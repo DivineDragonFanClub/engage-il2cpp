@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jukeboxsequence/JukeboxSequence.md"))]#[::unity2::class(namespace="App",name="JukeboxSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::jukeboxsequence::JukeboxSequence>)]pub struct JukeboxSequence{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jukeboxsequence/JukeboxSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JukeboxSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for JukeboxSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="JukeboxSequence.Label";
@@ -36,6 +33,9 @@ pub fn select()->Self{Self{value:1}
 pub fn exit()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jukeboxsequence/JukeboxSequence.md"))]#[::unity2::class(namespace="App",name="JukeboxSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::jukeboxsequence::JukeboxSequence>)]pub struct JukeboxSequence{}
 
 }
 
@@ -109,10 +109,10 @@ this}
 #[cfg(feature = "app-jukeboxsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::JukeboxSequence_Label;
     pub use super::JukeboxSequence;
     pub use super::IJukeboxSequence;
     pub use super::IJukeboxSequenceMethods;
-    pub use super::JukeboxSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

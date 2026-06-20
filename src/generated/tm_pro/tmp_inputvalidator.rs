@@ -20,23 +20,19 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "tm_pro-tmp_inputvalidator-types")]
 pub use __types::*;
 
-#[cfg(feature="tm_pro-tmp_inputvalidator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_InputValidator_unity2_raw{use super:: * ;
-pub unsafe fn validate(this:TMP_InputValidator,text: *mut::unity2::Il2CppString,pos: *mut i32,ch:u16,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="tm_pro-tmp_inputvalidator")]pub trait ITMP_InputValidatorMethods:ITMP_InputValidator{#[doc="`Validate(*mut::unity2::Il2CppString, *muti32, u16)` overload"]fn validate(self,ch:impl::core::convert::Into<u16>)->(u16, ::unity2::Il2CppString,i32){unsafe{let __receiver= <TMP_InputValidator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <TMP_InputValidator as::unity2::ClassIdentity> ::NAME,"Validate",));
-let inner:extern "C" fn(TMP_InputValidator, *mut::unity2::Il2CppString, *mut i32,u16, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TMP_InputValidator, *mut::unity2::Il2CppString, *mut i32,u16, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,text,pos,ch,__mi)}
+__inner(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::convert::Into::into(ch),__mi)}
 }
-
-#[cfg(feature="tm_pro-tmp_inputvalidator")]pub trait ITMP_InputValidatorMethods:ITMP_InputValidator{#[doc="`Validate(*mut::unity2::Il2CppString, *muti32, u16)` overload"]fn validate(self,ch:impl::core::convert::Into<u16>)->(u16, ::unity2::Il2CppString,i32){unsafe{let __receiver= <TMP_InputValidator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
-let __ret={__TMP_InputValidator_unity2_raw::validate(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::convert::Into::into(ch), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init(),__out_1.assume_init())}
 }
@@ -50,6 +46,11 @@ let __ret={__TMP_InputValidator_unity2_raw::validate(__receiver,__out_0.as_mut_p
 
 #[cfg(feature="tm_pro-tmp_inputvalidator")]impl TMP_InputValidator{pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="tm_pro-tmp_inputvalidator")]impl TMP_InputValidator{#[doc="Direct (non-virtual) call to `TMP_InputValidator`'s own `Validate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn validate(this:impl::core::convert::Into< ::unity2::IlInstance> ,text: *mut::unity2::Il2CppString,pos: *mut i32,ch:u16,)->u16{let __mi=Self::validate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut::unity2::Il2CppString, *mut i32,u16, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),text,pos,ch, ::core::option::Option::None)}
 }
 
 #[cfg(feature="tm_pro-tmp_inputvalidator")]impl TMP_InputValidator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

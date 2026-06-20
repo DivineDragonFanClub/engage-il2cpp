@@ -20,59 +20,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-skillinheritancemenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-skillinheritancemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SkillInheritanceMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:SkillInheritanceMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SkillInheritanceMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SkillInheritanceMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SkillInheritanceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn custom_call(this:SkillInheritanceMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",58usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
-let inner:extern "C" fn(SkillInheritanceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn key_left(this:SkillInheritanceMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
-let inner:extern "C" fn(SkillInheritanceMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-pub unsafe fn key_right(this:SkillInheritanceMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
-let inner:extern "C" fn(SkillInheritanceMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-}
-
 #[cfg(feature="app-skillinheritancemenu")]impl SkillInheritanceMenu{#[doc="`get_m_Unit()` overload"]pub fn get_m_unit()->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24a1de0usize)as*mut u8,crate::app::unit::Unit;
 )}
 }
@@ -103,19 +50,64 @@ inner(this,is_trigger,__mi)}
 (SkillInheritanceMenu)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SkillInheritanceMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SkillInheritanceMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SkillInheritanceMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(SkillInheritanceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SkillInheritanceMenu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let __inner:extern "C" fn(SkillInheritanceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SkillInheritanceMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let __inner:extern "C" fn(SkillInheritanceMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SkillInheritanceMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let __inner:extern "C" fn(SkillInheritanceMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`GetGod()` overload"]fn get_god(self,)->crate::app::godunit::GodUnit{unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24a3710usize)as*mut u8,crate::app::godunit::GodUnit;
@@ -159,6 +151,23 @@ pub fn get_god_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn set_skill_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 pub fn get_select_god_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
+
+#[cfg(feature="app-skillinheritancemenu")]impl SkillInheritanceMenu{#[doc="Direct (non-virtual) call to `SkillInheritanceMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SkillInheritanceMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SkillInheritanceMenu`'s own `CustomCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn custom_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::custom_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SkillInheritanceMenu`'s own `KeyLeft`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_left(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::key_left_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SkillInheritanceMenu`'s own `KeyRight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_right(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::key_right_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-skillinheritancemenu")]impl SkillInheritanceMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::skillinheritancemenucontent::SkillInheritanceMenuContent, crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::skillinheritancemenucontent::SkillInheritanceMenuContent,god_list:crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

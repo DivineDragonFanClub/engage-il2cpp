@@ -15,121 +15,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymessagemenu/RelayMessageMenu_MenuItem.md"))]#[::unity2::class(namespace="App",name="RelayMessageMenu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RelayMessageMenu_MenuItem{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymessagemenu/RelayMessageMenu.md"))]#[::unity2::class(namespace="App",name="RelayMessageMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RelayMessageMenu{#[static_field]#[rename(name="StartKind")]pub start_kind:crate::app::relaystampdata::RelayStampData_Kinds, #[offset(196)]#[rename(name="m_Kind")]pub m_kind:crate::app::relaystampdata::RelayStampData_Kinds, #[offset(200)]#[rename(name="m_MenuSelectList")]pub m_menu_select_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymessagemenu/RelayMessageMenu_MenuItem.md"))]#[::unity2::class(namespace="App",name="RelayMessageMenu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RelayMessageMenu_MenuItem{}
 
 }
 
 #[cfg(feature = "app-relaymessagemenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-relaymessagemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayMessageMenu_MenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:RelayMessageMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <RelayMessageMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RelayMessageMenu_MenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:RelayMessageMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <RelayMessageMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RelayMessageMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:RelayMessageMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <RelayMessageMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(RelayMessageMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-relaymessagemenu")]pub trait IRelayMessageMenu_MenuItemMethods:IRelayMessageMenu_MenuItem{#[doc="`get_Data()` overload"]fn get_data(self,)->crate::app::relaystampdata::RelayStampData{unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b062d0usize)as*mut u8,crate::app::relaystampdata::RelayStampData;
-(RelayMessageMenu_MenuItem)__receiver)}
-}
-#[doc="`set_Data(crate::app::relaystampdata::RelayStampData)` overload"]fn set_data(self,value:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData>)->(){unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b062e0usize)as*mut u8,();
-(RelayMessageMenu_MenuItem)__receiver,(crate::app::relaystampdata::RelayStampData)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(crate::app::relaystampdata::RelayStampData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData>)->(){unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b062f0usize)as*mut u8,();
-(RelayMessageMenu_MenuItem)__receiver,(crate::app::relaystampdata::RelayStampData)::core::convert::Into::into(data))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayMessageMenu_MenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayMessageMenu_MenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayMessageMenu_MenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-relaymessagemenu")]impl<__T:IRelayMessageMenu_MenuItem>IRelayMessageMenu_MenuItemMethods for __T{}
-
-#[cfg(feature="app-relaymessagemenu")]impl RelayMessageMenu_MenuItem{pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-relaymessagemenu")]impl RelayMessageMenu_MenuItem{#[doc="`.ctor(crate::app::relaystampdata::RelayStampData)` — overload selector"]pub fn new(data:crate::app::relaystampdata::RelayStampData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayMessageMenu_MenuItem), ::core::stringify!(new),));
- <Self as IRelayMessageMenu_MenuItemMethods> ::ctor(this,data);
-this}
-}
-
-#[cfg(feature="app-relaymessagemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayMessageMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:RelayMessageMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <RelayMessageMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RelayMessageMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn key_left(this:RelayMessageMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <RelayMessageMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
-let inner:extern "C" fn(RelayMessageMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-pub unsafe fn key_right(this:RelayMessageMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <RelayMessageMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
-let inner:extern "C" fn(RelayMessageMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-}
 
 #[cfg(feature="app-relaymessagemenu")]impl RelayMessageMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fff350usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -144,13 +38,40 @@ inner(this,is_trigger,__mi)}
 (RelayMessageMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::relaymessagemenucontent::RelayMessageMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayMessageMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayMessageMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RelayMessageMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RelayMessageMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RelayMessageMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayMessageMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <RelayMessageMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let __inner:extern "C" fn(RelayMessageMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RelayMessageMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayMessageMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <RelayMessageMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let __inner:extern "C" fn(RelayMessageMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`RebuildMenu()` overload"]fn rebuild_menu(self,)->(){unsafe{let __receiver= <RelayMessageMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2000510usize)as*mut u8,();
@@ -169,6 +90,17 @@ pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 }
 
+#[cfg(feature="app-relaymessagemenu")]impl RelayMessageMenu{#[doc="Direct (non-virtual) call to `RelayMessageMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayMessageMenu`'s own `KeyLeft`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_left(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::key_left_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayMessageMenu`'s own `KeyRight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_right(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::key_right_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-relaymessagemenu")]impl RelayMessageMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymessagemenucontent::RelayMessageMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::relaymessagemenucontent::RelayMessageMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RelayMessageMenu), ::core::stringify!(new),));
@@ -176,15 +108,93 @@ pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 this}
 }
 
+#[cfg(feature="app-relaymessagemenu")]pub trait IRelayMessageMenu_MenuItemMethods:IRelayMessageMenu_MenuItem{#[doc="`get_Data()` overload"]fn get_data(self,)->crate::app::relaystampdata::RelayStampData{unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b062d0usize)as*mut u8,crate::app::relaystampdata::RelayStampData;
+(RelayMessageMenu_MenuItem)__receiver)}
+}
+#[doc="`set_Data(crate::app::relaystampdata::RelayStampData)` overload"]fn set_data(self,value:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData>)->(){unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b062e0usize)as*mut u8,();
+(RelayMessageMenu_MenuItem)__receiver,(crate::app::relaystampdata::RelayStampData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::relaystampdata::RelayStampData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData>)->(){unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b062f0usize)as*mut u8,();
+(RelayMessageMenu_MenuItem)__receiver,(crate::app::relaystampdata::RelayStampData)::core::convert::Into::into(data))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RelayMessageMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RelayMessageMenu_MenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RelayMessageMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RelayMessageMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayMessageMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <RelayMessageMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(RelayMessageMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-relaymessagemenu")]impl<__T:IRelayMessageMenu_MenuItem>IRelayMessageMenu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-relaymessagemenu")]impl RelayMessageMenu_MenuItem{pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-relaymessagemenu")]impl RelayMessageMenu_MenuItem{#[doc="Direct (non-virtual) call to `RelayMessageMenu_MenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayMessageMenu_MenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayMessageMenu_MenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-relaymessagemenu")]impl RelayMessageMenu_MenuItem{#[doc="`.ctor(crate::app::relaystampdata::RelayStampData)` — overload selector"]pub fn new(data:crate::app::relaystampdata::RelayStampData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayMessageMenu_MenuItem), ::core::stringify!(new),));
+ <Self as IRelayMessageMenu_MenuItemMethods> ::ctor(this,data);
+this}
+}
+
 #[cfg(feature = "app-relaymessagemenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayMessageMenu_MenuItem;
-    pub use super::IRelayMessageMenu_MenuItem;
-    pub use super::IRelayMessageMenu_MenuItemMethods;
     pub use super::RelayMessageMenu;
     pub use super::IRelayMessageMenu;
     pub use super::IRelayMessageMenuMethods;
+    pub use super::RelayMessageMenu_MenuItem;
+    pub use super::IRelayMessageMenu_MenuItem;
+    pub use super::IRelayMessageMenu_MenuItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

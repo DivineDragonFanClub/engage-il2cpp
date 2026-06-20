@@ -16,89 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-ui-layoutrebuilder-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ui-layoutrebuilder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LayoutRebuilder_unity2_raw{use super:: * ;
-pub unsafe fn get_transform(this:LayoutRebuilder,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"get_transform",));
-let inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_destroyed(this:LayoutRebuilder,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"IsDestroyed",));
-let inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn rebuild(this:LayoutRebuilder,executing:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"Rebuild",));
-let inner:extern "C" fn(LayoutRebuilder,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,executing,__mi)}
-pub unsafe fn layout_complete(this:LayoutRebuilder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
-let inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn graphic_update_complete(this:LayoutRebuilder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
-let inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_hash_code(this:LayoutRebuilder,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",2usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn equals(this:LayoutRebuilder,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",0usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(LayoutRebuilder,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
-pub unsafe fn to_string(this:LayoutRebuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-ui-layoutrebuilder")]impl LayoutRebuilder{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c01230usize)as*mut u8,();
 )}
 }
@@ -131,13 +48,40 @@ inner(this,__mi)}
 (LayoutRebuilder)__receiver)}
 }
 #[doc="`get_transform()` overload"]fn get_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <LayoutRebuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LayoutRebuilder_unity2_raw::get_transform(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"get_transform",));
+let __inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsDestroyed()` overload"]fn is_destroyed(self,)->bool{unsafe{let __receiver= <LayoutRebuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LayoutRebuilder_unity2_raw::is_destroyed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"IsDestroyed",));
+let __inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,executing:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <LayoutRebuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LayoutRebuilder_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(executing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"Rebuild",));
+let __inner:extern "C" fn(LayoutRebuilder,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(executing),__mi)}
+}
 }
 #[doc="`PerformLayoutControl(crate::unity_engine::recttransform::RectTransform, crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::component::Component>)` overload"]fn perform_layout_control(self,rect:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform> ,action:impl::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::component::Component> >)->(){unsafe{let __receiver= <LayoutRebuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c01dc0usize)as*mut u8,();
@@ -148,19 +92,64 @@ __LayoutRebuilder_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(ex
 (LayoutRebuilder)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(rect),(crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::component::Component>)::core::convert::Into::into(action))}
 }
 #[doc="`LayoutComplete()` overload"]fn layout_complete(self,)->(){unsafe{let __receiver= <LayoutRebuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LayoutRebuilder_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
+let __inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GraphicUpdateComplete()` overload"]fn graphic_update_complete(self,)->(){unsafe{let __receiver= <LayoutRebuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LayoutRebuilder_unity2_raw::graphic_update_complete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
+let __inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <LayoutRebuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LayoutRebuilder_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let __inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <LayoutRebuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LayoutRebuilder_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"Equals",));
+let __inner:extern "C" fn(LayoutRebuilder,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LayoutRebuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LayoutRebuilder_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <LayoutRebuilder as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(LayoutRebuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LayoutRebuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c02740usize)as*mut u8,();
@@ -190,6 +179,32 @@ pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
+
+#[cfg(feature="unity_engine-ui-layoutrebuilder")]impl LayoutRebuilder{#[doc="Direct (non-virtual) call to `LayoutRebuilder`'s own `get_transform`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_transform(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::transform::Transform{let __mi=Self::get_transform_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `LayoutRebuilder`'s own `IsDestroyed`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_destroyed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_destroyed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `LayoutRebuilder`'s own `Rebuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn rebuild(this:impl::core::convert::Into< ::unity2::IlInstance> ,executing:crate::unity_engine::ui::canvasupdate::CanvasUpdate,)->(){let __mi=Self::rebuild_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),executing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `LayoutRebuilder`'s own `LayoutComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn layout_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::layout_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `LayoutRebuilder`'s own `GraphicUpdateComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn graphic_update_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::graphic_update_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `LayoutRebuilder`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `LayoutRebuilder`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)->bool{let __mi=Self::equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `LayoutRebuilder`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-ui-layoutrebuilder")]impl LayoutRebuilder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

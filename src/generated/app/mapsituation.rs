@@ -21,22 +21,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_SubPhases.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSituation_SubPhases{pub value:i32,}
-impl::unity2::ClassIdentity for MapSituation_SubPhases{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapSituation.SubPhases";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapSituation_SubPhases{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapSituation_SubPhases{pub fn normal()->Self{Self{value:0}
-}
-pub fn charm_confusion()->Self{Self{value:1}
-}
-pub fn num()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_ForceCursor.md"))]#[::unity2::class(namespace="App",name="MapSituation.ForceCursor")]#[parent(crate::system::object::Object)]pub struct MapSituation_ForceCursor{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation.md"))]#[::unity2::class(namespace="App",name="MapSituation")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapsituation::MapSituation>)]pub struct MapSituation{#[static_field]#[rename(name="TurnMax")]pub turn_max:i32, #[offset(32)]#[rename(name="m_Status")]pub m_status:crate::app::mapsituation::MapSituation_StatusField, #[offset(40)]#[rename(name="m_Players")]pub m_players: ::unity2::Array<crate::app::mapsituation::MapSituation_Player> , #[offset(48)]#[rename(name="m_Groups")]pub m_groups: ::unity2::Array<crate::app::force::Force_Type> , #[offset(56)]#[rename(name="m_CurrentForceType")]pub m_current_force_type:crate::app::force::Force_Type, #[offset(60)]#[rename(name="m_HumanForceType")]pub m_human_force_type:crate::app::force::Force_Type, #[offset(64)]#[rename(name="m_ForceCursors")]pub m_force_cursors: ::unity2::Array<crate::app::mapsituation::MapSituation_ForceCursor> , #[offset(72)]#[rename(name="m_Turn")]pub m_turn:i32, #[offset(76)]#[rename(name="m_SubPhase")]pub m_sub_phase:crate::app::mapsituation::MapSituation_SubPhases, #[offset(80)]#[rename(name="m_WinRuleEnemyNumLessThanOrEqualTo")]pub m_win_rule_enemy_num_less_than_or_equal_to:i32, #[offset(84)]#[rename(name="m_WinRuleLimitTurn")]pub m_win_rule_limit_turn:i32, #[offset(88)]#[rename(name="m_WinLoseResult")]pub m_win_lose_result:crate::app::winloserule::WinLoseRule, #[offset(92)]#[rename(name="m_Entrust")]pub m_entrust:crate::app::unitentrust::UnitEntrust_Type, #[offset(96)]#[rename(name="m_WinRuleMID")]pub m_win_rule_mid: ::unity2::Il2CppString, #[offset(104)]#[rename(name="m_WinRuleMIDArg")]pub m_win_rule_mid_arg: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_LoseRuleMID")]pub m_lose_rule_mid: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_LoseRuleMIDArg")]pub m_lose_rule_mid_arg: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_AverageLevel")]pub m_average_level:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSituation_Status{pub value:i32,}
@@ -67,9 +55,6 @@ pub fn win_rule_mask()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation.md"))]#[::unity2::class(namespace="App",name="MapSituation")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapsituation::MapSituation>)]pub struct MapSituation{#[static_field]#[rename(name="TurnMax")]pub turn_max:i32, #[offset(32)]#[rename(name="m_Status")]pub m_status:crate::app::mapsituation::MapSituation_StatusField, #[offset(40)]#[rename(name="m_Players")]pub m_players: ::unity2::Array<crate::app::mapsituation::MapSituation_Player> , #[offset(48)]#[rename(name="m_Groups")]pub m_groups: ::unity2::Array<crate::app::force::Force_Type> , #[offset(56)]#[rename(name="m_CurrentForceType")]pub m_current_force_type:crate::app::force::Force_Type, #[offset(60)]#[rename(name="m_HumanForceType")]pub m_human_force_type:crate::app::force::Force_Type, #[offset(64)]#[rename(name="m_ForceCursors")]pub m_force_cursors: ::unity2::Array<crate::app::mapsituation::MapSituation_ForceCursor> , #[offset(72)]#[rename(name="m_Turn")]pub m_turn:i32, #[offset(76)]#[rename(name="m_SubPhase")]pub m_sub_phase:crate::app::mapsituation::MapSituation_SubPhases, #[offset(80)]#[rename(name="m_WinRuleEnemyNumLessThanOrEqualTo")]pub m_win_rule_enemy_num_less_than_or_equal_to:i32, #[offset(84)]#[rename(name="m_WinRuleLimitTurn")]pub m_win_rule_limit_turn:i32, #[offset(88)]#[rename(name="m_WinLoseResult")]pub m_win_lose_result:crate::app::winloserule::WinLoseRule, #[offset(92)]#[rename(name="m_Entrust")]pub m_entrust:crate::app::unitentrust::UnitEntrust_Type, #[offset(96)]#[rename(name="m_WinRuleMID")]pub m_win_rule_mid: ::unity2::Il2CppString, #[offset(104)]#[rename(name="m_WinRuleMIDArg")]pub m_win_rule_mid_arg: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_LoseRuleMID")]pub m_lose_rule_mid: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_LoseRuleMIDArg")]pub m_lose_rule_mid_arg: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_AverageLevel")]pub m_average_level:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_Player.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSituation_Player{pub value:i32,}
 impl::unity2::ClassIdentity for MapSituation_Player{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSituation.Player";
@@ -94,47 +79,77 @@ pub fn num()->Self{Self{value:5}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_ForceCursor.md"))]#[::unity2::class(namespace="App",name="MapSituation.ForceCursor")]#[parent(crate::system::object::Object)]pub struct MapSituation_ForceCursor{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_StatusField.md"))]#[::unity2::class(namespace="App",name="MapSituation.StatusField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::mapsituation::MapSituation_Status>)]pub struct MapSituation_StatusField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_SubPhases.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSituation_SubPhases{pub value:i32,}
+impl::unity2::ClassIdentity for MapSituation_SubPhases{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSituation.SubPhases";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSituation_SubPhases{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSituation_SubPhases{pub fn normal()->Self{Self{value:0}
+}
+pub fn charm_confusion()->Self{Self{value:1}
+}
+pub fn num()->Self{Self{value:2}
+}
+}
 
 }
 
 #[cfg(feature = "app-mapsituation-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapsituation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSituation_unity2_raw{use super:: * ;
-pub unsafe fn get_version(this:MapSituation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapSituation as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(MapSituation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:MapSituation,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MapSituation as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(MapSituation,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:MapSituation,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapSituation as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(MapSituation,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
+#[cfg(feature="app-mapsituation")]pub trait IMapSituation_ForceCursorMethods:IMapSituation_ForceCursor{#[doc="`Set(i32, i32)` overload"]fn set(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc60usize)as*mut u8,();
+(MapSituation_ForceCursor)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc70usize)as*mut u8,();
+(MapSituation_ForceCursor)__receiver)}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc80usize)as*mut u8,i32;
+(MapSituation_ForceCursor)__receiver)}
+}
+#[doc="`set_X(i32)` overload"]fn set_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc90usize)as*mut u8,();
+(MapSituation_ForceCursor)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bca0usize)as*mut u8,i32;
+(MapSituation_ForceCursor)__receiver)}
+}
+#[doc="`set_Z(i32)` overload"]fn set_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bcb0usize)as*mut u8,();
+(MapSituation_ForceCursor)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bcc0usize)as*mut u8,();
+(MapSituation_ForceCursor)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsituation")]impl<__T:IMapSituation_ForceCursor>IMapSituation_ForceCursorMethods for __T{}
+
+#[cfg(feature="app-mapsituation")]impl MapSituation_ForceCursor{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mapsituation")]impl MapSituation_ForceCursor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSituation_ForceCursor), ::core::stringify!(new),));
+ <Self as IMapSituation_ForceCursorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-mapsituation")]impl MapSituation{#[doc="`GetWinRuleString()` overload"]pub fn get_win_rule_string()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d8a0usize)as*mut u8, ::unity2::Il2CppString;
@@ -348,13 +363,40 @@ inner(this,stream,version,__mi)}
 (MapSituation)__receiver)}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSituation_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapSituation as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(MapSituation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSituation_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapSituation as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(MapSituation,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSituation_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapSituation as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(MapSituation,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
 }
 #[doc="`get_CurrentForceType()` overload"]fn get_current_force_type(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d710usize)as*mut u8,crate::app::force::Force_Type;
@@ -543,6 +585,17 @@ pub fn is_hero_lose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn get_hero_unit_for_lose_rule_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
 }
 
+#[cfg(feature="app-mapsituation")]impl MapSituation{#[doc="Direct (non-virtual) call to `MapSituation`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSituation`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSituation`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapsituation")]impl MapSituation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapSituation), ::core::stringify!(new),));
@@ -550,69 +603,17 @@ pub fn get_hero_unit_for_lose_rule_string_method_info()-> & 'static::unity2::il2
 this}
 }
 
-#[cfg(feature="app-mapsituation")]pub trait IMapSituation_ForceCursorMethods:IMapSituation_ForceCursor{#[doc="`Set(i32, i32)` overload"]fn set(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc60usize)as*mut u8,();
-(MapSituation_ForceCursor)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc70usize)as*mut u8,();
-(MapSituation_ForceCursor)__receiver)}
-}
-#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc80usize)as*mut u8,i32;
-(MapSituation_ForceCursor)__receiver)}
-}
-#[doc="`set_X(i32)` overload"]fn set_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc90usize)as*mut u8,();
-(MapSituation_ForceCursor)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bca0usize)as*mut u8,i32;
-(MapSituation_ForceCursor)__receiver)}
-}
-#[doc="`set_Z(i32)` overload"]fn set_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bcb0usize)as*mut u8,();
-(MapSituation_ForceCursor)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bcc0usize)as*mut u8,();
-(MapSituation_ForceCursor)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapsituation")]impl<__T:IMapSituation_ForceCursor>IMapSituation_ForceCursorMethods for __T{}
-
-#[cfg(feature="app-mapsituation")]impl MapSituation_ForceCursor{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-mapsituation")]impl MapSituation_ForceCursor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSituation_ForceCursor), ::core::stringify!(new),));
- <Self as IMapSituation_ForceCursorMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapsituation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSituation_StatusField_unity2_raw{use super:: * ;
-pub unsafe fn to_int(this:MapSituation_StatusField,value:crate::app::mapsituation::MapSituation_Status,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-mapsituation")]pub trait IMapSituation_StatusFieldMethods:IMapSituation_StatusField{#[doc="`ToInt(crate::app::mapsituation::MapSituation_Status)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::mapsituation::MapSituation_Status>)->i32{unsafe{let __receiver= <MapSituation_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <MapSituation_StatusField as::unity2::ClassIdentity> ::NAME,"ToInt",));
-let inner:extern "C" fn(MapSituation_StatusField,crate::app::mapsituation::MapSituation_Status, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MapSituation_StatusField,crate::app::mapsituation::MapSituation_Status, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="app-mapsituation")]pub trait IMapSituation_StatusFieldMethods:IMapSituation_StatusField{#[doc="`ToInt(crate::app::mapsituation::MapSituation_Status)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::mapsituation::MapSituation_Status>)->i32{unsafe{let __receiver= <MapSituation_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSituation_StatusField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSituation_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bce0usize)as*mut u8,();
@@ -626,6 +627,11 @@ __MapSituation_StatusField_unity2_raw::to_int(__receiver, ::core::convert::Into:
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-mapsituation")]impl MapSituation_StatusField{#[doc="Direct (non-virtual) call to `MapSituation_StatusField`'s own `ToInt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_int(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::mapsituation::MapSituation_Status,)->i32{let __mi=Self::to_int_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::mapsituation::MapSituation_Status, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapsituation")]impl MapSituation_StatusField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapSituation_StatusField), ::core::stringify!(new),));
@@ -636,18 +642,18 @@ this}
 #[cfg(feature = "app-mapsituation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSituation_SubPhases;
-    pub use super::MapSituation_Status;
-    pub use super::MapSituation;
-    pub use super::IMapSituation;
-    pub use super::IMapSituationMethods;
-    pub use super::MapSituation_Player;
     pub use super::MapSituation_ForceCursor;
     pub use super::IMapSituation_ForceCursor;
     pub use super::IMapSituation_ForceCursorMethods;
+    pub use super::MapSituation;
+    pub use super::IMapSituation;
+    pub use super::IMapSituationMethods;
+    pub use super::MapSituation_Status;
+    pub use super::MapSituation_Player;
     pub use super::MapSituation_StatusField;
     pub use super::IMapSituation_StatusField;
     pub use super::IMapSituation_StatusFieldMethods;
+    pub use super::MapSituation_SubPhases;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

@@ -20,25 +20,21 @@ use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,Volum
 #[cfg(feature = "unity_engine-rendering-texturecurveparameter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-texturecurveparameter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextureCurveParameter_unity2_raw{use super:: * ;
-pub unsafe fn release(this:TextureCurveParameter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <TextureCurveParameter as::unity2::ClassIdentity> ::NAME,"Release",));
-let inner:extern "C" fn(TextureCurveParameter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-texturecurveparameter")]pub trait ITextureCurveParameterMethods:ITextureCurveParameter{#[doc="`.ctor(crate::unity_engine::rendering::texturecurve::TextureCurve, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::rendering::texturecurve::TextureCurve> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextureCurveParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1a40usize)as*mut u8,();
 (TextureCurveParameter)__receiver,(crate::unity_engine::rendering::texturecurve::TextureCurve)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
 }
 #[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <TextureCurveParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextureCurveParameter_unity2_raw::release(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TextureCurveParameter as::unity2::ClassIdentity> ::NAME,"Release",));
+let __inner:extern "C" fn(TextureCurveParameter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -46,6 +42,11 @@ __TextureCurveParameter_unity2_raw::release(__receiver, ::core::option::Option::
 
 #[cfg(feature="unity_engine-rendering-texturecurveparameter")]impl TextureCurveParameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-rendering-texturecurveparameter")]impl TextureCurveParameter{#[doc="Direct (non-virtual) call to `TextureCurveParameter`'s own `Release`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn release(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::release_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-texturecurveparameter")]impl TextureCurveParameter{#[doc="`.ctor(crate::unity_engine::rendering::texturecurve::TextureCurve, bool)` — overload selector"]pub fn new(value:crate::unity_engine::rendering::texturecurve::TextureCurve,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

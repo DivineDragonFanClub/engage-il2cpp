@@ -26,47 +26,41 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root_motion-final_ik-grounderbipedik-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-grounderbipedik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GrounderBipedIK_unity2_raw{use super:: * ;
-pub unsafe fn open_user_manual(this:GrounderBipedIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root_motion-final_ik-grounderbipedik")]pub trait IGrounderBipedIKMethods:IGrounderBipedIK{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <GrounderBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <GrounderBipedIK as::unity2::ClassIdentity> ::NAME,"OpenUserManual",));
-let inner:extern "C" fn(GrounderBipedIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GrounderBipedIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn open_script_reference(this:GrounderBipedIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <GrounderBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <GrounderBipedIK as::unity2::ClassIdentity> ::NAME,"OpenScriptReference",));
-let inner:extern "C" fn(GrounderBipedIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GrounderBipedIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn reset_position(this:GrounderBipedIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ResetPosition()` overload"]fn reset_position(self,)->(){unsafe{let __receiver= <GrounderBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <GrounderBipedIK as::unity2::ClassIdentity> ::NAME,"ResetPosition",));
-let inner:extern "C" fn(GrounderBipedIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GrounderBipedIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="root_motion-final_ik-grounderbipedik")]pub trait IGrounderBipedIKMethods:IGrounderBipedIK{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <GrounderBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GrounderBipedIK_unity2_raw::open_user_manual(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <GrounderBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GrounderBipedIK_unity2_raw::open_script_reference(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ResetPosition()` overload"]fn reset_position(self,)->(){unsafe{let __receiver= <GrounderBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GrounderBipedIK_unity2_raw::reset_position(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsReadyToInitiate()` overload"]fn is_ready_to_initiate(self,)->bool{unsafe{let __receiver= <GrounderBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2971340usize)as*mut u8,bool;
@@ -120,6 +114,17 @@ pub fn set_leg_ik_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn on_post_solver_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="root_motion-final_ik-grounderbipedik")]impl GrounderBipedIK{#[doc="Direct (non-virtual) call to `GrounderBipedIK`'s own `OpenUserManual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn open_user_manual(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::open_user_manual_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GrounderBipedIK`'s own `OpenScriptReference`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn open_script_reference(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::open_script_reference_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GrounderBipedIK`'s own `ResetPosition`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn reset_position(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::reset_position_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root_motion-final_ik-grounderbipedik")]impl GrounderBipedIK{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

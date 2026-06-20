@@ -22,29 +22,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-unitselectsortiemenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-unitselectsortiemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectSortieMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:UnitSelectSortieMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <UnitSelectSortieMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(UnitSelectSortieMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:UnitSelectSortieMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",50usize,__vt.len(), <UnitSelectSortieMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(UnitSelectSortieMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-unitselectsortiemenu")]impl UnitSelectSortieMenu{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent>)->crate::app::unitselectsortiemenu::UnitSelectSortieMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c61d70usize)as*mut u8,crate::app::unitselectsortiemenu::UnitSelectSortieMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)::core::convert::Into::into(menu_content))}
 }
@@ -55,10 +32,28 @@ inner(this,__mi)}
 (UnitSelectSortieMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitSelectSortieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectSortieMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <UnitSelectSortieMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(UnitSelectSortieMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <UnitSelectSortieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectSortieMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <UnitSelectSortieMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(UnitSelectSortieMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetSelectIndexFromUnit(crate::app::unit::Unit)` overload"]fn set_select_index_from_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitSelectSortieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c620b0usize)as*mut u8,();
@@ -78,6 +73,14 @@ pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn set_select_index_from_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn get_root_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-unitselectsortiemenu")]impl UnitSelectSortieMenu{#[doc="Direct (non-virtual) call to `UnitSelectSortieMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnitSelectSortieMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-unitselectsortiemenu")]impl UnitSelectSortieMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

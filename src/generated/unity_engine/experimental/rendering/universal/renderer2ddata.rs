@@ -19,6 +19,9 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="Renderer2DData")]#[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]pub struct Renderer2DData{#[offset(48)]#[rename(name="m_TransparencySortMode")]pub m_transparency_sort_mode:crate::unity_engine::transparencysortmode::TransparencySortMode, #[offset(52)]#[rename(name="m_TransparencySortAxis")]pub m_transparency_sort_axis:crate::unity_engine::vector3::Vector3, #[offset(64)]#[rename(name="m_HDREmulationScale")]pub m_hdr_emulation_scale:f32, #[offset(72)]#[rename(name="m_LightBlendStyles")]pub m_light_blend_styles: ::unity2::Array<crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle> , #[offset(80)]#[rename(name="m_UseDepthStencilBuffer")]pub m_use_depth_stencil_buffer:bool, #[offset(88)]#[rename(name="m_ShapeLightShader")]pub m_shape_light_shader:crate::unity_engine::shader::Shader, #[offset(96)]#[rename(name="m_ShapeLightVolumeShader")]pub m_shape_light_volume_shader:crate::unity_engine::shader::Shader, #[offset(104)]#[rename(name="m_PointLightShader")]pub m_point_light_shader:crate::unity_engine::shader::Shader, #[offset(112)]#[rename(name="m_PointLightVolumeShader")]pub m_point_light_volume_shader:crate::unity_engine::shader::Shader, #[offset(120)]#[rename(name="m_BlitShader")]pub m_blit_shader:crate::unity_engine::shader::Shader, #[offset(128)]#[rename(name="m_ShadowGroupShader")]pub m_shadow_group_shader:crate::unity_engine::shader::Shader, #[offset(136)]#[rename(name="m_RemoveSelfShadowShader")]pub m_remove_self_shadow_shader:crate::unity_engine::shader::Shader, #[offset(144)]#[rename(name="m_PostProcessData")]pub m_post_process_data:crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, #[offset(176)]#[rename(name="normalsRenderTarget")]pub normals_render_target:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(224)]#[rename(name="shadowsRenderTarget")]pub shadows_render_target:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData_Renderer2DDefaultMaterialType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Renderer2DData_Renderer2DDefaultMaterialType{pub value:i32,}
 impl::unity2::ClassIdentity for Renderer2DData_Renderer2DDefaultMaterialType{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
 const NAME: &'static str="Renderer2DData.Renderer2DDefaultMaterialType";
@@ -36,36 +39,10 @@ pub fn custom()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="Renderer2DData")]#[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]pub struct Renderer2DData{#[offset(48)]#[rename(name="m_TransparencySortMode")]pub m_transparency_sort_mode:crate::unity_engine::transparencysortmode::TransparencySortMode, #[offset(52)]#[rename(name="m_TransparencySortAxis")]pub m_transparency_sort_axis:crate::unity_engine::vector3::Vector3, #[offset(64)]#[rename(name="m_HDREmulationScale")]pub m_hdr_emulation_scale:f32, #[offset(72)]#[rename(name="m_LightBlendStyles")]pub m_light_blend_styles: ::unity2::Array<crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle> , #[offset(80)]#[rename(name="m_UseDepthStencilBuffer")]pub m_use_depth_stencil_buffer:bool, #[offset(88)]#[rename(name="m_ShapeLightShader")]pub m_shape_light_shader:crate::unity_engine::shader::Shader, #[offset(96)]#[rename(name="m_ShapeLightVolumeShader")]pub m_shape_light_volume_shader:crate::unity_engine::shader::Shader, #[offset(104)]#[rename(name="m_PointLightShader")]pub m_point_light_shader:crate::unity_engine::shader::Shader, #[offset(112)]#[rename(name="m_PointLightVolumeShader")]pub m_point_light_volume_shader:crate::unity_engine::shader::Shader, #[offset(120)]#[rename(name="m_BlitShader")]pub m_blit_shader:crate::unity_engine::shader::Shader, #[offset(128)]#[rename(name="m_ShadowGroupShader")]pub m_shadow_group_shader:crate::unity_engine::shader::Shader, #[offset(136)]#[rename(name="m_RemoveSelfShadowShader")]pub m_remove_self_shadow_shader:crate::unity_engine::shader::Shader, #[offset(144)]#[rename(name="m_PostProcessData")]pub m_post_process_data:crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, #[offset(176)]#[rename(name="normalsRenderTarget")]pub normals_render_target:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(224)]#[rename(name="shadowsRenderTarget")]pub shadows_render_target:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,}
-
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-renderer2ddata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Renderer2DData_unity2_raw{use super:: * ;
-pub unsafe fn create(this:Renderer2DData,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Renderer2DData as::unity2::ClassIdentity> ::NAME,"Create",));
-let inner:extern "C" fn(Renderer2DData, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_enable(this:Renderer2DData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <Renderer2DData as::unity2::ClassIdentity> ::NAME,"OnEnable",));
-let inner:extern "C" fn(Renderer2DData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-renderer2ddata")]pub trait IRenderer2DDataMethods:IRenderer2DData{#[doc="`get_hdrEmulationScale()` overload"]fn get_hdr_emulation_scale(self,)->f32{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab970usize)as*mut u8,f32;
@@ -120,10 +97,28 @@ inner(this,__mi)}
 (Renderer2DData)__receiver)}
 }
 #[doc="`Create()` overload"]fn create(self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Renderer2DData_unity2_raw::create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Renderer2DData as::unity2::ClassIdentity> ::NAME,"Create",));
+let __inner:extern "C" fn(Renderer2DData, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Renderer2DData_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Renderer2DData as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let __inner:extern "C" fn(Renderer2DData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_lightMaterials()` overload"]fn get_light_materials(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::unity_engine::material::Material>{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x31abc70usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::unity_engine::material::Material> ;
@@ -186,6 +181,14 @@ pub fn set_light_cull_result_method_info()-> & 'static::unity2::il2cpp::MethodIn
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
 }
 
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderer2ddata")]impl Renderer2DData{#[doc="Direct (non-virtual) call to `Renderer2DData`'s own `Create`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{let __mi=Self::create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Renderer2DData`'s own `OnEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-experimental-rendering-universal-renderer2ddata")]impl Renderer2DData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(Renderer2DData), ::core::stringify!(new),));
@@ -196,10 +199,10 @@ this}
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Renderer2DData_Renderer2DDefaultMaterialType;
     pub use super::Renderer2DData;
     pub use super::IRenderer2DData;
     pub use super::IRenderer2DDataMethods;
+    pub use super::Renderer2DData_Renderer2DDefaultMaterialType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

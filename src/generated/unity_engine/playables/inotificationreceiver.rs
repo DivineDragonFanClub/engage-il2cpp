@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "unity_engine-playables-inotificationreceiver-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-playables-inotificationreceiver")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __INotificationReceiver_unity2_raw{use super:: * ;
-pub unsafe fn on_notify(this:INotificationReceiver,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-playables-inotificationreceiver")]pub trait IINotificationReceiverMethods:IINotificationReceiver{#[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <INotificationReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <INotificationReceiver as::unity2::ClassIdentity> ::NAME,"OnNotify",));
-let inner:extern "C" fn(INotificationReceiver,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(INotificationReceiver,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,origin,notification,context,__mi)}
+__inner(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context),__mi)}
 }
-
-#[cfg(feature="unity_engine-playables-inotificationreceiver")]pub trait IINotificationReceiverMethods:IINotificationReceiver{#[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <INotificationReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__INotificationReceiver_unity2_raw::on_notify(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="unity_engine-playables-inotificationreceiver")]impl<__T:IINotificationReceiver>IINotificationReceiverMethods for __T{}
 
 #[cfg(feature="unity_engine-playables-inotificationreceiver")]impl INotificationReceiver{pub fn on_notify_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-playables-inotificationreceiver")]impl INotificationReceiver{#[doc="Direct (non-virtual) call to `INotificationReceiver`'s own `OnNotify`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_notify(this:impl::core::convert::Into< ::unity2::IlInstance> ,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,)->(){let __mi=Self::on_notify_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),origin,notification,context, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-playables-inotificationreceiver")]

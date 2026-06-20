@@ -20,19 +20,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-eachinspector-types")]
 pub use __types::*;
 
-#[cfg(feature="app-eachinspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EachInspector_unity2_raw{use super:: * ;
-pub unsafe fn is_eanble(this:EachInspector,from_person:i32,from_force:i32,to_person:i32,to_force:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <EachInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
-let inner:extern "C" fn(EachInspector,i32,i32,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,from_person,from_force,to_person,to_force,__mi)}
-}
-
 #[cfg(feature="app-eachinspector")]pub trait IEachInspectorMethods:IEachInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EachInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22d4bb0usize)as*mut u8,();
 (EachInspector)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
@@ -42,7 +29,16 @@ inner(this,from_person,from_force,to_person,to_force,__mi)}
 (EachInspector)__receiver,(i32)::core::convert::Into::into(from_person),(i32)::core::convert::Into::into(from_force),(i32)::core::convert::Into::into(to_person),(i32)::core::convert::Into::into(to_force))}
 }
 #[doc="`IsEanble(i32, i32, i32, i32)` overload"]fn is_eanble(self,from_person:impl::core::convert::Into<i32> ,from_force:impl::core::convert::Into<i32> ,to_person:impl::core::convert::Into<i32> ,to_force:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <EachInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EachInspector_unity2_raw::is_eanble(__receiver, ::core::convert::Into::into(from_person), ::core::convert::Into::into(from_force), ::core::convert::Into::into(to_person), ::core::convert::Into::into(to_force), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <EachInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
+let __inner:extern "C" fn(EachInspector,i32,i32,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(from_person), ::core::convert::Into::into(from_force), ::core::convert::Into::into(to_person), ::core::convert::Into::into(to_force),__mi)}
+}
 }
 }
 
@@ -51,6 +47,11 @@ __EachInspector_unity2_raw::is_eanble(__receiver, ::core::convert::Into::into(fr
 #[cfg(feature="app-eachinspector")]impl EachInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn is_each_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn is_eanble_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-eachinspector")]impl EachInspector{#[doc="Direct (non-virtual) call to `EachInspector`'s own `IsEanble`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_eanble(this:impl::core::convert::Into< ::unity2::IlInstance> ,from_person:i32,from_force:i32,to_person:i32,to_force:i32,)->bool{let __mi=Self::is_eanble_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,i32,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),from_person,from_force,to_person,to_force, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-eachinspector")]impl EachInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(kind:crate::app::mapinspector::MapInspector_Kind,args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

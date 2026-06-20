@@ -20,39 +20,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-sortiesequencereliancetalk-types")]
 pub use __types::*;
 
-#[cfg(feature="app-sortiesequencereliancetalk")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieSequenceRelianceTalk_unity2_raw{use super:: * ;
-pub unsafe fn create_mess_file_name(this:SortieSequenceRelianceTalk,is_reverse:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieSequenceRelianceTalk as::unity2::ClassIdentity> ::NAME,"CreateMessFileName",));
-let inner:extern "C" fn(SortieSequenceRelianceTalk,bool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_reverse,__mi)}
-pub unsafe fn create_mid(this:SortieSequenceRelianceTalk,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <SortieSequenceRelianceTalk as::unity2::ClassIdentity> ::NAME,"CreateMid",));
-let inner:extern "C" fn(SortieSequenceRelianceTalk, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn level_up(this:SortieSequenceRelianceTalk,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <SortieSequenceRelianceTalk as::unity2::ClassIdentity> ::NAME,"LevelUp",));
-let inner:extern "C" fn(SortieSequenceRelianceTalk, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-sortiesequencereliancetalk")]impl SortieSequenceRelianceTalk{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit_a:impl::core::convert::Into<crate::app::unit::Unit> ,unit_b:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0590usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit_a),(crate::app::unit::Unit)::core::convert::Into::into(unit_b))}
 }
@@ -63,21 +30,48 @@ inner(this,__mi)}
 (SortieSequenceRelianceTalk)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_a),(crate::app::unit::Unit)::core::convert::Into::into(unit_b))}
 }
 #[doc="`CreateMessFileName(bool)` overload"]fn create_mess_file_name(self,is_reverse:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieSequenceRelianceTalk_unity2_raw::create_mess_file_name(__receiver, ::core::convert::Into::into(is_reverse), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieSequenceRelianceTalk as::unity2::ClassIdentity> ::NAME,"CreateMessFileName",));
+let __inner:extern "C" fn(SortieSequenceRelianceTalk,bool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_reverse),__mi)}
+}
 }
 #[doc="`CreateMessFileName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn create_mess_file_name_2(self,ascii_name_a:impl::core::convert::Into< ::unity2::Il2CppString> ,ascii_name_b:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0a80usize)as*mut u8, ::unity2::Il2CppString;
 (SortieSequenceRelianceTalk)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(ascii_name_a),(::unity2::Il2CppString)::core::convert::Into::into(ascii_name_b))}
 }
 #[doc="`CreateMid()` overload"]fn create_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieSequenceRelianceTalk_unity2_raw::create_mid(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SortieSequenceRelianceTalk as::unity2::ClassIdentity> ::NAME,"CreateMid",));
+let __inner:extern "C" fn(SortieSequenceRelianceTalk, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetRelianceLevelText(crate::app::reliancedata::RelianceData_Level)` overload"]fn get_reliance_level_text(self,reliance_level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level>)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0c10usize)as*mut u8, ::unity2::Il2CppString;
 (SortieSequenceRelianceTalk)__receiver,(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(reliance_level))}
 }
 #[doc="`LevelUp()` overload"]fn level_up(self,)->(){unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieSequenceRelianceTalk_unity2_raw::level_up(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <SortieSequenceRelianceTalk as::unity2::ClassIdentity> ::NAME,"LevelUp",));
+let __inner:extern "C" fn(SortieSequenceRelianceTalk, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -90,6 +84,17 @@ pub fn create_mess_file_name_2_method_info()-> & 'static::unity2::il2cpp::Method
 pub fn create_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn get_reliance_level_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-sortiesequencereliancetalk")]impl SortieSequenceRelianceTalk{#[doc="Direct (non-virtual) call to `SortieSequenceRelianceTalk`'s own `CreateMessFileName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_mess_file_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_reverse:bool,)-> ::unity2::Il2CppString{let __mi=Self::create_mess_file_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_reverse, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieSequenceRelianceTalk`'s own `CreateMid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_mid(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::create_mid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieSequenceRelianceTalk`'s own `LevelUp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn level_up(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::level_up_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-sortiesequencereliancetalk")]impl SortieSequenceRelianceTalk{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]pub fn new(unit_a:crate::app::unit::Unit,unit_b:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

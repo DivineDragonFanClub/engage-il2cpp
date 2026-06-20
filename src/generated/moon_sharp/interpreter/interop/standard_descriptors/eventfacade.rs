@@ -37,36 +37,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <EventFacade as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn index(this:EventFacade,script:crate::moon_sharp::interpreter::script::Script,index:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <EventFacade as::unity2::ClassIdentity> ::NAME,"Index",));
-let inner:extern "C" fn(EventFacade,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,index,is_direct_indexing,__mi)}
-pub unsafe fn set_index(this:EventFacade,script:crate::moon_sharp::interpreter::script::Script,index:crate::moon_sharp::interpreter::dynvalue::DynValue,value:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <EventFacade as::unity2::ClassIdentity> ::NAME,"SetIndex",));
-let inner:extern "C" fn(EventFacade,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,index,value,is_direct_indexing,__mi)}
-pub unsafe fn meta_index(this:EventFacade,script:crate::moon_sharp::interpreter::script::Script,metaname: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <EventFacade as::unity2::ClassIdentity> ::NAME,"MetaIndex",));
-let inner:extern "C" fn(EventFacade,crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,metaname,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-standard_descriptors-eventfacade")]pub trait IEventFacadeMethods:IEventFacade{#[doc="`.ctor(crate::moon_sharp::interpreter::interop::eventmemberdescriptor::EventMemberDescriptor, crate::system::object::Object)` overload"]fn ctor(self,parent:impl::core::convert::Into<crate::moon_sharp::interpreter::interop::eventmemberdescriptor::EventMemberDescriptor> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventFacade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -78,13 +48,40 @@ inner(this,script,metaname,__mi)}
 (EventFacade)__receiver,(crate::system::func_4::Func_4<crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(add_callback),(crate::system::func_4::Func_4<crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(remove_callback),(crate::system::object::Object)::core::convert::Into::into(obj))}
 }
 #[doc="`Index(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]fn index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,index:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,is_direct_indexing:impl::core::convert::Into<bool>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventFacade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EventFacade_unity2_raw::index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(index), ::core::convert::Into::into(is_direct_indexing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <EventFacade as::unity2::ClassIdentity> ::NAME,"Index",));
+let __inner:extern "C" fn(EventFacade,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(index), ::core::convert::Into::into(is_direct_indexing),__mi)}
+}
 }
 #[doc="`SetIndex(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]fn set_index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,index:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,is_direct_indexing:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <EventFacade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EventFacade_unity2_raw::set_index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::convert::Into::into(is_direct_indexing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <EventFacade as::unity2::ClassIdentity> ::NAME,"SetIndex",));
+let __inner:extern "C" fn(EventFacade,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::convert::Into::into(is_direct_indexing),__mi)}
+}
 }
 #[doc="`MetaIndex(crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString)` overload"]fn meta_index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,metaname:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventFacade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EventFacade_unity2_raw::meta_index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(metaname), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <EventFacade as::unity2::ClassIdentity> ::NAME,"MetaIndex",));
+let __inner:extern "C" fn(EventFacade,crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(metaname),__mi)}
+}
 }
 }
 
@@ -95,6 +92,17 @@ pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn meta_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-standard_descriptors-eventfacade")]impl EventFacade{#[doc="Direct (non-virtual) call to `EventFacade`'s own `Index`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,index:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,index,is_direct_indexing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `EventFacade`'s own `SetIndex`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,index:crate::moon_sharp::interpreter::dynvalue::DynValue,value:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,)->bool{let __mi=Self::set_index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,index,value,is_direct_indexing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `EventFacade`'s own `MetaIndex`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn meta_index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,metaname: ::unity2::Il2CppString,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::meta_index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,metaname, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-standard_descriptors-eventfacade")]impl EventFacade{#[doc="`.ctor(crate::moon_sharp::interpreter::interop::eventmemberdescriptor::EventMemberDescriptor, crate::system::object::Object)` — overload selector"]pub fn new(parent:crate::moon_sharp::interpreter::interop::eventmemberdescriptor::EventMemberDescriptor,obj:crate::system::object::Object)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

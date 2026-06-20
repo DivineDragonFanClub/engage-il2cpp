@@ -28,34 +28,29 @@ use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWid
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlertogglehistory-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-ui-debuguihandlertogglehistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUIHandlerToggleHistory_unity2_raw{use super:: * ;
-pub unsafe fn set_widget(this:DebugUIHandlerToggleHistory,widget:crate::unity_engine::rendering::debugui::DebugUI_Widget,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlertogglehistory")]pub trait IDebugUIHandlerToggleHistoryMethods:IDebugUIHandlerToggleHistory{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerToggleHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <DebugUIHandlerToggleHistory as::unity2::ClassIdentity> ::NAME,"SetWidget",));
-let inner:extern "C" fn(DebugUIHandlerToggleHistory,crate::unity_engine::rendering::debugui::DebugUI_Widget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DebugUIHandlerToggleHistory,crate::unity_engine::rendering::debugui::DebugUI_Widget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,widget,__mi)}
-pub unsafe fn update_value_label(this:DebugUIHandlerToggleHistory,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(widget),__mi)}
+}
+}
+#[doc="`UpdateValueLabel()` overload"]fn update_value_label(self,)->(){unsafe{let __receiver= <DebugUIHandlerToggleHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",13usize,__vt.len(), <DebugUIHandlerToggleHistory as::unity2::ClassIdentity> ::NAME,"UpdateValueLabel",));
-let inner:extern "C" fn(DebugUIHandlerToggleHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DebugUIHandlerToggleHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-rendering-ui-debuguihandlertogglehistory")]pub trait IDebugUIHandlerToggleHistoryMethods:IDebugUIHandlerToggleHistory{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerToggleHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerToggleHistory_unity2_raw::set_widget(__receiver, ::core::convert::Into::into(widget), ::core::option::Option::None)}
-}
-#[doc="`UpdateValueLabel()` overload"]fn update_value_label(self,)->(){unsafe{let __receiver= <DebugUIHandlerToggleHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerToggleHistory_unity2_raw::update_value_label(__receiver, ::core::option::Option::None)}
 }
 #[doc="`RefreshAfterSanitization()` overload"]fn refresh_after_sanitization(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <DebugUIHandlerToggleHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30a61a0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
@@ -73,6 +68,14 @@ __DebugUIHandlerToggleHistory_unity2_raw::update_value_label(__receiver, ::core:
 pub fn update_value_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn refresh_after_sanitization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlertogglehistory")]impl DebugUIHandlerToggleHistory{#[doc="Direct (non-virtual) call to `DebugUIHandlerToggleHistory`'s own `SetWidget`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_widget(this:impl::core::convert::Into< ::unity2::IlInstance> ,widget:crate::unity_engine::rendering::debugui::DebugUI_Widget,)->(){let __mi=Self::set_widget_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::debugui::DebugUI_Widget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),widget, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUIHandlerToggleHistory`'s own `UpdateValueLabel`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_value_label(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_value_label_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-ui-debuguihandlertogglehistory")]impl DebugUIHandlerToggleHistory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

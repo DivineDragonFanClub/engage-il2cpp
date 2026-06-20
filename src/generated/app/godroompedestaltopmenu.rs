@@ -26,13 +26,22 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingMergeItem.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu.RingMergeItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GodRoomPedestalTopMenu_RingMergeItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_SkillInheritanceItem.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu.SkillInheritanceItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GodRoomPedestalTopMenu_SkillInheritanceItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingGachaItem.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu.RingGachaItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GodRoomPedestalTopMenu_RingGachaItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RefineGodWeaponItem.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu.RefineGodWeaponItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GodRoomPedestalTopMenu_RefineGodWeaponItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GodRoomPedestalTopMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingCleaningItem.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu.RingCleaningItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GodRoomPedestalTopMenu_RingCleaningItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GodRoomPedestalTopMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_SkillInheritanceItem.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu.SkillInheritanceItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GodRoomPedestalTopMenu_SkillInheritanceItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodRoomPedestalTopMenu_Result2{pub value:i32,}
@@ -58,65 +67,50 @@ pub fn end()->Self{Self{value:5}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingCleaningItem.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu.RingCleaningItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GodRoomPedestalTopMenu_RingCleaningItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_RingGachaItem.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu.RingGachaItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GodRoomPedestalTopMenu_RingGachaItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroompedestaltopmenu/GodRoomPedestalTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="GodRoomPedestalTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GodRoomPedestalTopMenu_DecideEventHandler{}
-
 }
 
 #[cfg(feature = "app-godroompedestaltopmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-godroompedestaltopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodRoomPedestalTopMenu_RingMergeItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GodRoomPedestalTopMenu_RingMergeItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GodRoomPedestalTopMenu_RingMergeItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RingMergeItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GodRoomPedestalTopMenu_RingMergeItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GodRoomPedestalTopMenu_RingMergeItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RingMergeItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GodRoomPedestalTopMenu_RingMergeItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GodRoomPedestalTopMenu_RingMergeItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RingMergeItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-godroompedestaltopmenu")]pub trait IGodRoomPedestalTopMenu_RingMergeItemMethods:IGodRoomPedestalTopMenu_RingMergeItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_RingMergeItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd9ae0usize)as*mut u8,();
 (GodRoomPedestalTopMenu_RingMergeItem)__receiver,(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingMergeItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RingMergeItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GodRoomPedestalTopMenu_RingMergeItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RingMergeItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingMergeItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RingMergeItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GodRoomPedestalTopMenu_RingMergeItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RingMergeItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingMergeItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RingMergeItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GodRoomPedestalTopMenu_RingMergeItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RingMergeItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -128,6 +122,17 @@ pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingMergeItem{#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RingMergeItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RingMergeItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RingMergeItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingMergeItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu_RingMergeItem), ::core::stringify!(new),));
@@ -135,100 +140,72 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-godroompedestaltopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GodRoomPedestalTopMenu_SkillInheritanceItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-godroompedestaltopmenu")]pub trait IGodRoomPedestalTopMenu_RingGachaItemMethods:IGodRoomPedestalTopMenu_RingGachaItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_RingGachaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd99e0usize)as*mut u8,();
+(GodRoomPedestalTopMenu_RingGachaItem)__receiver,(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingGachaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_SkillInheritanceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <GodRoomPedestalTopMenu_RingGachaItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RingGachaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GodRoomPedestalTopMenu_SkillInheritanceItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingGachaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_SkillInheritanceItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <GodRoomPedestalTopMenu_RingGachaItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RingGachaItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GodRoomPedestalTopMenu_SkillInheritanceItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingGachaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_SkillInheritanceItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <GodRoomPedestalTopMenu_RingGachaItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RingGachaItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-godroompedestaltopmenu")]pub trait IGodRoomPedestalTopMenu_SkillInheritanceItemMethods:IGodRoomPedestalTopMenu_SkillInheritanceItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd9be0usize)as*mut u8,();
-(GodRoomPedestalTopMenu_SkillInheritanceItem)__receiver,(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_SkillInheritanceItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-godroompedestaltopmenu")]impl<__T:IGodRoomPedestalTopMenu_SkillInheritanceItem>IGodRoomPedestalTopMenu_SkillInheritanceItemMethods for __T{}
+#[cfg(feature="app-godroompedestaltopmenu")]impl<__T:IGodRoomPedestalTopMenu_RingGachaItem>IGodRoomPedestalTopMenu_RingGachaItemMethods for __T{}
 
-#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_SkillInheritanceItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingGachaItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_SkillInheritanceItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu_SkillInheritanceItem), ::core::stringify!(new),));
- <Self as IGodRoomPedestalTopMenu_SkillInheritanceItemMethods> ::ctor(this,event_handler);
-this}
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingGachaItem{#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RingGachaItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RingGachaItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RingGachaItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
-#[cfg(feature="app-godroompedestaltopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GodRoomPedestalTopMenu_RefineGodWeaponItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GodRoomPedestalTopMenu_RefineGodWeaponItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RefineGodWeaponItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GodRoomPedestalTopMenu_RefineGodWeaponItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GodRoomPedestalTopMenu_RefineGodWeaponItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RefineGodWeaponItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GodRoomPedestalTopMenu_RefineGodWeaponItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GodRoomPedestalTopMenu_RefineGodWeaponItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RefineGodWeaponItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingGachaItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu_RingGachaItem), ::core::stringify!(new),));
+ <Self as IGodRoomPedestalTopMenu_RingGachaItemMethods> ::ctor(this,event_handler);
+this}
 }
 
 #[cfg(feature="app-godroompedestaltopmenu")]pub trait IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods:IGodRoomPedestalTopMenu_RefineGodWeaponItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_RefineGodWeaponItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -236,13 +213,40 @@ inner(this,__mi)}
 (GodRoomPedestalTopMenu_RefineGodWeaponItem)__receiver,(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomPedestalTopMenu_RefineGodWeaponItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GodRoomPedestalTopMenu_RefineGodWeaponItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RefineGodWeaponItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomPedestalTopMenu_RefineGodWeaponItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GodRoomPedestalTopMenu_RefineGodWeaponItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RefineGodWeaponItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomPedestalTopMenu_RefineGodWeaponItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RefineGodWeaponItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GodRoomPedestalTopMenu_RefineGodWeaponItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RefineGodWeaponItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -254,6 +258,17 @@ pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RefineGodWeaponItem{#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RefineGodWeaponItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RefineGodWeaponItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RefineGodWeaponItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RefineGodWeaponItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu_RefineGodWeaponItem), ::core::stringify!(new),));
@@ -261,27 +276,108 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-godroompedestaltopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodRoomPedestalTopMenu_unity2_raw{use super:: * ;
-pub unsafe fn b_call(this:GodRoomPedestalTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-godroompedestaltopmenu")]pub trait IGodRoomPedestalTopMenu_DecideEventHandlerMethods:IGodRoomPedestalTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd9400usize)as*mut u8,();
+(GodRoomPedestalTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",51usize,__vt.len(), <GodRoomPedestalTopMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <GodRoomPedestalTopMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_DecideEventHandler,crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:GodRoomPedestalTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver, ::core::convert::Into::into(result),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-godroompedestaltopmenu")]impl<__T:IGodRoomPedestalTopMenu_DecideEventHandler>IGodRoomPedestalTopMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,result:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),result, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IGodRoomPedestalTopMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-godroompedestaltopmenu")]pub trait IGodRoomPedestalTopMenu_RingCleaningItemMethods:IGodRoomPedestalTopMenu_RingCleaningItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd98e0usize)as*mut u8,();
+(GodRoomPedestalTopMenu_RingCleaningItem)__receiver,(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",30usize,__vt.len(), <GodRoomPedestalTopMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RingCleaningItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RingCleaningItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_RingCleaningItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-godroompedestaltopmenu")]impl<__T:IGodRoomPedestalTopMenu_RingCleaningItem>IGodRoomPedestalTopMenu_RingCleaningItemMethods for __T{}
+
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingCleaningItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingCleaningItem{#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RingCleaningItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RingCleaningItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_RingCleaningItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingCleaningItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu_RingCleaningItem), ::core::stringify!(new),));
+ <Self as IGodRoomPedestalTopMenu_RingCleaningItemMethods> ::ctor(this,event_handler);
+this}
 }
 
 #[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2> ,event_handler:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23397d0usize)as*mut u8,();
@@ -298,14 +394,32 @@ inner(this,__mi)}
 (GodRoomPedestalTopMenu)__receiver,(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)::core::convert::Into::into(value))}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomPedestalTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <GodRoomPedestalTopMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,initial_selected:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2> ,event_handler:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x233bf30usize)as*mut u8,();
 (GodRoomPedestalTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomPedestalTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <GodRoomPedestalTopMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -319,6 +433,14 @@ pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu{#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,initial_selected:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu), ::core::stringify!(new),));
@@ -326,164 +448,71 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-godroompedestaltopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodRoomPedestalTopMenu_RingCleaningItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GodRoomPedestalTopMenu_RingCleaningItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-godroompedestaltopmenu")]pub trait IGodRoomPedestalTopMenu_SkillInheritanceItemMethods:IGodRoomPedestalTopMenu_SkillInheritanceItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd9be0usize)as*mut u8,();
+(GodRoomPedestalTopMenu_SkillInheritanceItem)__receiver,(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RingCleaningItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_SkillInheritanceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GodRoomPedestalTopMenu_RingCleaningItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RingCleaningItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_SkillInheritanceItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GodRoomPedestalTopMenu_RingCleaningItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RingCleaningItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <GodRoomPedestalTopMenu_SkillInheritanceItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GodRoomPedestalTopMenu_SkillInheritanceItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-godroompedestaltopmenu")]pub trait IGodRoomPedestalTopMenu_RingCleaningItemMethods:IGodRoomPedestalTopMenu_RingCleaningItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd98e0usize)as*mut u8,();
-(GodRoomPedestalTopMenu_RingCleaningItem)__receiver,(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RingCleaningItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RingCleaningItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingCleaningItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RingCleaningItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-godroompedestaltopmenu")]impl<__T:IGodRoomPedestalTopMenu_RingCleaningItem>IGodRoomPedestalTopMenu_RingCleaningItemMethods for __T{}
+#[cfg(feature="app-godroompedestaltopmenu")]impl<__T:IGodRoomPedestalTopMenu_SkillInheritanceItem>IGodRoomPedestalTopMenu_SkillInheritanceItemMethods for __T{}
 
-#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingCleaningItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_SkillInheritanceItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingCleaningItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_SkillInheritanceItem{#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_SkillInheritanceItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_SkillInheritanceItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodRoomPedestalTopMenu_SkillInheritanceItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_SkillInheritanceItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu_RingCleaningItem), ::core::stringify!(new),));
- <Self as IGodRoomPedestalTopMenu_RingCleaningItemMethods> ::ctor(this,event_handler);
-this}
-}
-
-#[cfg(feature="app-godroompedestaltopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodRoomPedestalTopMenu_RingGachaItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GodRoomPedestalTopMenu_RingGachaItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GodRoomPedestalTopMenu_RingGachaItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RingGachaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GodRoomPedestalTopMenu_RingGachaItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GodRoomPedestalTopMenu_RingGachaItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RingGachaItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GodRoomPedestalTopMenu_RingGachaItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GodRoomPedestalTopMenu_RingGachaItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_RingGachaItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-godroompedestaltopmenu")]pub trait IGodRoomPedestalTopMenu_RingGachaItemMethods:IGodRoomPedestalTopMenu_RingGachaItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_RingGachaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd99e0usize)as*mut u8,();
-(GodRoomPedestalTopMenu_RingGachaItem)__receiver,(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingGachaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingGachaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GodRoomPedestalTopMenu_RingGachaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_RingGachaItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-godroompedestaltopmenu")]impl<__T:IGodRoomPedestalTopMenu_RingGachaItem>IGodRoomPedestalTopMenu_RingGachaItemMethods for __T{}
-
-#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingGachaItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_RingGachaItem{#[doc="`.ctor(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu_RingGachaItem), ::core::stringify!(new),));
- <Self as IGodRoomPedestalTopMenu_RingGachaItemMethods> ::ctor(this,event_handler);
-this}
-}
-
-#[cfg(feature="app-godroompedestaltopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodRoomPedestalTopMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:GodRoomPedestalTopMenu_DecideEventHandler,result:crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <GodRoomPedestalTopMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(GodRoomPedestalTopMenu_DecideEventHandler,crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,result,__mi)}
-}
-
-#[cfg(feature="app-godroompedestaltopmenu")]pub trait IGodRoomPedestalTopMenu_DecideEventHandlerMethods:IGodRoomPedestalTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd9400usize)as*mut u8,();
-(GodRoomPedestalTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2>)->(){unsafe{let __receiver= <GodRoomPedestalTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodRoomPedestalTopMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-godroompedestaltopmenu")]impl<__T:IGodRoomPedestalTopMenu_DecideEventHandler>IGodRoomPedestalTopMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-godroompedestaltopmenu")]impl GodRoomPedestalTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IGodRoomPedestalTopMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(GodRoomPedestalTopMenu_SkillInheritanceItem), ::core::stringify!(new),));
+ <Self as IGodRoomPedestalTopMenu_SkillInheritanceItemMethods> ::ctor(this,event_handler);
 this}
 }
 
@@ -493,25 +522,25 @@ pub mod prelude {
     pub use super::GodRoomPedestalTopMenu_RingMergeItem;
     pub use super::IGodRoomPedestalTopMenu_RingMergeItem;
     pub use super::IGodRoomPedestalTopMenu_RingMergeItemMethods;
-    pub use super::GodRoomPedestalTopMenu_SkillInheritanceItem;
-    pub use super::IGodRoomPedestalTopMenu_SkillInheritanceItem;
-    pub use super::IGodRoomPedestalTopMenu_SkillInheritanceItemMethods;
-    pub use super::GodRoomPedestalTopMenu_RefineGodWeaponItem;
-    pub use super::IGodRoomPedestalTopMenu_RefineGodWeaponItem;
-    pub use super::IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods;
-    pub use super::GodRoomPedestalTopMenu;
-    pub use super::IGodRoomPedestalTopMenu;
-    pub use super::IGodRoomPedestalTopMenuMethods;
-    pub use super::GodRoomPedestalTopMenu_Result2;
-    pub use super::GodRoomPedestalTopMenu_RingCleaningItem;
-    pub use super::IGodRoomPedestalTopMenu_RingCleaningItem;
-    pub use super::IGodRoomPedestalTopMenu_RingCleaningItemMethods;
     pub use super::GodRoomPedestalTopMenu_RingGachaItem;
     pub use super::IGodRoomPedestalTopMenu_RingGachaItem;
     pub use super::IGodRoomPedestalTopMenu_RingGachaItemMethods;
+    pub use super::GodRoomPedestalTopMenu_RefineGodWeaponItem;
+    pub use super::IGodRoomPedestalTopMenu_RefineGodWeaponItem;
+    pub use super::IGodRoomPedestalTopMenu_RefineGodWeaponItemMethods;
     pub use super::GodRoomPedestalTopMenu_DecideEventHandler;
     pub use super::IGodRoomPedestalTopMenu_DecideEventHandler;
     pub use super::IGodRoomPedestalTopMenu_DecideEventHandlerMethods;
+    pub use super::GodRoomPedestalTopMenu_RingCleaningItem;
+    pub use super::IGodRoomPedestalTopMenu_RingCleaningItem;
+    pub use super::IGodRoomPedestalTopMenu_RingCleaningItemMethods;
+    pub use super::GodRoomPedestalTopMenu;
+    pub use super::IGodRoomPedestalTopMenu;
+    pub use super::IGodRoomPedestalTopMenuMethods;
+    pub use super::GodRoomPedestalTopMenu_SkillInheritanceItem;
+    pub use super::IGodRoomPedestalTopMenu_SkillInheritanceItem;
+    pub use super::IGodRoomPedestalTopMenu_SkillInheritanceItemMethods;
+    pub use super::GodRoomPedestalTopMenu_Result2;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

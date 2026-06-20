@@ -17,69 +17,358 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimation/SimpleAnimation.md"))]#[::unity2::class(namespace="",name="SimpleAnimation")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SimpleAnimation{#[static_field]#[rename(name="kDefaultStateName")]pub k_default_state_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Graph")]pub m_graph:crate::unity_engine::playables::playablegraph::PlayableGraph, #[offset(40)]#[rename(name="m_LayerMixer")]pub m_layer_mixer:crate::unity_engine::playables::playablehandle::PlayableHandle, #[offset(56)]#[rename(name="m_TransitionMixer")]pub m_transition_mixer:crate::unity_engine::playables::playablehandle::PlayableHandle, #[offset(72)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(80)]#[rename(name="m_Initialized")]pub m_initialized:bool, #[offset(81)]#[rename(name="m_IsPlaying")]pub m_is_playing:bool, #[offset(88)]#[rename(name="m_Playable")]pub m_playable:crate::root::simpleanimationplayable::SimpleAnimationPlayable, #[offset(96)]#[rename(name="m_PlayAutomatically")]pub m_play_automatically:bool, #[offset(97)]#[rename(name="m_AnimatePhysics")]pub m_animate_physics:bool, #[offset(100)]#[rename(name="m_CullingMode")]pub m_culling_mode:crate::unity_engine::animatorcullingmode::AnimatorCullingMode, #[offset(104)]#[rename(name="m_WrapMode")]pub m_wrap_mode:crate::unity_engine::wrapmode::WrapMode, #[offset(112)]#[rename(name="m_Clip")]pub m_clip:crate::unity_engine::animationclip::AnimationClip, #[offset(120)]#[rename(name="m_States")]pub m_states: ::unity2::Array<crate::root::simpleanimation::SimpleAnimation_EditorState> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimation/SimpleAnimation_State.md"))]#[::unity2::class(namespace="",name="SimpleAnimation.State")]pub struct SimpleAnimation_State{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimation/SimpleAnimation_StateImpl.md"))]#[::unity2::class(namespace="",name="SimpleAnimation.StateImpl")]#[parent(crate::system::object::Object)]pub struct SimpleAnimation_StateImpl{#[offset(16)]#[rename(name="m_StateHandle")]pub m_state_handle:crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState, #[offset(24)]#[rename(name="m_Component")]pub m_component:crate::root::simpleanimation::SimpleAnimation,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimation/SimpleAnimation_StateEnumerable.md"))]#[::unity2::class(namespace="",name="SimpleAnimation.StateEnumerable")]#[parent(crate::system::object::Object)]pub struct SimpleAnimation_StateEnumerable{#[offset(16)]#[rename(name="m_Owner")]pub m_owner:crate::root::simpleanimation::SimpleAnimation,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimation/SimpleAnimation_StateEnumerable_StateEnumerator.md"))]#[::unity2::class(namespace="",name="SimpleAnimation.StateEnumerable.StateEnumerator")]#[parent(crate::system::object::Object)]pub struct SimpleAnimation_StateEnumerable_StateEnumerator{#[offset(16)]#[rename(name="m_Owner")]pub m_owner:crate::root::simpleanimation::SimpleAnimation, #[offset(24)]#[rename(name="m_Impl")]pub m_impl:crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimation/SimpleAnimation.md"))]#[::unity2::class(namespace="",name="SimpleAnimation")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SimpleAnimation{#[static_field]#[rename(name="kDefaultStateName")]pub k_default_state_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Graph")]pub m_graph:crate::unity_engine::playables::playablegraph::PlayableGraph, #[offset(40)]#[rename(name="m_LayerMixer")]pub m_layer_mixer:crate::unity_engine::playables::playablehandle::PlayableHandle, #[offset(56)]#[rename(name="m_TransitionMixer")]pub m_transition_mixer:crate::unity_engine::playables::playablehandle::PlayableHandle, #[offset(72)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(80)]#[rename(name="m_Initialized")]pub m_initialized:bool, #[offset(81)]#[rename(name="m_IsPlaying")]pub m_is_playing:bool, #[offset(88)]#[rename(name="m_Playable")]pub m_playable:crate::root::simpleanimationplayable::SimpleAnimationPlayable, #[offset(96)]#[rename(name="m_PlayAutomatically")]pub m_play_automatically:bool, #[offset(97)]#[rename(name="m_AnimatePhysics")]pub m_animate_physics:bool, #[offset(100)]#[rename(name="m_CullingMode")]pub m_culling_mode:crate::unity_engine::animatorcullingmode::AnimatorCullingMode, #[offset(104)]#[rename(name="m_WrapMode")]pub m_wrap_mode:crate::unity_engine::wrapmode::WrapMode, #[offset(112)]#[rename(name="m_Clip")]pub m_clip:crate::unity_engine::animationclip::AnimationClip, #[offset(120)]#[rename(name="m_States")]pub m_states: ::unity2::Array<crate::root::simpleanimation::SimpleAnimation_EditorState> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimation/SimpleAnimation_EditorState.md"))]#[::unity2::class(namespace="",name="SimpleAnimation.EditorState")]#[parent(crate::system::object::Object)]pub struct SimpleAnimation_EditorState{#[offset(16)]#[rename(name="clip")]pub clip:crate::unity_engine::animationclip::AnimationClip, #[offset(24)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="defaultState")]pub default_state:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimation/SimpleAnimation_StateEnumerable_StateEnumerator.md"))]#[::unity2::class(namespace="",name="SimpleAnimation.StateEnumerable.StateEnumerator")]#[parent(crate::system::object::Object)]pub struct SimpleAnimation_StateEnumerable_StateEnumerator{#[offset(16)]#[rename(name="m_Owner")]pub m_owner:crate::root::simpleanimation::SimpleAnimation, #[offset(24)]#[rename(name="m_Impl")]pub m_impl:crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/simpleanimation/SimpleAnimation_StateImpl.md"))]#[::unity2::class(namespace="",name="SimpleAnimation.StateImpl")]#[parent(crate::system::object::Object)]pub struct SimpleAnimation_StateImpl{#[offset(16)]#[rename(name="m_StateHandle")]pub m_state_handle:crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState, #[offset(24)]#[rename(name="m_Component")]pub m_component:crate::root::simpleanimation::SimpleAnimation,}
 
 }
 
 #[cfg(feature = "root-simpleanimation-types")]
 pub use __types::*;
 
-#[cfg(feature="root-simpleanimation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SimpleAnimation_unity2_raw{use super:: * ;
-pub unsafe fn on_enable(this:SimpleAnimation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-simpleanimation")]pub trait ISimpleAnimation_StateMethods:ISimpleAnimation_State{#[doc="`get_enabled()` overload"]fn get_enabled(self,)->bool{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_enabled",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_enabled(bool)` overload"]fn set_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_enabled",));
+let __inner:extern "C" fn(SimpleAnimation_State,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_isValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_isValid",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_time()` overload"]fn get_time(self,)->f32{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_time",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_time(f32)` overload"]fn set_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <SimpleAnimation as::unity2::ClassIdentity> ::NAME,"OnEnable",));
-let inner:extern "C" fn(SimpleAnimation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_time",));
+let __inner:extern "C" fn(SimpleAnimation_State,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_disable(this:SimpleAnimation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_normalizedTime()` overload"]fn get_normalized_time(self,)->f32{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <SimpleAnimation as::unity2::ClassIdentity> ::NAME,"OnDisable",));
-let inner:extern "C" fn(SimpleAnimation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",5usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_normalizedTime",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn awake(this:SimpleAnimation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_normalizedTime(f32)` overload"]fn set_normalized_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <SimpleAnimation as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(SimpleAnimation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",6usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_normalizedTime",));
+let __inner:extern "C" fn(SimpleAnimation_State,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_animation_clips(this:SimpleAnimation,results:crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",7usize,__vt.len(), <SimpleAnimation as::unity2::ClassIdentity> ::NAME,"GetAnimationClips",));
-let inner:extern "C" fn(SimpleAnimation,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",7usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_speed",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,results,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_speed(f32)` overload"]fn set_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_speed",));
+let __inner:extern "C" fn(SimpleAnimation_State,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_name",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_name",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_weight()` overload"]fn get_weight(self,)->f32{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_weight",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_weight(f32)` overload"]fn set_weight(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_weight",));
+let __inner:extern "C" fn(SimpleAnimation_State,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_length()` overload"]fn get_length(self,)->f32{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_length",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_clip()` overload"]fn get_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_clip",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_wrapMode()` overload"]fn get_wrap_mode(self,)->crate::unity_engine::wrapmode::WrapMode{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_wrapMode",));
+let __inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_wrapMode(crate::unity_engine::wrapmode::WrapMode)` overload"]fn set_wrap_mode(self,value:impl::core::convert::Into<crate::unity_engine::wrapmode::WrapMode>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_wrapMode",));
+let __inner:extern "C" fn(SimpleAnimation_State,crate::unity_engine::wrapmode::WrapMode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+}
+
+#[cfg(feature="root-simpleanimation")]impl<__T:ISimpleAnimation_State>ISimpleAnimation_StateMethods for __T{}
+
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_State{pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_wrap_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_wrap_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_State{#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `get_enabled`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enabled(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_enabled_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `set_enabled`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_enabled(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_enabled_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `get_isValid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_valid(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_valid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `get_time`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_time(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_time_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `set_time`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_time(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::set_time_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `get_normalizedTime`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_normalized_time(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_normalized_time_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `set_normalizedTime`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_normalized_time(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::set_normalized_time_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `get_speed`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_speed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_speed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `set_speed`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_speed(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::set_speed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `get_name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `set_name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::set_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `get_weight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_weight(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_weight_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `set_weight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_weight(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::set_weight_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `get_length`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_length(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_length_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `get_clip`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_clip(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::animationclip::AnimationClip{let __mi=Self::get_clip_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `get_wrapMode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_wrap_mode(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::wrapmode::WrapMode{let __mi=Self::get_wrap_mode_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_State`'s own `set_wrapMode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_wrap_mode(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::unity_engine::wrapmode::WrapMode,)->(){let __mi=Self::set_wrap_mode_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::wrapmode::WrapMode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+}
+
+#[cfg(feature="root-simpleanimation")]pub trait ISimpleAnimation_StateEnumerableMethods:ISimpleAnimation_StateEnumerable{#[doc="`.ctor(crate::root::simpleanimation::SimpleAnimation)` overload"]fn ctor(self,owner:impl::core::convert::Into<crate::root::simpleanimation::SimpleAnimation>)->(){unsafe{let __receiver= <SimpleAnimation_StateEnumerable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eec160usize)as*mut u8,();
+(SimpleAnimation_StateEnumerable)__receiver,(crate::root::simpleanimation::SimpleAnimation)::core::convert::Into::into(owner))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimation::SimpleAnimation_State>{unsafe{let __receiver= <SimpleAnimation_StateEnumerable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SimpleAnimation_StateEnumerable as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let __inner:extern "C" fn(SimpleAnimation_StateEnumerable, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimation::SimpleAnimation_State> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <SimpleAnimation_StateEnumerable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SimpleAnimation_StateEnumerable as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
+let __inner:extern "C" fn(SimpleAnimation_StateEnumerable, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="root-simpleanimation")]impl<__T:ISimpleAnimation_StateEnumerable>ISimpleAnimation_StateEnumerableMethods for __T{}
+
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateEnumerable{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateEnumerable{#[doc="Direct (non-virtual) call to `SimpleAnimation_StateEnumerable`'s own `GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimation::SimpleAnimation_State>{let __mi=Self::get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimation::SimpleAnimation_State> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateEnumerable`'s own `System.Collections.IEnumerable.GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_enumerable_get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::system_collections_i_enumerable_get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateEnumerable{#[doc="`.ctor(crate::root::simpleanimation::SimpleAnimation)` — overload selector"]pub fn new(owner:crate::root::simpleanimation::SimpleAnimation)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SimpleAnimation_StateEnumerable), ::core::stringify!(new),));
+ <Self as ISimpleAnimation_StateEnumerableMethods> ::ctor(this,owner);
+this}
 }
 
 #[cfg(feature="root-simpleanimation")]impl SimpleAnimation{#[doc="`LegacyClipCheck(crate::unity_engine::animationclip::AnimationClip)` overload"]pub fn legacy_clip_check(clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eea470usize)as*mut u8,();
@@ -228,10 +517,28 @@ inner(this,results,__mi)}
 (SimpleAnimation)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <SimpleAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SimpleAnimation as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let __inner:extern "C" fn(SimpleAnimation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <SimpleAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SimpleAnimation as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let __inner:extern "C" fn(SimpleAnimation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SimpleAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3eec9e0usize)as*mut u8,();
@@ -246,7 +553,16 @@ __SimpleAnimation_unity2_raw::on_disable(__receiver, ::core::option::Option::Non
 (SimpleAnimation)__receiver)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <SimpleAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_unity2_raw::awake(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <SimpleAnimation as::unity2::ClassIdentity> ::NAME,"Awake",));
+let __inner:extern "C" fn(SimpleAnimation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <SimpleAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3eecce0usize)as*mut u8,();
@@ -273,7 +589,16 @@ __SimpleAnimation_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 (SimpleAnimation)__receiver)}
 }
 #[doc="`GetAnimationClips(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip>)` overload"]fn get_animation_clips(self,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip> >)->(){unsafe{let __receiver= <SimpleAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_unity2_raw::get_animation_clips(__receiver, ::core::convert::Into::into(results), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <SimpleAnimation as::unity2::ClassIdentity> ::NAME,"GetAnimationClips",));
+let __inner:extern "C" fn(SimpleAnimation,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(results),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SimpleAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3eed760usize)as*mut u8,();
@@ -335,6 +660,20 @@ pub fn get_animation_clips_method_info()-> & 'static::unity2::il2cpp::MethodInfo
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
 }
 
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation{#[doc="Direct (non-virtual) call to `SimpleAnimation`'s own `OnEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation`'s own `OnDisable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_disable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_disable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation`'s own `GetAnimationClips`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_animation_clips(this:impl::core::convert::Into< ::unity2::IlInstance> ,results:crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip> ,)->(){let __mi=Self::get_animation_clips_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),results, ::core::option::Option::None)}
+}
+
 #[cfg(feature="root-simpleanimation")]impl SimpleAnimation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SimpleAnimation), ::core::stringify!(new),));
@@ -342,424 +681,111 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root-simpleanimation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SimpleAnimation_State_unity2_raw{use super:: * ;
-pub unsafe fn get_enabled(this:SimpleAnimation_State,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",0usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_enabled",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_enabled(this:SimpleAnimation_State,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_enabled",));
-let inner:extern "C" fn(SimpleAnimation_State,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_is_valid(this:SimpleAnimation_State,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",2usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_isValid",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_time(this:SimpleAnimation_State,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_time",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_time(this:SimpleAnimation_State,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_time",));
-let inner:extern "C" fn(SimpleAnimation_State,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_normalized_time(this:SimpleAnimation_State,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_normalizedTime",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_normalized_time(this:SimpleAnimation_State,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_normalizedTime",));
-let inner:extern "C" fn(SimpleAnimation_State,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_speed(this:SimpleAnimation_State,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-simpleanimation")]pub trait ISimpleAnimation_EditorStateMethods:ISimpleAnimation_EditorState{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SimpleAnimation_EditorState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eecb60usize)as*mut u8,();
+(SimpleAnimation_EditorState)__receiver)}
+}
+}
+
+#[cfg(feature="root-simpleanimation")]impl<__T:ISimpleAnimation_EditorState>ISimpleAnimation_EditorStateMethods for __T{}
+
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_EditorState{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_EditorState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SimpleAnimation_EditorState), ::core::stringify!(new),));
+ <Self as ISimpleAnimation_EditorStateMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root-simpleanimation")]pub trait ISimpleAnimation_StateEnumerable_StateEnumeratorMethods:ISimpleAnimation_StateEnumerable_StateEnumerator{#[doc="`.ctor(crate::root::simpleanimation::SimpleAnimation)` overload"]fn ctor(self,owner:impl::core::convert::Into<crate::root::simpleanimation::SimpleAnimation>)->(){unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef1210usize)as*mut u8,();
+(SimpleAnimation_StateEnumerable_StateEnumerator)__receiver,(crate::root::simpleanimation::SimpleAnimation)::core::convert::Into::into(owner))}
+}
+#[doc="`GetCurrent()` overload"]fn get_current(self,)->crate::root::simpleanimation::SimpleAnimation_State{unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3da0usize)as*mut u8,crate::root::simpleanimation::SimpleAnimation_State;
+(SimpleAnimation_StateEnumerable_StateEnumerator)__receiver)}
+}
+#[doc="`System.Collections.IEnumerator.get_Current()` overload"]fn system_collections_i_enumerator_get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",7usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_speed",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",7usize,__vt.len(), <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerator.get_Current",));
+let __inner:extern "C" fn(SimpleAnimation_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_speed(this:SimpleAnimation_State,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_speed",));
-let inner:extern "C" fn(SimpleAnimation_State,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_name(this:SimpleAnimation_State,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_name",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_name(this:SimpleAnimation_State,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_name",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_weight(this:SimpleAnimation_State,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_weight",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_weight(this:SimpleAnimation_State,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_weight",));
-let inner:extern "C" fn(SimpleAnimation_State,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_length(this:SimpleAnimation_State,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_length",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_clip(this:SimpleAnimation_State,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_clip",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_wrap_mode(this:SimpleAnimation_State,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"get_wrapMode",));
-let inner:extern "C" fn(SimpleAnimation_State, ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_wrap_mode(this:SimpleAnimation_State,value:crate::unity_engine::wrapmode::WrapMode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <SimpleAnimation_State as::unity2::ClassIdentity> ::NAME,"set_wrapMode",));
-let inner:extern "C" fn(SimpleAnimation_State,crate::unity_engine::wrapmode::WrapMode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-}
-
-#[cfg(feature="root-simpleanimation")]pub trait ISimpleAnimation_StateMethods:ISimpleAnimation_State{#[doc="`get_enabled()` overload"]fn get_enabled(self,)->bool{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::get_enabled(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_enabled(bool)` overload"]fn set_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::set_enabled(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_isValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::get_is_valid(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_time()` overload"]fn get_time(self,)->f32{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::get_time(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_time(f32)` overload"]fn set_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::set_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_normalizedTime()` overload"]fn get_normalized_time(self,)->f32{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::get_normalized_time(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_normalizedTime(f32)` overload"]fn set_normalized_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::set_normalized_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::get_speed(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_speed(f32)` overload"]fn set_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::set_speed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_weight()` overload"]fn get_weight(self,)->f32{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::get_weight(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_weight(f32)` overload"]fn set_weight(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::set_weight(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_length()` overload"]fn get_length(self,)->f32{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::get_length(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_clip()` overload"]fn get_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::get_clip(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_wrapMode()` overload"]fn get_wrap_mode(self,)->crate::unity_engine::wrapmode::WrapMode{unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::get_wrap_mode(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_wrapMode(crate::unity_engine::wrapmode::WrapMode)` overload"]fn set_wrap_mode(self,value:impl::core::convert::Into<crate::unity_engine::wrapmode::WrapMode>)->(){unsafe{let __receiver= <SimpleAnimation_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_State_unity2_raw::set_wrap_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+__inner(__receiver,__mi)}
 }
 }
-
-#[cfg(feature="root-simpleanimation")]impl<__T:ISimpleAnimation_State>ISimpleAnimation_StateMethods for __T{}
-
-#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_State{pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_wrap_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn set_wrap_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-}
-
-#[cfg(feature="root-simpleanimation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SimpleAnimation_StateImpl_unity2_raw{use super:: * ;
-pub unsafe fn simple_animation_state_get_enabled(this:SimpleAnimation_StateImpl,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_enabled",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn simple_animation_state_set_enabled(this:SimpleAnimation_StateImpl,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_enabled",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",5usize,__vt.len(), <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(SimpleAnimation_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn simple_animation_state_get_is_valid(this:SimpleAnimation_StateImpl,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_isValid",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",6usize,__vt.len(), <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
+let __inner:extern "C" fn(SimpleAnimation_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn simple_animation_state_get_time(this:SimpleAnimation_StateImpl,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_time",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn simple_animation_state_set_time(this:SimpleAnimation_StateImpl,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_time",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
+let __inner:extern "C" fn(SimpleAnimation_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn simple_animation_state_get_normalized_time(this:SimpleAnimation_StateImpl,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_normalizedTime",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn simple_animation_state_set_normalized_time(this:SimpleAnimation_StateImpl,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_normalizedTime",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn simple_animation_state_get_speed(this:SimpleAnimation_StateImpl,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_speed",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn simple_animation_state_set_speed(this:SimpleAnimation_StateImpl,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_speed",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn simple_animation_state_get_name(this:SimpleAnimation_StateImpl,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_name",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn simple_animation_state_set_name(this:SimpleAnimation_StateImpl,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_name",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn simple_animation_state_get_weight(this:SimpleAnimation_StateImpl,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_weight",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn simple_animation_state_set_weight(this:SimpleAnimation_StateImpl,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_weight",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn simple_animation_state_get_length(this:SimpleAnimation_StateImpl,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_length",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn simple_animation_state_get_clip(this:SimpleAnimation_StateImpl,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_clip",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn simple_animation_state_get_wrap_mode(this:SimpleAnimation_StateImpl,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_wrapMode",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn simple_animation_state_set_wrap_mode(this:SimpleAnimation_StateImpl,value:crate::unity_engine::wrapmode::WrapMode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_wrapMode",));
-let inner:extern "C" fn(SimpleAnimation_StateImpl,crate::unity_engine::wrapmode::WrapMode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="root-simpleanimation")]impl<__T:ISimpleAnimation_StateEnumerable_StateEnumerator>ISimpleAnimation_StateEnumerable_StateEnumeratorMethods for __T{}
+
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateEnumerable_StateEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateEnumerable_StateEnumerator{#[doc="Direct (non-virtual) call to `SimpleAnimation_StateEnumerable_StateEnumerator`'s own `System.Collections.IEnumerator.get_Current`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_enumerator_get_current(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::system_collections_i_enumerator_get_current_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateEnumerable_StateEnumerator`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateEnumerable_StateEnumerator`'s own `MoveNext`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn move_next(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::move_next_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateEnumerable_StateEnumerator`'s own `Reset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn reset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::reset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateEnumerable_StateEnumerator{#[doc="`.ctor(crate::root::simpleanimation::SimpleAnimation)` — overload selector"]pub fn new(owner:crate::root::simpleanimation::SimpleAnimation)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SimpleAnimation_StateEnumerable_StateEnumerator), ::core::stringify!(new),));
+ <Self as ISimpleAnimation_StateEnumerable_StateEnumeratorMethods> ::ctor(this,owner);
+this}
 }
 
 #[cfg(feature="root-simpleanimation")]pub trait ISimpleAnimation_StateImplMethods:ISimpleAnimation_StateImpl{#[doc="`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState, crate::root::simpleanimation::SimpleAnimation)` overload"]fn ctor(self,handle:impl::core::convert::Into<crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState> ,component:impl::core::convert::Into<crate::root::simpleanimation::SimpleAnimation>)->(){unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -767,55 +793,208 @@ inner(this,value,__mi)}
 (SimpleAnimation_StateImpl)__receiver,(crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState)::core::convert::Into::into(handle),(crate::root::simpleanimation::SimpleAnimation)::core::convert::Into::into(component))}
 }
 #[doc="`SimpleAnimation.State.get_enabled()` overload"]fn simple_animation_state_get_enabled(self,)->bool{unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_get_enabled(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_enabled",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.set_enabled(bool)` overload"]fn simple_animation_state_set_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_set_enabled(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_enabled",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.get_isValid()` overload"]fn simple_animation_state_get_is_valid(self,)->bool{unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_get_is_valid(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_isValid",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.get_time()` overload"]fn simple_animation_state_get_time(self,)->f32{unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_get_time(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_time",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.set_time(f32)` overload"]fn simple_animation_state_set_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_set_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_time",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.get_normalizedTime()` overload"]fn simple_animation_state_get_normalized_time(self,)->f32{unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_get_normalized_time(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_normalizedTime",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.set_normalizedTime(f32)` overload"]fn simple_animation_state_set_normalized_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_set_normalized_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_normalizedTime",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.get_speed()` overload"]fn simple_animation_state_get_speed(self,)->f32{unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_get_speed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_speed",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.set_speed(f32)` overload"]fn simple_animation_state_set_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_set_speed(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_speed",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.get_name()` overload"]fn simple_animation_state_get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_name",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.set_name(::unity2::Il2CppString)` overload"]fn simple_animation_state_set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_name",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.get_weight()` overload"]fn simple_animation_state_get_weight(self,)->f32{unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_get_weight(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_weight",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.set_weight(f32)` overload"]fn simple_animation_state_set_weight(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_set_weight(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_weight",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.get_length()` overload"]fn simple_animation_state_get_length(self,)->f32{unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_get_length(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_length",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.get_clip()` overload"]fn simple_animation_state_get_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_get_clip(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_clip",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.get_wrapMode()` overload"]fn simple_animation_state_get_wrap_mode(self,)->crate::unity_engine::wrapmode::WrapMode{unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_get_wrap_mode(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.get_wrapMode",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl, ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SimpleAnimation.State.set_wrapMode(crate::unity_engine::wrapmode::WrapMode)` overload"]fn simple_animation_state_set_wrap_mode(self,value:impl::core::convert::Into<crate::unity_engine::wrapmode::WrapMode>)->(){unsafe{let __receiver= <SimpleAnimation_StateImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateImpl_unity2_raw::simple_animation_state_set_wrap_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <SimpleAnimation_StateImpl as::unity2::ClassIdentity> ::NAME,"SimpleAnimation.State.set_wrapMode",));
+let __inner:extern "C" fn(SimpleAnimation_StateImpl,crate::unity_engine::wrapmode::WrapMode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -841,6 +1020,59 @@ pub fn simple_animation_state_get_wrap_mode_method_info()-> & 'static::unity2::i
 pub fn simple_animation_state_set_wrap_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 }
 
+#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateImpl{#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.get_enabled`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_get_enabled(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::simple_animation_state_get_enabled_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.set_enabled`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_set_enabled(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::simple_animation_state_set_enabled_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.get_isValid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_get_is_valid(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::simple_animation_state_get_is_valid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.get_time`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_get_time(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::simple_animation_state_get_time_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.set_time`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_set_time(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::simple_animation_state_set_time_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.get_normalizedTime`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_get_normalized_time(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::simple_animation_state_get_normalized_time_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.set_normalizedTime`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_set_normalized_time(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::simple_animation_state_set_normalized_time_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.get_speed`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_get_speed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::simple_animation_state_get_speed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.set_speed`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_set_speed(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::simple_animation_state_set_speed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.get_name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::simple_animation_state_get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.set_name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_set_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::simple_animation_state_set_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.get_weight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_get_weight(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::simple_animation_state_get_weight_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.set_weight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_set_weight(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::simple_animation_state_set_weight_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.get_length`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_get_length(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::simple_animation_state_get_length_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.get_clip`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_get_clip(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::animationclip::AnimationClip{let __mi=Self::simple_animation_state_get_clip_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.get_wrapMode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_get_wrap_mode(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::wrapmode::WrapMode{let __mi=Self::simple_animation_state_get_wrap_mode_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::wrapmode::WrapMode= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SimpleAnimation_StateImpl`'s own `SimpleAnimation.State.set_wrapMode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn simple_animation_state_set_wrap_mode(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::unity_engine::wrapmode::WrapMode,)->(){let __mi=Self::simple_animation_state_set_wrap_mode_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::wrapmode::WrapMode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+}
+
 #[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateImpl{#[doc="`.ctor(crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState, crate::root::simpleanimation::SimpleAnimation)` — overload selector"]pub fn new(handle:crate::root::simpleanimationplayable::SimpleAnimationPlayable_IState,component:crate::root::simpleanimation::SimpleAnimation)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SimpleAnimation_StateImpl), ::core::stringify!(new),));
@@ -848,176 +1080,27 @@ pub fn simple_animation_state_set_wrap_mode_method_info()-> & 'static::unity2::i
 this}
 }
 
-#[cfg(feature="root-simpleanimation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SimpleAnimation_StateEnumerable_unity2_raw{use super:: * ;
-pub unsafe fn get_enumerator(this:SimpleAnimation_StateEnumerable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimation::SimpleAnimation_State>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SimpleAnimation_StateEnumerable as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
-let inner:extern "C" fn(SimpleAnimation_StateEnumerable, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimation::SimpleAnimation_State> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_enumerable_get_enumerator(this:SimpleAnimation_StateEnumerable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <SimpleAnimation_StateEnumerable as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
-let inner:extern "C" fn(SimpleAnimation_StateEnumerable, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="root-simpleanimation")]pub trait ISimpleAnimation_StateEnumerableMethods:ISimpleAnimation_StateEnumerable{#[doc="`.ctor(crate::root::simpleanimation::SimpleAnimation)` overload"]fn ctor(self,owner:impl::core::convert::Into<crate::root::simpleanimation::SimpleAnimation>)->(){unsafe{let __receiver= <SimpleAnimation_StateEnumerable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eec160usize)as*mut u8,();
-(SimpleAnimation_StateEnumerable)__receiver,(crate::root::simpleanimation::SimpleAnimation)::core::convert::Into::into(owner))}
-}
-#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::root::simpleanimation::SimpleAnimation_State>{unsafe{let __receiver= <SimpleAnimation_StateEnumerable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateEnumerable_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
-}
-#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <SimpleAnimation_StateEnumerable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateEnumerable_unity2_raw::system_collections_i_enumerable_get_enumerator(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="root-simpleanimation")]impl<__T:ISimpleAnimation_StateEnumerable>ISimpleAnimation_StateEnumerableMethods for __T{}
-
-#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateEnumerable{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateEnumerable{#[doc="`.ctor(crate::root::simpleanimation::SimpleAnimation)` — overload selector"]pub fn new(owner:crate::root::simpleanimation::SimpleAnimation)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SimpleAnimation_StateEnumerable), ::core::stringify!(new),));
- <Self as ISimpleAnimation_StateEnumerableMethods> ::ctor(this,owner);
-this}
-}
-
-#[cfg(feature="root-simpleanimation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw{use super:: * ;
-pub unsafe fn system_collections_i_enumerator_get_current(this:SimpleAnimation_StateEnumerable_StateEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerator.get_Current",));
-let inner:extern "C" fn(SimpleAnimation_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:SimpleAnimation_StateEnumerable_StateEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(SimpleAnimation_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn move_next(this:SimpleAnimation_StateEnumerable_StateEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
-let inner:extern "C" fn(SimpleAnimation_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn reset(this:SimpleAnimation_StateEnumerable_StateEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
-let inner:extern "C" fn(SimpleAnimation_StateEnumerable_StateEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="root-simpleanimation")]pub trait ISimpleAnimation_StateEnumerable_StateEnumeratorMethods:ISimpleAnimation_StateEnumerable_StateEnumerator{#[doc="`.ctor(crate::root::simpleanimation::SimpleAnimation)` overload"]fn ctor(self,owner:impl::core::convert::Into<crate::root::simpleanimation::SimpleAnimation>)->(){unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef1210usize)as*mut u8,();
-(SimpleAnimation_StateEnumerable_StateEnumerator)__receiver,(crate::root::simpleanimation::SimpleAnimation)::core::convert::Into::into(owner))}
-}
-#[doc="`GetCurrent()` overload"]fn get_current(self,)->crate::root::simpleanimation::SimpleAnimation_State{unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef3da0usize)as*mut u8,crate::root::simpleanimation::SimpleAnimation_State;
-(SimpleAnimation_StateEnumerable_StateEnumerator)__receiver)}
-}
-#[doc="`System.Collections.IEnumerator.get_Current()` overload"]fn system_collections_i_enumerator_get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::system_collections_i_enumerator_get_current(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
-}
-#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SimpleAnimation_StateEnumerable_StateEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SimpleAnimation_StateEnumerable_StateEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="root-simpleanimation")]impl<__T:ISimpleAnimation_StateEnumerable_StateEnumerator>ISimpleAnimation_StateEnumerable_StateEnumeratorMethods for __T{}
-
-#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateEnumerable_StateEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_StateEnumerable_StateEnumerator{#[doc="`.ctor(crate::root::simpleanimation::SimpleAnimation)` — overload selector"]pub fn new(owner:crate::root::simpleanimation::SimpleAnimation)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SimpleAnimation_StateEnumerable_StateEnumerator), ::core::stringify!(new),));
- <Self as ISimpleAnimation_StateEnumerable_StateEnumeratorMethods> ::ctor(this,owner);
-this}
-}
-
-#[cfg(feature="root-simpleanimation")]pub trait ISimpleAnimation_EditorStateMethods:ISimpleAnimation_EditorState{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SimpleAnimation_EditorState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3eecb60usize)as*mut u8,();
-(SimpleAnimation_EditorState)__receiver)}
-}
-}
-
-#[cfg(feature="root-simpleanimation")]impl<__T:ISimpleAnimation_EditorState>ISimpleAnimation_EditorStateMethods for __T{}
-
-#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_EditorState{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="root-simpleanimation")]impl SimpleAnimation_EditorState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SimpleAnimation_EditorState), ::core::stringify!(new),));
- <Self as ISimpleAnimation_EditorStateMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "root-simpleanimation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SimpleAnimation;
-    pub use super::ISimpleAnimation;
-    pub use super::ISimpleAnimationMethods;
     pub use super::SimpleAnimation_State;
     pub use super::ISimpleAnimation_State;
     pub use super::ISimpleAnimation_StateMethods;
-    pub use super::SimpleAnimation_StateImpl;
-    pub use super::ISimpleAnimation_StateImpl;
-    pub use super::ISimpleAnimation_StateImplMethods;
     pub use super::SimpleAnimation_StateEnumerable;
     pub use super::ISimpleAnimation_StateEnumerable;
     pub use super::ISimpleAnimation_StateEnumerableMethods;
-    pub use super::SimpleAnimation_StateEnumerable_StateEnumerator;
-    pub use super::ISimpleAnimation_StateEnumerable_StateEnumerator;
-    pub use super::ISimpleAnimation_StateEnumerable_StateEnumeratorMethods;
+    pub use super::SimpleAnimation;
+    pub use super::ISimpleAnimation;
+    pub use super::ISimpleAnimationMethods;
     pub use super::SimpleAnimation_EditorState;
     pub use super::ISimpleAnimation_EditorState;
     pub use super::ISimpleAnimation_EditorStateMethods;
+    pub use super::SimpleAnimation_StateEnumerable_StateEnumerator;
+    pub use super::ISimpleAnimation_StateEnumerable_StateEnumerator;
+    pub use super::ISimpleAnimation_StateEnumerable_StateEnumeratorMethods;
+    pub use super::SimpleAnimation_StateImpl;
+    pub use super::ISimpleAnimation_StateImpl;
+    pub use super::ISimpleAnimation_StateImplMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

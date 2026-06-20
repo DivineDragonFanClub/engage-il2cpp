@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/unitywebrequest/UnityWebRequest.md"))]#[::unity2::class(namespace="UnityEngine.Networking",name="UnityWebRequest")]#[parent(crate::system::object::Object)]pub struct UnityWebRequest{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_DownloadHandler")]pub m_download_handler:crate::unity_engine::networking::downloadhandler::DownloadHandler, #[offset(32)]#[rename(name="m_UploadHandler")]pub m_upload_handler:crate::unity_engine::networking::uploadhandler::UploadHandler, #[offset(40)]#[rename(name="m_CertificateHandler")]pub m_certificate_handler:crate::unity_engine::networking::certificatehandler::CertificateHandler, #[static_field]#[rename(name="kHttpVerbGET")]pub k_http_verb_get: ::unity2::Il2CppString, #[static_field]#[rename(name="kHttpVerbHEAD")]pub k_http_verb_head: ::unity2::Il2CppString, #[static_field]#[rename(name="kHttpVerbPOST")]pub k_http_verb_post: ::unity2::Il2CppString, #[static_field]#[rename(name="kHttpVerbPUT")]pub k_http_verb_put: ::unity2::Il2CppString, #[static_field]#[rename(name="kHttpVerbCREATE")]pub k_http_verb_create: ::unity2::Il2CppString, #[static_field]#[rename(name="kHttpVerbDELETE")]pub k_http_verb_delete: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestMethod.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnityWebRequest_UnityWebRequestMethod{pub value:i32,}
 impl::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestMethod{const NAMESPACE: &'static str="UnityEngine.Networking";
 const NAME: &'static str="UnityWebRequest.UnityWebRequestMethod";
@@ -33,31 +36,6 @@ pub fn head()->Self{Self{value:3}
 pub fn custom()->Self{Self{value:4}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/unitywebrequest/UnityWebRequest_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnityWebRequest_Result{pub value:i32,}
-impl::unity2::ClassIdentity for UnityWebRequest_Result{const NAMESPACE: &'static str="UnityEngine.Networking";
-const NAME: &'static str="UnityWebRequest.Result";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for UnityWebRequest_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl UnityWebRequest_Result{pub fn in_progress()->Self{Self{value:0}
-}
-pub fn success()->Self{Self{value:1}
-}
-pub fn connection_error()->Self{Self{value:2}
-}
-pub fn protocol_error()->Self{Self{value:3}
-}
-pub fn data_processing_error()->Self{Self{value:4}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/unitywebrequest/UnityWebRequest.md"))]#[::unity2::class(namespace="UnityEngine.Networking",name="UnityWebRequest")]#[parent(crate::system::object::Object)]pub struct UnityWebRequest{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_DownloadHandler")]pub m_download_handler:crate::unity_engine::networking::downloadhandler::DownloadHandler, #[offset(32)]#[rename(name="m_UploadHandler")]pub m_upload_handler:crate::unity_engine::networking::uploadhandler::UploadHandler, #[offset(40)]#[rename(name="m_CertificateHandler")]pub m_certificate_handler:crate::unity_engine::networking::certificatehandler::CertificateHandler, #[static_field]#[rename(name="kHttpVerbGET")]pub k_http_verb_get: ::unity2::Il2CppString, #[static_field]#[rename(name="kHttpVerbHEAD")]pub k_http_verb_head: ::unity2::Il2CppString, #[static_field]#[rename(name="kHttpVerbPOST")]pub k_http_verb_post: ::unity2::Il2CppString, #[static_field]#[rename(name="kHttpVerbPUT")]pub k_http_verb_put: ::unity2::Il2CppString, #[static_field]#[rename(name="kHttpVerbCREATE")]pub k_http_verb_create: ::unity2::Il2CppString, #[static_field]#[rename(name="kHttpVerbDELETE")]pub k_http_verb_delete: ::unity2::Il2CppString,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestError.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnityWebRequest_UnityWebRequestError{pub value:i32,}
@@ -129,33 +107,32 @@ pub fn no_internet_connection()->Self{Self{value:28}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/unitywebrequest/UnityWebRequest_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnityWebRequest_Result{pub value:i32,}
+impl::unity2::ClassIdentity for UnityWebRequest_Result{const NAMESPACE: &'static str="UnityEngine.Networking";
+const NAME: &'static str="UnityWebRequest.Result";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnityWebRequest_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnityWebRequest_Result{pub fn in_progress()->Self{Self{value:0}
+}
+pub fn success()->Self{Self{value:1}
+}
+pub fn connection_error()->Self{Self{value:2}
+}
+pub fn protocol_error()->Self{Self{value:3}
+}
+pub fn data_processing_error()->Self{Self{value:4}
+}
+}
+
 }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequest-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-networking-unitywebrequest")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnityWebRequest_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:UnityWebRequest,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <UnityWebRequest as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:UnityWebRequest,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <UnityWebRequest as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="unity_engine-networking-unitywebrequest")]impl UnityWebRequest{#[doc="`GetWebErrorString(crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError)` overload"]pub fn get_web_error_string(err:impl::core::convert::Into<crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f18b20usize)as*mut u8, ::unity2::Il2CppString;
 (crate::unity_engine::networking::unitywebrequest::UnityWebRequest_UnityWebRequestError)::core::convert::Into::into(err))}
@@ -222,10 +199,28 @@ inner(this,__mi)}
 (UnityWebRequest)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(url),(::unity2::Il2CppString)::core::convert::Into::into(method),(crate::unity_engine::networking::downloadhandler::DownloadHandler)::core::convert::Into::into(download_handler),(crate::unity_engine::networking::uploadhandler::UploadHandler)::core::convert::Into::into(upload_handler))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <UnityWebRequest as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnityWebRequest_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <UnityWebRequest as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <UnityWebRequest as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnityWebRequest_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <UnityWebRequest as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(UnityWebRequest, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`DisposeHandlers()` overload"]fn dispose_handlers(self,)->(){unsafe{let __receiver= <UnityWebRequest as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f19570usize)as*mut u8,();
@@ -447,6 +442,14 @@ pub fn post_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn setup_post_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
 }
 
+#[cfg(feature="unity_engine-networking-unitywebrequest")]impl UnityWebRequest{#[doc="Direct (non-virtual) call to `UnityWebRequest`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnityWebRequest`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-networking-unitywebrequest")]impl UnityWebRequest{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(url: ::unity2::Il2CppString,method: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(UnityWebRequest), ::core::stringify!(new),));
@@ -462,12 +465,12 @@ this}
 #[cfg(feature = "unity_engine-networking-unitywebrequest")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnityWebRequest_UnityWebRequestMethod;
-    pub use super::UnityWebRequest_Result;
     pub use super::UnityWebRequest;
     pub use super::IUnityWebRequest;
     pub use super::IUnityWebRequestMethods;
+    pub use super::UnityWebRequest_UnityWebRequestMethod;
     pub use super::UnityWebRequest_UnityWebRequestError;
+    pub use super::UnityWebRequest_Result;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

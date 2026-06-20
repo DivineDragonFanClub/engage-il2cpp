@@ -64,60 +64,53 @@ pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-genericposer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GenericPoser_unity2_raw{use super:: * ;
-pub unsafe fn auto_mapping(this:GenericPoser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root_motion-final_ik-genericposer")]pub trait IGenericPoserMethods:IGenericPoser{#[doc="`AutoMapping()` overload"]fn auto_mapping(self,)->(){unsafe{let __receiver= <GenericPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <GenericPoser as::unity2::ClassIdentity> ::NAME,"AutoMapping",));
-let inner:extern "C" fn(GenericPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GenericPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn initiate_poser(this:GenericPoser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`InitiatePoser()` overload"]fn initiate_poser(self,)->(){unsafe{let __receiver= <GenericPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <GenericPoser as::unity2::ClassIdentity> ::NAME,"InitiatePoser",));
-let inner:extern "C" fn(GenericPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GenericPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update_poser(this:GenericPoser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`UpdatePoser()` overload"]fn update_poser(self,)->(){unsafe{let __receiver= <GenericPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",9usize,__vt.len(), <GenericPoser as::unity2::ClassIdentity> ::NAME,"UpdatePoser",));
-let inner:extern "C" fn(GenericPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GenericPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn fix_poser_transforms(this:GenericPoser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`FixPoserTransforms()` overload"]fn fix_poser_transforms(self,)->(){unsafe{let __receiver= <GenericPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <GenericPoser as::unity2::ClassIdentity> ::NAME,"FixPoserTransforms",));
-let inner:extern "C" fn(GenericPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GenericPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="root_motion-final_ik-genericposer")]pub trait IGenericPoserMethods:IGenericPoser{#[doc="`AutoMapping()` overload"]fn auto_mapping(self,)->(){unsafe{let __receiver= <GenericPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GenericPoser_unity2_raw::auto_mapping(__receiver, ::core::option::Option::None)}
-}
-#[doc="`InitiatePoser()` overload"]fn initiate_poser(self,)->(){unsafe{let __receiver= <GenericPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GenericPoser_unity2_raw::initiate_poser(__receiver, ::core::option::Option::None)}
-}
-#[doc="`UpdatePoser()` overload"]fn update_poser(self,)->(){unsafe{let __receiver= <GenericPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GenericPoser_unity2_raw::update_poser(__receiver, ::core::option::Option::None)}
-}
-#[doc="`FixPoserTransforms()` overload"]fn fix_poser_transforms(self,)->(){unsafe{let __receiver= <GenericPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GenericPoser_unity2_raw::fix_poser_transforms(__receiver, ::core::option::Option::None)}
 }
 #[doc="`StoreDefaultState()` overload"]fn store_default_state(self,)->(){unsafe{let __receiver= <GenericPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2521750usize)as*mut u8,();
@@ -142,6 +135,20 @@ pub fn fix_poser_transforms_method_info()-> & 'static::unity2::il2cpp::MethodInf
 pub fn store_default_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn get_target_named_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="root_motion-final_ik-genericposer")]impl GenericPoser{#[doc="Direct (non-virtual) call to `GenericPoser`'s own `AutoMapping`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn auto_mapping(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::auto_mapping_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GenericPoser`'s own `InitiatePoser`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn initiate_poser(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::initiate_poser_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GenericPoser`'s own `UpdatePoser`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_poser(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_poser_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GenericPoser`'s own `FixPoserTransforms`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn fix_poser_transforms(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::fix_poser_transforms_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root_motion-final_ik-genericposer")]impl GenericPoser{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -18,19 +18,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-situation_converter-convertinterrupt-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-situation_converter-convertinterrupt")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConvertInterrupt_unity2_raw{use super:: * ;
-pub unsafe fn convert(this:ConvertInterrupt,situation:crate::combat::camerasituation::CameraSituation,arg: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ConvertInterrupt as::unity2::ClassIdentity> ::NAME,"Convert",));
-let inner:extern "C" fn(ConvertInterrupt,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,situation,arg,__mi)}
-}
-
 #[cfg(feature="combat-situation_converter-convertinterrupt")]pub trait IConvertInterruptMethods:IConvertInterrupt{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertInterrupt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2541b30usize)as*mut u8,();
 (ConvertInterrupt)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
@@ -52,7 +39,16 @@ inner(this,situation,arg,__mi)}
 (ConvertInterrupt)__receiver,(crate::combat::cameraposition::CameraPosition)::core::convert::Into::into(value))}
 }
 #[doc="`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]fn convert(self,situation:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertInterrupt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ConvertInterrupt_unity2_raw::convert(__receiver, ::core::convert::Into::into(situation), ::core::convert::Into::into(arg), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ConvertInterrupt as::unity2::ClassIdentity> ::NAME,"Convert",));
+let __inner:extern "C" fn(ConvertInterrupt,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(situation), ::core::convert::Into::into(arg),__mi)}
+}
 }
 }
 
@@ -64,6 +60,11 @@ pub fn set_main_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn get_interrupt_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn set_interrupt_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="combat-situation_converter-convertinterrupt")]impl ConvertInterrupt{#[doc="Direct (non-virtual) call to `ConvertInterrupt`'s own `Convert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn convert(this:impl::core::convert::Into< ::unity2::IlInstance> ,situation:crate::combat::camerasituation::CameraSituation,arg: ::unity2::Il2CppString,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::convert_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),situation,arg, ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-situation_converter-convertinterrupt")]impl ConvertInterrupt{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

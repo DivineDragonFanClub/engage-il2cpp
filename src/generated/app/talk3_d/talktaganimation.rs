@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktaganimation/TalkTagAnimation.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagAnimation")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagAnimation{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktaganimation::TalkTagAnimation_TagID, #[offset(24)]#[rename(name="m_Pid")]pub m_pid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_AnimeName")]pub m_anime_name: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktaganimation/TalkTagAnimation_TagID.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTagAnimation_TagID{pub value:i32,}
 impl::unity2::ClassIdentity for TalkTagAnimation_TagID{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkTagAnimation.TagID";
@@ -35,52 +32,49 @@ pub fn look_at()->Self{Self{value:2}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktaganimation/TalkTagAnimation.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagAnimation")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagAnimation{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktaganimation::TalkTagAnimation_TagID, #[offset(24)]#[rename(name="m_Pid")]pub m_pid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_AnimeName")]pub m_anime_name: ::unity2::Il2CppString,}
+
 }
 
 #[cfg(feature = "app-talk3_d-talktaganimation-types")]
 pub use __types::*;
 
-#[cfg(feature="app-talk3_d-talktaganimation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkTagAnimation_unity2_raw{use super:: * ;
-pub unsafe fn initialize(this:TalkTagAnimation,talk_ptr:crate::app::talk3_d::talkptr::TalkPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-talk3_d-talktaganimation")]pub trait ITalkTagAnimationMethods:ITalkTagAnimation{#[doc="`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]fn initialize(self,talk_ptr:impl::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>)->(){unsafe{let __receiver= <TalkTagAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <TalkTagAnimation as::unity2::ClassIdentity> ::NAME,"Initialize",));
-let inner:extern "C" fn(TalkTagAnimation,crate::app::talk3_d::talkptr::TalkPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TalkTagAnimation,crate::app::talk3_d::talkptr::TalkPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,talk_ptr,__mi)}
-pub unsafe fn execute(this:TalkTagAnimation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(talk_ptr),__mi)}
+}
+}
+#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <TalkTagAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <TalkTagAnimation as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(TalkTagAnimation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TalkTagAnimation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_result(this:TalkTagAnimation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <TalkTagAnimation as::unity2::ClassIdentity> ::NAME,"GetResult",));
-let inner:extern "C" fn(TalkTagAnimation, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TalkTagAnimation, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-talk3_d-talktaganimation")]pub trait ITalkTagAnimationMethods:ITalkTagAnimation{#[doc="`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]fn initialize(self,talk_ptr:impl::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>)->(){unsafe{let __receiver= <TalkTagAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkTagAnimation_unity2_raw::initialize(__receiver, ::core::convert::Into::into(talk_ptr), ::core::option::Option::None)}
-}
-#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <TalkTagAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkTagAnimation_unity2_raw::execute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkTagAnimation_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9190usize)as*mut u8,();
@@ -96,6 +90,17 @@ pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-talk3_d-talktaganimation")]impl TalkTagAnimation{#[doc="Direct (non-virtual) call to `TalkTagAnimation`'s own `Initialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn initialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,talk_ptr:crate::app::talk3_d::talkptr::TalkPtr,)->(){let __mi=Self::initialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::talk3_d::talkptr::TalkPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),talk_ptr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TalkTagAnimation`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TalkTagAnimation`'s own `GetResult`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_result(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::talk3_d::talktag::TalkTag_Result{let __mi=Self::get_result_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-talk3_d-talktaganimation")]impl TalkTagAnimation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TalkTagAnimation), ::core::stringify!(new),));
@@ -106,10 +111,10 @@ this}
 #[cfg(feature = "app-talk3_d-talktaganimation")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TalkTagAnimation_TagID;
     pub use super::TalkTagAnimation;
     pub use super::ITalkTagAnimation;
     pub use super::ITalkTagAnimationMethods;
-    pub use super::TalkTagAnimation_TagID;
     pub use crate::app::talk3_d::talktag::ITalkTag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

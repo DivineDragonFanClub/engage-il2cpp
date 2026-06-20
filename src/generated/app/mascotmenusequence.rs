@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotmenusequence/MascotMenuSequence.md"))]#[::unity2::class(namespace="App",name="MascotMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mascotmenusequence::MascotMenuSequence>)]pub struct MascotMenuSequence{#[offset(120)]#[rename(name="m_FriendlyGauge")]pub m_friendly_gauge:crate::app::mascotfriendlycontent::MascotFriendlyContent, #[offset(128)]#[rename(name="m_MascotPresentationRoot")]pub m_mascot_presentation_root:crate::app::mascotpresentationroot::MascotPresentationRoot, #[offset(136)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::mascottopmenu::MascotTopMenu_MenuResult, #[offset(140)]#[rename(name="m_CustomMenuResult")]pub m_custom_menu_result:crate::app::mascotcustomizemenu::MascotCustomizeMenu_MenuResult, #[offset(144)]#[rename(name="m_Handle")]pub m_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(160)]#[rename(name="m_Reserved")]pub m_reserved:bool, #[offset(164)]#[rename(name="m_MascotReservePosition")]pub m_mascot_reserve_position:crate::unity_engine::vector3::Vector3, #[offset(176)]#[rename(name="m_MascotReserveRotation")]pub m_mascot_reserve_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(192)]#[rename(name="m_MascotCamera")]pub m_mascot_camera:crate::app::hubmascotcamera::HubMascotCamera,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotmenusequence/MascotMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MascotMenuSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MascotMenuSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MascotMenuSequence.Label";
@@ -47,9 +50,6 @@ pub fn custom_color()->Self{Self{value:8}
 pub fn exit()->Self{Self{value:9}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotmenusequence/MascotMenuSequence.md"))]#[::unity2::class(namespace="App",name="MascotMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mascotmenusequence::MascotMenuSequence>)]pub struct MascotMenuSequence{#[offset(120)]#[rename(name="m_FriendlyGauge")]pub m_friendly_gauge:crate::app::mascotfriendlycontent::MascotFriendlyContent, #[offset(128)]#[rename(name="m_MascotPresentationRoot")]pub m_mascot_presentation_root:crate::app::mascotpresentationroot::MascotPresentationRoot, #[offset(136)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::mascottopmenu::MascotTopMenu_MenuResult, #[offset(140)]#[rename(name="m_CustomMenuResult")]pub m_custom_menu_result:crate::app::mascotcustomizemenu::MascotCustomizeMenu_MenuResult, #[offset(144)]#[rename(name="m_Handle")]pub m_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(160)]#[rename(name="m_Reserved")]pub m_reserved:bool, #[offset(164)]#[rename(name="m_MascotReservePosition")]pub m_mascot_reserve_position:crate::unity_engine::vector3::Vector3, #[offset(176)]#[rename(name="m_MascotReserveRotation")]pub m_mascot_reserve_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(192)]#[rename(name="m_MascotCamera")]pub m_mascot_camera:crate::app::hubmascotcamera::HubMascotCamera,}
 
 }
 
@@ -217,10 +217,10 @@ this}
 #[cfg(feature = "app-mascotmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MascotMenuSequence_Label;
     pub use super::MascotMenuSequence;
     pub use super::IMascotMenuSequence;
     pub use super::IMascotMenuSequenceMethods;
+    pub use super::MascotMenuSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

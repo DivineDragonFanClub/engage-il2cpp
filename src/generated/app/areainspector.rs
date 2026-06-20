@@ -20,90 +20,81 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-areainspector-types")]
 pub use __types::*;
 
-#[cfg(feature="app-areainspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AreaInspector_unity2_raw{use super:: * ;
-pub unsafe fn is_eanble(this:AreaInspector,x:i32,z:i32,force:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
-let inner:extern "C" fn(AreaInspector,i32,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,z,force,__mi)}
-pub unsafe fn get_x1(this:AreaInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"get_X1",));
-let inner:extern "C" fn(AreaInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_z1(this:AreaInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"get_Z1",));
-let inner:extern "C" fn(AreaInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_x2(this:AreaInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"get_X2",));
-let inner:extern "C" fn(AreaInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_z2(this:AreaInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"get_Z2",));
-let inner:extern "C" fn(AreaInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_color(this:AreaInspector,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"get_Color",));
-let inner:extern "C" fn(AreaInspector, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-areainspector")]pub trait IAreaInspectorMethods:IAreaInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9cce0usize)as*mut u8,();
 (AreaInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
 }
 #[doc="`IsEanble(i32, i32, i32)` overload"]fn is_eanble(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,force:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AreaInspector_unity2_raw::is_eanble(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(force), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
+let __inner:extern "C" fn(AreaInspector,i32,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(force),__mi)}
+}
 }
 #[doc="`get_X1()` overload"]fn get_x1(self,)->i32{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AreaInspector_unity2_raw::get_x1(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"get_X1",));
+let __inner:extern "C" fn(AreaInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Z1()` overload"]fn get_z1(self,)->i32{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AreaInspector_unity2_raw::get_z1(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"get_Z1",));
+let __inner:extern "C" fn(AreaInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_X2()` overload"]fn get_x2(self,)->i32{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AreaInspector_unity2_raw::get_x2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"get_X2",));
+let __inner:extern "C" fn(AreaInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Z2()` overload"]fn get_z2(self,)->i32{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AreaInspector_unity2_raw::get_z2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"get_Z2",));
+let __inner:extern "C" fn(AreaInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AreaInspector_unity2_raw::get_color(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <AreaInspector as::unity2::ClassIdentity> ::NAME,"get_Color",));
+let __inner:extern "C" fn(AreaInspector, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -116,6 +107,26 @@ pub fn get_z1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn get_x2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn get_z2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-areainspector")]impl AreaInspector{#[doc="Direct (non-virtual) call to `AreaInspector`'s own `IsEanble`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_eanble(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:i32,z:i32,force:i32,)->bool{let __mi=Self::is_eanble_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,z,force, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AreaInspector`'s own `get_X1`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_x1(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_x1_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AreaInspector`'s own `get_Z1`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_z1(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_z1_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AreaInspector`'s own `get_X2`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_x2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_x2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AreaInspector`'s own `get_Z2`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_z2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_z2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AreaInspector`'s own `get_Color`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::color::Color{let __mi=Self::get_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-areainspector")]impl AreaInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

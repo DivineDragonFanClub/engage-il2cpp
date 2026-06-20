@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapactor/MapActor.md"))]#[::unity2::class(namespace="App",name="MapActor")]#[parent(crate::system::object::Object)]pub struct MapActor{#[static_field]#[rename(name="MoveTime")]pub move_time:f32, #[static_field]#[rename(name="StickMargin")]pub stick_margin:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapactor/MapActor_MoveResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapActor_MoveResult{pub value:i32,}
 impl::unity2::ClassIdentity for MapActor_MoveResult{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapActor.MoveResult";
@@ -32,6 +29,9 @@ pub fn r#move()->Self{Self{value:1}
 pub fn hit()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapactor/MapActor.md"))]#[::unity2::class(namespace="App",name="MapActor")]#[parent(crate::system::object::Object)]pub struct MapActor{#[static_field]#[rename(name="MoveTime")]pub move_time:f32, #[static_field]#[rename(name="StickMargin")]pub stick_margin:f32,}
 
 }
 
@@ -81,10 +81,10 @@ this}
 #[cfg(feature = "app-mapactor")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapActor_MoveResult;
     pub use super::MapActor;
     pub use super::IMapActor;
     pub use super::IMapActorMethods;
-    pub use super::MapActor_MoveResult;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -11,9 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fxzex/FXZEx.md"))]#[::unity2::class(namespace="Combat",name="FXZEx")]#[parent(crate::system::object::Object)]pub struct FXZEx{#[static_field]#[rename(name="layerMask")]pub layer_mask:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fxzex/FXZEx_HitPoint.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FXZEx_HitPoint{pub pos:crate::unity_engine::vector3::Vector3,pub nrm:crate::unity_engine::vector3::Vector3,pub col_index:i32,}
 impl::unity2::ClassIdentity for FXZEx_HitPoint{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="FXZEx.HitPoint";
@@ -23,6 +20,9 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for FXZEx_HitPoint{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fxzex/FXZEx.md"))]#[::unity2::class(namespace="Combat",name="FXZEx")]#[parent(crate::system::object::Object)]pub struct FXZEx{#[static_field]#[rename(name="layerMask")]pub layer_mask:i32,}
 
 }
 
@@ -75,9 +75,9 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 #[cfg(feature = "combat-fxzex")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::FXZEx_HitPoint;
     pub use super::FXZEx;
     pub use super::IFXZEx;
-    pub use super::FXZEx_HitPoint;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

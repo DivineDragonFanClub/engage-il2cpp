@@ -16,38 +16,33 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-specialized-stringdictionary-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-specialized-stringdictionary")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __StringDictionary_unity2_raw{use super:: * ;
-pub unsafe fn add(this:StringDictionary,key: ::unity2::Il2CppString,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <StringDictionary as::unity2::ClassIdentity> ::NAME,"Add",));
-let inner:extern "C" fn(StringDictionary, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,value,__mi)}
-pub unsafe fn get_enumerator(this:StringDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <StringDictionary as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
-let inner:extern "C" fn(StringDictionary, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="system-collections-specialized-stringdictionary")]pub trait IStringDictionaryMethods:IStringDictionary{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a27940usize)as*mut u8,();
 (StringDictionary)__receiver)}
 }
 #[doc="`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add(self,key:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StringDictionary_unity2_raw::add(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <StringDictionary as::unity2::ClassIdentity> ::NAME,"Add",));
+let __inner:extern "C" fn(StringDictionary, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <StringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StringDictionary_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <StringDictionary as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let __inner:extern "C" fn(StringDictionary, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -56,6 +51,14 @@ __StringDictionary_unity2_raw::get_enumerator(__receiver, ::core::option::Option
 #[cfg(feature="system-collections-specialized-stringdictionary")]impl StringDictionary{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="system-collections-specialized-stringdictionary")]impl StringDictionary{#[doc="Direct (non-virtual) call to `StringDictionary`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add(this:impl::core::convert::Into< ::unity2::IlInstance> ,key: ::unity2::Il2CppString,value: ::unity2::Il2CppString,)->(){let __mi=Self::add_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StringDictionary`'s own `GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-collections-specialized-stringdictionary")]impl StringDictionary{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

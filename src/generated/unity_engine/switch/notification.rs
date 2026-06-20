@@ -33,6 +33,24 @@ pub fn in_focus_only()->Self{Self{value:3}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/notification/Notification_FocusState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Notification_FocusState{pub value:i32,}
+impl::unity2::ClassIdentity for Notification_FocusState{const NAMESPACE: &'static str="UnityEngine.Switch";
+const NAME: &'static str="Notification.FocusState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Notification_FocusState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Notification_FocusState{pub fn in_focus()->Self{Self{value:1}
+}
+pub fn out_of_focus()->Self{Self{value:2}
+}
+pub fn background()->Self{Self{value:3}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/notification/Notification.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="Notification")]#[parent(crate::system::object::Object)]pub struct Notification{#[static_field]#[rename(name="notificationMessageReceived")]pub notification_message_received:crate::system::action_1::Action_1<crate::unity_engine::switch::notification::Notification_Message> ,}
 
 
@@ -54,24 +72,6 @@ pub fn operation_mode_changed()->Self{Self{value:30}
 pub fn performance_mode_changed()->Self{Self{value:31}
 }
 pub fn exit_request()->Self{Self{value:4}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/notification/Notification_FocusState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Notification_FocusState{pub value:i32,}
-impl::unity2::ClassIdentity for Notification_FocusState{const NAMESPACE: &'static str="UnityEngine.Switch";
-const NAME: &'static str="Notification.FocusState";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Notification_FocusState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Notification_FocusState{pub fn in_focus()->Self{Self{value:1}
-}
-pub fn out_of_focus()->Self{Self{value:2}
-}
-pub fn background()->Self{Self{value:3}
 }
 }
 
@@ -156,10 +156,10 @@ pub fn remove_notification_message_received_method_info()-> & 'static::unity2::i
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Notification_FocusHandlingMode;
+    pub use super::Notification_FocusState;
     pub use super::Notification;
     pub use super::INotification;
     pub use super::Notification_Message;
-    pub use super::Notification_FocusState;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md"))]#[::unity2::class(namespace="UnityEngine.LowLevel",name="PlayerLoopSystem.UpdateFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PlayerLoopSystem_UpdateFunction{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct PlayerLoopSystem{pub r#type: ::unity2::SystemType,pub sub_system_list: ::unity2::Array<crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem>,pub update_delegate:crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem_UpdateFunction,pub update_function: ::unity2::IntPtr,pub loop_condition_function: ::unity2::IntPtr,}
 impl::unity2::ClassIdentity for PlayerLoopSystem{const NAMESPACE: &'static str="UnityEngine.LowLevel";
 const NAME: &'static str="PlayerLoopSystem";
@@ -25,41 +28,26 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for PlayerLoopSystem{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md"))]#[::unity2::class(namespace="UnityEngine.LowLevel",name="PlayerLoopSystem.UpdateFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PlayerLoopSystem_UpdateFunction{}
-
 }
 
 #[cfg(feature = "unity_engine-low_level-playerloopsystem-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-low_level-playerloopsystem")]impl PlayerLoopSystem{#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8900usize)as*mut u8, ::unity2::Il2CppString;
-(*mut PlayerLoopSystem)self as*mut PlayerLoopSystem)}
-}
-}
-
-#[cfg(feature="unity_engine-low_level-playerloopsystem")]impl PlayerLoopSystem{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-low_level-playerloopsystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PlayerLoopSystem_UpdateFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:PlayerLoopSystem_UpdateFunction,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <PlayerLoopSystem_UpdateFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(PlayerLoopSystem_UpdateFunction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="unity_engine-low_level-playerloopsystem")]pub trait IPlayerLoopSystem_UpdateFunctionMethods:IPlayerLoopSystem_UpdateFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PlayerLoopSystem_UpdateFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x379e1c0usize)as*mut u8,();
 (PlayerLoopSystem_UpdateFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <PlayerLoopSystem_UpdateFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayerLoopSystem_UpdateFunction_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <PlayerLoopSystem_UpdateFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(PlayerLoopSystem_UpdateFunction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -69,6 +57,11 @@ __PlayerLoopSystem_UpdateFunction_unity2_raw::invoke(__receiver, ::core::option:
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="unity_engine-low_level-playerloopsystem")]impl PlayerLoopSystem_UpdateFunction{#[doc="Direct (non-virtual) call to `PlayerLoopSystem_UpdateFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-low_level-playerloopsystem")]impl PlayerLoopSystem_UpdateFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(PlayerLoopSystem_UpdateFunction), ::core::stringify!(new),));
@@ -76,13 +69,21 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="unity_engine-low_level-playerloopsystem")]impl PlayerLoopSystem{#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8900usize)as*mut u8, ::unity2::Il2CppString;
+(*mut PlayerLoopSystem)self as*mut PlayerLoopSystem)}
+}
+}
+
+#[cfg(feature="unity_engine-low_level-playerloopsystem")]impl PlayerLoopSystem{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "unity_engine-low_level-playerloopsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PlayerLoopSystem;
     pub use super::PlayerLoopSystem_UpdateFunction;
     pub use super::IPlayerLoopSystem_UpdateFunction;
     pub use super::IPlayerLoopSystem_UpdateFunctionMethods;
+    pub use super::PlayerLoopSystem;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

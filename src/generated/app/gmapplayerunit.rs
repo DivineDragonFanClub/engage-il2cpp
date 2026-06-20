@@ -38,29 +38,6 @@ pub fn ship()->Self{Self{value:1}
 #[cfg(feature = "app-gmapplayerunit-types")]
 pub use __types::*;
 
-#[cfg(feature="app-gmapplayerunit")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapPlayerUnit_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:GmapPlayerUnit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GmapPlayerUnit as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(GmapPlayerUnit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_tick(this:GmapPlayerUnit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <GmapPlayerUnit as::unity2::ClassIdentity> ::NAME,"OnTick",));
-let inner:extern "C" fn(GmapPlayerUnit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-gmapplayerunit")]impl GmapPlayerUnit{#[doc="`GetAngleLength(f32, f32)` overload"]pub fn get_angle_length(current:impl::core::convert::Into<f32> ,target:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b38430usize)as*mut u8,f32;
 (f32)::core::convert::Into::into(current),(f32)::core::convert::Into::into(target))}
 }
@@ -79,10 +56,28 @@ inner(this,__mi)}
 (GmapPlayerUnit)__receiver,(crate::app::gmapplayerunit::GmapPlayerUnit_ModelType)::core::convert::Into::into(value))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapPlayerUnit_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GmapPlayerUnit as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(GmapPlayerUnit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapPlayerUnit_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <GmapPlayerUnit as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let __inner:extern "C" fn(GmapPlayerUnit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateRotation()` overload"]fn update_rotation(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37990usize)as*mut u8,();
@@ -219,6 +214,14 @@ pub fn is_on_ground_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn play_teleport_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
 pub fn play_teleport_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+}
+
+#[cfg(feature="app-gmapplayerunit")]impl GmapPlayerUnit{#[doc="Direct (non-virtual) call to `GmapPlayerUnit`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapPlayerUnit`'s own `OnTick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-gmapplayerunit")]impl GmapPlayerUnit{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

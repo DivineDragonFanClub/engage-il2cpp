@@ -349,16 +349,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ScriptRuntimeException as::unity2::ClassIdentity> ::NAME,"AccessInstanceMemberOnStatics",e),}
 }
 }
-pub unsafe fn rethrow(this:ScriptRuntimeException,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <ScriptRuntimeException as::unity2::ClassIdentity> ::NAME,"Rethrow",));
-let inner:extern "C" fn(ScriptRuntimeException, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-scriptruntimeexception")]impl ScriptRuntimeException{#[doc="`ArithmeticOnNonNumber(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]pub fn arithmetic_on_non_number(l:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,r:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException{unsafe{::unity2::il2cpp_call!(__ScriptRuntimeException_unity2_raw::__lookup_arithmetic_on_non_number::get_method_info().method_ptr,crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException;
@@ -466,7 +456,16 @@ inner(this,__mi)}
 (ScriptRuntimeException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
 }
 #[doc="`Rethrow()` overload"]fn rethrow(self,)->(){unsafe{let __receiver= <ScriptRuntimeException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptRuntimeException_unity2_raw::rethrow(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ScriptRuntimeException as::unity2::ClassIdentity> ::NAME,"Rethrow",));
+let __inner:extern "C" fn(ScriptRuntimeException, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -506,6 +505,11 @@ pub fn attempt_to_call_non_func_method_info()-> & 'static::unity2::il2cpp::Metho
 pub fn access_instance_member_on_statics_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
 pub fn access_instance_member_on_statics_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
 pub fn rethrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-scriptruntimeexception")]impl ScriptRuntimeException{#[doc="Direct (non-virtual) call to `ScriptRuntimeException`'s own `Rethrow`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn rethrow(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::rethrow_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-scriptruntimeexception")]impl ScriptRuntimeException{#[doc="`.ctor(crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException)` — overload selector"]pub fn new(ex:crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

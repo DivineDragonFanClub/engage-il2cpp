@@ -16,39 +16,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akcommoncommsettings-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akcommoncommsettings")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkCommonCommSettings_unity2_raw{use super:: * ;
-pub unsafe fn copy_to(this:AkCommonCommSettings,settings:crate::root::akcommunicationsettings::AkCommunicationSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AkCommonCommSettings as::unity2::ClassIdentity> ::NAME,"CopyTo",));
-let inner:extern "C" fn(AkCommonCommSettings,crate::root::akcommunicationsettings::AkCommunicationSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,settings,__mi)}
-pub unsafe fn validate(this:AkCommonCommSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <AkCommonCommSettings as::unity2::ClassIdentity> ::NAME,"Validate",));
-let inner:extern "C" fn(AkCommonCommSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="root-akcommoncommsettings")]impl AkCommonCommSettings{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f128c0usize)as*mut u8,();
 )}
 }
 }
 
 #[cfg(feature="root-akcommoncommsettings")]pub trait IAkCommonCommSettingsMethods:IAkCommonCommSettings{#[doc="`CopyTo(crate::root::akcommunicationsettings::AkCommunicationSettings)` overload"]fn copy_to(self,settings:impl::core::convert::Into<crate::root::akcommunicationsettings::AkCommunicationSettings>)->(){unsafe{let __receiver= <AkCommonCommSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonCommSettings_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkCommonCommSettings as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let __inner:extern "C" fn(AkCommonCommSettings,crate::root::akcommunicationsettings::AkCommunicationSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(settings),__mi)}
+}
 }
 #[doc="`Validate()` overload"]fn validate(self,)->(){unsafe{let __receiver= <AkCommonCommSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonCommSettings_unity2_raw::validate(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkCommonCommSettings as::unity2::ClassIdentity> ::NAME,"Validate",));
+let __inner:extern "C" fn(AkCommonCommSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCommonCommSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12830usize)as*mut u8,();
@@ -62,6 +57,14 @@ __AkCommonCommSettings_unity2_raw::validate(__receiver, ::core::option::Option::
 pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="root-akcommoncommsettings")]impl AkCommonCommSettings{#[doc="Direct (non-virtual) call to `AkCommonCommSettings`'s own `CopyTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn copy_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,settings:crate::root::akcommunicationsettings::AkCommunicationSettings,)->(){let __mi=Self::copy_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root::akcommunicationsettings::AkCommunicationSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),settings, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonCommSettings`'s own `Validate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn validate(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::validate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-akcommoncommsettings")]impl AkCommonCommSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -16,35 +16,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-resourcehandle_2-types")]
 pub use __types::*;
 
-#[cfg(feature="app-resourcehandle_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ResourceHandle_2_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:ResourceHandle_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <ResourceHandle_2 as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(ResourceHandle_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:ResourceHandle_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ResourceHandle_2 as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(ResourceHandle_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-resourcehandle_2")]pub trait IResourceHandle_2Methods:IResourceHandle_2{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ResourceHandle_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2013860usize)as*mut u8,();
 (ResourceHandle_2)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <ResourceHandle_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourceHandle_2_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <ResourceHandle_2 as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(ResourceHandle_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Reset(::unity2::Il2CppString)` overload"]fn reset(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ResourceHandle_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2013bb0usize)as*mut u8,();
@@ -55,7 +41,16 @@ __ResourceHandle_2_unity2_raw::finalize(__receiver, ::core::option::Option::None
 (ResourceHandle_2)__receiver)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <ResourceHandle_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourceHandle_2_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ResourceHandle_2 as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(ResourceHandle_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 fn load_async<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,completed:impl::core::convert::Into<crate::system::action_1::Action_1<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<ResourceHandle_2 as::unity2::ClassIdentity> ::class(),"LoadAsync",2,)}
 );
@@ -175,6 +170,14 @@ pub fn unload_scene_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn get_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-resourcehandle_2")]impl ResourceHandle_2{#[doc="Direct (non-virtual) call to `ResourceHandle_2`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ResourceHandle_2`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-resourcehandle_2")]impl ResourceHandle_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

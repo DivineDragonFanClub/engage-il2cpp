@@ -17,19 +17,13 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_EnhanceObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishAllMenuContent.EnhanceObject")]#[parent(crate::system::object::Object)]pub struct DishAllMenuContent_EnhanceObject{#[offset(16)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Value")]pub m_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_UnitsHistory.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishAllMenuContent.UnitsHistory")]#[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]pub struct DishAllMenuContent_UnitsHistory{#[offset(32)]#[rename(name="m_UnitIcon0")]pub m_unit_icon0:crate::app::uniticon::UnitIcon, #[offset(40)]#[rename(name="m_UnitName0")]pub m_unit_name0:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_UnitIcon1")]pub m_unit_icon1:crate::app::uniticon::UnitIcon, #[offset(56)]#[rename(name="m_UnitName1")]pub m_unit_name1:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_UnitGrp")]pub m_unit_grp:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_Blank")]pub m_blank:crate::unity_engine::gameobject::GameObject,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_HistoryObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishAllMenuContent.HistoryObject")]#[parent(crate::system::object::Object)]pub struct DishAllMenuContent_HistoryObject{#[offset(16)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_DishHistory.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishAllMenuContent.DishHistory")]#[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]pub struct DishAllMenuContent_DishHistory{#[offset(32)]#[rename(name="m_FoodName")]pub m_food_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_DifficultyIcon")]pub m_difficulty_icon:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_FoodDifficulty")]pub m_food_difficulty:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_EnhanceObjectList")]pub m_enhance_object_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject> , #[offset(64)]#[rename(name="m_Dish")]pub m_dish:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_Params")]pub m_params:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_Blank0")]pub m_blank0:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_Blank1")]pub m_blank1:crate::unity_engine::gameobject::GameObject,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishAllMenuContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DishAllMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_UnitSelectMenuContent")]pub m_unit_select_menu_content:crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2, #[offset(32)]#[rename(name="m_DishSelectMenuContent")]pub m_dish_select_menu_content:crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent, #[offset(40)]#[rename(name="m_FoodstuffMenuContent")]pub m_foodstuff_menu_content:crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent, #[offset(48)]#[rename(name="m_HistoryList")]pub m_history_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject> , #[offset(56)]#[rename(name="m_CookHistory")]pub m_cook_history:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_CookHistory, #[offset(64)]#[rename(name="m_UnitsHistory")]pub m_units_history:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_UnitsHistory, #[offset(72)]#[rename(name="m_DishHistory")]pub m_dish_history:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_DishHistory, #[offset(80)]#[rename(name="m_FoodstuffsHistory")]pub m_foodstuffs_history:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_FoodstuffsHistory, #[offset(88)]#[rename(name="m_UnitIcon0")]pub m_unit_icon0:crate::app::uniticon::UnitIcon, #[offset(96)]#[rename(name="m_UnitName0")]pub m_unit_name0:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(104)]#[rename(name="m_UnitIcon1")]pub m_unit_icon1:crate::app::uniticon::UnitIcon, #[offset(112)]#[rename(name="m_UnitName1")]pub m_unit_name1:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_FoodName")]pub m_food_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_DifficultyIcon")]pub m_difficulty_icon:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_FoodDifficulty")]pub m_food_difficulty:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_EnhanceObjectList")]pub m_enhance_object_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject> , #[offset(152)]#[rename(name="m_FoodstuffItemList")]pub m_foodstuff_item_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(160)]#[rename(name="m_FoodstuffGroup")]pub m_foodstuff_group:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_CookChefTitleText")]pub m_cook_chef_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(176)]#[rename(name="m_FriendTitleText")]pub m_friend_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(184)]#[rename(name="m_CookMenuTitleText")]pub m_cook_menu_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(192)]#[rename(name="m_BasicEffectTitleText")]pub m_basic_effect_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(200)]#[rename(name="m_CookAddFoodTitleText")]pub m_cook_add_food_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(208)]#[rename(name="m_CookAddFoodNothingTitleText")]pub m_cook_add_food_nothing_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(216)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_EnhanceObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishAllMenuContent.EnhanceObject")]#[parent(crate::system::object::Object)]pub struct DishAllMenuContent_EnhanceObject{#[offset(16)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Value")]pub m_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_CookHistory.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishAllMenuContent.CookHistory")]#[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]pub struct DishAllMenuContent_CookHistory{}
@@ -37,41 +31,16 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_FoodstuffsHistory.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishAllMenuContent.FoodstuffsHistory")]#[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]pub struct DishAllMenuContent_FoodstuffsHistory{#[offset(32)]#[rename(name="m_FoodstuffItemList")]pub m_foodstuff_item_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_FoodstuffGroup")]pub m_foodstuff_group:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_Nothing")]pub m_nothing:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_Blank")]pub m_blank:crate::unity_engine::gameobject::GameObject,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_HistoryObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishAllMenuContent.HistoryObject")]#[parent(crate::system::object::Object)]pub struct DishAllMenuContent_HistoryObject{#[offset(16)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishAllMenuContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DishAllMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_UnitSelectMenuContent")]pub m_unit_select_menu_content:crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2, #[offset(32)]#[rename(name="m_DishSelectMenuContent")]pub m_dish_select_menu_content:crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent, #[offset(40)]#[rename(name="m_FoodstuffMenuContent")]pub m_foodstuff_menu_content:crate::app::cooking_menu::foodstuffmenucontent::FoodstuffMenuContent, #[offset(48)]#[rename(name="m_HistoryList")]pub m_history_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject> , #[offset(56)]#[rename(name="m_CookHistory")]pub m_cook_history:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_CookHistory, #[offset(64)]#[rename(name="m_UnitsHistory")]pub m_units_history:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_UnitsHistory, #[offset(72)]#[rename(name="m_DishHistory")]pub m_dish_history:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_DishHistory, #[offset(80)]#[rename(name="m_FoodstuffsHistory")]pub m_foodstuffs_history:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_FoodstuffsHistory, #[offset(88)]#[rename(name="m_UnitIcon0")]pub m_unit_icon0:crate::app::uniticon::UnitIcon, #[offset(96)]#[rename(name="m_UnitName0")]pub m_unit_name0:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(104)]#[rename(name="m_UnitIcon1")]pub m_unit_icon1:crate::app::uniticon::UnitIcon, #[offset(112)]#[rename(name="m_UnitName1")]pub m_unit_name1:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_FoodName")]pub m_food_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_DifficultyIcon")]pub m_difficulty_icon:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_FoodDifficulty")]pub m_food_difficulty:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_EnhanceObjectList")]pub m_enhance_object_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject> , #[offset(152)]#[rename(name="m_FoodstuffItemList")]pub m_foodstuff_item_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(160)]#[rename(name="m_FoodstuffGroup")]pub m_foodstuff_group:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_CookChefTitleText")]pub m_cook_chef_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(176)]#[rename(name="m_FriendTitleText")]pub m_friend_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(184)]#[rename(name="m_CookMenuTitleText")]pub m_cook_menu_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(192)]#[rename(name="m_BasicEffectTitleText")]pub m_basic_effect_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(200)]#[rename(name="m_CookAddFoodTitleText")]pub m_cook_add_food_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(208)]#[rename(name="m_CookAddFoodNothingTitleText")]pub m_cook_add_food_nothing_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(216)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator,}
+
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent-types")]
 pub use __types::*;
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]pub trait IDishAllMenuContent_EnhanceObjectMethods:IDishAllMenuContent_EnhanceObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishAllMenuContent_EnhanceObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd1740usize)as*mut u8,();
-(DishAllMenuContent_EnhanceObject)__receiver)}
-}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl<__T:IDishAllMenuContent_EnhanceObject>IDishAllMenuContent_EnhanceObjectMethods for __T{}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_EnhanceObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_EnhanceObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DishAllMenuContent_EnhanceObject), ::core::stringify!(new),));
- <Self as IDishAllMenuContent_EnhanceObjectMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DishAllMenuContent_UnitsHistory_unity2_raw{use super:: * ;
-pub unsafe fn hide(this:DishAllMenuContent_UnitsHistory,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DishAllMenuContent_UnitsHistory as::unity2::ClassIdentity> ::NAME,"Hide",));
-let inner:extern "C" fn(DishAllMenuContent_UnitsHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-cooking_menu-dishallmenucontent")]pub trait IDishAllMenuContent_UnitsHistoryMethods:IDishAllMenuContent_UnitsHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` overload"]fn ctor(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,unit_icon0:impl::core::convert::Into<crate::app::uniticon::UnitIcon> ,unit_name0:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI> ,unit_icon1:impl::core::convert::Into<crate::app::uniticon::UnitIcon> ,unit_name1:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI>)->(){unsafe{let __receiver= <DishAllMenuContent_UnitsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd1f60usize)as*mut u8,();
@@ -82,7 +51,16 @@ inner(this,__mi)}
 (DishAllMenuContent_UnitsHistory)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(unit_list))}
 }
 #[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <DishAllMenuContent_UnitsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DishAllMenuContent_UnitsHistory_unity2_raw::hide(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DishAllMenuContent_UnitsHistory as::unity2::ClassIdentity> ::NAME,"Hide",));
+let __inner:extern "C" fn(DishAllMenuContent_UnitsHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -93,78 +71,16 @@ pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_UnitsHistory{#[doc="Direct (non-virtual) call to `DishAllMenuContent_UnitsHistory`'s own `Hide`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn hide(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::hide_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_UnitsHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` — overload selector"]pub fn new(game_object:crate::unity_engine::gameobject::GameObject,unit_icon0:crate::app::uniticon::UnitIcon,unit_name0:crate::tm_pro::textmeshprougui::TextMeshProUGUI,unit_icon1:crate::app::uniticon::UnitIcon,unit_name1:crate::tm_pro::textmeshprougui::TextMeshProUGUI)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DishAllMenuContent_UnitsHistory), ::core::stringify!(new),));
  <Self as IDishAllMenuContent_UnitsHistoryMethods> ::ctor(this,game_object,unit_icon0,unit_name0,unit_icon1,unit_name1);
 this}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DishAllMenuContent_HistoryObject_unity2_raw{use super:: * ;
-pub unsafe fn show(this:DishAllMenuContent_HistoryObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DishAllMenuContent_HistoryObject as::unity2::ClassIdentity> ::NAME,"Show",));
-let inner:extern "C" fn(DishAllMenuContent_HistoryObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn hide(this:DishAllMenuContent_HistoryObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DishAllMenuContent_HistoryObject as::unity2::ClassIdentity> ::NAME,"Hide",));
-let inner:extern "C" fn(DishAllMenuContent_HistoryObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]pub trait IDishAllMenuContent_HistoryObjectMethods:IDishAllMenuContent_HistoryObject{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DishAllMenuContent_HistoryObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd0a00usize)as*mut u8,();
-(DishAllMenuContent_HistoryObject)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <DishAllMenuContent_HistoryObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DishAllMenuContent_HistoryObject_unity2_raw::show(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <DishAllMenuContent_HistoryObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DishAllMenuContent_HistoryObject_unity2_raw::hide(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_gameObject()` overload"]fn get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <DishAllMenuContent_HistoryObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd1f50usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(DishAllMenuContent_HistoryObject)__receiver)}
-}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl<__T:IDishAllMenuContent_HistoryObject>IDishAllMenuContent_HistoryObjectMethods for __T{}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_HistoryObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_HistoryObject{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(game_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DishAllMenuContent_HistoryObject), ::core::stringify!(new),));
- <Self as IDishAllMenuContent_HistoryObjectMethods> ::ctor(this,game_object);
-this}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DishAllMenuContent_DishHistory_unity2_raw{use super:: * ;
-pub unsafe fn hide(this:DishAllMenuContent_DishHistory,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DishAllMenuContent_DishHistory as::unity2::ClassIdentity> ::NAME,"Hide",));
-let inner:extern "C" fn(DishAllMenuContent_DishHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-cooking_menu-dishallmenucontent")]pub trait IDishAllMenuContent_DishHistoryMethods:IDishAllMenuContent_DishHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>)` overload"]fn ctor(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,food_name:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI> ,difficulty_icon:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,food_difficulty:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI> ,enhance_object_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject> >)->(){unsafe{let __receiver= <DishAllMenuContent_DishHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -176,7 +92,16 @@ inner(this,__mi)}
 (DishAllMenuContent_DishHistory)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food))}
 }
 #[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <DishAllMenuContent_DishHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DishAllMenuContent_DishHistory_unity2_raw::hide(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DishAllMenuContent_DishHistory as::unity2::ClassIdentity> ::NAME,"Hide",));
+let __inner:extern "C" fn(DishAllMenuContent_DishHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetFoodInfo(crate::app::fooddata::FoodData)` overload"]fn set_food_info(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData>)->(){unsafe{let __receiver= <DishAllMenuContent_DishHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd1020usize)as*mut u8,();
@@ -197,10 +122,164 @@ pub fn set_food_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn get_enhance_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_DishHistory{#[doc="Direct (non-virtual) call to `DishAllMenuContent_DishHistory`'s own `Hide`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn hide(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::hide_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_DishHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>)` — overload selector"]pub fn new(game_object:crate::unity_engine::gameobject::GameObject,food_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI,difficulty_icon:crate::unity_engine::gameobject::GameObject,food_difficulty:crate::tm_pro::textmeshprougui::TextMeshProUGUI,enhance_object_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DishAllMenuContent_DishHistory), ::core::stringify!(new),));
  <Self as IDishAllMenuContent_DishHistoryMethods> ::ctor(this,game_object,food_name,difficulty_icon,food_difficulty,enhance_object_list);
+this}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]pub trait IDishAllMenuContent_EnhanceObjectMethods:IDishAllMenuContent_EnhanceObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishAllMenuContent_EnhanceObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd1740usize)as*mut u8,();
+(DishAllMenuContent_EnhanceObject)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl<__T:IDishAllMenuContent_EnhanceObject>IDishAllMenuContent_EnhanceObjectMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_EnhanceObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_EnhanceObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishAllMenuContent_EnhanceObject), ::core::stringify!(new),));
+ <Self as IDishAllMenuContent_EnhanceObjectMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]pub trait IDishAllMenuContent_CookHistoryMethods:IDishAllMenuContent_CookHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DishAllMenuContent_CookHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd08f0usize)as*mut u8,();
+(DishAllMenuContent_CookHistory)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+#[doc="`SetupCook()` overload"]fn setup_cook(self,)->(){unsafe{let __receiver= <DishAllMenuContent_CookHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd0a90usize)as*mut u8,();
+(DishAllMenuContent_CookHistory)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl<__T:IDishAllMenuContent_CookHistory>IDishAllMenuContent_CookHistoryMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_CookHistory{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_cook_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_CookHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(game_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishAllMenuContent_CookHistory), ::core::stringify!(new),));
+ <Self as IDishAllMenuContent_CookHistoryMethods> ::ctor(this,game_object);
+this}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]pub trait IDishAllMenuContent_FoodstuffsHistoryMethods:IDishAllMenuContent_FoodstuffsHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,foodstuff_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> > ,foodstuff_group:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DishAllMenuContent_FoodstuffsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd1750usize)as*mut u8,();
+(DishAllMenuContent_FoodstuffsHistory)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>)::core::convert::Into::into(foodstuff_item_list),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(foodstuff_group))}
+}
+#[doc="`Show(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]fn show(self,foodstuffs:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> >)->(){unsafe{let __receiver= <DishAllMenuContent_FoodstuffsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd18c0usize)as*mut u8,();
+(DishAllMenuContent_FoodstuffsHistory)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)::core::convert::Into::into(foodstuffs))}
+}
+#[doc="`SetFoodstuffs(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]fn set_foodstuffs(self,foodstuffs:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> >)->(){unsafe{let __receiver= <DishAllMenuContent_FoodstuffsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd19a0usize)as*mut u8,();
+(DishAllMenuContent_FoodstuffsHistory)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)::core::convert::Into::into(foodstuffs))}
+}
+#[doc="`SetFoodstuffItem(crate::unity_engine::gameobject::GameObject, crate::app::foodstuffdata::FoodstuffData)` overload"]fn set_foodstuff_item(self,content_item:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->(){unsafe{let __receiver= <DishAllMenuContent_FoodstuffsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd1d70usize)as*mut u8,();
+(DishAllMenuContent_FoodstuffsHistory)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(content_item),(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(data))}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <DishAllMenuContent_FoodstuffsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DishAllMenuContent_FoodstuffsHistory as::unity2::ClassIdentity> ::NAME,"Hide",));
+let __inner:extern "C" fn(DishAllMenuContent_FoodstuffsHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl<__T:IDishAllMenuContent_FoodstuffsHistory>IDishAllMenuContent_FoodstuffsHistoryMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_FoodstuffsHistory{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_foodstuffs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_foodstuff_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_FoodstuffsHistory{#[doc="Direct (non-virtual) call to `DishAllMenuContent_FoodstuffsHistory`'s own `Hide`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn hide(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::hide_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_FoodstuffsHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(game_object:crate::unity_engine::gameobject::GameObject,foodstuff_item_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,foodstuff_group:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishAllMenuContent_FoodstuffsHistory), ::core::stringify!(new),));
+ <Self as IDishAllMenuContent_FoodstuffsHistoryMethods> ::ctor(this,game_object,foodstuff_item_list,foodstuff_group);
+this}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]pub trait IDishAllMenuContent_HistoryObjectMethods:IDishAllMenuContent_HistoryObject{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DishAllMenuContent_HistoryObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd0a00usize)as*mut u8,();
+(DishAllMenuContent_HistoryObject)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <DishAllMenuContent_HistoryObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DishAllMenuContent_HistoryObject as::unity2::ClassIdentity> ::NAME,"Show",));
+let __inner:extern "C" fn(DishAllMenuContent_HistoryObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <DishAllMenuContent_HistoryObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DishAllMenuContent_HistoryObject as::unity2::ClassIdentity> ::NAME,"Hide",));
+let __inner:extern "C" fn(DishAllMenuContent_HistoryObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_gameObject()` overload"]fn get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <DishAllMenuContent_HistoryObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd1f50usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(DishAllMenuContent_HistoryObject)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl<__T:IDishAllMenuContent_HistoryObject>IDishAllMenuContent_HistoryObjectMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_HistoryObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_HistoryObject{#[doc="Direct (non-virtual) call to `DishAllMenuContent_HistoryObject`'s own `Show`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn show(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::show_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DishAllMenuContent_HistoryObject`'s own `Hide`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn hide(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::hide_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_HistoryObject{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(game_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishAllMenuContent_HistoryObject), ::core::stringify!(new),));
+ <Self as IDishAllMenuContent_HistoryObjectMethods> ::ctor(this,game_object);
 this}
 }
 
@@ -289,103 +368,30 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]pub trait IDishAllMenuContent_CookHistoryMethods:IDishAllMenuContent_CookHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DishAllMenuContent_CookHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd08f0usize)as*mut u8,();
-(DishAllMenuContent_CookHistory)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
-}
-#[doc="`SetupCook()` overload"]fn setup_cook(self,)->(){unsafe{let __receiver= <DishAllMenuContent_CookHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd0a90usize)as*mut u8,();
-(DishAllMenuContent_CookHistory)__receiver)}
-}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl<__T:IDishAllMenuContent_CookHistory>IDishAllMenuContent_CookHistoryMethods for __T{}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_CookHistory{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn setup_cook_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_CookHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(game_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DishAllMenuContent_CookHistory), ::core::stringify!(new),));
- <Self as IDishAllMenuContent_CookHistoryMethods> ::ctor(this,game_object);
-this}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DishAllMenuContent_FoodstuffsHistory_unity2_raw{use super:: * ;
-pub unsafe fn hide(this:DishAllMenuContent_FoodstuffsHistory,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DishAllMenuContent_FoodstuffsHistory as::unity2::ClassIdentity> ::NAME,"Hide",));
-let inner:extern "C" fn(DishAllMenuContent_FoodstuffsHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]pub trait IDishAllMenuContent_FoodstuffsHistoryMethods:IDishAllMenuContent_FoodstuffsHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,foodstuff_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> > ,foodstuff_group:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DishAllMenuContent_FoodstuffsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd1750usize)as*mut u8,();
-(DishAllMenuContent_FoodstuffsHistory)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>)::core::convert::Into::into(foodstuff_item_list),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(foodstuff_group))}
-}
-#[doc="`Show(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]fn show(self,foodstuffs:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> >)->(){unsafe{let __receiver= <DishAllMenuContent_FoodstuffsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd18c0usize)as*mut u8,();
-(DishAllMenuContent_FoodstuffsHistory)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)::core::convert::Into::into(foodstuffs))}
-}
-#[doc="`SetFoodstuffs(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]fn set_foodstuffs(self,foodstuffs:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> >)->(){unsafe{let __receiver= <DishAllMenuContent_FoodstuffsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd19a0usize)as*mut u8,();
-(DishAllMenuContent_FoodstuffsHistory)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)::core::convert::Into::into(foodstuffs))}
-}
-#[doc="`SetFoodstuffItem(crate::unity_engine::gameobject::GameObject, crate::app::foodstuffdata::FoodstuffData)` overload"]fn set_foodstuff_item(self,content_item:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->(){unsafe{let __receiver= <DishAllMenuContent_FoodstuffsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd1d70usize)as*mut u8,();
-(DishAllMenuContent_FoodstuffsHistory)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(content_item),(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(data))}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <DishAllMenuContent_FoodstuffsHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DishAllMenuContent_FoodstuffsHistory_unity2_raw::hide(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl<__T:IDishAllMenuContent_FoodstuffsHistory>IDishAllMenuContent_FoodstuffsHistoryMethods for __T{}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_FoodstuffsHistory{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_foodstuffs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_foodstuff_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-cooking_menu-dishallmenucontent")]impl DishAllMenuContent_FoodstuffsHistory{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(game_object:crate::unity_engine::gameobject::GameObject,foodstuff_item_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,foodstuff_group:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DishAllMenuContent_FoodstuffsHistory), ::core::stringify!(new),));
- <Self as IDishAllMenuContent_FoodstuffsHistoryMethods> ::ctor(this,game_object,foodstuff_item_list,foodstuff_group);
-this}
-}
-
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DishAllMenuContent_EnhanceObject;
-    pub use super::IDishAllMenuContent_EnhanceObject;
-    pub use super::IDishAllMenuContent_EnhanceObjectMethods;
     pub use super::DishAllMenuContent_UnitsHistory;
     pub use super::IDishAllMenuContent_UnitsHistory;
     pub use super::IDishAllMenuContent_UnitsHistoryMethods;
-    pub use super::DishAllMenuContent_HistoryObject;
-    pub use super::IDishAllMenuContent_HistoryObject;
-    pub use super::IDishAllMenuContent_HistoryObjectMethods;
     pub use super::DishAllMenuContent_DishHistory;
     pub use super::IDishAllMenuContent_DishHistory;
     pub use super::IDishAllMenuContent_DishHistoryMethods;
-    pub use super::DishAllMenuContent;
-    pub use super::IDishAllMenuContent;
-    pub use super::IDishAllMenuContentMethods;
+    pub use super::DishAllMenuContent_EnhanceObject;
+    pub use super::IDishAllMenuContent_EnhanceObject;
+    pub use super::IDishAllMenuContent_EnhanceObjectMethods;
     pub use super::DishAllMenuContent_CookHistory;
     pub use super::IDishAllMenuContent_CookHistory;
     pub use super::IDishAllMenuContent_CookHistoryMethods;
     pub use super::DishAllMenuContent_FoodstuffsHistory;
     pub use super::IDishAllMenuContent_FoodstuffsHistory;
     pub use super::IDishAllMenuContent_FoodstuffsHistoryMethods;
+    pub use super::DishAllMenuContent_HistoryObject;
+    pub use super::IDishAllMenuContent_HistoryObject;
+    pub use super::IDishAllMenuContent_HistoryObjectMethods;
+    pub use super::DishAllMenuContent;
+    pub use super::IDishAllMenuContent;
+    pub use super::IDishAllMenuContentMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

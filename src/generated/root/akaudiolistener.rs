@@ -17,126 +17,18 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudiolistener/AkAudioListener.md"))]#[::unity2::class(namespace="",name="AkAudioListener")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkAudioListener{#[static_field]#[rename(name="defaultListeners")]pub default_listeners:crate::root::akaudiolistener::AkAudioListener_DefaultListenerList, #[offset(24)]#[rename(name="akGameObjectID")]pub ak_game_object_id:u64, #[offset(32)]#[rename(name="EmittersToStartListeningTo")]pub emitters_to_start_listening_to:crate::system::collections::generic::list_1::List_1<crate::root::akgameobj::AkGameObj> , #[offset(40)]#[rename(name="EmittersToStopListeningTo")]pub emitters_to_stop_listening_to:crate::system::collections::generic::list_1::List_1<crate::root::akgameobj::AkGameObj> , #[offset(48)]#[rename(name="isDefaultListener")]pub is_default_listener_field:bool, #[offset(52)]#[rename(name="listenerId")]pub listener_id:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudiolistener/AkAudioListener_DefaultListenerList.md"))]#[::unity2::class(namespace="",name="AkAudioListener.DefaultListenerList")]#[parent(crate::root::akaudiolistener::AkAudioListener_BaseListenerList)]pub struct AkAudioListener_DefaultListenerList{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudiolistener/AkAudioListener_BaseListenerList.md"))]#[::unity2::class(namespace="",name="AkAudioListener.BaseListenerList")]#[parent(crate::system::object::Object)]pub struct AkAudioListener_BaseListenerList{#[offset(16)]#[rename(name="listenerIdList")]pub listener_id_list:crate::system::collections::generic::list_1::List_1<u64> , #[offset(24)]#[rename(name="listenerList")]pub listener_list:crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener> ,}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudiolistener/AkAudioListener.md"))]#[::unity2::class(namespace="",name="AkAudioListener")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkAudioListener{#[static_field]#[rename(name="defaultListeners")]pub default_listeners:crate::root::akaudiolistener::AkAudioListener_DefaultListenerList, #[offset(24)]#[rename(name="akGameObjectID")]pub ak_game_object_id:u64, #[offset(32)]#[rename(name="EmittersToStartListeningTo")]pub emitters_to_start_listening_to:crate::system::collections::generic::list_1::List_1<crate::root::akgameobj::AkGameObj> , #[offset(40)]#[rename(name="EmittersToStopListeningTo")]pub emitters_to_stop_listening_to:crate::system::collections::generic::list_1::List_1<crate::root::akgameobj::AkGameObj> , #[offset(48)]#[rename(name="isDefaultListener")]pub is_default_listener_field:bool, #[offset(52)]#[rename(name="listenerId")]pub listener_id:i32,}
-
 }
 
 #[cfg(feature = "root-akaudiolistener-types")]
 pub use __types::*;
-
-#[cfg(feature="root-akaudiolistener")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkAudioListener_DefaultListenerList_unity2_raw{use super:: * ;
-pub unsafe fn add(this:AkAudioListener_DefaultListenerList,listener:crate::root::akaudiolistener::AkAudioListener,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AkAudioListener_DefaultListenerList as::unity2::ClassIdentity> ::NAME,"Add",));
-let inner:extern "C" fn(AkAudioListener_DefaultListenerList,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,listener,__mi)}
-pub unsafe fn remove(this:AkAudioListener_DefaultListenerList,listener:crate::root::akaudiolistener::AkAudioListener,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <AkAudioListener_DefaultListenerList as::unity2::ClassIdentity> ::NAME,"Remove",));
-let inner:extern "C" fn(AkAudioListener_DefaultListenerList,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,listener,__mi)}
-}
-
-#[cfg(feature="root-akaudiolistener")]pub trait IAkAudioListener_DefaultListenerListMethods:IAkAudioListener_DefaultListenerList{#[doc="`Add(crate::root::akaudiolistener::AkAudioListener)` overload"]fn add(self,listener:impl::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>)->bool{unsafe{let __receiver= <AkAudioListener_DefaultListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkAudioListener_DefaultListenerList_unity2_raw::add(__receiver, ::core::convert::Into::into(listener), ::core::option::Option::None)}
-}
-#[doc="`Remove(crate::root::akaudiolistener::AkAudioListener)` overload"]fn remove(self,listener:impl::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>)->bool{unsafe{let __receiver= <AkAudioListener_DefaultListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkAudioListener_DefaultListenerList_unity2_raw::remove(__receiver, ::core::convert::Into::into(listener), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkAudioListener_DefaultListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c0d0usize)as*mut u8,();
-(AkAudioListener_DefaultListenerList)__receiver)}
-}
-}
-
-#[cfg(feature="root-akaudiolistener")]impl<__T:IAkAudioListener_DefaultListenerList>IAkAudioListener_DefaultListenerListMethods for __T{}
-
-#[cfg(feature="root-akaudiolistener")]impl AkAudioListener_DefaultListenerList{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="root-akaudiolistener")]impl AkAudioListener_DefaultListenerList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AkAudioListener_DefaultListenerList), ::core::stringify!(new),));
- <Self as IAkAudioListener_DefaultListenerListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root-akaudiolistener")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkAudioListener_BaseListenerList_unity2_raw{use super:: * ;
-pub unsafe fn add(this:AkAudioListener_BaseListenerList,listener:crate::root::akaudiolistener::AkAudioListener,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AkAudioListener_BaseListenerList as::unity2::ClassIdentity> ::NAME,"Add",));
-let inner:extern "C" fn(AkAudioListener_BaseListenerList,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,listener,__mi)}
-pub unsafe fn remove(this:AkAudioListener_BaseListenerList,listener:crate::root::akaudiolistener::AkAudioListener,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <AkAudioListener_BaseListenerList as::unity2::ClassIdentity> ::NAME,"Remove",));
-let inner:extern "C" fn(AkAudioListener_BaseListenerList,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,listener,__mi)}
-}
-
-#[cfg(feature="root-akaudiolistener")]pub trait IAkAudioListener_BaseListenerListMethods:IAkAudioListener_BaseListenerList{#[doc="`get_ListenerList()` overload"]fn get_listener_list(self,)->crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener>{unsafe{let __receiver= <AkAudioListener_BaseListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9bbf0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener> ;
-(AkAudioListener_BaseListenerList)__receiver)}
-}
-#[doc="`Add(crate::root::akaudiolistener::AkAudioListener)` overload"]fn add(self,listener:impl::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>)->bool{unsafe{let __receiver= <AkAudioListener_BaseListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkAudioListener_BaseListenerList_unity2_raw::add(__receiver, ::core::convert::Into::into(listener), ::core::option::Option::None)}
-}
-#[doc="`Remove(crate::root::akaudiolistener::AkAudioListener)` overload"]fn remove(self,listener:impl::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>)->bool{unsafe{let __receiver= <AkAudioListener_BaseListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkAudioListener_BaseListenerList_unity2_raw::remove(__receiver, ::core::convert::Into::into(listener), ::core::option::Option::None)}
-}
-#[doc="`GetListenerIds()` overload"]fn get_listener_ids(self,)-> ::unity2::Array<u64>{unsafe{let __receiver= <AkAudioListener_BaseListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9bdf0usize)as*mut u8, ::unity2::Array<u64> ;
-(AkAudioListener_BaseListenerList)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkAudioListener_BaseListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9be50usize)as*mut u8,();
-(AkAudioListener_BaseListenerList)__receiver)}
-}
-}
-
-#[cfg(feature="root-akaudiolistener")]impl<__T:IAkAudioListener_BaseListenerList>IAkAudioListener_BaseListenerListMethods for __T{}
-
-#[cfg(feature="root-akaudiolistener")]impl AkAudioListener_BaseListenerList{pub fn get_listener_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_listener_ids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="root-akaudiolistener")]impl AkAudioListener_BaseListenerList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AkAudioListener_BaseListenerList), ::core::stringify!(new),));
- <Self as IAkAudioListener_BaseListenerListMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="root-akaudiolistener")]impl AkAudioListener{#[doc="`get_DefaultListeners()` overload"]pub fn get_default_listeners()->crate::root::akaudiolistener::AkAudioListener_DefaultListenerList{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcf660usize)as*mut u8,crate::root::akaudiolistener::AkAudioListener_DefaultListenerList;
 )}
@@ -211,18 +103,132 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="root-akaudiolistener")]pub trait IAkAudioListener_DefaultListenerListMethods:IAkAudioListener_DefaultListenerList{#[doc="`Add(crate::root::akaudiolistener::AkAudioListener)` overload"]fn add(self,listener:impl::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>)->bool{unsafe{let __receiver= <AkAudioListener_DefaultListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkAudioListener_DefaultListenerList as::unity2::ClassIdentity> ::NAME,"Add",));
+let __inner:extern "C" fn(AkAudioListener_DefaultListenerList,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(listener),__mi)}
+}
+}
+#[doc="`Remove(crate::root::akaudiolistener::AkAudioListener)` overload"]fn remove(self,listener:impl::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>)->bool{unsafe{let __receiver= <AkAudioListener_DefaultListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkAudioListener_DefaultListenerList as::unity2::ClassIdentity> ::NAME,"Remove",));
+let __inner:extern "C" fn(AkAudioListener_DefaultListenerList,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(listener),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkAudioListener_DefaultListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c0d0usize)as*mut u8,();
+(AkAudioListener_DefaultListenerList)__receiver)}
+}
+}
+
+#[cfg(feature="root-akaudiolistener")]impl<__T:IAkAudioListener_DefaultListenerList>IAkAudioListener_DefaultListenerListMethods for __T{}
+
+#[cfg(feature="root-akaudiolistener")]impl AkAudioListener_DefaultListenerList{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root-akaudiolistener")]impl AkAudioListener_DefaultListenerList{#[doc="Direct (non-virtual) call to `AkAudioListener_DefaultListenerList`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add(this:impl::core::convert::Into< ::unity2::IlInstance> ,listener:crate::root::akaudiolistener::AkAudioListener,)->bool{let __mi=Self::add_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),listener, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkAudioListener_DefaultListenerList`'s own `Remove`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn remove(this:impl::core::convert::Into< ::unity2::IlInstance> ,listener:crate::root::akaudiolistener::AkAudioListener,)->bool{let __mi=Self::remove_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),listener, ::core::option::Option::None)}
+}
+
+#[cfg(feature="root-akaudiolistener")]impl AkAudioListener_DefaultListenerList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAudioListener_DefaultListenerList), ::core::stringify!(new),));
+ <Self as IAkAudioListener_DefaultListenerListMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root-akaudiolistener")]pub trait IAkAudioListener_BaseListenerListMethods:IAkAudioListener_BaseListenerList{#[doc="`get_ListenerList()` overload"]fn get_listener_list(self,)->crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener>{unsafe{let __receiver= <AkAudioListener_BaseListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9bbf0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::root::akaudiolistener::AkAudioListener> ;
+(AkAudioListener_BaseListenerList)__receiver)}
+}
+#[doc="`Add(crate::root::akaudiolistener::AkAudioListener)` overload"]fn add(self,listener:impl::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>)->bool{unsafe{let __receiver= <AkAudioListener_BaseListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkAudioListener_BaseListenerList as::unity2::ClassIdentity> ::NAME,"Add",));
+let __inner:extern "C" fn(AkAudioListener_BaseListenerList,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(listener),__mi)}
+}
+}
+#[doc="`Remove(crate::root::akaudiolistener::AkAudioListener)` overload"]fn remove(self,listener:impl::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>)->bool{unsafe{let __receiver= <AkAudioListener_BaseListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkAudioListener_BaseListenerList as::unity2::ClassIdentity> ::NAME,"Remove",));
+let __inner:extern "C" fn(AkAudioListener_BaseListenerList,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(listener),__mi)}
+}
+}
+#[doc="`GetListenerIds()` overload"]fn get_listener_ids(self,)-> ::unity2::Array<u64>{unsafe{let __receiver= <AkAudioListener_BaseListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9bdf0usize)as*mut u8, ::unity2::Array<u64> ;
+(AkAudioListener_BaseListenerList)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkAudioListener_BaseListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9be50usize)as*mut u8,();
+(AkAudioListener_BaseListenerList)__receiver)}
+}
+}
+
+#[cfg(feature="root-akaudiolistener")]impl<__T:IAkAudioListener_BaseListenerList>IAkAudioListener_BaseListenerListMethods for __T{}
+
+#[cfg(feature="root-akaudiolistener")]impl AkAudioListener_BaseListenerList{pub fn get_listener_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_listener_ids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="root-akaudiolistener")]impl AkAudioListener_BaseListenerList{#[doc="Direct (non-virtual) call to `AkAudioListener_BaseListenerList`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add(this:impl::core::convert::Into< ::unity2::IlInstance> ,listener:crate::root::akaudiolistener::AkAudioListener,)->bool{let __mi=Self::add_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),listener, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkAudioListener_BaseListenerList`'s own `Remove`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn remove(this:impl::core::convert::Into< ::unity2::IlInstance> ,listener:crate::root::akaudiolistener::AkAudioListener,)->bool{let __mi=Self::remove_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),listener, ::core::option::Option::None)}
+}
+
+#[cfg(feature="root-akaudiolistener")]impl AkAudioListener_BaseListenerList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAudioListener_BaseListenerList), ::core::stringify!(new),));
+ <Self as IAkAudioListener_BaseListenerListMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root-akaudiolistener")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkAudioListener;
+    pub use super::IAkAudioListener;
+    pub use super::IAkAudioListenerMethods;
     pub use super::AkAudioListener_DefaultListenerList;
     pub use super::IAkAudioListener_DefaultListenerList;
     pub use super::IAkAudioListener_DefaultListenerListMethods;
     pub use super::AkAudioListener_BaseListenerList;
     pub use super::IAkAudioListener_BaseListenerList;
     pub use super::IAkAudioListener_BaseListenerListMethods;
-    pub use super::AkAudioListener;
-    pub use super::IAkAudioListener;
-    pub use super::IAkAudioListenerMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

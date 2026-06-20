@@ -17,38 +17,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/demos/fkoffset/FKOffset_Offset.md"))]#[::unity2::class(namespace="RootMotion.Demos",name="FKOffset.Offset")]#[parent(crate::system::object::Object)]pub struct FKOffset_Offset{#[offset(16)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="bone")]pub bone:crate::unity_engine::humanbodybones::HumanBodyBones, #[offset(28)]#[rename(name="rotationOffset")]pub rotation_offset:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="t")]pub t:crate::unity_engine::transform::Transform,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/demos/fkoffset/FKOffset.md"))]#[::unity2::class(namespace="RootMotion.Demos",name="FKOffset")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FKOffset{#[offset(24)]#[rename(name="offsets")]pub offsets: ::unity2::Array<crate::root_motion::demos::fkoffset::FKOffset_Offset> , #[offset(32)]#[rename(name="animator")]pub animator:crate::unity_engine::animator::Animator,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/demos/fkoffset/FKOffset_Offset.md"))]#[::unity2::class(namespace="RootMotion.Demos",name="FKOffset.Offset")]#[parent(crate::system::object::Object)]pub struct FKOffset_Offset{#[offset(16)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="bone")]pub bone:crate::unity_engine::humanbodybones::HumanBodyBones, #[offset(28)]#[rename(name="rotationOffset")]pub rotation_offset:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="t")]pub t:crate::unity_engine::transform::Transform,}
 
 }
 
 #[cfg(feature = "root_motion-demos-fkoffset-types")]
 pub use __types::*;
-
-#[cfg(feature="root_motion-demos-fkoffset")]pub trait IFKOffset_OffsetMethods:IFKOffset_Offset{#[doc="`Apply(crate::unity_engine::animator::Animator)` overload"]fn apply(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{let __receiver= <FKOffset_Offset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a4b0usize)as*mut u8,();
-(FKOffset_Offset)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FKOffset_Offset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a620usize)as*mut u8,();
-(FKOffset_Offset)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-demos-fkoffset")]impl<__T:IFKOffset_Offset>IFKOffset_OffsetMethods for __T{}
-
-#[cfg(feature="root_motion-demos-fkoffset")]impl FKOffset_Offset{pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root_motion-demos-fkoffset")]impl FKOffset_Offset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FKOffset_Offset), ::core::stringify!(new),));
- <Self as IFKOffset_OffsetMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="root_motion-demos-fkoffset")]pub trait IFKOffsetMethods:IFKOffset{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <FKOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2d46210usize)as*mut u8,();
@@ -83,15 +60,38 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root_motion-demos-fkoffset")]pub trait IFKOffset_OffsetMethods:IFKOffset_Offset{#[doc="`Apply(crate::unity_engine::animator::Animator)` overload"]fn apply(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{let __receiver= <FKOffset_Offset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a4b0usize)as*mut u8,();
+(FKOffset_Offset)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FKOffset_Offset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a620usize)as*mut u8,();
+(FKOffset_Offset)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-demos-fkoffset")]impl<__T:IFKOffset_Offset>IFKOffset_OffsetMethods for __T{}
+
+#[cfg(feature="root_motion-demos-fkoffset")]impl FKOffset_Offset{pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root_motion-demos-fkoffset")]impl FKOffset_Offset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FKOffset_Offset), ::core::stringify!(new),));
+ <Self as IFKOffset_OffsetMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root_motion-demos-fkoffset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FKOffset_Offset;
-    pub use super::IFKOffset_Offset;
-    pub use super::IFKOffset_OffsetMethods;
     pub use super::FKOffset;
     pub use super::IFKOffset;
     pub use super::IFKOffsetMethods;
+    pub use super::FKOffset_Offset;
+    pub use super::IFKOffset_Offset;
+    pub use super::IFKOffset_OffsetMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

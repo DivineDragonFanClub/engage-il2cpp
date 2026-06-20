@@ -25,6 +25,24 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tastedata/TasteData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TasteData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for TasteData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TasteData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TasteData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TasteData_Flags{pub fn is_bad()->Self{Self{value:1}
+}
+pub fn disable_food_enhance()->Self{Self{value:2}
+}
+pub fn is_make_bento()->Self{Self{value:4}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tastedata/TasteData_ConditionType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TasteData_ConditionType{pub value:i32,}
 impl::unity2::ClassIdentity for TasteData_ConditionType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="TasteData.ConditionType";
@@ -55,24 +73,6 @@ pub fn is_adult()->Self{Self{value:8}
 pub fn is_child()->Self{Self{value:9}
 }
 pub fn is_lueur()->Self{Self{value:10}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tastedata/TasteData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TasteData_Flags{pub value:i32,}
-impl::unity2::ClassIdentity for TasteData_Flags{const NAMESPACE: &'static str="App";
-const NAME: &'static str="TasteData.Flags";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TasteData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TasteData_Flags{pub fn is_bad()->Self{Self{value:1}
-}
-pub fn disable_food_enhance()->Self{Self{value:2}
-}
-pub fn is_make_bento()->Self{Self{value:4}
 }
 }
 
@@ -117,19 +117,6 @@ pub fn g()->Self{Self{value:8}
 #[cfg(feature = "app-tastedata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-tastedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TasteData_FlagField_unity2_raw{use super:: * ;
-pub unsafe fn to_int(this:TasteData_FlagField,value:crate::app::tastedata::TasteData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <TasteData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
-let inner:extern "C" fn(TasteData_FlagField,crate::app::tastedata::TasteData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-}
-
 #[cfg(feature="app-tastedata")]pub trait ITasteData_FlagFieldMethods:ITasteData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TasteData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21ff710usize)as*mut u8,();
 (TasteData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
@@ -139,7 +126,16 @@ inner(this,value,__mi)}
 (TasteData_FlagField)__receiver,(crate::app::tastedata::TasteData_Flags)::core::convert::Into::into(f))}
 }
 #[doc="`ToInt(crate::app::tastedata::TasteData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::tastedata::TasteData_Flags>)->i32{unsafe{let __receiver= <TasteData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TasteData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TasteData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let __inner:extern "C" fn(TasteData_FlagField,crate::app::tastedata::TasteData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -148,6 +144,11 @@ __TasteData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into
 #[cfg(feature="app-tastedata")]impl TasteData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-tastedata")]impl TasteData_FlagField{#[doc="Direct (non-virtual) call to `TasteData_FlagField`'s own `ToInt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_int(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::tastedata::TasteData_Flags,)->i32{let __mi=Self::to_int_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::tastedata::TasteData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-tastedata")]impl TasteData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -160,19 +161,6 @@ this}
  failed to instantiate", ::core::stringify!(TasteData_FlagField), ::core::stringify!(new_2),));
  <Self as ITasteData_FlagFieldMethods> ::ctor_2(this,f);
 this}
-}
-
-#[cfg(feature="app-tastedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TasteData_unity2_raw{use super:: * ;
-pub unsafe fn get_debug_name(this:TasteData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <TasteData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let inner:extern "C" fn(TasteData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-tastedata")]impl TasteData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21deea0usize)as*mut u8,();
@@ -273,7 +261,16 @@ inner(this,__mi)}
 (TasteData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TasteData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TasteData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let __inner:extern "C" fn(TasteData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsConditional()` overload"]fn is_conditional(self,)->bool{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21df130usize)as*mut u8,bool;
@@ -331,6 +328,11 @@ pub fn is_make_bento_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn get_grade_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
 }
 
+#[cfg(feature="app-tastedata")]impl TasteData{#[doc="Direct (non-virtual) call to `TasteData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-tastedata")]impl TasteData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TasteData), ::core::stringify!(new),));
@@ -341,8 +343,8 @@ this}
 #[cfg(feature = "app-tastedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TasteData_ConditionType;
     pub use super::TasteData_Flags;
+    pub use super::TasteData_ConditionType;
     pub use super::TasteData_FlagField;
     pub use super::ITasteData_FlagField;
     pub use super::ITasteData_FlagFieldMethods;

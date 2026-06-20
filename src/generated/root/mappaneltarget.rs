@@ -25,6 +25,40 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mappaneltarget/MapPanelTarget_DangerType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelTarget_DangerType{pub value:i32,}
+impl::unity2::ClassIdentity for MapPanelTarget_DangerType{const NAMESPACE: &'static str="";
+const NAME: &'static str="MapPanelTarget.DangerType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapPanelTarget_DangerType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapPanelTarget_DangerType{pub fn none()->Self{Self{value:1}
+}
+pub fn disadvantage()->Self{Self{value:2}
+}
+pub fn criticaled()->Self{Self{value:4}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mappaneltarget/MapPanelTarget_DirtyType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelTarget_DirtyType{pub value:i32,}
+impl::unity2::ClassIdentity for MapPanelTarget_DirtyType{const NAMESPACE: &'static str="";
+const NAME: &'static str="MapPanelTarget.DirtyType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapPanelTarget_DirtyType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapPanelTarget_DirtyType{pub fn attack()->Self{Self{value:1}
+}
+pub fn full_bullet()->Self{Self{value:2}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mappaneltarget/MapPanelTarget_MeshIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelTarget_MeshIndex{pub value:i32,}
 impl::unity2::ClassIdentity for MapPanelTarget_MeshIndex{const NAMESPACE: &'static str="";
 const NAME: &'static str="MapPanelTarget.MeshIndex";
@@ -47,40 +81,6 @@ pub fn num()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mappaneltarget/MapPanelTarget_DirtyType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelTarget_DirtyType{pub value:i32,}
-impl::unity2::ClassIdentity for MapPanelTarget_DirtyType{const NAMESPACE: &'static str="";
-const NAME: &'static str="MapPanelTarget.DirtyType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapPanelTarget_DirtyType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapPanelTarget_DirtyType{pub fn attack()->Self{Self{value:1}
-}
-pub fn full_bullet()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mappaneltarget/MapPanelTarget_DangerType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelTarget_DangerType{pub value:i32,}
-impl::unity2::ClassIdentity for MapPanelTarget_DangerType{const NAMESPACE: &'static str="";
-const NAME: &'static str="MapPanelTarget.DangerType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapPanelTarget_DangerType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapPanelTarget_DangerType{pub fn none()->Self{Self{value:1}
-}
-pub fn disadvantage()->Self{Self{value:2}
-}
-pub fn criticaled()->Self{Self{value:4}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mappaneltarget/MapPanelTarget.md"))]#[::unity2::class(namespace="",name="MapPanelTarget")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::root::mappaneltarget::MapPanelTarget>)]pub struct MapPanelTarget{#[offset(64)]#[rename(name="m_MovingAlpha")]pub m_moving_alpha:crate::app::gamecurve::GameCurve, #[offset(72)]#[rename(name="m_StoppedAlpha")]pub m_stopped_alpha:crate::app::gamecurve::GameCurve, #[static_field]#[rename(name="m_TargetTexW")]pub m_target_tex_w:f32, #[offset(80)]#[rename(name="m_DangerUnits")]pub m_danger_units:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::mappaneltarget::MapPanelTarget_DangerType> , #[offset(88)]#[rename(name="m_GeneralMaterial")]pub m_general_material:crate::unity_engine::material::Material, #[offset(96)]#[rename(name="m_EngageMaterial")]pub m_engage_material:crate::unity_engine::material::Material, #[offset(104)]#[rename(name="m_GunnerMaterial")]pub m_gunner_material:crate::unity_engine::material::Material, #[offset(112)]#[rename(name="m_FullBulletMaterial")]pub m_full_bullet_material:crate::unity_engine::material::Material, #[offset(120)]#[rename(name="m_DefaultColor")]pub m_default_color:crate::unity_engine::color::Color, #[offset(136)]#[rename(name="m_DisadvantageColor")]pub m_disadvantage_color:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="m_CriticaledColor")]pub m_criticaled_color:crate::unity_engine::color::Color, #[offset(168)]#[rename(name="m_EngageColor")]pub m_engage_color:crate::unity_engine::color::Color, #[offset(184)]#[rename(name="m_GunnerColor")]pub m_gunner_color:crate::unity_engine::color::Color, #[offset(200)]#[rename(name="m_FriendlyImpactColor")]pub m_friendly_impact_color:crate::unity_engine::color::Color, #[offset(216)]#[rename(name="m_HostileImpactColor")]pub m_hostile_impact_color:crate::unity_engine::color::Color, #[offset(232)]#[rename(name="m_ScrollForGeneral")]pub m_scroll_for_general:crate::unity_engine::animationcurve::AnimationCurve, #[offset(240)]#[rename(name="m_ScrollForGunner")]pub m_scroll_for_gunner:crate::unity_engine::animationcurve::AnimationCurve, #[offset(248)]#[rename(name="m_AlphaCurve")]pub m_alpha_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(256)]#[rename(name="m_PositionZOffsetForGeneral")]pub m_position_z_offset_for_general:f32, #[offset(260)]#[rename(name="m_PositionZOffsetForHorse")]pub m_position_z_offset_for_horse:f32, #[offset(264)]#[rename(name="m_PositionZOffsetForFly")]pub m_position_z_offset_for_fly:f32, #[offset(268)]#[rename(name="m_PositionZOffsetForBmapSize2")]pub m_position_z_offset_for_bmap_size2:f32, #[offset(272)]#[rename(name="m_PositionZOffsetForBmapSize3")]pub m_position_z_offset_for_bmap_size3:f32, #[offset(276)]#[rename(name="m_PositionZOffsetForBmapSize5")]pub m_position_z_offset_for_bmap_size5:f32, #[offset(280)]#[rename(name="m_ArchHeightOffset")]pub m_arch_height_offset:f32, #[offset(288)]#[rename(name="m_GeneralAttackerList")]pub m_general_attacker_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(296)]#[rename(name="m_EngageAttackerList")]pub m_engage_attacker_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(304)]#[rename(name="m_GunnerList")]pub m_gunner_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(312)]#[rename(name="m_FullBulletList")]pub m_full_bullet_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(320)]#[rename(name="m_Target")]pub m_target:crate::app::unit::Unit, #[offset(328)]#[rename(name="m_DestX")]pub m_dest_x:i32, #[offset(332)]#[rename(name="m_DestZ")]pub m_dest_z:i32, #[offset(336)]#[rename(name="m_PropertyID")]pub m_property_id:i32, #[offset(340)]#[rename(name="m_Time")]pub m_time:f32, #[offset(344)]#[rename(name="m_Current")]pub m_current:crate::app::gamecurve::GameCurve, #[offset(352)]#[rename(name="m_Arrow")]pub m_arrow:crate::root::maparrow::MapArrow, #[offset(360)]#[rename(name="m_DirtyFlag")]pub m_dirty_flag:crate::root::mappaneltarget::MapPanelTarget_DirtyType,}
 
 }
@@ -88,44 +88,29 @@ pub fn criticaled()->Self{Self{value:4}
 #[cfg(feature = "root-mappaneltarget-types")]
 pub use __types::*;
 
-#[cfg(feature="root-mappaneltarget")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapPanelTarget_unity2_raw{use super:: * ;
-pub unsafe fn get_sub_mesh_count(this:MapPanelTarget,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-mappaneltarget")]pub trait IMapPanelTargetMethods:IMapPanelTarget{#[doc="`get_SubMeshCount()` overload"]fn get_sub_mesh_count(self,)->i32{unsafe{let __receiver= <MapPanelTarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <MapPanelTarget as::unity2::ClassIdentity> ::NAME,"get_SubMeshCount",));
-let inner:extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn awake(this:MapPanelTarget,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapPanelTarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <MapPanelTarget as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_source_materials(this:MapPanelTarget,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MapPanelTarget as::unity2::ClassIdentity> ::NAME,"GetSourceMaterials",));
-let inner:extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="root-mappaneltarget")]pub trait IMapPanelTargetMethods:IMapPanelTarget{#[doc="`get_SubMeshCount()` overload"]fn get_sub_mesh_count(self,)->i32{unsafe{let __receiver= <MapPanelTarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapPanelTarget_unity2_raw::get_sub_mesh_count(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapPanelTarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapPanelTarget_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapPanelTarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23561b0usize)as*mut u8,();
@@ -136,7 +121,16 @@ __MapPanelTarget_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 (MapPanelTarget)__receiver)}
 }
 #[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MapPanelTarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapPanelTarget_unity2_raw::get_source_materials(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapPanelTarget as::unity2::ClassIdentity> ::NAME,"GetSourceMaterials",));
+let __inner:extern "C" fn(MapPanelTarget, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateDangerUnits()` overload"]fn update_danger_units(self,)->(){unsafe{let __receiver= <MapPanelTarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23576a0usize)as*mut u8,();
@@ -259,6 +253,17 @@ pub fn get_arch_height_offset_method_info()-> & 'static::unity2::il2cpp::MethodI
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
 }
 
+#[cfg(feature="root-mappaneltarget")]impl MapPanelTarget{#[doc="Direct (non-virtual) call to `MapPanelTarget`'s own `get_SubMeshCount`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sub_mesh_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_sub_mesh_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapPanelTarget`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapPanelTarget`'s own `GetSourceMaterials`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_source_materials(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __mi=Self::get_source_materials_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="root-mappaneltarget")]impl MapPanelTarget{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapPanelTarget), ::core::stringify!(new),));
@@ -269,9 +274,9 @@ this}
 #[cfg(feature = "root-mappaneltarget")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelTarget_MeshIndex;
-    pub use super::MapPanelTarget_DirtyType;
     pub use super::MapPanelTarget_DangerType;
+    pub use super::MapPanelTarget_DirtyType;
+    pub use super::MapPanelTarget_MeshIndex;
     pub use super::MapPanelTarget;
     pub use super::IMapPanelTarget;
     pub use super::IMapPanelTargetMethods;

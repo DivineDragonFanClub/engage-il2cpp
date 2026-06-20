@@ -40,19 +40,6 @@ pub fn skip_fade_out()->Self{Self{value:1}
 #[cfg(feature = "combat-classchangesequence-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-classchangesequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ClassChangeSequence_unity2_raw{use super:: * ;
-pub unsafe fn get_global_asset_path(this:ClassChangeSequence,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <ClassChangeSequence as::unity2::ClassIdentity> ::NAME,"get_GlobalAssetPath",));
-let inner:extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="combat-classchangesequence")]impl ClassChangeSequence{#[doc="`IsExist()` overload"]pub fn is_exist()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea68c0usize)as*mut u8,bool;
 )}
 }
@@ -62,7 +49,16 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="combat-classchangesequence")]pub trait IClassChangeSequenceMethods:IClassChangeSequence{#[doc="`get_GlobalAssetPath()` overload"]fn get_global_asset_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ClassChangeSequence_unity2_raw::get_global_asset_path(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <ClassChangeSequence as::unity2::ClassIdentity> ::NAME,"get_GlobalAssetPath",));
+let __inner:extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_ReturnMode()` overload"]fn get_return_mode(self,)->crate::app::viewmode::ViewMode_Mode{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea7950usize)as*mut u8,crate::app::viewmode::ViewMode_Mode;
@@ -166,6 +162,11 @@ pub fn start_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn stop_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 pub fn setup_game_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 pub fn create_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="combat-classchangesequence")]impl ClassChangeSequence{#[doc="Direct (non-virtual) call to `ClassChangeSequence`'s own `get_GlobalAssetPath`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_global_asset_path(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_global_asset_path_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-classchangesequence")]impl ClassChangeSequence{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::viewmode::ViewMode_Mode)` — overload selector"]pub fn new(before:crate::app::unit::Unit,after:crate::app::unit::Unit,camera_mode:crate::app::viewmode::ViewMode_Mode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

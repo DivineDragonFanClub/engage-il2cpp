@@ -22,10 +22,10 @@ impl::unity2::IlType for Hashtable_bucket{fn il_type()-> &'static::unity2::il2cp
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_ValueCollection.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.ValueCollection")]#[parent(crate::system::object::Object)]pub struct Hashtable_ValueCollection{#[offset(16)]#[rename(name="_hashtable")]pub hashtable:crate::system::collections::hashtable::Hashtable,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable")]#[parent(crate::system::object::Object)]pub struct Hashtable{#[static_field]#[rename(name="HashPrime")]pub hash_prime:i32, #[static_field]#[rename(name="InitialSize")]pub initial_size:i32, #[static_field]#[rename(name="LoadFactorName")]pub load_factor_name: ::unity2::Il2CppString, #[static_field]#[rename(name="VersionName")]pub version_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ComparerName")]pub comparer_name: ::unity2::Il2CppString, #[static_field]#[rename(name="HashCodeProviderName")]pub hash_code_provider_name: ::unity2::Il2CppString, #[static_field]#[rename(name="HashSizeName")]pub hash_size_name: ::unity2::Il2CppString, #[static_field]#[rename(name="KeysName")]pub keys_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ValuesName")]pub values_name: ::unity2::Il2CppString, #[static_field]#[rename(name="KeyComparerName")]pub key_comparer_name: ::unity2::Il2CppString, #[offset(16)]#[rename(name="buckets")]pub buckets: ::unity2::Array<crate::system::collections::hashtable::Hashtable_bucket> , #[offset(24)]#[rename(name="count")]pub count:i32, #[offset(28)]#[rename(name="occupancy")]pub occupancy:i32, #[offset(32)]#[rename(name="loadsize")]pub loadsize:i32, #[offset(36)]#[rename(name="loadFactor")]pub load_factor:f32, #[offset(40)]#[rename(name="version")]pub version:i32, #[offset(44)]#[rename(name="isWriterInProgress")]pub is_writer_in_progress:bool, #[offset(48)]#[rename(name="keys")]pub keys:crate::system::collections::icollection::ICollection, #[offset(56)]#[rename(name="values")]pub values:crate::system::collections::icollection::ICollection, #[offset(64)]#[rename(name="_keycomparer")]pub keycomparer:crate::system::collections::iequalitycomparer::IEqualityComparer, #[offset(72)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_KeyCollection.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.KeyCollection")]#[parent(crate::system::object::Object)]pub struct Hashtable_KeyCollection{#[offset(16)]#[rename(name="_hashtable")]pub hashtable:crate::system::collections::hashtable::Hashtable,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_HashtableDebugView.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.HashtableDebugView")]#[parent(crate::system::object::Object)]pub struct Hashtable_HashtableDebugView{}
@@ -34,7 +34,7 @@ impl::unity2::IlType for Hashtable_bucket{fn il_type()-> &'static::unity2::il2cp
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_HashtableEnumerator.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.HashtableEnumerator")]#[parent(crate::system::object::Object)]pub struct Hashtable_HashtableEnumerator{#[offset(16)]#[rename(name="hashtable")]pub hashtable:crate::system::collections::hashtable::Hashtable, #[offset(24)]#[rename(name="bucket")]pub bucket:i32, #[offset(28)]#[rename(name="version")]pub version:i32, #[offset(32)]#[rename(name="current")]pub current:bool, #[offset(36)]#[rename(name="getObjectRetType")]pub get_object_ret_type:i32, #[offset(40)]#[rename(name="currentKey")]pub current_key: ::unity2::IlInstance, #[offset(48)]#[rename(name="currentValue")]pub current_value: ::unity2::IlInstance,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_ValueCollection.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.ValueCollection")]#[parent(crate::system::object::Object)]pub struct Hashtable_ValueCollection{#[offset(16)]#[rename(name="_hashtable")]pub hashtable:crate::system::collections::hashtable::Hashtable,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_KeyCollection.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.KeyCollection")]#[parent(crate::system::object::Object)]pub struct Hashtable_KeyCollection{#[offset(16)]#[rename(name="_hashtable")]pub hashtable:crate::system::collections::hashtable::Hashtable,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashtable/Hashtable_SyncHashtable.md"))]#[::unity2::class(namespace="System.Collections",name="Hashtable.SyncHashtable")]#[parent(crate::system::collections::hashtable::Hashtable)]pub struct Hashtable_SyncHashtable{#[offset(80)]#[rename(name="_table")]pub table:crate::system::collections::hashtable::Hashtable,}
@@ -44,217 +44,104 @@ impl::unity2::IlType for Hashtable_bucket{fn il_type()-> &'static::unity2::il2cp
 #[cfg(feature = "system-collections-hashtable-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-hashtable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Hashtable_unity2_raw{use super:: * ;
-pub unsafe fn add(this:Hashtable,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="system-collections-hashtable")]pub trait IHashtable_ValueCollectionMethods:IHashtable_ValueCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]fn ctor(self,hashtable:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable>)->(){unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8670usize)as*mut u8,();
+(Hashtable_ValueCollection)__receiver,(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(hashtable))}
+}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",22usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"Add",));
-let inner:extern "C" fn(Hashtable,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",9usize,__vt.len(), <Hashtable_ValueCollection as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let __inner:extern "C" fn(Hashtable_ValueCollection, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,value,__mi)}
-pub unsafe fn clear(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index),__mi)}
+}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",23usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"Clear",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",10usize,__vt.len(), <Hashtable_ValueCollection as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let __inner:extern "C" fn(Hashtable_ValueCollection, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn clone(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",24usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"Clone",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",11usize,__vt.len(), <Hashtable_ValueCollection as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let __inner:extern "C" fn(Hashtable_ValueCollection, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn contains(this:Hashtable,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",25usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"Contains",));
-let inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",12usize,__vt.len(), <Hashtable_ValueCollection as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let __inner:extern "C" fn(Hashtable_ValueCollection, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn contains_key(this:Hashtable,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",26usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"ContainsKey",));
-let inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <Hashtable_ValueCollection as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let __inner:extern "C" fn(Hashtable_ValueCollection, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn copy_to(this:Hashtable,array: ::unity2::IlInstance,array_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"CopyTo",));
-let inner:extern "C" fn(Hashtable, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,array_index,__mi)}
-pub unsafe fn get_item(this:Hashtable,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_Item",));
-let inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn set_item(this:Hashtable,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"set_Item",));
-let inner:extern "C" fn(Hashtable,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,value,__mi)}
-pub unsafe fn system_collections_i_enumerable_get_enumerator(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_enumerator(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_hash(this:Hashtable,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"GetHash",));
-let inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn get_is_read_only(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_is_fixed_size(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_IsFixedSize",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_is_synchronized(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",34usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn key_equals(this:Hashtable,item:crate::system::object::Object,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",35usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"KeyEquals",));
-let inner:extern "C" fn(Hashtable,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,item,key,__mi)}
-pub unsafe fn get_keys(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",36usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_Keys",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_values(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",37usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_Values",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn remove(this:Hashtable,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",38usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"Remove",));
-let inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn get_sync_root(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",39usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_count(this:Hashtable,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",40usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_Count",));
-let inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_deserialization(this:Hashtable,sender:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"OnDeserialization",));
-let inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sender,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="system-collections-hashtable")]impl<__T:IHashtable_ValueCollection>IHashtable_ValueCollectionMethods for __T{}
+
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_ValueCollection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_ValueCollection{#[doc="Direct (non-virtual) call to `Hashtable_ValueCollection`'s own `CopyTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn copy_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::IlInstance,array_index:i32,)->(){let __mi=Self::copy_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,array_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_ValueCollection`'s own `GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_ValueCollection`'s own `get_IsSynchronized`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_synchronized(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_synchronized_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_ValueCollection`'s own `get_SyncRoot`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sync_root(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_sync_root_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_ValueCollection`'s own `get_Count`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_ValueCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]pub fn new(hashtable:crate::system::collections::hashtable::Hashtable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable_ValueCollection), ::core::stringify!(new),));
+ <Self as IHashtable_ValueCollectionMethods> ::ctor(this,hashtable);
+this}
 }
 
 #[cfg(feature="system-collections-hashtable")]impl Hashtable{#[doc="`Synchronized(crate::system::collections::hashtable::Hashtable)` overload"]pub fn synchronized(table:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable>)->crate::system::collections::hashtable::Hashtable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3820770usize)as*mut u8,crate::system::collections::hashtable::Hashtable;
@@ -307,19 +194,64 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x381ecc0usize)as*mut
 (__ret,__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`Add(crate::system::object::Object, crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::add(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"Add",));
+let __inner:extern "C" fn(Hashtable,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::clear(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"Clear",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::clone(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"Clone",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::contains(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"Contains",));
+let __inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`ContainsKey(crate::system::object::Object)` overload"]fn contains_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::contains_key(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"ContainsKey",));
+let __inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`CopyKeys(::unity2::IlInstance, i32)` overload"]fn copy_keys(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x381f5f0usize)as*mut u8,();
@@ -330,17 +262,44 @@ __Hashtable_unity2_raw::contains_key(__receiver, ::core::convert::Into::into(key
 (Hashtable)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
 }
 #[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let __inner:extern "C" fn(Hashtable, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index),__mi)}
+}
 }
 #[doc="`CopyValues(::unity2::IlInstance, i32)` overload"]fn copy_values(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x381f940usize)as*mut u8,();
 (Hashtable)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
 }
 #[doc="`get_Item(crate::system::object::Object)` overload"]fn get_item(self,key:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::get_item(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_Item",));
+let __inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_item(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::set_item(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"set_Item",));
+let __inner:extern "C" fn(Hashtable,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`expand()` overload"]fn expand(self,)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x381fc30usize)as*mut u8,();
@@ -359,31 +318,112 @@ __Hashtable_unity2_raw::set_item(__receiver, ::core::convert::Into::into(key), :
 (Hashtable)__receiver,(i32)::core::convert::Into::into(newsize),(bool)::core::convert::Into::into(force_new_hash_code))}
 }
 #[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::system_collections_i_enumerable_get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetHash(crate::system::object::Object)` overload"]fn get_hash(self,key:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::get_hash(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"GetHash",));
+let __inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_IsFixedSize()` overload"]fn get_is_fixed_size(self,)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::get_is_fixed_size(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_IsFixedSize",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`KeyEquals(crate::system::object::Object, crate::system::object::Object)` overload"]fn key_equals(self,item:impl::core::convert::Into<crate::system::object::Object> ,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::key_equals(__receiver, ::core::convert::Into::into(item), ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"KeyEquals",));
+let __inner:extern "C" fn(Hashtable,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(item), ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::get_keys(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_Keys",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Values()` overload"]fn get_values(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::get_values(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_Values",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Insert(crate::system::object::Object, crate::system::object::Object, bool)` overload"]fn insert(self,key:impl::core::convert::Into<crate::system::object::Object> ,nvalue:impl::core::convert::Into<crate::system::object::Object> ,add:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x381ed30usize)as*mut u8,();
@@ -394,16 +434,52 @@ __Hashtable_unity2_raw::get_values(__receiver, ::core::option::Option::None)}
 (Hashtable)__receiver,(::unity2::Array<crate::system::collections::hashtable::Hashtable_bucket>)::core::convert::Into::into(new_buckets),(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(nvalue),(i32)::core::convert::Into::into(hashcode))}
 }
 #[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::remove(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"Remove",));
+let __inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let __inner:extern "C" fn(Hashtable, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDeserialization(crate::system::object::Object)` overload"]fn on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_unity2_raw::on_deserialization(__receiver, ::core::convert::Into::into(sender), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <Hashtable as::unity2::ClassIdentity> ::NAME,"OnDeserialization",));
+let __inner:extern "C" fn(Hashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(sender),__mi)}
+}
 }
 }
 
@@ -450,6 +526,71 @@ pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
 pub fn synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
 pub fn on_deserialization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+}
+
+#[cfg(feature="system-collections-hashtable")]impl Hashtable{#[doc="Direct (non-virtual) call to `Hashtable`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,value:crate::system::object::Object,)->(){let __mi=Self::add_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `Clear`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clear(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::clear_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `Clone`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clone(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::clone_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `Contains`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn contains(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->bool{let __mi=Self::contains_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `ContainsKey`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn contains_key(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->bool{let __mi=Self::contains_key_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `CopyTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn copy_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::IlInstance,array_index:i32,)->(){let __mi=Self::copy_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,array_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `get_Item`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->crate::system::object::Object{let __mi=Self::get_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `set_Item`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,value:crate::system::object::Object,)->(){let __mi=Self::set_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `System.Collections.IEnumerable.GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_enumerable_get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::system_collections_i_enumerable_get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __mi=Self::get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `GetHash`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->i32{let __mi=Self::get_hash_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `get_IsReadOnly`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_read_only(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_read_only_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `get_IsFixedSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_fixed_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_fixed_size_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `get_IsSynchronized`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_synchronized(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_synchronized_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `KeyEquals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,item:crate::system::object::Object,key:crate::system::object::Object,)->bool{let __mi=Self::key_equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),item,key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `get_Keys`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_keys(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::icollection::ICollection{let __mi=Self::get_keys_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `get_Values`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_values(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::icollection::ICollection{let __mi=Self::get_values_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `Remove`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn remove(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->(){let __mi=Self::remove_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `get_SyncRoot`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sync_root(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_sync_root_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `get_Count`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable`'s own `OnDeserialization`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialization(this:impl::core::convert::Into< ::unity2::IlInstance> ,sender:crate::system::object::Object,)->(){let __mi=Self::on_deserialization_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sender, ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-collections-hashtable")]impl Hashtable{#[doc="`.ctor(bool)` — overload selector"]pub fn new(trash:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -499,194 +640,93 @@ this}
 this}
 }
 
-#[cfg(feature="system-collections-hashtable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Hashtable_KeyCollection_unity2_raw{use super:: * ;
-pub unsafe fn copy_to(this:Hashtable_KeyCollection,array: ::unity2::IlInstance,array_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <Hashtable_KeyCollection as::unity2::ClassIdentity> ::NAME,"CopyTo",));
-let inner:extern "C" fn(Hashtable_KeyCollection, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,array_index,__mi)}
-pub unsafe fn get_enumerator(this:Hashtable_KeyCollection,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <Hashtable_KeyCollection as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
-let inner:extern "C" fn(Hashtable_KeyCollection, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_is_synchronized(this:Hashtable_KeyCollection,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <Hashtable_KeyCollection as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
-let inner:extern "C" fn(Hashtable_KeyCollection, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_sync_root(this:Hashtable_KeyCollection,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <Hashtable_KeyCollection as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
-let inner:extern "C" fn(Hashtable_KeyCollection, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_count(this:Hashtable_KeyCollection,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <Hashtable_KeyCollection as::unity2::ClassIdentity> ::NAME,"get_Count",));
-let inner:extern "C" fn(Hashtable_KeyCollection, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="system-collections-hashtable")]pub trait IHashtable_KeyCollectionMethods:IHashtable_KeyCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]fn ctor(self,hashtable:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable>)->(){unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7620usize)as*mut u8,();
-(Hashtable_KeyCollection)__receiver,(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(hashtable))}
-}
-#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_KeyCollection_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index), ::core::option::Option::None)}
-}
-#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_KeyCollection_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_KeyCollection_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_KeyCollection_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_KeyCollection_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="system-collections-hashtable")]impl<__T:IHashtable_KeyCollection>IHashtable_KeyCollectionMethods for __T{}
-
-#[cfg(feature="system-collections-hashtable")]impl Hashtable_KeyCollection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="system-collections-hashtable")]impl Hashtable_KeyCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]pub fn new(hashtable:crate::system::collections::hashtable::Hashtable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Hashtable_KeyCollection), ::core::stringify!(new),));
- <Self as IHashtable_KeyCollectionMethods> ::ctor(this,hashtable);
-this}
-}
-
-#[cfg(feature="system-collections-hashtable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Hashtable_HashtableEnumerator_unity2_raw{use super:: * ;
-pub unsafe fn clone(this:Hashtable_HashtableEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"Clone",));
-let inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_key(this:Hashtable_HashtableEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"get_Key",));
-let inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn move_next(this:Hashtable_HashtableEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
-let inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_entry(this:Hashtable_HashtableEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"get_Entry",));
-let inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_current(this:Hashtable_HashtableEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
-let inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_value(this:Hashtable_HashtableEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"get_Value",));
-let inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn reset(this:Hashtable_HashtableEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
-let inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="system-collections-hashtable")]pub trait IHashtable_HashtableEnumeratorMethods:IHashtable_HashtableEnumerator{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable, i32)` overload"]fn ctor(self,hashtable:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable> ,get_obj_ret_type:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7110usize)as*mut u8,();
 (Hashtable_HashtableEnumerator)__receiver,(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(hashtable),(i32)::core::convert::Into::into(get_obj_ret_type))}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_HashtableEnumerator_unity2_raw::clone(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"Clone",));
+let __inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_HashtableEnumerator_unity2_raw::get_key(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"get_Key",));
+let __inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_HashtableEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
+let __inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_HashtableEnumerator_unity2_raw::get_entry(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"get_Entry",));
+let __inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_HashtableEnumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
+let __inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_HashtableEnumerator_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"get_Value",));
+let __inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Hashtable_HashtableEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_HashtableEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <Hashtable_HashtableEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
+let __inner:extern "C" fn(Hashtable_HashtableEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -702,6 +742,29 @@ pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_HashtableEnumerator{#[doc="Direct (non-virtual) call to `Hashtable_HashtableEnumerator`'s own `Clone`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clone(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::clone_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_HashtableEnumerator`'s own `get_Key`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_key(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_key_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_HashtableEnumerator`'s own `MoveNext`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn move_next(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::move_next_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_HashtableEnumerator`'s own `get_Entry`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_entry(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::dictionaryentry::DictionaryEntry{let __mi=Self::get_entry_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_HashtableEnumerator`'s own `get_Current`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_current(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_current_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_HashtableEnumerator`'s own `get_Value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_HashtableEnumerator`'s own `Reset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn reset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::reset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-collections-hashtable")]impl Hashtable_HashtableEnumerator{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable, i32)` — overload selector"]pub fn new(hashtable:crate::system::collections::hashtable::Hashtable,get_obj_ret_type:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(Hashtable_HashtableEnumerator), ::core::stringify!(new),));
@@ -709,83 +772,75 @@ pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="system-collections-hashtable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Hashtable_ValueCollection_unity2_raw{use super:: * ;
-pub unsafe fn copy_to(this:Hashtable_ValueCollection,array: ::unity2::IlInstance,array_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-collections-hashtable")]pub trait IHashtable_KeyCollectionMethods:IHashtable_KeyCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]fn ctor(self,hashtable:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable>)->(){unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d7620usize)as*mut u8,();
+(Hashtable_KeyCollection)__receiver,(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(hashtable))}
+}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <Hashtable_ValueCollection as::unity2::ClassIdentity> ::NAME,"CopyTo",));
-let inner:extern "C" fn(Hashtable_ValueCollection, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",9usize,__vt.len(), <Hashtable_KeyCollection as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let __inner:extern "C" fn(Hashtable_KeyCollection, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,array_index,__mi)}
-pub unsafe fn get_enumerator(this:Hashtable_ValueCollection,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index),__mi)}
+}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",10usize,__vt.len(), <Hashtable_ValueCollection as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
-let inner:extern "C" fn(Hashtable_ValueCollection, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",10usize,__vt.len(), <Hashtable_KeyCollection as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let __inner:extern "C" fn(Hashtable_KeyCollection, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_is_synchronized(this:Hashtable_ValueCollection,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",11usize,__vt.len(), <Hashtable_ValueCollection as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
-let inner:extern "C" fn(Hashtable_ValueCollection, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",11usize,__vt.len(), <Hashtable_KeyCollection as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let __inner:extern "C" fn(Hashtable_KeyCollection, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_sync_root(this:Hashtable_ValueCollection,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",12usize,__vt.len(), <Hashtable_ValueCollection as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
-let inner:extern "C" fn(Hashtable_ValueCollection, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",12usize,__vt.len(), <Hashtable_KeyCollection as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let __inner:extern "C" fn(Hashtable_KeyCollection, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_count(this:Hashtable_ValueCollection,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Hashtable_KeyCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <Hashtable_ValueCollection as::unity2::ClassIdentity> ::NAME,"get_Count",));
-let inner:extern "C" fn(Hashtable_ValueCollection, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <Hashtable_KeyCollection as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let __inner:extern "C" fn(Hashtable_KeyCollection, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="system-collections-hashtable")]pub trait IHashtable_ValueCollectionMethods:IHashtable_ValueCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]fn ctor(self,hashtable:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable>)->(){unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d8670usize)as*mut u8,();
-(Hashtable_ValueCollection)__receiver,(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(hashtable))}
-}
-#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_ValueCollection_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index), ::core::option::Option::None)}
-}
-#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_ValueCollection_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_ValueCollection_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_ValueCollection_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Hashtable_ValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_ValueCollection_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="system-collections-hashtable")]impl<__T:IHashtable_ValueCollection>IHashtable_ValueCollectionMethods for __T{}
+#[cfg(feature="system-collections-hashtable")]impl<__T:IHashtable_KeyCollection>IHashtable_KeyCollectionMethods for __T{}
 
-#[cfg(feature="system-collections-hashtable")]impl Hashtable_ValueCollection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_KeyCollection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
@@ -793,204 +848,28 @@ pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="system-collections-hashtable")]impl Hashtable_ValueCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]pub fn new(hashtable:crate::system::collections::hashtable::Hashtable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Hashtable_ValueCollection), ::core::stringify!(new),));
- <Self as IHashtable_ValueCollectionMethods> ::ctor(this,hashtable);
-this}
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_KeyCollection{#[doc="Direct (non-virtual) call to `Hashtable_KeyCollection`'s own `CopyTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn copy_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::IlInstance,array_index:i32,)->(){let __mi=Self::copy_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,array_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_KeyCollection`'s own `GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_KeyCollection`'s own `get_IsSynchronized`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_synchronized(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_synchronized_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_KeyCollection`'s own `get_SyncRoot`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sync_root(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_sync_root_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_KeyCollection`'s own `get_Count`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
-#[cfg(feature="system-collections-hashtable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Hashtable_SyncHashtable_unity2_raw{use super:: * ;
-pub unsafe fn get_count(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",40usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_Count",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_is_read_only(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_is_fixed_size(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_IsFixedSize",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_is_synchronized(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",34usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_item(this:Hashtable_SyncHashtable,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_Item",));
-let inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn set_item(this:Hashtable_SyncHashtable,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"set_Item",));
-let inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,value,__mi)}
-pub unsafe fn get_sync_root(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",39usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn add(this:Hashtable_SyncHashtable,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"Add",));
-let inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,value,__mi)}
-pub unsafe fn clear(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"Clear",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn contains(this:Hashtable_SyncHashtable,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"Contains",));
-let inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn contains_key(this:Hashtable_SyncHashtable,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"ContainsKey",));
-let inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn copy_to(this:Hashtable_SyncHashtable,array: ::unity2::IlInstance,array_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"CopyTo",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,array_index,__mi)}
-pub unsafe fn clone(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",24usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"Clone",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_enumerable_get_enumerator(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_enumerator(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_keys(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",36usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_Keys",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_values(this:Hashtable_SyncHashtable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",37usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_Values",));
-let inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn remove(this:Hashtable_SyncHashtable,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",38usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"Remove",));
-let inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn on_deserialization(this:Hashtable_SyncHashtable,sender:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"OnDeserialization",));
-let inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sender,__mi)}
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_KeyCollection{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]pub fn new(hashtable:crate::system::collections::hashtable::Hashtable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Hashtable_KeyCollection), ::core::stringify!(new),));
+ <Self as IHashtable_KeyCollectionMethods> ::ctor(this,hashtable);
+this}
 }
 
 #[cfg(feature="system-collections-hashtable")]pub trait IHashtable_SyncHashtableMethods:IHashtable_SyncHashtable{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]fn ctor(self,table:impl::core::convert::Into<crate::system::collections::hashtable::Hashtable>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -998,61 +877,232 @@ inner(this,sender,__mi)}
 (Hashtable_SyncHashtable)__receiver,(crate::system::collections::hashtable::Hashtable)::core::convert::Into::into(table))}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_IsFixedSize()` overload"]fn get_is_fixed_size(self,)->bool{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::get_is_fixed_size(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_IsFixedSize",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Item(crate::system::object::Object)` overload"]fn get_item(self,key:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::get_item(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_Item",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_item(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::set_item(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"set_Item",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Add(crate::system::object::Object, crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::add(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"Add",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::clear(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"Clear",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::contains(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"Contains",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`ContainsKey(crate::system::object::Object)` overload"]fn contains_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::contains_key(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"ContainsKey",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index),__mi)}
+}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::clone(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"Clone",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::system_collections_i_enumerable_get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::get_keys(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_Keys",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Values()` overload"]fn get_values(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::get_values(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"get_Values",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::remove(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"Remove",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`OnDeserialization(crate::system::object::Object)` overload"]fn on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Hashtable_SyncHashtable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Hashtable_SyncHashtable_unity2_raw::on_deserialization(__receiver, ::core::convert::Into::into(sender), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <Hashtable_SyncHashtable as::unity2::ClassIdentity> ::NAME,"OnDeserialization",));
+let __inner:extern "C" fn(Hashtable_SyncHashtable,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(sender),__mi)}
+}
 }
 }
 
@@ -1080,6 +1130,65 @@ pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn on_deserialization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
 }
 
+#[cfg(feature="system-collections-hashtable")]impl Hashtable_SyncHashtable{#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `get_Count`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `get_IsReadOnly`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_read_only(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_read_only_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `get_IsFixedSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_fixed_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_fixed_size_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `get_IsSynchronized`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_synchronized(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_synchronized_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `get_Item`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->crate::system::object::Object{let __mi=Self::get_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `set_Item`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,value:crate::system::object::Object,)->(){let __mi=Self::set_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `get_SyncRoot`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sync_root(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_sync_root_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,value:crate::system::object::Object,)->(){let __mi=Self::add_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `Clear`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clear(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::clear_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `Contains`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn contains(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->bool{let __mi=Self::contains_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `ContainsKey`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn contains_key(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->bool{let __mi=Self::contains_key_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `CopyTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn copy_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::IlInstance,array_index:i32,)->(){let __mi=Self::copy_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,array_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `Clone`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clone(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::clone_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `System.Collections.IEnumerable.GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_enumerable_get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::system_collections_i_enumerable_get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __mi=Self::get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `get_Keys`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_keys(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::icollection::ICollection{let __mi=Self::get_keys_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `get_Values`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_values(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::icollection::ICollection{let __mi=Self::get_values_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `Remove`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn remove(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->(){let __mi=Self::remove_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Hashtable_SyncHashtable`'s own `OnDeserialization`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialization(this:impl::core::convert::Into< ::unity2::IlInstance> ,sender:crate::system::object::Object,)->(){let __mi=Self::on_deserialization_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sender, ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-collections-hashtable")]impl Hashtable_SyncHashtable{#[doc="`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]pub fn new(table:crate::system::collections::hashtable::Hashtable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(Hashtable_SyncHashtable), ::core::stringify!(new),));
@@ -1091,20 +1200,20 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Hashtable_bucket;
+    pub use super::Hashtable_ValueCollection;
+    pub use super::IHashtable_ValueCollection;
+    pub use super::IHashtable_ValueCollectionMethods;
     pub use super::Hashtable;
     pub use super::IHashtable;
     pub use super::IHashtableMethods;
-    pub use super::Hashtable_KeyCollection;
-    pub use super::IHashtable_KeyCollection;
-    pub use super::IHashtable_KeyCollectionMethods;
     pub use super::Hashtable_HashtableDebugView;
     pub use super::IHashtable_HashtableDebugView;
     pub use super::Hashtable_HashtableEnumerator;
     pub use super::IHashtable_HashtableEnumerator;
     pub use super::IHashtable_HashtableEnumeratorMethods;
-    pub use super::Hashtable_ValueCollection;
-    pub use super::IHashtable_ValueCollection;
-    pub use super::IHashtable_ValueCollectionMethods;
+    pub use super::Hashtable_KeyCollection;
+    pub use super::IHashtable_KeyCollection;
+    pub use super::IHashtable_KeyCollectionMethods;
     pub use super::Hashtable_SyncHashtable;
     pub use super::IHashtable_SyncHashtable;
     pub use super::IHashtable_SyncHashtableMethods;

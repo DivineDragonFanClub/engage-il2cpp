@@ -18,59 +18,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-talk3_d-talktagaddletter-types")]
 pub use __types::*;
 
-#[cfg(feature="app-talk3_d-talktagaddletter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkTagAddLetter_unity2_raw{use super:: * ;
-pub unsafe fn execute(this:TalkTagAddLetter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <TalkTagAddLetter as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(TalkTagAddLetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn execute_for_character_pre_load(this:TalkTagAddLetter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <TalkTagAddLetter as::unity2::ClassIdentity> ::NAME,"ExecuteForCharacterPreLoad",));
-let inner:extern "C" fn(TalkTagAddLetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_result(this:TalkTagAddLetter,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <TalkTagAddLetter as::unity2::ClassIdentity> ::NAME,"GetResult",));
-let inner:extern "C" fn(TalkTagAddLetter, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_result_for_head_text(this:TalkTagAddLetter,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <TalkTagAddLetter as::unity2::ClassIdentity> ::NAME,"GetResultForHeadText",));
-let inner:extern "C" fn(TalkTagAddLetter, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn need_fade_wait(this:TalkTagAddLetter,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <TalkTagAddLetter as::unity2::ClassIdentity> ::NAME,"NeedFadeWait",));
-let inner:extern "C" fn(TalkTagAddLetter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-talk3_d-talktagaddletter")]pub trait ITalkTagAddLetterMethods:ITalkTagAddLetter{#[doc="`SetLetter(u16)` overload"]fn set_letter(self,chr:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8680usize)as*mut u8,();
 (TalkTagAddLetter)__receiver,(u16)::core::convert::Into::into(chr))}
@@ -80,23 +27,68 @@ inner(this,__mi)}
 (TalkTagAddLetter)__receiver)}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkTagAddLetter_unity2_raw::execute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TalkTagAddLetter as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(TalkTagAddLetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ExecuteForCharacterPreLoad()` overload"]fn execute_for_character_pre_load(self,)->(){unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkTagAddLetter_unity2_raw::execute_for_character_pre_load(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TalkTagAddLetter as::unity2::ClassIdentity> ::NAME,"ExecuteForCharacterPreLoad",));
+let __inner:extern "C" fn(TalkTagAddLetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkTagAddLetter_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TalkTagAddLetter as::unity2::ClassIdentity> ::NAME,"GetResult",));
+let __inner:extern "C" fn(TalkTagAddLetter, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetResultForHeadText()` overload"]fn get_result_for_head_text(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkTagAddLetter_unity2_raw::get_result_for_head_text(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TalkTagAddLetter as::unity2::ClassIdentity> ::NAME,"GetResultForHeadText",));
+let __inner:extern "C" fn(TalkTagAddLetter, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetAddLetter()` overload"]fn get_add_letter(self,)->u16{unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8fe0usize)as*mut u8,u16;
 (TalkTagAddLetter)__receiver)}
 }
 #[doc="`NeedFadeWait()` overload"]fn need_fade_wait(self,)->bool{unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkTagAddLetter_unity2_raw::need_fade_wait(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TalkTagAddLetter as::unity2::ClassIdentity> ::NAME,"NeedFadeWait",));
+let __inner:extern "C" fn(TalkTagAddLetter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagAddLetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9020usize)as*mut u8,();
@@ -115,6 +107,23 @@ pub fn get_result_for_head_text_method_info()-> & 'static::unity2::il2cpp::Metho
 pub fn get_add_letter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn need_fade_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-talk3_d-talktagaddletter")]impl TalkTagAddLetter{#[doc="Direct (non-virtual) call to `TalkTagAddLetter`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TalkTagAddLetter`'s own `ExecuteForCharacterPreLoad`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute_for_character_pre_load(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::execute_for_character_pre_load_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TalkTagAddLetter`'s own `GetResult`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_result(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::talk3_d::talktag::TalkTag_Result{let __mi=Self::get_result_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TalkTagAddLetter`'s own `GetResultForHeadText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_result_for_head_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::talk3_d::talktag::TalkTag_Result{let __mi=Self::get_result_for_head_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TalkTagAddLetter`'s own `NeedFadeWait`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn need_fade_wait(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::need_fade_wait_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-talk3_d-talktagaddletter")]impl TalkTagAddLetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

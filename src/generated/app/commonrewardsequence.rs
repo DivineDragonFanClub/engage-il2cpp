@@ -18,6 +18,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardsequence/CommonRewardSequence.md"))]#[::unity2::class(namespace="App",name="CommonRewardSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct CommonRewardSequence{#[offset(112)]#[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[offset(120)]#[rename(name="m_RewardExpList")]pub m_reward_exp_list:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> , #[offset(128)]#[rename(name="m_RewardItemList")]pub m_reward_item_list:crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> , #[offset(136)]#[rename(name="m_RewardMoney")]pub m_reward_money:i32, #[offset(140)]#[rename(name="m_IsDiscard")]pub m_is_discard:bool, #[offset(141)]#[rename(name="m_IsCreateBg")]pub m_is_create_bg:bool, #[offset(142)]#[rename(name="m_IsClear")]pub m_is_clear:bool, #[offset(144)]#[rename(name="TitleMID")]pub title_mid: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_LevelUpUnitList")]pub m_level_up_unit_list:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> ,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]#[::unity2::class(namespace="App",name="CommonRewardSequence.ProcDiscardMessage")]#[parent(crate::app::procinst::ProcInst)]pub struct CommonRewardSequence_ProcDiscardMessage{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardsequence/CommonRewardSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CommonRewardSequence_Label2{pub value:i32,}
 impl::unity2::ClassIdentity for CommonRewardSequence_Label2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="CommonRewardSequence.Label2";
@@ -36,9 +39,6 @@ pub fn close()->Self{Self{value:2}
 pub fn end()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]#[::unity2::class(namespace="App",name="CommonRewardSequence.ProcDiscardMessage")]#[parent(crate::app::procinst::ProcInst)]pub struct CommonRewardSequence_ProcDiscardMessage{}
 
 }
 
@@ -179,10 +179,10 @@ pub mod prelude {
     pub use super::CommonRewardSequence;
     pub use super::ICommonRewardSequence;
     pub use super::ICommonRewardSequenceMethods;
-    pub use super::CommonRewardSequence_Label2;
     pub use super::CommonRewardSequence_ProcDiscardMessage;
     pub use super::ICommonRewardSequence_ProcDiscardMessage;
     pub use super::ICommonRewardSequence_ProcDiscardMessageMethods;
+    pub use super::CommonRewardSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -26,34 +26,29 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-skilleditequipskillmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-skilleditequipskillmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SkillEditEquipSkillMenuContent_unity2_raw{use super:: * ;
-pub unsafe fn calc_cursor_moved_pos_x(this:SkillEditEquipSkillMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-skilleditequipskillmenucontent")]pub trait ISkillEditEquipSkillMenuContentMethods:ISkillEditEquipSkillMenuContent{#[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <SkillEditEquipSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",9usize,__vt.len(), <SkillEditEquipSkillMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosX",));
-let inner:extern "C" fn(SkillEditEquipSkillMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SkillEditEquipSkillMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,menu_item_index,__mi)}
-pub unsafe fn calc_cursor_moved_pos_y(this:SkillEditEquipSkillMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(menu_item_index),__mi)}
+}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <SkillEditEquipSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <SkillEditEquipSkillMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
-let inner:extern "C" fn(SkillEditEquipSkillMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SkillEditEquipSkillMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,menu_item_index,__mi)}
+__inner(__receiver, ::core::convert::Into::into(menu_item_index),__mi)}
 }
-
-#[cfg(feature="app-skilleditequipskillmenucontent")]pub trait ISkillEditEquipSkillMenuContentMethods:ISkillEditEquipSkillMenuContent{#[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <SkillEditEquipSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SkillEditEquipSkillMenuContent_unity2_raw::calc_cursor_moved_pos_x(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
-}
-#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <SkillEditEquipSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SkillEditEquipSkillMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`SetUnitName(crate::app::unit::Unit)` overload"]fn set_unit_name(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <SkillEditEquipSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2499e90usize)as*mut u8,();
@@ -76,6 +71,14 @@ pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::Method
 pub fn set_unit_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn set_skill_ng_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-skilleditequipskillmenucontent")]impl SkillEditEquipSkillMenuContent{#[doc="Direct (non-virtual) call to `SkillEditEquipSkillMenuContent`'s own `CalcCursorMovedPosX`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_cursor_moved_pos_x(this:impl::core::convert::Into< ::unity2::IlInstance> ,menu_item_index:i32,)->f32{let __mi=Self::calc_cursor_moved_pos_x_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),menu_item_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SkillEditEquipSkillMenuContent`'s own `CalcCursorMovedPosY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_cursor_moved_pos_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,menu_item_index:i32,)->f32{let __mi=Self::calc_cursor_moved_pos_y_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),menu_item_index, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-skilleditequipskillmenucontent")]impl SkillEditEquipSkillMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

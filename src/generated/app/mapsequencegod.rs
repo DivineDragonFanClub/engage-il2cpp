@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencegod/MapSequenceGod_ProcEngage.md"))]#[::unity2::class(namespace="App",name="MapSequenceGod.ProcEngage")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceGod_ProcEngage{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencegod/MapSequenceGod_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceGod_Kind{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceGod_Kind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceGod.Kind";
@@ -36,7 +33,13 @@ pub fn god_change()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencegod/MapSequenceGod_ProcEngageCancel.md"))]#[::unity2::class(namespace="App",name="MapSequenceGod.ProcEngageCancel")]#[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]pub struct MapSequenceGod_ProcEngageCancel{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencegod/MapSequenceGod.md"))]#[::unity2::class(namespace="App",name="MapSequenceGod")]#[parent(crate::system::object::Object)]pub struct MapSequenceGod{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencegod/MapSequenceGod_ProcEngageStart.md"))]#[::unity2::class(namespace="App",name="MapSequenceGod.ProcEngageStart")]#[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]pub struct MapSequenceGod_ProcEngageStart{#[offset(112)]#[rename(name="m_Kind")]pub m_kind:crate::app::mapsequencegod::MapSequenceGod_Kind, #[offset(116)]#[rename(name="m_IsSimple")]pub m_is_simple:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencegod/MapSequenceGod_ProcEngage.md"))]#[::unity2::class(namespace="App",name="MapSequenceGod.ProcEngage")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceGod_ProcEngage{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencegod/MapSequenceGod_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceGod_Label{pub value:i32,}
@@ -57,122 +60,12 @@ pub fn end()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencegod/MapSequenceGod.md"))]#[::unity2::class(namespace="App",name="MapSequenceGod")]#[parent(crate::system::object::Object)]pub struct MapSequenceGod{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencegod/MapSequenceGod_ProcEngageStart.md"))]#[::unity2::class(namespace="App",name="MapSequenceGod.ProcEngageStart")]#[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]pub struct MapSequenceGod_ProcEngageStart{#[offset(112)]#[rename(name="m_Kind")]pub m_kind:crate::app::mapsequencegod::MapSequenceGod_Kind, #[offset(116)]#[rename(name="m_IsSimple")]pub m_is_simple:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencegod/MapSequenceGod_ProcEngageCancel.md"))]#[::unity2::class(namespace="App",name="MapSequenceGod.ProcEngageCancel")]#[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]pub struct MapSequenceGod_ProcEngageCancel{}
 
 }
 
 #[cfg(feature = "app-mapsequencegod-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapsequencegod")]pub trait IMapSequenceGod_ProcEngageMethods:IMapSequenceGod_ProcEngage{#[doc="`IsUsableInfo()` overload"]fn is_usable_info(self,)->bool{unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35220usize)as*mut u8,bool;
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`IsNeedToDeploy()` overload"]fn is_need_to_deploy(self,)->bool{unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e352f0usize)as*mut u8,bool;
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`MoveWait()` overload"]fn move_wait(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e353c0usize)as*mut u8,();
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`HideInfoUIForDetail()` overload"]fn hide_info_ui_for_detail(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35480usize)as*mut u8,();
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`HideInfoUIForSimple()` overload"]fn hide_info_ui_for_simple(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35550usize)as*mut u8,();
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`UpdateImage()` overload"]fn update_image(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35600usize)as*mut u8,();
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`UpdateInfoUI()` overload"]fn update_info_ui(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e356e0usize)as*mut u8,();
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`ShowInfoUI()` overload"]fn show_info_ui(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e357c0usize)as*mut u8,();
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`UpdateDeploy()` overload"]fn update_deploy(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e358c0usize)as*mut u8,();
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`UpdateMapRoute()` overload"]fn update_map_route(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35960usize)as*mut u8,();
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`UpdateMapCursor()` overload"]fn update_map_cursor(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35f70usize)as*mut u8,();
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`IsUpdateMapRoute()` overload"]fn is_update_map_route(self,)->bool{unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35e00usize)as*mut u8,bool;
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e36090usize)as*mut u8,();
-(MapSequenceGod_ProcEngage)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapsequencegod")]impl<__T:IMapSequenceGod_ProcEngage>IMapSequenceGod_ProcEngageMethods for __T{}
-
-#[cfg(feature="app-mapsequencegod")]impl MapSequenceGod_ProcEngage{pub fn is_usable_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_need_to_deploy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn hide_info_ui_for_detail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn hide_info_ui_for_simple_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn update_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn update_info_ui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn show_info_ui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn update_deploy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn update_map_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn update_map_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn is_update_map_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-mapsequencegod")]impl MapSequenceGod_ProcEngage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceGod_ProcEngage), ::core::stringify!(new),));
- <Self as IMapSequenceGod_ProcEngageMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapsequencegod")]impl MapSequenceGod_ProcEngageCancel{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e36120usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mapsequencegod")]pub trait IMapSequenceGod_ProcEngageCancelMethods:IMapSequenceGod_ProcEngageCancel{#[doc="`Cancel()` overload"]fn cancel(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngageCancel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e360a0usize)as*mut u8,();
-(MapSequenceGod_ProcEngageCancel)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngageCancel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e36660usize)as*mut u8,();
-(MapSequenceGod_ProcEngageCancel)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapsequencegod")]impl<__T:IMapSequenceGod_ProcEngageCancel>IMapSequenceGod_ProcEngageCancelMethods for __T{}
-
-#[cfg(feature="app-mapsequencegod")]impl MapSequenceGod_ProcEngageCancel{pub fn cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mapsequencegod")]impl MapSequenceGod_ProcEngageCancel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceGod_ProcEngageCancel), ::core::stringify!(new),));
- <Self as IMapSequenceGod_ProcEngageCancelMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-mapsequencegod")]impl MapSequenceGod{#[doc="`CreateBindEngageSimple(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_engage_simple(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d07f0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -283,23 +176,130 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-mapsequencegod")]pub trait IMapSequenceGod_ProcEngageMethods:IMapSequenceGod_ProcEngage{#[doc="`IsUsableInfo()` overload"]fn is_usable_info(self,)->bool{unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35220usize)as*mut u8,bool;
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`IsNeedToDeploy()` overload"]fn is_need_to_deploy(self,)->bool{unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e352f0usize)as*mut u8,bool;
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`MoveWait()` overload"]fn move_wait(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e353c0usize)as*mut u8,();
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`HideInfoUIForDetail()` overload"]fn hide_info_ui_for_detail(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35480usize)as*mut u8,();
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`HideInfoUIForSimple()` overload"]fn hide_info_ui_for_simple(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35550usize)as*mut u8,();
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`UpdateImage()` overload"]fn update_image(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35600usize)as*mut u8,();
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`UpdateInfoUI()` overload"]fn update_info_ui(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e356e0usize)as*mut u8,();
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`ShowInfoUI()` overload"]fn show_info_ui(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e357c0usize)as*mut u8,();
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`UpdateDeploy()` overload"]fn update_deploy(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e358c0usize)as*mut u8,();
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`UpdateMapRoute()` overload"]fn update_map_route(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35960usize)as*mut u8,();
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`UpdateMapCursor()` overload"]fn update_map_cursor(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35f70usize)as*mut u8,();
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`IsUpdateMapRoute()` overload"]fn is_update_map_route(self,)->bool{unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e35e00usize)as*mut u8,bool;
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e36090usize)as*mut u8,();
+(MapSequenceGod_ProcEngage)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequencegod")]impl<__T:IMapSequenceGod_ProcEngage>IMapSequenceGod_ProcEngageMethods for __T{}
+
+#[cfg(feature="app-mapsequencegod")]impl MapSequenceGod_ProcEngage{pub fn is_usable_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_need_to_deploy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hide_info_ui_for_detail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn hide_info_ui_for_simple_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_info_ui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn show_info_ui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_deploy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_map_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_map_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_update_map_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-mapsequencegod")]impl MapSequenceGod_ProcEngage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceGod_ProcEngage), ::core::stringify!(new),));
+ <Self as IMapSequenceGod_ProcEngageMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsequencegod")]impl MapSequenceGod_ProcEngageCancel{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e36120usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapsequencegod")]pub trait IMapSequenceGod_ProcEngageCancelMethods:IMapSequenceGod_ProcEngageCancel{#[doc="`Cancel()` overload"]fn cancel(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngageCancel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e360a0usize)as*mut u8,();
+(MapSequenceGod_ProcEngageCancel)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceGod_ProcEngageCancel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e36660usize)as*mut u8,();
+(MapSequenceGod_ProcEngageCancel)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequencegod")]impl<__T:IMapSequenceGod_ProcEngageCancel>IMapSequenceGod_ProcEngageCancelMethods for __T{}
+
+#[cfg(feature="app-mapsequencegod")]impl MapSequenceGod_ProcEngageCancel{pub fn cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapsequencegod")]impl MapSequenceGod_ProcEngageCancel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceGod_ProcEngageCancel), ::core::stringify!(new),));
+ <Self as IMapSequenceGod_ProcEngageCancelMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-mapsequencegod")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceGod_ProcEngage;
-    pub use super::IMapSequenceGod_ProcEngage;
-    pub use super::IMapSequenceGod_ProcEngageMethods;
     pub use super::MapSequenceGod_Kind;
-    pub use super::MapSequenceGod_ProcEngageCancel;
-    pub use super::IMapSequenceGod_ProcEngageCancel;
-    pub use super::IMapSequenceGod_ProcEngageCancelMethods;
-    pub use super::MapSequenceGod_Label;
     pub use super::MapSequenceGod;
     pub use super::IMapSequenceGod;
     pub use super::IMapSequenceGodMethods;
     pub use super::MapSequenceGod_ProcEngageStart;
     pub use super::IMapSequenceGod_ProcEngageStart;
     pub use super::IMapSequenceGod_ProcEngageStartMethods;
+    pub use super::MapSequenceGod_ProcEngage;
+    pub use super::IMapSequenceGod_ProcEngage;
+    pub use super::IMapSequenceGod_ProcEngageMethods;
+    pub use super::MapSequenceGod_Label;
+    pub use super::MapSequenceGod_ProcEngageCancel;
+    pub use super::IMapSequenceGod_ProcEngageCancel;
+    pub use super::IMapSequenceGod_ProcEngageCancelMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

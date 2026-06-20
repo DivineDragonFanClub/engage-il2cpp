@@ -25,16 +25,16 @@ use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionDataList.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.OptionDataList")]#[parent(crate::system::object::Object)]pub struct TMP_Dropdown_OptionDataList{#[offset(16)]#[rename(name="m_Options")]pub m_options:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_DropdownEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.DropdownEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<i32>)]pub struct TMP_Dropdown_DropdownEvent{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct TMP_Dropdown{#[offset(248)]#[rename(name="m_Template")]pub m_template:crate::unity_engine::recttransform::RectTransform, #[offset(256)]#[rename(name="m_CaptionText")]pub m_caption_text:crate::tm_pro::tmp_text::TMP_Text, #[offset(264)]#[rename(name="m_CaptionImage")]pub m_caption_image:crate::unity_engine::ui::image::Image, #[offset(272)]#[rename(name="m_Placeholder")]pub m_placeholder:crate::unity_engine::ui::graphic::Graphic, #[offset(280)]#[rename(name="m_ItemText")]pub m_item_text:crate::tm_pro::tmp_text::TMP_Text, #[offset(288)]#[rename(name="m_ItemImage")]pub m_item_image:crate::unity_engine::ui::image::Image, #[offset(296)]#[rename(name="m_Value")]pub m_value:i32, #[offset(304)]#[rename(name="m_Options")]pub m_options:crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionDataList, #[offset(312)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownEvent, #[offset(320)]#[rename(name="m_AlphaFadeSpeed")]pub m_alpha_fade_speed:f32, #[offset(328)]#[rename(name="m_Dropdown")]pub m_dropdown:crate::unity_engine::gameobject::GameObject, #[offset(336)]#[rename(name="m_Blocker")]pub m_blocker:crate::unity_engine::gameobject::GameObject, #[offset(344)]#[rename(name="m_Items")]pub m_items:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem> , #[offset(352)]#[rename(name="m_AlphaTweenRunner")]pub m_alpha_tween_runner:crate::tm_pro::tweenrunner_1_2::TweenRunner_1_2<crate::tm_pro::floattween_2::FloatTween_2> , #[offset(360)]#[rename(name="validTemplate")]pub valid_template:bool, #[offset(368)]#[rename(name="m_Coroutine")]pub m_coroutine:crate::unity_engine::coroutine::Coroutine, #[static_field]#[rename(name="s_NoOptionData")]pub s_no_option_data:crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_DropdownItem.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.DropdownItem")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TMP_Dropdown_DropdownItem{#[offset(24)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::tmp_text::TMP_Text, #[offset(32)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(48)]#[rename(name="m_Toggle")]pub m_toggle:crate::unity_engine::ui::toggle::Toggle,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct TMP_Dropdown{#[offset(248)]#[rename(name="m_Template")]pub m_template:crate::unity_engine::recttransform::RectTransform, #[offset(256)]#[rename(name="m_CaptionText")]pub m_caption_text:crate::tm_pro::tmp_text::TMP_Text, #[offset(264)]#[rename(name="m_CaptionImage")]pub m_caption_image:crate::unity_engine::ui::image::Image, #[offset(272)]#[rename(name="m_Placeholder")]pub m_placeholder:crate::unity_engine::ui::graphic::Graphic, #[offset(280)]#[rename(name="m_ItemText")]pub m_item_text:crate::tm_pro::tmp_text::TMP_Text, #[offset(288)]#[rename(name="m_ItemImage")]pub m_item_image:crate::unity_engine::ui::image::Image, #[offset(296)]#[rename(name="m_Value")]pub m_value:i32, #[offset(304)]#[rename(name="m_Options")]pub m_options:crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionDataList, #[offset(312)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownEvent, #[offset(320)]#[rename(name="m_AlphaFadeSpeed")]pub m_alpha_fade_speed:f32, #[offset(328)]#[rename(name="m_Dropdown")]pub m_dropdown:crate::unity_engine::gameobject::GameObject, #[offset(336)]#[rename(name="m_Blocker")]pub m_blocker:crate::unity_engine::gameobject::GameObject, #[offset(344)]#[rename(name="m_Items")]pub m_items:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem> , #[offset(352)]#[rename(name="m_AlphaTweenRunner")]pub m_alpha_tween_runner:crate::tm_pro::tweenrunner_1_2::TweenRunner_1_2<crate::tm_pro::floattween_2::FloatTween_2> , #[offset(360)]#[rename(name="validTemplate")]pub valid_template:bool, #[offset(368)]#[rename(name="m_Coroutine")]pub m_coroutine:crate::unity_engine::coroutine::Coroutine, #[static_field]#[rename(name="s_NoOptionData")]pub s_no_option_data:crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_DropdownEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.DropdownEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<i32>)]pub struct TMP_Dropdown_DropdownEvent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionDataList.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.OptionDataList")]#[parent(crate::system::object::Object)]pub struct TMP_Dropdown_OptionDataList{#[offset(16)]#[rename(name="m_Options")]pub m_options:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_dropdown/TMP_Dropdown_OptionData.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Dropdown.OptionData")]#[parent(crate::system::object::Object)]pub struct TMP_Dropdown_OptionData{#[offset(16)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::sprite::Sprite,}
@@ -43,264 +43,6 @@ use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
 
 #[cfg(feature = "tm_pro-tmp_dropdown-types")]
 pub use __types::*;
-
-#[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_OptionDataListMethods:ITMP_Dropdown_OptionDataList{#[doc="`get_options()` overload"]fn get_options(self,)->crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>{unsafe{let __receiver= <TMP_Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea88e0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData> ;
-(TMP_Dropdown_OptionDataList)__receiver)}
-}
-#[doc="`set_options(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>)` overload"]fn set_options(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData> >)->(){unsafe{let __receiver= <TMP_Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea88f0usize)as*mut u8,();
-(TMP_Dropdown_OptionDataList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8900usize)as*mut u8,();
-(TMP_Dropdown_OptionDataList)__receiver)}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl<__T:ITMP_Dropdown_OptionDataList>ITMP_Dropdown_OptionDataListMethods for __T{}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_OptionDataList{pub fn get_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_OptionDataList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionDataList), ::core::stringify!(new),));
- <Self as ITMP_Dropdown_OptionDataListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_DropdownEventMethods:ITMP_Dropdown_DropdownEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8580usize)as*mut u8,();
-(TMP_Dropdown_DropdownEvent)__receiver)}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl<__T:ITMP_Dropdown_DropdownEvent>ITMP_Dropdown_DropdownEventMethods for __T{}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_Dropdown_DropdownEvent), ::core::stringify!(new),));
- <Self as ITMP_Dropdown_DropdownEventMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_Dropdown_DropdownItem_unity2_raw{use super:: * ;
-pub unsafe fn on_pointer_enter(this:TMP_Dropdown_DropdownItem,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <TMP_Dropdown_DropdownItem as::unity2::ClassIdentity> ::NAME,"OnPointerEnter",));
-let inner:extern "C" fn(TMP_Dropdown_DropdownItem,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn on_cancel(this:TMP_Dropdown_DropdownItem,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <TMP_Dropdown_DropdownItem as::unity2::ClassIdentity> ::NAME,"OnCancel",));
-let inner:extern "C" fn(TMP_Dropdown_DropdownItem,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_DropdownItemMethods:ITMP_Dropdown_DropdownItem{#[doc="`get_text()` overload"]fn get_text(self,)->crate::tm_pro::tmp_text::TMP_Text{unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea85e0usize)as*mut u8,crate::tm_pro::tmp_text::TMP_Text;
-(TMP_Dropdown_DropdownItem)__receiver)}
-}
-#[doc="`set_text(crate::tm_pro::tmp_text::TMP_Text)` overload"]fn set_text(self,value:impl::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea85f0usize)as*mut u8,();
-(TMP_Dropdown_DropdownItem)__receiver,(crate::tm_pro::tmp_text::TMP_Text)::core::convert::Into::into(value))}
-}
-#[doc="`get_image()` overload"]fn get_image(self,)->crate::unity_engine::ui::image::Image{unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8600usize)as*mut u8,crate::unity_engine::ui::image::Image;
-(TMP_Dropdown_DropdownItem)__receiver)}
-}
-#[doc="`set_image(crate::unity_engine::ui::image::Image)` overload"]fn set_image(self,value:impl::core::convert::Into<crate::unity_engine::ui::image::Image>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8610usize)as*mut u8,();
-(TMP_Dropdown_DropdownItem)__receiver,(crate::unity_engine::ui::image::Image)::core::convert::Into::into(value))}
-}
-#[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8620usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
-(TMP_Dropdown_DropdownItem)__receiver)}
-}
-#[doc="`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]fn set_rect_transform(self,value:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8630usize)as*mut u8,();
-(TMP_Dropdown_DropdownItem)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(value))}
-}
-#[doc="`get_toggle()` overload"]fn get_toggle(self,)->crate::unity_engine::ui::toggle::Toggle{unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8640usize)as*mut u8,crate::unity_engine::ui::toggle::Toggle;
-(TMP_Dropdown_DropdownItem)__receiver)}
-}
-#[doc="`set_toggle(crate::unity_engine::ui::toggle::Toggle)` overload"]fn set_toggle(self,value:impl::core::convert::Into<crate::unity_engine::ui::toggle::Toggle>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8650usize)as*mut u8,();
-(TMP_Dropdown_DropdownItem)__receiver,(crate::unity_engine::ui::toggle::Toggle)::core::convert::Into::into(value))}
-}
-#[doc="`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_enter(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_DropdownItem_unity2_raw::on_pointer_enter(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
-}
-#[doc="`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_cancel(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_DropdownItem_unity2_raw::on_cancel(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea87b0usize)as*mut u8,();
-(TMP_Dropdown_DropdownItem)__receiver)}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl<__T:ITMP_Dropdown_DropdownItem>ITMP_Dropdown_DropdownItemMethods for __T{}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownItem{pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_toggle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_toggle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn on_pointer_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn on_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_Dropdown_DropdownItem), ::core::stringify!(new),));
- <Self as ITMP_Dropdown_DropdownItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="tm_pro-tmp_dropdown")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_Dropdown_unity2_raw{use super:: * ;
-pub unsafe fn awake(this:TMP_Dropdown,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(TMP_Dropdown, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn start(this:TMP_Dropdown,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"Start",));
-let inner:extern "C" fn(TMP_Dropdown, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_disable(this:TMP_Dropdown,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"OnDisable",));
-let inner:extern "C" fn(TMP_Dropdown, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_pointer_click(this:TMP_Dropdown,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"OnPointerClick",));
-let inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn on_submit(this:TMP_Dropdown,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"OnSubmit",));
-let inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn on_cancel(this:TMP_Dropdown,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",44usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"OnCancel",));
-let inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn create_blocker(this:TMP_Dropdown,root_canvas:crate::unity_engine::canvas::Canvas,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",45usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"CreateBlocker",));
-let inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::canvas::Canvas, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,root_canvas,__mi)}
-pub unsafe fn destroy_blocker(this:TMP_Dropdown,blocker:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",46usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"DestroyBlocker",));
-let inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,blocker,__mi)}
-pub unsafe fn create_dropdown_list(this:TMP_Dropdown,template:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",47usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"CreateDropdownList",));
-let inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,template,__mi)}
-pub unsafe fn destroy_dropdown_list(this:TMP_Dropdown,dropdown_list:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",48usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"DestroyDropdownList",));
-let inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,dropdown_list,__mi)}
-pub unsafe fn create_item(this:TMP_Dropdown,item_template:crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",49usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"CreateItem",));
-let inner:extern "C" fn(TMP_Dropdown,crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem, ::unity2::OptionalMethod,)->crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,item_template,__mi)}
-pub unsafe fn destroy_item(this:TMP_Dropdown,item:crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",50usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"DestroyItem",));
-let inner:extern "C" fn(TMP_Dropdown,crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,item,__mi)}
-}
 
 #[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown{pub fn get_or_add_component<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<TMP_Dropdown as::unity2::ClassIdentity> ::class(),"GetOrAddComponent",1,)}
 );
@@ -424,13 +166,40 @@ __f(::core::convert::Into::into(go), ::core::option::Option::Some(__mi_opaque),)
 (TMP_Dropdown)__receiver)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::awake(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"Awake",));
+let __inner:extern "C" fn(TMP_Dropdown, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::start(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"Start",));
+let __inner:extern "C" fn(TMP_Dropdown, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let __inner:extern "C" fn(TMP_Dropdown, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`RefreshShownValue()` overload"]fn refresh_shown_value(self,)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2d93830usize)as*mut u8,();
@@ -457,35 +226,116 @@ __TMP_Dropdown_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 (TMP_Dropdown)__receiver)}
 }
 #[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::on_pointer_click(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"OnPointerClick",));
+let __inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_submit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::on_submit(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"OnSubmit",));
+let __inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_cancel(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::on_cancel(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"OnCancel",));
+let __inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2d94f60usize)as*mut u8,();
 (TMP_Dropdown)__receiver)}
 }
 #[doc="`CreateBlocker(crate::unity_engine::canvas::Canvas)` overload"]fn create_blocker(self,root_canvas:impl::core::convert::Into<crate::unity_engine::canvas::Canvas>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::create_blocker(__receiver, ::core::convert::Into::into(root_canvas), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"CreateBlocker",));
+let __inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::canvas::Canvas, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(root_canvas),__mi)}
+}
 }
 #[doc="`DestroyBlocker(crate::unity_engine::gameobject::GameObject)` overload"]fn destroy_blocker(self,blocker:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::destroy_blocker(__receiver, ::core::convert::Into::into(blocker), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",46usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"DestroyBlocker",));
+let __inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(blocker),__mi)}
+}
 }
 #[doc="`CreateDropdownList(crate::unity_engine::gameobject::GameObject)` overload"]fn create_dropdown_list(self,template:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::create_dropdown_list(__receiver, ::core::convert::Into::into(template), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"CreateDropdownList",));
+let __inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(template),__mi)}
+}
 }
 #[doc="`DestroyDropdownList(crate::unity_engine::gameobject::GameObject)` overload"]fn destroy_dropdown_list(self,dropdown_list:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::destroy_dropdown_list(__receiver, ::core::convert::Into::into(dropdown_list), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",48usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"DestroyDropdownList",));
+let __inner:extern "C" fn(TMP_Dropdown,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(dropdown_list),__mi)}
+}
 }
 #[doc="`CreateItem(crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem)` overload"]fn create_item(self,item_template:impl::core::convert::Into<crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem>)->crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem{unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::create_item(__receiver, ::core::convert::Into::into(item_template), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",49usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"CreateItem",));
+let __inner:extern "C" fn(TMP_Dropdown,crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem, ::unity2::OptionalMethod,)->crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(item_template),__mi)}
+}
 }
 #[doc="`DestroyItem(crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem)` overload"]fn destroy_item(self,item:impl::core::convert::Into<crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem>)->(){unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_Dropdown_unity2_raw::destroy_item(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <TMP_Dropdown as::unity2::ClassIdentity> ::NAME,"DestroyItem",));
+let __inner:extern "C" fn(TMP_Dropdown,crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(item),__mi)}
+}
 }
 #[doc="`AddItem(crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData, bool, crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem, crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem>)` overload"]fn add_item(self,data:impl::core::convert::Into<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData> ,selected:impl::core::convert::Into<bool> ,item_template:impl::core::convert::Into<crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem> ,items:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem> >)->crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem{unsafe{let __receiver= <TMP_Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2d95f30usize)as*mut u8,crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem;
@@ -577,10 +427,186 @@ pub fn on_select_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
 }
 
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown{#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `Start`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `OnDisable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_disable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_disable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `OnPointerClick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_pointer_click(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_pointer_click_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `OnSubmit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_submit(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,)->(){let __mi=Self::on_submit_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `OnCancel`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_cancel(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,)->(){let __mi=Self::on_cancel_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `CreateBlocker`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_blocker(this:impl::core::convert::Into< ::unity2::IlInstance> ,root_canvas:crate::unity_engine::canvas::Canvas,)->crate::unity_engine::gameobject::GameObject{let __mi=Self::create_blocker_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::canvas::Canvas, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),root_canvas, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `DestroyBlocker`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn destroy_blocker(this:impl::core::convert::Into< ::unity2::IlInstance> ,blocker:crate::unity_engine::gameobject::GameObject,)->(){let __mi=Self::destroy_blocker_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),blocker, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `CreateDropdownList`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_dropdown_list(this:impl::core::convert::Into< ::unity2::IlInstance> ,template:crate::unity_engine::gameobject::GameObject,)->crate::unity_engine::gameobject::GameObject{let __mi=Self::create_dropdown_list_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),template, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `DestroyDropdownList`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn destroy_dropdown_list(this:impl::core::convert::Into< ::unity2::IlInstance> ,dropdown_list:crate::unity_engine::gameobject::GameObject,)->(){let __mi=Self::destroy_dropdown_list_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),dropdown_list, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `CreateItem`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,item_template:crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem,)->crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem{let __mi=Self::create_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem, ::unity2::OptionalMethod,)->crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),item_template, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown`'s own `DestroyItem`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn destroy_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,item:crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem,)->(){let __mi=Self::destroy_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::tm_pro::tmp_dropdown::TMP_Dropdown_DropdownItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),item, ::core::option::Option::None)}
+}
+
 #[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TMP_Dropdown), ::core::stringify!(new),));
  <Self as ITMP_DropdownMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_DropdownItemMethods:ITMP_Dropdown_DropdownItem{#[doc="`get_text()` overload"]fn get_text(self,)->crate::tm_pro::tmp_text::TMP_Text{unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea85e0usize)as*mut u8,crate::tm_pro::tmp_text::TMP_Text;
+(TMP_Dropdown_DropdownItem)__receiver)}
+}
+#[doc="`set_text(crate::tm_pro::tmp_text::TMP_Text)` overload"]fn set_text(self,value:impl::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea85f0usize)as*mut u8,();
+(TMP_Dropdown_DropdownItem)__receiver,(crate::tm_pro::tmp_text::TMP_Text)::core::convert::Into::into(value))}
+}
+#[doc="`get_image()` overload"]fn get_image(self,)->crate::unity_engine::ui::image::Image{unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8600usize)as*mut u8,crate::unity_engine::ui::image::Image;
+(TMP_Dropdown_DropdownItem)__receiver)}
+}
+#[doc="`set_image(crate::unity_engine::ui::image::Image)` overload"]fn set_image(self,value:impl::core::convert::Into<crate::unity_engine::ui::image::Image>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8610usize)as*mut u8,();
+(TMP_Dropdown_DropdownItem)__receiver,(crate::unity_engine::ui::image::Image)::core::convert::Into::into(value))}
+}
+#[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8620usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(TMP_Dropdown_DropdownItem)__receiver)}
+}
+#[doc="`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]fn set_rect_transform(self,value:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8630usize)as*mut u8,();
+(TMP_Dropdown_DropdownItem)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(value))}
+}
+#[doc="`get_toggle()` overload"]fn get_toggle(self,)->crate::unity_engine::ui::toggle::Toggle{unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8640usize)as*mut u8,crate::unity_engine::ui::toggle::Toggle;
+(TMP_Dropdown_DropdownItem)__receiver)}
+}
+#[doc="`set_toggle(crate::unity_engine::ui::toggle::Toggle)` overload"]fn set_toggle(self,value:impl::core::convert::Into<crate::unity_engine::ui::toggle::Toggle>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8650usize)as*mut u8,();
+(TMP_Dropdown_DropdownItem)__receiver,(crate::unity_engine::ui::toggle::Toggle)::core::convert::Into::into(value))}
+}
+#[doc="`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_enter(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TMP_Dropdown_DropdownItem as::unity2::ClassIdentity> ::NAME,"OnPointerEnter",));
+let __inner:extern "C" fn(TMP_Dropdown_DropdownItem,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
+}
+#[doc="`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_cancel(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TMP_Dropdown_DropdownItem as::unity2::ClassIdentity> ::NAME,"OnCancel",));
+let __inner:extern "C" fn(TMP_Dropdown_DropdownItem,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea87b0usize)as*mut u8,();
+(TMP_Dropdown_DropdownItem)__receiver)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl<__T:ITMP_Dropdown_DropdownItem>ITMP_Dropdown_DropdownItemMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownItem{pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_toggle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_toggle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_pointer_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownItem{#[doc="Direct (non-virtual) call to `TMP_Dropdown_DropdownItem`'s own `OnPointerEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_pointer_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_pointer_enter_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_Dropdown_DropdownItem`'s own `OnCancel`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_cancel(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,)->(){let __mi=Self::on_cancel_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Dropdown_DropdownItem), ::core::stringify!(new),));
+ <Self as ITMP_Dropdown_DropdownItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_DropdownEventMethods:ITMP_Dropdown_DropdownEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Dropdown_DropdownEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8580usize)as*mut u8,();
+(TMP_Dropdown_DropdownEvent)__receiver)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl<__T:ITMP_Dropdown_DropdownEvent>ITMP_Dropdown_DropdownEventMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_DropdownEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Dropdown_DropdownEvent), ::core::stringify!(new),));
+ <Self as ITMP_Dropdown_DropdownEventMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]pub trait ITMP_Dropdown_OptionDataListMethods:ITMP_Dropdown_OptionDataList{#[doc="`get_options()` overload"]fn get_options(self,)->crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>{unsafe{let __receiver= <TMP_Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea88e0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData> ;
+(TMP_Dropdown_OptionDataList)__receiver)}
+}
+#[doc="`set_options(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>)` overload"]fn set_options(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData> >)->(){unsafe{let __receiver= <TMP_Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea88f0usize)as*mut u8,();
+(TMP_Dropdown_OptionDataList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_dropdown::TMP_Dropdown_OptionData>)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8900usize)as*mut u8,();
+(TMP_Dropdown_OptionDataList)__receiver)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl<__T:ITMP_Dropdown_OptionDataList>ITMP_Dropdown_OptionDataListMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_OptionDataList{pub fn get_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="tm_pro-tmp_dropdown")]impl TMP_Dropdown_OptionDataList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Dropdown_OptionDataList), ::core::stringify!(new),));
+ <Self as ITMP_Dropdown_OptionDataListMethods> ::ctor(this,);
 this}
 }
 
@@ -655,18 +681,18 @@ this}
 #[cfg(feature = "tm_pro-tmp_dropdown")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TMP_Dropdown_OptionDataList;
-    pub use super::ITMP_Dropdown_OptionDataList;
-    pub use super::ITMP_Dropdown_OptionDataListMethods;
-    pub use super::TMP_Dropdown_DropdownEvent;
-    pub use super::ITMP_Dropdown_DropdownEvent;
-    pub use super::ITMP_Dropdown_DropdownEventMethods;
-    pub use super::TMP_Dropdown_DropdownItem;
-    pub use super::ITMP_Dropdown_DropdownItem;
-    pub use super::ITMP_Dropdown_DropdownItemMethods;
     pub use super::TMP_Dropdown;
     pub use super::ITMP_Dropdown;
     pub use super::ITMP_DropdownMethods;
+    pub use super::TMP_Dropdown_DropdownItem;
+    pub use super::ITMP_Dropdown_DropdownItem;
+    pub use super::ITMP_Dropdown_DropdownItemMethods;
+    pub use super::TMP_Dropdown_DropdownEvent;
+    pub use super::ITMP_Dropdown_DropdownEvent;
+    pub use super::ITMP_Dropdown_DropdownEventMethods;
+    pub use super::TMP_Dropdown_OptionDataList;
+    pub use super::ITMP_Dropdown_OptionDataList;
+    pub use super::ITMP_Dropdown_OptionDataListMethods;
     pub use super::TMP_Dropdown_OptionData;
     pub use super::ITMP_Dropdown_OptionData;
     pub use super::ITMP_Dropdown_OptionDataMethods;

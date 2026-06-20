@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaycamera/HubPlayCamera.md"))]#[::unity2::class(namespace="App",name="HubPlayCamera")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayCamera{#[offset(120)]#[rename(name="CameraObject")]pub camera_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="MainCamera")]pub main_camera:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="AssetPath")]pub asset_path: ::unity2::Il2CppString, #[static_field]#[rename(name="DisableLodCrossFadeTag")]pub disable_lod_cross_fade_tag: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_distance")]pub m_distance:crate::system::collections::generic::list_1::List_1<f32> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaycamera/HubPlayCamera_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubPlayCamera_Label{pub value:i32,}
 impl::unity2::ClassIdentity for HubPlayCamera_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubPlayCamera.Label";
@@ -40,89 +37,13 @@ pub fn exit()->Self{Self{value:3}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaycamera/HubPlayCamera_DemoTelop.md"))]#[::unity2::class(namespace="App",name="HubPlayCamera.DemoTelop")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayCamera_DemoTelop{#[offset(120)]#[rename(name="Root")]pub root:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="UIObject")]pub ui_object:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="UIAssetPath")]pub ui_asset_path: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_animator")]pub m_animator:crate::unity_engine::animator::Animator,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaycamera/HubPlayCamera.md"))]#[::unity2::class(namespace="App",name="HubPlayCamera")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayCamera{#[offset(120)]#[rename(name="CameraObject")]pub camera_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="MainCamera")]pub main_camera:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="AssetPath")]pub asset_path: ::unity2::Il2CppString, #[static_field]#[rename(name="DisableLodCrossFadeTag")]pub disable_lod_cross_fade_tag: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_distance")]pub m_distance:crate::system::collections::generic::list_1::List_1<f32> ,}
+
 }
 
 #[cfg(feature = "app-hubplaycamera-types")]
 pub use __types::*;
-
-#[cfg(feature="app-hubplaycamera")]impl HubPlayCamera{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data:impl::core::convert::Into<crate::app::hubdemodata::HubDemoData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d7430usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubdemodata::HubDemoData)::core::convert::Into::into(data))}
-}
-}
-
-#[cfg(feature="app-hubplaycamera")]pub trait IHubPlayCameraMethods:IHubPlayCamera{#[doc="`get_Data()` overload"]fn get_data(self,)->crate::app::hubdemodata::HubDemoData{unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d60a0usize)as*mut u8,crate::app::hubdemodata::HubDemoData;
-(HubPlayCamera)__receiver)}
-}
-#[doc="`get_CameraHandle()` overload"]fn get_camera_handle(self,)->crate::app::resourcehandle_2::ResourceHandle_2{unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d60b0usize)as*mut u8,crate::app::resourcehandle_2::ResourceHandle_2;
-(HubPlayCamera)__receiver)}
-}
-#[doc="`set_CameraHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]fn set_camera_handle(self,value:impl::core::convert::Into<crate::app::resourcehandle_2::ResourceHandle_2>)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d60c0usize)as*mut u8,();
-(HubPlayCamera)__receiver,(crate::app::resourcehandle_2::ResourceHandle_2)::core::convert::Into::into(value))}
-}
-#[doc="`get_Player()` overload"]fn get_player(self,)->crate::app::hubplayercontroller::HubPlayerController{unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d60d0usize)as*mut u8,crate::app::hubplayercontroller::HubPlayerController;
-(HubPlayCamera)__receiver)}
-}
-#[doc="`.ctor(crate::app::hubdemodata::HubDemoData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::hubdemodata::HubDemoData>)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d61f0usize)as*mut u8,();
-(HubPlayCamera)__receiver,(crate::app::hubdemodata::HubDemoData)::core::convert::Into::into(data))}
-}
-#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d62d0usize)as*mut u8,();
-(HubPlayCamera)__receiver)}
-}
-#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d6aa0usize)as*mut u8,bool;
-(HubPlayCamera)__receiver)}
-}
-#[doc="`Main()` overload"]fn main(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d6ad0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(HubPlayCamera)__receiver)}
-}
-#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d6b50usize)as*mut u8,();
-(HubPlayCamera)__receiver)}
-}
-#[doc="`OpenMessage()` overload"]fn open_message(self,)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d72d0usize)as*mut u8,();
-(HubPlayCamera)__receiver)}
-}
-#[doc="`OpenTutorial()` overload"]fn open_tutorial(self,)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d72e0usize)as*mut u8,();
-(HubPlayCamera)__receiver)}
-}
-#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23d7370usize)as*mut u8,();
-(HubPlayCamera)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubplaycamera")]impl<__T:IHubPlayCamera>IHubPlayCameraMethods for __T{}
-
-#[cfg(feature="app-hubplaycamera")]impl HubPlayCamera{pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_camera_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_camera_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn open_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn open_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-hubplaycamera")]impl HubPlayCamera{#[doc="`.ctor(crate::app::hubdemodata::HubDemoData)` — overload selector"]pub fn new(data:crate::app::hubdemodata::HubDemoData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayCamera), ::core::stringify!(new),));
- <Self as IHubPlayCameraMethods> ::ctor(this,data);
-this}
-}
 
 #[cfg(feature="app-hubplaycamera")]impl HubPlayCamera_DemoTelop{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data:impl::core::convert::Into<crate::app::hubdemodata::HubDemoData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2310usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubdemodata::HubDemoData)::core::convert::Into::into(data))}
@@ -203,16 +124,95 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-hubplaycamera")]impl HubPlayCamera{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,data:impl::core::convert::Into<crate::app::hubdemodata::HubDemoData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d7430usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubdemodata::HubDemoData)::core::convert::Into::into(data))}
+}
+}
+
+#[cfg(feature="app-hubplaycamera")]pub trait IHubPlayCameraMethods:IHubPlayCamera{#[doc="`get_Data()` overload"]fn get_data(self,)->crate::app::hubdemodata::HubDemoData{unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d60a0usize)as*mut u8,crate::app::hubdemodata::HubDemoData;
+(HubPlayCamera)__receiver)}
+}
+#[doc="`get_CameraHandle()` overload"]fn get_camera_handle(self,)->crate::app::resourcehandle_2::ResourceHandle_2{unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d60b0usize)as*mut u8,crate::app::resourcehandle_2::ResourceHandle_2;
+(HubPlayCamera)__receiver)}
+}
+#[doc="`set_CameraHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]fn set_camera_handle(self,value:impl::core::convert::Into<crate::app::resourcehandle_2::ResourceHandle_2>)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d60c0usize)as*mut u8,();
+(HubPlayCamera)__receiver,(crate::app::resourcehandle_2::ResourceHandle_2)::core::convert::Into::into(value))}
+}
+#[doc="`get_Player()` overload"]fn get_player(self,)->crate::app::hubplayercontroller::HubPlayerController{unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d60d0usize)as*mut u8,crate::app::hubplayercontroller::HubPlayerController;
+(HubPlayCamera)__receiver)}
+}
+#[doc="`.ctor(crate::app::hubdemodata::HubDemoData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::hubdemodata::HubDemoData>)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d61f0usize)as*mut u8,();
+(HubPlayCamera)__receiver,(crate::app::hubdemodata::HubDemoData)::core::convert::Into::into(data))}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d62d0usize)as*mut u8,();
+(HubPlayCamera)__receiver)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d6aa0usize)as*mut u8,bool;
+(HubPlayCamera)__receiver)}
+}
+#[doc="`Main()` overload"]fn main(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d6ad0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(HubPlayCamera)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d6b50usize)as*mut u8,();
+(HubPlayCamera)__receiver)}
+}
+#[doc="`OpenMessage()` overload"]fn open_message(self,)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d72d0usize)as*mut u8,();
+(HubPlayCamera)__receiver)}
+}
+#[doc="`OpenTutorial()` overload"]fn open_tutorial(self,)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d72e0usize)as*mut u8,();
+(HubPlayCamera)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <HubPlayCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d7370usize)as*mut u8,();
+(HubPlayCamera)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaycamera")]impl<__T:IHubPlayCamera>IHubPlayCameraMethods for __T{}
+
+#[cfg(feature="app-hubplaycamera")]impl HubPlayCamera{pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_camera_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_camera_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn open_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn open_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-hubplaycamera")]impl HubPlayCamera{#[doc="`.ctor(crate::app::hubdemodata::HubDemoData)` — overload selector"]pub fn new(data:crate::app::hubdemodata::HubDemoData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayCamera), ::core::stringify!(new),));
+ <Self as IHubPlayCameraMethods> ::ctor(this,data);
+this}
+}
+
 #[cfg(feature = "app-hubplaycamera")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubPlayCamera;
-    pub use super::IHubPlayCamera;
-    pub use super::IHubPlayCameraMethods;
     pub use super::HubPlayCamera_Label;
     pub use super::HubPlayCamera_DemoTelop;
     pub use super::IHubPlayCamera_DemoTelop;
     pub use super::IHubPlayCamera_DemoTelopMethods;
+    pub use super::HubPlayCamera;
+    pub use super::IHubPlayCamera;
+    pub use super::IHubPlayCameraMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

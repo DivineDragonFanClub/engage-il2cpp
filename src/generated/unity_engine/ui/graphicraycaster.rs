@@ -25,9 +25,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/graphicraycaster/GraphicRaycaster.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="GraphicRaycaster")]#[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]pub struct GraphicRaycaster{#[static_field]#[rename(name="kNoEventMaskSet")]pub k_no_event_mask_set:i32, #[offset(32)]#[rename(name="m_IgnoreReversedGraphics")]pub m_ignore_reversed_graphics:bool, #[offset(36)]#[rename(name="m_BlockingObjects")]pub m_blocking_objects:crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects, #[offset(40)]#[rename(name="m_BlockingMask")]pub m_blocking_mask:crate::unity_engine::layermask::LayerMask, #[offset(48)]#[rename(name="m_Canvas")]pub m_canvas:crate::unity_engine::canvas::Canvas, #[offset(56)]#[rename(name="m_RaycastResults")]pub m_raycast_results:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic> , #[static_field]#[rename(name="s_SortedGraphics")]pub s_sorted_graphics:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/graphicraycaster/GraphicRaycaster_BlockingObjects.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GraphicRaycaster_BlockingObjects{pub value:i32,}
 impl::unity2::ClassIdentity for GraphicRaycaster_BlockingObjects{const NAMESPACE: &'static str="UnityEngine.UI";
 const NAME: &'static str="GraphicRaycaster.BlockingObjects";
@@ -47,53 +44,13 @@ pub fn all()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/graphicraycaster/GraphicRaycaster.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="GraphicRaycaster")]#[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]pub struct GraphicRaycaster{#[static_field]#[rename(name="kNoEventMaskSet")]pub k_no_event_mask_set:i32, #[offset(32)]#[rename(name="m_IgnoreReversedGraphics")]pub m_ignore_reversed_graphics:bool, #[offset(36)]#[rename(name="m_BlockingObjects")]pub m_blocking_objects:crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects, #[offset(40)]#[rename(name="m_BlockingMask")]pub m_blocking_mask:crate::unity_engine::layermask::LayerMask, #[offset(48)]#[rename(name="m_Canvas")]pub m_canvas:crate::unity_engine::canvas::Canvas, #[offset(56)]#[rename(name="m_RaycastResults")]pub m_raycast_results:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic> , #[static_field]#[rename(name="s_SortedGraphics")]pub s_sorted_graphics:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic> ,}
+
 }
 
 #[cfg(feature = "unity_engine-ui-graphicraycaster-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-ui-graphicraycaster")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GraphicRaycaster_unity2_raw{use super:: * ;
-pub unsafe fn get_sort_order_priority(this:GraphicRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <GraphicRaycaster as::unity2::ClassIdentity> ::NAME,"get_sortOrderPriority",));
-let inner:extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_render_order_priority(this:GraphicRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <GraphicRaycaster as::unity2::ClassIdentity> ::NAME,"get_renderOrderPriority",));
-let inner:extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn raycast(this:GraphicRaycaster,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,result_append_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <GraphicRaycaster as::unity2::ClassIdentity> ::NAME,"Raycast",));
-let inner:extern "C" fn(GraphicRaycaster,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,result_append_list,__mi)}
-pub unsafe fn get_event_camera(this:GraphicRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GraphicRaycaster as::unity2::ClassIdentity> ::NAME,"get_eventCamera",));
-let inner:extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="unity_engine-ui-graphicraycaster")]impl GraphicRaycaster{#[doc="`Raycast(crate::unity_engine::canvas::Canvas, crate::unity_engine::camera::Camera, crate::unity_engine::vector2::Vector2, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::ui::graphic::Graphic>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>)` overload"]pub fn raycast_2(canvas:impl::core::convert::Into<crate::unity_engine::canvas::Canvas> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,pointer_position:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,found_graphics:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::ui::graphic::Graphic> > ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31913e0usize)as*mut u8,();
 (crate::unity_engine::canvas::Canvas)::core::convert::Into::into(canvas),(crate::unity_engine::camera::Camera)::core::convert::Into::into(event_camera),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pointer_position),(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::ui::graphic::Graphic>)::core::convert::Into::into(found_graphics),(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>)::core::convert::Into::into(results))}
@@ -104,10 +61,28 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-ui-graphicraycaster")]pub trait IGraphicRaycasterMethods:IGraphicRaycaster{#[doc="`get_sortOrderPriority()` overload"]fn get_sort_order_priority(self,)->i32{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GraphicRaycaster_unity2_raw::get_sort_order_priority(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <GraphicRaycaster as::unity2::ClassIdentity> ::NAME,"get_sortOrderPriority",));
+let __inner:extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_renderOrderPriority()` overload"]fn get_render_order_priority(self,)->i32{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GraphicRaycaster_unity2_raw::get_render_order_priority(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <GraphicRaycaster as::unity2::ClassIdentity> ::NAME,"get_renderOrderPriority",));
+let __inner:extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_ignoreReversedGraphics()` overload"]fn get_ignore_reversed_graphics(self,)->bool{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3190610usize)as*mut u8,bool;
@@ -142,10 +117,28 @@ __GraphicRaycaster_unity2_raw::get_render_order_priority(__receiver, ::core::opt
 (GraphicRaycaster)__receiver)}
 }
 #[doc="`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]fn raycast(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,result_append_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> >)->(){unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GraphicRaycaster_unity2_raw::raycast(__receiver, ::core::convert::Into::into(event_data), ::core::convert::Into::into(result_append_list), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <GraphicRaycaster as::unity2::ClassIdentity> ::NAME,"Raycast",));
+let __inner:extern "C" fn(GraphicRaycaster,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data), ::core::convert::Into::into(result_append_list),__mi)}
+}
 }
 #[doc="`get_eventCamera()` overload"]fn get_event_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GraphicRaycaster_unity2_raw::get_event_camera(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GraphicRaycaster as::unity2::ClassIdentity> ::NAME,"get_eventCamera",));
+let __inner:extern "C" fn(GraphicRaycaster, ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -167,6 +160,20 @@ pub fn raycast_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 }
 
+#[cfg(feature="unity_engine-ui-graphicraycaster")]impl GraphicRaycaster{#[doc="Direct (non-virtual) call to `GraphicRaycaster`'s own `get_sortOrderPriority`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sort_order_priority(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_sort_order_priority_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GraphicRaycaster`'s own `get_renderOrderPriority`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_render_order_priority(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_render_order_priority_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GraphicRaycaster`'s own `Raycast`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn raycast(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,result_append_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> ,)->(){let __mi=Self::raycast_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data,result_append_list, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GraphicRaycaster`'s own `get_eventCamera`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_event_camera(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::camera::Camera{let __mi=Self::get_event_camera_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-ui-graphicraycaster")]impl GraphicRaycaster{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GraphicRaycaster), ::core::stringify!(new),));
@@ -177,10 +184,10 @@ this}
 #[cfg(feature = "unity_engine-ui-graphicraycaster")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GraphicRaycaster_BlockingObjects;
     pub use super::GraphicRaycaster;
     pub use super::IGraphicRaycaster;
     pub use super::IGraphicRaycasterMethods;
-    pub use super::GraphicRaycaster_BlockingObjects;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

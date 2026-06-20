@@ -20,437 +20,401 @@ use crate::system::reflection::typeinfo::{ITypeInfo,TypeInfo}
 #[cfg(feature = "system-reflection-emit-typebuilder-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-emit-typebuilder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TypeBuilder_unity2_raw{use super:: * ;
-pub unsafe fn get_assembly(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-reflection-emit-typebuilder")]pub trait ITypeBuilderMethods:ITypeBuilder{#[doc="`get_Assembly()` overload"]fn get_assembly(self,)->crate::system::reflection::assembly::Assembly{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",25usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"get_Assembly",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_assembly_qualified_name(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_AssemblyQualifiedName()` overload"]fn get_assembly_qualified_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",29usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"get_AssemblyQualifiedName",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_base_type(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_BaseType()` overload"]fn get_base_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",31usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"get_BaseType",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_full_name(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_FullName()` overload"]fn get_full_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",27usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"get_FullName",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_module(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::module::Module{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",15usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"get_Module",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_namespace(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Namespace()` overload"]fn get_namespace(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",28usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"get_Namespace",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_element_type(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetElementType()` overload"]fn get_element_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(107usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",107usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetElementType",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_underlying_system_type(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_UnderlyingSystemType()` overload"]fn get_underlying_system_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(116usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",116usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"get_UnderlyingSystemType",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_attribute_flags_impl(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::typeattributes::TypeAttributes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetAttributeFlagsImpl()` overload"]fn get_attribute_flags_impl(self,)->crate::system::reflection::typeattributes::TypeAttributes{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(98usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",98usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetAttributeFlagsImpl",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->crate::system::reflection::typeattributes::TypeAttributes= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->crate::system::reflection::typeattributes::TypeAttributes= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_constructor_impl(this:TypeBuilder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,binder:crate::system::reflection::binder::Binder,call_convention:crate::system::reflection::callingconventions::CallingConventions,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::constructorinfo::ConstructorInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetConstructorImpl(crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn get_constructor_impl(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,binder:impl::core::convert::Into<crate::system::reflection::binder::Binder> ,call_convention:impl::core::convert::Into<crate::system::reflection::callingconventions::CallingConventions> ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::constructorinfo::ConstructorInfo{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",35usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetConstructorImpl",));
-let inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder,crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::constructorinfo::ConstructorInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder,crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::constructorinfo::ConstructorInfo= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,binding_attr,binder,call_convention,types,modifiers,__mi)}
-pub unsafe fn get_constructors(this:TypeBuilder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(binder), ::core::convert::Into::into(call_convention), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers),__mi)}
+}
+}
+#[doc="`GetConstructors(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_constructors(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",36usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetConstructors",));
-let inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,binding_attr,__mi)}
-pub unsafe fn get_custom_attributes(this:TypeBuilder,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(binding_attr),__mi)}
+}
+}
+#[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
-let inner:extern "C" fn(TypeBuilder,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,inherit,__mi)}
-pub unsafe fn get_custom_attributes_2(this:TypeBuilder,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(inherit),__mi)}
+}
+}
+#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",11usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,attribute_type,inherit,__mi)}
-pub unsafe fn get_event(this:TypeBuilder,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::eventinfo::EventInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit),__mi)}
+}
+}
+#[doc="`GetEvent(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_event(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)->crate::system::reflection::eventinfo::EventInfo{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",49usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetEvent",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)->crate::system::reflection::eventinfo::EventInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)->crate::system::reflection::eventinfo::EventInfo= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,binding_attr,__mi)}
-pub unsafe fn get_events(this:TypeBuilder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr),__mi)}
+}
+}
+#[doc="`GetEvents(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_events(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",50usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetEvents",));
-let inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,binding_attr,__mi)}
-pub unsafe fn get_field(this:TypeBuilder,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::fieldinfo::FieldInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(binding_attr),__mi)}
+}
+}
+#[doc="`GetField(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_field(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)->crate::system::reflection::fieldinfo::FieldInfo{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",44usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetField",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)->crate::system::reflection::fieldinfo::FieldInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)->crate::system::reflection::fieldinfo::FieldInfo= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,binding_attr,__mi)}
-pub unsafe fn get_fields(this:TypeBuilder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr),__mi)}
+}
+}
+#[doc="`GetFields(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_fields(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",45usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetFields",));
-let inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,binding_attr,__mi)}
-pub unsafe fn get_interface(this:TypeBuilder,name: ::unity2::Il2CppString,ignore_case:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(binding_attr),__mi)}
+}
+}
+#[doc="`GetInterface(::unity2::Il2CppString, bool)` overload"]fn get_interface(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,ignore_case:impl::core::convert::Into<bool>)-> ::unity2::SystemType{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",47usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetInterface",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,bool, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,bool, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,ignore_case,__mi)}
-pub unsafe fn get_interfaces(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(ignore_case),__mi)}
+}
+}
+#[doc="`GetInterfaces()` overload"]fn get_interfaces(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",48usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetInterfaces",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_method_impl(this:TypeBuilder,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,binder:crate::system::reflection::binder::Binder,call_convention:crate::system::reflection::callingconventions::CallingConventions,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMethodImpl(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn get_method_impl(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,binder:impl::core::convert::Into<crate::system::reflection::binder::Binder> ,call_convention:impl::core::convert::Into<crate::system::reflection::callingconventions::CallingConventions> ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",41usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetMethodImpl",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder,crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder,crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,binding_attr,binder,call_convention,types,modifiers,__mi)}
-pub unsafe fn get_methods(this:TypeBuilder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(binder), ::core::convert::Into::into(call_convention), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers),__mi)}
+}
+}
+#[doc="`GetMethods(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_methods(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",43usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetMethods",));
-let inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,binding_attr,__mi)}
-pub unsafe fn get_nested_type(this:TypeBuilder,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(binding_attr),__mi)}
+}
+}
+#[doc="`GetNestedType(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_nested_type(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::SystemType{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",59usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetNestedType",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,binding_attr,__mi)}
-pub unsafe fn get_nested_types(this:TypeBuilder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr),__mi)}
+}
+}
+#[doc="`GetNestedTypes(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_nested_types(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",58usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetNestedTypes",));
-let inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,binding_attr,__mi)}
-pub unsafe fn get_properties(this:TypeBuilder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(binding_attr),__mi)}
+}
+}
+#[doc="`GetProperties(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_properties(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(56usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",56usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetProperties",));
-let inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,binding_attr,__mi)}
-pub unsafe fn get_property_impl(this:TypeBuilder,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,binder:crate::system::reflection::binder::Binder,return_type: ::unity2::SystemType,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(binding_attr),__mi)}
+}
+}
+#[doc="`GetPropertyImpl(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, ::unity2::SystemType, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn get_property_impl(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,binder:impl::core::convert::Into<crate::system::reflection::binder::Binder> ,return_type:impl::core::convert::Into< ::unity2::SystemType> ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::propertyinfo::PropertyInfo{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(55usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",55usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"GetPropertyImpl",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder, ::unity2::SystemType, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder, ::unity2::SystemType, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,binding_attr,binder,return_type,types,modifiers,__mi)}
-pub unsafe fn has_element_type_impl(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(binder), ::core::convert::Into::into(return_type), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers),__mi)}
+}
+}
+#[doc="`HasElementTypeImpl()` overload"]fn has_element_type_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(110usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",110usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"HasElementTypeImpl",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_array_impl(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsArrayImpl()` overload"]fn is_array_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(99usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",99usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"IsArrayImpl",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_by_ref_impl(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsByRefImpl()` overload"]fn is_by_ref_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(100usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",100usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"IsByRefImpl",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_com_object_impl(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsCOMObjectImpl()` overload"]fn is_com_object_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(103usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",103usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"IsCOMObjectImpl",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_defined(this:TypeBuilder,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",12usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"IsDefined",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,attribute_type,inherit,__mi)}
-pub unsafe fn is_pointer_impl(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit),__mi)}
+}
+}
+#[doc="`IsPointerImpl()` overload"]fn is_pointer_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(101usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",101usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"IsPointerImpl",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_primitive_impl(this:TypeBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsPrimitiveImpl()` overload"]fn is_primitive_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(102usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",102usize,__vt.len(), <TypeBuilder as::unity2::ClassIdentity> ::NAME,"IsPrimitiveImpl",));
-let inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TypeBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="system-reflection-emit-typebuilder")]pub trait ITypeBuilderMethods:ITypeBuilder{#[doc="`get_Assembly()` overload"]fn get_assembly(self,)->crate::system::reflection::assembly::Assembly{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_assembly(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_AssemblyQualifiedName()` overload"]fn get_assembly_qualified_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_assembly_qualified_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_BaseType()` overload"]fn get_base_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_base_type(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_FullName()` overload"]fn get_full_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_full_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_module(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Namespace()` overload"]fn get_namespace(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_namespace(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetElementType()` overload"]fn get_element_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_element_type(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_UnderlyingSystemType()` overload"]fn get_underlying_system_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_underlying_system_type(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetAttributeFlagsImpl()` overload"]fn get_attribute_flags_impl(self,)->crate::system::reflection::typeattributes::TypeAttributes{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_attribute_flags_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetConstructorImpl(crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn get_constructor_impl(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,binder:impl::core::convert::Into<crate::system::reflection::binder::Binder> ,call_convention:impl::core::convert::Into<crate::system::reflection::callingconventions::CallingConventions> ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::constructorinfo::ConstructorInfo{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_constructor_impl(__receiver, ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(binder), ::core::convert::Into::into(call_convention), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers), ::core::option::Option::None)}
-}
-#[doc="`GetConstructors(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_constructors(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_constructors(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
-}
-#[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(inherit), ::core::option::Option::None)}
-}
-#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_custom_attributes_2(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
-}
-#[doc="`GetEvent(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_event(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)->crate::system::reflection::eventinfo::EventInfo{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_event(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
-}
-#[doc="`GetEvents(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_events(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_events(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
-}
-#[doc="`GetField(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_field(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)->crate::system::reflection::fieldinfo::FieldInfo{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_field(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
-}
-#[doc="`GetFields(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_fields(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_fields(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
-}
-#[doc="`GetInterface(::unity2::Il2CppString, bool)` overload"]fn get_interface(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,ignore_case:impl::core::convert::Into<bool>)-> ::unity2::SystemType{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_interface(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(ignore_case), ::core::option::Option::None)}
-}
-#[doc="`GetInterfaces()` overload"]fn get_interfaces(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_interfaces(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMethodImpl(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn get_method_impl(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,binder:impl::core::convert::Into<crate::system::reflection::binder::Binder> ,call_convention:impl::core::convert::Into<crate::system::reflection::callingconventions::CallingConventions> ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_method_impl(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(binder), ::core::convert::Into::into(call_convention), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers), ::core::option::Option::None)}
-}
-#[doc="`GetMethods(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_methods(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_methods(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
-}
-#[doc="`GetNestedType(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_nested_type(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::SystemType{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_nested_type(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
-}
-#[doc="`GetNestedTypes(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_nested_types(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_nested_types(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
-}
-#[doc="`GetProperties(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_properties(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_properties(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
-}
-#[doc="`GetPropertyImpl(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, ::unity2::SystemType, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn get_property_impl(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,binder:impl::core::convert::Into<crate::system::reflection::binder::Binder> ,return_type:impl::core::convert::Into< ::unity2::SystemType> ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::propertyinfo::PropertyInfo{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::get_property_impl(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(binder), ::core::convert::Into::into(return_type), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers), ::core::option::Option::None)}
-}
-#[doc="`HasElementTypeImpl()` overload"]fn has_element_type_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::has_element_type_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsArrayImpl()` overload"]fn is_array_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::is_array_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsByRefImpl()` overload"]fn is_by_ref_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::is_by_ref_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsCOMObjectImpl()` overload"]fn is_com_object_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::is_com_object_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::is_defined(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
-}
-#[doc="`IsPointerImpl()` overload"]fn is_pointer_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::is_pointer_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsPrimitiveImpl()` overload"]fn is_primitive_impl(self,)->bool{unsafe{let __receiver= <TypeBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TypeBuilder_unity2_raw::is_primitive_impl(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -489,6 +453,107 @@ pub fn is_com_object_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
 pub fn is_pointer_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
 pub fn is_primitive_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+}
+
+#[cfg(feature="system-reflection-emit-typebuilder")]impl TypeBuilder{#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `get_Assembly`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_assembly(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::assembly::Assembly{let __mi=Self::get_assembly_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `get_AssemblyQualifiedName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_assembly_qualified_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_assembly_qualified_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `get_BaseType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_base_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_base_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `get_FullName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_full_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_full_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `get_Module`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::module::Module{let __mi=Self::get_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `get_Namespace`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_namespace(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_namespace_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetElementType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_element_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_element_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `get_UnderlyingSystemType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_underlying_system_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_underlying_system_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetAttributeFlagsImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_attribute_flags_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::typeattributes::TypeAttributes{let __mi=Self::get_attribute_flags_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::typeattributes::TypeAttributes= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetConstructorImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_constructor_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,binding_attr:crate::system::reflection::bindingflags::BindingFlags,binder:crate::system::reflection::binder::Binder,call_convention:crate::system::reflection::callingconventions::CallingConventions,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,)->crate::system::reflection::constructorinfo::ConstructorInfo{let __mi=Self::get_constructor_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder,crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::constructorinfo::ConstructorInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),binding_attr,binder,call_convention,types,modifiers, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetConstructors`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_constructors(this:impl::core::convert::Into< ::unity2::IlInstance> ,binding_attr:crate::system::reflection::bindingflags::BindingFlags,)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo>{let __mi=Self::get_constructors_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),binding_attr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetCustomAttributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_custom_attributes(this:impl::core::convert::Into< ::unity2::IlInstance> ,inherit:bool,)-> ::unity2::Array<crate::system::object::Object>{let __mi=Self::get_custom_attributes_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),inherit, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetCustomAttributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_custom_attributes_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,attribute_type: ::unity2::SystemType,inherit:bool,)-> ::unity2::Array<crate::system::object::Object>{let __mi=Self::get_custom_attributes_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),attribute_type,inherit, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetEvent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_event(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,)->crate::system::reflection::eventinfo::EventInfo{let __mi=Self::get_event_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)->crate::system::reflection::eventinfo::EventInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name,binding_attr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetEvents`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_events(this:impl::core::convert::Into< ::unity2::IlInstance> ,binding_attr:crate::system::reflection::bindingflags::BindingFlags,)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo>{let __mi=Self::get_events_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),binding_attr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetField`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_field(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,)->crate::system::reflection::fieldinfo::FieldInfo{let __mi=Self::get_field_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)->crate::system::reflection::fieldinfo::FieldInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name,binding_attr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetFields`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_fields(this:impl::core::convert::Into< ::unity2::IlInstance> ,binding_attr:crate::system::reflection::bindingflags::BindingFlags,)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo>{let __mi=Self::get_fields_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),binding_attr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetInterface`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_interface(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,ignore_case:bool,)-> ::unity2::SystemType{let __mi=Self::get_interface_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,bool, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name,ignore_case, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetInterfaces`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_interfaces(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array< ::unity2::SystemType>{let __mi=Self::get_interfaces_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetMethodImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_method_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,binder:crate::system::reflection::binder::Binder,call_convention:crate::system::reflection::callingconventions::CallingConventions,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,)->crate::system::reflection::methodinfo::MethodInfo{let __mi=Self::get_method_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder,crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name,binding_attr,binder,call_convention,types,modifiers, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetMethods`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_methods(this:impl::core::convert::Into< ::unity2::IlInstance> ,binding_attr:crate::system::reflection::bindingflags::BindingFlags,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{let __mi=Self::get_methods_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),binding_attr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetNestedType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_nested_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,)-> ::unity2::SystemType{let __mi=Self::get_nested_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name,binding_attr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetNestedTypes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_nested_types(this:impl::core::convert::Into< ::unity2::IlInstance> ,binding_attr:crate::system::reflection::bindingflags::BindingFlags,)-> ::unity2::Array< ::unity2::SystemType>{let __mi=Self::get_nested_types_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),binding_attr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetProperties`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_properties(this:impl::core::convert::Into< ::unity2::IlInstance> ,binding_attr:crate::system::reflection::bindingflags::BindingFlags,)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>{let __mi=Self::get_properties_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),binding_attr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `GetPropertyImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_property_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,binder:crate::system::reflection::binder::Binder,return_type: ::unity2::SystemType,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,)->crate::system::reflection::propertyinfo::PropertyInfo{let __mi=Self::get_property_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder, ::unity2::SystemType, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name,binding_attr,binder,return_type,types,modifiers, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `HasElementTypeImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn has_element_type_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::has_element_type_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `IsArrayImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_array_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_array_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `IsByRefImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_by_ref_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_by_ref_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `IsCOMObjectImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_com_object_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_com_object_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `IsDefined`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_defined(this:impl::core::convert::Into< ::unity2::IlInstance> ,attribute_type: ::unity2::SystemType,inherit:bool,)->bool{let __mi=Self::is_defined_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),attribute_type,inherit, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `IsPointerImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_pointer_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_pointer_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TypeBuilder`'s own `IsPrimitiveImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_primitive_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_primitive_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "system-reflection-emit-typebuilder")]

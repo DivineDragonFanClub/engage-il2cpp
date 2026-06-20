@@ -21,6 +21,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characternodeconstraint/CharacterNodeConstraint.md"))]#[::unity2::class(namespace="Combat",name="CharacterNodeConstraint")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterNodeConstraint{#[offset(24)]#[rename(name="state")]pub state:crate::combat::characternodeconstraint::CharacterNodeConstraint_State, #[offset(32)]#[rename(name="SpecialPurposeCameraNodes")]pub special_purpose_camera_nodes: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(40)]#[rename(name="SpecialPurposeParticleNodes")]pub special_purpose_particle_nodes: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(48)]#[rename(name="specialPurposeParticleNodesOffset")]pub special_purpose_particle_nodes_offset: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(56)]#[rename(name="_ctr")]pub ctr:crate::unity_engine::transform::Transform,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characternodeconstraint/CharacterNodeConstraint_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CharacterNodeConstraint_State{pub value:i32,}
 impl::unity2::ClassIdentity for CharacterNodeConstraint_State{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="CharacterNodeConstraint.State";
@@ -37,9 +40,6 @@ pub fn no_use()->Self{Self{value:1}
 pub fn running()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characternodeconstraint/CharacterNodeConstraint.md"))]#[::unity2::class(namespace="Combat",name="CharacterNodeConstraint")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterNodeConstraint{#[offset(24)]#[rename(name="state")]pub state:crate::combat::characternodeconstraint::CharacterNodeConstraint_State, #[offset(32)]#[rename(name="SpecialPurposeCameraNodes")]pub special_purpose_camera_nodes: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(40)]#[rename(name="SpecialPurposeParticleNodes")]pub special_purpose_particle_nodes: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(48)]#[rename(name="specialPurposeParticleNodesOffset")]pub special_purpose_particle_nodes_offset: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(56)]#[rename(name="_ctr")]pub ctr:crate::unity_engine::transform::Transform,}
 
 }
 
@@ -87,10 +87,10 @@ this}
 #[cfg(feature = "combat-characternodeconstraint")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharacterNodeConstraint_State;
     pub use super::CharacterNodeConstraint;
     pub use super::ICharacterNodeConstraint;
     pub use super::ICharacterNodeConstraintMethods;
+    pub use super::CharacterNodeConstraint_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

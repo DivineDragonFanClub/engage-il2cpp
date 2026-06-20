@@ -14,60 +14,53 @@ mod __types {
 #[cfg(feature = "tm_pro-itweenvalue_2-types")]
 pub use __types::*;
 
-#[cfg(feature="tm_pro-itweenvalue_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ITweenValue_2_unity2_raw{use super:: * ;
-pub unsafe fn tween_value(this:ITweenValue_2,float_percentage:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="tm_pro-itweenvalue_2")]pub trait IITweenValue_2Methods:IITweenValue_2{#[doc="`TweenValue(f32)` overload"]fn tween_value(self,float_percentage:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ITweenValue_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <ITweenValue_2 as::unity2::ClassIdentity> ::NAME,"TweenValue",));
-let inner:extern "C" fn(ITweenValue_2,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ITweenValue_2,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,float_percentage,__mi)}
-pub unsafe fn get_ignore_time_scale(this:ITweenValue_2,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(float_percentage),__mi)}
+}
+}
+#[doc="`get_ignoreTimeScale()` overload"]fn get_ignore_time_scale(self,)->bool{unsafe{let __receiver= <ITweenValue_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <ITweenValue_2 as::unity2::ClassIdentity> ::NAME,"get_ignoreTimeScale",));
-let inner:extern "C" fn(ITweenValue_2, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ITweenValue_2, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_duration(this:ITweenValue_2,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_duration()` overload"]fn get_duration(self,)->f32{unsafe{let __receiver= <ITweenValue_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <ITweenValue_2 as::unity2::ClassIdentity> ::NAME,"get_duration",));
-let inner:extern "C" fn(ITweenValue_2, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ITweenValue_2, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn valid_target(this:ITweenValue_2,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ValidTarget()` overload"]fn valid_target(self,)->bool{unsafe{let __receiver= <ITweenValue_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",3usize,__vt.len(), <ITweenValue_2 as::unity2::ClassIdentity> ::NAME,"ValidTarget",));
-let inner:extern "C" fn(ITweenValue_2, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ITweenValue_2, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="tm_pro-itweenvalue_2")]pub trait IITweenValue_2Methods:IITweenValue_2{#[doc="`TweenValue(f32)` overload"]fn tween_value(self,float_percentage:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ITweenValue_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ITweenValue_2_unity2_raw::tween_value(__receiver, ::core::convert::Into::into(float_percentage), ::core::option::Option::None)}
-}
-#[doc="`get_ignoreTimeScale()` overload"]fn get_ignore_time_scale(self,)->bool{unsafe{let __receiver= <ITweenValue_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ITweenValue_2_unity2_raw::get_ignore_time_scale(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_duration()` overload"]fn get_duration(self,)->f32{unsafe{let __receiver= <ITweenValue_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ITweenValue_2_unity2_raw::get_duration(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ValidTarget()` overload"]fn valid_target(self,)->bool{unsafe{let __receiver= <ITweenValue_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ITweenValue_2_unity2_raw::valid_target(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -77,6 +70,20 @@ __ITweenValue_2_unity2_raw::valid_target(__receiver, ::core::option::Option::Non
 pub fn get_ignore_time_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn valid_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="tm_pro-itweenvalue_2")]impl ITweenValue_2{#[doc="Direct (non-virtual) call to `ITweenValue_2`'s own `TweenValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn tween_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,float_percentage:f32,)->(){let __mi=Self::tween_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),float_percentage, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ITweenValue_2`'s own `get_ignoreTimeScale`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_ignore_time_scale(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_ignore_time_scale_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ITweenValue_2`'s own `get_duration`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_duration(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_duration_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ITweenValue_2`'s own `ValidTarget`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn valid_target(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::valid_target_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "tm_pro-itweenvalue_2")]

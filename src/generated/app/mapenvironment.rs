@@ -19,15 +19,43 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapenvironment/MapEnvironment.md"))]#[::unity2::class(namespace="App",name="MapEnvironment")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::mapenvironment::MapEnvironment>)]pub struct MapEnvironment{#[offset(32)]#[rename(name="Bmap")]pub bmap:crate::app::mapenvironment::MapEnvironment_Param, #[offset(40)]#[rename(name="Combat")]pub combat:crate::app::mapenvironment::MapEnvironment_Param,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapenvironment/MapEnvironment_Param.md"))]#[::unity2::class(namespace="App",name="MapEnvironment.Param")]#[parent(crate::system::object::Object)]pub struct MapEnvironment_Param{#[offset(16)]#[rename(name="color")]pub color:crate::unity_engine::color::Color, #[offset(32)]#[rename(name="start")]pub start:f32, #[offset(36)]#[rename(name="end")]pub end:f32, #[offset(40)]#[rename(name="useDefaultShadowPreset")]pub use_default_shadow_preset:bool, #[offset(48)]#[rename(name="overrideShadowPresetData")]pub override_shadow_preset_data:crate::unity_engine::rendering::universal::custom::customshadowdata::CustomShadowData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapenvironment/MapEnvironment.md"))]#[::unity2::class(namespace="App",name="MapEnvironment")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::mapenvironment::MapEnvironment>)]pub struct MapEnvironment{#[offset(32)]#[rename(name="Bmap")]pub bmap:crate::app::mapenvironment::MapEnvironment_Param, #[offset(40)]#[rename(name="Combat")]pub combat:crate::app::mapenvironment::MapEnvironment_Param,}
 
 }
 
 #[cfg(feature = "app-mapenvironment-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapenvironment")]pub trait IMapEnvironment_ParamMethods:IMapEnvironment_Param{#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <MapEnvironment_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5500usize)as*mut u8,();
+(MapEnvironment_Param)__receiver)}
+}
+#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <MapEnvironment_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5540usize)as*mut u8,();
+(MapEnvironment_Param)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapEnvironment_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5590usize)as*mut u8,();
+(MapEnvironment_Param)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapenvironment")]impl<__T:IMapEnvironment_Param>IMapEnvironment_ParamMethods for __T{}
+
+#[cfg(feature="app-mapenvironment")]impl MapEnvironment_Param{pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapenvironment")]impl MapEnvironment_Param{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapEnvironment_Param), ::core::stringify!(new),));
+ <Self as IMapEnvironment_ParamMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-mapenvironment")]pub trait IMapEnvironmentMethods:IMapEnvironment{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapEnvironment as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1dc0c00usize)as*mut u8,();
@@ -62,43 +90,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapenvironment")]pub trait IMapEnvironment_ParamMethods:IMapEnvironment_Param{#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <MapEnvironment_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5500usize)as*mut u8,();
-(MapEnvironment_Param)__receiver)}
-}
-#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <MapEnvironment_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5540usize)as*mut u8,();
-(MapEnvironment_Param)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapEnvironment_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5590usize)as*mut u8,();
-(MapEnvironment_Param)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapenvironment")]impl<__T:IMapEnvironment_Param>IMapEnvironment_ParamMethods for __T{}
-
-#[cfg(feature="app-mapenvironment")]impl MapEnvironment_Param{pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mapenvironment")]impl MapEnvironment_Param{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapEnvironment_Param), ::core::stringify!(new),));
- <Self as IMapEnvironment_ParamMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapenvironment")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapEnvironment;
-    pub use super::IMapEnvironment;
-    pub use super::IMapEnvironmentMethods;
     pub use super::MapEnvironment_Param;
     pub use super::IMapEnvironment_Param;
     pub use super::IMapEnvironment_ParamMethods;
+    pub use super::MapEnvironment;
+    pub use super::IMapEnvironment;
+    pub use super::IMapEnvironmentMethods;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

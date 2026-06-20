@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogsequence/TalkLogSequence.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkLogSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::talk3_d::talklogsequence::TalkLogSequence>)]pub struct TalkLogSequence{#[offset(114)]#[rename(name="m_IsPlayedVoice")]pub m_is_played_voice:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogsequence/TalkLogSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkLogSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for TalkLogSequence_Label{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkLogSequence.Label";
@@ -36,36 +39,10 @@ pub fn end()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogsequence/TalkLogSequence.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkLogSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::talk3_d::talklogsequence::TalkLogSequence>)]pub struct TalkLogSequence{#[offset(114)]#[rename(name="m_IsPlayedVoice")]pub m_is_played_voice:bool,}
-
 }
 
 #[cfg(feature = "app-talk3_d-talklogsequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-talk3_d-talklogsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkLogSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:TalkLogSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <TalkLogSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(TalkLogSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:TalkLogSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <TalkLogSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(TalkLogSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-talk3_d-talklogsequence")]impl TalkLogSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::talk3_d::talklogsequence::TalkLogSequence{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20bff80usize)as*mut u8,crate::app::talk3_d::talklogsequence::TalkLogSequence;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
@@ -73,10 +50,28 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-talk3_d-talklogsequence")]pub trait ITalkLogSequenceMethods:ITalkLogSequence{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkLogSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TalkLogSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(TalkLogSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkLogSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TalkLogSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(TalkLogSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ShowTalkUI()` overload"]fn show_talk_ui(self,)->(){unsafe{let __receiver= <TalkLogSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20c2eb0usize)as*mut u8,();
@@ -142,6 +137,14 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 }
 
+#[cfg(feature="app-talk3_d-talklogsequence")]impl TalkLogSequence{#[doc="Direct (non-virtual) call to `TalkLogSequence`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TalkLogSequence`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-talk3_d-talklogsequence")]impl TalkLogSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TalkLogSequence), ::core::stringify!(new),));
@@ -152,10 +155,10 @@ this}
 #[cfg(feature = "app-talk3_d-talklogsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TalkLogSequence_Label;
     pub use super::TalkLogSequence;
     pub use super::ITalkLogSequence;
     pub use super::ITalkLogSequenceMethods;
+    pub use super::TalkLogSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

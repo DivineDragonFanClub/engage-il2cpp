@@ -57,39 +57,6 @@ pub fn goal()->Self{Self{value:4}
 #[cfg(feature = "root_motion-final_ik-iksolverlimb-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-iksolverlimb")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverLimb_unity2_raw{use super:: * ;
-pub unsafe fn on_initiate_virtual(this:IKSolverLimb,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <IKSolverLimb as::unity2::ClassIdentity> ::NAME,"OnInitiateVirtual",));
-let inner:extern "C" fn(IKSolverLimb, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_update_virtual(this:IKSolverLimb,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <IKSolverLimb as::unity2::ClassIdentity> ::NAME,"OnUpdateVirtual",));
-let inner:extern "C" fn(IKSolverLimb, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_post_solve_virtual(this:IKSolverLimb,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <IKSolverLimb as::unity2::ClassIdentity> ::NAME,"OnPostSolveVirtual",));
-let inner:extern "C" fn(IKSolverLimb, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="root_motion-final_ik-iksolverlimb")]pub trait IIKSolverLimbMethods:IIKSolverLimb{#[doc="`MaintainRotation()` overload"]fn maintain_rotation(self,)->(){unsafe{let __receiver= <IKSolverLimb as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c32cf0usize)as*mut u8,();
 (IKSolverLimb)__receiver)}
@@ -99,13 +66,40 @@ inner(this,__mi)}
 (IKSolverLimb)__receiver)}
 }
 #[doc="`OnInitiateVirtual()` overload"]fn on_initiate_virtual(self,)->(){unsafe{let __receiver= <IKSolverLimb as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverLimb_unity2_raw::on_initiate_virtual(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <IKSolverLimb as::unity2::ClassIdentity> ::NAME,"OnInitiateVirtual",));
+let __inner:extern "C" fn(IKSolverLimb, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnUpdateVirtual()` overload"]fn on_update_virtual(self,)->(){unsafe{let __receiver= <IKSolverLimb as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverLimb_unity2_raw::on_update_virtual(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <IKSolverLimb as::unity2::ClassIdentity> ::NAME,"OnUpdateVirtual",));
+let __inner:extern "C" fn(IKSolverLimb, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnPostSolveVirtual()` overload"]fn on_post_solve_virtual(self,)->(){unsafe{let __receiver= <IKSolverLimb as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverLimb_unity2_raw::on_post_solve_virtual(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <IKSolverLimb as::unity2::ClassIdentity> ::NAME,"OnPostSolveVirtual",));
+let __inner:extern "C" fn(IKSolverLimb, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverLimb as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c33bc0usize)as*mut u8,();
@@ -143,6 +137,17 @@ pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn get_axis_directions_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn store_axis_directions_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn get_modified_bend_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolverlimb")]impl IKSolverLimb{#[doc="Direct (non-virtual) call to `IKSolverLimb`'s own `OnInitiateVirtual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_initiate_virtual(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_initiate_virtual_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverLimb`'s own `OnUpdateVirtual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_update_virtual(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_update_virtual_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverLimb`'s own `OnPostSolveVirtual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_post_solve_virtual(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_post_solve_virtual_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root_motion-final_ik-iksolverlimb")]impl IKSolverLimb{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

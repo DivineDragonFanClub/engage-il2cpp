@@ -17,7 +17,13 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence_MapEventStatck.md"))]#[::unity2::class(namespace="App",name="EventSequence.MapEventStatck")]#[parent(crate::app::procinst::ProcInst)]pub struct EventSequence_MapEventStatck{#[offset(112)]#[rename(name="m_Stack")]pub m_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> , #[offset(120)]#[rename(name="m_UnitIndex")]pub m_unit_index:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence.md"))]#[::unity2::class(namespace="App",name="EventSequence")]#[parent(crate::app::stackprocinst_1::StackProcInst_1<crate::app::eventsequence::EventSequence>)]pub struct EventSequence{#[offset(112)]#[rename(name="m_Current")]pub m_current:crate::app::eventsequence::EventSequence_Coroutine, #[offset(120)]#[rename(name="m_Coroutines")]pub m_coroutines:crate::system::collections::generic::list_1::List_1<crate::app::eventsequence::EventSequence_Coroutine> , #[offset(128)]#[rename(name="m_BindingUI")]pub m_binding_ui:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence_Coroutine.md"))]#[::unity2::class(namespace="App",name="EventSequence.Coroutine")]#[parent(crate::system::object::Object)]pub struct EventSequence_Coroutine{#[offset(16)]#[rename(name="m_Func")]pub m_func:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(24)]#[rename(name="m_Args")]pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> , #[offset(32)]#[rename(name="m_First")]pub m_first:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EventSequence_Label{pub value:i32,}
@@ -33,58 +39,113 @@ impl EventSequence_Label{pub fn end()->Self{Self{value:0}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence_MapEventStatck.md"))]#[::unity2::class(namespace="App",name="EventSequence.MapEventStatck")]#[parent(crate::app::procinst::ProcInst)]pub struct EventSequence_MapEventStatck{#[offset(112)]#[rename(name="m_Stack")]pub m_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> , #[offset(120)]#[rename(name="m_UnitIndex")]pub m_unit_index:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventsequence/EventSequence_Coroutine.md"))]#[::unity2::class(namespace="App",name="EventSequence.Coroutine")]#[parent(crate::system::object::Object)]pub struct EventSequence_Coroutine{#[offset(16)]#[rename(name="m_Func")]pub m_func:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(24)]#[rename(name="m_Args")]pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> , #[offset(32)]#[rename(name="m_First")]pub m_first:bool,}
-
 }
 
 #[cfg(feature = "app-eventsequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-eventsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:EventSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]pub fn try_create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32> ,arg3:impl::core::convert::Into<i32> ,arg4:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59000usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2),(i32)::core::convert::Into::into(arg3),(i32)::core::convert::Into::into(arg4))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector)` overload"]pub fn try_create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59120usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`IsExist(crate::app::unit::Unit)` overload"]pub fn is_exist(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e591b0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit)` overload"]pub fn try_create_bind_3(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e591d0usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32)` overload"]pub fn try_create_bind_4(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59210usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn try_create_bind_5(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,from:impl::core::convert::Into<crate::app::unit::Unit> ,to:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59240usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(from),(crate::app::unit::Unit)::core::convert::Into::into(to))}
+}
+}
+
+#[cfg(feature="app-eventsequence")]pub trait IEventSequence_MapEventStatckMethods:IEventSequence_MapEventStatck{#[doc="`.ctor(crate::app::mapinspector::MapInspector)` overload"]fn ctor(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58d30usize)as*mut u8,();
+(EventSequence_MapEventStatck)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` overload"]fn ctor_2(self,stack:impl::core::convert::Into<crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> > ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58e00usize)as*mut u8,();
+(EventSequence_MapEventStatck)__receiver,(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>)::core::convert::Into::into(stack),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <EventSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(EventSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",9usize,__vt.len(), <EventSequence_MapEventStatck as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:EventSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <EventSequence_MapEventStatck as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let __inner:extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",10usize,__vt.len(), <EventSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(EventSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",10usize,__vt.len(), <EventSequence_MapEventStatck as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_shutdown(this:EventSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <EventSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
-let inner:extern "C" fn(EventSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_debug_log(this:EventSequence,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <EventSequence as::unity2::ClassIdentity> ::NAME,"GetDebugLog",));
-let inner:extern "C" fn(EventSequence, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-eventsequence")]impl<__T:IEventSequence_MapEventStatck>IEventSequence_MapEventStatckMethods for __T{}
+
+#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn try_create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn try_create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn try_create_bind_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn try_create_bind_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn try_create_bind_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{#[doc="Direct (non-virtual) call to `EventSequence_MapEventStatck`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `EventSequence_MapEventStatck`'s own `OnTick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `EventSequence_MapEventStatck`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{#[doc="`.ctor(crate::app::mapinspector::MapInspector)` — overload selector"]pub fn new(inspector:crate::app::mapinspector::MapInspector)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventSequence_MapEventStatck), ::core::stringify!(new),));
+ <Self as IEventSequence_MapEventStatckMethods> ::ctor(this,inspector);
+this}
+#[doc="`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` — overload selector"]pub fn new_2(stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> ,unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventSequence_MapEventStatck), ::core::stringify!(new_2),));
+ <Self as IEventSequence_MapEventStatckMethods> ::ctor_2(this,stack,unit);
+this}
 }
 
 #[cfg(feature="app-eventsequence")]impl EventSequence{#[doc="`GetCoroutines()` overload"]pub fn get_coroutines()->crate::system::collections::generic::list_1::List_1<crate::app::eventsequence::EventSequence_Coroutine>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e3740usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::eventsequence::EventSequence_Coroutine> ;
@@ -207,13 +268,40 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-eventsequence")]pub trait IEventSequenceMethods:IEventSequence{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <EventSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EventSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <EventSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(EventSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <EventSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EventSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <EventSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(EventSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <EventSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EventSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <EventSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let __inner:extern "C" fn(EventSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`TryBindUI()` overload"]fn try_bind_ui(self,)->(){unsafe{let __receiver= <EventSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24e30a0usize)as*mut u8,();
@@ -244,7 +332,16 @@ __EventSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None
 (EventSequence)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(func),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
 }
 #[doc="`GetDebugLog()` overload"]fn get_debug_log(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EventSequence_unity2_raw::get_debug_log(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <EventSequence as::unity2::ClassIdentity> ::NAME,"GetDebugLog",));
+let __inner:extern "C" fn(EventSequence, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24e3de0usize)as*mut u8,();
@@ -307,109 +404,24 @@ pub fn map_ending_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
 }
 
+#[cfg(feature="app-eventsequence")]impl EventSequence{#[doc="Direct (non-virtual) call to `EventSequence`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `EventSequence`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `EventSequence`'s own `OnShutdown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_shutdown(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_shutdown_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `EventSequence`'s own `GetDebugLog`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_log(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_log_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-eventsequence")]impl EventSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(EventSequence), ::core::stringify!(new),));
  <Self as IEventSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-eventsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventSequence_MapEventStatck_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:EventSequence_MapEventStatck,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <EventSequence_MapEventStatck as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_tick(this:EventSequence_MapEventStatck,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <EventSequence_MapEventStatck as::unity2::ClassIdentity> ::NAME,"OnTick",));
-let inner:extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:EventSequence_MapEventStatck,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <EventSequence_MapEventStatck as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(EventSequence_MapEventStatck, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]pub fn try_create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32> ,arg3:impl::core::convert::Into<i32> ,arg4:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59000usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2),(i32)::core::convert::Into::into(arg3),(i32)::core::convert::Into::into(arg4))}
-}
-#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector)` overload"]pub fn try_create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59120usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
-}
-#[doc="`IsExist(crate::app::unit::Unit)` overload"]pub fn is_exist(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e591b0usize)as*mut u8,bool;
-(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit)` overload"]pub fn try_create_bind_3(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e591d0usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32)` overload"]pub fn try_create_bind_4(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59210usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value))}
-}
-#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn try_create_bind_5(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,from:impl::core::convert::Into<crate::app::unit::Unit> ,to:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e59240usize)as*mut u8,bool;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(from),(crate::app::unit::Unit)::core::convert::Into::into(to))}
-}
-}
-
-#[cfg(feature="app-eventsequence")]pub trait IEventSequence_MapEventStatckMethods:IEventSequence_MapEventStatck{#[doc="`.ctor(crate::app::mapinspector::MapInspector)` overload"]fn ctor(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58d30usize)as*mut u8,();
-(EventSequence_MapEventStatck)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
-}
-#[doc="`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` overload"]fn ctor_2(self,stack:impl::core::convert::Into<crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> > ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e58e00usize)as*mut u8,();
-(EventSequence_MapEventStatck)__receiver,(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>)::core::convert::Into::into(stack),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EventSequence_MapEventStatck_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EventSequence_MapEventStatck_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <EventSequence_MapEventStatck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EventSequence_MapEventStatck_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-eventsequence")]impl<__T:IEventSequence_MapEventStatck>IEventSequence_MapEventStatckMethods for __T{}
-
-#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn try_create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn try_create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn try_create_bind_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn try_create_bind_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn try_create_bind_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="app-eventsequence")]impl EventSequence_MapEventStatck{#[doc="`.ctor(crate::app::mapinspector::MapInspector)` — overload selector"]pub fn new(inspector:crate::app::mapinspector::MapInspector)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventSequence_MapEventStatck), ::core::stringify!(new),));
- <Self as IEventSequence_MapEventStatckMethods> ::ctor(this,inspector);
-this}
-#[doc="`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>, crate::app::unit::Unit)` — overload selector"]pub fn new_2(stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> ,unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventSequence_MapEventStatck), ::core::stringify!(new_2),));
- <Self as IEventSequence_MapEventStatckMethods> ::ctor_2(this,stack,unit);
 this}
 }
 
@@ -474,16 +486,16 @@ this}
 #[cfg(feature = "app-eventsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventSequence;
-    pub use super::IEventSequence;
-    pub use super::IEventSequenceMethods;
-    pub use super::EventSequence_Label;
     pub use super::EventSequence_MapEventStatck;
     pub use super::IEventSequence_MapEventStatck;
     pub use super::IEventSequence_MapEventStatckMethods;
+    pub use super::EventSequence;
+    pub use super::IEventSequence;
+    pub use super::IEventSequenceMethods;
     pub use super::EventSequence_Coroutine;
     pub use super::IEventSequence_Coroutine;
     pub use super::IEventSequence_CoroutineMethods;
+    pub use super::EventSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::stackprocinst_1::IStackProcInst_1;
     pub use crate::system::object::IObject;

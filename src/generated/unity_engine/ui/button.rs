@@ -35,29 +35,6 @@ use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
 #[cfg(feature = "unity_engine-ui-button-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ui-button")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Button_unity2_raw{use super:: * ;
-pub unsafe fn on_pointer_click(this:Button,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",41usize,__vt.len(), <Button as::unity2::ClassIdentity> ::NAME,"OnPointerClick",));
-let inner:extern "C" fn(Button,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn on_submit(this:Button,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <Button as::unity2::ClassIdentity> ::NAME,"OnSubmit",));
-let inner:extern "C" fn(Button,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-}
-
 #[cfg(feature="unity_engine-ui-button")]pub trait IButtonMethods:IButton{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317c240usize)as*mut u8,();
 (Button)__receiver)}
@@ -75,10 +52,28 @@ inner(this,event_data,__mi)}
 (Button)__receiver)}
 }
 #[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Button_unity2_raw::on_pointer_click(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <Button as::unity2::ClassIdentity> ::NAME,"OnPointerClick",));
+let __inner:extern "C" fn(Button,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_submit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Button_unity2_raw::on_submit(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <Button as::unity2::ClassIdentity> ::NAME,"OnSubmit",));
+let __inner:extern "C" fn(Button,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`OnFinishSubmit()` overload"]fn on_finish_submit(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317c5a0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
@@ -95,6 +90,14 @@ pub fn press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn on_pointer_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn on_submit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn on_finish_submit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="unity_engine-ui-button")]impl Button{#[doc="Direct (non-virtual) call to `Button`'s own `OnPointerClick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_pointer_click(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_pointer_click_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Button`'s own `OnSubmit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_submit(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,)->(){let __mi=Self::on_submit_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-ui-button")]impl Button{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

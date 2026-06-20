@@ -37,6 +37,9 @@ pub fn gmap()->Self{Self{value:4}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData.md"))]#[::unity2::class(namespace="App",name="TipsData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::tipsdata::TipsData>)]pub struct TipsData{#[offset(92)]#[rename(name="m_Kind")]pub m_kind:crate::app::tipsdata::TipsData_Kinds,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TipsData_Kinds{pub value:i32,}
 impl::unity2::ClassIdentity for TipsData_Kinds{const NAMESPACE: &'static str="App";
 const NAME: &'static str="TipsData.Kinds";
@@ -54,36 +57,10 @@ pub fn skill()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData.md"))]#[::unity2::class(namespace="App",name="TipsData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::tipsdata::TipsData>)]pub struct TipsData{#[offset(92)]#[rename(name="m_Kind")]pub m_kind:crate::app::tipsdata::TipsData_Kinds,}
-
 }
 
 #[cfg(feature = "app-tipsdata-types")]
 pub use __types::*;
-
-#[cfg(feature="app-tipsdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TipsData_unity2_raw{use super:: * ;
-pub unsafe fn on_build(this:TipsData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TipsData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let inner:extern "C" fn(TipsData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_release(this:TipsData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <TipsData as::unity2::ClassIdentity> ::NAME,"OnRelease",));
-let inner:extern "C" fn(TipsData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-tipsdata")]impl TipsData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf80usize)as*mut u8,();
 )}
@@ -163,10 +140,28 @@ inner(this,__mi)}
 (TipsData)__receiver)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TipsData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TipsData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let __inner:extern "C" fn(TipsData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TipsData_unity2_raw::on_release(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TipsData as::unity2::ClassIdentity> ::NAME,"OnRelease",));
+let __inner:extern "C" fn(TipsData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsCondition()` overload"]fn is_condition(self,)->bool{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec820usize)as*mut u8,bool;
@@ -205,6 +200,14 @@ pub fn is_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
 }
 
+#[cfg(feature="app-tipsdata")]impl TipsData{#[doc="Direct (non-virtual) call to `TipsData`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TipsData`'s own `OnRelease`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_release(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_release_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-tipsdata")]impl TipsData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TipsData), ::core::stringify!(new),));
@@ -216,10 +219,10 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TipsData_Allows;
-    pub use super::TipsData_Kinds;
     pub use super::TipsData;
     pub use super::ITipsData;
     pub use super::ITipsDataMethods;
+    pub use super::TipsData_Kinds;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

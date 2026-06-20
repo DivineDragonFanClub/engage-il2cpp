@@ -21,9 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmenuitemsetter/UnitMenuItemSetter.md"))]#[::unity2::class(namespace="App",name="UnitMenuItemSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitMenuItemSetter{#[offset(24)]#[rename(name="m_SelectBg")]pub m_select_bg:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_SubFrame")]pub m_sub_frame:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_Face")]pub m_face:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_IconCheck")]pub m_icon_check:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_Message")]pub m_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmenuitemsetter/UnitMenuItemSetter_SubFrame.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitMenuItemSetter_SubFrame{pub value:i32,}
 impl::unity2::ClassIdentity for UnitMenuItemSetter_SubFrame{const NAMESPACE: &'static str="App";
 const NAME: &'static str="UnitMenuItemSetter.SubFrame";
@@ -40,6 +37,9 @@ pub fn sub()->Self{Self{value:1}
 pub fn must()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmenuitemsetter/UnitMenuItemSetter.md"))]#[::unity2::class(namespace="App",name="UnitMenuItemSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitMenuItemSetter{#[offset(24)]#[rename(name="m_SelectBg")]pub m_select_bg:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_SubFrame")]pub m_sub_frame:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_Face")]pub m_face:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_IconCheck")]pub m_icon_check:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_Message")]pub m_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
@@ -89,10 +89,10 @@ this}
 #[cfg(feature = "app-unitmenuitemsetter")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitMenuItemSetter_SubFrame;
     pub use super::UnitMenuItemSetter;
     pub use super::IUnitMenuItemSetter;
     pub use super::IUnitMenuItemSetterMethods;
-    pub use super::UnitMenuItemSetter_SubFrame;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

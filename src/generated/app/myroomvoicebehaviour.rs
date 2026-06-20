@@ -18,29 +18,6 @@ use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,Playa
 #[cfg(feature = "app-myroomvoicebehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature="app-myroomvoicebehaviour")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomVoiceBehaviour_unity2_raw{use super:: * ;
-pub unsafe fn on_behaviour_play(this:MyRoomVoiceBehaviour,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <MyRoomVoiceBehaviour as::unity2::ClassIdentity> ::NAME,"OnBehaviourPlay",));
-let inner:extern "C" fn(MyRoomVoiceBehaviour,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,info,__mi)}
-pub unsafe fn on_behaviour_pause(this:MyRoomVoiceBehaviour,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <MyRoomVoiceBehaviour as::unity2::ClassIdentity> ::NAME,"OnBehaviourPause",));
-let inner:extern "C" fn(MyRoomVoiceBehaviour,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,info,__mi)}
-}
-
 #[cfg(feature="app-myroomvoicebehaviour")]pub trait IMyRoomVoiceBehaviourMethods:IMyRoomVoiceBehaviour{#[doc="`get_VoiceSituation()` overload"]fn get_voice_situation(self,)->crate::app::gamesound::GameSound_WakeupVoiceSituation{unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2660usize)as*mut u8,crate::app::gamesound::GameSound_WakeupVoiceSituation;
 (MyRoomVoiceBehaviour)__receiver)}
@@ -74,10 +51,28 @@ inner(this,playable,info,__mi)}
 (MyRoomVoiceBehaviour)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_play(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomVoiceBehaviour_unity2_raw::on_behaviour_play(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <MyRoomVoiceBehaviour as::unity2::ClassIdentity> ::NAME,"OnBehaviourPlay",));
+let __inner:extern "C" fn(MyRoomVoiceBehaviour,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info),__mi)}
+}
 }
 #[doc="`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_pause(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomVoiceBehaviour_unity2_raw::on_behaviour_pause(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MyRoomVoiceBehaviour as::unity2::ClassIdentity> ::NAME,"OnBehaviourPause",));
+let __inner:extern "C" fn(MyRoomVoiceBehaviour,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomVoiceBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2fc0usize)as*mut u8,();
@@ -98,6 +93,14 @@ pub fn set_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn on_behaviour_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn on_behaviour_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-myroomvoicebehaviour")]impl MyRoomVoiceBehaviour{#[doc="Direct (non-virtual) call to `MyRoomVoiceBehaviour`'s own `OnBehaviourPlay`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_behaviour_play(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,)->(){let __mi=Self::on_behaviour_play_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable,info, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MyRoomVoiceBehaviour`'s own `OnBehaviourPause`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_behaviour_pause(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,)->(){let __mi=Self::on_behaviour_pause_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable,info, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-myroomvoicebehaviour")]impl MyRoomVoiceBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -18,28 +18,15 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistmenu/TroopListMenu_ConfirmBattleSequence.md"))]#[::unity2::class(namespace="App",name="TroopListMenu.ConfirmBattleSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct TroopListMenu_ConfirmBattleSequence{#[offset(112)]#[rename(name="m_ParentMenu")]pub m_parent_menu:crate::app::basicmenu::BasicMenu,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistmenu/TroopListMenu_TroopListMenuItem.md"))]#[::unity2::class(namespace="App",name="TroopListMenu.TroopListMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct TroopListMenu_TroopListMenuItem{#[offset(100)]#[rename(name="m_index")]pub m_index:i32, #[offset(104)]#[rename(name="m_mode")]pub m_mode:crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistmenu/TroopListMenu.md"))]#[::unity2::class(namespace="App",name="TroopListMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct TroopListMenu{#[static_field]#[rename(name="m_mode")]pub m_mode:crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode, #[static_field]#[rename(name="m_page")]pub m_page:i32, #[static_field]#[rename(name="ListUnitNum")]pub list_unit_num:i32, #[static_field]#[rename(name="m_ListUnitNum")]pub m_list_unit_num:i32, #[static_field]#[rename(name="m_ListUnit")]pub m_list_unit: ::unity2::Array<crate::app::unit::Unit> , #[static_field]#[rename(name="m_TmpListUnit")]pub m_tmp_list_unit: ::unity2::Array<crate::app::unit::Unit> , #[static_field]#[rename(name="m_sortMenu")]pub m_sort_menu:crate::app::trooplistsortmenu::TroopListSortMenu, #[offset(196)]#[rename(name="m_SelectSort")]pub m_select_sort:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistmenu/TroopListMenu_TroopListMenuItem.md"))]#[::unity2::class(namespace="App",name="TroopListMenu.TroopListMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct TroopListMenu_TroopListMenuItem{#[offset(100)]#[rename(name="m_index")]pub m_index:i32, #[offset(104)]#[rename(name="m_mode")]pub m_mode:crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,}
 
 }
 
 #[cfg(feature = "app-trooplistmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-trooplistmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TroopListMenu_ConfirmBattleSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_dispose(this:TroopListMenu_ConfirmBattleSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <TroopListMenu_ConfirmBattleSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(TroopListMenu_ConfirmBattleSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-trooplistmenu")]impl TroopListMenu_ConfirmBattleSequence{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu)` overload"]pub fn create_bind(parent_menu:impl::core::convert::Into<crate::app::basicmenu::BasicMenu>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fbe0usize)as*mut u8,();
 (crate::app::basicmenu::BasicMenu)::core::convert::Into::into(parent_menu))}
@@ -51,7 +38,16 @@ inner(this,__mi)}
 (TroopListMenu_ConfirmBattleSequence)__receiver,(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(parent_menu))}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TroopListMenu_ConfirmBattleSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_ConfirmBattleSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TroopListMenu_ConfirmBattleSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(TroopListMenu_ConfirmBattleSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CreateDialog()` overload"]fn create_dialog(self,)->(){unsafe{let __receiver= <TroopListMenu_ConfirmBattleSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fe90usize)as*mut u8,();
@@ -67,194 +63,16 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn create_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_ConfirmBattleSequence{#[doc="Direct (non-virtual) call to `TroopListMenu_ConfirmBattleSequence`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-trooplistmenu")]impl TroopListMenu_ConfirmBattleSequence{#[doc="`.ctor(crate::app::basicmenu::BasicMenu)` — overload selector"]pub fn new(parent_menu:crate::app::basicmenu::BasicMenu)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TroopListMenu_ConfirmBattleSequence), ::core::stringify!(new),));
  <Self as ITroopListMenu_ConfirmBattleSequenceMethods> ::ctor(this,parent_menu);
 this}
-}
-
-#[cfg(feature="app-trooplistmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TroopListMenu_TroopListMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:TroopListMenu_TroopListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:TroopListMenu_TroopListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:TroopListMenu_TroopListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:TroopListMenu_TroopListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn r_call(this:TroopListMenu_TroopListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"RCall",));
-let inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn plus_call(this:TroopListMenu_TroopListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",24usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"PlusCall",));
-let inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-trooplistmenu")]pub trait ITroopListMenu_TroopListMenuItemMethods:ITroopListMenu_TroopListMenuItem{#[doc="`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,mode:impl::core::convert::Into<crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode>)->(){unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ff10usize)as*mut u8,();
-(TroopListMenu_TroopListMenuItem)__receiver,(i32)::core::convert::Into::into(index),(crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)::core::convert::Into::into(mode))}
-}
-#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ff50usize)as*mut u8,crate::app::unit::Unit;
-(TroopListMenu_TroopListMenuItem)__receiver)}
-}
-#[doc="`GetTmpUnit()` overload"]fn get_tmp_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fff0usize)as*mut u8,crate::app::unit::Unit;
-(TroopListMenu_TroopListMenuItem)__receiver)}
-}
-#[doc="`GetMode()` overload"]fn get_mode(self,)->crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b40090usize)as*mut u8,crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode;
-(TroopListMenu_TroopListMenuItem)__receiver)}
-}
-#[doc="`GetRectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b400a0usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
-(TroopListMenu_TroopListMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_TroopListMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_TroopListMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_TroopListMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_TroopListMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`RCall()` overload"]fn r_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_TroopListMenuItem_unity2_raw::r_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_TroopListMenuItem_unity2_raw::plus_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`SetPage(i32)` overload"]fn set_page(self,page:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b414b0usize)as*mut u8,();
-(TroopListMenu_TroopListMenuItem)__receiver,(i32)::core::convert::Into::into(page))}
-}
-}
-
-#[cfg(feature="app-trooplistmenu")]impl<__T:ITroopListMenu_TroopListMenuItem>ITroopListMenu_TroopListMenuItemMethods for __T{}
-
-#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_TroopListMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_tmp_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn r_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn plus_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-}
-
-#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_TroopListMenuItem{#[doc="`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` — overload selector"]pub fn new(index:i32,mode:crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TroopListMenu_TroopListMenuItem), ::core::stringify!(new),));
- <Self as ITroopListMenu_TroopListMenuItemMethods> ::ctor(this,index,mode);
-this}
-}
-
-#[cfg(feature="app-trooplistmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TroopListMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:TroopListMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <TroopListMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(TroopListMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn move_up(this:TroopListMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",44usize,__vt.len(), <TroopListMenu as::unity2::ClassIdentity> ::NAME,"MoveUp",));
-let inner:extern "C" fn(TroopListMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-pub unsafe fn move_down(this:TroopListMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",45usize,__vt.len(), <TroopListMenu as::unity2::ClassIdentity> ::NAME,"MoveDown",));
-let inner:extern "C" fn(TroopListMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-pub unsafe fn custom_call(this:TroopListMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",58usize,__vt.len(), <TroopListMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
-let inner:extern "C" fn(TroopListMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:TroopListMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",50usize,__vt.len(), <TroopListMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(TroopListMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-trooplistmenu")]impl TroopListMenu{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::trooplistmenucontent::TroopListMenuContent, crate::app::trooplistsortmenu::TroopListSortMenu, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::trooplistmenucontent::TroopListMenuContent> ,sort_menu:impl::core::convert::Into<crate::app::trooplistsortmenu::TroopListSortMenu> ,mode:impl::core::convert::Into<crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode>)->crate::app::trooplistmenu::TroopListMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a35f0usize)as*mut u8,crate::app::trooplistmenu::TroopListMenu;
@@ -288,19 +106,64 @@ inner(this,__mi)}
 (TroopListMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::trooplistmenucontent::TroopListMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <TroopListMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(TroopListMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`MoveUp(bool)` overload"]fn move_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_unity2_raw::move_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <TroopListMenu as::unity2::ClassIdentity> ::NAME,"MoveUp",));
+let __inner:extern "C" fn(TroopListMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`MoveDown(bool)` overload"]fn move_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_unity2_raw::move_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <TroopListMenu as::unity2::ClassIdentity> ::NAME,"MoveDown",));
+let __inner:extern "C" fn(TroopListMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <TroopListMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let __inner:extern "C" fn(TroopListMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TroopListMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <TroopListMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(TroopListMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetCurrentPage()` overload"]fn get_current_page(self,)->i32{unsafe{let __receiver= <TroopListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22a6720usize)as*mut u8,i32;
@@ -362,10 +225,168 @@ pub fn is_select_sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
 }
 
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu{#[doc="Direct (non-virtual) call to `TroopListMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TroopListMenu`'s own `MoveUp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn move_up(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::move_up_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TroopListMenu`'s own `MoveDown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn move_down(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::move_down_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TroopListMenu`'s own `CustomCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn custom_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::custom_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TroopListMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-trooplistmenu")]impl TroopListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::trooplistmenucontent::TroopListMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::trooplistmenucontent::TroopListMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TroopListMenu), ::core::stringify!(new),));
  <Self as ITroopListMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-trooplistmenu")]pub trait ITroopListMenu_TroopListMenuItemMethods:ITroopListMenu_TroopListMenuItem{#[doc="`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,mode:impl::core::convert::Into<crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode>)->(){unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ff10usize)as*mut u8,();
+(TroopListMenu_TroopListMenuItem)__receiver,(i32)::core::convert::Into::into(index),(crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ff50usize)as*mut u8,crate::app::unit::Unit;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`GetTmpUnit()` overload"]fn get_tmp_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fff0usize)as*mut u8,crate::app::unit::Unit;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`GetMode()` overload"]fn get_mode(self,)->crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b40090usize)as*mut u8,crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`GetRectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b400a0usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(TroopListMenu_TroopListMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`RCall()` overload"]fn r_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"RCall",));
+let __inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <TroopListMenu_TroopListMenuItem as::unity2::ClassIdentity> ::NAME,"PlusCall",));
+let __inner:extern "C" fn(TroopListMenu_TroopListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`SetPage(i32)` overload"]fn set_page(self,page:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TroopListMenu_TroopListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b414b0usize)as*mut u8,();
+(TroopListMenu_TroopListMenuItem)__receiver,(i32)::core::convert::Into::into(page))}
+}
+}
+
+#[cfg(feature="app-trooplistmenu")]impl<__T:ITroopListMenu_TroopListMenuItem>ITroopListMenu_TroopListMenuItemMethods for __T{}
+
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_TroopListMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_tmp_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn r_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn plus_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_page_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_TroopListMenuItem{#[doc="Direct (non-virtual) call to `TroopListMenu_TroopListMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TroopListMenu_TroopListMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TroopListMenu_TroopListMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TroopListMenu_TroopListMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TroopListMenu_TroopListMenuItem`'s own `RCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn r_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::r_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TroopListMenu_TroopListMenuItem`'s own `PlusCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn plus_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::plus_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-trooplistmenu")]impl TroopListMenu_TroopListMenuItem{#[doc="`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` — overload selector"]pub fn new(index:i32,mode:crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TroopListMenu_TroopListMenuItem), ::core::stringify!(new),));
+ <Self as ITroopListMenu_TroopListMenuItemMethods> ::ctor(this,index,mode);
 this}
 }
 
@@ -375,12 +396,12 @@ pub mod prelude {
     pub use super::TroopListMenu_ConfirmBattleSequence;
     pub use super::ITroopListMenu_ConfirmBattleSequence;
     pub use super::ITroopListMenu_ConfirmBattleSequenceMethods;
-    pub use super::TroopListMenu_TroopListMenuItem;
-    pub use super::ITroopListMenu_TroopListMenuItem;
-    pub use super::ITroopListMenu_TroopListMenuItemMethods;
     pub use super::TroopListMenu;
     pub use super::ITroopListMenu;
     pub use super::ITroopListMenuMethods;
+    pub use super::TroopListMenu_TroopListMenuItem;
+    pub use super::ITroopListMenu_TroopListMenuItem;
+    pub use super::ITroopListMenu_TroopListMenuItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

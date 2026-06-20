@@ -18,21 +18,17 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-decoratorargs-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-decoratorargs")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DecoratorArgs_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:DecoratorArgs,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="combat-decoratorargs")]pub trait IDecoratorArgsMethods:IDecoratorArgs{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DecoratorArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <DecoratorArgs as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(DecoratorArgs, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DecoratorArgs, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="combat-decoratorargs")]pub trait IDecoratorArgsMethods:IDecoratorArgs{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DecoratorArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DecoratorArgs_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Set(crate::combat::phase::Phase)` overload"]fn set(self,phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <DecoratorArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea4c0usize)as*mut u8,();
@@ -49,6 +45,11 @@ __DecoratorArgs_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 #[cfg(feature="combat-decoratorargs")]impl DecoratorArgs{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="combat-decoratorargs")]impl DecoratorArgs{#[doc="Direct (non-virtual) call to `DecoratorArgs`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-decoratorargs")]impl DecoratorArgs{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

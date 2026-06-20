@@ -20,39 +20,6 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-universal-scriptablerendererdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptableRendererData_unity2_raw{use super:: * ;
-pub unsafe fn create(this:ScriptableRendererData,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ScriptableRendererData as::unity2::ClassIdentity> ::NAME,"Create",));
-let inner:extern "C" fn(ScriptableRendererData, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_validate(this:ScriptableRendererData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <ScriptableRendererData as::unity2::ClassIdentity> ::NAME,"OnValidate",));
-let inner:extern "C" fn(ScriptableRendererData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_enable(this:ScriptableRendererData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <ScriptableRendererData as::unity2::ClassIdentity> ::NAME,"OnEnable",));
-let inner:extern "C" fn(ScriptableRendererData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-universal-scriptablerendererdata")]pub trait IScriptableRendererDataMethods:IScriptableRendererData{#[doc="`get_isInvalidated()` overload"]fn get_is_invalidated(self,)->bool{unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed66c0usize)as*mut u8,bool;
 (ScriptableRendererData)__receiver)}
@@ -62,7 +29,16 @@ inner(this,__mi)}
 (ScriptableRendererData)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`Create()` overload"]fn create(self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptableRendererData_unity2_raw::create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ScriptableRendererData as::unity2::ClassIdentity> ::NAME,"Create",));
+let __inner:extern "C" fn(ScriptableRendererData, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_rendererFeatures()` overload"]fn get_renderer_features(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature>{unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed66e0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature> ;
@@ -77,10 +53,28 @@ __ScriptableRendererData_unity2_raw::create(__receiver, ::core::option::Option::
 (ScriptableRendererData)__receiver)}
 }
 #[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptableRendererData_unity2_raw::on_validate(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ScriptableRendererData as::unity2::ClassIdentity> ::NAME,"OnValidate",));
+let __inner:extern "C" fn(ScriptableRendererData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptableRendererData_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ScriptableRendererData as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let __inner:extern "C" fn(ScriptableRendererData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed6730usize)as*mut u8,();
@@ -99,6 +93,17 @@ pub fn internal_create_renderer_method_info()-> & 'static::unity2::il2cpp::Metho
 pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerendererdata")]impl ScriptableRendererData{#[doc="Direct (non-virtual) call to `ScriptableRendererData`'s own `Create`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{let __mi=Self::create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScriptableRendererData`'s own `OnValidate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_validate(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_validate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScriptableRendererData`'s own `OnEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-universal-scriptablerendererdata")]impl ScriptableRendererData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

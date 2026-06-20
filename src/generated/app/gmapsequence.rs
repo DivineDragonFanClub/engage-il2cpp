@@ -33,107 +33,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapFreeCameraSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapSequence_GmapFreeCameraSequence{#[static_field]#[rename(name="FreeCameraRootPath")]pub free_camera_root_path: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="MoveSpeedAngle")]pub move_speed_angle:f32, #[offset(120)]#[rename(name="m_AngleX")]pub m_angle_x:f32, #[offset(124)]#[rename(name="m_AngleZ")]pub m_angle_z:f32, #[offset(128)]#[rename(name="m_StartPosition")]pub m_start_position:crate::unity_engine::vector3::Vector3, #[offset(140)]#[rename(name="m_CachePosition")]pub m_cache_position:crate::unity_engine::vector3::Vector3, #[offset(152)]#[rename(name="m_DisableFlag")]pub m_disable_flag:crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField, #[offset(160)]#[rename(name="m_AngleLimit")]pub m_angle_limit: ::unity2::Array<f32> , #[offset(168)]#[rename(name="m_Camera")]pub m_camera:crate::app::gmapcamera::GmapCamera,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_GmapFreeCameraSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GmapSequence.GmapFreeCameraSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GmapSequence_GmapFreeCameraSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GmapSequence_GmapFreeCameraSequence_Label{pub fn end()->Self{Self{value:0}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Dir.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_GmapFreeCameraSequence_Dir{pub value:i32,}
-impl::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_Dir{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GmapSequence.GmapFreeCameraSequence.Dir";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GmapSequence_GmapFreeCameraSequence_Dir{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GmapSequence_GmapFreeCameraSequence_Dir{pub fn up()->Self{Self{value:0}
-}
-pub fn down()->Self{Self{value:1}
-}
-pub fn left()->Self{Self{value:2}
-}
-pub fn right()->Self{Self{value:3}
-}
-pub fn num()->Self{Self{value:4}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapDisposeSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapDisposeSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapSequence_GmapDisposeSequence{#[offset(112)]#[rename(name="m_DisposSpot")]pub m_dispos_spot:crate::app::gmapspot::GmapSpot,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapTeleportSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapTeleportSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapSequence_GmapTeleportSequence{#[offset(112)]#[rename(name="m_Destination")]pub m_destination:crate::app::gmapspot::GmapSpot, #[offset(120)]#[rename(name="m_IsClosed")]pub m_is_closed:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_EnterChapterSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence.EnterChapterSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapSequence_EnterChapterSequence{#[static_field]#[rename(name="TalkFlagNameM010")]pub talk_flag_name_m010: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_NowSpot")]pub m_now_spot:crate::app::gmapspot::GmapSpot, #[offset(120)]#[rename(name="m_Type")]pub m_type:crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, #[offset(128)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::system::action::Action, #[offset(136)]#[rename(name="m_DecideEventHandler2")]pub m_decide_event_handler2:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_SelfDestroy.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapFreeCameraSequence.SelfDestroy")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapSequence_GmapFreeCameraSequence_SelfDestroy{#[offset(24)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlag.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_GmapFreeCameraSequence_DirFlag{pub value:i32,}
-impl::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_DirFlag{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GmapSequence.GmapFreeCameraSequence.DirFlag";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GmapSequence_GmapFreeCameraSequence_DirFlag{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GmapSequence_GmapFreeCameraSequence_DirFlag{pub fn up()->Self{Self{value:1}
-}
-pub fn left()->Self{Self{value:2}
-}
-pub fn right()->Self{Self{value:4}
-}
-pub fn down()->Self{Self{value:8}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_EnterChapterSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_EnterChapterSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for GmapSequence_EnterChapterSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GmapSequence.EnterChapterSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GmapSequence_EnterChapterSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GmapSequence_EnterChapterSequence_Label{pub fn talk()->Self{Self{value:0}
-}
-pub fn dialog()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapTeleportSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_GmapTeleportSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for GmapSequence_GmapTeleportSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GmapSequence.GmapTeleportSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GmapSequence_GmapTeleportSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GmapSequence_GmapTeleportSequence_Label{pub fn end()->Self{Self{value:0}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for GmapSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GmapSequence.Label";
@@ -174,6 +73,110 @@ pub fn tail()->Self{Self{value:13}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlag.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_GmapFreeCameraSequence_DirFlag{pub value:i32,}
+impl::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_DirFlag{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSequence.GmapFreeCameraSequence.DirFlag";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GmapSequence_GmapFreeCameraSequence_DirFlag{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GmapSequence_GmapFreeCameraSequence_DirFlag{pub fn up()->Self{Self{value:1}
+}
+pub fn left()->Self{Self{value:2}
+}
+pub fn right()->Self{Self{value:4}
+}
+pub fn down()->Self{Self{value:8}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_GmapFreeCameraSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSequence.GmapFreeCameraSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GmapSequence_GmapFreeCameraSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GmapSequence_GmapFreeCameraSequence_Label{pub fn end()->Self{Self{value:0}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapDisposeSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapDisposeSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapSequence_GmapDisposeSequence{#[offset(112)]#[rename(name="m_DisposSpot")]pub m_dispos_spot:crate::app::gmapspot::GmapSpot,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_SelfDestroy.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapFreeCameraSequence.SelfDestroy")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapSequence_GmapFreeCameraSequence_SelfDestroy{#[offset(24)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapWholeMapSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapWholeMapSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapSequence_GmapWholeMapSequence{#[offset(112)]#[rename(name="m_WholeMap")]pub m_whole_map:crate::app::gmapwholemapcontroller::GmapWholeMapController, #[offset(120)]#[rename(name="m_GmapCamera")]pub m_gmap_camera:crate::app::gmapcamera::GmapCamera, #[offset(128)]#[rename(name="m_MapInfo")]pub m_map_info:crate::app::gmapmapinfocontent::GmapMapInfoContent,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_EnterChapterSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_EnterChapterSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for GmapSequence_EnterChapterSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSequence.EnterChapterSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GmapSequence_EnterChapterSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GmapSequence_EnterChapterSequence_Label{pub fn talk()->Self{Self{value:0}
+}
+pub fn dialog()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::gmapsequence::GmapSequence>)]pub struct GmapSequence{#[offset(136)]#[rename(name="m_NowSpot")]pub m_now_spot:crate::app::gmapspot::GmapSpot, #[offset(144)]#[rename(name="m_ChangingSpot")]pub m_changing_spot:crate::app::gmapspot::GmapSpot, #[offset(152)]#[rename(name="m_ChangingPath")]pub m_changing_path:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_DisposSpot")]pub m_dispos_spot:crate::app::gmapspot::GmapSpot, #[offset(168)]#[rename(name="m_GmapCamera")]pub m_gmap_camera:crate::app::gmapcamera::GmapCamera, #[offset(176)]#[rename(name="m_PathController")]pub m_path_controller:crate::app::gmapcinemachinecontroller::GmapCinemachineController, #[offset(184)]#[rename(name="m_VirtualSphere")]pub m_virtual_sphere:crate::unity_engine::gameobject::GameObject, #[offset(192)]#[rename(name="m_WholeMap")]pub m_whole_map:crate::app::gmapwholemapcontroller::GmapWholeMapController, #[offset(200)]#[rename(name="m_MapInfo")]pub m_map_info:crate::app::gmapmapinfocontent::GmapMapInfoContent, #[offset(208)]#[rename(name="m_EncountIconRoot")]pub m_encount_icon_root:crate::root::encounticonroot::EncountIconRoot, #[offset(216)]#[rename(name="m_IsMoveForward")]pub m_is_move_forward:bool, #[offset(224)]#[rename(name="m_NextSpot")]pub m_next_spot:crate::app::gmapspot::GmapSpot, #[offset(232)]#[rename(name="m_PrevSpot")]pub m_prev_spot:crate::app::gmapspot::GmapSpot, #[offset(240)]#[rename(name="m_Paths")]pub m_paths:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_PathCollection")]pub m_path_collection:crate::app::gmap::gmappathcollection::GmapPathCollection, #[offset(256)]#[rename(name="m_AutoMoveRoutes")]pub m_auto_move_routes:crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot> , #[offset(264)]#[rename(name="m_AppearedSpotList")]pub m_appeared_spot_list:crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot> , #[offset(272)]#[rename(name="m_IsAppearedEncount")]pub m_is_appeared_encount:bool, #[offset(280)]#[rename(name="m_EffectParent")]pub m_effect_parent:crate::unity_engine::gameobject::GameObject, #[offset(288)]#[rename(name="AppearLineEffectPath")]pub appear_line_effect_path: ::unity2::Il2CppString, #[offset(296)]#[rename(name="AppearSymbolEffectPath")]pub appear_symbol_effect_path: ::unity2::Il2CppString, #[offset(304)]#[rename(name="AppearSpotEffectPath")]pub appear_spot_effect_path: ::unity2::Il2CppString, #[offset(312)]#[rename(name="m_AppearLineEffect")]pub m_appear_line_effect:crate::unity_engine::gameobject::GameObject, #[offset(320)]#[rename(name="m_IsInitialized")]pub m_is_initialized:bool, #[offset(321)]#[rename(name="m_IsSkipping")]pub m_is_skipping:bool, #[offset(328)]#[rename(name="m_CinemaScope")]pub m_cinema_scope:crate::app::gmapcinemascope::GmapCinemaScope, #[offset(336)]#[rename(name="m_DlcPathHandle")]pub m_dlc_path_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(344)]#[rename(name="m_DlcSpotHandle")]pub m_dlc_spot_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(352)]#[rename(name="m_DlcPath")]pub m_dlc_path:crate::unity_engine::gameobject::GameObject, #[offset(360)]#[rename(name="m_DlcSpot")]pub m_dlc_spot:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="PathLengthMainToGod")]pub path_length_main_to_god:f32, #[static_field]#[rename(name="PathLengthGodToMain")]pub path_length_god_to_main:f32, #[offset(368)]#[rename(name="m_IsEncountAppearOfMain")]pub m_is_encount_appear_of_main:bool, #[offset(369)]#[rename(name="m_IsEncountAppearOfGod")]pub m_is_encount_appear_of_god:bool, #[offset(370)]#[rename(name="m_IsEncountAppearOfEvil")]pub m_is_encount_appear_of_evil:bool, #[offset(376)]#[rename(name="m_G002SymbolPath")]pub m_g002_symbol_path: ::unity2::Il2CppString, #[offset(384)]#[rename(name="m_G004SymbolPath")]pub m_g004_symbol_path: ::unity2::Il2CppString, #[offset(392)]#[rename(name="m_G005SymbolPath")]pub m_g005_symbol_path: ::unity2::Il2CppString, #[offset(400)]#[rename(name="m_G003SymbolPath")]pub m_g003_symbol_path: ::unity2::Il2CppString, #[offset(408)]#[rename(name="m_G006SymbolPath")]pub m_g006_symbol_path: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapTeleportSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapTeleportSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapSequence_GmapTeleportSequence{#[offset(112)]#[rename(name="m_Destination")]pub m_destination:crate::app::gmapspot::GmapSpot, #[offset(120)]#[rename(name="m_IsClosed")]pub m_is_closed:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_Dir.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_GmapFreeCameraSequence_Dir{pub value:i32,}
+impl::unity2::ClassIdentity for GmapSequence_GmapFreeCameraSequence_Dir{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSequence.GmapFreeCameraSequence.Dir";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GmapSequence_GmapFreeCameraSequence_Dir{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GmapSequence_GmapFreeCameraSequence_Dir{pub fn up()->Self{Self{value:0}
+}
+pub fn down()->Self{Self{value:1}
+}
+pub fn left()->Self{Self{value:2}
+}
+pub fn right()->Self{Self{value:3}
+}
+pub fn num()->Self{Self{value:4}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlagField.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapFreeCameraSequence.DirFlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag>)]pub struct GmapSequence_GmapFreeCameraSequence_DirFlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapTeleportSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_GmapTeleportSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for GmapSequence_GmapTeleportSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapSequence.GmapTeleportSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GmapSequence_GmapTeleportSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GmapSequence_GmapTeleportSequence_Label{pub fn end()->Self{Self{value:0}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapWholeMapSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_GmapWholeMapSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for GmapSequence_GmapWholeMapSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GmapSequence.GmapWholeMapSequence.Label";
@@ -188,10 +191,7 @@ impl GmapSequence_GmapWholeMapSequence_Label{pub fn end()->Self{Self{value:0}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::gmapsequence::GmapSequence>)]pub struct GmapSequence{#[offset(136)]#[rename(name="m_NowSpot")]pub m_now_spot:crate::app::gmapspot::GmapSpot, #[offset(144)]#[rename(name="m_ChangingSpot")]pub m_changing_spot:crate::app::gmapspot::GmapSpot, #[offset(152)]#[rename(name="m_ChangingPath")]pub m_changing_path:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_DisposSpot")]pub m_dispos_spot:crate::app::gmapspot::GmapSpot, #[offset(168)]#[rename(name="m_GmapCamera")]pub m_gmap_camera:crate::app::gmapcamera::GmapCamera, #[offset(176)]#[rename(name="m_PathController")]pub m_path_controller:crate::app::gmapcinemachinecontroller::GmapCinemachineController, #[offset(184)]#[rename(name="m_VirtualSphere")]pub m_virtual_sphere:crate::unity_engine::gameobject::GameObject, #[offset(192)]#[rename(name="m_WholeMap")]pub m_whole_map:crate::app::gmapwholemapcontroller::GmapWholeMapController, #[offset(200)]#[rename(name="m_MapInfo")]pub m_map_info:crate::app::gmapmapinfocontent::GmapMapInfoContent, #[offset(208)]#[rename(name="m_EncountIconRoot")]pub m_encount_icon_root:crate::root::encounticonroot::EncountIconRoot, #[offset(216)]#[rename(name="m_IsMoveForward")]pub m_is_move_forward:bool, #[offset(224)]#[rename(name="m_NextSpot")]pub m_next_spot:crate::app::gmapspot::GmapSpot, #[offset(232)]#[rename(name="m_PrevSpot")]pub m_prev_spot:crate::app::gmapspot::GmapSpot, #[offset(240)]#[rename(name="m_Paths")]pub m_paths:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_PathCollection")]pub m_path_collection:crate::app::gmap::gmappathcollection::GmapPathCollection, #[offset(256)]#[rename(name="m_AutoMoveRoutes")]pub m_auto_move_routes:crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot> , #[offset(264)]#[rename(name="m_AppearedSpotList")]pub m_appeared_spot_list:crate::system::collections::generic::list_1::List_1<crate::app::gmapspot::GmapSpot> , #[offset(272)]#[rename(name="m_IsAppearedEncount")]pub m_is_appeared_encount:bool, #[offset(280)]#[rename(name="m_EffectParent")]pub m_effect_parent:crate::unity_engine::gameobject::GameObject, #[offset(288)]#[rename(name="AppearLineEffectPath")]pub appear_line_effect_path: ::unity2::Il2CppString, #[offset(296)]#[rename(name="AppearSymbolEffectPath")]pub appear_symbol_effect_path: ::unity2::Il2CppString, #[offset(304)]#[rename(name="AppearSpotEffectPath")]pub appear_spot_effect_path: ::unity2::Il2CppString, #[offset(312)]#[rename(name="m_AppearLineEffect")]pub m_appear_line_effect:crate::unity_engine::gameobject::GameObject, #[offset(320)]#[rename(name="m_IsInitialized")]pub m_is_initialized:bool, #[offset(321)]#[rename(name="m_IsSkipping")]pub m_is_skipping:bool, #[offset(328)]#[rename(name="m_CinemaScope")]pub m_cinema_scope:crate::app::gmapcinemascope::GmapCinemaScope, #[offset(336)]#[rename(name="m_DlcPathHandle")]pub m_dlc_path_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(344)]#[rename(name="m_DlcSpotHandle")]pub m_dlc_spot_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(352)]#[rename(name="m_DlcPath")]pub m_dlc_path:crate::unity_engine::gameobject::GameObject, #[offset(360)]#[rename(name="m_DlcSpot")]pub m_dlc_spot:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="PathLengthMainToGod")]pub path_length_main_to_god:f32, #[static_field]#[rename(name="PathLengthGodToMain")]pub path_length_god_to_main:f32, #[offset(368)]#[rename(name="m_IsEncountAppearOfMain")]pub m_is_encount_appear_of_main:bool, #[offset(369)]#[rename(name="m_IsEncountAppearOfGod")]pub m_is_encount_appear_of_god:bool, #[offset(370)]#[rename(name="m_IsEncountAppearOfEvil")]pub m_is_encount_appear_of_evil:bool, #[offset(376)]#[rename(name="m_G002SymbolPath")]pub m_g002_symbol_path: ::unity2::Il2CppString, #[offset(384)]#[rename(name="m_G004SymbolPath")]pub m_g004_symbol_path: ::unity2::Il2CppString, #[offset(392)]#[rename(name="m_G005SymbolPath")]pub m_g005_symbol_path: ::unity2::Il2CppString, #[offset(400)]#[rename(name="m_G003SymbolPath")]pub m_g003_symbol_path: ::unity2::Il2CppString, #[offset(408)]#[rename(name="m_G006SymbolPath")]pub m_g006_symbol_path: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapWholeMapSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapWholeMapSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapSequence_GmapWholeMapSequence{#[offset(112)]#[rename(name="m_WholeMap")]pub m_whole_map:crate::app::gmapwholemapcontroller::GmapWholeMapController, #[offset(120)]#[rename(name="m_GmapCamera")]pub m_gmap_camera:crate::app::gmapcamera::GmapCamera, #[offset(128)]#[rename(name="m_MapInfo")]pub m_map_info:crate::app::gmapmapinfocontent::GmapMapInfoContent,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapFreeCameraSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapSequence_GmapFreeCameraSequence{#[static_field]#[rename(name="FreeCameraRootPath")]pub free_camera_root_path: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="MoveSpeedAngle")]pub move_speed_angle:f32, #[offset(120)]#[rename(name="m_AngleX")]pub m_angle_x:f32, #[offset(124)]#[rename(name="m_AngleZ")]pub m_angle_z:f32, #[offset(128)]#[rename(name="m_StartPosition")]pub m_start_position:crate::unity_engine::vector3::Vector3, #[offset(140)]#[rename(name="m_CachePosition")]pub m_cache_position:crate::unity_engine::vector3::Vector3, #[offset(152)]#[rename(name="m_DisableFlag")]pub m_disable_flag:crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField, #[offset(160)]#[rename(name="m_AngleLimit")]pub m_angle_limit: ::unity2::Array<f32> , #[offset(168)]#[rename(name="m_Camera")]pub m_camera:crate::app::gmapcamera::GmapCamera,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapDisposeSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapSequence_GmapDisposeSequence_Label{pub value:i32,}
@@ -222,119 +222,12 @@ pub fn end()->Self{Self{value:7}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_GmapFreeCameraSequence_DirFlagField.md"))]#[::unity2::class(namespace="App",name="GmapSequence.GmapFreeCameraSequence.DirFlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag>)]pub struct GmapSequence_GmapFreeCameraSequence_DirFlagField{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapsequence/GmapSequence_EnterChapterSequence.md"))]#[::unity2::class(namespace="App",name="GmapSequence.EnterChapterSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapSequence_EnterChapterSequence{#[static_field]#[rename(name="TalkFlagNameM010")]pub talk_flag_name_m010: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_NowSpot")]pub m_now_spot:crate::app::gmapspot::GmapSpot, #[offset(120)]#[rename(name="m_Type")]pub m_type:crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, #[offset(128)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::system::action::Action, #[offset(136)]#[rename(name="m_DecideEventHandler2")]pub m_decide_event_handler2:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "app-gmapsequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapFreeCameraSequence{#[doc="`LoadResorces()` overload"]pub fn load_resorces()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd17a0usize)as*mut u8,();
-)}
-}
-#[doc="`IsLoading()` overload"]pub fn is_loading()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1840usize)as*mut u8,bool;
-)}
-}
-#[doc="`UnloadResources()` overload"]pub fn unload_resources()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd18c0usize)as*mut u8,();
-)}
-}
-#[doc="`CalcLeftRightPos(crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn calc_left_right_pos(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,angle:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2830usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(angle))}
-}
-#[doc="`CalcUDPos(crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn calc_ud_pos(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,angle:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2bc0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(angle))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2e60usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-gmapsequence")]pub trait IGmapSequence_GmapFreeCameraSequenceMethods:IGmapSequence_GmapFreeCameraSequence{#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1940usize)as*mut u8,();
-(GmapSequence_GmapFreeCameraSequence)__receiver)}
-}
-#[doc="`WaitScroll()` overload"]fn wait_scroll(self,)->bool{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1b10usize)as*mut u8,bool;
-(GmapSequence_GmapFreeCameraSequence)__receiver)}
-}
-#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1b90usize)as*mut u8,();
-(GmapSequence_GmapFreeCameraSequence)__receiver)}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1db0usize)as*mut u8,();
-(GmapSequence_GmapFreeCameraSequence)__receiver)}
-}
-#[doc="`TryLRMove(f32)` overload"]fn try_lr_move(self,move_l_stick_x:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2400usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(GmapSequence_GmapFreeCameraSequence)__receiver,(f32)::core::convert::Into::into(move_l_stick_x))}
-}
-#[doc="`TryUDMove(f32)` overload"]fn try_ud_move(self,move_l_stick_y:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2560usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(GmapSequence_GmapFreeCameraSequence)__receiver,(f32)::core::convert::Into::into(move_l_stick_y))}
-}
-#[doc="`InitAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField)` overload"]fn init_angle_limit(self,flags:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField>)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1d00usize)as*mut u8,();
-(GmapSequence_GmapFreeCameraSequence)__receiver,(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField)::core::convert::Into::into(flags))}
-}
-#[doc="`ClampAngle(f32, crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)` overload"]fn clamp_angle(self,angle:impl::core::convert::Into<f32> ,dir:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir>)->f32{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2710usize)as*mut u8,f32;
-(GmapSequence_GmapFreeCameraSequence)__receiver,(f32)::core::convert::Into::into(angle),(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)::core::convert::Into::into(dir))}
-}
-#[doc="`TryGetAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir, *mutf32)` overload"]fn try_get_angle_limit(self,dir:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir>)->(bool,f32){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2c50usize)as*mut u8,bool;
-(GmapSequence_GmapFreeCameraSequence)__receiver,(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)::core::convert::Into::into(dir),(*mut f32)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`SetAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField, f32, crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)` overload"]fn set_angle_limit(self,flag:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField> ,angle:impl::core::convert::Into<f32> ,dir:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir>)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2a30usize)as*mut u8,();
-(GmapSequence_GmapFreeCameraSequence)__receiver,(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField)::core::convert::Into::into(flag),(f32)::core::convert::Into::into(angle),(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)::core::convert::Into::into(dir))}
-}
-#[doc="`GetRecalcIgnoreFlag()` overload"]fn get_recalc_ignore_flag(self,)->crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd28a0usize)as*mut u8,crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField;
-(GmapSequence_GmapFreeCameraSequence)__receiver)}
-}
-#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2ca0usize)as*mut u8,();
-(GmapSequence_GmapFreeCameraSequence)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3300usize)as*mut u8,();
-(GmapSequence_GmapFreeCameraSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapsequence")]impl<__T:IGmapSequence_GmapFreeCameraSequence>IGmapSequence_GmapFreeCameraSequenceMethods for __T{}
-
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapFreeCameraSequence{pub fn load_resorces_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn wait_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn try_lr_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn try_ud_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn calc_left_right_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn calc_ud_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn init_angle_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn clamp_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn try_get_angle_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn set_angle_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_recalc_ignore_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-}
-
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapFreeCameraSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapSequence_GmapFreeCameraSequence), ::core::stringify!(new),));
- <Self as IGmapSequence_GmapFreeCameraSequenceMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapDisposeSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd07a0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -424,111 +317,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapTeleportSequence{#[doc="`LoadResources()` overload"]pub fn load_resources()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3370usize)as*mut u8,();
-)}
-}
-#[doc="`IsLoading()` overload"]pub fn is_loading()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd33e0usize)as*mut u8,bool;
-)}
-}
-#[doc="`UnloadResources()` overload"]pub fn unload_resources()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3450usize)as*mut u8,();
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3be0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-gmapsequence")]pub trait IGmapSequence_GmapTeleportSequenceMethods:IGmapSequence_GmapTeleportSequence{#[doc="`StartTeleport()` overload"]fn start_teleport(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd34c0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(GmapSequence_GmapTeleportSequence)__receiver)}
-}
-#[doc="`OpenMenu()` overload"]fn open_menu(self,)->(){unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3540usize)as*mut u8,();
-(GmapSequence_GmapTeleportSequence)__receiver)}
-}
-#[doc="`Teleport()` overload"]fn teleport(self,)->(){unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd38b0usize)as*mut u8,();
-(GmapSequence_GmapTeleportSequence)__receiver)}
-}
-#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3a20usize)as*mut u8,();
-(GmapSequence_GmapTeleportSequence)__receiver)}
-}
-#[doc="`CloseMapAndTitleBar()` overload"]fn close_map_and_title_bar(self,)->(){unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3a30usize)as*mut u8,();
-(GmapSequence_GmapTeleportSequence)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3f70usize)as*mut u8,();
-(GmapSequence_GmapTeleportSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapsequence")]impl<__T:IGmapSequence_GmapTeleportSequence>IGmapSequence_GmapTeleportSequenceMethods for __T{}
-
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapTeleportSequence{pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn start_teleport_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn open_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn teleport_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn close_map_and_title_bar_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapTeleportSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapSequence_GmapTeleportSequence), ::core::stringify!(new),));
- <Self as IGmapSequence_GmapTeleportSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_EnterChapterSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,now_spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot> ,r#type:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type> ,decide_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf790usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(now_spot),(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(r#type),(crate::system::action::Action)::core::convert::Into::into(decide_event_handler))}
-}
-}
-
-#[cfg(feature="app-gmapsequence")]pub trait IGmapSequence_EnterChapterSequenceMethods:IGmapSequence_EnterChapterSequence{#[doc="`.ctor(crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` overload"]fn ctor(self,now_spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot> ,r#type:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type> ,decide_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <GmapSequence_EnterChapterSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf130usize)as*mut u8,();
-(GmapSequence_EnterChapterSequence)__receiver,(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(now_spot),(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(r#type),(crate::system::action::Action)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <GmapSequence_EnterChapterSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf330usize)as*mut u8,();
-(GmapSequence_EnterChapterSequence)__receiver)}
-}
-#[doc="`Talk()` overload"]fn talk(self,)->(){unsafe{let __receiver= <GmapSequence_EnterChapterSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf500usize)as*mut u8,();
-(GmapSequence_EnterChapterSequence)__receiver)}
-}
-#[doc="`OpenDialog()` overload"]fn open_dialog(self,)->(){unsafe{let __receiver= <GmapSequence_EnterChapterSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf5b0usize)as*mut u8,();
-(GmapSequence_EnterChapterSequence)__receiver)}
-}
-#[doc="`Final()` overload"]fn r#final(self,)->(){unsafe{let __receiver= <GmapSequence_EnterChapterSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf6d0usize)as*mut u8,();
-(GmapSequence_EnterChapterSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapsequence")]impl<__T:IGmapSequence_EnterChapterSequence>IGmapSequence_EnterChapterSequenceMethods for __T{}
-
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_EnterChapterSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn open_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn final_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_EnterChapterSequence{#[doc="`.ctor(crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` — overload selector"]pub fn new(now_spot:crate::app::gmapspot::GmapSpot,r#type:crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,decide_event_handler:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapSequence_EnterChapterSequence), ::core::stringify!(new),));
- <Self as IGmapSequence_EnterChapterSequenceMethods> ::ctor(this,now_spot,r#type,decide_event_handler);
-this}
-}
-
 #[cfg(feature="app-gmapsequence")]pub trait IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods:IGmapSequence_GmapFreeCameraSequence_SelfDestroy{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence_SelfDestroy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b62c20usize)as*mut u8,();
 (GmapSequence_GmapFreeCameraSequence_SelfDestroy)__receiver)}
@@ -557,77 +345,48 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gmapsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapSequence_unity2_raw{use super:: * ;
-pub unsafe fn get_loading_mode(this:GmapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::loadingmanager::LoadingManager_Modes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"get_LoadingMode",));
-let inner:extern "C" fn(GmapSequence, ::unity2::OptionalMethod,)->crate::app::loadingmanager::LoadingManager_Modes= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_create(this:GmapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(GmapSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:GmapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(GmapSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_shutdown(this:GmapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
-let inner:extern "C" fn(GmapSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_version(this:GmapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(GmapSequence, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:GmapSequence,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(GmapSequence,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:GmapSequence,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(GmapSequence,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapWholeMapSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd4780usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-gmapsequence")]pub trait IGmapSequence_GmapWholeMapSequenceMethods:IGmapSequence_GmapWholeMapSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapSequence_GmapWholeMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd4150usize)as*mut u8,();
+(GmapSequence_GmapWholeMapSequence)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <GmapSequence_GmapWholeMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd4220usize)as*mut u8,();
+(GmapSequence_GmapWholeMapSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <GmapSequence_GmapWholeMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd43e0usize)as*mut u8,();
+(GmapSequence_GmapWholeMapSequence)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <GmapSequence_GmapWholeMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd4650usize)as*mut u8,();
+(GmapSequence_GmapWholeMapSequence)__receiver)}
+}
+#[doc="`WaitCameraMoveStrictly()` overload"]fn wait_camera_move_strictly(self,)->(){unsafe{let __receiver= <GmapSequence_GmapWholeMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd4740usize)as*mut u8,();
+(GmapSequence_GmapWholeMapSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapsequence")]impl<__T:IGmapSequence_GmapWholeMapSequence>IGmapSequence_GmapWholeMapSequenceMethods for __T{}
+
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapWholeMapSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn wait_camera_move_strictly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapWholeMapSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapSequence_GmapWholeMapSequence), ::core::stringify!(new),));
+ <Self as IGmapSequence_GmapWholeMapSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-gmapsequence")]impl GmapSequence{#[doc="`get_IsMoveFast()` overload"]pub fn get_is_move_fast()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b39540usize)as*mut u8,bool;
@@ -654,7 +413,16 @@ inner(this,stream,version,__mi)}
 }
 
 #[cfg(feature="app-gmapsequence")]pub trait IGmapSequenceMethods:IGmapSequence{#[doc="`get_LoadingMode()` overload"]fn get_loading_mode(self,)->crate::app::loadingmanager::LoadingManager_Modes{unsafe{let __receiver= <GmapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapSequence_unity2_raw::get_loading_mode(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"get_LoadingMode",));
+let __inner:extern "C" fn(GmapSequence, ::unity2::OptionalMethod,)->crate::app::loadingmanager::LoadingManager_Modes= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_NowSpot()` overload"]fn get_now_spot(self,)->crate::app::gmapspot::GmapSpot{unsafe{let __receiver= <GmapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2b39440usize)as*mut u8,crate::app::gmapspot::GmapSpot;
@@ -673,13 +441,40 @@ __GmapSequence_unity2_raw::get_loading_mode(__receiver, ::core::option::Option::
 (GmapSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GmapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(GmapSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <GmapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(GmapSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <GmapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let __inner:extern "C" fn(GmapSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`PersistentTick()` overload"]fn persistent_tick(self,)->(){unsafe{let __receiver= <GmapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2b39c00usize)as*mut u8,();
@@ -905,13 +700,40 @@ let mut __out_1= ::core::mem::MaybeUninit:: <bool> ::uninit();
 (GmapSequence)__receiver)}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <GmapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapSequence_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(GmapSequence, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GmapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapSequence_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(GmapSequence,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GmapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapSequence_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <GmapSequence as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(GmapSequence,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
 }
 #[doc="`IsPlayAppearEncountSound()` overload"]fn is_play_appear_encount_sound(self,)->bool{unsafe{let __receiver= <GmapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2b44650usize)as*mut u8,bool;
@@ -1022,6 +844,29 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
 }
 
+#[cfg(feature="app-gmapsequence")]impl GmapSequence{#[doc="Direct (non-virtual) call to `GmapSequence`'s own `get_LoadingMode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_loading_mode(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::loadingmanager::LoadingManager_Modes{let __mi=Self::get_loading_mode_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::loadingmanager::LoadingManager_Modes= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapSequence`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapSequence`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapSequence`'s own `OnShutdown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_shutdown(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_shutdown_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapSequence`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapSequence`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapSequence`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gmapsequence")]impl GmapSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GmapSequence), ::core::stringify!(new),));
@@ -1029,61 +874,65 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapWholeMapSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd4780usize)as*mut u8,();
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapTeleportSequence{#[doc="`LoadResources()` overload"]pub fn load_resources()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3370usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoading()` overload"]pub fn is_loading()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd33e0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadResources()` overload"]pub fn unload_resources()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3450usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3be0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
 }
 
-#[cfg(feature="app-gmapsequence")]pub trait IGmapSequence_GmapWholeMapSequenceMethods:IGmapSequence_GmapWholeMapSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapSequence_GmapWholeMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd4150usize)as*mut u8,();
-(GmapSequence_GmapWholeMapSequence)__receiver)}
+#[cfg(feature="app-gmapsequence")]pub trait IGmapSequence_GmapTeleportSequenceMethods:IGmapSequence_GmapTeleportSequence{#[doc="`StartTeleport()` overload"]fn start_teleport(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd34c0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(GmapSequence_GmapTeleportSequence)__receiver)}
 }
-#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <GmapSequence_GmapWholeMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd4220usize)as*mut u8,();
-(GmapSequence_GmapWholeMapSequence)__receiver)}
+#[doc="`OpenMenu()` overload"]fn open_menu(self,)->(){unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3540usize)as*mut u8,();
+(GmapSequence_GmapTeleportSequence)__receiver)}
 }
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <GmapSequence_GmapWholeMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd43e0usize)as*mut u8,();
-(GmapSequence_GmapWholeMapSequence)__receiver)}
+#[doc="`Teleport()` overload"]fn teleport(self,)->(){unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd38b0usize)as*mut u8,();
+(GmapSequence_GmapTeleportSequence)__receiver)}
 }
-#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <GmapSequence_GmapWholeMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd4650usize)as*mut u8,();
-(GmapSequence_GmapWholeMapSequence)__receiver)}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3a20usize)as*mut u8,();
+(GmapSequence_GmapTeleportSequence)__receiver)}
 }
-#[doc="`WaitCameraMoveStrictly()` overload"]fn wait_camera_move_strictly(self,)->(){unsafe{let __receiver= <GmapSequence_GmapWholeMapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd4740usize)as*mut u8,();
-(GmapSequence_GmapWholeMapSequence)__receiver)}
+#[doc="`CloseMapAndTitleBar()` overload"]fn close_map_and_title_bar(self,)->(){unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3a30usize)as*mut u8,();
+(GmapSequence_GmapTeleportSequence)__receiver)}
 }
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapSequence_GmapTeleportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3f70usize)as*mut u8,();
+(GmapSequence_GmapTeleportSequence)__receiver)}
 }
-
-#[cfg(feature="app-gmapsequence")]impl<__T:IGmapSequence_GmapWholeMapSequence>IGmapSequence_GmapWholeMapSequenceMethods for __T{}
-
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapWholeMapSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn wait_camera_move_strictly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapWholeMapSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmapsequence")]impl<__T:IGmapSequence_GmapTeleportSequence>IGmapSequence_GmapTeleportSequenceMethods for __T{}
+
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapTeleportSequence{pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_teleport_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn open_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn teleport_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn close_map_and_title_bar_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapTeleportSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapSequence_GmapWholeMapSequence), ::core::stringify!(new),));
- <Self as IGmapSequence_GmapWholeMapSequenceMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(GmapSequence_GmapTeleportSequence), ::core::stringify!(new),));
+ <Self as IGmapSequence_GmapTeleportSequenceMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="app-gmapsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw{use super:: * ;
-pub unsafe fn to_int(this:GmapSequence_GmapFreeCameraSequence_DirFlagField,value:crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GmapSequence_GmapFreeCameraSequence_DirFlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
-let inner:extern "C" fn(GmapSequence_GmapFreeCameraSequence_DirFlagField,crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
 }
 
 #[cfg(feature="app-gmapsequence")]pub trait IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods:IGmapSequence_GmapFreeCameraSequence_DirFlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence_DirFlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -1095,7 +944,16 @@ inner(this,value,__mi)}
 (GmapSequence_GmapFreeCameraSequence_DirFlagField)__receiver,(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag)::core::convert::Into::into(f))}
 }
 #[doc="`ToInt(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag>)->i32{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence_DirFlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapSequence_GmapFreeCameraSequence_DirFlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GmapSequence_GmapFreeCameraSequence_DirFlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let __inner:extern "C" fn(GmapSequence_GmapFreeCameraSequence_DirFlagField,crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`TestUp()` overload"]fn test_up(self,)->bool{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence_DirFlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b62980usize)as*mut u8,bool;
@@ -1131,6 +989,11 @@ pub fn test_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapFreeCameraSequence_DirFlagField{#[doc="Direct (non-virtual) call to `GmapSequence_GmapFreeCameraSequence_DirFlagField`'s own `ToInt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_int(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag,)->i32{let __mi=Self::to_int_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlag, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapFreeCameraSequence_DirFlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GmapSequence_GmapFreeCameraSequence_DirFlagField), ::core::stringify!(new),));
@@ -1143,41 +1006,192 @@ this}
 this}
 }
 
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapFreeCameraSequence{#[doc="`LoadResorces()` overload"]pub fn load_resorces()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd17a0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoading()` overload"]pub fn is_loading()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1840usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadResources()` overload"]pub fn unload_resources()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd18c0usize)as*mut u8,();
+)}
+}
+#[doc="`CalcLeftRightPos(crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn calc_left_right_pos(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,angle:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2830usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(angle))}
+}
+#[doc="`CalcUDPos(crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn calc_ud_pos(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,angle:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2bc0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(angle))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2e60usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-gmapsequence")]pub trait IGmapSequence_GmapFreeCameraSequenceMethods:IGmapSequence_GmapFreeCameraSequence{#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1940usize)as*mut u8,();
+(GmapSequence_GmapFreeCameraSequence)__receiver)}
+}
+#[doc="`WaitScroll()` overload"]fn wait_scroll(self,)->bool{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1b10usize)as*mut u8,bool;
+(GmapSequence_GmapFreeCameraSequence)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1b90usize)as*mut u8,();
+(GmapSequence_GmapFreeCameraSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1db0usize)as*mut u8,();
+(GmapSequence_GmapFreeCameraSequence)__receiver)}
+}
+#[doc="`TryLRMove(f32)` overload"]fn try_lr_move(self,move_l_stick_x:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2400usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(GmapSequence_GmapFreeCameraSequence)__receiver,(f32)::core::convert::Into::into(move_l_stick_x))}
+}
+#[doc="`TryUDMove(f32)` overload"]fn try_ud_move(self,move_l_stick_y:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2560usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(GmapSequence_GmapFreeCameraSequence)__receiver,(f32)::core::convert::Into::into(move_l_stick_y))}
+}
+#[doc="`InitAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField)` overload"]fn init_angle_limit(self,flags:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField>)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd1d00usize)as*mut u8,();
+(GmapSequence_GmapFreeCameraSequence)__receiver,(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField)::core::convert::Into::into(flags))}
+}
+#[doc="`ClampAngle(f32, crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)` overload"]fn clamp_angle(self,angle:impl::core::convert::Into<f32> ,dir:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir>)->f32{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2710usize)as*mut u8,f32;
+(GmapSequence_GmapFreeCameraSequence)__receiver,(f32)::core::convert::Into::into(angle),(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)::core::convert::Into::into(dir))}
+}
+#[doc="`TryGetAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir, *mutf32)` overload"]fn try_get_angle_limit(self,dir:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir>)->(bool,f32){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2c50usize)as*mut u8,bool;
+(GmapSequence_GmapFreeCameraSequence)__receiver,(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)::core::convert::Into::into(dir),(*mut f32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`SetAngleLimit(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField, f32, crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)` overload"]fn set_angle_limit(self,flag:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField> ,angle:impl::core::convert::Into<f32> ,dir:impl::core::convert::Into<crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir>)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2a30usize)as*mut u8,();
+(GmapSequence_GmapFreeCameraSequence)__receiver,(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField)::core::convert::Into::into(flag),(f32)::core::convert::Into::into(angle),(crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_Dir)::core::convert::Into::into(dir))}
+}
+#[doc="`GetRecalcIgnoreFlag()` overload"]fn get_recalc_ignore_flag(self,)->crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField{unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd28a0usize)as*mut u8,crate::app::gmapsequence::GmapSequence_GmapFreeCameraSequence_DirFlagField;
+(GmapSequence_GmapFreeCameraSequence)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd2ca0usize)as*mut u8,();
+(GmapSequence_GmapFreeCameraSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapSequence_GmapFreeCameraSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd3300usize)as*mut u8,();
+(GmapSequence_GmapFreeCameraSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapsequence")]impl<__T:IGmapSequence_GmapFreeCameraSequence>IGmapSequence_GmapFreeCameraSequenceMethods for __T{}
+
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapFreeCameraSequence{pub fn load_resorces_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn wait_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn try_lr_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn try_ud_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn calc_left_right_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn calc_ud_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn init_angle_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clamp_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn try_get_angle_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_angle_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_recalc_ignore_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_GmapFreeCameraSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapSequence_GmapFreeCameraSequence), ::core::stringify!(new),));
+ <Self as IGmapSequence_GmapFreeCameraSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_EnterChapterSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,now_spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot> ,r#type:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type> ,decide_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf790usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(now_spot),(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(r#type),(crate::system::action::Action)::core::convert::Into::into(decide_event_handler))}
+}
+}
+
+#[cfg(feature="app-gmapsequence")]pub trait IGmapSequence_EnterChapterSequenceMethods:IGmapSequence_EnterChapterSequence{#[doc="`.ctor(crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` overload"]fn ctor(self,now_spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot> ,r#type:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type> ,decide_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <GmapSequence_EnterChapterSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf130usize)as*mut u8,();
+(GmapSequence_EnterChapterSequence)__receiver,(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(now_spot),(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(r#type),(crate::system::action::Action)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <GmapSequence_EnterChapterSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf330usize)as*mut u8,();
+(GmapSequence_EnterChapterSequence)__receiver)}
+}
+#[doc="`Talk()` overload"]fn talk(self,)->(){unsafe{let __receiver= <GmapSequence_EnterChapterSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf500usize)as*mut u8,();
+(GmapSequence_EnterChapterSequence)__receiver)}
+}
+#[doc="`OpenDialog()` overload"]fn open_dialog(self,)->(){unsafe{let __receiver= <GmapSequence_EnterChapterSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf5b0usize)as*mut u8,();
+(GmapSequence_EnterChapterSequence)__receiver)}
+}
+#[doc="`Final()` overload"]fn r#final(self,)->(){unsafe{let __receiver= <GmapSequence_EnterChapterSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccf6d0usize)as*mut u8,();
+(GmapSequence_EnterChapterSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapsequence")]impl<__T:IGmapSequence_EnterChapterSequence>IGmapSequence_EnterChapterSequenceMethods for __T{}
+
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_EnterChapterSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn open_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn final_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapsequence")]impl GmapSequence_EnterChapterSequence{#[doc="`.ctor(crate::app::gmapspot::GmapSpot, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::system::action::Action)` — overload selector"]pub fn new(now_spot:crate::app::gmapspot::GmapSpot,r#type:crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,decide_event_handler:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapSequence_EnterChapterSequence), ::core::stringify!(new),));
+ <Self as IGmapSequence_EnterChapterSequenceMethods> ::ctor(this,now_spot,r#type,decide_event_handler);
+this}
+}
+
 #[cfg(feature = "app-gmapsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapSequence_GmapFreeCameraSequence;
-    pub use super::IGmapSequence_GmapFreeCameraSequence;
-    pub use super::IGmapSequence_GmapFreeCameraSequenceMethods;
+    pub use super::GmapSequence_Label;
+    pub use super::GmapSequence_GmapFreeCameraSequence_DirFlag;
     pub use super::GmapSequence_GmapFreeCameraSequence_Label;
-    pub use super::GmapSequence_GmapFreeCameraSequence_Dir;
     pub use super::GmapSequence_GmapDisposeSequence;
     pub use super::IGmapSequence_GmapDisposeSequence;
     pub use super::IGmapSequence_GmapDisposeSequenceMethods;
-    pub use super::GmapSequence_GmapTeleportSequence;
-    pub use super::IGmapSequence_GmapTeleportSequence;
-    pub use super::IGmapSequence_GmapTeleportSequenceMethods;
-    pub use super::GmapSequence_EnterChapterSequence;
-    pub use super::IGmapSequence_EnterChapterSequence;
-    pub use super::IGmapSequence_EnterChapterSequenceMethods;
     pub use super::GmapSequence_GmapFreeCameraSequence_SelfDestroy;
     pub use super::IGmapSequence_GmapFreeCameraSequence_SelfDestroy;
     pub use super::IGmapSequence_GmapFreeCameraSequence_SelfDestroyMethods;
-    pub use super::GmapSequence_GmapFreeCameraSequence_DirFlag;
-    pub use super::GmapSequence_EnterChapterSequence_Label;
-    pub use super::GmapSequence_GmapTeleportSequence_Label;
-    pub use super::GmapSequence_Label;
-    pub use super::GmapSequence_GmapWholeMapSequence_Label;
-    pub use super::GmapSequence;
-    pub use super::IGmapSequence;
-    pub use super::IGmapSequenceMethods;
     pub use super::GmapSequence_GmapWholeMapSequence;
     pub use super::IGmapSequence_GmapWholeMapSequence;
     pub use super::IGmapSequence_GmapWholeMapSequenceMethods;
-    pub use super::GmapSequence_GmapDisposeSequence_Label;
+    pub use super::GmapSequence_EnterChapterSequence_Label;
+    pub use super::GmapSequence;
+    pub use super::IGmapSequence;
+    pub use super::IGmapSequenceMethods;
+    pub use super::GmapSequence_GmapTeleportSequence;
+    pub use super::IGmapSequence_GmapTeleportSequence;
+    pub use super::IGmapSequence_GmapTeleportSequenceMethods;
+    pub use super::GmapSequence_GmapFreeCameraSequence_Dir;
     pub use super::GmapSequence_GmapFreeCameraSequence_DirFlagField;
     pub use super::IGmapSequence_GmapFreeCameraSequence_DirFlagField;
     pub use super::IGmapSequence_GmapFreeCameraSequence_DirFlagFieldMethods;
+    pub use super::GmapSequence_GmapTeleportSequence_Label;
+    pub use super::GmapSequence_GmapWholeMapSequence_Label;
+    pub use super::GmapSequence_GmapFreeCameraSequence;
+    pub use super::IGmapSequence_GmapFreeCameraSequence;
+    pub use super::IGmapSequence_GmapFreeCameraSequenceMethods;
+    pub use super::GmapSequence_GmapDisposeSequence_Label;
+    pub use super::GmapSequence_EnterChapterSequence;
+    pub use super::IGmapSequence_EnterChapterSequence;
+    pub use super::IGmapSequence_EnterChapterSequenceMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

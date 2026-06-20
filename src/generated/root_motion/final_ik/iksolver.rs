@@ -13,266 +13,27 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolver/IKSolver_Point.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolver.Point")]#[parent(crate::system::object::Object)]pub struct IKSolver_Point{#[offset(16)]#[rename(name="transform")]pub transform:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="weight")]pub weight:f32, #[offset(28)]#[rename(name="solverPosition")]pub solver_position:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="solverRotation")]pub solver_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(56)]#[rename(name="defaultLocalPosition")]pub default_local_position:crate::unity_engine::vector3::Vector3, #[offset(68)]#[rename(name="defaultLocalRotation")]pub default_local_rotation:crate::unity_engine::quaternion::Quaternion,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolver/IKSolver_Node.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolver.Node")]#[parent(crate::root_motion::final_ik::iksolver::IKSolver_Point)]pub struct IKSolver_Node{#[offset(84)]#[rename(name="length")]pub length:f32, #[offset(88)]#[rename(name="effectorPositionWeight")]pub effector_position_weight:f32, #[offset(92)]#[rename(name="effectorRotationWeight")]pub effector_rotation_weight:f32, #[offset(96)]#[rename(name="offset")]pub offset:crate::unity_engine::vector3::Vector3,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolver/IKSolver_IterationDelegate.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolver.IterationDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct IKSolver_IterationDelegate{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolver/IKSolver_UpdateDelegate.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolver.UpdateDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct IKSolver_UpdateDelegate{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolver/IKSolver.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolver")]#[parent(crate::system::object::Object)]pub struct IKSolver{#[offset(16)]#[rename(name="executedInEditor")]pub executed_in_editor:bool, #[offset(20)]#[rename(name="IKPosition")]pub ik_position_field:crate::unity_engine::vector3::Vector3, #[offset(32)]#[rename(name="IKPositionWeight")]pub ik_position_weight_field:f32, #[offset(40)]#[rename(name="OnPreInitiate")]pub on_pre_initiate:crate::root_motion::final_ik::iksolver::IKSolver_UpdateDelegate, #[offset(48)]#[rename(name="OnPostInitiate")]pub on_post_initiate:crate::root_motion::final_ik::iksolver::IKSolver_UpdateDelegate, #[offset(56)]#[rename(name="OnPreUpdate")]pub on_pre_update:crate::root_motion::final_ik::iksolver::IKSolver_UpdateDelegate, #[offset(64)]#[rename(name="OnPostUpdate")]pub on_post_update:crate::root_motion::final_ik::iksolver::IKSolver_UpdateDelegate, #[offset(72)]#[rename(name="firstInitiation")]pub first_initiation:bool, #[offset(80)]#[rename(name="root")]pub root:crate::unity_engine::transform::Transform,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolver/IKSolver_Bone.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolver.Bone")]#[parent(crate::root_motion::final_ik::iksolver::IKSolver_Point)]pub struct IKSolver_Bone{#[offset(84)]#[rename(name="length")]pub length:f32, #[offset(88)]#[rename(name="sqrMag")]pub sqr_mag:f32, #[offset(92)]#[rename(name="axis")]pub axis:crate::unity_engine::vector3::Vector3, #[offset(104)]#[rename(name="_rotationLimit")]pub rotation_limit_field:crate::root_motion::final_ik::rotationlimit::RotationLimit, #[offset(112)]#[rename(name="isLimited")]pub is_limited:bool,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolver/IKSolver_IterationDelegate.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolver.IterationDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct IKSolver_IterationDelegate{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolver/IKSolver_Point.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolver.Point")]#[parent(crate::system::object::Object)]pub struct IKSolver_Point{#[offset(16)]#[rename(name="transform")]pub transform:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="weight")]pub weight:f32, #[offset(28)]#[rename(name="solverPosition")]pub solver_position:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="solverRotation")]pub solver_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(56)]#[rename(name="defaultLocalPosition")]pub default_local_position:crate::unity_engine::vector3::Vector3, #[offset(68)]#[rename(name="defaultLocalRotation")]pub default_local_rotation:crate::unity_engine::quaternion::Quaternion,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolver/IKSolver_UpdateDelegate.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolver.UpdateDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct IKSolver_UpdateDelegate{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolver/IKSolver_Node.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolver.Node")]#[parent(crate::root_motion::final_ik::iksolver::IKSolver_Point)]pub struct IKSolver_Node{#[offset(84)]#[rename(name="length")]pub length:f32, #[offset(88)]#[rename(name="effectorPositionWeight")]pub effector_position_weight:f32, #[offset(92)]#[rename(name="effectorRotationWeight")]pub effector_rotation_weight:f32, #[offset(96)]#[rename(name="offset")]pub offset:crate::unity_engine::vector3::Vector3,}
+
 }
 
 #[cfg(feature = "root_motion-final_ik-iksolver-types")]
 pub use __types::*;
-
-#[cfg(feature="root_motion-final_ik-iksolver")]pub trait IIKSolver_PointMethods:IIKSolver_Point{#[doc="`StoreDefaultLocalState()` overload"]fn store_default_local_state(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1c20usize)as*mut u8,();
-(IKSolver_Point)__receiver)}
-}
-#[doc="`FixTransform()` overload"]fn fix_transform(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1c70usize)as*mut u8,();
-(IKSolver_Point)__receiver)}
-}
-#[doc="`UpdateSolverPosition()` overload"]fn update_solver_position(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1d00usize)as*mut u8,();
-(IKSolver_Point)__receiver)}
-}
-#[doc="`UpdateSolverLocalPosition()` overload"]fn update_solver_local_position(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1d40usize)as*mut u8,();
-(IKSolver_Point)__receiver)}
-}
-#[doc="`UpdateSolverState()` overload"]fn update_solver_state(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1d80usize)as*mut u8,();
-(IKSolver_Point)__receiver)}
-}
-#[doc="`UpdateSolverLocalState()` overload"]fn update_solver_local_state(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1dd0usize)as*mut u8,();
-(IKSolver_Point)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af16a0usize)as*mut u8,();
-(IKSolver_Point)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl<__T:IIKSolver_Point>IIKSolver_PointMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_Point{pub fn store_default_local_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn fix_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn update_solver_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn update_solver_local_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn update_solver_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn update_solver_local_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_Point{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKSolver_Point), ::core::stringify!(new),));
- <Self as IIKSolver_PointMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]pub trait IIKSolver_NodeMethods:IIKSolver_Node{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolver_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1b00usize)as*mut u8,();
-(IKSolver_Node)__receiver)}
-}
-#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]fn ctor_2(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <IKSolver_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1b50usize)as*mut u8,();
-(IKSolver_Node)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform))}
-}
-#[doc="`.ctor(crate::unity_engine::transform::Transform, f32)` overload"]fn ctor_3(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolver_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1bb0usize)as*mut u8,();
-(IKSolver_Node)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform),(f32)::core::convert::Into::into(weight))}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl<__T:IIKSolver_Node>IIKSolver_NodeMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_Node{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_Node{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKSolver_Node), ::core::stringify!(new),));
- <Self as IIKSolver_NodeMethods> ::ctor(this,);
-this}
-#[doc="`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]pub fn new_2(transform:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKSolver_Node), ::core::stringify!(new_2),));
- <Self as IIKSolver_NodeMethods> ::ctor_2(this,transform);
-this}
-#[doc="`.ctor(crate::unity_engine::transform::Transform, f32)` — overload selector"]pub fn new_3(transform:crate::unity_engine::transform::Transform,weight:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKSolver_Node), ::core::stringify!(new_3),));
- <Self as IIKSolver_NodeMethods> ::ctor_3(this,transform,weight);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolver_IterationDelegate_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:IKSolver_IterationDelegate,i:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <IKSolver_IterationDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(IKSolver_IterationDelegate,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,i,__mi)}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]pub trait IIKSolver_IterationDelegateMethods:IIKSolver_IterationDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <IKSolver_IterationDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1810usize)as*mut u8,();
-(IKSolver_IterationDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32)` overload"]fn invoke(self,i:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <IKSolver_IterationDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolver_IterationDelegate_unity2_raw::invoke(__receiver, ::core::convert::Into::into(i), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl<__T:IIKSolver_IterationDelegate>IIKSolver_IterationDelegateMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_IterationDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_IterationDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKSolver_IterationDelegate), ::core::stringify!(new),));
- <Self as IIKSolver_IterationDelegateMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolver_UpdateDelegate_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:IKSolver_UpdateDelegate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <IKSolver_UpdateDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(IKSolver_UpdateDelegate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]pub trait IIKSolver_UpdateDelegateMethods:IIKSolver_UpdateDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <IKSolver_UpdateDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1e20usize)as*mut u8,();
-(IKSolver_UpdateDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <IKSolver_UpdateDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolver_UpdateDelegate_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl<__T:IIKSolver_UpdateDelegate>IIKSolver_UpdateDelegateMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_UpdateDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_UpdateDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKSolver_UpdateDelegate), ::core::stringify!(new),));
- <Self as IIKSolver_UpdateDelegateMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolver")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolver_unity2_raw{use super:: * ;
-pub unsafe fn is_valid_2(this:IKSolver,message: *mut::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"IsValid",));
-let inner:extern "C" fn(IKSolver, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,message,__mi)}
-pub unsafe fn get_ik_position(this:IKSolver,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"GetIKPosition",));
-let inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_points(this:IKSolver,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"GetPoints",));
-let inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_point(this:IKSolver,transform:crate::unity_engine::transform::Transform,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver_Point{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"GetPoint",));
-let inner:extern "C" fn(IKSolver,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver_Point= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,transform,__mi)}
-pub unsafe fn fix_transforms(this:IKSolver,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"FixTransforms",));
-let inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn store_default_local_state(this:IKSolver,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"StoreDefaultLocalState",));
-let inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_initiate(this:IKSolver,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"OnInitiate",));
-let inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_update(this:IKSolver,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
-let inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver{#[doc="`ContainsDuplicateBone(::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Bone>)` overload"]pub fn contains_duplicate_bone(bones:impl::core::convert::Into< ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Bone> >)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c264b0usize)as*mut u8,crate::unity_engine::transform::Transform;
 (::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Bone>)::core::convert::Into::into(bones))}
@@ -294,7 +55,16 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3c26690usize)as*mut
 }
 #[doc="`IsValid(*mut::unity2::Il2CppString)` overload"]fn is_valid_2(self,)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKSolver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let __ret={__IKSolver_unity2_raw::is_valid_2(__receiver,__out_0.as_mut_ptr(), ::core::option::Option::None)}
+let __ret={{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let __inner:extern "C" fn(IKSolver, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__out_0.as_mut_ptr(),__mi)}
+}
 ;
 (__ret,__out_0.assume_init())}
 }
@@ -307,7 +77,16 @@ let __ret={__IKSolver_unity2_raw::is_valid_2(__receiver,__out_0.as_mut_ptr(), ::
 (IKSolver)__receiver)}
 }
 #[doc="`GetIKPosition()` overload"]fn get_ik_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolver_unity2_raw::get_ik_position(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"GetIKPosition",));
+let __inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetIKPosition(crate::unity_engine::vector3::Vector3)` overload"]fn set_ik_position(self,position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c26410usize)as*mut u8,();
@@ -334,22 +113,76 @@ __IKSolver_unity2_raw::get_ik_position(__receiver, ::core::option::Option::None)
 (IKSolver)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`GetPoints()` overload"]fn get_points(self,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point>{unsafe{let __receiver= <IKSolver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolver_unity2_raw::get_points(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"GetPoints",));
+let __inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetPoint(crate::unity_engine::transform::Transform)` overload"]fn get_point(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::root_motion::final_ik::iksolver::IKSolver_Point{unsafe{let __receiver= <IKSolver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolver_unity2_raw::get_point(__receiver, ::core::convert::Into::into(transform), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"GetPoint",));
+let __inner:extern "C" fn(IKSolver,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver_Point= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(transform),__mi)}
+}
 }
 #[doc="`FixTransforms()` overload"]fn fix_transforms(self,)->(){unsafe{let __receiver= <IKSolver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolver_unity2_raw::fix_transforms(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"FixTransforms",));
+let __inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`StoreDefaultLocalState()` overload"]fn store_default_local_state(self,)->(){unsafe{let __receiver= <IKSolver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolver_unity2_raw::store_default_local_state(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"StoreDefaultLocalState",));
+let __inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnInitiate()` overload"]fn on_initiate(self,)->(){unsafe{let __receiver= <IKSolver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolver_unity2_raw::on_initiate(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"OnInitiate",));
+let __inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <IKSolver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolver_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IKSolver as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let __inner:extern "C" fn(IKSolver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`LogWarning(::unity2::Il2CppString)` overload"]fn log_warning(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <IKSolver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c26490usize)as*mut u8,();
@@ -385,6 +218,32 @@ pub fn contains_duplicate_bone_method_info()-> & 'static::unity2::il2cpp::Method
 pub fn hierarchy_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 pub fn pre_solve_bones_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver{#[doc="Direct (non-virtual) call to `IKSolver`'s own `IsValid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_valid_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,message: *mut::unity2::Il2CppString,)->bool{let __mi=Self::is_valid_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),message, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolver`'s own `GetIKPosition`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_ik_position(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::vector3::Vector3{let __mi=Self::get_ik_position_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolver`'s own `GetPoints`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_points(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point>{let __mi=Self::get_points_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolver`'s own `GetPoint`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_point(this:impl::core::convert::Into< ::unity2::IlInstance> ,transform:crate::unity_engine::transform::Transform,)->crate::root_motion::final_ik::iksolver::IKSolver_Point{let __mi=Self::get_point_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver_Point= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),transform, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolver`'s own `FixTransforms`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn fix_transforms(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::fix_transforms_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolver`'s own `StoreDefaultLocalState`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn store_default_local_state(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::store_default_local_state_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolver`'s own `OnInitiate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_initiate(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_initiate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolver`'s own `OnUpdate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -463,27 +322,185 @@ this}
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-iksolver")]pub trait IIKSolver_IterationDelegateMethods:IIKSolver_IterationDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <IKSolver_IterationDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1810usize)as*mut u8,();
+(IKSolver_IterationDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,i:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <IKSolver_IterationDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <IKSolver_IterationDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(IKSolver_IterationDelegate,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(i),__mi)}
+}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl<__T:IIKSolver_IterationDelegate>IIKSolver_IterationDelegateMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_IterationDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_IterationDelegate{#[doc="Direct (non-virtual) call to `IKSolver_IterationDelegate`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,i:i32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),i, ::core::option::Option::None)}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_IterationDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKSolver_IterationDelegate), ::core::stringify!(new),));
+ <Self as IIKSolver_IterationDelegateMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]pub trait IIKSolver_PointMethods:IIKSolver_Point{#[doc="`StoreDefaultLocalState()` overload"]fn store_default_local_state(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1c20usize)as*mut u8,();
+(IKSolver_Point)__receiver)}
+}
+#[doc="`FixTransform()` overload"]fn fix_transform(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1c70usize)as*mut u8,();
+(IKSolver_Point)__receiver)}
+}
+#[doc="`UpdateSolverPosition()` overload"]fn update_solver_position(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1d00usize)as*mut u8,();
+(IKSolver_Point)__receiver)}
+}
+#[doc="`UpdateSolverLocalPosition()` overload"]fn update_solver_local_position(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1d40usize)as*mut u8,();
+(IKSolver_Point)__receiver)}
+}
+#[doc="`UpdateSolverState()` overload"]fn update_solver_state(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1d80usize)as*mut u8,();
+(IKSolver_Point)__receiver)}
+}
+#[doc="`UpdateSolverLocalState()` overload"]fn update_solver_local_state(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1dd0usize)as*mut u8,();
+(IKSolver_Point)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolver_Point as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af16a0usize)as*mut u8,();
+(IKSolver_Point)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl<__T:IIKSolver_Point>IIKSolver_PointMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_Point{pub fn store_default_local_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn fix_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_solver_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_solver_local_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_solver_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_solver_local_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_Point{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKSolver_Point), ::core::stringify!(new),));
+ <Self as IIKSolver_PointMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]pub trait IIKSolver_UpdateDelegateMethods:IIKSolver_UpdateDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <IKSolver_UpdateDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1e20usize)as*mut u8,();
+(IKSolver_UpdateDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <IKSolver_UpdateDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <IKSolver_UpdateDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(IKSolver_UpdateDelegate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl<__T:IIKSolver_UpdateDelegate>IIKSolver_UpdateDelegateMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_UpdateDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_UpdateDelegate{#[doc="Direct (non-virtual) call to `IKSolver_UpdateDelegate`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_UpdateDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKSolver_UpdateDelegate), ::core::stringify!(new),));
+ <Self as IIKSolver_UpdateDelegateMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]pub trait IIKSolver_NodeMethods:IIKSolver_Node{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolver_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1b00usize)as*mut u8,();
+(IKSolver_Node)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]fn ctor_2(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <IKSolver_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1b50usize)as*mut u8,();
+(IKSolver_Node)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform))}
+}
+#[doc="`.ctor(crate::unity_engine::transform::Transform, f32)` overload"]fn ctor_3(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolver_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af1bb0usize)as*mut u8,();
+(IKSolver_Node)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform),(f32)::core::convert::Into::into(weight))}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl<__T:IIKSolver_Node>IIKSolver_NodeMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_Node{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolver")]impl IKSolver_Node{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKSolver_Node), ::core::stringify!(new),));
+ <Self as IIKSolver_NodeMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]pub fn new_2(transform:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKSolver_Node), ::core::stringify!(new_2),));
+ <Self as IIKSolver_NodeMethods> ::ctor_2(this,transform);
+this}
+#[doc="`.ctor(crate::unity_engine::transform::Transform, f32)` — overload selector"]pub fn new_3(transform:crate::unity_engine::transform::Transform,weight:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKSolver_Node), ::core::stringify!(new_3),));
+ <Self as IIKSolver_NodeMethods> ::ctor_3(this,transform,weight);
+this}
+}
+
 #[cfg(feature = "root_motion-final_ik-iksolver")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IKSolver_Point;
-    pub use super::IIKSolver_Point;
-    pub use super::IIKSolver_PointMethods;
-    pub use super::IKSolver_Node;
-    pub use super::IIKSolver_Node;
-    pub use super::IIKSolver_NodeMethods;
-    pub use super::IKSolver_IterationDelegate;
-    pub use super::IIKSolver_IterationDelegate;
-    pub use super::IIKSolver_IterationDelegateMethods;
-    pub use super::IKSolver_UpdateDelegate;
-    pub use super::IIKSolver_UpdateDelegate;
-    pub use super::IIKSolver_UpdateDelegateMethods;
     pub use super::IKSolver;
     pub use super::IIKSolver;
     pub use super::IIKSolverMethods;
     pub use super::IKSolver_Bone;
     pub use super::IIKSolver_Bone;
     pub use super::IIKSolver_BoneMethods;
+    pub use super::IKSolver_IterationDelegate;
+    pub use super::IIKSolver_IterationDelegate;
+    pub use super::IIKSolver_IterationDelegateMethods;
+    pub use super::IKSolver_Point;
+    pub use super::IIKSolver_Point;
+    pub use super::IIKSolver_PointMethods;
+    pub use super::IKSolver_UpdateDelegate;
+    pub use super::IIKSolver_UpdateDelegate;
+    pub use super::IIKSolver_UpdateDelegateMethods;
+    pub use super::IKSolver_Node;
+    pub use super::IIKSolver_Node;
+    pub use super::IIKSolver_NodeMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

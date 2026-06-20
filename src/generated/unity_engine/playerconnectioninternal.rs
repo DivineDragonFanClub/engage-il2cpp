@@ -16,49 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-playerconnectioninternal-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-playerconnectioninternal")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PlayerConnectionInternal_unity2_raw{use super:: * ;
-pub unsafe fn unity_engine_i_player_editor_connection_native_poll(this:PlayerConnectionInternal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <PlayerConnectionInternal as::unity2::ClassIdentity> ::NAME,"UnityEngine.IPlayerEditorConnectionNative.Poll",));
-let inner:extern "C" fn(PlayerConnectionInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_i_player_editor_connection_native_initialize(this:PlayerConnectionInternal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <PlayerConnectionInternal as::unity2::ClassIdentity> ::NAME,"UnityEngine.IPlayerEditorConnectionNative.Initialize",));
-let inner:extern "C" fn(PlayerConnectionInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_i_player_editor_connection_native_is_connected(this:PlayerConnectionInternal,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <PlayerConnectionInternal as::unity2::ClassIdentity> ::NAME,"UnityEngine.IPlayerEditorConnectionNative.IsConnected",));
-let inner:extern "C" fn(PlayerConnectionInternal, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_i_player_editor_connection_native_disconnect_all(this:PlayerConnectionInternal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <PlayerConnectionInternal as::unity2::ClassIdentity> ::NAME,"UnityEngine.IPlayerEditorConnectionNative.DisconnectAll",));
-let inner:extern "C" fn(PlayerConnectionInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-playerconnectioninternal")]impl PlayerConnectionInternal{#[doc="`IsConnected()` overload"]pub fn is_connected()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8230usize)as*mut u8,bool;
 )}
 }
@@ -86,16 +43,52 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-playerconnectioninternal")]pub trait IPlayerConnectionInternalMethods:IPlayerConnectionInternal{#[doc="`UnityEngine.IPlayerEditorConnectionNative.Poll()` overload"]fn unity_engine_i_player_editor_connection_native_poll(self,)->(){unsafe{let __receiver= <PlayerConnectionInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayerConnectionInternal_unity2_raw::unity_engine_i_player_editor_connection_native_poll(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <PlayerConnectionInternal as::unity2::ClassIdentity> ::NAME,"UnityEngine.IPlayerEditorConnectionNative.Poll",));
+let __inner:extern "C" fn(PlayerConnectionInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UnityEngine.IPlayerEditorConnectionNative.Initialize()` overload"]fn unity_engine_i_player_editor_connection_native_initialize(self,)->(){unsafe{let __receiver= <PlayerConnectionInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayerConnectionInternal_unity2_raw::unity_engine_i_player_editor_connection_native_initialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <PlayerConnectionInternal as::unity2::ClassIdentity> ::NAME,"UnityEngine.IPlayerEditorConnectionNative.Initialize",));
+let __inner:extern "C" fn(PlayerConnectionInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UnityEngine.IPlayerEditorConnectionNative.IsConnected()` overload"]fn unity_engine_i_player_editor_connection_native_is_connected(self,)->bool{unsafe{let __receiver= <PlayerConnectionInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayerConnectionInternal_unity2_raw::unity_engine_i_player_editor_connection_native_is_connected(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <PlayerConnectionInternal as::unity2::ClassIdentity> ::NAME,"UnityEngine.IPlayerEditorConnectionNative.IsConnected",));
+let __inner:extern "C" fn(PlayerConnectionInternal, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UnityEngine.IPlayerEditorConnectionNative.DisconnectAll()` overload"]fn unity_engine_i_player_editor_connection_native_disconnect_all(self,)->(){unsafe{let __receiver= <PlayerConnectionInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayerConnectionInternal_unity2_raw::unity_engine_i_player_editor_connection_native_disconnect_all(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <PlayerConnectionInternal as::unity2::ClassIdentity> ::NAME,"UnityEngine.IPlayerEditorConnectionNative.DisconnectAll",));
+let __inner:extern "C" fn(PlayerConnectionInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayerConnectionInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x32f6150usize)as*mut u8,();
@@ -118,6 +111,20 @@ pub fn try_send_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn poll_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
 pub fn disconnect_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="unity_engine-playerconnectioninternal")]impl PlayerConnectionInternal{#[doc="Direct (non-virtual) call to `PlayerConnectionInternal`'s own `UnityEngine.IPlayerEditorConnectionNative.Poll`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_i_player_editor_connection_native_poll(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::unity_engine_i_player_editor_connection_native_poll_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayerConnectionInternal`'s own `UnityEngine.IPlayerEditorConnectionNative.Initialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_i_player_editor_connection_native_initialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::unity_engine_i_player_editor_connection_native_initialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayerConnectionInternal`'s own `UnityEngine.IPlayerEditorConnectionNative.IsConnected`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_i_player_editor_connection_native_is_connected(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::unity_engine_i_player_editor_connection_native_is_connected_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayerConnectionInternal`'s own `UnityEngine.IPlayerEditorConnectionNative.DisconnectAll`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_i_player_editor_connection_native_disconnect_all(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::unity_engine_i_player_editor_connection_native_disconnect_all_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-playerconnectioninternal")]impl PlayerConnectionInternal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

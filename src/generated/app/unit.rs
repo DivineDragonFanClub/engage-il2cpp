@@ -23,18 +23,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_ItemsForSelectedWeapon.md"))]#[::unity2::class(namespace="App",name="Unit.ItemsForSelectedWeapon")]#[parent(crate::system::object::Object)]pub struct Unit_ItemsForSelectedWeapon{#[offset(16)]#[rename(name="m_Items")]pub m_items: ::unity2::Array<crate::app::itemdata::ItemData> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_CalcInfo.md"))]#[::unity2::class(namespace="App",name="Unit.CalcInfo")]#[parent(crate::system::object::Object)]pub struct Unit_CalcInfo{#[offset(16)]#[rename(name="Count")]pub count:i32, #[offset(20)]#[rename(name="Attack")]pub attack:i32, #[offset(24)]#[rename(name="Hit")]pub hit:i32, #[offset(28)]#[rename(name="Avoid")]pub avoid:i32, #[offset(32)]#[rename(name="Critical")]pub critical:i32, #[offset(36)]#[rename(name="Secure")]pub secure:i32, #[offset(40)]#[rename(name="Continuous")]pub continuous:i32, #[offset(44)]#[rename(name="PhysicalAttack")]pub physical_attack:i32, #[offset(48)]#[rename(name="MagicAttack")]pub magic_attack:i32, #[offset(52)]#[rename(name="PhysicalDefense")]pub physical_defense:i32, #[offset(56)]#[rename(name="MagicDefense")]pub magic_defense:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_ChartItemsForSelectedWeapon.md"))]#[::unity2::class(namespace="App",name="Unit.ChartItemsForSelectedWeapon")]#[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]pub struct Unit_ChartItemsForSelectedWeapon{#[offset(24)]#[rename(name="m_ChartItems")]pub m_chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_StatusField.md"))]#[::unity2::class(namespace="App",name="Unit.StatusField")]#[parent(crate::app::bitfieldtemplate64_1::BitFieldTemplate64_1<crate::app::unit::Unit_Status>)]pub struct Unit_StatusField{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_ChangeValue.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Unit_ChangeValue{pub m_value:u8,pub m_display:u8,}
 impl::unity2::ClassIdentity for Unit_ChangeValue{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Unit.ChangeValue";
@@ -46,7 +34,19 @@ impl::unity2::IlType for Unit_ChangeValue{fn il_type()-> &'static::unity2::il2cp
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_DisposItemsForSelectedWeapon.md"))]#[::unity2::class(namespace="App",name="Unit.DisposItemsForSelectedWeapon")]#[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]pub struct Unit_DisposItemsForSelectedWeapon{#[offset(24)]#[rename(name="m_Data")]pub m_data:crate::app::disposdata::DisposData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_ItemsForSelectedWeapon.md"))]#[::unity2::class(namespace="App",name="Unit.ItemsForSelectedWeapon")]#[parent(crate::system::object::Object)]pub struct Unit_ItemsForSelectedWeapon{#[offset(16)]#[rename(name="m_Items")]pub m_items: ::unity2::Array<crate::app::itemdata::ItemData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_ChartItemsForSelectedWeapon.md"))]#[::unity2::class(namespace="App",name="Unit.ChartItemsForSelectedWeapon")]#[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]pub struct Unit_ChartItemsForSelectedWeapon{#[offset(24)]#[rename(name="m_ChartItems")]pub m_chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_StatusField.md"))]#[::unity2::class(namespace="App",name="Unit.StatusField")]#[parent(crate::app::bitfieldtemplate64_1::BitFieldTemplate64_1<crate::app::unit::Unit_Status>)]pub struct Unit_StatusField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_CalcInfo.md"))]#[::unity2::class(namespace="App",name="Unit.CalcInfo")]#[parent(crate::system::object::Object)]pub struct Unit_CalcInfo{#[offset(16)]#[rename(name="Count")]pub count:i32, #[offset(20)]#[rename(name="Attack")]pub attack:i32, #[offset(24)]#[rename(name="Hit")]pub hit:i32, #[offset(28)]#[rename(name="Avoid")]pub avoid:i32, #[offset(32)]#[rename(name="Critical")]pub critical:i32, #[offset(36)]#[rename(name="Secure")]pub secure:i32, #[offset(40)]#[rename(name="Continuous")]pub continuous:i32, #[offset(44)]#[rename(name="PhysicalAttack")]pub physical_attack:i32, #[offset(48)]#[rename(name="MagicAttack")]pub magic_attack:i32, #[offset(52)]#[rename(name="PhysicalDefense")]pub physical_defense:i32, #[offset(56)]#[rename(name="MagicDefense")]pub magic_defense:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_FuncUnitItem.md"))]#[::unity2::class(namespace="App",name="Unit.FuncUnitItem")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Unit_FuncUnitItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_GuardType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Unit_GuardType{pub value:i32,}
@@ -69,7 +69,10 @@ pub fn not_enough_hp()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_FuncUnitItem.md"))]#[::unity2::class(namespace="App",name="Unit.FuncUnitItem")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Unit_FuncUnitItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_DisposItemsForSelectedWeapon.md"))]#[::unity2::class(namespace="App",name="Unit.DisposItemsForSelectedWeapon")]#[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]pub struct Unit_DisposItemsForSelectedWeapon{#[offset(24)]#[rename(name="m_Data")]pub m_data:crate::app::disposdata::DisposData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit.md"))]#[::unity2::class(namespace="App",name="Unit")]#[parent(crate::system::object::Object)]pub struct Unit{#[static_field]#[rename(name="ItemMax")]pub item_max:i32, #[static_field]#[rename(name="ExpMax")]pub exp_max:i32, #[static_field]#[rename(name="EnhanceMoveMax")]pub enhance_move_max:i32, #[static_field]#[rename(name="StunMax")]pub stun_max:i32, #[static_field]#[rename(name="EquipSkillMax")]pub equip_skill_max:i32, #[static_field]#[rename(name="InternalLevelMin")]pub internal_level_min:i32, #[static_field]#[rename(name="InternalLevelMax")]pub internal_level_max:i32, #[static_field]#[rename(name="SkillPointMax")]pub skill_point_max:i32, #[static_field]#[rename(name="CellCountMax")]pub cell_count_max:i32, #[static_field]#[rename(name="LevelUpRetryMax")]pub level_up_retry_max:i32, #[static_field]#[rename(name="DefaultGodStates")]pub default_god_states: ::unity2::Array<crate::app::godstate::GodState> , #[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_Status")]pub m_status:crate::app::unit::Unit_StatusField, #[offset(24)]#[rename(name="m_Prev")]pub m_prev:crate::app::unit::Unit, #[offset(32)]#[rename(name="m_Next")]pub m_next:crate::app::unit::Unit, #[offset(40)]#[rename(name="m_Ai")]pub m_ai:crate::app::unitai::UnitAI, #[offset(48)]#[rename(name="m_Edit")]pub m_edit:crate::app::unitedit::UnitEdit, #[offset(56)]#[rename(name="m_Ident")]pub m_ident:i32, #[offset(64)]#[rename(name="m_Person")]pub m_person:crate::app::persondata::PersonData, #[offset(72)]#[rename(name="m_Job")]pub m_job:crate::app::jobdata::JobData, #[offset(80)]#[rename(name="m_Force")]pub m_force:crate::app::force::Force, #[offset(88)]#[rename(name="m_BaseCapability")]pub m_base_capability:crate::app::unitbasecapability::UnitBaseCapability, #[offset(96)]#[rename(name="m_GrowCapability")]pub m_grow_capability:crate::app::capability::Capability, #[offset(104)]#[rename(name="m_LevelCapability")]pub m_level_capability:crate::app::unitbasecapability::UnitBaseCapability, #[offset(112)]#[rename(name="m_GrowSeed")]pub m_grow_seed:u32, #[offset(116)]#[rename(name="m_DropSeed")]pub m_drop_seed:u32, #[offset(120)]#[rename(name="m_Actor")]pub m_actor:crate::app::unitactor::UnitActor, #[offset(128)]#[rename(name="m_Info")]pub m_info:crate::app::mapinforoot::MapInfoRoot, #[offset(136)]#[rename(name="m_Index")]pub m_index:u8, #[offset(137)]#[rename(name="m_Level")]pub m_level:u8, #[offset(138)]#[rename(name="m_Exp")]pub m_exp:u8, #[offset(139)]#[rename(name="m_Hp")]pub m_hp:crate::app::unit::Unit_ChangeValue, #[offset(141)]#[rename(name="m_HpStockCount")]pub m_hp_stock_count:u8, #[offset(142)]#[rename(name="m_HpStockCountMax")]pub m_hp_stock_count_max:u8, #[offset(143)]#[rename(name="m_ExtraHpStockCount")]pub m_extra_hp_stock_count:u8, #[offset(144)]#[rename(name="m_ExtraHpStockCountMax")]pub m_extra_hp_stock_count_max:u8, #[offset(145)]#[rename(name="m_EngageCount")]pub m_engage_count:u8, #[offset(146)]#[rename(name="m_EngageTurn")]pub m_engage_turn:u8, #[offset(147)]#[rename(name="m_EngageCountView")]pub m_engage_count_view:u8, #[offset(152)]#[rename(name="m_GodStates")]pub m_god_states: ::unity2::Array<crate::app::godstate::GodState> , #[offset(160)]#[rename(name="m_X")]pub m_x:i8, #[offset(161)]#[rename(name="m_Z")]pub m_z:i8, #[offset(162)]#[rename(name="m_DisposX")]pub m_dispos_x:i8, #[offset(163)]#[rename(name="m_DisposZ")]pub m_dispos_z:i8, #[offset(164)]#[rename(name="m_Angle")]pub m_angle:f32, #[offset(168)]#[rename(name="m_DontAttackPerson")]pub m_dont_attack_person:crate::app::persondata::PersonData, #[offset(176)]#[rename(name="m_DontAttackForceMask")]pub m_dont_attack_force_mask:u32, #[offset(184)]#[rename(name="m_ItemList")]pub m_item_list:crate::app::unititemlist::UnitItemList, #[offset(192)]#[rename(name="m_ItemSelected")]pub m_item_selected:crate::app::unititem::UnitItem, #[offset(200)]#[rename(name="m_AccessoryList")]pub m_accessory_list:crate::app::unitaccessorylist::UnitAccessoryList, #[offset(208)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[offset(216)]#[rename(name="m_GodLink")]pub m_god_link:crate::app::godunit::GodUnit, #[offset(224)]#[rename(name="m_Ring")]pub m_ring:crate::app::unitring::UnitRing, #[offset(232)]#[rename(name="m_ExtraSight")]pub m_extra_sight:i32, #[offset(236)]#[rename(name="m_MoveDistance")]pub m_move_distance:i32, #[offset(240)]#[rename(name="m_MaskSkill")]pub m_mask_skill:crate::app::skillarray::SkillArray, #[offset(248)]#[rename(name="m_EquipSkill")]pub m_equip_skill:crate::app::skillarray::SkillArray, #[offset(256)]#[rename(name="m_PrivateSkill")]pub m_private_skill:crate::app::skillarray::SkillArray, #[offset(264)]#[rename(name="m_ReceiveSkill")]pub m_receive_skill:crate::app::skillarray::SkillArray, #[offset(272)]#[rename(name="m_SupportedSkill")]pub m_supported_skill:crate::app::skillarray::SkillArray, #[offset(280)]#[rename(name="m_EquipSkillPool")]pub m_equip_skill_pool:crate::app::skillarray::SkillArray, #[offset(288)]#[rename(name="m_LearnedJobSkill")]pub m_learned_job_skill:crate::app::skilldata::SkillData, #[offset(296)]#[rename(name="m_OriginalAptitude")]pub m_original_aptitude:crate::app::weaponmask::WeaponMask, #[offset(304)]#[rename(name="m_Aptitude")]pub m_aptitude:crate::app::weaponmask::WeaponMask, #[offset(312)]#[rename(name="m_WeaponMask")]pub m_weapon_mask:crate::app::weaponmask::WeaponMask, #[offset(320)]#[rename(name="m_SelectedWeaponMask")]pub m_selected_weapon_mask:crate::app::weaponmask::WeaponMask, #[offset(328)]#[rename(name="m_EnhanceFactors")]pub m_enhance_factors:crate::app::unitenhancefactors::UnitEnhanceFactors, #[offset(336)]#[rename(name="m_EnhanceCalculator")]pub m_enhance_calculator:crate::app::unitenhancecalculator::UnitEnhanceCalculator, #[offset(344)]#[rename(name="m_InternalLevel")]pub m_internal_level:i8, #[offset(345)]#[rename(name="m_LastPickVoice")]pub m_last_pick_voice:i8, #[offset(352)]#[rename(name="m_AttackImage")]pub m_attack_image:crate::app::mapdeployattackimage::MapDeployAttackImage, #[offset(360)]#[rename(name="m_RodImage")]pub m_rod_image:crate::app::mapdeployrodimage::MapDeployRodImage, #[offset(368)]#[rename(name="m_HealImage")]pub m_heal_image:crate::app::mapdeployhealimage::MapDeployHealImage, #[offset(376)]#[rename(name="m_SupportImage")]pub m_support_image:crate::app::mapdeploysupportimage::MapDeploySupportImage, #[offset(384)]#[rename(name="m_InterferenceImage")]pub m_interference_image:crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage, #[offset(392)]#[rename(name="m_EngageImage")]pub m_engage_image:crate::app::mapdeployengageimage::MapDeployEngageImage, #[offset(400)]#[rename(name="m_MoveImage")]pub m_move_image:crate::app::mapdeploymoveimage::MapDeployMoveImage, #[offset(408)]#[rename(name="m_Record")]pub m_record:crate::app::unitrecord::UnitRecord, #[offset(416)]#[rename(name="m_MapHistoryIndex")]pub m_map_history_index:u8, #[offset(424)]#[rename(name="m_MaskSkillLock")]pub m_mask_skill_lock: ::unity2::IlInstance, #[offset(432)]#[rename(name="m_FortuneTarget")]pub m_fortune_target:crate::app::persondata::PersonData, #[offset(440)]#[rename(name="m_FortuneSeed")]pub m_fortune_seed:u32, #[offset(444)]#[rename(name="m_RelayPlayerIndex")]pub m_relay_player_index:u8, #[offset(446)]#[rename(name="m_SkillPoint")]pub m_skill_point:i16, #[offset(448)]#[rename(name="m_OwnerUnit")]pub m_owner_unit:i32, #[offset(452)]#[rename(name="m_LockTargetX")]pub m_lock_target_x:i8, #[offset(453)]#[rename(name="m_LockTargetZ")]pub m_lock_target_z:i8, #[static_field]#[rename(name="s_AttackImage")]pub s_attack_image:crate::app::mapdeployattackimage::MapDeployAttackImage, #[static_field]#[rename(name="s_RodImage")]pub s_rod_image:crate::app::mapdeployrodimage::MapDeployRodImage, #[static_field]#[rename(name="s_HealImage")]pub s_heal_image:crate::app::mapdeployhealimage::MapDeployHealImage, #[static_field]#[rename(name="s_SupportImage")]pub s_support_image:crate::app::mapdeploysupportimage::MapDeploySupportImage, #[static_field]#[rename(name="s_InterferenceImage")]pub s_interference_image:crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage, #[static_field]#[rename(name="s_EngageImage")]pub s_engage_image:crate::app::mapdeployengageimage::MapDeployEngageImage, #[static_field]#[rename(name="s_MoveImage")]pub s_move_image:crate::app::mapdeploymoveimage::MapDeployMoveImage, #[static_field]#[rename(name="LeaderAddLevel")]pub leader_add_level:i32, #[static_field]#[rename(name="s_Engaging")]pub s_engaging:bool, #[static_field]#[rename(name="s_Mind")]pub s_mind:crate::app::mapmind::MapMind_Type, #[static_field]#[rename(name="s_CanEngageStart")]pub s_can_engage_start:bool, #[static_field]#[rename(name="s_UnitList")]pub s_unit_list:crate::app::unititemlist::UnitItemList, #[static_field]#[rename(name="s_TempList")]pub s_temp_list:crate::app::unititemlist::UnitItemList, #[static_field]#[rename(name="s_TempTarget")]pub s_temp_target:crate::app::maptarget::MapTarget_DataSet, #[static_field]#[rename(name="Disorder")]pub disorder:crate::app::skilldata::SkillData_States, #[static_field]#[rename(name="GrowAbortCount")]pub grow_abort_count:i32, #[static_field]#[rename(name="InvalidEngageCount")]pub invalid_engage_count:u8, #[static_field]#[rename(name="EnemyEngageMask")]pub enemy_engage_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdnagerdeploy::MapDnagerDeploy> , #[offset(488)]#[rename(name="m_CalcInfo")]pub m_calc_info:crate::app::unit::Unit_CalcInfo,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Unit_Status{pub value:i64,}
@@ -211,161 +214,10 @@ pub fn save_mask()->Self{Self{value: -1}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unit/Unit.md"))]#[::unity2::class(namespace="App",name="Unit")]#[parent(crate::system::object::Object)]pub struct Unit{#[static_field]#[rename(name="ItemMax")]pub item_max:i32, #[static_field]#[rename(name="ExpMax")]pub exp_max:i32, #[static_field]#[rename(name="EnhanceMoveMax")]pub enhance_move_max:i32, #[static_field]#[rename(name="StunMax")]pub stun_max:i32, #[static_field]#[rename(name="EquipSkillMax")]pub equip_skill_max:i32, #[static_field]#[rename(name="InternalLevelMin")]pub internal_level_min:i32, #[static_field]#[rename(name="InternalLevelMax")]pub internal_level_max:i32, #[static_field]#[rename(name="SkillPointMax")]pub skill_point_max:i32, #[static_field]#[rename(name="CellCountMax")]pub cell_count_max:i32, #[static_field]#[rename(name="LevelUpRetryMax")]pub level_up_retry_max:i32, #[static_field]#[rename(name="DefaultGodStates")]pub default_god_states: ::unity2::Array<crate::app::godstate::GodState> , #[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_Status")]pub m_status:crate::app::unit::Unit_StatusField, #[offset(24)]#[rename(name="m_Prev")]pub m_prev:crate::app::unit::Unit, #[offset(32)]#[rename(name="m_Next")]pub m_next:crate::app::unit::Unit, #[offset(40)]#[rename(name="m_Ai")]pub m_ai:crate::app::unitai::UnitAI, #[offset(48)]#[rename(name="m_Edit")]pub m_edit:crate::app::unitedit::UnitEdit, #[offset(56)]#[rename(name="m_Ident")]pub m_ident:i32, #[offset(64)]#[rename(name="m_Person")]pub m_person:crate::app::persondata::PersonData, #[offset(72)]#[rename(name="m_Job")]pub m_job:crate::app::jobdata::JobData, #[offset(80)]#[rename(name="m_Force")]pub m_force:crate::app::force::Force, #[offset(88)]#[rename(name="m_BaseCapability")]pub m_base_capability:crate::app::unitbasecapability::UnitBaseCapability, #[offset(96)]#[rename(name="m_GrowCapability")]pub m_grow_capability:crate::app::capability::Capability, #[offset(104)]#[rename(name="m_LevelCapability")]pub m_level_capability:crate::app::unitbasecapability::UnitBaseCapability, #[offset(112)]#[rename(name="m_GrowSeed")]pub m_grow_seed:u32, #[offset(116)]#[rename(name="m_DropSeed")]pub m_drop_seed:u32, #[offset(120)]#[rename(name="m_Actor")]pub m_actor:crate::app::unitactor::UnitActor, #[offset(128)]#[rename(name="m_Info")]pub m_info:crate::app::mapinforoot::MapInfoRoot, #[offset(136)]#[rename(name="m_Index")]pub m_index:u8, #[offset(137)]#[rename(name="m_Level")]pub m_level:u8, #[offset(138)]#[rename(name="m_Exp")]pub m_exp:u8, #[offset(139)]#[rename(name="m_Hp")]pub m_hp:crate::app::unit::Unit_ChangeValue, #[offset(141)]#[rename(name="m_HpStockCount")]pub m_hp_stock_count:u8, #[offset(142)]#[rename(name="m_HpStockCountMax")]pub m_hp_stock_count_max:u8, #[offset(143)]#[rename(name="m_ExtraHpStockCount")]pub m_extra_hp_stock_count:u8, #[offset(144)]#[rename(name="m_ExtraHpStockCountMax")]pub m_extra_hp_stock_count_max:u8, #[offset(145)]#[rename(name="m_EngageCount")]pub m_engage_count:u8, #[offset(146)]#[rename(name="m_EngageTurn")]pub m_engage_turn:u8, #[offset(147)]#[rename(name="m_EngageCountView")]pub m_engage_count_view:u8, #[offset(152)]#[rename(name="m_GodStates")]pub m_god_states: ::unity2::Array<crate::app::godstate::GodState> , #[offset(160)]#[rename(name="m_X")]pub m_x:i8, #[offset(161)]#[rename(name="m_Z")]pub m_z:i8, #[offset(162)]#[rename(name="m_DisposX")]pub m_dispos_x:i8, #[offset(163)]#[rename(name="m_DisposZ")]pub m_dispos_z:i8, #[offset(164)]#[rename(name="m_Angle")]pub m_angle:f32, #[offset(168)]#[rename(name="m_DontAttackPerson")]pub m_dont_attack_person:crate::app::persondata::PersonData, #[offset(176)]#[rename(name="m_DontAttackForceMask")]pub m_dont_attack_force_mask:u32, #[offset(184)]#[rename(name="m_ItemList")]pub m_item_list:crate::app::unititemlist::UnitItemList, #[offset(192)]#[rename(name="m_ItemSelected")]pub m_item_selected:crate::app::unititem::UnitItem, #[offset(200)]#[rename(name="m_AccessoryList")]pub m_accessory_list:crate::app::unitaccessorylist::UnitAccessoryList, #[offset(208)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[offset(216)]#[rename(name="m_GodLink")]pub m_god_link:crate::app::godunit::GodUnit, #[offset(224)]#[rename(name="m_Ring")]pub m_ring:crate::app::unitring::UnitRing, #[offset(232)]#[rename(name="m_ExtraSight")]pub m_extra_sight:i32, #[offset(236)]#[rename(name="m_MoveDistance")]pub m_move_distance:i32, #[offset(240)]#[rename(name="m_MaskSkill")]pub m_mask_skill:crate::app::skillarray::SkillArray, #[offset(248)]#[rename(name="m_EquipSkill")]pub m_equip_skill:crate::app::skillarray::SkillArray, #[offset(256)]#[rename(name="m_PrivateSkill")]pub m_private_skill:crate::app::skillarray::SkillArray, #[offset(264)]#[rename(name="m_ReceiveSkill")]pub m_receive_skill:crate::app::skillarray::SkillArray, #[offset(272)]#[rename(name="m_SupportedSkill")]pub m_supported_skill:crate::app::skillarray::SkillArray, #[offset(280)]#[rename(name="m_EquipSkillPool")]pub m_equip_skill_pool:crate::app::skillarray::SkillArray, #[offset(288)]#[rename(name="m_LearnedJobSkill")]pub m_learned_job_skill:crate::app::skilldata::SkillData, #[offset(296)]#[rename(name="m_OriginalAptitude")]pub m_original_aptitude:crate::app::weaponmask::WeaponMask, #[offset(304)]#[rename(name="m_Aptitude")]pub m_aptitude:crate::app::weaponmask::WeaponMask, #[offset(312)]#[rename(name="m_WeaponMask")]pub m_weapon_mask:crate::app::weaponmask::WeaponMask, #[offset(320)]#[rename(name="m_SelectedWeaponMask")]pub m_selected_weapon_mask:crate::app::weaponmask::WeaponMask, #[offset(328)]#[rename(name="m_EnhanceFactors")]pub m_enhance_factors:crate::app::unitenhancefactors::UnitEnhanceFactors, #[offset(336)]#[rename(name="m_EnhanceCalculator")]pub m_enhance_calculator:crate::app::unitenhancecalculator::UnitEnhanceCalculator, #[offset(344)]#[rename(name="m_InternalLevel")]pub m_internal_level:i8, #[offset(345)]#[rename(name="m_LastPickVoice")]pub m_last_pick_voice:i8, #[offset(352)]#[rename(name="m_AttackImage")]pub m_attack_image:crate::app::mapdeployattackimage::MapDeployAttackImage, #[offset(360)]#[rename(name="m_RodImage")]pub m_rod_image:crate::app::mapdeployrodimage::MapDeployRodImage, #[offset(368)]#[rename(name="m_HealImage")]pub m_heal_image:crate::app::mapdeployhealimage::MapDeployHealImage, #[offset(376)]#[rename(name="m_SupportImage")]pub m_support_image:crate::app::mapdeploysupportimage::MapDeploySupportImage, #[offset(384)]#[rename(name="m_InterferenceImage")]pub m_interference_image:crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage, #[offset(392)]#[rename(name="m_EngageImage")]pub m_engage_image:crate::app::mapdeployengageimage::MapDeployEngageImage, #[offset(400)]#[rename(name="m_MoveImage")]pub m_move_image:crate::app::mapdeploymoveimage::MapDeployMoveImage, #[offset(408)]#[rename(name="m_Record")]pub m_record:crate::app::unitrecord::UnitRecord, #[offset(416)]#[rename(name="m_MapHistoryIndex")]pub m_map_history_index:u8, #[offset(424)]#[rename(name="m_MaskSkillLock")]pub m_mask_skill_lock: ::unity2::IlInstance, #[offset(432)]#[rename(name="m_FortuneTarget")]pub m_fortune_target:crate::app::persondata::PersonData, #[offset(440)]#[rename(name="m_FortuneSeed")]pub m_fortune_seed:u32, #[offset(444)]#[rename(name="m_RelayPlayerIndex")]pub m_relay_player_index:u8, #[offset(446)]#[rename(name="m_SkillPoint")]pub m_skill_point:i16, #[offset(448)]#[rename(name="m_OwnerUnit")]pub m_owner_unit:i32, #[offset(452)]#[rename(name="m_LockTargetX")]pub m_lock_target_x:i8, #[offset(453)]#[rename(name="m_LockTargetZ")]pub m_lock_target_z:i8, #[static_field]#[rename(name="s_AttackImage")]pub s_attack_image:crate::app::mapdeployattackimage::MapDeployAttackImage, #[static_field]#[rename(name="s_RodImage")]pub s_rod_image:crate::app::mapdeployrodimage::MapDeployRodImage, #[static_field]#[rename(name="s_HealImage")]pub s_heal_image:crate::app::mapdeployhealimage::MapDeployHealImage, #[static_field]#[rename(name="s_SupportImage")]pub s_support_image:crate::app::mapdeploysupportimage::MapDeploySupportImage, #[static_field]#[rename(name="s_InterferenceImage")]pub s_interference_image:crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage, #[static_field]#[rename(name="s_EngageImage")]pub s_engage_image:crate::app::mapdeployengageimage::MapDeployEngageImage, #[static_field]#[rename(name="s_MoveImage")]pub s_move_image:crate::app::mapdeploymoveimage::MapDeployMoveImage, #[static_field]#[rename(name="LeaderAddLevel")]pub leader_add_level:i32, #[static_field]#[rename(name="s_Engaging")]pub s_engaging:bool, #[static_field]#[rename(name="s_Mind")]pub s_mind:crate::app::mapmind::MapMind_Type, #[static_field]#[rename(name="s_CanEngageStart")]pub s_can_engage_start:bool, #[static_field]#[rename(name="s_UnitList")]pub s_unit_list:crate::app::unititemlist::UnitItemList, #[static_field]#[rename(name="s_TempList")]pub s_temp_list:crate::app::unititemlist::UnitItemList, #[static_field]#[rename(name="s_TempTarget")]pub s_temp_target:crate::app::maptarget::MapTarget_DataSet, #[static_field]#[rename(name="Disorder")]pub disorder:crate::app::skilldata::SkillData_States, #[static_field]#[rename(name="GrowAbortCount")]pub grow_abort_count:i32, #[static_field]#[rename(name="InvalidEngageCount")]pub invalid_engage_count:u8, #[static_field]#[rename(name="EnemyEngageMask")]pub enemy_engage_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdnagerdeploy::MapDnagerDeploy> , #[offset(488)]#[rename(name="m_CalcInfo")]pub m_calc_info:crate::app::unit::Unit_CalcInfo,}
-
 }
 
 #[cfg(feature = "app-unit-types")]
 pub use __types::*;
-
-#[cfg(feature="app-unit")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Unit_ItemsForSelectedWeapon_unity2_raw{use super:: * ;
-pub unsafe fn prepare(this:Unit_ItemsForSelectedWeapon,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Unit_ItemsForSelectedWeapon as::unity2::ClassIdentity> ::NAME,"Prepare",));
-let inner:extern "C" fn(Unit_ItemsForSelectedWeapon, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-unit")]pub trait IUnit_ItemsForSelectedWeaponMethods:IUnit_ItemsForSelectedWeapon{#[doc="`Sort()` overload"]fn sort(self,)->(){unsafe{let __receiver= <Unit_ItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b44140usize)as*mut u8,();
-(Unit_ItemsForSelectedWeapon)__receiver)}
-}
-#[doc="`GetCount()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Unit_ItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b44280usize)as*mut u8,i32;
-(Unit_ItemsForSelectedWeapon)__receiver)}
-}
-#[doc="`Get(i32)` overload"]fn get(self,index:impl::core::convert::Into<i32>)->crate::app::itemdata::ItemData{unsafe{let __receiver= <Unit_ItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b44290usize)as*mut u8,crate::app::itemdata::ItemData;
-(Unit_ItemsForSelectedWeapon)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <Unit_ItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Unit_ItemsForSelectedWeapon_unity2_raw::prepare(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Unit_ItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b43d00usize)as*mut u8,();
-(Unit_ItemsForSelectedWeapon)__receiver)}
-}
-}
-
-#[cfg(feature="app-unit")]impl<__T:IUnit_ItemsForSelectedWeapon>IUnit_ItemsForSelectedWeaponMethods for __T{}
-
-#[cfg(feature="app-unit")]impl Unit_ItemsForSelectedWeapon{pub fn sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-unit")]impl Unit_ItemsForSelectedWeapon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Unit_ItemsForSelectedWeapon), ::core::stringify!(new),));
- <Self as IUnit_ItemsForSelectedWeaponMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-unit")]pub trait IUnit_CalcInfoMethods:IUnit_CalcInfo{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <Unit_CalcInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b42d30usize)as*mut u8,();
-(Unit_CalcInfo)__receiver)}
-}
-#[doc="`Update(crate::app::unit::Unit)` overload"]fn update(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::unit::Unit_CalcInfo{unsafe{let __receiver= <Unit_CalcInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b42d50usize)as*mut u8,crate::app::unit::Unit_CalcInfo;
-(Unit_CalcInfo)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Unit_CalcInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b43a50usize)as*mut u8,();
-(Unit_CalcInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-unit")]impl<__T:IUnit_CalcInfo>IUnit_CalcInfoMethods for __T{}
-
-#[cfg(feature="app-unit")]impl Unit_CalcInfo{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-unit")]impl Unit_CalcInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Unit_CalcInfo), ::core::stringify!(new),));
- <Self as IUnit_CalcInfoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-unit")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Unit_ChartItemsForSelectedWeapon_unity2_raw{use super:: * ;
-pub unsafe fn prepare(this:Unit_ChartItemsForSelectedWeapon,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Unit_ChartItemsForSelectedWeapon as::unity2::ClassIdentity> ::NAME,"Prepare",));
-let inner:extern "C" fn(Unit_ChartItemsForSelectedWeapon, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-unit")]pub trait IUnit_ChartItemsForSelectedWeaponMethods:IUnit_ChartItemsForSelectedWeapon{#[doc="`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` overload"]fn ctor(self,chart_items:impl::core::convert::Into< ::unity2::Array<crate::app::chartdata::ChartData_Item> >)->(){unsafe{let __receiver= <Unit_ChartItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b43cc0usize)as*mut u8,();
-(Unit_ChartItemsForSelectedWeapon)__receiver,(::unity2::Array<crate::app::chartdata::ChartData_Item>)::core::convert::Into::into(chart_items))}
-}
-#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <Unit_ChartItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Unit_ChartItemsForSelectedWeapon_unity2_raw::prepare(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-unit")]impl<__T:IUnit_ChartItemsForSelectedWeapon>IUnit_ChartItemsForSelectedWeaponMethods for __T{}
-
-#[cfg(feature="app-unit")]impl Unit_ChartItemsForSelectedWeapon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unit")]impl Unit_ChartItemsForSelectedWeapon{#[doc="`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` — overload selector"]pub fn new(chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Unit_ChartItemsForSelectedWeapon), ::core::stringify!(new),));
- <Self as IUnit_ChartItemsForSelectedWeaponMethods> ::ctor(this,chart_items);
-this}
-}
-
-#[cfg(feature="app-unit")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Unit_StatusField_unity2_raw{use super:: * ;
-pub unsafe fn to_long(this:Unit_StatusField,value:crate::app::unit::Unit_Status,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <Unit_StatusField as::unity2::ClassIdentity> ::NAME,"ToLong",));
-let inner:extern "C" fn(Unit_StatusField,crate::app::unit::Unit_Status, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-}
-
-#[cfg(feature="app-unit")]pub trait IUnit_StatusFieldMethods:IUnit_StatusField{#[doc="`ToLong(crate::app::unit::Unit_Status)` overload"]fn to_long(self,value:impl::core::convert::Into<crate::app::unit::Unit_Status>)->i64{unsafe{let __receiver= <Unit_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Unit_StatusField_unity2_raw::to_long(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Unit_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b442e0usize)as*mut u8,();
-(Unit_StatusField)__receiver)}
-}
-}
-
-#[cfg(feature="app-unit")]impl<__T:IUnit_StatusField>IUnit_StatusFieldMethods for __T{}
-
-#[cfg(feature="app-unit")]impl Unit_StatusField{pub fn to_long_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unit")]impl Unit_StatusField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Unit_StatusField), ::core::stringify!(new),));
- <Self as IUnit_StatusFieldMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-unit")]impl Unit_ChangeValue{#[doc="`op_Implicit(crate::app::unit::Unit_ChangeValue)` overload"]pub fn op_implicit(v:impl::core::convert::Into<crate::app::unit::Unit_ChangeValue>)->u8{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b43cb0usize)as*mut u8,u8;
 (crate::app::unit::Unit_ChangeValue)::core::convert::Into::into(v))}
@@ -405,52 +257,155 @@ pub fn instant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
-#[cfg(feature="app-unit")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Unit_DisposItemsForSelectedWeapon_unity2_raw{use super:: * ;
-pub unsafe fn prepare(this:Unit_DisposItemsForSelectedWeapon,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-unit")]pub trait IUnit_ItemsForSelectedWeaponMethods:IUnit_ItemsForSelectedWeapon{#[doc="`Sort()` overload"]fn sort(self,)->(){unsafe{let __receiver= <Unit_ItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b44140usize)as*mut u8,();
+(Unit_ItemsForSelectedWeapon)__receiver)}
+}
+#[doc="`GetCount()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Unit_ItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b44280usize)as*mut u8,i32;
+(Unit_ItemsForSelectedWeapon)__receiver)}
+}
+#[doc="`Get(i32)` overload"]fn get(self,index:impl::core::convert::Into<i32>)->crate::app::itemdata::ItemData{unsafe{let __receiver= <Unit_ItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b44290usize)as*mut u8,crate::app::itemdata::ItemData;
+(Unit_ItemsForSelectedWeapon)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <Unit_ItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <Unit_DisposItemsForSelectedWeapon as::unity2::ClassIdentity> ::NAME,"Prepare",));
-let inner:extern "C" fn(Unit_DisposItemsForSelectedWeapon, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <Unit_ItemsForSelectedWeapon as::unity2::ClassIdentity> ::NAME,"Prepare",));
+let __inner:extern "C" fn(Unit_ItemsForSelectedWeapon, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-unit")]pub trait IUnit_DisposItemsForSelectedWeaponMethods:IUnit_DisposItemsForSelectedWeapon{#[doc="`.ctor(crate::app::disposdata::DisposData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::disposdata::DisposData>)->(){unsafe{let __receiver= <Unit_DisposItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b43e70usize)as*mut u8,();
-(Unit_DisposItemsForSelectedWeapon)__receiver,(crate::app::disposdata::DisposData)::core::convert::Into::into(data))}
 }
-#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <Unit_DisposItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Unit_DisposItemsForSelectedWeapon_unity2_raw::prepare(__receiver, ::core::option::Option::None)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Unit_ItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b43d00usize)as*mut u8,();
+(Unit_ItemsForSelectedWeapon)__receiver)}
 }
 }
 
-#[cfg(feature="app-unit")]impl<__T:IUnit_DisposItemsForSelectedWeapon>IUnit_DisposItemsForSelectedWeaponMethods for __T{}
+#[cfg(feature="app-unit")]impl<__T:IUnit_ItemsForSelectedWeapon>IUnit_ItemsForSelectedWeaponMethods for __T{}
 
-#[cfg(feature="app-unit")]impl Unit_DisposItemsForSelectedWeapon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-unit")]impl Unit_ItemsForSelectedWeapon{pub fn sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-unit")]impl Unit_DisposItemsForSelectedWeapon{#[doc="`.ctor(crate::app::disposdata::DisposData)` — overload selector"]pub fn new(data:crate::app::disposdata::DisposData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-unit")]impl Unit_ItemsForSelectedWeapon{#[doc="Direct (non-virtual) call to `Unit_ItemsForSelectedWeapon`'s own `Prepare`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn prepare(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::prepare_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unit")]impl Unit_ItemsForSelectedWeapon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(Unit_DisposItemsForSelectedWeapon), ::core::stringify!(new),));
- <Self as IUnit_DisposItemsForSelectedWeaponMethods> ::ctor(this,data);
+ failed to instantiate", ::core::stringify!(Unit_ItemsForSelectedWeapon), ::core::stringify!(new),));
+ <Self as IUnit_ItemsForSelectedWeaponMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-unit")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Unit_FuncUnitItem_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:Unit_FuncUnitItem,unit_item:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-unit")]pub trait IUnit_ChartItemsForSelectedWeaponMethods:IUnit_ChartItemsForSelectedWeapon{#[doc="`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` overload"]fn ctor(self,chart_items:impl::core::convert::Into< ::unity2::Array<crate::app::chartdata::ChartData_Item> >)->(){unsafe{let __receiver= <Unit_ChartItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b43cc0usize)as*mut u8,();
+(Unit_ChartItemsForSelectedWeapon)__receiver,(::unity2::Array<crate::app::chartdata::ChartData_Item>)::core::convert::Into::into(chart_items))}
+}
+#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <Unit_ChartItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <Unit_FuncUnitItem as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(Unit_FuncUnitItem,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <Unit_ChartItemsForSelectedWeapon as::unity2::ClassIdentity> ::NAME,"Prepare",));
+let __inner:extern "C" fn(Unit_ChartItemsForSelectedWeapon, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit_item,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-unit")]impl<__T:IUnit_ChartItemsForSelectedWeapon>IUnit_ChartItemsForSelectedWeaponMethods for __T{}
+
+#[cfg(feature="app-unit")]impl Unit_ChartItemsForSelectedWeapon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unit")]impl Unit_ChartItemsForSelectedWeapon{#[doc="Direct (non-virtual) call to `Unit_ChartItemsForSelectedWeapon`'s own `Prepare`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn prepare(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::prepare_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unit")]impl Unit_ChartItemsForSelectedWeapon{#[doc="`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` — overload selector"]pub fn new(chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Unit_ChartItemsForSelectedWeapon), ::core::stringify!(new),));
+ <Self as IUnit_ChartItemsForSelectedWeaponMethods> ::ctor(this,chart_items);
+this}
+}
+
+#[cfg(feature="app-unit")]pub trait IUnit_StatusFieldMethods:IUnit_StatusField{#[doc="`ToLong(crate::app::unit::Unit_Status)` overload"]fn to_long(self,value:impl::core::convert::Into<crate::app::unit::Unit_Status>)->i64{unsafe{let __receiver= <Unit_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Unit_StatusField as::unity2::ClassIdentity> ::NAME,"ToLong",));
+let __inner:extern "C" fn(Unit_StatusField,crate::app::unit::Unit_Status, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Unit_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b442e0usize)as*mut u8,();
+(Unit_StatusField)__receiver)}
+}
+}
+
+#[cfg(feature="app-unit")]impl<__T:IUnit_StatusField>IUnit_StatusFieldMethods for __T{}
+
+#[cfg(feature="app-unit")]impl Unit_StatusField{pub fn to_long_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unit")]impl Unit_StatusField{#[doc="Direct (non-virtual) call to `Unit_StatusField`'s own `ToLong`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_long(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::unit::Unit_Status,)->i64{let __mi=Self::to_long_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit_Status, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unit")]impl Unit_StatusField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Unit_StatusField), ::core::stringify!(new),));
+ <Self as IUnit_StatusFieldMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-unit")]pub trait IUnit_CalcInfoMethods:IUnit_CalcInfo{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <Unit_CalcInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b42d30usize)as*mut u8,();
+(Unit_CalcInfo)__receiver)}
+}
+#[doc="`Update(crate::app::unit::Unit)` overload"]fn update(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::unit::Unit_CalcInfo{unsafe{let __receiver= <Unit_CalcInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b42d50usize)as*mut u8,crate::app::unit::Unit_CalcInfo;
+(Unit_CalcInfo)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Unit_CalcInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b43a50usize)as*mut u8,();
+(Unit_CalcInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-unit")]impl<__T:IUnit_CalcInfo>IUnit_CalcInfoMethods for __T{}
+
+#[cfg(feature="app-unit")]impl Unit_CalcInfo{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-unit")]impl Unit_CalcInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Unit_CalcInfo), ::core::stringify!(new),));
+ <Self as IUnit_CalcInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-unit")]pub trait IUnit_FuncUnitItemMethods:IUnit_FuncUnitItem{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Unit_FuncUnitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -458,7 +413,16 @@ inner(this,unit_item,__mi)}
 (Unit_FuncUnitItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <Unit_FuncUnitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Unit_FuncUnitItem_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit_item), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Unit_FuncUnitItem as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(Unit_FuncUnitItem,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit_item),__mi)}
+}
 }
 }
 
@@ -468,10 +432,51 @@ __Unit_FuncUnitItem_unity2_raw::invoke(__receiver, ::core::convert::Into::into(u
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-unit")]impl Unit_FuncUnitItem{#[doc="Direct (non-virtual) call to `Unit_FuncUnitItem`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit_item:crate::app::unititem::UnitItem,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit_item, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-unit")]impl Unit_FuncUnitItem{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(Unit_FuncUnitItem), ::core::stringify!(new),));
  <Self as IUnit_FuncUnitItemMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-unit")]pub trait IUnit_DisposItemsForSelectedWeaponMethods:IUnit_DisposItemsForSelectedWeapon{#[doc="`.ctor(crate::app::disposdata::DisposData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::disposdata::DisposData>)->(){unsafe{let __receiver= <Unit_DisposItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b43e70usize)as*mut u8,();
+(Unit_DisposItemsForSelectedWeapon)__receiver,(crate::app::disposdata::DisposData)::core::convert::Into::into(data))}
+}
+#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <Unit_DisposItemsForSelectedWeapon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Unit_DisposItemsForSelectedWeapon as::unity2::ClassIdentity> ::NAME,"Prepare",));
+let __inner:extern "C" fn(Unit_DisposItemsForSelectedWeapon, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-unit")]impl<__T:IUnit_DisposItemsForSelectedWeapon>IUnit_DisposItemsForSelectedWeaponMethods for __T{}
+
+#[cfg(feature="app-unit")]impl Unit_DisposItemsForSelectedWeapon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unit")]impl Unit_DisposItemsForSelectedWeapon{#[doc="Direct (non-virtual) call to `Unit_DisposItemsForSelectedWeapon`'s own `Prepare`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn prepare(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::prepare_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unit")]impl Unit_DisposItemsForSelectedWeapon{#[doc="`.ctor(crate::app::disposdata::DisposData)` — overload selector"]pub fn new(data:crate::app::disposdata::DisposData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Unit_DisposItemsForSelectedWeapon), ::core::stringify!(new),));
+ <Self as IUnit_DisposItemsForSelectedWeaponMethods> ::ctor(this,data);
 this}
 }
 
@@ -3875,30 +3880,30 @@ this}
 #[cfg(feature = "app-unit")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Unit_ChangeValue;
     pub use super::Unit_ItemsForSelectedWeapon;
     pub use super::IUnit_ItemsForSelectedWeapon;
     pub use super::IUnit_ItemsForSelectedWeaponMethods;
-    pub use super::Unit_CalcInfo;
-    pub use super::IUnit_CalcInfo;
-    pub use super::IUnit_CalcInfoMethods;
     pub use super::Unit_ChartItemsForSelectedWeapon;
     pub use super::IUnit_ChartItemsForSelectedWeapon;
     pub use super::IUnit_ChartItemsForSelectedWeaponMethods;
     pub use super::Unit_StatusField;
     pub use super::IUnit_StatusField;
     pub use super::IUnit_StatusFieldMethods;
-    pub use super::Unit_ChangeValue;
-    pub use super::Unit_DisposItemsForSelectedWeapon;
-    pub use super::IUnit_DisposItemsForSelectedWeapon;
-    pub use super::IUnit_DisposItemsForSelectedWeaponMethods;
-    pub use super::Unit_GuardType;
+    pub use super::Unit_CalcInfo;
+    pub use super::IUnit_CalcInfo;
+    pub use super::IUnit_CalcInfoMethods;
     pub use super::Unit_FuncUnitItem;
     pub use super::IUnit_FuncUnitItem;
     pub use super::IUnit_FuncUnitItemMethods;
-    pub use super::Unit_Status;
+    pub use super::Unit_GuardType;
+    pub use super::Unit_DisposItemsForSelectedWeapon;
+    pub use super::IUnit_DisposItemsForSelectedWeapon;
+    pub use super::IUnit_DisposItemsForSelectedWeaponMethods;
     pub use super::Unit;
     pub use super::IUnit;
     pub use super::IUnitMethods;
+    pub use super::Unit_Status;
     pub use crate::app::bitfield64::IBitField64;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate64_1::IBitFieldTemplate64_1;

@@ -24,21 +24,17 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-cutsceneeventreceiver-types")]
 pub use __types::*;
 
-#[cfg(feature="app-cutsceneeventreceiver")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CutSceneEventReceiver_unity2_raw{use super:: * ;
-pub unsafe fn on_notify(this:CutSceneEventReceiver,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-cutsceneeventreceiver")]pub trait ICutSceneEventReceiverMethods:ICutSceneEventReceiver{#[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CutSceneEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <CutSceneEventReceiver as::unity2::ClassIdentity> ::NAME,"OnNotify",));
-let inner:extern "C" fn(CutSceneEventReceiver,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CutSceneEventReceiver,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,origin,notification,context,__mi)}
+__inner(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context),__mi)}
 }
-
-#[cfg(feature="app-cutsceneeventreceiver")]pub trait ICutSceneEventReceiverMethods:ICutSceneEventReceiver{#[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CutSceneEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CutSceneEventReceiver_unity2_raw::on_notify(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context), ::core::option::Option::None)}
 }
 #[doc="`OnNotifySpringResestMarker(crate::app::cutscenespringresetmarker::CutSceneSpringResetMarker)` overload"]fn on_notify_spring_resest_marker(self,spring_marker:impl::core::convert::Into<crate::app::cutscenespringresetmarker::CutSceneSpringResetMarker>)->(){unsafe{let __receiver= <CutSceneEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x29f3140usize)as*mut u8,();
@@ -55,6 +51,11 @@ __CutSceneEventReceiver_unity2_raw::on_notify(__receiver, ::core::convert::Into:
 #[cfg(feature="app-cutsceneeventreceiver")]impl CutSceneEventReceiver{pub fn on_notify_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn on_notify_spring_resest_marker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-cutsceneeventreceiver")]impl CutSceneEventReceiver{#[doc="Direct (non-virtual) call to `CutSceneEventReceiver`'s own `OnNotify`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_notify(this:impl::core::convert::Into< ::unity2::IlInstance> ,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,)->(){let __mi=Self::on_notify_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),origin,notification,context, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-cutsceneeventreceiver")]impl CutSceneEventReceiver{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

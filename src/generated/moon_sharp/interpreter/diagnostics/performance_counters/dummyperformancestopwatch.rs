@@ -27,26 +27,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <DummyPerformanceStopwatch as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn get_result(this:DummyPerformanceStopwatch,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DummyPerformanceStopwatch as::unity2::ClassIdentity> ::NAME,"GetResult",));
-let inner:extern "C" fn(DummyPerformanceStopwatch, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:DummyPerformanceStopwatch,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <DummyPerformanceStopwatch as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(DummyPerformanceStopwatch, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_cctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<DummyPerformanceStopwatch as::unity2::ClassIdentity> ::class(),".cctor",0,param_types,true,)}
@@ -69,10 +49,28 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (DummyPerformanceStopwatch)__receiver)}
 }
 #[doc="`GetResult()` overload"]fn get_result(self,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult{unsafe{let __receiver= <DummyPerformanceStopwatch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DummyPerformanceStopwatch_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DummyPerformanceStopwatch as::unity2::ClassIdentity> ::NAME,"GetResult",));
+let __inner:extern "C" fn(DummyPerformanceStopwatch, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DummyPerformanceStopwatch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DummyPerformanceStopwatch_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <DummyPerformanceStopwatch as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(DummyPerformanceStopwatch, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -82,6 +80,14 @@ __DummyPerformanceStopwatch_unity2_raw::dispose(__receiver, ::core::option::Opti
 pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-dummyperformancestopwatch")]impl DummyPerformanceStopwatch{#[doc="Direct (non-virtual) call to `DummyPerformanceStopwatch`'s own `GetResult`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_result(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult{let __mi=Self::get_result_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DummyPerformanceStopwatch`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-dummyperformancestopwatch")]impl DummyPerformanceStopwatch{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

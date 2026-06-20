@@ -16,19 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-rendering-universal-shaderdata-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-universal-shaderdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ShaderData_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:ShaderData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ShaderData as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(ShaderData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-universal-shaderdata")]impl ShaderData{#[doc="`get_instance()` overload"]pub fn get_instance()->crate::unity_engine::rendering::universal::shaderdata::ShaderData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed6880usize)as*mut u8,crate::unity_engine::rendering::universal::shaderdata::ShaderData;
 )}
 }
@@ -42,7 +29,16 @@ inner(this,__mi)}
 (ShaderData)__receiver)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <ShaderData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ShaderData_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ShaderData as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(ShaderData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetLightDataBuffer(i32)` overload"]fn get_light_data_buffer(self,size:impl::core::convert::Into<i32>)->crate::unity_engine::computebuffer::ComputeBuffer{unsafe{let __receiver= <ShaderData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed6a60usize)as*mut u8,crate::unity_engine::computebuffer::ComputeBuffer;
@@ -100,6 +96,11 @@ pub fn get_shadow_data_buffer_method_info()-> & 'static::unity2::il2cpp::MethodI
 pub fn get_shadow_indices_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn dispose_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-shaderdata")]impl ShaderData{#[doc="Direct (non-virtual) call to `ShaderData`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-universal-shaderdata")]impl ShaderData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

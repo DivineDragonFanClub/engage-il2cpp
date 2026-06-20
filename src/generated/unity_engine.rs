@@ -115,9 +115,9 @@
  #[cfg(feature="unity_engine-animatorcullingmode-types")]pub use animatorcullingmode::{AnimatorCullingMode}
 ;
  #[cfg(any(feature="unity_engine-animatoroverridecontroller-types"))]pub mod animatoroverridecontroller;
- #[cfg(feature="unity_engine-animatoroverridecontroller-types")]pub use animatoroverridecontroller::{AnimatorOverrideController,IAnimatorOverrideController,AnimatorOverrideController_OnOverrideControllerDirtyCallback,IAnimatorOverrideController_OnOverrideControllerDirtyCallback}
+ #[cfg(feature="unity_engine-animatoroverridecontroller-types")]pub use animatoroverridecontroller::{AnimatorOverrideController_OnOverrideControllerDirtyCallback,IAnimatorOverrideController_OnOverrideControllerDirtyCallback,AnimatorOverrideController,IAnimatorOverrideController}
 ;
- #[cfg(feature="unity_engine-animatoroverridecontroller")]pub use animatoroverridecontroller::{IAnimatorOverrideControllerMethods,IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods}
+ #[cfg(feature="unity_engine-animatoroverridecontroller")]pub use animatoroverridecontroller::{IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods,IAnimatorOverrideControllerMethods}
 ;
  #[cfg(any(feature="unity_engine-animatorrecordermode-types"))]pub mod animatorrecordermode;
  #[cfg(feature="unity_engine-animatorrecordermode-types")]pub use animatorrecordermode::{AnimatorRecorderMode}
@@ -135,7 +135,7 @@
  #[cfg(feature="unity_engine-animatorutility-types")]pub use animatorutility::{AnimatorUtility,IAnimatorUtility}
 ;
  #[cfg(any(feature="unity_engine-application-types"))]pub mod application;
- #[cfg(feature="unity_engine-application-types")]pub use application::{Application,IApplication,Application_LogCallback,IApplication_LogCallback,Application_LowMemoryCallback,IApplication_LowMemoryCallback}
+ #[cfg(feature="unity_engine-application-types")]pub use application::{Application_LogCallback,IApplication_LogCallback,Application_LowMemoryCallback,IApplication_LowMemoryCallback,Application,IApplication}
 ;
  #[cfg(feature="unity_engine-application")]pub use application::{IApplication_LogCallbackMethods,IApplication_LowMemoryCallbackMethods}
 ;
@@ -191,9 +191,9 @@
  #[cfg(feature="unity_engine-audiobehaviour")]pub use audiobehaviour::{IAudioBehaviourMethods}
 ;
  #[cfg(any(feature="unity_engine-audioclip-types"))]pub mod audioclip;
- #[cfg(feature="unity_engine-audioclip-types")]pub use audioclip::{AudioClip_PCMReaderCallback,IAudioClip_PCMReaderCallback,AudioClip_PCMSetPositionCallback,IAudioClip_PCMSetPositionCallback,AudioClip,IAudioClip}
+ #[cfg(feature="unity_engine-audioclip-types")]pub use audioclip::{AudioClip,IAudioClip,AudioClip_PCMReaderCallback,IAudioClip_PCMReaderCallback,AudioClip_PCMSetPositionCallback,IAudioClip_PCMSetPositionCallback}
 ;
- #[cfg(feature="unity_engine-audioclip")]pub use audioclip::{IAudioClip_PCMReaderCallbackMethods,IAudioClip_PCMSetPositionCallbackMethods,IAudioClipMethods}
+ #[cfg(feature="unity_engine-audioclip")]pub use audioclip::{IAudioClipMethods,IAudioClip_PCMReaderCallbackMethods,IAudioClip_PCMSetPositionCallbackMethods}
 ;
  #[cfg(any(feature="unity_engine-audiosettings-types"))]pub mod audiosettings;
  #[cfg(feature="unity_engine-audiosettings-types")]pub use audiosettings::{AudioSettings_AudioConfigurationChangeHandler,IAudioSettings_AudioConfigurationChangeHandler,AudioSettings,IAudioSettings}
@@ -265,7 +265,7 @@
  #[cfg(feature="unity_engine-cachedassetbundle-types")]pub use cachedassetbundle::{CachedAssetBundle}
 ;
  #[cfg(any(feature="unity_engine-camera-types"))]pub mod camera;
- #[cfg(feature="unity_engine-camera-types")]pub use camera::{Camera_GateFitMode,Camera_RenderRequestOutputSpace,Camera_MonoOrStereoscopicEye,Camera_CameraCallback,ICamera_CameraCallback,Camera_StereoscopicEye,Camera_GateFitParameters,Camera_RenderRequest,Camera_RenderRequestMode,Camera,ICamera,Camera_ProjectionMatrixMode}
+ #[cfg(feature="unity_engine-camera-types")]pub use camera::{Camera_ProjectionMatrixMode,Camera_RenderRequestMode,Camera_RenderRequest,Camera_StereoscopicEye,Camera_CameraCallback,ICamera_CameraCallback,Camera_GateFitMode,Camera_RenderRequestOutputSpace,Camera_MonoOrStereoscopicEye,Camera,ICamera,Camera_GateFitParameters}
 ;
  #[cfg(feature="unity_engine-camera")]pub use camera::{ICamera_CameraCallbackMethods,ICameraMethods}
 ;
@@ -279,9 +279,9 @@
  #[cfg(feature="unity_engine-cameratype-types")]pub use cameratype::{CameraType}
 ;
  #[cfg(any(feature="unity_engine-canvas-types"))]pub mod canvas;
- #[cfg(feature="unity_engine-canvas-types")]pub use canvas::{Canvas_WillRenderCanvases,ICanvas_WillRenderCanvases,Canvas,ICanvas}
+ #[cfg(feature="unity_engine-canvas-types")]pub use canvas::{Canvas,ICanvas,Canvas_WillRenderCanvases,ICanvas_WillRenderCanvases}
 ;
- #[cfg(feature="unity_engine-canvas")]pub use canvas::{ICanvas_WillRenderCanvasesMethods,ICanvasMethods}
+ #[cfg(feature="unity_engine-canvas")]pub use canvas::{ICanvasMethods,ICanvas_WillRenderCanvasesMethods}
 ;
  #[cfg(any(feature="unity_engine-canvasgroup-types"))]pub mod canvasgroup;
  #[cfg(feature="unity_engine-canvasgroup-types")]pub use canvasgroup::{CanvasGroup,ICanvasGroup}
@@ -570,9 +570,9 @@
  #[cfg(feature="unity_engine-fogmode-types")]pub use fogmode::{FogMode}
 ;
  #[cfg(any(feature="unity_engine-font-types"))]pub mod font;
- #[cfg(feature="unity_engine-font-types")]pub use font::{Font,IFont,Font_FontTextureRebuildCallback,IFont_FontTextureRebuildCallback}
+ #[cfg(feature="unity_engine-font-types")]pub use font::{Font_FontTextureRebuildCallback,IFont_FontTextureRebuildCallback,Font,IFont}
 ;
- #[cfg(feature="unity_engine-font")]pub use font::{IFontMethods,IFont_FontTextureRebuildCallbackMethods}
+ #[cfg(feature="unity_engine-font")]pub use font::{IFont_FontTextureRebuildCallbackMethods,IFontMethods}
 ;
  #[cfg(any(feature="unity_engine-fontstyle-types"))]pub mod fontstyle;
  #[cfg(feature="unity_engine-fontstyle-types")]pub use fontstyle::{FontStyle}
@@ -619,9 +619,9 @@
  #[cfg(feature="unity_engine-gridlayout")]pub use gridlayout::{IGridLayoutMethods}
 ;
  #[cfg(any(feature="unity_engine-gui-types"))]pub mod gui;
- #[cfg(feature="unity_engine-gui-types")]pub use gui::{GUI_WindowFunction,IGUI_WindowFunction,GUI_Scope,IGUI_Scope,GUI,IGUI}
+ #[cfg(feature="unity_engine-gui-types")]pub use gui::{GUI_WindowFunction,IGUI_WindowFunction,GUI,IGUI,GUI_Scope,IGUI_Scope}
 ;
- #[cfg(feature="unity_engine-gui")]pub use gui::{IGUI_WindowFunctionMethods,IGUI_ScopeMethods,IGUIMethods}
+ #[cfg(feature="unity_engine-gui")]pub use gui::{IGUI_WindowFunctionMethods,IGUIMethods,IGUI_ScopeMethods}
 ;
  #[cfg(any(feature="unity_engine-guiclip-types"))]pub mod guiclip;
  #[cfg(feature="unity_engine-guiclip-types")]pub use guiclip::{GUIClip,IGUIClip}
@@ -632,9 +632,9 @@
  #[cfg(feature="unity_engine-guicontent")]pub use guicontent::{IGUIContentMethods}
 ;
  #[cfg(any(feature="unity_engine-guilayout-types"))]pub mod guilayout;
- #[cfg(feature="unity_engine-guilayout-types")]pub use guilayout::{GUILayout_LayoutedWindow,IGUILayout_LayoutedWindow,GUILayout,IGUILayout,GUILayout_ScrollViewScope,IGUILayout_ScrollViewScope,GUILayout_HorizontalScope,IGUILayout_HorizontalScope,GUILayout_AreaScope,IGUILayout_AreaScope}
+ #[cfg(feature="unity_engine-guilayout-types")]pub use guilayout::{GUILayout,IGUILayout,GUILayout_ScrollViewScope,IGUILayout_ScrollViewScope,GUILayout_HorizontalScope,IGUILayout_HorizontalScope,GUILayout_AreaScope,IGUILayout_AreaScope,GUILayout_LayoutedWindow,IGUILayout_LayoutedWindow}
 ;
- #[cfg(feature="unity_engine-guilayout")]pub use guilayout::{IGUILayout_LayoutedWindowMethods,IGUILayout_ScrollViewScopeMethods,IGUILayout_HorizontalScopeMethods,IGUILayout_AreaScopeMethods}
+ #[cfg(feature="unity_engine-guilayout")]pub use guilayout::{IGUILayout_ScrollViewScopeMethods,IGUILayout_HorizontalScopeMethods,IGUILayout_AreaScopeMethods,IGUILayout_LayoutedWindowMethods}
 ;
  #[cfg(any(feature="unity_engine-guilayoutentry-types"))]pub mod guilayoutentry;
  #[cfg(feature="unity_engine-guilayoutentry-types")]pub use guilayoutentry::{GUILayoutEntry,IGUILayoutEntry}
@@ -988,7 +988,7 @@
  #[cfg(feature="unity_engine-matrix4x4-types")]pub use matrix4x4::{Matrix4x4}
 ;
  #[cfg(any(feature="unity_engine-mesh-types"))]pub mod mesh;
- #[cfg(feature="unity_engine-mesh-types")]pub use mesh::{Mesh_MeshData,Mesh_MeshDataArray,Mesh,IMesh}
+ #[cfg(feature="unity_engine-mesh-types")]pub use mesh::{Mesh_MeshDataArray,Mesh_MeshData,Mesh,IMesh}
 ;
  #[cfg(feature="unity_engine-mesh")]pub use mesh::{IMeshMethods}
 ;
@@ -1058,7 +1058,7 @@
 ;
  #[cfg(any(feature="unity_engine-particle_system_jobs-nativeparticledata-types"))]pub mod particle_system_jobs;
  #[cfg(any(feature="unity_engine-particlesystem-types"))]pub mod particlesystem;
- #[cfg(feature="unity_engine-particlesystem-types")]pub use particlesystem::{ParticleSystem_PlaybackState_Force,ParticleSystem_SizeBySpeedModule,ParticleSystem_Particle,ParticleSystem_ForceOverLifetimeModule,ParticleSystem_MinMaxGradient,ParticleSystem_LightsModule,ParticleSystem_MinMaxCurve,ParticleSystem_TriggerModule,ParticleSystem_RotationBySpeedModule,ParticleSystem_PlaybackState_Collision,ParticleSystem_PlaybackState_Shape,ParticleSystem_PlaybackState_Emission,ParticleSystem_PlaybackState_Seed,ParticleSystem_RotationOverLifetimeModule,ParticleSystem_CustomDataModule,ParticleSystem_MainModule,ParticleSystem_PlaybackState_Trail,ParticleSystem_LimitVelocityOverLifetimeModule,ParticleSystem_CollisionModule,ParticleSystem_PlaybackState_Lights,ParticleSystem_LifetimeByEmitterSpeedModule,ParticleSystem_VelocityOverLifetimeModule,ParticleSystem_TextureSheetAnimationModule,ParticleSystem_SubEmittersModule,ParticleSystem_SizeOverLifetimeModule,ParticleSystem_EmissionModule,ParticleSystem_ShapeModule,ParticleSystem_NoiseModule,ParticleSystem_Trails,ParticleSystem_TrailModule,ParticleSystem_PlaybackState_Seed4,ParticleSystem_PlaybackState,ParticleSystem_InheritVelocityModule,ParticleSystem_PlaybackState_Noise,ParticleSystem,IParticleSystem,ParticleSystem_EmitParams,ParticleSystem_ColorOverLifetimeModule,ParticleSystem_ExternalForcesModule,ParticleSystem_PlaybackState_Initial,ParticleSystem_ColorBySpeedModule}
+ #[cfg(feature="unity_engine-particlesystem-types")]pub use particlesystem::{ParticleSystem_PlaybackState_Seed,ParticleSystem_RotationBySpeedModule,ParticleSystem_MainModule,ParticleSystem_PlaybackState_Force,ParticleSystem_LimitVelocityOverLifetimeModule,ParticleSystem_EmissionModule,ParticleSystem_LightsModule,ParticleSystem_TextureSheetAnimationModule,ParticleSystem_PlaybackState_Initial,ParticleSystem_InheritVelocityModule,ParticleSystem_MinMaxCurve,ParticleSystem_PlaybackState_Lights,ParticleSystem_ExternalForcesModule,ParticleSystem_CollisionModule,ParticleSystem_PlaybackState_Seed4,ParticleSystem_ColorOverLifetimeModule,ParticleSystem_RotationOverLifetimeModule,ParticleSystem_SubEmittersModule,ParticleSystem_SizeBySpeedModule,ParticleSystem_VelocityOverLifetimeModule,ParticleSystem_PlaybackState_Shape,ParticleSystem_PlaybackState,ParticleSystem,IParticleSystem,ParticleSystem_Trails,ParticleSystem_ShapeModule,ParticleSystem_PlaybackState_Collision,ParticleSystem_SizeOverLifetimeModule,ParticleSystem_TrailModule,ParticleSystem_PlaybackState_Noise,ParticleSystem_LifetimeByEmitterSpeedModule,ParticleSystem_PlaybackState_Trail,ParticleSystem_EmitParams,ParticleSystem_TriggerModule,ParticleSystem_PlaybackState_Emission,ParticleSystem_NoiseModule,ParticleSystem_CustomDataModule,ParticleSystem_Particle,ParticleSystem_MinMaxGradient,ParticleSystem_ForceOverLifetimeModule,ParticleSystem_ColorBySpeedModule}
 ;
  #[cfg(feature="unity_engine-particlesystem")]pub use particlesystem::{IParticleSystemMethods}
 ;
@@ -1233,7 +1233,7 @@
  #[cfg(feature="unity_engine-rectoffset")]pub use rectoffset::{IRectOffsetMethods}
 ;
  #[cfg(any(feature="unity_engine-recttransform-types"))]pub mod recttransform;
- #[cfg(feature="unity_engine-recttransform-types")]pub use recttransform::{RectTransform,IRectTransform,RectTransform_Edge,RectTransform_Axis,RectTransform_ReapplyDrivenProperties,IRectTransform_ReapplyDrivenProperties}
+ #[cfg(feature="unity_engine-recttransform-types")]pub use recttransform::{RectTransform_Axis,RectTransform,IRectTransform,RectTransform_ReapplyDrivenProperties,IRectTransform_ReapplyDrivenProperties,RectTransform_Edge}
 ;
  #[cfg(feature="unity_engine-recttransform")]pub use recttransform::{IRectTransformMethods,IRectTransform_ReapplyDrivenPropertiesMethods}
 ;
@@ -1365,7 +1365,7 @@
 ;
  #[cfg(any(feature="unity_engine-scripting-api_updating-apiupdaterruntimehelpers-types",feature="unity_engine-scripting-api_updating-movedfromattribute-types",feature="unity_engine-scripting-api_updating-movedfromattributedata-types",feature="unity_engine-scripting-garbagecollector-types",feature="unity_engine-scripting-preserveattribute-types",feature="unity_engine-scripting-requiredbynativecodeattribute-types",feature="unity_engine-scripting-usedbynativecodeattribute-types"))]pub mod scripting;
  #[cfg(any(feature="unity_engine-scriptingutility-types"))]pub mod scriptingutility;
- #[cfg(feature="unity_engine-scriptingutility-types")]pub use scriptingutility::{ScriptingUtility_TestClass,ScriptingUtility,IScriptingUtility}
+ #[cfg(feature="unity_engine-scriptingutility-types")]pub use scriptingutility::{ScriptingUtility,IScriptingUtility,ScriptingUtility_TestClass}
 ;
  #[cfg(any(feature="unity_engine-scrollviewstate-types"))]pub mod scrollviewstate;
  #[cfg(feature="unity_engine-scrollviewstate-types")]pub use scrollviewstate::{ScrollViewState,IScrollViewState}
@@ -1401,7 +1401,7 @@
  #[cfg(feature="unity_engine-shader")]pub use shader::{IShaderMethods}
 ;
  #[cfg(any(feature="unity_engine-shadervariantcollection-types"))]pub mod shadervariantcollection;
- #[cfg(feature="unity_engine-shadervariantcollection-types")]pub use shadervariantcollection::{ShaderVariantCollection_ShaderVariant,ShaderVariantCollection,IShaderVariantCollection}
+ #[cfg(feature="unity_engine-shadervariantcollection-types")]pub use shadervariantcollection::{ShaderVariantCollection,IShaderVariantCollection,ShaderVariantCollection_ShaderVariant}
 ;
  #[cfg(feature="unity_engine-shadervariantcollection")]pub use shadervariantcollection::{IShaderVariantCollectionMethods}
 ;
@@ -1464,7 +1464,7 @@
  #[cfg(feature="unity_engine-spherecollider")]pub use spherecollider::{ISphereColliderMethods}
 ;
  #[cfg(any(feature="unity_engine-spookyhash-types"))]pub mod spookyhash;
- #[cfg(feature="unity_engine-spookyhash-types")]pub use spookyhash::{SpookyHash_U,SpookyHash,ISpookyHash}
+ #[cfg(feature="unity_engine-spookyhash-types")]pub use spookyhash::{SpookyHash,ISpookyHash,SpookyHash_U}
 ;
  #[cfg(any(feature="unity_engine-sprite-types"))]pub mod sprite;
  #[cfg(feature="unity_engine-sprite-types")]pub use sprite::{Sprite,ISprite}
@@ -1553,7 +1553,7 @@
  #[cfg(feature="unity_engine-textclipping-types")]pub use textclipping::{TextClipping}
 ;
  #[cfg(any(feature="unity_engine-texteditor-types"))]pub mod texteditor;
- #[cfg(feature="unity_engine-texteditor-types")]pub use texteditor::{TextEditor_DblClickSnapping,TextEditor,ITextEditor}
+ #[cfg(feature="unity_engine-texteditor-types")]pub use texteditor::{TextEditor,ITextEditor,TextEditor_DblClickSnapping}
 ;
  #[cfg(feature="unity_engine-texteditor")]pub use texteditor::{ITextEditorMethods}
 ;
@@ -1624,7 +1624,7 @@
  #[cfg(feature="unity_engine-touchphase-types")]pub use touchphase::{TouchPhase}
 ;
  #[cfg(any(feature="unity_engine-touchscreenkeyboard-types"))]pub mod touchscreenkeyboard;
- #[cfg(feature="unity_engine-touchscreenkeyboard-types")]pub use touchscreenkeyboard::{TouchScreenKeyboard,ITouchScreenKeyboard,TouchScreenKeyboard_Status}
+ #[cfg(feature="unity_engine-touchscreenkeyboard-types")]pub use touchscreenkeyboard::{TouchScreenKeyboard_Status,TouchScreenKeyboard,ITouchScreenKeyboard}
 ;
  #[cfg(feature="unity_engine-touchscreenkeyboard")]pub use touchscreenkeyboard::{ITouchScreenKeyboardMethods}
 ;
@@ -1643,9 +1643,9 @@
  #[cfg(feature="unity_engine-trackedreference")]pub use trackedreference::{ITrackedReferenceMethods}
 ;
  #[cfg(any(feature="unity_engine-transform-types"))]pub mod transform;
- #[cfg(feature="unity_engine-transform-types")]pub use transform::{Transform,ITransform,Transform_Enumerator,ITransform_Enumerator}
+ #[cfg(feature="unity_engine-transform-types")]pub use transform::{Transform_Enumerator,ITransform_Enumerator,Transform,ITransform}
 ;
- #[cfg(feature="unity_engine-transform")]pub use transform::{ITransformMethods,ITransform_EnumeratorMethods}
+ #[cfg(feature="unity_engine-transform")]pub use transform::{ITransform_EnumeratorMethods,ITransformMethods}
 ;
  #[cfg(any(feature="unity_engine-transparencysortmode-types"))]pub mod transparencysortmode;
  #[cfg(feature="unity_engine-transparencysortmode-types")]pub use transparencysortmode::{TransparencySortMode}
@@ -1687,7 +1687,7 @@
  #[cfg(feature="unity_engine-unitystring-types")]pub use unitystring::{UnityString,IUnityString}
 ;
  #[cfg(any(feature="unity_engine-unitysynchronizationcontext-types"))]pub mod unitysynchronizationcontext;
- #[cfg(feature="unity_engine-unitysynchronizationcontext-types")]pub use unitysynchronizationcontext::{UnitySynchronizationContext,IUnitySynchronizationContext,UnitySynchronizationContext_WorkRequest}
+ #[cfg(feature="unity_engine-unitysynchronizationcontext-types")]pub use unitysynchronizationcontext::{UnitySynchronizationContext_WorkRequest,UnitySynchronizationContext,IUnitySynchronizationContext}
 ;
  #[cfg(feature="unity_engine-unitysynchronizationcontext")]pub use unitysynchronizationcontext::{IUnitySynchronizationContextMethods}
 ;

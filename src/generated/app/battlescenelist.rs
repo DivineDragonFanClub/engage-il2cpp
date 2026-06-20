@@ -18,19 +18,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-battlescenelist-types")]
 pub use __types::*;
 
-#[cfg(feature="app-battlescenelist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleSceneList_unity2_raw{use super:: * ;
-pub unsafe fn clear(this:BattleSceneList,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <BattleSceneList as::unity2::ClassIdentity> ::NAME,"Clear",));
-let inner:extern "C" fn(BattleSceneList, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-battlescenelist")]impl BattleSceneList{#[doc="`CanSkillCount(crate::app::battlescene::BattleScene, crate::app::battleside::BattleSide_Type, bool)` overload"]pub fn can_skill_count(scene:impl::core::convert::Into<crate::app::battlescene::BattleScene> ,target:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,reversed:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e921e0usize)as*mut u8,bool;
 (crate::app::battlescene::BattleScene)::core::convert::Into::into(scene),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(target),(bool)::core::convert::Into::into(reversed))}
 }
@@ -109,7 +96,16 @@ inner(this,__mi)}
 (BattleSceneList)__receiver,(crate::app::battlescene::BattleScene_Kind)::core::convert::Into::into(kind),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(current),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(target))}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <BattleSceneList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BattleSceneList_unity2_raw::clear(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleSceneList as::unity2::ClassIdentity> ::NAME,"Clear",));
+let __inner:extern "C" fn(BattleSceneList, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -135,6 +131,11 @@ pub fn create_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn create_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 pub fn create_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
+
+#[cfg(feature="app-battlescenelist")]impl BattleSceneList{#[doc="Direct (non-virtual) call to `BattleSceneList`'s own `Clear`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clear(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::clear_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-battlescenelist")]impl BattleSceneList{#[doc="`.ctor(crate::app::battleinfo::BattleInfo)` — overload selector"]pub fn new(info:crate::app::battleinfo::BattleInfo)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

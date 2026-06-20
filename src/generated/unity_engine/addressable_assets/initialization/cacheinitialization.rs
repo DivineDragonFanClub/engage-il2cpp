@@ -11,110 +11,55 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Initialization",name="CacheInitialization")]#[parent(crate::system::object::Object)]pub struct CacheInitialization{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization_CacheInitOp.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Initialization",name="CacheInitialization.CacheInitOp")]#[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<bool>)]pub struct CacheInitialization_CacheInitOp{#[offset(136)]#[rename(name="m_Callback")]pub m_callback:crate::system::func_1::Func_1<bool> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Initialization",name="CacheInitialization")]#[parent(crate::system::object::Object)]pub struct CacheInitialization{}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CacheInitialization_unity2_raw{use super:: * ;
-pub unsafe fn initialize(this:CacheInitialization,id: ::unity2::Il2CppString,data_str: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <CacheInitialization as::unity2::ClassIdentity> ::NAME,"Initialize",));
-let inner:extern "C" fn(CacheInitialization, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,id,data_str,__mi)}
-pub unsafe fn initialize_async(this:CacheInitialization,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,id: ::unity2::Il2CppString,data: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <CacheInitialization as::unity2::ClassIdentity> ::NAME,"InitializeAsync",));
-let inner:extern "C" fn(CacheInitialization,crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,rm,id,data,__mi)}
-}
-
-#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]pub trait ICacheInitializationMethods:ICacheInitialization{#[doc="`Initialize(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn initialize(self,id:impl::core::convert::Into< ::unity2::Il2CppString> ,data_str:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <CacheInitialization as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CacheInitialization_unity2_raw::initialize(__receiver, ::core::convert::Into::into(id), ::core::convert::Into::into(data_str), ::core::option::Option::None)}
-}
-#[doc="`InitializeAsync(crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn initialize_async(self,rm:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,id:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool>{unsafe{let __receiver= <CacheInitialization as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CacheInitialization_unity2_raw::initialize_async(__receiver, ::core::convert::Into::into(rm), ::core::convert::Into::into(id), ::core::convert::Into::into(data), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CacheInitialization as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3520usize)as*mut u8,();
-(CacheInitialization)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl<__T:ICacheInitialization>ICacheInitializationMethods for __T{}
-
-#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn initialize_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(CacheInitialization), ::core::stringify!(new),));
- <Self as ICacheInitializationMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CacheInitialization_CacheInitOp_unity2_raw{use super:: * ;
-pub unsafe fn invoke_wait_for_completion(this:CacheInitialization_CacheInitOp,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <CacheInitialization_CacheInitOp as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
-let inner:extern "C" fn(CacheInitialization_CacheInitOp, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update(this:CacheInitialization_CacheInitOp,unscaled_delta_time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",36usize,__vt.len(), <CacheInitialization_CacheInitOp as::unity2::ClassIdentity> ::NAME,"Update",));
-let inner:extern "C" fn(CacheInitialization_CacheInitOp,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unscaled_delta_time,__mi)}
-pub unsafe fn execute(this:CacheInitialization_CacheInitOp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <CacheInitialization_CacheInitOp as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(CacheInitialization_CacheInitOp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]pub trait ICacheInitialization_CacheInitOpMethods:ICacheInitialization_CacheInitOp{#[doc="`Init(crate::system::func_1::Func_1<bool>)` overload"]fn init(self,callback:impl::core::convert::Into<crate::system::func_1::Func_1<bool> >)->(){unsafe{let __receiver= <CacheInitialization_CacheInitOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeb40usize)as*mut u8,();
 (CacheInitialization_CacheInitOp)__receiver,(crate::system::func_1::Func_1<bool>)::core::convert::Into::into(callback))}
 }
 #[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <CacheInitialization_CacheInitOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CacheInitialization_CacheInitOp_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <CacheInitialization_CacheInitOp as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
+let __inner:extern "C" fn(CacheInitialization_CacheInitOp, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Update(f32)` overload"]fn update(self,unscaled_delta_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CacheInitialization_CacheInitOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CacheInitialization_CacheInitOp_unity2_raw::update(__receiver, ::core::convert::Into::into(unscaled_delta_time), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <CacheInitialization_CacheInitOp as::unity2::ClassIdentity> ::NAME,"Update",));
+let __inner:extern "C" fn(CacheInitialization_CacheInitOp,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unscaled_delta_time),__mi)}
+}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <CacheInitialization_CacheInitOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CacheInitialization_CacheInitOp_unity2_raw::execute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <CacheInitialization_CacheInitOp as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(CacheInitialization_CacheInitOp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CacheInitialization_CacheInitOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db34c0usize)as*mut u8,();
@@ -131,6 +76,17 @@ pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization_CacheInitOp{#[doc="Direct (non-virtual) call to `CacheInitialization_CacheInitOp`'s own `InvokeWaitForCompletion`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke_wait_for_completion(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::invoke_wait_for_completion_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CacheInitialization_CacheInitOp`'s own `Update`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update(this:impl::core::convert::Into< ::unity2::IlInstance> ,unscaled_delta_time:f32,)->(){let __mi=Self::update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unscaled_delta_time, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CacheInitialization_CacheInitOp`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization_CacheInitOp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(CacheInitialization_CacheInitOp), ::core::stringify!(new),));
@@ -138,15 +94,67 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]pub trait ICacheInitializationMethods:ICacheInitialization{#[doc="`Initialize(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn initialize(self,id:impl::core::convert::Into< ::unity2::Il2CppString> ,data_str:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <CacheInitialization as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CacheInitialization as::unity2::ClassIdentity> ::NAME,"Initialize",));
+let __inner:extern "C" fn(CacheInitialization, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(id), ::core::convert::Into::into(data_str),__mi)}
+}
+}
+#[doc="`InitializeAsync(crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn initialize_async(self,rm:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,id:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool>{unsafe{let __receiver= <CacheInitialization as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CacheInitialization as::unity2::ClassIdentity> ::NAME,"InitializeAsync",));
+let __inner:extern "C" fn(CacheInitialization,crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(rm), ::core::convert::Into::into(id), ::core::convert::Into::into(data),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CacheInitialization as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3520usize)as*mut u8,();
+(CacheInitialization)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl<__T:ICacheInitialization>ICacheInitializationMethods for __T{}
+
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization{#[doc="Direct (non-virtual) call to `CacheInitialization`'s own `Initialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn initialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,id: ::unity2::Il2CppString,data_str: ::unity2::Il2CppString,)->bool{let __mi=Self::initialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),id,data_str, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CacheInitialization`'s own `InitializeAsync`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn initialize_async(this:impl::core::convert::Into< ::unity2::IlInstance> ,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,id: ::unity2::Il2CppString,data: ::unity2::Il2CppString,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool>{let __mi=Self::initialize_async_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),rm,id,data, ::core::option::Option::None)}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitialization")]impl CacheInitialization{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CacheInitialization), ::core::stringify!(new),));
+ <Self as ICacheInitializationMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CacheInitialization;
-    pub use super::ICacheInitialization;
-    pub use super::ICacheInitializationMethods;
     pub use super::CacheInitialization_CacheInitOp;
     pub use super::ICacheInitialization_CacheInitOp;
     pub use super::ICacheInitialization_CacheInitOpMethods;
+    pub use super::CacheInitialization;
+    pub use super::ICacheInitialization;
+    pub use super::ICacheInitializationMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

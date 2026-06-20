@@ -16,49 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-animationcurve-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-animationcurve")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimationCurve_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:AnimationCurve,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <AnimationCurve as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(AnimationCurve, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn equals(this:AnimationCurve,o:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",0usize,__vt.len(), <AnimationCurve as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(AnimationCurve,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,o,__mi)}
-pub unsafe fn equals_2(this:AnimationCurve,other:crate::unity_engine::animationcurve::AnimationCurve,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AnimationCurve as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(AnimationCurve,crate::unity_engine::animationcurve::AnimationCurve, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,other,__mi)}
-pub unsafe fn get_hash_code(this:AnimationCurve,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",2usize,__vt.len(), <AnimationCurve as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(AnimationCurve, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-animationcurve")]impl AnimationCurve{#[doc="`Internal_Destroy(::unity2::IntPtr)` overload"]pub fn internal_destroy(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c34900usize)as*mut u8,();
 (::unity2::IntPtr)::core::convert::Into::into(ptr))}
 }
@@ -78,7 +35,16 @@ inner(this,__mi)}
 (AnimationCurve)__receiver,(::unity2::IntPtr)::core::convert::Into::into(other))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AnimationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationCurve_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AnimationCurve as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(AnimationCurve, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Evaluate(f32)` overload"]fn evaluate(self,time:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <AnimationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c34a90usize)as*mut u8,f32;
@@ -145,13 +111,40 @@ __AnimationCurve_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 (AnimationCurve)__receiver)}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <AnimationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationCurve_unity2_raw::equals(__receiver, ::core::convert::Into::into(o), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <AnimationCurve as::unity2::ClassIdentity> ::NAME,"Equals",));
+let __inner:extern "C" fn(AnimationCurve,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(o),__mi)}
+}
 }
 #[doc="`Equals(crate::unity_engine::animationcurve::AnimationCurve)` overload"]fn equals_2(self,other:impl::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>)->bool{unsafe{let __receiver= <AnimationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationCurve_unity2_raw::equals_2(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AnimationCurve as::unity2::ClassIdentity> ::NAME,"Equals",));
+let __inner:extern "C" fn(AnimationCurve,crate::unity_engine::animationcurve::AnimationCurve, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(other),__mi)}
+}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <AnimationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationCurve_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <AnimationCurve as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let __inner:extern "C" fn(AnimationCurve, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`AddKey_Internal_Injected(*mutcrate::unity_engine::keyframe::Keyframe)` overload"]fn add_key_internal_injected(self,)->(i32,crate::unity_engine::keyframe::Keyframe){unsafe{let __receiver= <AnimationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::keyframe::Keyframe> ::uninit();
@@ -205,6 +198,20 @@ pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn add_key_internal_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
 pub fn move_key_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
 pub fn get_key_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+}
+
+#[cfg(feature="unity_engine-animationcurve")]impl AnimationCurve{#[doc="Direct (non-virtual) call to `AnimationCurve`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimationCurve`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,o:crate::system::object::Object,)->bool{let __mi=Self::equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),o, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimationCurve`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,other:crate::unity_engine::animationcurve::AnimationCurve,)->bool{let __mi=Self::equals_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animationcurve::AnimationCurve, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),other, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimationCurve`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-animationcurve")]impl AnimationCurve{#[doc="`.ctor(::unity2::Array<crate::unity_engine::keyframe::Keyframe>)` — overload selector"]pub fn new(keys: ::unity2::Array<crate::unity_engine::keyframe::Keyframe>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

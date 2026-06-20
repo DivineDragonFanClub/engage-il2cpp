@@ -16,89 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "nintendo-message_studio-lib-tagprocessorbase-types")]
 pub use __types::*;
 
-#[cfg(feature="nintendo-message_studio-lib-tagprocessorbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TagProcessorBase_unity2_raw{use super:: * ;
-pub unsafe fn process_char(this:TagProcessorBase,c:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessChar",));
-let inner:extern "C" fn(TagProcessorBase,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,c,__mi)}
-pub unsafe fn process_ruby_tag(this:TagProcessorBase,ruby_tag_info:crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessRubyTag",));
-let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,ruby_tag_info,__mi)}
-pub unsafe fn process_font_tag(this:TagProcessorBase,font_tag_info:crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessFontTag",));
-let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,font_tag_info,__mi)}
-pub unsafe fn process_size_tag(this:TagProcessorBase,size_tag_info:crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessSizeTag",));
-let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,size_tag_info,__mi)}
-pub unsafe fn process_color_tag(this:TagProcessorBase,color_tag_info:crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessColorTag",));
-let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,color_tag_info,__mi)}
-pub unsafe fn process_page_break_tag(this:TagProcessorBase,page_break_tag_info:crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessPageBreakTag",));
-let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,page_break_tag_info,__mi)}
-pub unsafe fn process_custom_tag(this:TagProcessorBase,tag_info:crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessCustomTag",));
-let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,tag_info,__mi)}
-pub unsafe fn process_end(this:TagProcessorBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessEnd",));
-let inner:extern "C" fn(TagProcessorBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="nintendo-message_studio-lib-tagprocessorbase")]pub trait ITagProcessorBaseMethods:ITagProcessorBase{#[doc="`Process(::unity2::IntPtr)` overload"]fn process(self,p:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TagProcessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7c00usize)as*mut u8,();
 (TagProcessorBase)__receiver,(::unity2::IntPtr)::core::convert::Into::into(p))}
@@ -112,28 +29,100 @@ inner(this,__mi)}
 (TagProcessorBase)__receiver,(u16)::core::convert::Into::into(tag),(::unity2::Array<u8>)::core::convert::Into::into(param))}
 }
 #[doc="`ProcessChar(u16)` overload"]fn process_char(self,c:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TagProcessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TagProcessorBase_unity2_raw::process_char(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessChar",));
+let __inner:extern "C" fn(TagProcessorBase,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(c),__mi)}
+}
 }
 #[doc="`ProcessRubyTag(crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo)` overload"]fn process_ruby_tag(self,ruby_tag_info:impl::core::convert::Into<crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo>)->(){unsafe{let __receiver= <TagProcessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TagProcessorBase_unity2_raw::process_ruby_tag(__receiver, ::core::convert::Into::into(ruby_tag_info), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessRubyTag",));
+let __inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(ruby_tag_info),__mi)}
+}
 }
 #[doc="`ProcessFontTag(crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo)` overload"]fn process_font_tag(self,font_tag_info:impl::core::convert::Into<crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo>)->(){unsafe{let __receiver= <TagProcessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TagProcessorBase_unity2_raw::process_font_tag(__receiver, ::core::convert::Into::into(font_tag_info), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessFontTag",));
+let __inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(font_tag_info),__mi)}
+}
 }
 #[doc="`ProcessSizeTag(crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo)` overload"]fn process_size_tag(self,size_tag_info:impl::core::convert::Into<crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo>)->(){unsafe{let __receiver= <TagProcessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TagProcessorBase_unity2_raw::process_size_tag(__receiver, ::core::convert::Into::into(size_tag_info), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessSizeTag",));
+let __inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(size_tag_info),__mi)}
+}
 }
 #[doc="`ProcessColorTag(crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo)` overload"]fn process_color_tag(self,color_tag_info:impl::core::convert::Into<crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo>)->(){unsafe{let __receiver= <TagProcessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TagProcessorBase_unity2_raw::process_color_tag(__receiver, ::core::convert::Into::into(color_tag_info), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessColorTag",));
+let __inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(color_tag_info),__mi)}
+}
 }
 #[doc="`ProcessPageBreakTag(crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo)` overload"]fn process_page_break_tag(self,page_break_tag_info:impl::core::convert::Into<crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo>)->(){unsafe{let __receiver= <TagProcessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TagProcessorBase_unity2_raw::process_page_break_tag(__receiver, ::core::convert::Into::into(page_break_tag_info), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessPageBreakTag",));
+let __inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(page_break_tag_info),__mi)}
+}
 }
 #[doc="`ProcessCustomTag(crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo)` overload"]fn process_custom_tag(self,tag_info:impl::core::convert::Into<crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo>)->(){unsafe{let __receiver= <TagProcessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TagProcessorBase_unity2_raw::process_custom_tag(__receiver, ::core::convert::Into::into(tag_info), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessCustomTag",));
+let __inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(tag_info),__mi)}
+}
 }
 #[doc="`ProcessEnd()` overload"]fn process_end(self,)->(){unsafe{let __receiver= <TagProcessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TagProcessorBase_unity2_raw::process_end(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessEnd",));
+let __inner:extern "C" fn(TagProcessorBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadChar(::unity2::IntPtr, i32)` overload"]fn read_char(self,p:impl::core::convert::Into< ::unity2::IntPtr> ,offset:impl::core::convert::Into<i32>)->u16{unsafe{let __receiver= <TagProcessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7e50usize)as*mut u8,u16;
@@ -160,6 +149,32 @@ pub fn process_custom_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn process_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn read_char_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="nintendo-message_studio-lib-tagprocessorbase")]impl TagProcessorBase{#[doc="Direct (non-virtual) call to `TagProcessorBase`'s own `ProcessChar`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_char(this:impl::core::convert::Into< ::unity2::IlInstance> ,c:u16,)->(){let __mi=Self::process_char_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),c, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TagProcessorBase`'s own `ProcessRubyTag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_ruby_tag(this:impl::core::convert::Into< ::unity2::IlInstance> ,ruby_tag_info:crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo,)->(){let __mi=Self::process_ruby_tag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),ruby_tag_info, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TagProcessorBase`'s own `ProcessFontTag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_font_tag(this:impl::core::convert::Into< ::unity2::IlInstance> ,font_tag_info:crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo,)->(){let __mi=Self::process_font_tag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),font_tag_info, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TagProcessorBase`'s own `ProcessSizeTag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_size_tag(this:impl::core::convert::Into< ::unity2::IlInstance> ,size_tag_info:crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo,)->(){let __mi=Self::process_size_tag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),size_tag_info, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TagProcessorBase`'s own `ProcessColorTag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_color_tag(this:impl::core::convert::Into< ::unity2::IlInstance> ,color_tag_info:crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo,)->(){let __mi=Self::process_color_tag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),color_tag_info, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TagProcessorBase`'s own `ProcessPageBreakTag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_page_break_tag(this:impl::core::convert::Into< ::unity2::IlInstance> ,page_break_tag_info:crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo,)->(){let __mi=Self::process_page_break_tag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),page_break_tag_info, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TagProcessorBase`'s own `ProcessCustomTag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_custom_tag(this:impl::core::convert::Into< ::unity2::IlInstance> ,tag_info:crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo,)->(){let __mi=Self::process_custom_tag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),tag_info, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TagProcessorBase`'s own `ProcessEnd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_end(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::process_end_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="nintendo-message_studio-lib-tagprocessorbase")]impl TagProcessorBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

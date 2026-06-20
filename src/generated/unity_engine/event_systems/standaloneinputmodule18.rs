@@ -50,79 +50,6 @@ pub fn buttons()->Self{Self{value:1}
 #[cfg(feature = "unity_engine-event_systems-standaloneinputmodule18-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-event_systems-standaloneinputmodule18")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __StandaloneInputModule18_unity2_raw{use super:: * ;
-pub unsafe fn update_module(this:StandaloneInputModule18,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",24usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"UpdateModule",));
-let inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_module_supported(this:StandaloneInputModule18,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"IsModuleSupported",));
-let inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn should_activate_module(this:StandaloneInputModule18,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"ShouldActivateModule",));
-let inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn activate_module(this:StandaloneInputModule18,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"ActivateModule",));
-let inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn deactivate_module(this:StandaloneInputModule18,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"DeactivateModule",));
-let inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn process(this:StandaloneInputModule18,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"Process",));
-let inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn force_auto_select(this:StandaloneInputModule18,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"ForceAutoSelect",));
-let inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-event_systems-standaloneinputmodule18")]impl StandaloneInputModule18{#[doc="`A()` overload"]pub fn a()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2500570usize)as*mut u8,bool;
 )}
 }
@@ -214,22 +141,76 @@ inner(this,__mi)}
 (StandaloneInputModule18)__receiver)}
 }
 #[doc="`UpdateModule()` overload"]fn update_module(self,)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StandaloneInputModule18_unity2_raw::update_module(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"UpdateModule",));
+let __inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsModuleSupported()` overload"]fn is_module_supported(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StandaloneInputModule18_unity2_raw::is_module_supported(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"IsModuleSupported",));
+let __inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ShouldActivateModule()` overload"]fn should_activate_module(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StandaloneInputModule18_unity2_raw::should_activate_module(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"ShouldActivateModule",));
+let __inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ActivateModule()` overload"]fn activate_module(self,)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StandaloneInputModule18_unity2_raw::activate_module(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"ActivateModule",));
+let __inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`DeactivateModule()` overload"]fn deactivate_module(self,)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StandaloneInputModule18_unity2_raw::deactivate_module(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"DeactivateModule",));
+let __inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Process()` overload"]fn process(self,)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StandaloneInputModule18_unity2_raw::process(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"Process",));
+let __inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ProcessTouchEvents()` overload"]fn process_touch_events(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2501400usize)as*mut u8,bool;
@@ -256,7 +237,16 @@ __StandaloneInputModule18_unity2_raw::process(__receiver, ::core::option::Option
 (StandaloneInputModule18)__receiver)}
 }
 #[doc="`ForceAutoSelect()` overload"]fn force_auto_select(self,)->bool{unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StandaloneInputModule18_unity2_raw::force_auto_select(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <StandaloneInputModule18 as::unity2::ClassIdentity> ::NAME,"ForceAutoSelect",));
+let __inner:extern "C" fn(StandaloneInputModule18, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ProcessMouseEvent(i32)` overload"]fn process_mouse_event_2(self,id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StandaloneInputModule18 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2501e60usize)as*mut u8,();
@@ -318,6 +308,29 @@ pub fn a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2:
 pub fn b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
 pub fn x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
 pub fn y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+}
+
+#[cfg(feature="unity_engine-event_systems-standaloneinputmodule18")]impl StandaloneInputModule18{#[doc="Direct (non-virtual) call to `StandaloneInputModule18`'s own `UpdateModule`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StandaloneInputModule18`'s own `IsModuleSupported`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_module_supported(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_module_supported_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StandaloneInputModule18`'s own `ShouldActivateModule`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn should_activate_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::should_activate_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StandaloneInputModule18`'s own `ActivateModule`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn activate_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::activate_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StandaloneInputModule18`'s own `DeactivateModule`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn deactivate_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::deactivate_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StandaloneInputModule18`'s own `Process`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::process_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StandaloneInputModule18`'s own `ForceAutoSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn force_auto_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::force_auto_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-event_systems-standaloneinputmodule18")]impl StandaloneInputModule18{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

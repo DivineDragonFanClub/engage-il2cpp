@@ -22,19 +22,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-hubfacilitydata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-hubfacilitydata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubFacilityData_unity2_raw{use super:: * ;
-pub unsafe fn get_debug_name(this:HubFacilityData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HubFacilityData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let inner:extern "C" fn(HubFacilityData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-hubfacilitydata")]impl HubFacilityData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28a7840usize)as*mut u8,();
 )}
 }
@@ -73,7 +60,16 @@ inner(this,__mi)}
 (HubFacilityData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubFacilityData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubFacilityData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubFacilityData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let __inner:extern "C" fn(HubFacilityData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetPrefixlessAid()` overload"]fn get_prefixless_aid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubFacilityData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x28a7980usize)as*mut u8, ::unity2::Il2CppString;
@@ -124,6 +120,11 @@ pub fn set_first_access_flag_method_info()-> & 'static::unity2::il2cpp::MethodIn
 pub fn reset_first_access_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
 pub fn is_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-hubfacilitydata")]impl HubFacilityData{#[doc="Direct (non-virtual) call to `HubFacilityData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-hubfacilitydata")]impl HubFacilityData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

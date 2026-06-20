@@ -20,109 +20,6 @@ use crate::system::reflection::methodbase::{IMethodBase,MethodBase}
 #[cfg(feature = "system-reflection-methodinfo-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-methodinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MethodInfo_unity2_raw{use super:: * ;
-pub unsafe fn equals(this:MethodInfo,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",0usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(MethodInfo,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
-pub unsafe fn get_hash_code(this:MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",2usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_member_type(this:MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::membertypes::MemberTypes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"get_MemberType",));
-let inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)->crate::system::reflection::membertypes::MemberTypes= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_return_type(this:MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",44usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"get_ReturnType",));
-let inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_generic_arguments(this:MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"GetGenericArguments",));
-let inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_generic_method_definition(this:MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",45usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"GetGenericMethodDefinition",));
-let inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn make_generic_method(this:MethodInfo,type_arguments: ::unity2::Array< ::unity2::SystemType> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",46usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"MakeGenericMethod",));
-let inner:extern "C" fn(MethodInfo, ::unity2::Array< ::unity2::SystemType> , ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,type_arguments,__mi)}
-pub unsafe fn create_delegate(this:MethodInfo,delegate_type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::delegate::Delegate{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",47usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"CreateDelegate",));
-let inner:extern "C" fn(MethodInfo, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,delegate_type,__mi)}
-pub unsafe fn create_delegate_2(this:MethodInfo,delegate_type: ::unity2::SystemType,target:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::delegate::Delegate{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",48usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"CreateDelegate",));
-let inner:extern "C" fn(MethodInfo, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,delegate_type,target,__mi)}
-pub unsafe fn get_base_method(this:MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",49usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"GetBaseMethod",));
-let inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="system-reflection-methodinfo")]impl MethodInfo{#[doc="`op_Equality(crate::system::reflection::methodinfo::MethodInfo, crate::system::reflection::methodinfo::MethodInfo)` overload"]pub fn op_equality(left:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo> ,right:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3370d30usize)as*mut u8,bool;
 (crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(left),(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(right))}
 }
@@ -136,34 +33,124 @@ inner(this,__mi)}
 (MethodInfo)__receiver)}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MethodInfo_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"Equals",));
+let __inner:extern "C" fn(MethodInfo,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MethodInfo_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let __inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_MemberType()` overload"]fn get_member_type(self,)->crate::system::reflection::membertypes::MemberTypes{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MethodInfo_unity2_raw::get_member_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"get_MemberType",));
+let __inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)->crate::system::reflection::membertypes::MemberTypes= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_ReturnType()` overload"]fn get_return_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MethodInfo_unity2_raw::get_return_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"get_ReturnType",));
+let __inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetGenericArguments()` overload"]fn get_generic_arguments(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MethodInfo_unity2_raw::get_generic_arguments(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"GetGenericArguments",));
+let __inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetGenericMethodDefinition()` overload"]fn get_generic_method_definition(self,)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MethodInfo_unity2_raw::get_generic_method_definition(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"GetGenericMethodDefinition",));
+let __inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`MakeGenericMethod(::unity2::Array<::unity2::SystemType>)` overload"]fn make_generic_method(self,type_arguments:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> >)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MethodInfo_unity2_raw::make_generic_method(__receiver, ::core::convert::Into::into(type_arguments), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",46usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"MakeGenericMethod",));
+let __inner:extern "C" fn(MethodInfo, ::unity2::Array< ::unity2::SystemType> , ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(type_arguments),__mi)}
+}
 }
 #[doc="`CreateDelegate(::unity2::SystemType)` overload"]fn create_delegate(self,delegate_type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::delegate::Delegate{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MethodInfo_unity2_raw::create_delegate(__receiver, ::core::convert::Into::into(delegate_type), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"CreateDelegate",));
+let __inner:extern "C" fn(MethodInfo, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(delegate_type),__mi)}
+}
 }
 #[doc="`CreateDelegate(::unity2::SystemType, crate::system::object::Object)` overload"]fn create_delegate_2(self,delegate_type:impl::core::convert::Into< ::unity2::SystemType> ,target:impl::core::convert::Into<crate::system::object::Object>)->crate::system::delegate::Delegate{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MethodInfo_unity2_raw::create_delegate_2(__receiver, ::core::convert::Into::into(delegate_type), ::core::convert::Into::into(target), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",48usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"CreateDelegate",));
+let __inner:extern "C" fn(MethodInfo, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(delegate_type), ::core::convert::Into::into(target),__mi)}
+}
 }
 #[doc="`GetBaseMethod()` overload"]fn get_base_method(self,)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MethodInfo_unity2_raw::get_base_method(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",49usize,__vt.len(), <MethodInfo as::unity2::ClassIdentity> ::NAME,"GetBaseMethod",));
+let __inner:extern "C" fn(MethodInfo, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -182,6 +169,38 @@ pub fn make_generic_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo
 pub fn create_delegate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn create_delegate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 pub fn get_base_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="system-reflection-methodinfo")]impl MethodInfo{#[doc="Direct (non-virtual) call to `MethodInfo`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)->bool{let __mi=Self::equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MethodInfo`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MethodInfo`'s own `get_MemberType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_member_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::membertypes::MemberTypes{let __mi=Self::get_member_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::membertypes::MemberTypes= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MethodInfo`'s own `get_ReturnType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_return_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_return_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MethodInfo`'s own `GetGenericArguments`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_generic_arguments(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array< ::unity2::SystemType>{let __mi=Self::get_generic_arguments_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MethodInfo`'s own `GetGenericMethodDefinition`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_generic_method_definition(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::methodinfo::MethodInfo{let __mi=Self::get_generic_method_definition_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MethodInfo`'s own `MakeGenericMethod`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn make_generic_method(this:impl::core::convert::Into< ::unity2::IlInstance> ,type_arguments: ::unity2::Array< ::unity2::SystemType> ,)->crate::system::reflection::methodinfo::MethodInfo{let __mi=Self::make_generic_method_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array< ::unity2::SystemType> , ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),type_arguments, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MethodInfo`'s own `CreateDelegate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_delegate(this:impl::core::convert::Into< ::unity2::IlInstance> ,delegate_type: ::unity2::SystemType,)->crate::system::delegate::Delegate{let __mi=Self::create_delegate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),delegate_type, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MethodInfo`'s own `CreateDelegate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_delegate_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,delegate_type: ::unity2::SystemType,target:crate::system::object::Object,)->crate::system::delegate::Delegate{let __mi=Self::create_delegate_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),delegate_type,target, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MethodInfo`'s own `GetBaseMethod`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_base_method(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::methodinfo::MethodInfo{let __mi=Self::get_base_method_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-reflection-methodinfo")]impl MethodInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dir_2/Dir_2.md"))]#[::unity2::class(namespace="App",name="Dir")]#[parent(crate::system::object::Object)]pub struct Dir_2{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dir_2/Dir_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Dir_Type{pub value:u8,}
 impl::unity2::ClassIdentity for Dir_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Dir.Type";
@@ -48,6 +45,9 @@ pub fn down_left()->Self{Self{value:5}
 pub fn down_right()->Self{Self{value:6}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dir_2/Dir_2.md"))]#[::unity2::class(namespace="App",name="Dir")]#[parent(crate::system::object::Object)]pub struct Dir_2{}
 
 }
 
@@ -109,10 +109,10 @@ this}
 #[cfg(feature = "app-dir_2")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Dir_Type;
     pub use super::Dir_2;
     pub use super::IDir_2;
     pub use super::IDir_2Methods;
-    pub use super::Dir_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -14,57 +14,41 @@ mod __types {
 #[cfg(feature = "unity_engine-timeline-ipropertycollector-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-ipropertycollector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPropertyCollector_unity2_raw{use super:: * ;
-pub unsafe fn push_active_game_object(this:IPropertyCollector,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-timeline-ipropertycollector")]pub trait IIPropertyCollectorMethods:IIPropertyCollector{#[doc="`PushActiveGameObject(crate::unity_engine::gameobject::GameObject)` overload"]fn push_active_game_object(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <IPropertyCollector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IPropertyCollector as::unity2::ClassIdentity> ::NAME,"PushActiveGameObject",));
-let inner:extern "C" fn(IPropertyCollector,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPropertyCollector,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,game_object,__mi)}
-pub unsafe fn pop_active_game_object(this:IPropertyCollector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(game_object),__mi)}
+}
+}
+#[doc="`PopActiveGameObject()` overload"]fn pop_active_game_object(self,)->(){unsafe{let __receiver= <IPropertyCollector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IPropertyCollector as::unity2::ClassIdentity> ::NAME,"PopActiveGameObject",));
-let inner:extern "C" fn(IPropertyCollector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPropertyCollector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn add_from_clip(this:IPropertyCollector,clip:crate::unity_engine::animationclip::AnimationClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`AddFromClip(crate::unity_engine::animationclip::AnimationClip)` overload"]fn add_from_clip(self,clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>)->(){unsafe{let __receiver= <IPropertyCollector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <IPropertyCollector as::unity2::ClassIdentity> ::NAME,"AddFromClip",));
-let inner:extern "C" fn(IPropertyCollector,crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPropertyCollector,crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,clip,__mi)}
-pub unsafe fn add_object_properties(this:IPropertyCollector,obj:crate::unity_engine::object_2::Object_2,clip:crate::unity_engine::animationclip::AnimationClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <IPropertyCollector as::unity2::ClassIdentity> ::NAME,"AddObjectProperties",));
-let inner:extern "C" fn(IPropertyCollector,crate::unity_engine::object_2::Object_2,crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,clip,__mi)}
+__inner(__receiver, ::core::convert::Into::into(clip),__mi)}
 }
-
-#[cfg(feature="unity_engine-timeline-ipropertycollector")]pub trait IIPropertyCollectorMethods:IIPropertyCollector{#[doc="`PushActiveGameObject(crate::unity_engine::gameobject::GameObject)` overload"]fn push_active_game_object(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <IPropertyCollector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPropertyCollector_unity2_raw::push_active_game_object(__receiver, ::core::convert::Into::into(game_object), ::core::option::Option::None)}
-}
-#[doc="`PopActiveGameObject()` overload"]fn pop_active_game_object(self,)->(){unsafe{let __receiver= <IPropertyCollector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPropertyCollector_unity2_raw::pop_active_game_object(__receiver, ::core::option::Option::None)}
-}
-#[doc="`AddFromClip(crate::unity_engine::animationclip::AnimationClip)` overload"]fn add_from_clip(self,clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>)->(){unsafe{let __receiver= <IPropertyCollector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPropertyCollector_unity2_raw::add_from_clip(__receiver, ::core::convert::Into::into(clip), ::core::option::Option::None)}
 }
 fn add_from_name<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<IPropertyCollector as::unity2::ClassIdentity> ::class(),"AddFromName",1,)}
 );
@@ -88,7 +72,16 @@ let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
 __f(__receiver, ::core::convert::Into::into(name), ::core::option::Option::Some(__mi_opaque),)}
 }
 #[doc="`AddObjectProperties(crate::unity_engine::object_2::Object_2, crate::unity_engine::animationclip::AnimationClip)` overload"]fn add_object_properties(self,obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2> ,clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>)->(){unsafe{let __receiver= <IPropertyCollector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPropertyCollector_unity2_raw::add_object_properties(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(clip), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IPropertyCollector as::unity2::ClassIdentity> ::NAME,"AddObjectProperties",));
+let __inner:extern "C" fn(IPropertyCollector,crate::unity_engine::object_2::Object_2,crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(clip),__mi)}
+}
 }
 }
 
@@ -98,6 +91,20 @@ __IPropertyCollector_unity2_raw::add_object_properties(__receiver, ::core::conve
 pub fn pop_active_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn add_from_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn add_object_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-timeline-ipropertycollector")]impl IPropertyCollector{#[doc="Direct (non-virtual) call to `IPropertyCollector`'s own `PushActiveGameObject`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn push_active_game_object(this:impl::core::convert::Into< ::unity2::IlInstance> ,game_object:crate::unity_engine::gameobject::GameObject,)->(){let __mi=Self::push_active_game_object_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),game_object, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPropertyCollector`'s own `PopActiveGameObject`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn pop_active_game_object(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::pop_active_game_object_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPropertyCollector`'s own `AddFromClip`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add_from_clip(this:impl::core::convert::Into< ::unity2::IlInstance> ,clip:crate::unity_engine::animationclip::AnimationClip,)->(){let __mi=Self::add_from_clip_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),clip, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPropertyCollector`'s own `AddObjectProperties`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add_object_properties(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::unity_engine::object_2::Object_2,clip:crate::unity_engine::animationclip::AnimationClip,)->(){let __mi=Self::add_object_properties_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::object_2::Object_2,crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,clip, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-timeline-ipropertycollector")]

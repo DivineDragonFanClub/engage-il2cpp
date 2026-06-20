@@ -19,28 +19,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_TopMenu_UploadMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.TopMenu.UploadMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_TopMenu_UploadMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadGodMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.UploadGodMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct RankingSequence_UploadPairsMenu_UploadGodMenuItem{#[offset(32)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu)]pub struct RankingSequence_UploadPairsMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_TopMenu.md"))]#[::unity2::class(namespace="App",name="RankingSequence.TopMenu")]#[parent(crate::system::object::Object)]pub struct RankingSequence_TopMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.RandomAddUploadPairsMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_PairMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.PairMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct RankingSequence_PairMenuItem{#[offset(32)]#[rename(name="m_Data")]pub m_data:crate::app::nexranking::NexRanking_Data, #[static_field]#[rename(name="MaxRatingSlot")]pub max_rating_slot:u32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.AddUploadPairsMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem{#[offset(32)]#[rename(name="m_UploadPersonMenuItem")]pub m_upload_person_menu_item:crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem, #[offset(40)]#[rename(name="m_UploadGodMenuItem")]pub m_upload_god_menu_item:crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPersonMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.UploadPersonMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct RankingSequence_UploadPairsMenu_UploadPersonMenuItem{#[offset(32)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_TopMenu_RankingMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.TopMenu.RankingMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_TopMenu_RankingMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RankingSequence_Label{pub value:i32,}
@@ -73,19 +52,34 @@ pub fn end()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadDataMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.UploadDataMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_UploadPairsMenu_UploadDataMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPairMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.UploadPairMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_UploadPairsMenu_UploadPairMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_PairMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.PairMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct RankingSequence_PairMenuItem{#[offset(32)]#[rename(name="m_Data")]pub m_data:crate::app::nexranking::NexRanking_Data, #[static_field]#[rename(name="MaxRatingSlot")]pub max_rating_slot:u32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadGodMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.UploadGodMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct RankingSequence_UploadPairsMenu_UploadGodMenuItem{#[offset(32)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_TopMenu.md"))]#[::unity2::class(namespace="App",name="RankingSequence.TopMenu")]#[parent(crate::system::object::Object)]pub struct RankingSequence_TopMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_TopMenu_ChapterSelect.md"))]#[::unity2::class(namespace="App",name="RankingSequence.TopMenu.ChapterSelect")]#[parent(crate::app::menuitem::MenuItem)]pub struct RankingSequence_TopMenu_ChapterSelect{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_TopMenu_BaseMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.TopMenu.BaseMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct RankingSequence_TopMenu_BaseMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu)]pub struct RankingSequence_UploadPairsMenu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPairMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.UploadPairMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_UploadPairsMenu_UploadPairMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.RandomAddUploadPairsMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_TopMenu_RankingMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.TopMenu.RankingMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_TopMenu_RankingMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadDataMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.UploadDataMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_UploadPairsMenu_UploadDataMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.AddUploadPairsMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem{#[offset(32)]#[rename(name="m_UploadPersonMenuItem")]pub m_upload_person_menu_item:crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem, #[offset(40)]#[rename(name="m_UploadGodMenuItem")]pub m_upload_god_menu_item:crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_TopMenu_UploadMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.TopMenu.UploadMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_TopMenu_UploadMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence.md"))]#[::unity2::class(namespace="App",name="RankingSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::rankingsequence::RankingSequence>)]pub struct RankingSequence{#[static_field]#[rename(name="MaxRankingCount")]pub max_ranking_count:i32, #[offset(114)]#[rename(name="m_IsLastChapter")]pub m_is_last_chapter:bool, #[offset(120)]#[rename(name="m_Cid")]pub m_cid: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_ChapterIndex")]pub m_chapter_index:i32, #[offset(132)]#[rename(name="m_SelectNetRankingIndex")]pub m_select_net_ranking_index:i32, #[offset(136)]#[rename(name="m_PersonIndex")]pub m_person_index:i32, #[offset(140)]#[rename(name="m_GodIndex")]pub m_god_index:i32, #[offset(144)]#[rename(name="m_RandomAddNum")]pub m_random_add_num:i32, #[offset(152)]#[rename(name="m_Pairs")]pub m_pairs:crate::system::collections::generic::list_1::List_1<crate::app::nexranking::NexRanking_Data> ,}
@@ -93,101 +87,187 @@ pub fn end()->Self{Self{value:8}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.ClearUploadPairsMenuItem")]#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]pub struct RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_TopMenu_BaseMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.TopMenu.BaseMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct RankingSequence_TopMenu_BaseMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPersonMenuItem.md"))]#[::unity2::class(namespace="App",name="RankingSequence.UploadPairsMenu.UploadPersonMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct RankingSequence_UploadPairsMenu_UploadPersonMenuItem{#[offset(32)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
+
 }
 
 #[cfg(feature = "app-rankingsequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_TopMenu_UploadMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_label(this:RankingSequence_TopMenu_UploadMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_TopMenu_RankingMenuItemMethods:IRankingSequence_TopMenu_RankingMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_TopMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",72usize,__vt.len(), <RankingSequence_TopMenu_UploadMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
-let inner:extern "C" fn(RankingSequence_TopMenu_UploadMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",72usize,__vt.len(), <RankingSequence_TopMenu_RankingMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
+let __inner:extern "C" fn(RankingSequence_TopMenu_RankingMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_enable(this:RankingSequence_TopMenu_UploadMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_TopMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",22usize,__vt.len(), <RankingSequence_TopMenu_UploadMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
-let inner:extern "C" fn(RankingSequence_TopMenu_UploadMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",22usize,__vt.len(), <RankingSequence_TopMenu_RankingMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let __inner:extern "C" fn(RankingSequence_TopMenu_RankingMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_TopMenu_UploadMenuItemMethods:IRankingSequence_TopMenu_UploadMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_TopMenu_UploadMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_TopMenu_UploadMenuItem_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
 }
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_TopMenu_UploadMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_TopMenu_UploadMenuItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_TopMenu_UploadMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7a100usize)as*mut u8,();
-(RankingSequence_TopMenu_UploadMenuItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_TopMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7a060usize)as*mut u8,();
+(RankingSequence_TopMenu_RankingMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_TopMenu_UploadMenuItem>IRankingSequence_TopMenu_UploadMenuItemMethods for __T{}
+#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_TopMenu_RankingMenuItem>IRankingSequence_TopMenu_RankingMenuItemMethods for __T{}
 
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_UploadMenuItem{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_RankingMenuItem{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_UploadMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_RankingMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_TopMenu_RankingMenuItem`'s own `get_Label`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_label(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::rankingsequence::RankingSequence_Label{let __mi=Self::get_label_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_TopMenu_RankingMenuItem`'s own `IsEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_RankingMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RankingSequence_TopMenu_UploadMenuItem), ::core::stringify!(new),));
- <Self as IRankingSequence_TopMenu_UploadMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(RankingSequence_TopMenu_RankingMenuItem), ::core::stringify!(new),));
+ <Self as IRankingSequence_TopMenu_RankingMenuItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_UploadPairsMenu_UploadGodMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn is_enable(this:RankingSequence_UploadPairsMenu_UploadGodMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods:IRankingSequence_UploadPairsMenu_UploadPairMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadGodMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",72usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPairMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:RankingSequence_UploadPairsMenu_UploadGodMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadGodMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",5usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPairMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_left_right(this:RankingSequence_UploadPairsMenu_UploadGodMenuItem,step:i32,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",70usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::ClassIdentity> ::NAME,"OnLeftRight",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadGodMenuItem,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPairMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,step,is_trigger,__mi)}
-pub unsafe fn get_help(this:RankingSequence_UploadPairsMenu_UploadGodMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7ac40usize)as*mut u8,();
+(RankingSequence_UploadPairsMenu_UploadPairMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_UploadPairsMenu_UploadPairMenuItem>IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods for __T{}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadPairMenuItem{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadPairMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadPairMenuItem`'s own `get_Label`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_label(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::rankingsequence::RankingSequence_Label{let __mi=Self::get_label_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadPairMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadPairMenuItem`'s own `IsEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadPairMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu_UploadPairMenuItem), ::core::stringify!(new),));
+ <Self as IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_PairMenuItemMethods:IRankingSequence_PairMenuItem{#[doc="`.ctor(crate::app::nexranking::NexRanking_Data)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::nexranking::NexRanking_Data>)->(){unsafe{let __receiver= <RankingSequence_PairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af5750usize)as*mut u8,();
+(RankingSequence_PairMenuItem)__receiver,(crate::app::nexranking::NexRanking_Data)::core::convert::Into::into(data))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_PairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RankingSequence_PairMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RankingSequence_PairMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_PairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",7usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadGodMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",7usize,__vt.len(), <RankingSequence_PairMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
+let __inner:extern "C" fn(RankingSequence_PairMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_PairMenuItem>IRankingSequence_PairMenuItemMethods for __T{}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_PairMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_PairMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_PairMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_PairMenuItem`'s own `GetHelp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_PairMenuItem{#[doc="`.ctor(crate::app::nexranking::NexRanking_Data)` — overload selector"]pub fn new(data:crate::app::nexranking::NexRanking_Data)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RankingSequence_PairMenuItem), ::core::stringify!(new),));
+ <Self as IRankingSequence_PairMenuItemMethods> ::ctor(this,data);
+this}
 }
 
 #[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_UploadGodMenuItemMethods:IRankingSequence_UploadPairsMenu_UploadGodMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -195,16 +275,52 @@ inner(this,__mi)}
 (RankingSequence_UploadPairsMenu_UploadGodMenuItem)__receiver)}
 }
 #[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadGodMenuItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadGodMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadGodMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadGodMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnLeftRight(i32, bool)` overload"]fn on_left_right(self,step:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadGodMenuItem_unity2_raw::on_left_right(__receiver, ::core::convert::Into::into(step), ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",70usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::ClassIdentity> ::NAME,"OnLeftRight",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadGodMenuItem,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(step), ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadGodMenuItem_unity2_raw::get_help(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadGodMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadGodMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -217,34 +333,24 @@ pub fn on_left_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadGodMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadGodMenuItem`'s own `IsEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadGodMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadGodMenuItem`'s own `OnLeftRight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_left_right(this:impl::core::convert::Into< ::unity2::IlInstance> ,step:i32,is_trigger:bool,)->(){let __mi=Self::on_left_right_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),step,is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadGodMenuItem`'s own `GetHelp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadGodMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu_UploadGodMenuItem), ::core::stringify!(new),));
  <Self as IRankingSequence_UploadPairsMenu_UploadGodMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1af5b80usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenuMethods:IRankingSequence_UploadPairsMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af5df0usize)as*mut u8,();
-(RankingSequence_UploadPairsMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_UploadPairsMenu>IRankingSequence_UploadPairsMenuMethods for __T{}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu), ::core::stringify!(new),));
- <Self as IRankingSequence_UploadPairsMenuMethods> ::ctor(this,);
 this}
 }
 
@@ -272,60 +378,145 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_label(this:RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_TopMenu_ChapterSelectMethods:IRankingSequence_TopMenu_ChapterSelect{#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_TopMenu_ChapterSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <RankingSequence_TopMenu_ChapterSelect as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let __inner:extern "C" fn(RankingSequence_TopMenu_ChapterSelect, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_TopMenu_ChapterSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RankingSequence_TopMenu_ChapterSelect as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RankingSequence_TopMenu_ChapterSelect, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnLeftRight(i32, bool)` overload"]fn on_left_right(self,step:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RankingSequence_TopMenu_ChapterSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",70usize,__vt.len(), <RankingSequence_TopMenu_ChapterSelect as::unity2::ClassIdentity> ::NAME,"OnLeftRight",));
+let __inner:extern "C" fn(RankingSequence_TopMenu_ChapterSelect,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(step), ::core::convert::Into::into(is_trigger),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_TopMenu_ChapterSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b79fc0usize)as*mut u8,();
+(RankingSequence_TopMenu_ChapterSelect)__receiver)}
+}
+}
+
+#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_TopMenu_ChapterSelect>IRankingSequence_TopMenu_ChapterSelectMethods for __T{}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_ChapterSelect{pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_left_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_ChapterSelect{#[doc="Direct (non-virtual) call to `RankingSequence_TopMenu_ChapterSelect`'s own `IsEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_TopMenu_ChapterSelect`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_TopMenu_ChapterSelect`'s own `OnLeftRight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_left_right(this:impl::core::convert::Into< ::unity2::IlInstance> ,step:i32,is_trigger:bool,)->(){let __mi=Self::on_left_right_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),step,is_trigger, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_ChapterSelect{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RankingSequence_TopMenu_ChapterSelect), ::core::stringify!(new),));
+ <Self as IRankingSequence_TopMenu_ChapterSelectMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1af5b80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenuMethods:IRankingSequence_UploadPairsMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af5df0usize)as*mut u8,();
+(RankingSequence_UploadPairsMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_UploadPairsMenu>IRankingSequence_UploadPairsMenuMethods for __T{}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu), ::core::stringify!(new),));
+ <Self as IRankingSequence_UploadPairsMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods:IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",72usize,__vt.len(), <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_enable(this:RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_left_right(this:RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,step:i32,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnLeftRight(i32, bool)` overload"]fn on_left_right(self,step:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",70usize,__vt.len(), <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::ClassIdentity> ::NAME,"OnLeftRight",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,step,is_trigger,__mi)}
+__inner(__receiver, ::core::convert::Into::into(step), ::core::convert::Into::into(is_trigger),__mi)}
 }
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods:IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnLeftRight(i32, bool)` overload"]fn on_left_right(self,step:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem_unity2_raw::on_left_right(__receiver, ::core::convert::Into::into(step), ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7a500usize)as*mut u8,();
@@ -342,6 +533,20 @@ pub fn on_left_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem`'s own `get_Label`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_label(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::rankingsequence::RankingSequence_Label{let __mi=Self::get_label_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem`'s own `IsEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem`'s own `OnLeftRight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_left_right(this:impl::core::convert::Into< ::unity2::IlInstance> ,step:i32,is_trigger:bool,)->(){let __mi=Self::on_left_right_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),step,is_trigger, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem), ::core::stringify!(new),));
@@ -349,222 +554,41 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_PairMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:RankingSequence_PairMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <RankingSequence_PairMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RankingSequence_PairMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help(this:RankingSequence_PairMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <RankingSequence_PairMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
-let inner:extern "C" fn(RankingSequence_PairMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_PairMenuItemMethods:IRankingSequence_PairMenuItem{#[doc="`.ctor(crate::app::nexranking::NexRanking_Data)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::nexranking::NexRanking_Data>)->(){unsafe{let __receiver= <RankingSequence_PairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af5750usize)as*mut u8,();
-(RankingSequence_PairMenuItem)__receiver,(crate::app::nexranking::NexRanking_Data)::core::convert::Into::into(data))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_PairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_PairMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_PairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_PairMenuItem_unity2_raw::get_help(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_PairMenuItem>IRankingSequence_PairMenuItemMethods for __T{}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_PairMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_PairMenuItem{#[doc="`.ctor(crate::app::nexranking::NexRanking_Data)` — overload selector"]pub fn new(data:crate::app::nexranking::NexRanking_Data)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RankingSequence_PairMenuItem), ::core::stringify!(new),));
- <Self as IRankingSequence_PairMenuItemMethods> ::ctor(this,data);
-this}
-}
-
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_label(this:RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",72usize,__vt.len(), <RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_enable(this:RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods:IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem, crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)` overload"]fn ctor(self,person_item:impl::core::convert::Into<crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem> ,god_item:impl::core::convert::Into<crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem>)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7a120usize)as*mut u8,();
-(RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem)__receiver,(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem)::core::convert::Into::into(person_item),(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)::core::convert::Into::into(god_item))}
-}
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem>IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods for __T{}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem{#[doc="`.ctor(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem, crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)` — overload selector"]pub fn new(person_item:crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem,god_item:crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem), ::core::stringify!(new),));
- <Self as IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods> ::ctor(this,person_item,god_item);
-this}
-}
-
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_UploadPairsMenu_UploadPersonMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn is_enable(this:RankingSequence_UploadPairsMenu_UploadPersonMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPersonMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:RankingSequence_UploadPairsMenu_UploadPersonMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPersonMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_left_right(this:RankingSequence_UploadPairsMenu_UploadPersonMenuItem,step:i32,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",70usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::ClassIdentity> ::NAME,"OnLeftRight",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPersonMenuItem,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,step,is_trigger,__mi)}
-pub unsafe fn get_help(this:RankingSequence_UploadPairsMenu_UploadPersonMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPersonMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_UploadPersonMenuItemMethods:IRankingSequence_UploadPairsMenu_UploadPersonMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7ac50usize)as*mut u8,();
-(RankingSequence_UploadPairsMenu_UploadPersonMenuItem)__receiver)}
-}
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadPersonMenuItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadPersonMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnLeftRight(i32, bool)` overload"]fn on_left_right(self,step:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadPersonMenuItem_unity2_raw::on_left_right(__receiver, ::core::convert::Into::into(step), ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
-}
-#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadPersonMenuItem_unity2_raw::get_help(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_UploadPairsMenu_UploadPersonMenuItem>IRankingSequence_UploadPairsMenu_UploadPersonMenuItemMethods for __T{}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadPersonMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_left_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadPersonMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu_UploadPersonMenuItem), ::core::stringify!(new),));
- <Self as IRankingSequence_UploadPairsMenu_UploadPersonMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_label(this:RankingSequence_UploadPairsMenu_UploadDataMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods:IRankingSequence_UploadPairsMenu_UploadDataMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadDataMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",72usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadDataMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadDataMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadDataMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:RankingSequence_UploadPairsMenu_UploadDataMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadDataMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadDataMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadDataMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadDataMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_enable(this:RankingSequence_UploadPairsMenu_UploadDataMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadDataMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadDataMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadDataMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadDataMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods:IRankingSequence_UploadPairsMenu_UploadDataMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadDataMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadDataMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadDataMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadDataMenuItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadDataMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7a600usize)as*mut u8,();
@@ -580,6 +604,17 @@ pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadDataMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadDataMenuItem`'s own `get_Label`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_label(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::rankingsequence::RankingSequence_Label{let __mi=Self::get_label_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadDataMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadDataMenuItem`'s own `IsEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadDataMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu_UploadDataMenuItem), ::core::stringify!(new),));
@@ -587,265 +622,108 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_TopMenu_ChapterSelect_unity2_raw{use super:: * ;
-pub unsafe fn is_enable(this:RankingSequence_TopMenu_ChapterSelect,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <RankingSequence_TopMenu_ChapterSelect as::unity2::ClassIdentity> ::NAME,"IsEnable",));
-let inner:extern "C" fn(RankingSequence_TopMenu_ChapterSelect, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:RankingSequence_TopMenu_ChapterSelect,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <RankingSequence_TopMenu_ChapterSelect as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RankingSequence_TopMenu_ChapterSelect, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_left_right(this:RankingSequence_TopMenu_ChapterSelect,step:i32,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",70usize,__vt.len(), <RankingSequence_TopMenu_ChapterSelect as::unity2::ClassIdentity> ::NAME,"OnLeftRight",));
-let inner:extern "C" fn(RankingSequence_TopMenu_ChapterSelect,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,step,is_trigger,__mi)}
-}
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_TopMenu_ChapterSelectMethods:IRankingSequence_TopMenu_ChapterSelect{#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_TopMenu_ChapterSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_TopMenu_ChapterSelect_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_TopMenu_ChapterSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_TopMenu_ChapterSelect_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnLeftRight(i32, bool)` overload"]fn on_left_right(self,step:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RankingSequence_TopMenu_ChapterSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_TopMenu_ChapterSelect_unity2_raw::on_left_right(__receiver, ::core::convert::Into::into(step), ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_TopMenu_ChapterSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b79fc0usize)as*mut u8,();
-(RankingSequence_TopMenu_ChapterSelect)__receiver)}
-}
-}
-
-#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_TopMenu_ChapterSelect>IRankingSequence_TopMenu_ChapterSelectMethods for __T{}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_ChapterSelect{pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_left_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_ChapterSelect{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RankingSequence_TopMenu_ChapterSelect), ::core::stringify!(new),));
- <Self as IRankingSequence_TopMenu_ChapterSelectMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_TopMenu_BaseMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_label(this:RankingSequence_TopMenu_BaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods:IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",72usize,__vt.len(), <RankingSequence_TopMenu_BaseMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
-let inner:extern "C" fn(RankingSequence_TopMenu_BaseMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",72usize,__vt.len(), <RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:RankingSequence_TopMenu_BaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <RankingSequence_TopMenu_BaseMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RankingSequence_TopMenu_BaseMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:RankingSequence_TopMenu_BaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <RankingSequence_TopMenu_BaseMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RankingSequence_TopMenu_BaseMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_TopMenu_BaseMenuItemMethods:IRankingSequence_TopMenu_BaseMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_TopMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_TopMenu_BaseMenuItem_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_TopMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_TopMenu_BaseMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <RankingSequence_TopMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_TopMenu_BaseMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_TopMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b79bf0usize)as*mut u8,();
-(RankingSequence_TopMenu_BaseMenuItem)__receiver)}
+__inner(__receiver,__mi)}
 }
 }
-
-#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_TopMenu_BaseMenuItem>IRankingSequence_TopMenu_BaseMenuItemMethods for __T{}
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_BaseMenuItem{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[doc="`.ctor(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem, crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)` overload"]fn ctor(self,person_item:impl::core::convert::Into<crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem> ,god_item:impl::core::convert::Into<crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem>)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7a120usize)as*mut u8,();
+(RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem)__receiver,(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem)::core::convert::Into::into(person_item),(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)::core::convert::Into::into(god_item))}
 }
-
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_BaseMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RankingSequence_TopMenu_BaseMenuItem), ::core::stringify!(new),));
- <Self as IRankingSequence_TopMenu_BaseMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_label(this:RankingSequence_UploadPairsMenu_UploadPairMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",72usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPairMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:RankingSequence_UploadPairsMenu_UploadPairMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPairMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_enable(this:RankingSequence_UploadPairsMenu_UploadPairMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPairMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods:IRankingSequence_UploadPairsMenu_UploadPairMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_UploadPairMenuItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPairMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7ac40usize)as*mut u8,();
-(RankingSequence_UploadPairsMenu_UploadPairMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_UploadPairsMenu_UploadPairMenuItem>IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods for __T{}
+#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem>IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods for __T{}
 
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadPairMenuItem{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadPairMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem`'s own `get_Label`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_label(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::rankingsequence::RankingSequence_Label{let __mi=Self::get_label_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem`'s own `IsEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem{#[doc="`.ctor(crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem, crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)` — overload selector"]pub fn new(person_item:crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadPersonMenuItem,god_item:crate::app::rankingsequence::RankingSequence_UploadPairsMenu_UploadGodMenuItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu_UploadPairMenuItem), ::core::stringify!(new),));
- <Self as IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem), ::core::stringify!(new),));
+ <Self as IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods> ::ctor(this,person_item,god_item);
 this}
 }
 
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_TopMenu_RankingMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_label(this:RankingSequence_TopMenu_RankingMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_TopMenu_UploadMenuItemMethods:IRankingSequence_TopMenu_UploadMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_TopMenu_UploadMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",72usize,__vt.len(), <RankingSequence_TopMenu_RankingMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
-let inner:extern "C" fn(RankingSequence_TopMenu_RankingMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",72usize,__vt.len(), <RankingSequence_TopMenu_UploadMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
+let __inner:extern "C" fn(RankingSequence_TopMenu_UploadMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_enable(this:RankingSequence_TopMenu_RankingMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_TopMenu_UploadMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",22usize,__vt.len(), <RankingSequence_TopMenu_RankingMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
-let inner:extern "C" fn(RankingSequence_TopMenu_RankingMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",22usize,__vt.len(), <RankingSequence_TopMenu_UploadMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let __inner:extern "C" fn(RankingSequence_TopMenu_UploadMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_TopMenu_RankingMenuItemMethods:IRankingSequence_TopMenu_RankingMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_TopMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_TopMenu_RankingMenuItem_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
 }
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_TopMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_TopMenu_RankingMenuItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_TopMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7a060usize)as*mut u8,();
-(RankingSequence_TopMenu_RankingMenuItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_TopMenu_UploadMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7a100usize)as*mut u8,();
+(RankingSequence_TopMenu_UploadMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_TopMenu_RankingMenuItem>IRankingSequence_TopMenu_RankingMenuItemMethods for __T{}
+#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_TopMenu_UploadMenuItem>IRankingSequence_TopMenu_UploadMenuItemMethods for __T{}
 
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_RankingMenuItem{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_UploadMenuItem{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_RankingMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RankingSequence_TopMenu_RankingMenuItem), ::core::stringify!(new),));
- <Self as IRankingSequence_TopMenu_RankingMenuItemMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_UploadMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_TopMenu_UploadMenuItem`'s own `get_Label`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_label(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::rankingsequence::RankingSequence_Label{let __mi=Self::get_label_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_TopMenu_UploadMenuItem`'s own `IsEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:RankingSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <RankingSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(RankingSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:RankingSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <RankingSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(RankingSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_UploadMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RankingSequence_TopMenu_UploadMenuItem), ::core::stringify!(new),));
+ <Self as IRankingSequence_TopMenu_UploadMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-rankingsequence")]impl RankingSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x237d4b0usize)as*mut u8,();
@@ -863,10 +741,28 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-rankingsequence")]pub trait IRankingSequenceMethods:IRankingSequence{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <RankingSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(RankingSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RankingSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(RankingSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetChapter()` overload"]fn get_chapter(self,)->crate::app::chapterdata::ChapterData{unsafe{let __receiver= <RankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x237c770usize)as*mut u8,crate::app::chapterdata::ChapterData;
@@ -970,6 +866,14 @@ pub fn get_person_debug_name_by_net_ranking_index_method_info()-> & 'static::uni
 pub fn get_god_debug_name_by_net_ranking_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
 }
 
+#[cfg(feature="app-rankingsequence")]impl RankingSequence{#[doc="Direct (non-virtual) call to `RankingSequence`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-rankingsequence")]impl RankingSequence{#[doc="`.ctor(bool)` — overload selector"]pub fn new(is_last_chapter:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RankingSequence), ::core::stringify!(new),));
@@ -977,34 +881,29 @@ pub fn get_god_debug_name_by_net_ranking_index_method_info()-> & 'static::unity2
 this}
 }
 
-#[cfg(feature="app-rankingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_label(this:RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods:IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",72usize,__vt.len(), <RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_enable(this:RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
-let inner:extern "C" fn(RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods:IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7a1f0usize)as*mut u8,();
@@ -1019,6 +918,14 @@ pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem`'s own `get_Label`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_label(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::rankingsequence::RankingSequence_Label{let __mi=Self::get_label_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem`'s own `IsEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem), ::core::stringify!(new),));
@@ -1026,55 +933,207 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_TopMenu_BaseMenuItemMethods:IRankingSequence_TopMenu_BaseMenuItem{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::rankingsequence::RankingSequence_Label{unsafe{let __receiver= <RankingSequence_TopMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",72usize,__vt.len(), <RankingSequence_TopMenu_BaseMenuItem as::unity2::ClassIdentity> ::NAME,"get_Label",));
+let __inner:extern "C" fn(RankingSequence_TopMenu_BaseMenuItem, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_TopMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RankingSequence_TopMenu_BaseMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RankingSequence_TopMenu_BaseMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <RankingSequence_TopMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RankingSequence_TopMenu_BaseMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RankingSequence_TopMenu_BaseMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_TopMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b79bf0usize)as*mut u8,();
+(RankingSequence_TopMenu_BaseMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_TopMenu_BaseMenuItem>IRankingSequence_TopMenu_BaseMenuItemMethods for __T{}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_BaseMenuItem{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_BaseMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_TopMenu_BaseMenuItem`'s own `get_Label`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_label(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::rankingsequence::RankingSequence_Label{let __mi=Self::get_label_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::rankingsequence::RankingSequence_Label= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_TopMenu_BaseMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_TopMenu_BaseMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_TopMenu_BaseMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RankingSequence_TopMenu_BaseMenuItem), ::core::stringify!(new),));
+ <Self as IRankingSequence_TopMenu_BaseMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-rankingsequence")]pub trait IRankingSequence_UploadPairsMenu_UploadPersonMenuItemMethods:IRankingSequence_UploadPairsMenu_UploadPersonMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7ac50usize)as*mut u8,();
+(RankingSequence_UploadPairsMenu_UploadPersonMenuItem)__receiver)}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPersonMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPersonMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnLeftRight(i32, bool)` overload"]fn on_left_right(self,step:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",70usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::ClassIdentity> ::NAME,"OnLeftRight",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPersonMenuItem,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(step), ::core::convert::Into::into(is_trigger),__mi)}
+}
+}
+#[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <RankingSequence_UploadPairsMenu_UploadPersonMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
+let __inner:extern "C" fn(RankingSequence_UploadPairsMenu_UploadPersonMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-rankingsequence")]impl<__T:IRankingSequence_UploadPairsMenu_UploadPersonMenuItem>IRankingSequence_UploadPairsMenu_UploadPersonMenuItemMethods for __T{}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadPersonMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_left_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadPersonMenuItem{#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadPersonMenuItem`'s own `IsEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadPersonMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadPersonMenuItem`'s own `OnLeftRight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_left_right(this:impl::core::convert::Into< ::unity2::IlInstance> ,step:i32,is_trigger:bool,)->(){let __mi=Self::on_left_right_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),step,is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RankingSequence_UploadPairsMenu_UploadPersonMenuItem`'s own `GetHelp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-rankingsequence")]impl RankingSequence_UploadPairsMenu_UploadPersonMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RankingSequence_UploadPairsMenu_UploadPersonMenuItem), ::core::stringify!(new),));
+ <Self as IRankingSequence_UploadPairsMenu_UploadPersonMenuItemMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-rankingsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RankingSequence_TopMenu_UploadMenuItem;
-    pub use super::IRankingSequence_TopMenu_UploadMenuItem;
-    pub use super::IRankingSequence_TopMenu_UploadMenuItemMethods;
-    pub use super::RankingSequence_UploadPairsMenu_UploadGodMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_UploadGodMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_UploadGodMenuItemMethods;
-    pub use super::RankingSequence_UploadPairsMenu;
-    pub use super::IRankingSequence_UploadPairsMenu;
-    pub use super::IRankingSequence_UploadPairsMenuMethods;
-    pub use super::RankingSequence_TopMenu;
-    pub use super::IRankingSequence_TopMenu;
-    pub use super::IRankingSequence_TopMenuMethods;
-    pub use super::RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods;
-    pub use super::RankingSequence_PairMenuItem;
-    pub use super::IRankingSequence_PairMenuItem;
-    pub use super::IRankingSequence_PairMenuItemMethods;
-    pub use super::RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods;
-    pub use super::RankingSequence_UploadPairsMenu_UploadPersonMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_UploadPersonMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_UploadPersonMenuItemMethods;
-    pub use super::RankingSequence_Label;
-    pub use super::RankingSequence_UploadPairsMenu_UploadDataMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_UploadDataMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods;
-    pub use super::RankingSequence_TopMenu_ChapterSelect;
-    pub use super::IRankingSequence_TopMenu_ChapterSelect;
-    pub use super::IRankingSequence_TopMenu_ChapterSelectMethods;
-    pub use super::RankingSequence_TopMenu_BaseMenuItem;
-    pub use super::IRankingSequence_TopMenu_BaseMenuItem;
-    pub use super::IRankingSequence_TopMenu_BaseMenuItemMethods;
-    pub use super::RankingSequence_UploadPairsMenu_UploadPairMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_UploadPairMenuItem;
-    pub use super::IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods;
     pub use super::RankingSequence_TopMenu_RankingMenuItem;
     pub use super::IRankingSequence_TopMenu_RankingMenuItem;
     pub use super::IRankingSequence_TopMenu_RankingMenuItemMethods;
+    pub use super::RankingSequence_Label;
+    pub use super::RankingSequence_UploadPairsMenu_UploadPairMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_UploadPairMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_UploadPairMenuItemMethods;
+    pub use super::RankingSequence_PairMenuItem;
+    pub use super::IRankingSequence_PairMenuItem;
+    pub use super::IRankingSequence_PairMenuItemMethods;
+    pub use super::RankingSequence_UploadPairsMenu_UploadGodMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_UploadGodMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_UploadGodMenuItemMethods;
+    pub use super::RankingSequence_TopMenu;
+    pub use super::IRankingSequence_TopMenu;
+    pub use super::IRankingSequence_TopMenuMethods;
+    pub use super::RankingSequence_TopMenu_ChapterSelect;
+    pub use super::IRankingSequence_TopMenu_ChapterSelect;
+    pub use super::IRankingSequence_TopMenu_ChapterSelectMethods;
+    pub use super::RankingSequence_UploadPairsMenu;
+    pub use super::IRankingSequence_UploadPairsMenu;
+    pub use super::IRankingSequence_UploadPairsMenuMethods;
+    pub use super::RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItemMethods;
+    pub use super::RankingSequence_UploadPairsMenu_UploadDataMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_UploadDataMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods;
+    pub use super::RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_AddUploadPairsMenuItemMethods;
+    pub use super::RankingSequence_TopMenu_UploadMenuItem;
+    pub use super::IRankingSequence_TopMenu_UploadMenuItem;
+    pub use super::IRankingSequence_TopMenu_UploadMenuItemMethods;
     pub use super::RankingSequence;
     pub use super::IRankingSequence;
     pub use super::IRankingSequenceMethods;
     pub use super::RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem;
     pub use super::IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem;
     pub use super::IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods;
+    pub use super::RankingSequence_TopMenu_BaseMenuItem;
+    pub use super::IRankingSequence_TopMenu_BaseMenuItem;
+    pub use super::IRankingSequence_TopMenu_BaseMenuItemMethods;
+    pub use super::RankingSequence_UploadPairsMenu_UploadPersonMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_UploadPersonMenuItem;
+    pub use super::IRankingSequence_UploadPairsMenu_UploadPersonMenuItemMethods;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

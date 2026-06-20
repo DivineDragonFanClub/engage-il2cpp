@@ -23,6 +23,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))]#[::unity2::class(namespace="App",name="BasicSkillMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct BasicSkillMenuItemContent{#[offset(72)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_Name")]pub m_name:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_SubText")]pub m_sub_text:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_Border")]pub m_border:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_Efficacy")]pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(112)]#[rename(name="m_IsDouble")]pub m_is_double:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent_SubText.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BasicSkillMenuItemContent_SubText{pub value:i32,}
 impl::unity2::ClassIdentity for BasicSkillMenuItemContent_SubText{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BasicSkillMenuItemContent.SubText";
@@ -52,59 +55,22 @@ pub fn double()->Self{Self{value:8}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md"))]#[::unity2::class(namespace="App",name="BasicSkillMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct BasicSkillMenuItemContent{#[offset(72)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_Name")]pub m_name:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_SubText")]pub m_sub_text:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_Border")]pub m_border:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_Efficacy")]pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(112)]#[rename(name="m_IsDouble")]pub m_is_double:bool,}
-
 }
 
 #[cfg(feature = "app-basicskillmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-basicskillmenuitemcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BasicSkillMenuItemContent_unity2_raw{use super:: * ;
-pub unsafe fn update_text_color(this:BasicSkillMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-basicskillmenuitemcontent")]pub trait IBasicSkillMenuItemContentMethods:IBasicSkillMenuItemContent{#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <BasicSkillMenuItemContent as::unity2::ClassIdentity> ::NAME,"UpdateTextColor",));
-let inner:extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build(this:BasicSkillMenuItemContent,menu_item:crate::app::basicmenuitem::BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <BasicSkillMenuItemContent as::unity2::ClassIdentity> ::NAME,"Build",));
-let inner:extern "C" fn(BasicSkillMenuItemContent,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,menu_item,__mi)}
-pub unsafe fn build_text(this:BasicSkillMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <BasicSkillMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildText",));
-let inner:extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_text_color(this:BasicSkillMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <BasicSkillMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildTextColor",));
-let inner:extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-basicskillmenuitemcontent")]pub trait IBasicSkillMenuItemContentMethods:IBasicSkillMenuItemContent{#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BasicSkillMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetIconColor(bool)` overload"]fn set_icon_color(self,is_active_icon:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2467cc0usize)as*mut u8,();
@@ -123,10 +89,28 @@ __BasicSkillMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::op
 (BasicSkillMenuItemContent)__receiver)}
 }
 #[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BasicSkillMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <BasicSkillMenuItemContent as::unity2::ClassIdentity> ::NAME,"Build",));
+let __inner:extern "C" fn(BasicSkillMenuItemContent,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(menu_item),__mi)}
+}
 }
 #[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BasicSkillMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <BasicSkillMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildText",));
+let __inner:extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BuildText(crate::app::skilldata::SkillData, bool)` overload"]fn build_text_2(self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,is_active_icon:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2468740usize)as*mut u8,();
@@ -137,7 +121,16 @@ __BasicSkillMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::O
 (BasicSkillMenuItemContent)__receiver)}
 }
 #[doc="`BuildTextColor()` overload"]fn build_text_color(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BasicSkillMenuItemContent_unity2_raw::build_text_color(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <BasicSkillMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildTextColor",));
+let __inner:extern "C" fn(BasicSkillMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicSkillMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2468fb0usize)as*mut u8,();
@@ -160,6 +153,20 @@ pub fn build_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 }
 
+#[cfg(feature="app-basicskillmenuitemcontent")]impl BasicSkillMenuItemContent{#[doc="Direct (non-virtual) call to `BasicSkillMenuItemContent`'s own `UpdateTextColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_text_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_text_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BasicSkillMenuItemContent`'s own `Build`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build(this:impl::core::convert::Into< ::unity2::IlInstance> ,menu_item:crate::app::basicmenuitem::BasicMenuItem,)->(){let __mi=Self::build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),menu_item, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BasicSkillMenuItemContent`'s own `BuildText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BasicSkillMenuItemContent`'s own `BuildTextColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_text_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_text_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-basicskillmenuitemcontent")]impl BasicSkillMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(BasicSkillMenuItemContent), ::core::stringify!(new),));
@@ -170,10 +177,10 @@ this}
 #[cfg(feature = "app-basicskillmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BasicSkillMenuItemContent_SubText;
     pub use super::BasicSkillMenuItemContent;
     pub use super::IBasicSkillMenuItemContent;
     pub use super::IBasicSkillMenuItemContentMethods;
+    pub use super::BasicSkillMenuItemContent_SubText;
     pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

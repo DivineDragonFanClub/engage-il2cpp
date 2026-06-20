@@ -11,9 +11,6 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem.md"))]#[::unity2::class(namespace="App",name="MapDebugDisposMenu.DisposMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct MapDebugDisposMenu_DisposMenuItem{#[offset(32)]#[rename(name="m_Group")]pub m_group: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_PositionGroup")]pub m_position_group:crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdebugdisposmenu/MapDebugDisposMenu.md"))]#[::unity2::class(namespace="App",name="MapDebugDisposMenu")]#[parent(crate::system::object::Object)]pub struct MapDebugDisposMenu{}
 
 
@@ -22,93 +19,13 @@ use crate::system::object::{IObject,Object}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DeleteForceMenuItem.md"))]#[::unity2::class(namespace="App",name="MapDebugDisposMenu.DeleteForceMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct MapDebugDisposMenu_DeleteForceMenuItem{#[offset(32)]#[rename(name="m_ForceType")]pub m_force_type:crate::app::force::Force_Type, #[offset(40)]#[rename(name="m_ForceName")]pub m_force_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_ForceUnitCount")]pub m_force_unit_count: ::unity2::Il2CppString,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem.md"))]#[::unity2::class(namespace="App",name="MapDebugDisposMenu.DisposMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct MapDebugDisposMenu_DisposMenuItem{#[offset(32)]#[rename(name="m_Group")]pub m_group: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_PositionGroup")]pub m_position_group:crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,}
+
 }
 
 #[cfg(feature = "app-mapdebugdisposmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapdebugdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapDebugDisposMenu_DisposMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:MapDebugDisposMenu_DisposMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MapDebugDisposMenu_DisposMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_tick(this:MapDebugDisposMenu_DisposMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",68usize,__vt.len(), <MapDebugDisposMenu_DisposMenuItem as::unity2::ClassIdentity> ::NAME,"OnTick",));
-let inner:extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:MapDebugDisposMenu_DisposMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapDebugDisposMenu_DisposMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn x_call(this:MapDebugDisposMenu_DisposMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <MapDebugDisposMenu_DisposMenuItem as::unity2::ClassIdentity> ::NAME,"XCall",));
-let inner:extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{#[doc="`DrawCell(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn draw_cell(group:impl::core::convert::Into< ::unity2::Il2CppString> ,position:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24bdec0usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(group),(::unity2::Il2CppString)::core::convert::Into::into(position))}
-}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]pub trait IMapDebugDisposMenu_DisposMenuItemMethods:IMapDebugDisposMenu_DisposMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` overload"]fn ctor(self,group:impl::core::convert::Into< ::unity2::Il2CppString> ,position_group:impl::core::convert::Into<crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup>)->(){unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24bde60usize)as*mut u8,();
-(MapDebugDisposMenu_DisposMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(group),(crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)::core::convert::Into::into(position_group))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DisposMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DisposMenuItem_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DisposMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DisposMenuItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl<__T:IMapDebugDisposMenu_DisposMenuItem>IMapDebugDisposMenu_DisposMenuItemMethods for __T{}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn draw_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` — overload selector"]pub fn new(group: ::unity2::Il2CppString,position_group:crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapDebugDisposMenu_DisposMenuItem), ::core::stringify!(new),));
- <Self as IMapDebugDisposMenu_DisposMenuItemMethods> ::ctor(this,group,position_group);
-this}
-}
 
 #[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c3360usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -167,129 +84,117 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapdebugdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_column_count(this:MapDebugDisposMenu_DeleteForceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnCount",));
-let inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_width0(this:MapDebugDisposMenu_DeleteForceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
-let inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_width1(this:MapDebugDisposMenu_DeleteForceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth1",));
-let inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_width2(this:MapDebugDisposMenu_DeleteForceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth2",));
-let inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name0(this:MapDebugDisposMenu_DeleteForceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
-let inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name1(this:MapDebugDisposMenu_DeleteForceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
-let inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name2(this:MapDebugDisposMenu_DeleteForceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",44usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
-let inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_tick(this:MapDebugDisposMenu_DeleteForceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",68usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"OnTick",));
-let inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:MapDebugDisposMenu_DeleteForceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-mapdebugdisposmenu")]pub trait IMapDebugDisposMenu_DeleteForceMenuItemMethods:IMapDebugDisposMenu_DeleteForceMenuItem{#[doc="`.ctor(crate::app::force::Force_Type)` overload"]fn ctor(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24bdb70usize)as*mut u8,();
 (MapDebugDisposMenu_DeleteForceMenuItem)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
 }
 #[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnCount",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth1",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetColumnWidth2()` overload"]fn get_column_width2(self,)->f32{unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_width2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth2",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",68usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapDebugDisposMenu_DeleteForceMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapDebugDisposMenu_DeleteForceMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DeleteForceMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -307,6 +212,35 @@ pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 }
 
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DeleteForceMenuItem{#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DeleteForceMenuItem`'s own `GetColumnCount`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_column_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DeleteForceMenuItem`'s own `GetColumnWidth0`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_width0(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_column_width0_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DeleteForceMenuItem`'s own `GetColumnWidth1`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_width1(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_column_width1_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DeleteForceMenuItem`'s own `GetColumnWidth2`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_width2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_column_width2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DeleteForceMenuItem`'s own `GetColumnName0`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name0(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name0_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DeleteForceMenuItem`'s own `GetColumnName1`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name1(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name1_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DeleteForceMenuItem`'s own `GetColumnName2`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DeleteForceMenuItem`'s own `OnTick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DeleteForceMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DeleteForceMenuItem{#[doc="`.ctor(crate::app::force::Force_Type)` — overload selector"]pub fn new(force_type:crate::app::force::Force_Type)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapDebugDisposMenu_DeleteForceMenuItem), ::core::stringify!(new),));
@@ -314,12 +248,99 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{#[doc="`DrawCell(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn draw_cell(group:impl::core::convert::Into< ::unity2::Il2CppString> ,position:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24bdec0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(group),(::unity2::Il2CppString)::core::convert::Into::into(position))}
+}
+}
+
+#[cfg(feature="app-mapdebugdisposmenu")]pub trait IMapDebugDisposMenu_DisposMenuItemMethods:IMapDebugDisposMenu_DisposMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` overload"]fn ctor(self,group:impl::core::convert::Into< ::unity2::Il2CppString> ,position_group:impl::core::convert::Into<crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup>)->(){unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bde60usize)as*mut u8,();
+(MapDebugDisposMenu_DisposMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(group),(crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)::core::convert::Into::into(position_group))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapDebugDisposMenu_DisposMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",68usize,__vt.len(), <MapDebugDisposMenu_DisposMenuItem as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapDebugDisposMenu_DisposMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <MapDebugDisposMenu_DisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <MapDebugDisposMenu_DisposMenuItem as::unity2::ClassIdentity> ::NAME,"XCall",));
+let __inner:extern "C" fn(MapDebugDisposMenu_DisposMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapdebugdisposmenu")]impl<__T:IMapDebugDisposMenu_DisposMenuItem>IMapDebugDisposMenu_DisposMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn draw_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DisposMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DisposMenuItem`'s own `OnTick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DisposMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapDebugDisposMenu_DisposMenuItem`'s own `XCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn x_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::x_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapdebugdisposmenu")]impl MapDebugDisposMenu_DisposMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)` — overload selector"]pub fn new(group: ::unity2::Il2CppString,position_group:crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDebugDisposMenu_DisposMenuItem), ::core::stringify!(new),));
+ <Self as IMapDebugDisposMenu_DisposMenuItemMethods> ::ctor(this,group,position_group);
+this}
+}
+
 #[cfg(feature = "app-mapdebugdisposmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapDebugDisposMenu_DisposMenuItem;
-    pub use super::IMapDebugDisposMenu_DisposMenuItem;
-    pub use super::IMapDebugDisposMenu_DisposMenuItemMethods;
     pub use super::MapDebugDisposMenu;
     pub use super::IMapDebugDisposMenu;
     pub use super::IMapDebugDisposMenuMethods;
@@ -329,6 +350,9 @@ pub mod prelude {
     pub use super::MapDebugDisposMenu_DeleteForceMenuItem;
     pub use super::IMapDebugDisposMenu_DeleteForceMenuItem;
     pub use super::IMapDebugDisposMenu_DeleteForceMenuItemMethods;
+    pub use super::MapDebugDisposMenu_DisposMenuItem;
+    pub use super::IMapDebugDisposMenu_DisposMenuItem;
+    pub use super::IMapDebugDisposMenu_DisposMenuItemMethods;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;

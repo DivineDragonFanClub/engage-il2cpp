@@ -48,51 +48,45 @@ pub fn both_landed()->Self{Self{value:2}
 #[cfg(feature = "combat-characterlyinghorse-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-characterlyinghorse")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CharacterLyingHorse_unity2_raw{use super:: * ;
-pub unsafe fn my_start(this:CharacterLyingHorse,die_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <CharacterLyingHorse as::unity2::ClassIdentity> ::NAME,"MyStart",));
-let inner:extern "C" fn(CharacterLyingHorse,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,die_hash,__mi)}
-pub unsafe fn make_my_dead_pose(this:CharacterLyingHorse,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <CharacterLyingHorse as::unity2::ClassIdentity> ::NAME,"MakeMyDeadPose",));
-let inner:extern "C" fn(CharacterLyingHorse, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn my_late_update(this:CharacterLyingHorse,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <CharacterLyingHorse as::unity2::ClassIdentity> ::NAME,"MyLateUpdate",));
-let inner:extern "C" fn(CharacterLyingHorse, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="combat-characterlyinghorse")]pub trait ICharacterLyingHorseMethods:ICharacterLyingHorse{#[doc="`GetProgess()` overload"]fn get_progess(self,)->crate::combat::characterlyinghorse::CharacterLyingHorse_Progress{unsafe{let __receiver= <CharacterLyingHorse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27ecd70usize)as*mut u8,crate::combat::characterlyinghorse::CharacterLyingHorse_Progress;
 (CharacterLyingHorse)__receiver)}
 }
 #[doc="`MyStart(i32)` overload"]fn my_start(self,die_hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterLyingHorse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CharacterLyingHorse_unity2_raw::my_start(__receiver, ::core::convert::Into::into(die_hash), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CharacterLyingHorse as::unity2::ClassIdentity> ::NAME,"MyStart",));
+let __inner:extern "C" fn(CharacterLyingHorse,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(die_hash),__mi)}
+}
 }
 #[doc="`MakeMyDeadPose()` overload"]fn make_my_dead_pose(self,)->(){unsafe{let __receiver= <CharacterLyingHorse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CharacterLyingHorse_unity2_raw::make_my_dead_pose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CharacterLyingHorse as::unity2::ClassIdentity> ::NAME,"MakeMyDeadPose",));
+let __inner:extern "C" fn(CharacterLyingHorse, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`MyLateUpdate()` overload"]fn my_late_update(self,)->(){unsafe{let __receiver= <CharacterLyingHorse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CharacterLyingHorse_unity2_raw::my_late_update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CharacterLyingHorse as::unity2::ClassIdentity> ::NAME,"MyLateUpdate",));
+let __inner:extern "C" fn(CharacterLyingHorse, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterLyingHorse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27ed5b0usize)as*mut u8,();
@@ -107,6 +101,17 @@ pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn make_my_dead_pose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn my_late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="combat-characterlyinghorse")]impl CharacterLyingHorse{#[doc="Direct (non-virtual) call to `CharacterLyingHorse`'s own `MyStart`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn my_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,die_hash:i32,)->(){let __mi=Self::my_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),die_hash, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CharacterLyingHorse`'s own `MakeMyDeadPose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn make_my_dead_pose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::make_my_dead_pose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CharacterLyingHorse`'s own `MyLateUpdate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn my_late_update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::my_late_update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-characterlyinghorse")]impl CharacterLyingHorse{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

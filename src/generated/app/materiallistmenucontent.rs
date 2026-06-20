@@ -23,9 +23,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenucontent/MaterialListMenuContent.md"))]#[::unity2::class(namespace="App",name="MaterialListMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MaterialListMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(240)]#[rename(name="m_ItemHelpText")]pub m_item_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_CategoryIconList")]pub m_category_icon_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenucontent/MaterialListMenuContent_CategoryType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MaterialListMenuContent_CategoryType{pub value:i32,}
 impl::unity2::ClassIdentity for MaterialListMenuContent_CategoryType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MaterialListMenuContent.CategoryType";
@@ -53,23 +50,13 @@ pub fn end()->Self{Self{value:4}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenucontent/MaterialListMenuContent.md"))]#[::unity2::class(namespace="App",name="MaterialListMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MaterialListMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(240)]#[rename(name="m_ItemHelpText")]pub m_item_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_CategoryIconList")]pub m_category_icon_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image> ,}
+
 }
 
 #[cfg(feature = "app-materiallistmenucontent-types")]
 pub use __types::*;
-
-#[cfg(feature="app-materiallistmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MaterialListMenuContent_unity2_raw{use super:: * ;
-pub unsafe fn calc_cursor_moved_pos_y(this:MaterialListMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MaterialListMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
-let inner:extern "C" fn(MaterialListMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,menu_item_index,__mi)}
-}
 
 #[cfg(feature="app-materiallistmenucontent")]impl MaterialListMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c8e10usize)as*mut u8,();
 )}
@@ -94,7 +81,16 @@ inner(this,menu_item_index,__mi)}
 (MaterialListMenuContent)__receiver,(crate::app::materiallistmenucontent::MaterialListMenuContent_CategoryType)::core::convert::Into::into(value))}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaterialListMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MaterialListMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let __inner:extern "C" fn(MaterialListMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(menu_item_index),__mi)}
+}
 }
 #[doc="`InitCategory()` overload"]fn init_category(self,)->(){unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25c7ba0usize)as*mut u8,();
@@ -134,6 +130,11 @@ pub fn set_item_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 }
 
+#[cfg(feature="app-materiallistmenucontent")]impl MaterialListMenuContent{#[doc="Direct (non-virtual) call to `MaterialListMenuContent`'s own `CalcCursorMovedPosY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_cursor_moved_pos_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,menu_item_index:i32,)->f32{let __mi=Self::calc_cursor_moved_pos_y_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),menu_item_index, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-materiallistmenucontent")]impl MaterialListMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MaterialListMenuContent), ::core::stringify!(new),));
@@ -144,10 +145,10 @@ this}
 #[cfg(feature = "app-materiallistmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MaterialListMenuContent_CategoryType;
     pub use super::MaterialListMenuContent;
     pub use super::IMaterialListMenuContent;
     pub use super::IMaterialListMenuContentMethods;
-    pub use super::MaterialListMenuContent_CategoryType;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

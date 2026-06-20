@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmaterial/MapMaterial.md"))]#[::unity2::class(namespace="App",name="MapMaterial")]#[parent(crate::system::object::Object)]pub struct MapMaterial{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::mapmaterial::MapMaterial_Node> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmaterial/MapMaterial_Node.md"))]#[::unity2::class(namespace="App",name="MapMaterial.Node")]#[parent(crate::system::object::Object)]pub struct MapMaterial_Node{#[offset(16)]#[rename(name="kind")]pub kind:crate::app::mapmaterial::MapMaterial_Kinds, #[offset(24)]#[rename(name="material")]pub material: ::unity2::Il2CppString, #[offset(32)]#[rename(name="property")]pub property: ::unity2::Il2CppString, #[offset(40)]#[rename(name="value")]pub value:f32, #[offset(44)]#[rename(name="color")]pub color:crate::unity_engine::color::Color,}
 
 
@@ -33,31 +36,10 @@ pub fn color()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmaterial/MapMaterial.md"))]#[::unity2::class(namespace="App",name="MapMaterial")]#[parent(crate::system::object::Object)]pub struct MapMaterial{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::mapmaterial::MapMaterial_Node> ,}
-
 }
 
 #[cfg(feature = "app-mapmaterial-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapmaterial")]pub trait IMapMaterial_NodeMethods:IMapMaterial_Node{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMaterial_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2186b00usize)as*mut u8,();
-(MapMaterial_Node)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapmaterial")]impl<__T:IMapMaterial_Node>IMapMaterial_NodeMethods for __T{}
-
-#[cfg(feature="app-mapmaterial")]impl MapMaterial_Node{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-mapmaterial")]impl MapMaterial_Node{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapMaterial_Node), ::core::stringify!(new),));
- <Self as IMapMaterial_NodeMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-mapmaterial")]pub trait IMapMaterialMethods:IMapMaterial{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3e90usize)as*mut u8,();
@@ -102,16 +84,34 @@ pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 this}
 }
 
+#[cfg(feature="app-mapmaterial")]pub trait IMapMaterial_NodeMethods:IMapMaterial_Node{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMaterial_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186b00usize)as*mut u8,();
+(MapMaterial_Node)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapmaterial")]impl<__T:IMapMaterial_Node>IMapMaterial_NodeMethods for __T{}
+
+#[cfg(feature="app-mapmaterial")]impl MapMaterial_Node{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapmaterial")]impl MapMaterial_Node{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapMaterial_Node), ::core::stringify!(new),));
+ <Self as IMapMaterial_NodeMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-mapmaterial")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapMaterial;
+    pub use super::IMapMaterial;
+    pub use super::IMapMaterialMethods;
     pub use super::MapMaterial_Node;
     pub use super::IMapMaterial_Node;
     pub use super::IMapMaterial_NodeMethods;
     pub use super::MapMaterial_Kinds;
-    pub use super::MapMaterial;
-    pub use super::IMapMaterial;
-    pub use super::IMapMaterialMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

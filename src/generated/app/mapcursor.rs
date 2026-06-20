@@ -21,28 +21,36 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_DistanceMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapCursor_DistanceMode{pub value:i32,}
-impl::unity2::ClassIdentity for MapCursor_DistanceMode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapCursor.DistanceMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapCursor_DistanceMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapCursor_DistanceMode{pub fn near()->Self{Self{value:0}
-}
-pub fn middle()->Self{Self{value:1}
-}
-pub fn far()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_FlagField.md"))]#[::unity2::class(namespace="App",name="MapCursor.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::mapcursor::MapCursor_Flag>)]pub struct MapCursor_FlagField{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor.md"))]#[::unity2::class(namespace="App",name="MapCursor")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapcursor::MapCursor>)]pub struct MapCursor{#[static_field]#[rename(name="MapCursorMoveOffset")]pub map_cursor_move_offset:f32, #[static_field]#[rename(name="MOVE_WAIT_FRAME")]pub move_wait_frame:i32, #[static_field]#[rename(name="MOVE_CENTER_FRAME")]pub move_center_frame:i32, #[offset(28)]#[rename(name="m_Pos")]pub m_pos:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="m_OldPos")]pub m_old_pos:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="m_OrigPos")]pub m_orig_pos:crate::unity_engine::vector3::Vector3, #[offset(64)]#[rename(name="m_Rotate")]pub m_rotate:crate::unity_engine::vector3::Vector3, #[offset(76)]#[rename(name="m_Move")]pub m_move:crate::unity_engine::vector3::Vector3, #[offset(88)]#[rename(name="m_EnterPos")]pub m_enter_pos:crate::unity_engine::vector3::Vector3, #[offset(100)]#[rename(name="m_MoveCount")]pub m_move_count:i32, #[offset(104)]#[rename(name="m_IsRotateXSoundPlaying")]pub m_is_rotate_x_sound_playing:bool, #[static_field]#[rename(name="m_CursorTop")]pub m_cursor_top:crate::app::mapcursor::MapCursor_CursorTopType, #[static_field]#[rename(name="m_CursorTopAnim")]pub m_cursor_top_anim:crate::app::mapcursor::MapCursor_AnimType, #[static_field]#[rename(name="m_CursorBottomAnim")]pub m_cursor_bottom_anim:crate::app::mapcursor::MapCursor_AnimType, #[offset(112)]#[rename(name="m_CursorIconBill")]pub m_cursor_icon_bill:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="m_DistanceDir")]pub m_distance_dir:i32, #[offset(124)]#[rename(name="m_AnalogCount")]pub m_analog_count:i32, #[offset(128)]#[rename(name="m_CenterCount")]pub m_center_count:i32, #[offset(132)]#[rename(name="m_DistanceScale")]pub m_distance_scale:f32, #[offset(136)]#[rename(name="m_MapCursorMoveType")]pub m_map_cursor_move_type:crate::app::gameconfig::GameConfig_MapCursorMoveTyep, #[offset(140)]#[rename(name="m_IsLockMoveType")]pub m_is_lock_move_type:bool, #[offset(144)]#[rename(name="m_CursorTopObj")]pub m_cursor_top_obj:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_CursorBottomObj")]pub m_cursor_bottom_obj:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_CursorTopMgr")]pub m_cursor_top_mgr:crate::root::mappointeranimmanager::MapPointerAnimManager, #[offset(168)]#[rename(name="m_CursorBottomMgr")]pub m_cursor_bottom_mgr:crate::root::mapcursoranimmanager::MapCursorAnimManager, #[static_field]#[rename(name="m_MapPointerLocatorRoot")]pub m_map_pointer_locator_root:crate::root::mappointerlocatorroot::MapPointerLocatorRoot, #[static_field]#[rename(name="m_MapCursorLocatorRoot")]pub m_map_cursor_locator_root:crate::root::mapcursorlocatorroot::MapCursorLocatorRoot, #[offset(176)]#[rename(name="m_PositionTop")]pub m_position_top:crate::app::interpolatorvector3::InterpolatorVector3, #[offset(184)]#[rename(name="m_PositionBottom")]pub m_position_bottom:crate::app::interpolatorvector3::InterpolatorVector3, #[offset(192)]#[rename(name="m_CursorMind")]pub m_cursor_mind:crate::app::mapmind::MapMind_Type, #[offset(196)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(216)]#[rename(name="m_Flags")]pub m_flags:crate::app::mapcursor::MapCursor_FlagField,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_FlagField.md"))]#[::unity2::class(namespace="App",name="MapCursor.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::mapcursor::MapCursor_Flag>)]pub struct MapCursor_FlagField{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_CursorTopType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapCursor_CursorTopType{pub value:i32,}
+impl::unity2::ClassIdentity for MapCursor_CursorTopType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapCursor.CursorTopType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapCursor_CursorTopType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapCursor_CursorTopType{pub fn pointer()->Self{Self{value:0}
+}
+pub fn attack()->Self{Self{value:1}
+}
+pub fn talk()->Self{Self{value:2}
+}
+pub fn rod()->Self{Self{value:3}
+}
+pub fn dance()->Self{Self{value:4}
+}
+pub fn cannon()->Self{Self{value:5}
+}
+pub fn num()->Self{Self{value:6}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_AnimType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapCursor_AnimType{pub value:i32,}
@@ -79,28 +87,20 @@ pub fn auto()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_CursorTopType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapCursor_CursorTopType{pub value:i32,}
-impl::unity2::ClassIdentity for MapCursor_CursorTopType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapCursor.CursorTopType";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_DistanceMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapCursor_DistanceMode{pub value:i32,}
+impl::unity2::ClassIdentity for MapCursor_DistanceMode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapCursor.DistanceMode";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for MapCursor_CursorTopType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for MapCursor_DistanceMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl MapCursor_CursorTopType{pub fn pointer()->Self{Self{value:0}
+impl MapCursor_DistanceMode{pub fn near()->Self{Self{value:0}
 }
-pub fn attack()->Self{Self{value:1}
+pub fn middle()->Self{Self{value:1}
 }
-pub fn talk()->Self{Self{value:2}
-}
-pub fn rod()->Self{Self{value:3}
-}
-pub fn dance()->Self{Self{value:4}
-}
-pub fn cannon()->Self{Self{value:5}
-}
-pub fn num()->Self{Self{value:6}
+pub fn far()->Self{Self{value:2}
 }
 }
 
@@ -109,77 +109,40 @@ pub fn num()->Self{Self{value:6}
 #[cfg(feature = "app-mapcursor-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapcursor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapCursor_unity2_raw{use super:: * ;
-pub unsafe fn on_tick(this:MapCursor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-mapcursor")]pub trait IMapCursor_FlagFieldMethods:IMapCursor_FlagField{#[doc="`ToInt(crate::app::mapcursor::MapCursor_Flag)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::mapcursor::MapCursor_Flag>)->i32{unsafe{let __receiver= <MapCursor_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",7usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnTick",));
-let inner:extern "C" fn(MapCursor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",5usize,__vt.len(), <MapCursor_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let __inner:extern "C" fn(MapCursor_FlagField,crate::app::mapcursor::MapCursor_Flag, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_update(this:MapCursor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
-let inner:extern "C" fn(MapCursor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_bind(this:MapCursor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnBind",));
-let inner:extern "C" fn(MapCursor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_unbind(this:MapCursor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnUnbind",));
-let inner:extern "C" fn(MapCursor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_version(this:MapCursor,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(MapCursor, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:MapCursor,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(MapCursor,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:MapCursor,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(MapCursor,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCursor_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bdb10usize)as*mut u8,();
+(MapCursor_FlagField)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapcursor")]impl<__T:IMapCursor_FlagField>IMapCursor_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-mapcursor")]impl MapCursor_FlagField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapcursor")]impl MapCursor_FlagField{#[doc="Direct (non-virtual) call to `MapCursor_FlagField`'s own `ToInt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_int(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::mapcursor::MapCursor_Flag,)->i32{let __mi=Self::to_int_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::mapcursor::MapCursor_Flag, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapcursor")]impl MapCursor_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapCursor_FlagField), ::core::stringify!(new),));
+ <Self as IMapCursor_FlagFieldMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-mapcursor")]impl MapCursor{#[doc="`GetCursorMind()` overload"]pub fn get_cursor_mind()->crate::app::mapmind::MapMind_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29a9a70usize)as*mut u8,crate::app::mapmind::MapMind_Type;
@@ -368,10 +331,28 @@ inner(this,stream,version,__mi)}
 (MapCursor)__receiver)}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapCursor_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let __inner:extern "C" fn(MapCursor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapCursor_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let __inner:extern "C" fn(MapCursor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ToggleCursorMoveSize()` overload"]fn toggle_cursor_move_size(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x29b07c0usize)as*mut u8,();
@@ -500,19 +481,64 @@ __out_0.assume_init()}
 (MapCursor)__receiver)}
 }
 #[doc="`OnBind()` overload"]fn on_bind(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapCursor_unity2_raw::on_bind(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnBind",));
+let __inner:extern "C" fn(MapCursor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnUnbind()` overload"]fn on_unbind(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapCursor_unity2_raw::on_unbind(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnUnbind",));
+let __inner:extern "C" fn(MapCursor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapCursor_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(MapCursor, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapCursor_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(MapCursor,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapCursor_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapCursor as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(MapCursor,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
 }
 }
 
@@ -617,6 +643,29 @@ pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[96]}
 }
 
+#[cfg(feature="app-mapcursor")]impl MapCursor{#[doc="Direct (non-virtual) call to `MapCursor`'s own `OnTick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapCursor`'s own `OnUpdate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapCursor`'s own `OnBind`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_bind(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_bind_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapCursor`'s own `OnUnbind`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_unbind(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_unbind_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapCursor`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapCursor`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapCursor`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapcursor")]impl MapCursor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapCursor), ::core::stringify!(new),));
@@ -624,54 +673,19 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-mapcursor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapCursor_FlagField_unity2_raw{use super:: * ;
-pub unsafe fn to_int(this:MapCursor_FlagField,value:crate::app::mapcursor::MapCursor_Flag,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MapCursor_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
-let inner:extern "C" fn(MapCursor_FlagField,crate::app::mapcursor::MapCursor_Flag, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-}
-
-#[cfg(feature="app-mapcursor")]pub trait IMapCursor_FlagFieldMethods:IMapCursor_FlagField{#[doc="`ToInt(crate::app::mapcursor::MapCursor_Flag)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::mapcursor::MapCursor_Flag>)->i32{unsafe{let __receiver= <MapCursor_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapCursor_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCursor_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24bdb10usize)as*mut u8,();
-(MapCursor_FlagField)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapcursor")]impl<__T:IMapCursor_FlagField>IMapCursor_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-mapcursor")]impl MapCursor_FlagField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapcursor")]impl MapCursor_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapCursor_FlagField), ::core::stringify!(new),));
- <Self as IMapCursor_FlagFieldMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapcursor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapCursor_DistanceMode;
-    pub use super::MapCursor;
-    pub use super::IMapCursor;
-    pub use super::IMapCursorMethods;
     pub use super::MapCursor_FlagField;
     pub use super::IMapCursor_FlagField;
     pub use super::IMapCursor_FlagFieldMethods;
+    pub use super::MapCursor;
+    pub use super::IMapCursor;
+    pub use super::IMapCursorMethods;
+    pub use super::MapCursor_CursorTopType;
     pub use super::MapCursor_AnimType;
     pub use super::MapCursor_Flag;
-    pub use super::MapCursor_CursorTopType;
+    pub use super::MapCursor_DistanceMode;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

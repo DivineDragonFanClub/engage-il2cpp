@@ -13,22 +13,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommonoutputsettings/AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType{pub value:i32,}
-impl::unity2::ClassIdentity for AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType{const NAMESPACE: &'static str="";
-const NAME: &'static str="AkCommonOutputSettings.ChannelConfiguration.ChannelConfigType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType{pub fn anonymous()->Self{Self{value:0}
-}
-pub fn standard()->Self{Self{value:1}
-}
-pub fn ambisonic()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommonoutputsettings/AkCommonOutputSettings_ChannelConfiguration.md"))]#[::unity2::class(namespace="",name="AkCommonOutputSettings.ChannelConfiguration")]#[parent(crate::system::object::Object)]pub struct AkCommonOutputSettings_ChannelConfiguration{#[offset(16)]#[rename(name="m_ChannelConfigType")]pub m_channel_config_type:crate::root::akcommonoutputsettings::AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType, #[offset(20)]#[rename(name="m_ChannelMask")]pub m_channel_mask:crate::root::akcommonoutputsettings::AkCommonOutputSettings_ChannelConfiguration_ChannelMask, #[offset(24)]#[rename(name="m_NumberOfChannels")]pub m_number_of_channels:u32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommonoutputsettings/AkCommonOutputSettings_PanningRule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AkCommonOutputSettings_PanningRule{pub value:i32,}
@@ -43,6 +28,24 @@ impl::unity2::IlType for AkCommonOutputSettings_PanningRule{fn il_type()-> &'sta
 impl AkCommonOutputSettings_PanningRule{pub fn speakers()->Self{Self{value:0}
 }
 pub fn headphones()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommonoutputsettings/AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType{pub value:i32,}
+impl::unity2::ClassIdentity for AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType{const NAMESPACE: &'static str="";
+const NAME: &'static str="AkCommonOutputSettings.ChannelConfiguration.ChannelConfigType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType{pub fn anonymous()->Self{Self{value:0}
+}
+pub fn standard()->Self{Self{value:1}
+}
+pub fn ambisonic()->Self{Self{value:2}
 }
 }
 
@@ -181,36 +184,10 @@ pub fn setup_all_speakers()->Self{Self{value:261951}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommonoutputsettings/AkCommonOutputSettings_ChannelConfiguration.md"))]#[::unity2::class(namespace="",name="AkCommonOutputSettings.ChannelConfiguration")]#[parent(crate::system::object::Object)]pub struct AkCommonOutputSettings_ChannelConfiguration{#[offset(16)]#[rename(name="m_ChannelConfigType")]pub m_channel_config_type:crate::root::akcommonoutputsettings::AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType, #[offset(20)]#[rename(name="m_ChannelMask")]pub m_channel_mask:crate::root::akcommonoutputsettings::AkCommonOutputSettings_ChannelConfiguration_ChannelMask, #[offset(24)]#[rename(name="m_NumberOfChannels")]pub m_number_of_channels:u32,}
-
 }
 
 #[cfg(feature = "root-akcommonoutputsettings-types")]
 pub use __types::*;
-
-#[cfg(feature="root-akcommonoutputsettings")]pub trait IAkCommonOutputSettingsMethods:IAkCommonOutputSettings{#[doc="`CopyTo(crate::root::akoutputsettings::AkOutputSettings)` overload"]fn copy_to(self,settings:impl::core::convert::Into<crate::root::akoutputsettings::AkOutputSettings>)->(){unsafe{let __receiver= <AkCommonOutputSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12910usize)as*mut u8,();
-(AkCommonOutputSettings)__receiver,(crate::root::akoutputsettings::AkOutputSettings)::core::convert::Into::into(settings))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCommonOutputSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12d10usize)as*mut u8,();
-(AkCommonOutputSettings)__receiver)}
-}
-}
-
-#[cfg(feature="root-akcommonoutputsettings")]impl<__T:IAkCommonOutputSettings>IAkCommonOutputSettingsMethods for __T{}
-
-#[cfg(feature="root-akcommonoutputsettings")]impl AkCommonOutputSettings{pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root-akcommonoutputsettings")]impl AkCommonOutputSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AkCommonOutputSettings), ::core::stringify!(new),));
- <Self as IAkCommonOutputSettingsMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="root-akcommonoutputsettings")]pub trait IAkCommonOutputSettings_ChannelConfigurationMethods:IAkCommonOutputSettings_ChannelConfiguration{#[doc="`CopyTo(crate::root::akchannelconfig::AkChannelConfig)` overload"]fn copy_to(self,config:impl::core::convert::Into<crate::root::akchannelconfig::AkChannelConfig>)->(){unsafe{let __receiver= <AkCommonOutputSettings_ChannelConfiguration as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e4b0usize)as*mut u8,();
@@ -235,18 +212,41 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root-akcommonoutputsettings")]pub trait IAkCommonOutputSettingsMethods:IAkCommonOutputSettings{#[doc="`CopyTo(crate::root::akoutputsettings::AkOutputSettings)` overload"]fn copy_to(self,settings:impl::core::convert::Into<crate::root::akoutputsettings::AkOutputSettings>)->(){unsafe{let __receiver= <AkCommonOutputSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12910usize)as*mut u8,();
+(AkCommonOutputSettings)__receiver,(crate::root::akoutputsettings::AkOutputSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCommonOutputSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12d10usize)as*mut u8,();
+(AkCommonOutputSettings)__receiver)}
+}
+}
+
+#[cfg(feature="root-akcommonoutputsettings")]impl<__T:IAkCommonOutputSettings>IAkCommonOutputSettingsMethods for __T{}
+
+#[cfg(feature="root-akcommonoutputsettings")]impl AkCommonOutputSettings{pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akcommonoutputsettings")]impl AkCommonOutputSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCommonOutputSettings), ::core::stringify!(new),));
+ <Self as IAkCommonOutputSettingsMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root-akcommonoutputsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType;
+    pub use super::AkCommonOutputSettings_ChannelConfiguration;
+    pub use super::IAkCommonOutputSettings_ChannelConfiguration;
+    pub use super::IAkCommonOutputSettings_ChannelConfigurationMethods;
     pub use super::AkCommonOutputSettings_PanningRule;
+    pub use super::AkCommonOutputSettings_ChannelConfiguration_ChannelConfigType;
     pub use super::AkCommonOutputSettings;
     pub use super::IAkCommonOutputSettings;
     pub use super::IAkCommonOutputSettingsMethods;
     pub use super::AkCommonOutputSettings_ChannelConfiguration_ChannelMask;
-    pub use super::AkCommonOutputSettings_ChannelConfiguration;
-    pub use super::IAkCommonOutputSettings_ChannelConfiguration;
-    pub use super::IAkCommonOutputSettings_ChannelConfigurationMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

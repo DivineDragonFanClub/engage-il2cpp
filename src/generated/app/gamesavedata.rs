@@ -17,67 +17,13 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcWrite.md"))]#[::unity2::class(namespace="App",name="GameSaveData.ProcWrite")]#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]pub struct GameSaveData_ProcWrite{#[offset(152)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(160)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<u8> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcWrite_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSaveData_ProcWrite_Label{pub value:i32,}
-impl::unity2::ClassIdentity for GameSaveData_ProcWrite_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameSaveData.ProcWrite.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameSaveData_ProcWrite_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameSaveData_ProcWrite_Label{pub fn end()->Self{Self{value:0}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_Tag.md"))]#[::unity2::class(namespace="App",name="GameSaveData.Tag")]#[parent(crate::system::object::Object)]pub struct GameSaveData_Tag{#[static_field]#[rename(name="Index")]pub index:i32, #[static_field]#[rename(name="UserGlobal")]pub user_global:i32, #[static_field]#[rename(name="RelayGlobal")]pub relay_global:i32, #[static_field]#[rename(name="VersusGlobal")]pub versus_global:i32, #[static_field]#[rename(name="User")]pub user:i32, #[static_field]#[rename(name="God")]pub god:i32, #[static_field]#[rename(name="GodBond")]pub god_bond:i32, #[static_field]#[rename(name="Unit")]pub unit:i32, #[static_field]#[rename(name="Transporter")]pub transporter:i32, #[static_field]#[rename(name="UnitReliance")]pub unit_reliance:i32, #[static_field]#[rename(name="Map")]pub map:i32, #[static_field]#[rename(name="Hub")]pub hub:i32, #[static_field]#[rename(name="Gmap")]pub gmap:i32, #[static_field]#[rename(name="Ring")]pub ring:i32, #[static_field]#[rename(name="Time")]pub time:i32, #[static_field]#[rename(name="Restart")]pub restart:i32, #[static_field]#[rename(name="Profile")]pub profile:i32, #[static_field]#[rename(name="ProfileList")]pub profile_list:i32, #[static_field]#[rename(name="DebugParam")]pub debug_param:i32, #[static_field]#[rename(name="Crc32")]pub crc32:i32, #[static_field]#[rename(name="MaxIndex")]pub max_index:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcCopy.md"))]#[::unity2::class(namespace="App",name="GameSaveData.ProcCopy")]#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]pub struct GameSaveData_ProcCopy{#[offset(152)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<u8> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcRead_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSaveData_ProcRead_Label{pub value:i32,}
-impl::unity2::ClassIdentity for GameSaveData_ProcRead_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameSaveData.ProcRead.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameSaveData_ProcRead_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameSaveData_ProcRead_Label{pub fn end()->Self{Self{value:0}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcCopy_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSaveData_ProcCopy_Label{pub value:i32,}
-impl::unity2::ClassIdentity for GameSaveData_ProcCopy_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameSaveData.ProcCopy.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameSaveData_ProcCopy_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameSaveData_ProcCopy_Label{pub fn end()->Self{Self{value:0}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_Tag_Writer.md"))]#[::unity2::class(namespace="App",name="GameSaveData.Tag.Writer")]#[parent(crate::system::object::Object)]pub struct GameSaveData_Tag_Writer{#[offset(16)]#[rename(name="m_FirstPos")]pub m_first_pos:i32, #[offset(20)]#[rename(name="m_Index")]pub m_index:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcDelete.md"))]#[::unity2::class(namespace="App",name="GameSaveData.ProcDelete")]#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]pub struct GameSaveData_ProcDelete{#[offset(152)]#[rename(name="m_HeaderReader")]pub m_header_reader:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader, #[offset(160)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(168)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<u8> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData.md"))]#[::unity2::class(namespace="App",name="GameSaveData")]#[parent(crate::system::object::Object)]pub struct GameSaveData{#[static_field]#[rename(name="GlobalCount")]pub global_count:i32, #[static_field]#[rename(name="AutoCount")]pub auto_count:i32, #[static_field]#[rename(name="ManualCount")]pub manual_count:i32, #[static_field]#[rename(name="DataSize")]pub data_size:i32, #[static_field]#[rename(name="NXRootPath")]pub nx_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_ReadingTarget")]pub s_reading_target:crate::app::gamesavedata::GameSaveData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_Tag_Reader.md"))]#[::unity2::class(namespace="App",name="GameSaveData.Tag.Reader")]#[parent(crate::system::object::Object)]pub struct GameSaveData_Tag_Reader{#[offset(16)]#[rename(name="m_PosList")]pub m_pos_list:crate::system::collections::generic::list_1::List_1<i32> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcRead.md"))]#[::unity2::class(namespace="App",name="GameSaveData.ProcRead")]#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]pub struct GameSaveData_ProcRead{#[offset(152)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<u8> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcBase.md"))]#[::unity2::class(namespace="App",name="GameSaveData.ProcBase")]#[parent(crate::app::procwaitmessagebase::ProcWaitMessageBase)]pub struct GameSaveData_ProcBase{#[offset(120)]#[rename(name="m_SaveData")]pub m_save_data:crate::app::gamesavedata::GameSaveData, #[offset(128)]#[rename(name="m_Handle")]pub m_handle:crate::app::savedatahandle::SaveDataHandle, #[offset(136)]#[rename(name="m_MsgTime")]pub m_msg_time:f64, #[offset(144)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_Types.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSaveData_Types{pub value:i32,}
@@ -108,7 +54,61 @@ pub fn num()->Self{Self{value:7}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_Tag_Reader.md"))]#[::unity2::class(namespace="App",name="GameSaveData.Tag.Reader")]#[parent(crate::system::object::Object)]pub struct GameSaveData_Tag_Reader{#[offset(16)]#[rename(name="m_PosList")]pub m_pos_list:crate::system::collections::generic::list_1::List_1<i32> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcCopy_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSaveData_ProcCopy_Label{pub value:i32,}
+impl::unity2::ClassIdentity for GameSaveData_ProcCopy_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameSaveData.ProcCopy.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameSaveData_ProcCopy_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameSaveData_ProcCopy_Label{pub fn end()->Self{Self{value:0}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_Tag.md"))]#[::unity2::class(namespace="App",name="GameSaveData.Tag")]#[parent(crate::system::object::Object)]pub struct GameSaveData_Tag{#[static_field]#[rename(name="Index")]pub index:i32, #[static_field]#[rename(name="UserGlobal")]pub user_global:i32, #[static_field]#[rename(name="RelayGlobal")]pub relay_global:i32, #[static_field]#[rename(name="VersusGlobal")]pub versus_global:i32, #[static_field]#[rename(name="User")]pub user:i32, #[static_field]#[rename(name="God")]pub god:i32, #[static_field]#[rename(name="GodBond")]pub god_bond:i32, #[static_field]#[rename(name="Unit")]pub unit:i32, #[static_field]#[rename(name="Transporter")]pub transporter:i32, #[static_field]#[rename(name="UnitReliance")]pub unit_reliance:i32, #[static_field]#[rename(name="Map")]pub map:i32, #[static_field]#[rename(name="Hub")]pub hub:i32, #[static_field]#[rename(name="Gmap")]pub gmap:i32, #[static_field]#[rename(name="Ring")]pub ring:i32, #[static_field]#[rename(name="Time")]pub time:i32, #[static_field]#[rename(name="Restart")]pub restart:i32, #[static_field]#[rename(name="Profile")]pub profile:i32, #[static_field]#[rename(name="ProfileList")]pub profile_list:i32, #[static_field]#[rename(name="DebugParam")]pub debug_param:i32, #[static_field]#[rename(name="Crc32")]pub crc32:i32, #[static_field]#[rename(name="MaxIndex")]pub max_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcCopy.md"))]#[::unity2::class(namespace="App",name="GameSaveData.ProcCopy")]#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]pub struct GameSaveData_ProcCopy{#[offset(152)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<u8> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_Tag_Writer.md"))]#[::unity2::class(namespace="App",name="GameSaveData.Tag.Writer")]#[parent(crate::system::object::Object)]pub struct GameSaveData_Tag_Writer{#[offset(16)]#[rename(name="m_FirstPos")]pub m_first_pos:i32, #[offset(20)]#[rename(name="m_Index")]pub m_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData.md"))]#[::unity2::class(namespace="App",name="GameSaveData")]#[parent(crate::system::object::Object)]pub struct GameSaveData{#[static_field]#[rename(name="GlobalCount")]pub global_count:i32, #[static_field]#[rename(name="AutoCount")]pub auto_count:i32, #[static_field]#[rename(name="ManualCount")]pub manual_count:i32, #[static_field]#[rename(name="DataSize")]pub data_size:i32, #[static_field]#[rename(name="NXRootPath")]pub nx_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_ReadingTarget")]pub s_reading_target:crate::app::gamesavedata::GameSaveData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcRead_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSaveData_ProcRead_Label{pub value:i32,}
+impl::unity2::ClassIdentity for GameSaveData_ProcRead_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameSaveData.ProcRead.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameSaveData_ProcRead_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameSaveData_ProcRead_Label{pub fn end()->Self{Self{value:0}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcWrite.md"))]#[::unity2::class(namespace="App",name="GameSaveData.ProcWrite")]#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]pub struct GameSaveData_ProcWrite{#[offset(152)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(160)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<u8> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcWrite_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSaveData_ProcWrite_Label{pub value:i32,}
+impl::unity2::ClassIdentity for GameSaveData_ProcWrite_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameSaveData.ProcWrite.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameSaveData_ProcWrite_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameSaveData_ProcWrite_Label{pub fn end()->Self{Self{value:0}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcDelete_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSaveData_ProcDelete_Label{pub value:i32,}
@@ -125,76 +125,231 @@ impl GameSaveData_ProcDelete_Label{pub fn end()->Self{Self{value:0}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcBase.md"))]#[::unity2::class(namespace="App",name="GameSaveData.ProcBase")]#[parent(crate::app::procwaitmessagebase::ProcWaitMessageBase)]pub struct GameSaveData_ProcBase{#[offset(120)]#[rename(name="m_SaveData")]pub m_save_data:crate::app::gamesavedata::GameSaveData, #[offset(128)]#[rename(name="m_Handle")]pub m_handle:crate::app::savedatahandle::SaveDataHandle, #[offset(136)]#[rename(name="m_MsgTime")]pub m_msg_time:f64, #[offset(144)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedata/GameSaveData_ProcRead.md"))]#[::unity2::class(namespace="App",name="GameSaveData.ProcRead")]#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]pub struct GameSaveData_ProcRead{#[offset(152)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<u8> ,}
 
 }
 
 #[cfg(feature = "app-gamesavedata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-gamesavedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameSaveData_ProcWrite_unity2_raw{use super:: * ;
-pub unsafe fn is_showing(this:GameSaveData_ProcWrite,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GameSaveData_ProcWrite as::unity2::ClassIdentity> ::NAME,"IsShowing",));
-let inner:extern "C" fn(GameSaveData_ProcWrite, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcWrite{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e6a0c0usize)as*mut u8,();
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcDelete{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e684d0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedata::GameSaveData)::core::convert::Into::into(save_data))}
 }
 }
 
-#[cfg(feature="app-gamesavedata")]pub trait IGameSaveData_ProcWriteMethods:IGameSaveData_ProcWrite{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]fn ctor(self,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6abd0usize)as*mut u8,();
-(GameSaveData_ProcWrite)__receiver,(crate::app::gamesavedata::GameSaveData)::core::convert::Into::into(save_data))}
+#[cfg(feature="app-gamesavedata")]pub trait IGameSaveData_ProcDeleteMethods:IGameSaveData_ProcDelete{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]fn ctor(self,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69070usize)as*mut u8,();
+(GameSaveData_ProcDelete)__receiver,(crate::app::gamesavedata::GameSaveData)::core::convert::Into::into(save_data))}
 }
-#[doc="`IsShowing()` overload"]fn is_showing(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameSaveData_ProcWrite_unity2_raw::is_showing(__receiver, ::core::option::Option::None)}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GameSaveData_ProcDelete as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(GameSaveData_ProcDelete, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
 }
-#[doc="`MessageOpen()` overload"]fn message_open(self,)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ad90usize)as*mut u8,();
-(GameSaveData_ProcWrite)__receiver)}
 }
-#[doc="`ModifyForParentalControl()` overload"]fn modify_for_parental_control(self,)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6adf0usize)as*mut u8,();
-(GameSaveData_ProcWrite)__receiver)}
+#[doc="`MessageOpen()` overload"]fn message_open(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69100usize)as*mut u8,();
+(GameSaveData_ProcDelete)__receiver)}
 }
-#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ae10usize)as*mut u8,();
-(GameSaveData_ProcWrite)__receiver)}
+#[doc="`ReadHeader()` overload"]fn read_header(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69160usize)as*mut u8,();
+(GameSaveData_ProcDelete)__receiver)}
 }
-#[doc="`WriteGlobal()` overload"]fn write_global(self,)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6aef0usize)as*mut u8,();
-(GameSaveData_ProcWrite)__receiver)}
+#[doc="`IsReadingHeader()` overload"]fn is_reading_header(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e691e0usize)as*mut u8,bool;
+(GameSaveData_ProcDelete)__receiver)}
 }
-#[doc="`Success()` overload"]fn success(self,)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6af40usize)as*mut u8,();
-(GameSaveData_ProcWrite)__receiver)}
+#[doc="`DeleteSaveData()` overload"]fn delete_save_data(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e692b0usize)as*mut u8,();
+(GameSaveData_ProcDelete)__receiver)}
+}
+#[doc="`CheckRelayUserGlobalData()` overload"]fn check_relay_user_global_data(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69340usize)as*mut u8,bool;
+(GameSaveData_ProcDelete)__receiver)}
+}
+#[doc="`WriteGlobal()` overload"]fn write_global(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69520usize)as*mut u8,();
+(GameSaveData_ProcDelete)__receiver)}
+}
+#[doc="`Success()` overload"]fn success(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69610usize)as*mut u8,();
+(GameSaveData_ProcDelete)__receiver)}
 }
 }
 
-#[cfg(feature="app-gamesavedata")]impl<__T:IGameSaveData_ProcWrite>IGameSaveData_ProcWriteMethods for __T{}
+#[cfg(feature="app-gamesavedata")]impl<__T:IGameSaveData_ProcDelete>IGameSaveData_ProcDeleteMethods for __T{}
 
-#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcWrite{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcDelete{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_showing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn message_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn modify_for_parental_control_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn write_global_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn read_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_reading_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn delete_save_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn check_relay_user_global_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn write_global_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 }
 
-#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcWrite{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]pub fn new(save_data:crate::app::gamesavedata::GameSaveData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcDelete{#[doc="Direct (non-virtual) call to `GameSaveData_ProcDelete`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcDelete{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]pub fn new(save_data:crate::app::gamesavedata::GameSaveData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GameSaveData_ProcWrite), ::core::stringify!(new),));
- <Self as IGameSaveData_ProcWriteMethods> ::ctor(this,save_data);
+ failed to instantiate", ::core::stringify!(GameSaveData_ProcDelete), ::core::stringify!(new),));
+ <Self as IGameSaveData_ProcDeleteMethods> ::ctor(this,save_data);
+this}
+}
+
+#[cfg(feature="app-gamesavedata")]pub trait IGameSaveData_Tag_ReaderMethods:IGameSaveData_Tag_Reader{#[doc="`.ctor(crate::app::stream_2::Stream_2)` overload"]fn ctor(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GameSaveData_Tag_Reader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3a250usize)as*mut u8,();
+(GameSaveData_Tag_Reader)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Read(crate::app::stream_2::Stream_2, i32)` overload"]fn read(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <GameSaveData_Tag_Reader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3a490usize)as*mut u8,i32;
+(GameSaveData_Tag_Reader)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <GameSaveData_Tag_Reader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3a5a0usize)as*mut u8,i32;
+(GameSaveData_Tag_Reader)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamesavedata")]impl<__T:IGameSaveData_Tag_Reader>IGameSaveData_Tag_ReaderMethods for __T{}
+
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_Tag_Reader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_Tag_Reader{#[doc="`.ctor(crate::app::stream_2::Stream_2)` — overload selector"]pub fn new(stream:crate::app::stream_2::Stream_2)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveData_Tag_Reader), ::core::stringify!(new),));
+ <Self as IGameSaveData_Tag_ReaderMethods> ::ctor(this,stream);
+this}
+}
+
+#[cfg(feature="app-gamesavedata")]pub trait IGameSaveData_ProcBaseMethods:IGameSaveData_ProcBase{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]fn ctor(self,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66cd0usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver,(crate::app::gamesavedata::GameSaveData)::core::convert::Into::into(save_data))}
+}
+#[doc="`PauseExitApp()` overload"]fn pause_exit_app(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66d10usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`ResumeExitApp()` overload"]fn resume_exit_app(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66d80usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`ResumeExitAppAndJumpIfFailed(i32)` overload"]fn resume_exit_app_and_jump_if_failed(self,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66df0usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver,(i32)::core::convert::Into::into(label))}
+}
+#[doc="`WriteGlobalCore(crate::app::stream_2::Stream_2, ::unity2::Array<u8>)` overload"]fn write_global_core(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,data:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66eb0usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(::unity2::Array<u8>)::core::convert::Into::into(data))}
+}
+#[doc="`Check(crate::app::stream_2::Stream_2, ::unity2::Il2CppString)` overload"]fn check(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66fc0usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66fd0usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`IsRunning()` overload"]fn is_running(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67060usize)as*mut u8,bool;
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`IsFailed()` overload"]fn is_failed(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66e90usize)as*mut u8,bool;
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`IsShowing()` overload"]fn is_showing(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GameSaveData_ProcBase as::unity2::ClassIdentity> ::NAME,"IsShowing",));
+let __inner:extern "C" fn(GameSaveData_ProcBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`MessageOpen(::unity2::Il2CppString)` overload"]fn message_open(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67090usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`MessageClose()` overload"]fn message_close(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e671f0usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`StartMessageTime()` overload"]fn start_message_time(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e672b0usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`GetWaitMessageTime()` overload"]fn get_wait_message_time(self,)->f32{unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67320usize)as*mut u8,f32;
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`WaitMessageTime()` overload"]fn wait_message_time(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67350usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`SaveStartSoundEvent()` overload"]fn save_start_sound_event(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67420usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`SaveEndSoundEvent()` overload"]fn save_end_sound_event(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e674c0usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver)}
+}
+#[doc="`ModifyForParentalControlImpl()` overload"]fn modify_for_parental_control_impl(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67560usize)as*mut u8,();
+(GameSaveData_ProcBase)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamesavedata")]impl<__T:IGameSaveData_ProcBase>IGameSaveData_ProcBaseMethods for __T{}
+
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcBase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn pause_exit_app_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn resume_exit_app_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn resume_exit_app_and_jump_if_failed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn write_global_core_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_failed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_showing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn message_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn message_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn start_message_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_wait_message_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn wait_message_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn save_start_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn save_end_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn modify_for_parental_control_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
+
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcBase{#[doc="Direct (non-virtual) call to `GameSaveData_ProcBase`'s own `IsShowing`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_showing(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_showing_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcBase{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]pub fn new(save_data:crate::app::gamesavedata::GameSaveData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveData_ProcBase), ::core::stringify!(new),));
+ <Self as IGameSaveData_ProcBaseMethods> ::ctor(this,save_data);
 this}
 }
 
@@ -274,82 +429,6 @@ pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 ::{}
  failed to instantiate", ::core::stringify!(GameSaveData_Tag_Writer), ::core::stringify!(new),));
  <Self as IGameSaveData_Tag_WriterMethods> ::ctor(this,stream);
-this}
-}
-
-#[cfg(feature="app-gamesavedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameSaveData_ProcDelete_unity2_raw{use super:: * ;
-pub unsafe fn on_dispose(this:GameSaveData_ProcDelete,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <GameSaveData_ProcDelete as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(GameSaveData_ProcDelete, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcDelete{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e684d0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedata::GameSaveData)::core::convert::Into::into(save_data))}
-}
-}
-
-#[cfg(feature="app-gamesavedata")]pub trait IGameSaveData_ProcDeleteMethods:IGameSaveData_ProcDelete{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]fn ctor(self,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69070usize)as*mut u8,();
-(GameSaveData_ProcDelete)__receiver,(crate::app::gamesavedata::GameSaveData)::core::convert::Into::into(save_data))}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameSaveData_ProcDelete_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
-}
-#[doc="`MessageOpen()` overload"]fn message_open(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69100usize)as*mut u8,();
-(GameSaveData_ProcDelete)__receiver)}
-}
-#[doc="`ReadHeader()` overload"]fn read_header(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69160usize)as*mut u8,();
-(GameSaveData_ProcDelete)__receiver)}
-}
-#[doc="`IsReadingHeader()` overload"]fn is_reading_header(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e691e0usize)as*mut u8,bool;
-(GameSaveData_ProcDelete)__receiver)}
-}
-#[doc="`DeleteSaveData()` overload"]fn delete_save_data(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e692b0usize)as*mut u8,();
-(GameSaveData_ProcDelete)__receiver)}
-}
-#[doc="`CheckRelayUserGlobalData()` overload"]fn check_relay_user_global_data(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69340usize)as*mut u8,bool;
-(GameSaveData_ProcDelete)__receiver)}
-}
-#[doc="`WriteGlobal()` overload"]fn write_global(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69520usize)as*mut u8,();
-(GameSaveData_ProcDelete)__receiver)}
-}
-#[doc="`Success()` overload"]fn success(self,)->(){unsafe{let __receiver= <GameSaveData_ProcDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e69610usize)as*mut u8,();
-(GameSaveData_ProcDelete)__receiver)}
-}
-}
-
-#[cfg(feature="app-gamesavedata")]impl<__T:IGameSaveData_ProcDelete>IGameSaveData_ProcDeleteMethods for __T{}
-
-#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcDelete{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn message_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn read_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn is_reading_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn delete_save_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn check_relay_user_global_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn write_global_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcDelete{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]pub fn new(save_data:crate::app::gamesavedata::GameSaveData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameSaveData_ProcDelete), ::core::stringify!(new),));
- <Self as IGameSaveData_ProcDeleteMethods> ::ctor(this,save_data);
 this}
 }
 
@@ -597,17 +676,71 @@ this}
 this}
 }
 
-#[cfg(feature="app-gamesavedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameSaveData_ProcRead_unity2_raw{use super:: * ;
-pub unsafe fn is_showing(this:GameSaveData_ProcRead,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcWrite{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e6a0c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedata::GameSaveData)::core::convert::Into::into(save_data))}
+}
+}
+
+#[cfg(feature="app-gamesavedata")]pub trait IGameSaveData_ProcWriteMethods:IGameSaveData_ProcWrite{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]fn ctor(self,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6abd0usize)as*mut u8,();
+(GameSaveData_ProcWrite)__receiver,(crate::app::gamesavedata::GameSaveData)::core::convert::Into::into(save_data))}
+}
+#[doc="`IsShowing()` overload"]fn is_showing(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <GameSaveData_ProcRead as::unity2::ClassIdentity> ::NAME,"IsShowing",));
-let inner:extern "C" fn(GameSaveData_ProcRead, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <GameSaveData_ProcWrite as::unity2::ClassIdentity> ::NAME,"IsShowing",));
+let __inner:extern "C" fn(GameSaveData_ProcWrite, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`MessageOpen()` overload"]fn message_open(self,)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ad90usize)as*mut u8,();
+(GameSaveData_ProcWrite)__receiver)}
+}
+#[doc="`ModifyForParentalControl()` overload"]fn modify_for_parental_control(self,)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6adf0usize)as*mut u8,();
+(GameSaveData_ProcWrite)__receiver)}
+}
+#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ae10usize)as*mut u8,();
+(GameSaveData_ProcWrite)__receiver)}
+}
+#[doc="`WriteGlobal()` overload"]fn write_global(self,)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6aef0usize)as*mut u8,();
+(GameSaveData_ProcWrite)__receiver)}
+}
+#[doc="`Success()` overload"]fn success(self,)->(){unsafe{let __receiver= <GameSaveData_ProcWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6af40usize)as*mut u8,();
+(GameSaveData_ProcWrite)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamesavedata")]impl<__T:IGameSaveData_ProcWrite>IGameSaveData_ProcWriteMethods for __T{}
+
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcWrite{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_showing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn message_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn modify_for_parental_control_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn write_global_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcWrite{#[doc="Direct (non-virtual) call to `GameSaveData_ProcWrite`'s own `IsShowing`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_showing(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_showing_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcWrite{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]pub fn new(save_data:crate::app::gamesavedata::GameSaveData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveData_ProcWrite), ::core::stringify!(new),));
+ <Self as IGameSaveData_ProcWriteMethods> ::ctor(this,save_data);
+this}
 }
 
 #[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcRead{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e69620usize)as*mut u8,();
@@ -640,7 +773,16 @@ inner(this,__mi)}
 (GameSaveData_ProcRead)__receiver)}
 }
 #[doc="`IsShowing()` overload"]fn is_showing(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcRead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameSaveData_ProcRead_unity2_raw::is_showing(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GameSaveData_ProcRead as::unity2::ClassIdentity> ::NAME,"IsShowing",));
+let __inner:extern "C" fn(GameSaveData_ProcRead, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -656,6 +798,11 @@ pub fn modify_for_parental_control_method_info()-> & 'static::unity2::il2cpp::Me
 pub fn is_showing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcRead{#[doc="Direct (non-virtual) call to `GameSaveData_ProcRead`'s own `IsShowing`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_showing(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_showing_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcRead{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]pub fn new(save_data:crate::app::gamesavedata::GameSaveData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GameSaveData_ProcRead), ::core::stringify!(new),));
@@ -663,183 +810,40 @@ pub fn is_showing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-gamesavedata")]pub trait IGameSaveData_Tag_ReaderMethods:IGameSaveData_Tag_Reader{#[doc="`.ctor(crate::app::stream_2::Stream_2)` overload"]fn ctor(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GameSaveData_Tag_Reader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3a250usize)as*mut u8,();
-(GameSaveData_Tag_Reader)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
-}
-#[doc="`Read(crate::app::stream_2::Stream_2, i32)` overload"]fn read(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <GameSaveData_Tag_Reader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3a490usize)as*mut u8,i32;
-(GameSaveData_Tag_Reader)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(index))}
-}
-#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <GameSaveData_Tag_Reader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3a5a0usize)as*mut u8,i32;
-(GameSaveData_Tag_Reader)__receiver)}
-}
-}
-
-#[cfg(feature="app-gamesavedata")]impl<__T:IGameSaveData_Tag_Reader>IGameSaveData_Tag_ReaderMethods for __T{}
-
-#[cfg(feature="app-gamesavedata")]impl GameSaveData_Tag_Reader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gamesavedata")]impl GameSaveData_Tag_Reader{#[doc="`.ctor(crate::app::stream_2::Stream_2)` — overload selector"]pub fn new(stream:crate::app::stream_2::Stream_2)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameSaveData_Tag_Reader), ::core::stringify!(new),));
- <Self as IGameSaveData_Tag_ReaderMethods> ::ctor(this,stream);
-this}
-}
-
-#[cfg(feature="app-gamesavedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameSaveData_ProcBase_unity2_raw{use super:: * ;
-pub unsafe fn is_showing(this:GameSaveData_ProcBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GameSaveData_ProcBase as::unity2::ClassIdentity> ::NAME,"IsShowing",));
-let inner:extern "C" fn(GameSaveData_ProcBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gamesavedata")]pub trait IGameSaveData_ProcBaseMethods:IGameSaveData_ProcBase{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]fn ctor(self,save_data:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData>)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66cd0usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver,(crate::app::gamesavedata::GameSaveData)::core::convert::Into::into(save_data))}
-}
-#[doc="`PauseExitApp()` overload"]fn pause_exit_app(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66d10usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`ResumeExitApp()` overload"]fn resume_exit_app(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66d80usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`ResumeExitAppAndJumpIfFailed(i32)` overload"]fn resume_exit_app_and_jump_if_failed(self,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66df0usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver,(i32)::core::convert::Into::into(label))}
-}
-#[doc="`WriteGlobalCore(crate::app::stream_2::Stream_2, ::unity2::Array<u8>)` overload"]fn write_global_core(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,data:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66eb0usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(::unity2::Array<u8>)::core::convert::Into::into(data))}
-}
-#[doc="`Check(crate::app::stream_2::Stream_2, ::unity2::Il2CppString)` overload"]fn check(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66fc0usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(::unity2::Il2CppString)::core::convert::Into::into(path))}
-}
-#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66fd0usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`IsRunning()` overload"]fn is_running(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67060usize)as*mut u8,bool;
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`IsFailed()` overload"]fn is_failed(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66e90usize)as*mut u8,bool;
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`IsShowing()` overload"]fn is_showing(self,)->bool{unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameSaveData_ProcBase_unity2_raw::is_showing(__receiver, ::core::option::Option::None)}
-}
-#[doc="`MessageOpen(::unity2::Il2CppString)` overload"]fn message_open(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67090usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
-}
-#[doc="`MessageClose()` overload"]fn message_close(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e671f0usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`StartMessageTime()` overload"]fn start_message_time(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e672b0usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`GetWaitMessageTime()` overload"]fn get_wait_message_time(self,)->f32{unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67320usize)as*mut u8,f32;
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`WaitMessageTime()` overload"]fn wait_message_time(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67350usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`SaveStartSoundEvent()` overload"]fn save_start_sound_event(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67420usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`SaveEndSoundEvent()` overload"]fn save_end_sound_event(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e674c0usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver)}
-}
-#[doc="`ModifyForParentalControlImpl()` overload"]fn modify_for_parental_control_impl(self,)->(){unsafe{let __receiver= <GameSaveData_ProcBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e67560usize)as*mut u8,();
-(GameSaveData_ProcBase)__receiver)}
-}
-}
-
-#[cfg(feature="app-gamesavedata")]impl<__T:IGameSaveData_ProcBase>IGameSaveData_ProcBaseMethods for __T{}
-
-#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcBase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn pause_exit_app_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn resume_exit_app_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn resume_exit_app_and_jump_if_failed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn write_global_core_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn is_failed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn is_showing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn message_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn message_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn start_message_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_wait_message_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn wait_message_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn save_start_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn save_end_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn modify_for_parental_control_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-}
-
-#[cfg(feature="app-gamesavedata")]impl GameSaveData_ProcBase{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]pub fn new(save_data:crate::app::gamesavedata::GameSaveData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameSaveData_ProcBase), ::core::stringify!(new),));
- <Self as IGameSaveData_ProcBaseMethods> ::ctor(this,save_data);
-this}
-}
-
 #[cfg(feature = "app-gamesavedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameSaveData_ProcWrite;
-    pub use super::IGameSaveData_ProcWrite;
-    pub use super::IGameSaveData_ProcWriteMethods;
-    pub use super::GameSaveData_ProcWrite_Label;
+    pub use super::GameSaveData_ProcDelete;
+    pub use super::IGameSaveData_ProcDelete;
+    pub use super::IGameSaveData_ProcDeleteMethods;
+    pub use super::GameSaveData_Tag_Reader;
+    pub use super::IGameSaveData_Tag_Reader;
+    pub use super::IGameSaveData_Tag_ReaderMethods;
+    pub use super::GameSaveData_ProcBase;
+    pub use super::IGameSaveData_ProcBase;
+    pub use super::IGameSaveData_ProcBaseMethods;
+    pub use super::GameSaveData_Types;
+    pub use super::GameSaveData_ProcCopy_Label;
     pub use super::GameSaveData_Tag;
     pub use super::IGameSaveData_Tag;
     pub use super::GameSaveData_ProcCopy;
     pub use super::IGameSaveData_ProcCopy;
     pub use super::IGameSaveData_ProcCopyMethods;
-    pub use super::GameSaveData_ProcRead_Label;
-    pub use super::GameSaveData_ProcCopy_Label;
     pub use super::GameSaveData_Tag_Writer;
     pub use super::IGameSaveData_Tag_Writer;
     pub use super::IGameSaveData_Tag_WriterMethods;
-    pub use super::GameSaveData_ProcDelete;
-    pub use super::IGameSaveData_ProcDelete;
-    pub use super::IGameSaveData_ProcDeleteMethods;
     pub use super::GameSaveData;
     pub use super::IGameSaveData;
     pub use super::IGameSaveDataMethods;
+    pub use super::GameSaveData_ProcRead_Label;
+    pub use super::GameSaveData_ProcWrite;
+    pub use super::IGameSaveData_ProcWrite;
+    pub use super::IGameSaveData_ProcWriteMethods;
+    pub use super::GameSaveData_ProcWrite_Label;
+    pub use super::GameSaveData_ProcDelete_Label;
     pub use super::GameSaveData_ProcRead;
     pub use super::IGameSaveData_ProcRead;
     pub use super::IGameSaveData_ProcReadMethods;
-    pub use super::GameSaveData_Types;
-    pub use super::GameSaveData_Tag_Reader;
-    pub use super::IGameSaveData_Tag_Reader;
-    pub use super::IGameSaveData_Tag_ReaderMethods;
-    pub use super::GameSaveData_ProcDelete_Label;
-    pub use super::GameSaveData_ProcBase;
-    pub use super::IGameSaveData_ProcBase;
-    pub use super::IGameSaveData_ProcBaseMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procwaitmessagebase::IProcWaitMessageBase;
     pub use crate::system::object::IObject;

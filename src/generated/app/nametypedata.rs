@@ -80,19 +80,6 @@ pub fn 敬語_女王()->Self{Self{value:20}
 #[cfg(feature = "app-nametypedata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-nametypedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NameTypeData_unity2_raw{use super:: * ;
-pub unsafe fn get_debug_name(this:NameTypeData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <NameTypeData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let inner:extern "C" fn(NameTypeData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-nametypedata")]impl NameTypeData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f0ecb0usize)as*mut u8,();
 )}
 }
@@ -122,7 +109,16 @@ inner(this,__mi)}
 (NameTypeData)__receiver,(::unity2::Array<crate::app::nametypedata::NameTypeData_Type>)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NameTypeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NameTypeData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <NameTypeData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let __inner:extern "C" fn(NameTypeData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetHubCookSuffix(crate::app::nametypedata::NameTypeData)` overload"]fn get_hub_cook_suffix(self,to_data:impl::core::convert::Into<crate::app::nametypedata::NameTypeData>)-> ::unity2::Il2CppString{unsafe{let __receiver= <NameTypeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0f5a0usize)as*mut u8, ::unity2::Il2CppString;
@@ -541,6 +537,11 @@ pub fn get_name_type38_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn set_name_type38_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[86]}
 pub fn get_name_type39_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[87]}
 pub fn set_name_type39_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
+}
+
+#[cfg(feature="app-nametypedata")]impl NameTypeData{#[doc="Direct (non-virtual) call to `NameTypeData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-nametypedata")]impl NameTypeData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

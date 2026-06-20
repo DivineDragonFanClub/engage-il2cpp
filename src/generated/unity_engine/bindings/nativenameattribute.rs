@@ -14,21 +14,17 @@ mod __types {
 #[cfg(feature = "unity_engine-bindings-nativenameattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-bindings-nativenameattribute")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NativeNameAttribute_unity2_raw{use super:: * ;
-pub unsafe fn set_name(this:NativeNameAttribute,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-bindings-nativenameattribute")]pub trait INativeNameAttributeMethods:INativeNameAttribute{#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeNameAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <NativeNameAttribute as::unity2::ClassIdentity> ::NAME,"set_Name",));
-let inner:extern "C" fn(NativeNameAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(NativeNameAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="unity_engine-bindings-nativenameattribute")]pub trait INativeNameAttributeMethods:INativeNameAttribute{#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeNameAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NativeNameAttribute_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeNameAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f380b0usize)as*mut u8,();
@@ -40,6 +36,11 @@ __NativeNameAttribute_unity2_raw::set_name(__receiver, ::core::convert::Into::in
 
 #[cfg(feature="unity_engine-bindings-nativenameattribute")]impl NativeNameAttribute{pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-bindings-nativenameattribute")]impl NativeNameAttribute{#[doc="Direct (non-virtual) call to `NativeNameAttribute`'s own `set_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::set_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-bindings-nativenameattribute")]impl NativeNameAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -16,45 +16,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationmap-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-addressable_assets-resource_locators-resourcelocationmap")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ResourceLocationMap_unity2_raw{use super:: * ;
-pub unsafe fn get_locator_id(this:ResourceLocationMap,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ResourceLocationMap as::unity2::ClassIdentity> ::NAME,"get_LocatorId",));
-let inner:extern "C" fn(ResourceLocationMap, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_keys(this:ResourceLocationMap,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <ResourceLocationMap as::unity2::ClassIdentity> ::NAME,"get_Keys",));
-let inner:extern "C" fn(ResourceLocationMap, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn locate(this:ResourceLocationMap,key:crate::system::object::Object,r#type: ::unity2::SystemType,locations: *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <ResourceLocationMap as::unity2::ClassIdentity> ::NAME,"Locate",));
-let inner:extern "C" fn(ResourceLocationMap,crate::system::object::Object, ::unity2::SystemType, *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,r#type,locations,__mi)}
-}
-
 #[cfg(feature="unity_engine-addressable_assets-resource_locators-resourcelocationmap")]pub trait IResourceLocationMapMethods:IResourceLocationMap{#[doc="`.ctor(::unity2::Il2CppString, i32)` overload"]fn ctor(self,id:impl::core::convert::Into< ::unity2::Il2CppString> ,capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ResourceLocationMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db4ff0usize)as*mut u8,();
 (ResourceLocationMap)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(id),(i32)::core::convert::Into::into(capacity))}
 }
 #[doc="`get_LocatorId()` overload"]fn get_locator_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ResourceLocationMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourceLocationMap_unity2_raw::get_locator_id(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ResourceLocationMap as::unity2::ClassIdentity> ::NAME,"get_LocatorId",));
+let __inner:extern "C" fn(ResourceLocationMap, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_LocatorId(::unity2::Il2CppString)` overload"]fn set_locator_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ResourceLocationMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbc940usize)as*mut u8,();
@@ -73,11 +49,29 @@ __ResourceLocationMap_unity2_raw::get_locator_id(__receiver, ::core::option::Opt
 (ResourceLocationMap)__receiver,(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::system::object::Object,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> >)::core::convert::Into::into(value))}
 }
 #[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>{unsafe{let __receiver= <ResourceLocationMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourceLocationMap_unity2_raw::get_keys(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ResourceLocationMap as::unity2::ClassIdentity> ::NAME,"get_Keys",));
+let __inner:extern "C" fn(ResourceLocationMap, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Locate(crate::system::object::Object, ::unity2::SystemType, *mutcrate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"]fn locate(self,key:impl::core::convert::Into<crate::system::object::Object> ,r#type:impl::core::convert::Into< ::unity2::SystemType>)->(bool,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>){unsafe{let __receiver= <ResourceLocationMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> > ::uninit();
-let __ret={__ResourceLocationMap_unity2_raw::locate(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(r#type),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+let __ret={{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ResourceLocationMap as::unity2::ClassIdentity> ::NAME,"Locate",));
+let __inner:extern "C" fn(ResourceLocationMap,crate::system::object::Object, ::unity2::SystemType, *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(r#type),__out_0.as_mut_ptr(),__mi)}
+}
 ;
 (__ret,__out_0.assume_init())}
 }
@@ -103,6 +97,17 @@ pub fn get_keys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn locate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-resource_locators-resourcelocationmap")]impl ResourceLocationMap{#[doc="Direct (non-virtual) call to `ResourceLocationMap`'s own `get_LocatorId`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_locator_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_locator_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ResourceLocationMap`'s own `get_Keys`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_keys(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>{let __mi=Self::get_keys_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ResourceLocationMap`'s own `Locate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn locate(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,r#type: ::unity2::SystemType,locations: *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,)->bool{let __mi=Self::locate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::SystemType, *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key,r#type,locations, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-addressable_assets-resource_locators-resourcelocationmap")]impl ResourceLocationMap{#[doc="`.ctor(::unity2::Il2CppString, i32)` — overload selector"]pub fn new(id: ::unity2::Il2CppString,capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

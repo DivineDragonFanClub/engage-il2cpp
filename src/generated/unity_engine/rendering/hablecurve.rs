@@ -11,9 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/hablecurve/HableCurve_Segment.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="HableCurve.Segment")]#[parent(crate::system::object::Object)]pub struct HableCurve_Segment{#[offset(16)]#[rename(name="offsetX")]pub offset_x:f32, #[offset(20)]#[rename(name="offsetY")]pub offset_y:f32, #[offset(24)]#[rename(name="scaleX")]pub scale_x:f32, #[offset(28)]#[rename(name="scaleY")]pub scale_y:f32, #[offset(32)]#[rename(name="lnA")]pub ln_a:f32, #[offset(36)]#[rename(name="B")]pub b:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/hablecurve/HableCurve.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="HableCurve")]#[parent(crate::system::object::Object)]pub struct HableCurve{#[offset(32)]#[rename(name="segments")]pub segments: ::unity2::Array<crate::unity_engine::rendering::hablecurve::HableCurve_Segment> , #[offset(40)]#[rename(name="uniforms")]pub uniforms:crate::unity_engine::rendering::hablecurve::HableCurve_Uniforms,}
 
 
@@ -30,33 +27,13 @@ impl::unity2::IlType for HableCurve_DirectParams{fn il_type()-> &'static::unity2
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/hablecurve/HableCurve_Uniforms.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="HableCurve.Uniforms")]#[parent(crate::system::object::Object)]pub struct HableCurve_Uniforms{#[offset(16)]#[rename(name="parent")]pub parent:crate::unity_engine::rendering::hablecurve::HableCurve,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/hablecurve/HableCurve_Segment.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="HableCurve.Segment")]#[parent(crate::system::object::Object)]pub struct HableCurve_Segment{#[offset(16)]#[rename(name="offsetX")]pub offset_x:f32, #[offset(20)]#[rename(name="offsetY")]pub offset_y:f32, #[offset(24)]#[rename(name="scaleX")]pub scale_x:f32, #[offset(28)]#[rename(name="scaleY")]pub scale_y:f32, #[offset(32)]#[rename(name="lnA")]pub ln_a:f32, #[offset(36)]#[rename(name="B")]pub b:f32,}
+
 }
 
 #[cfg(feature = "unity_engine-rendering-hablecurve-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-rendering-hablecurve")]pub trait IHableCurve_SegmentMethods:IHableCurve_Segment{#[doc="`Eval(f32)` overload"]fn eval(self,x:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <HableCurve_Segment as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed500usize)as*mut u8,f32;
-(HableCurve_Segment)__receiver,(f32)::core::convert::Into::into(x))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HableCurve_Segment as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed570usize)as*mut u8,();
-(HableCurve_Segment)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-hablecurve")]impl<__T:IHableCurve_Segment>IHableCurve_SegmentMethods for __T{}
-
-#[cfg(feature="unity_engine-rendering-hablecurve")]impl HableCurve_Segment{pub fn eval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-rendering-hablecurve")]impl HableCurve_Segment{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HableCurve_Segment), ::core::stringify!(new),));
- <Self as IHableCurve_SegmentMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="unity_engine-rendering-hablecurve")]pub trait IHableCurveMethods:IHableCurve{#[doc="`get_whitePoint()` overload"]fn get_white_point(self,)->f32{unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa660usize)as*mut u8,f32;
@@ -205,12 +182,32 @@ pub fn get_sho_segment_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 this}
 }
 
+#[cfg(feature="unity_engine-rendering-hablecurve")]pub trait IHableCurve_SegmentMethods:IHableCurve_Segment{#[doc="`Eval(f32)` overload"]fn eval(self,x:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <HableCurve_Segment as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed500usize)as*mut u8,f32;
+(HableCurve_Segment)__receiver,(f32)::core::convert::Into::into(x))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HableCurve_Segment as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed570usize)as*mut u8,();
+(HableCurve_Segment)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl<__T:IHableCurve_Segment>IHableCurve_SegmentMethods for __T{}
+
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl HableCurve_Segment{pub fn eval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl HableCurve_Segment{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HableCurve_Segment), ::core::stringify!(new),));
+ <Self as IHableCurve_SegmentMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "unity_engine-rendering-hablecurve")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HableCurve_Segment;
-    pub use super::IHableCurve_Segment;
-    pub use super::IHableCurve_SegmentMethods;
     pub use super::HableCurve;
     pub use super::IHableCurve;
     pub use super::IHableCurveMethods;
@@ -218,6 +215,9 @@ pub mod prelude {
     pub use super::HableCurve_Uniforms;
     pub use super::IHableCurve_Uniforms;
     pub use super::IHableCurve_UniformsMethods;
+    pub use super::HableCurve_Segment;
+    pub use super::IHableCurve_Segment;
+    pub use super::IHableCurve_SegmentMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

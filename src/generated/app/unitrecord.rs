@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitrecord/UnitRecord.md"))]#[::unity2::class(namespace="App",name="UnitRecord")]#[parent(crate::system::object::Object)]pub struct UnitRecord{#[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="s_Names")]pub s_names: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_Keys")]pub s_keys:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unitrecord::UnitRecord_Kinds,i32> , #[static_field]#[rename(name="s_Kinds")]pub s_kinds:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::unitrecord::UnitRecord_Kinds> , #[offset(16)]#[rename(name="m_Values")]pub m_values: ::unity2::Array<i32> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitrecord/UnitRecord_DeadFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitRecord_DeadFlags{pub value:i32,}
 impl::unity2::ClassIdentity for UnitRecord_DeadFlags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="UnitRecord.DeadFlags";
@@ -27,9 +30,6 @@ impl UnitRecord_DeadFlags{pub fn encount()->Self{Self{value:1}
 pub fn exist_dead()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitrecord/UnitRecord.md"))]#[::unity2::class(namespace="App",name="UnitRecord")]#[parent(crate::system::object::Object)]pub struct UnitRecord{#[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="s_Names")]pub s_names: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_Keys")]pub s_keys:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unitrecord::UnitRecord_Kinds,i32> , #[static_field]#[rename(name="s_Kinds")]pub s_kinds:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::unitrecord::UnitRecord_Kinds> , #[offset(16)]#[rename(name="m_Values")]pub m_values: ::unity2::Array<i32> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitrecord/UnitRecord_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitRecord_Kinds{pub value:i32,}
@@ -256,10 +256,10 @@ this}
 #[cfg(feature = "app-unitrecord")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitRecord_DeadFlags;
     pub use super::UnitRecord;
     pub use super::IUnitRecord;
     pub use super::IUnitRecordMethods;
+    pub use super::UnitRecord_DeadFlags;
     pub use super::UnitRecord_Kinds;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

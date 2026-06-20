@@ -9,10 +9,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui_elements/uir/utility_2/Utility_GPUBuffer_1.md"))]#[::unity2::class(namespace="UnityEngine.UIElements.UIR",name="Utility.GPUBuffer`1")]#[parent(crate::system::object::Object)]pub struct Utility_GPUBuffer_1<T0: ::unity2::ClassIdentity>{#[rename(name="buffer")]pub buffer: ::unity2::IntPtr,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui_elements/uir/utility_2/Utility_2.md"))]#[::unity2::class(namespace="UnityEngine.UIElements.UIR",name="Utility")]#[parent(crate::system::object::Object)]pub struct Utility_2{#[static_field]#[rename(name="GraphicsResourcesRecreate")]pub graphics_resources_recreate:crate::system::action_1::Action_1<bool> , #[static_field]#[rename(name="EngineUpdate")]pub engine_update:crate::system::action::Action, #[static_field]#[rename(name="FlushPendingResources")]pub flush_pending_resources:crate::system::action::Action, #[static_field]#[rename(name="RegisterIntermediateRenderers")]pub register_intermediate_renderers:crate::system::action_1::Action_1<crate::unity_engine::camera::Camera> , #[static_field]#[rename(name="RenderNodeAdd")]pub render_node_add:crate::system::action_1::Action_1< ::unity2::IntPtr> , #[static_field]#[rename(name="RenderNodeExecute")]pub render_node_execute:crate::system::action_1::Action_1< ::unity2::IntPtr> , #[static_field]#[rename(name="RenderNodeCleanup")]pub render_node_cleanup:crate::system::action_1::Action_1< ::unity2::IntPtr> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui_elements/uir/utility_2/Utility_GPUBuffer_1.md"))]#[::unity2::class(namespace="UnityEngine.UIElements.UIR",name="Utility.GPUBuffer`1")]#[parent(crate::system::object::Object)]pub struct Utility_GPUBuffer_1<T0: ::unity2::ClassIdentity>{#[rename(name="buffer")]pub buffer: ::unity2::IntPtr,}
 
 }
 
@@ -58,10 +58,10 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 #[cfg(feature = "unity_engine-ui_elements-uir-utility_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Utility_GPUBuffer_1;
-    pub use super::IUtility_GPUBuffer_1;
     pub use super::Utility_2;
     pub use super::IUtility_2;
+    pub use super::Utility_GPUBuffer_1;
+    pub use super::IUtility_GPUBuffer_1;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

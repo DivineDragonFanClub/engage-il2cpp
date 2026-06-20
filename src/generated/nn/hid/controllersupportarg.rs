@@ -11,25 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/controllersupportarg/ControllerSupportArg.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ControllerSupportArg{pub player_count_min:u8,pub player_count_max:u8,pub enable_take_over_connection:bool,pub enable_left_justify:bool,pub enable_permit_joy_dual:bool,pub enable_single_mode:bool,pub enable_identification_color:bool,pub identification_color:crate::nn::hid::controllersupportarg::ControllerSupportArg_Color4u8Array8,pub enable_explain_text:bool,pub explain_text: ::unity2::Array<u8>,}
-impl::unity2::ClassIdentity for ControllerSupportArg{const NAMESPACE: &'static str="nn.hid";
-const NAME: &'static str="ControllerSupportArg";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ControllerSupportArg{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl ControllerSupportArg{#[inline]pub fn explain_text_size()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"ExplainTextSize");
- ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
-#[inline]pub fn set_explain_text_size(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"ExplainTextSize");
- ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/controllersupportarg/ControllerSupportArg_Color4u8Array8.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ControllerSupportArg_Color4u8Array8{}
 impl::unity2::ClassIdentity for ControllerSupportArg_Color4u8Array8{const NAMESPACE: &'static str="nn.hid";
 const NAME: &'static str="ControllerSupportArg.Color4u8Array8";
@@ -48,22 +29,29 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"_Length");
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/controllersupportarg/ControllerSupportArg.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ControllerSupportArg{pub player_count_min:u8,pub player_count_max:u8,pub enable_take_over_connection:bool,pub enable_left_justify:bool,pub enable_permit_joy_dual:bool,pub enable_single_mode:bool,pub enable_identification_color:bool,pub identification_color:crate::nn::hid::controllersupportarg::ControllerSupportArg_Color4u8Array8,pub enable_explain_text:bool,pub explain_text: ::unity2::Array<u8>,}
+impl::unity2::ClassIdentity for ControllerSupportArg{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="ControllerSupportArg";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ControllerSupportArg{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ControllerSupportArg{#[inline]pub fn explain_text_size()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"ExplainTextSize");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_explain_text_size(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"ExplainTextSize");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+}
+
 }
 
 #[cfg(feature = "nn-hid-controllersupportarg-types")]
 pub use __types::*;
-
-#[cfg(feature="nn-hid-controllersupportarg")]impl ControllerSupportArg{#[doc="`SetDefault()` overload"]pub fn set_default(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253ef40usize)as*mut u8,();
-(*mut ControllerSupportArg)self as*mut ControllerSupportArg)}
-}
-#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253efe0usize)as*mut u8, ::unity2::Il2CppString;
-(*mut ControllerSupportArg)self as*mut ControllerSupportArg)}
-}
-}
-
-#[cfg(feature="nn-hid-controllersupportarg")]impl ControllerSupportArg{pub fn set_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
 
 #[cfg(feature="nn-hid-controllersupportarg")]impl ControllerSupportArg_Color4u8Array8{#[doc="`get_Length()` overload"]pub fn get_length(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19cbe10usize)as*mut u8,i32;
 (*mut ControllerSupportArg_Color4u8Array8)self as*mut ControllerSupportArg_Color4u8Array8)}
@@ -97,11 +85,23 @@ pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
+#[cfg(feature="nn-hid-controllersupportarg")]impl ControllerSupportArg{#[doc="`SetDefault()` overload"]pub fn set_default(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253ef40usize)as*mut u8,();
+(*mut ControllerSupportArg)self as*mut ControllerSupportArg)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253efe0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut ControllerSupportArg)self as*mut ControllerSupportArg)}
+}
+}
+
+#[cfg(feature="nn-hid-controllersupportarg")]impl ControllerSupportArg{pub fn set_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
 #[cfg(feature = "nn-hid-controllersupportarg")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ControllerSupportArg;
     pub use super::ControllerSupportArg_Color4u8Array8;
+    pub use super::ControllerSupportArg;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

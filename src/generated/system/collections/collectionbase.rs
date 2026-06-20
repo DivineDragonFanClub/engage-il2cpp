@@ -16,249 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-collectionbase-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-collectionbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CollectionBase_unity2_raw{use super:: * ;
-pub unsafe fn get_count(this:CollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"get_Count",));
-let inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn clear(this:CollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"Clear",));
-let inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn remove_at(this:CollectionBase,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"RemoveAt",));
-let inner:extern "C" fn(CollectionBase,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,__mi)}
-pub unsafe fn system_collections_i_list_get_is_read_only(this:CollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.get_IsReadOnly",));
-let inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_collection_get_is_synchronized(this:CollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_IsSynchronized",));
-let inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_collection_get_sync_root(this:CollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_SyncRoot",));
-let inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_collection_copy_to(this:CollectionBase,array: ::unity2::IlInstance,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.CopyTo",));
-let inner:extern "C" fn(CollectionBase, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,index,__mi)}
-pub unsafe fn system_collections_i_list_get_item(this:CollectionBase,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.get_Item",));
-let inner:extern "C" fn(CollectionBase,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,__mi)}
-pub unsafe fn system_collections_i_list_set_item(this:CollectionBase,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.set_Item",));
-let inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,value,__mi)}
-pub unsafe fn system_collections_i_list_contains(this:CollectionBase,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.Contains",));
-let inner:extern "C" fn(CollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn system_collections_i_list_add(this:CollectionBase,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.Add",));
-let inner:extern "C" fn(CollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn system_collections_i_list_remove(this:CollectionBase,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.Remove",));
-let inner:extern "C" fn(CollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn system_collections_i_list_index_of(this:CollectionBase,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.IndexOf",));
-let inner:extern "C" fn(CollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn system_collections_i_list_insert(this:CollectionBase,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.Insert",));
-let inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,value,__mi)}
-pub unsafe fn get_enumerator(this:CollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
-let inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_set(this:CollectionBase,index:i32,old_value:crate::system::object::Object,new_value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnSet",));
-let inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,old_value,new_value,__mi)}
-pub unsafe fn on_insert(this:CollectionBase,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnInsert",));
-let inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,value,__mi)}
-pub unsafe fn on_clear(this:CollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnClear",));
-let inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_remove(this:CollectionBase,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnRemove",));
-let inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,value,__mi)}
-pub unsafe fn on_validate(this:CollectionBase,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnValidate",));
-let inner:extern "C" fn(CollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn on_set_complete(this:CollectionBase,index:i32,old_value:crate::system::object::Object,new_value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",24usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnSetComplete",));
-let inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,old_value,new_value,__mi)}
-pub unsafe fn on_insert_complete(this:CollectionBase,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnInsertComplete",));
-let inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,value,__mi)}
-pub unsafe fn on_clear_complete(this:CollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnClearComplete",));
-let inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_remove_complete(this:CollectionBase,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnRemoveComplete",));
-let inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,value,__mi)}
-}
-
 #[cfg(feature="system-collections-collectionbase")]pub trait ICollectionBaseMethods:ICollectionBase{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x31da2e0usize)as*mut u8,();
 (CollectionBase)__receiver)}
@@ -272,76 +29,292 @@ inner(this,index,value,__mi)}
 (CollectionBase)__receiver)}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let __inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::clear(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"Clear",));
+let __inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::remove_at(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"RemoveAt",));
+let __inner:extern "C" fn(CollectionBase,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index),__mi)}
+}
 }
 #[doc="`System.Collections.IList.get_IsReadOnly()` overload"]fn system_collections_i_list_get_is_read_only(self,)->bool{unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_list_get_is_read_only(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.get_IsReadOnly",));
+let __inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.ICollection.get_IsSynchronized()` overload"]fn system_collections_i_collection_get_is_synchronized(self,)->bool{unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_collection_get_is_synchronized(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_IsSynchronized",));
+let __inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.ICollection.get_SyncRoot()` overload"]fn system_collections_i_collection_get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_collection_get_sync_root(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_SyncRoot",));
+let __inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]fn system_collections_i_collection_copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_collection_copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.CopyTo",));
+let __inner:extern "C" fn(CollectionBase, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index),__mi)}
+}
 }
 #[doc="`System.Collections.IList.get_Item(i32)` overload"]fn system_collections_i_list_get_item(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_list_get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.get_Item",));
+let __inner:extern "C" fn(CollectionBase,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index),__mi)}
+}
 }
 #[doc="`System.Collections.IList.set_Item(i32, crate::system::object::Object)` overload"]fn system_collections_i_list_set_item(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_list_set_item(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.set_Item",));
+let __inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`System.Collections.IList.Contains(crate::system::object::Object)` overload"]fn system_collections_i_list_contains(self,value:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_list_contains(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.Contains",));
+let __inner:extern "C" fn(CollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`System.Collections.IList.Add(crate::system::object::Object)` overload"]fn system_collections_i_list_add(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_list_add(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.Add",));
+let __inner:extern "C" fn(CollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`System.Collections.IList.Remove(crate::system::object::Object)` overload"]fn system_collections_i_list_remove(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_list_remove(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.Remove",));
+let __inner:extern "C" fn(CollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`System.Collections.IList.IndexOf(crate::system::object::Object)` overload"]fn system_collections_i_list_index_of(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_list_index_of(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.IndexOf",));
+let __inner:extern "C" fn(CollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`System.Collections.IList.Insert(i32, crate::system::object::Object)` overload"]fn system_collections_i_list_insert(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::system_collections_i_list_insert(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.IList.Insert",));
+let __inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let __inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSet(i32, crate::system::object::Object, crate::system::object::Object)` overload"]fn on_set(self,index:impl::core::convert::Into<i32> ,old_value:impl::core::convert::Into<crate::system::object::Object> ,new_value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::on_set(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(old_value), ::core::convert::Into::into(new_value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnSet",));
+let __inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(old_value), ::core::convert::Into::into(new_value),__mi)}
+}
 }
 #[doc="`OnInsert(i32, crate::system::object::Object)` overload"]fn on_insert(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::on_insert(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnInsert",));
+let __inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`OnClear()` overload"]fn on_clear(self,)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::on_clear(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnClear",));
+let __inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnRemove(i32, crate::system::object::Object)` overload"]fn on_remove(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::on_remove(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnRemove",));
+let __inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`OnValidate(crate::system::object::Object)` overload"]fn on_validate(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::on_validate(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnValidate",));
+let __inner:extern "C" fn(CollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`OnSetComplete(i32, crate::system::object::Object, crate::system::object::Object)` overload"]fn on_set_complete(self,index:impl::core::convert::Into<i32> ,old_value:impl::core::convert::Into<crate::system::object::Object> ,new_value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::on_set_complete(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(old_value), ::core::convert::Into::into(new_value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnSetComplete",));
+let __inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(old_value), ::core::convert::Into::into(new_value),__mi)}
+}
 }
 #[doc="`OnInsertComplete(i32, crate::system::object::Object)` overload"]fn on_insert_complete(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::on_insert_complete(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnInsertComplete",));
+let __inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`OnClearComplete()` overload"]fn on_clear_complete(self,)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::on_clear_complete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnClearComplete",));
+let __inner:extern "C" fn(CollectionBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnRemoveComplete(i32, crate::system::object::Object)` overload"]fn on_remove_complete(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CollectionBase_unity2_raw::on_remove_complete(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <CollectionBase as::unity2::ClassIdentity> ::NAME,"OnRemoveComplete",));
+let __inner:extern "C" fn(CollectionBase,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -374,6 +347,80 @@ pub fn on_set_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn on_insert_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
 pub fn on_clear_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
 pub fn on_remove_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+}
+
+#[cfg(feature="system-collections-collectionbase")]impl CollectionBase{#[doc="Direct (non-virtual) call to `CollectionBase`'s own `get_Count`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `Clear`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clear(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::clear_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `RemoveAt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn remove_at(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,)->(){let __mi=Self::remove_at_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.IList.get_IsReadOnly`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_list_get_is_read_only(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::system_collections_i_list_get_is_read_only_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.ICollection.get_IsSynchronized`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_get_is_synchronized(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::system_collections_i_collection_get_is_synchronized_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.ICollection.get_SyncRoot`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_get_sync_root(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::system_collections_i_collection_get_sync_root_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.ICollection.CopyTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_copy_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::IlInstance,index:i32,)->(){let __mi=Self::system_collections_i_collection_copy_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.IList.get_Item`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_list_get_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,)->crate::system::object::Object{let __mi=Self::system_collections_i_list_get_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.IList.set_Item`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_list_set_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,value:crate::system::object::Object,)->(){let __mi=Self::system_collections_i_list_set_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.IList.Contains`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_list_contains(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::system::object::Object,)->bool{let __mi=Self::system_collections_i_list_contains_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.IList.Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_list_add(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::system::object::Object,)->i32{let __mi=Self::system_collections_i_list_add_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.IList.Remove`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_list_remove(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::system::object::Object,)->(){let __mi=Self::system_collections_i_list_remove_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.IList.IndexOf`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_list_index_of(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::system::object::Object,)->i32{let __mi=Self::system_collections_i_list_index_of_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `System.Collections.IList.Insert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_list_insert(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,value:crate::system::object::Object,)->(){let __mi=Self::system_collections_i_list_insert_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `OnSet`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_set(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,old_value:crate::system::object::Object,new_value:crate::system::object::Object,)->(){let __mi=Self::on_set_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,old_value,new_value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `OnInsert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_insert(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,value:crate::system::object::Object,)->(){let __mi=Self::on_insert_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `OnClear`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_clear(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_clear_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `OnRemove`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_remove(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,value:crate::system::object::Object,)->(){let __mi=Self::on_remove_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `OnValidate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_validate(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::system::object::Object,)->(){let __mi=Self::on_validate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `OnSetComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_set_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,old_value:crate::system::object::Object,new_value:crate::system::object::Object,)->(){let __mi=Self::on_set_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,old_value,new_value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `OnInsertComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_insert_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,value:crate::system::object::Object,)->(){let __mi=Self::on_insert_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `OnClearComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_clear_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_clear_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CollectionBase`'s own `OnRemoveComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_remove_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,value:crate::system::object::Object,)->(){let __mi=Self::on_remove_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-collections-collectionbase")]impl CollectionBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

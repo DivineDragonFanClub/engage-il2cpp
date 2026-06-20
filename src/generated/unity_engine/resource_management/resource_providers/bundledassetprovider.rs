@@ -204,17 +204,7 @@ this}
 }
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-bundledassetprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BundledAssetProvider_unity2_raw{use super:: * ;
-pub unsafe fn provide(this:BundledAssetProvider,provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <BundledAssetProvider as::unity2::ClassIdentity> ::NAME,"Provide",));
-let inner:extern "C" fn(BundledAssetProvider,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,provide_handle,__mi)}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<BundledAssetProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
 );
@@ -227,7 +217,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-bundledassetprovider")]pub trait IBundledAssetProviderMethods:IBundledAssetProvider{#[doc="`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn provide(self,provide_handle:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <BundledAssetProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BundledAssetProvider_unity2_raw::provide(__receiver, ::core::convert::Into::into(provide_handle), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <BundledAssetProvider as::unity2::ClassIdentity> ::NAME,"Provide",));
+let __inner:extern "C" fn(BundledAssetProvider,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(provide_handle),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BundledAssetProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__BundledAssetProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
@@ -239,6 +238,11 @@ __BundledAssetProvider_unity2_raw::provide(__receiver, ::core::convert::Into::in
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-bundledassetprovider")]impl BundledAssetProvider{pub fn provide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-bundledassetprovider")]impl BundledAssetProvider{#[doc="Direct (non-virtual) call to `BundledAssetProvider`'s own `Provide`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn provide(this:impl::core::convert::Into< ::unity2::IlInstance> ,provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,)->(){let __mi=Self::provide_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),provide_handle, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-bundledassetprovider")]impl BundledAssetProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

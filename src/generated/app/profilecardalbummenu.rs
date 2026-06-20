@@ -35,50 +35,89 @@ pub fn cancel()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbummenu/ProfileCardAlbumMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardAlbumMenu{#[offset(112)]#[rename(name="m_ChangeProfileEventHandler")]pub m_change_profile_event_handler:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler, #[offset(128)]#[rename(name="m_CardRoot")]pub m_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(136)]#[rename(name="m_ProfileListIndex")]pub m_profile_list_index:i32, #[offset(144)]#[rename(name="m_ProfileCard")]pub m_profile_card:crate::app::profilecard::ProfileCard, #[offset(152)]#[rename(name="m_result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(156)]#[rename(name="m_CloseCalled")]pub m_close_called:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbummenu/ProfileCardAlbumMenu_ChangeProfileEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumMenu.ChangeProfileEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardAlbumMenu_ChangeProfileEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbummenu/ProfileCardAlbumMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardAlbumMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbummenu/ProfileCardAlbumMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardAlbumMenu{#[offset(112)]#[rename(name="m_ChangeProfileEventHandler")]pub m_change_profile_event_handler:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler, #[offset(128)]#[rename(name="m_CardRoot")]pub m_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(136)]#[rename(name="m_ProfileListIndex")]pub m_profile_list_index:i32, #[offset(144)]#[rename(name="m_ProfileCard")]pub m_profile_card:crate::app::profilecard::ProfileCard, #[offset(152)]#[rename(name="m_result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(156)]#[rename(name="m_CloseCalled")]pub m_close_called:bool,}
 
 }
 
 #[cfg(feature = "app-profilecardalbummenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-profilecardalbummenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardAlbumMenu_unity2_raw{use super:: * ;
-pub unsafe fn open_anime(this:ProfileCardAlbumMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-profilecardalbummenu")]pub trait IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods:IProfileCardAlbumMenu_ChangeProfileEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_ChangeProfileEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2266ba0usize)as*mut u8,();
+(ProfileCardAlbumMenu_ChangeProfileEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_ChangeProfileEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <ProfileCardAlbumMenu as::unity2::ClassIdentity> ::NAME,"OpenAnime",));
-let inner:extern "C" fn(ProfileCardAlbumMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <ProfileCardAlbumMenu_ChangeProfileEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(ProfileCardAlbumMenu_ChangeProfileEventHandler,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn tick_input(this:ProfileCardAlbumMenu,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver, ::core::convert::Into::into(index),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-profilecardalbummenu")]impl<__T:IProfileCardAlbumMenu_ChangeProfileEventHandler>IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_ChangeProfileEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_ChangeProfileEventHandler{#[doc="Direct (non-virtual) call to `ProfileCardAlbumMenu_ChangeProfileEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_ChangeProfileEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardAlbumMenu_ChangeProfileEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-profilecardalbummenu")]pub trait IProfileCardAlbumMenu_DecideEventHandlerMethods:IProfileCardAlbumMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2266e90usize)as*mut u8,();
+(ProfileCardAlbumMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2)` overload"]fn invoke(self,result2:impl::core::convert::Into<crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",19usize,__vt.len(), <ProfileCardAlbumMenu as::unity2::ClassIdentity> ::NAME,"TickInput",));
-let inner:extern "C" fn(ProfileCardAlbumMenu, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <ProfileCardAlbumMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(ProfileCardAlbumMenu_DecideEventHandler,crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:ProfileCardAlbumMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <ProfileCardAlbumMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(ProfileCardAlbumMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver, ::core::convert::Into::into(result2),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-profilecardalbummenu")]impl<__T:IProfileCardAlbumMenu_DecideEventHandler>IProfileCardAlbumMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `ProfileCardAlbumMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,result2:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),result2, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardAlbumMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardAlbumMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardroot::ProfileCardRoot, i32, crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler, crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,profiled_card_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,initial_profile_list_index:impl::core::convert::Into<i32> ,change_profile_event_handler:impl::core::convert::Into<crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler>)->crate::app::profilecardalbummenu::ProfileCardAlbumMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x230a8c0usize)as*mut u8,crate::app::profilecardalbummenu::ProfileCardAlbumMenu;
@@ -99,14 +138,32 @@ inner(this,__mi)}
 (ProfileCardAlbumMenu)__receiver)}
 }
 #[doc="`OpenAnime()` overload"]fn open_anime(self,)->(){unsafe{let __receiver= <ProfileCardAlbumMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardAlbumMenu_unity2_raw::open_anime(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ProfileCardAlbumMenu as::unity2::ClassIdentity> ::NAME,"OpenAnime",));
+let __inner:extern "C" fn(ProfileCardAlbumMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <ProfileCardAlbumMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x230acf0usize)as*mut u8,();
 (ProfileCardAlbumMenu)__receiver)}
 }
 #[doc="`TickInput()` overload"]fn tick_input(self,)->bool{unsafe{let __receiver= <ProfileCardAlbumMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardAlbumMenu_unity2_raw::tick_input(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <ProfileCardAlbumMenu as::unity2::ClassIdentity> ::NAME,"TickInput",));
+let __inner:extern "C" fn(ProfileCardAlbumMenu, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsSwitchingPages()` overload"]fn is_switching_pages(self,)->bool{unsafe{let __receiver= <ProfileCardAlbumMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x230ade0usize)as*mut u8,bool;
@@ -157,7 +214,16 @@ __ProfileCardAlbumMenu_unity2_raw::tick_input(__receiver, ::core::option::Option
 (ProfileCardAlbumMenu)__receiver)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProfileCardAlbumMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardAlbumMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ProfileCardAlbumMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(ProfileCardAlbumMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -185,6 +251,17 @@ pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 }
 
+#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu{#[doc="Direct (non-virtual) call to `ProfileCardAlbumMenu`'s own `OpenAnime`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn open_anime(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::open_anime_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ProfileCardAlbumMenu`'s own `TickInput`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn tick_input(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::tick_input_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ProfileCardAlbumMenu`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu{#[doc="`.ctor(crate::app::profilecardroot::ProfileCardRoot, i32, crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler, crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler)` — overload selector"]pub fn new(card_root:crate::app::profilecardroot::ProfileCardRoot,initial_profile_list_index:i32,change_profile_event_handler:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_ChangeProfileEventHandler,decide_event_handler:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(ProfileCardAlbumMenu), ::core::stringify!(new),));
@@ -192,89 +269,19 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-profilecardalbummenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardAlbumMenu_ChangeProfileEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:ProfileCardAlbumMenu_ChangeProfileEventHandler,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <ProfileCardAlbumMenu_ChangeProfileEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(ProfileCardAlbumMenu_ChangeProfileEventHandler,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,__mi)}
-}
-
-#[cfg(feature="app-profilecardalbummenu")]pub trait IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods:IProfileCardAlbumMenu_ChangeProfileEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_ChangeProfileEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2266ba0usize)as*mut u8,();
-(ProfileCardAlbumMenu_ChangeProfileEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32)` overload"]fn invoke(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_ChangeProfileEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardAlbumMenu_ChangeProfileEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-profilecardalbummenu")]impl<__T:IProfileCardAlbumMenu_ChangeProfileEventHandler>IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_ChangeProfileEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_ChangeProfileEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardAlbumMenu_ChangeProfileEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-profilecardalbummenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardAlbumMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:ProfileCardAlbumMenu_DecideEventHandler,result2:crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <ProfileCardAlbumMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(ProfileCardAlbumMenu_DecideEventHandler,crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,result2,__mi)}
-}
-
-#[cfg(feature="app-profilecardalbummenu")]pub trait IProfileCardAlbumMenu_DecideEventHandlerMethods:IProfileCardAlbumMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2266e90usize)as*mut u8,();
-(ProfileCardAlbumMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2)` overload"]fn invoke(self,result2:impl::core::convert::Into<crate::app::profilecardalbummenu::ProfileCardAlbumMenu_Result2>)->(){unsafe{let __receiver= <ProfileCardAlbumMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardAlbumMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result2), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-profilecardalbummenu")]impl<__T:IProfileCardAlbumMenu_DecideEventHandler>IProfileCardAlbumMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardalbummenu")]impl ProfileCardAlbumMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardAlbumMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardAlbumMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-profilecardalbummenu")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ProfileCardAlbumMenu_Result2;
-    pub use super::ProfileCardAlbumMenu;
-    pub use super::IProfileCardAlbumMenu;
-    pub use super::IProfileCardAlbumMenuMethods;
     pub use super::ProfileCardAlbumMenu_ChangeProfileEventHandler;
     pub use super::IProfileCardAlbumMenu_ChangeProfileEventHandler;
     pub use super::IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods;
     pub use super::ProfileCardAlbumMenu_DecideEventHandler;
     pub use super::IProfileCardAlbumMenu_DecideEventHandler;
     pub use super::IProfileCardAlbumMenu_DecideEventHandlerMethods;
+    pub use super::ProfileCardAlbumMenu;
+    pub use super::IProfileCardAlbumMenu;
+    pub use super::IProfileCardAlbumMenuMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

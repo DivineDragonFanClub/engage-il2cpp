@@ -21,26 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/charactermove/CharacterMove_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CharacterMove_State{pub value:i32,}
-impl::unity2::ClassIdentity for CharacterMove_State{const NAMESPACE: &'static str="Combat";
-const NAME: &'static str="CharacterMove.State";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for CharacterMove_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl CharacterMove_State{pub fn waiting()->Self{Self{value:0}
-}
-pub fn running()->Self{Self{value:1}
-}
-pub fn braking()->Self{Self{value:2}
-}
-pub fn jumping()->Self{Self{value:3}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/charactermove/CharacterMove_StartMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CharacterMove_StartMode{pub value:i32,}
 impl::unity2::ClassIdentity for CharacterMove_StartMode{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="CharacterMove.StartMode";
@@ -60,6 +40,26 @@ pub fn from_max_speed()->Self{Self{value:2}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/charactermove/CharacterMove.md"))]#[::unity2::class(namespace="Combat",name="CharacterMove")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterMove{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(32)]#[rename(name="MaxRunSpeedKMPS")]pub max_run_speed_kmps:f32, #[offset(36)]#[rename(name="TimeToMaxSpeed")]pub time_to_max_speed:f32, #[offset(40)]#[rename(name="TimeToZero")]pub time_to_zero:f32, #[offset(44)]#[rename(name="HeightSmoothRatio")]pub height_smooth_ratio:f32, #[offset(48)]#[rename(name="StairInterpolationLimit")]pub stair_interpolation_limit:f32, #[offset(56)]#[rename(name="m_State")]pub m_state:crate::combat::charactermove::CharacterMove_State, #[offset(60)]#[rename(name="m_Goal")]pub m_goal:crate::combat::fxz::FXZ, #[offset(68)]#[rename(name="m_Velocity")]pub m_velocity:f32, #[offset(72)]#[rename(name="m_PrevY")]pub m_prev_y:f32, #[offset(80)]#[rename(name="m_Jump")]pub m_jump:crate::combat::characterjump::CharacterJump,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/charactermove/CharacterMove_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CharacterMove_State{pub value:i32,}
+impl::unity2::ClassIdentity for CharacterMove_State{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="CharacterMove.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CharacterMove_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CharacterMove_State{pub fn waiting()->Self{Self{value:0}
+}
+pub fn running()->Self{Self{value:1}
+}
+pub fn braking()->Self{Self{value:2}
+}
+pub fn jumping()->Self{Self{value:3}
+}
+}
 
 }
 
@@ -192,11 +192,11 @@ this}
 #[cfg(feature = "combat-charactermove")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CharacterMove_State;
     pub use super::CharacterMove_StartMode;
     pub use super::CharacterMove;
     pub use super::ICharacterMove;
     pub use super::ICharacterMoveMethods;
+    pub use super::CharacterMove_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

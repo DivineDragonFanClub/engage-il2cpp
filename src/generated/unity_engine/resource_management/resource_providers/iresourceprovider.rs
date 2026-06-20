@@ -14,86 +14,77 @@ mod __types {
 #[cfg(feature = "unity_engine-resource_management-resource_providers-iresourceprovider-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resource_management-resource_providers-iresourceprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IResourceProvider_unity2_raw{use super:: * ;
-pub unsafe fn get_provider_id(this:IResourceProvider,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-resource_management-resource_providers-iresourceprovider")]pub trait IIResourceProviderMethods:IIResourceProvider{#[doc="`get_ProviderId()` overload"]fn get_provider_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"get_ProviderId",));
-let inner:extern "C" fn(IResourceProvider, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceProvider, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default_type(this:IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetDefaultType(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn get_default_type(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)-> ::unity2::SystemType{unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"GetDefaultType",));
-let inner:extern "C" fn(IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,location,__mi)}
-pub unsafe fn can_provide(this:IResourceProvider,r#type: ::unity2::SystemType,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(location),__mi)}
+}
+}
+#[doc="`CanProvide(::unity2::SystemType, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn can_provide(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->bool{unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"CanProvide",));
-let inner:extern "C" fn(IResourceProvider, ::unity2::SystemType,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceProvider, ::unity2::SystemType,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,r#type,location,__mi)}
-pub unsafe fn provide(this:IResourceProvider,provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(location),__mi)}
+}
+}
+#[doc="`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn provide(self,provide_handle:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",3usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"Provide",));
-let inner:extern "C" fn(IResourceProvider,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceProvider,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,provide_handle,__mi)}
-pub unsafe fn release(this:IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,asset:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(provide_handle),__mi)}
+}
+}
+#[doc="`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]fn release(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,asset:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"Release",));
-let inner:extern "C" fn(IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,location,asset,__mi)}
-pub unsafe fn get_behaviour_flags(this:IResourceProvider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(location), ::core::convert::Into::into(asset),__mi)}
+}
+}
+#[doc="`get_BehaviourFlags()` overload"]fn get_behaviour_flags(self,)->crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags{unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"get_BehaviourFlags",));
-let inner:extern "C" fn(IResourceProvider, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceProvider, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-iresourceprovider")]pub trait IIResourceProviderMethods:IIResourceProvider{#[doc="`get_ProviderId()` overload"]fn get_provider_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceProvider_unity2_raw::get_provider_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetDefaultType(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn get_default_type(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)-> ::unity2::SystemType{unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceProvider_unity2_raw::get_default_type(__receiver, ::core::convert::Into::into(location), ::core::option::Option::None)}
-}
-#[doc="`CanProvide(::unity2::SystemType, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn can_provide(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->bool{unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceProvider_unity2_raw::can_provide(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(location), ::core::option::Option::None)}
-}
-#[doc="`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn provide(self,provide_handle:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceProvider_unity2_raw::provide(__receiver, ::core::convert::Into::into(provide_handle), ::core::option::Option::None)}
-}
-#[doc="`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]fn release(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,asset:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceProvider_unity2_raw::release(__receiver, ::core::convert::Into::into(location), ::core::convert::Into::into(asset), ::core::option::Option::None)}
-}
-#[doc="`get_BehaviourFlags()` overload"]fn get_behaviour_flags(self,)->crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags{unsafe{let __receiver= <IResourceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceProvider_unity2_raw::get_behaviour_flags(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -105,6 +96,26 @@ pub fn can_provide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn provide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn get_behaviour_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-iresourceprovider")]impl IResourceProvider{#[doc="Direct (non-virtual) call to `IResourceProvider`'s own `get_ProviderId`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_provider_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_provider_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceProvider`'s own `GetDefaultType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,)-> ::unity2::SystemType{let __mi=Self::get_default_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),location, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceProvider`'s own `CanProvide`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn can_provide(this:impl::core::convert::Into< ::unity2::IlInstance> ,r#type: ::unity2::SystemType,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,)->bool{let __mi=Self::can_provide_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),r#type,location, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceProvider`'s own `Provide`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn provide(this:impl::core::convert::Into< ::unity2::IlInstance> ,provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,)->(){let __mi=Self::provide_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),provide_handle, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceProvider`'s own `Release`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn release(this:impl::core::convert::Into< ::unity2::IlInstance> ,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,asset:crate::system::object::Object,)->(){let __mi=Self::release_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),location,asset, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceProvider`'s own `get_BehaviourFlags`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_behaviour_flags(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags{let __mi=Self::get_behaviour_flags_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-iresourceprovider")]

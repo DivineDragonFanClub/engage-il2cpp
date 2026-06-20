@@ -26,51 +26,45 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-helpitemgodname-types")]
 pub use __types::*;
 
-#[cfg(feature="app-helpitemgodname")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HelpItemGodName_unity2_raw{use super:: * ;
-pub unsafe fn get_help_item_type(this:HelpItemGodName,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::helpmanager::HelpManager_HelpItemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-helpitemgodname")]pub trait IHelpItemGodNameMethods:IHelpItemGodName{#[doc="`get_HelpItemType()` overload"]fn get_help_item_type(self,)->crate::app::helpmanager::HelpManager_HelpItemType{unsafe{let __receiver= <HelpItemGodName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <HelpItemGodName as::unity2::ClassIdentity> ::NAME,"get_HelpItemType",));
-let inner:extern "C" fn(HelpItemGodName, ::unity2::OptionalMethod,)->crate::app::helpmanager::HelpManager_HelpItemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(HelpItemGodName, ::unity2::OptionalMethod,)->crate::app::helpmanager::HelpManager_HelpItemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_valid(this:HelpItemGodName,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <HelpItemGodName as::unity2::ClassIdentity> ::NAME,"IsValid",));
-let inner:extern "C" fn(HelpItemGodName, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_contents(this:HelpItemGodName,setter:crate::app::helpparamsetter::HelpParamSetter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <HelpItemGodName as::unity2::ClassIdentity> ::NAME,"SetContents",));
-let inner:extern "C" fn(HelpItemGodName,crate::app::helpparamsetter::HelpParamSetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,setter,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-helpitemgodname")]pub trait IHelpItemGodNameMethods:IHelpItemGodName{#[doc="`get_HelpItemType()` overload"]fn get_help_item_type(self,)->crate::app::helpmanager::HelpManager_HelpItemType{unsafe{let __receiver= <HelpItemGodName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HelpItemGodName_unity2_raw::get_help_item_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetData(crate::app::goddata::GodData)` overload"]fn set_data(self,god:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <HelpItemGodName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x297d3a0usize)as*mut u8,();
 (HelpItemGodName)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(god))}
 }
 #[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemGodName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HelpItemGodName_unity2_raw::is_valid(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <HelpItemGodName as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let __inner:extern "C" fn(HelpItemGodName, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemGodName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HelpItemGodName_unity2_raw::set_contents(__receiver, ::core::convert::Into::into(setter), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HelpItemGodName as::unity2::ClassIdentity> ::NAME,"SetContents",));
+let __inner:extern "C" fn(HelpItemGodName,crate::app::helpparamsetter::HelpParamSetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(setter),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemGodName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x297d790usize)as*mut u8,();
@@ -85,6 +79,17 @@ pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn set_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-helpitemgodname")]impl HelpItemGodName{#[doc="Direct (non-virtual) call to `HelpItemGodName`'s own `get_HelpItemType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_item_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::helpmanager::HelpManager_HelpItemType{let __mi=Self::get_help_item_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::helpmanager::HelpManager_HelpItemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HelpItemGodName`'s own `IsValid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_valid(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_valid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HelpItemGodName`'s own `SetContents`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_contents(this:impl::core::convert::Into< ::unity2::IlInstance> ,setter:crate::app::helpparamsetter::HelpParamSetter,)->(){let __mi=Self::set_contents_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::helpparamsetter::HelpParamSetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),setter, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-helpitemgodname")]impl HelpItemGodName{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

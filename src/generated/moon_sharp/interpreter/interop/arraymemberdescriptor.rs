@@ -41,16 +41,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ArrayMemberDescriptor as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn prepare_for_wiring(this:ArrayMemberDescriptor,t:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <ArrayMemberDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",));
-let inner:extern "C" fn(ArrayMemberDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_build_array_indices{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<ArrayMemberDescriptor as::unity2::ClassIdentity> ::class(),"BuildArrayIndices",2,param_types,true,)}
@@ -103,7 +93,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (ArrayMemberDescriptor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(is_setter))}
 }
 #[doc="`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]fn prepare_for_wiring(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <ArrayMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ArrayMemberDescriptor_unity2_raw::prepare_for_wiring(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <ArrayMemberDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",));
+let __inner:extern "C" fn(ArrayMemberDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 }
 
@@ -115,6 +114,11 @@ pub fn prepare_for_wiring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn build_array_indices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn array_indexer_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn array_indexer_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-arraymemberdescriptor")]impl ArrayMemberDescriptor{#[doc="Direct (non-virtual) call to `ArrayMemberDescriptor`'s own `PrepareForWiring`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn prepare_for_wiring(this:impl::core::convert::Into< ::unity2::IlInstance> ,t:crate::moon_sharp::interpreter::table::Table,)->(){let __mi=Self::prepare_for_wiring_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-arraymemberdescriptor")]impl ArrayMemberDescriptor{#[doc="`.ctor(::unity2::Il2CppString, bool, ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,is_setter:bool,indexer_params: ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

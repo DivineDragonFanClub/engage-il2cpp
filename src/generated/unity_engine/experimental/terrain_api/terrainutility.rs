@@ -22,9 +22,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.TerrainAPI",name="TerrainUtility.TerrainMap")]#[parent(crate::system::object::Object)]pub struct TerrainUtility_TerrainMap{#[offset(16)]#[rename(name="m_patchSize")]pub m_patch_size:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="m_errorCode")]pub m_error_code:crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_ErrorCode, #[offset(32)]#[rename(name="m_terrainTiles")]pub m_terrain_tiles:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TileCoord,crate::unity_engine::terrain::Terrain> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TerrainFilter.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.TerrainAPI",name="TerrainUtility.TerrainMap.TerrainFilter")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct TerrainUtility_TerrainMap_TerrainFilter{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_ErrorCode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TerrainUtility_TerrainMap_ErrorCode{pub value:i32,}
 impl::unity2::ClassIdentity for TerrainUtility_TerrainMap_ErrorCode{const NAMESPACE: &'static str="UnityEngine.Experimental.TerrainAPI";
 const NAME: &'static str="TerrainUtility.TerrainMap.ErrorCode";
@@ -43,6 +40,9 @@ pub fn size_mismatch()->Self{Self{value:4}
 pub fn edge_alignment_mismatch()->Self{Self{value:8}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TerrainFilter.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.TerrainAPI",name="TerrainUtility.TerrainMap.TerrainFilter")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct TerrainUtility_TerrainMap_TerrainFilter{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.TerrainAPI",name="TerrainUtility")]#[parent(crate::system::object::Object)]pub struct TerrainUtility{}
@@ -119,25 +119,21 @@ pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
-#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TerrainUtility_TerrainMap_TerrainFilter_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:TerrainUtility_TerrainMap_TerrainFilter,terrain:crate::unity_engine::terrain::Terrain,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <TerrainUtility_TerrainMap_TerrainFilter as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(TerrainUtility_TerrainMap_TerrainFilter,crate::unity_engine::terrain::Terrain, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,terrain,__mi)}
-}
-
 #[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]pub trait ITerrainUtility_TerrainMap_TerrainFilterMethods:ITerrainUtility_TerrainMap_TerrainFilter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TerrainUtility_TerrainMap_TerrainFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2a390usize)as*mut u8,();
 (TerrainUtility_TerrainMap_TerrainFilter)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::terrain::Terrain)` overload"]fn invoke(self,terrain:impl::core::convert::Into<crate::unity_engine::terrain::Terrain>)->bool{unsafe{let __receiver= <TerrainUtility_TerrainMap_TerrainFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TerrainUtility_TerrainMap_TerrainFilter_unity2_raw::invoke(__receiver, ::core::convert::Into::into(terrain), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TerrainUtility_TerrainMap_TerrainFilter as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(TerrainUtility_TerrainMap_TerrainFilter,crate::unity_engine::terrain::Terrain, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(terrain),__mi)}
+}
 }
 }
 
@@ -145,6 +141,11 @@ __TerrainUtility_TerrainMap_TerrainFilter_unity2_raw::invoke(__receiver, ::core:
 
 #[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainMap_TerrainFilter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainMap_TerrainFilter{#[doc="Direct (non-virtual) call to `TerrainUtility_TerrainMap_TerrainFilter`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,terrain:crate::unity_engine::terrain::Terrain,)->bool{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::terrain::Terrain, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),terrain, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainMap_TerrainFilter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -206,10 +207,10 @@ pub mod prelude {
     pub use super::TerrainUtility_TerrainMap;
     pub use super::ITerrainUtility_TerrainMap;
     pub use super::ITerrainUtility_TerrainMapMethods;
+    pub use super::TerrainUtility_TerrainMap_ErrorCode;
     pub use super::TerrainUtility_TerrainMap_TerrainFilter;
     pub use super::ITerrainUtility_TerrainMap_TerrainFilter;
     pub use super::ITerrainUtility_TerrainMap_TerrainFilterMethods;
-    pub use super::TerrainUtility_TerrainMap_ErrorCode;
     pub use super::TerrainUtility;
     pub use super::ITerrainUtility;
     pub use super::TerrainUtility_TerrainMap_TileCoord;

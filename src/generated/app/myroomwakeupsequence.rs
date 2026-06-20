@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))]#[::unity2::class(namespace="App",name="MyRoomWakeupSequence.RelianceWakeup")]#[parent(crate::system::object::Object)]pub struct MyRoomWakeupSequence_RelianceWakeup{#[offset(16)]#[rename(name="m_pid")]pub m_pid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_level")]pub m_level:crate::app::reliancedata::RelianceData_Level, #[offset(28)]#[rename(name="m_pattern")]pub m_pattern:crate::app::gamesound::GameSound_WakeupVoicePattern,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomwakeupsequence/MyRoomWakeupSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomWakeupSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MyRoomWakeupSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MyRoomWakeupSequence.Label";
@@ -37,13 +40,46 @@ pub fn skip_end_fade()->Self{Self{value:2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomwakeupsequence/MyRoomWakeupSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomWakeupSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomwakeupsequence::MyRoomWakeupSequence>)]pub struct MyRoomWakeupSequence{#[offset(114)]#[rename(name="IsRecallSelect")]pub is_recall_select:bool, #[offset(120)]#[rename(name="RecallPID")]pub recall_pid: ::unity2::Il2CppString, #[offset(128)]#[rename(name="RecallLevel")]pub recall_level:crate::app::reliancedata::RelianceData_Level, #[offset(132)]#[rename(name="RecallPattern")]pub recall_pattern:crate::app::gamesound::GameSound_WakeupVoicePattern, #[offset(136)]#[rename(name="m_wakeupUnit")]pub m_wakeup_unit:crate::app::unit::Unit, #[offset(144)]#[rename(name="m_level")]pub m_level:crate::app::reliancedata::RelianceData_Level, #[offset(148)]#[rename(name="m_pattern")]pub m_pattern:crate::app::gamesound::GameSound_WakeupVoicePattern, #[offset(152)]#[rename(name="m_pid")]pub m_pid: ::unity2::Il2CppString, #[offset(160)]#[rename(name="m_eventRoot")]pub m_event_root:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_cameraRoot")]pub m_camera_root:crate::unity_engine::gameobject::GameObject, #[offset(176)]#[rename(name="m_cameraRootParent")]pub m_camera_root_parent:crate::unity_engine::gameobject::GameObject, #[offset(184)]#[rename(name="m_cameraData")]pub m_camera_data:crate::unity_engine::gameobject::GameObject, #[offset(192)]#[rename(name="m_cameraData2")]pub m_camera_data2:crate::unity_engine::gameobject::GameObject, #[offset(200)]#[rename(name="m_character")]pub m_character:crate::combat::character::Character, #[offset(208)]#[rename(name="m_lookAt")]pub m_look_at:crate::app::hublookatcontroller::HubLookAtController, #[offset(216)]#[rename(name="m_CharacterPosition")]pub m_character_position:crate::unity_engine::vector3::Vector3, #[offset(228)]#[rename(name="m_CharacterRotation")]pub m_character_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(248)]#[rename(name="m_timelineObject")]pub m_timeline_object:crate::unity_engine::playables::playableasset::PlayableAsset, #[offset(256)]#[rename(name="m_playableDirector")]pub m_playable_director:crate::unity_engine::playables::playabledirector::PlayableDirector, #[offset(264)]#[rename(name="m_playableAssetHandle")]pub m_playable_asset_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(272)]#[rename(name="m_aocHandle")]pub m_aoc_handle: ::unity2::Array<crate::app::resourcehandle_2::ResourceHandle_2> , #[offset(280)]#[rename(name="m_effectHandle")]pub m_effect_handle:crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2> , #[offset(288)]#[rename(name="m_aocList")]pub m_aoc_list: ::unity2::Array<crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController> , #[offset(296)]#[rename(name="m_currentAnimName")]pub m_current_anim_name: ::unity2::Il2CppString, #[offset(304)]#[rename(name="m_eventVoiceList")]pub m_event_voice_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(312)]#[rename(name="m_eventCanvas")]pub m_event_canvas:crate::unity_engine::gameobject::GameObject, #[offset(320)]#[rename(name="m_eventCanvasForeground")]pub m_event_canvas_foreground:crate::unity_engine::gameobject::GameObject, #[offset(328)]#[rename(name="m_eventCanvasBackground")]pub m_event_canvas_background:crate::unity_engine::gameobject::GameObject, #[offset(336)]#[rename(name="m_caption")]pub m_caption:crate::unity_engine::gameobject::GameObject, #[offset(344)]#[rename(name="m_env")]pub m_env:crate::unity_engine::gameobject::GameObject, #[offset(352)]#[rename(name="m_isFastWakeup")]pub m_is_fast_wakeup:bool, #[offset(353)]#[rename(name="m_isLoading")]pub m_is_loading:bool, #[offset(360)]#[rename(name="m_captionText")]pub m_caption_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(456)]#[rename(name="FlagName")]pub flag_name: ::unity2::Il2CppString, #[offset(464)]#[rename(name="eventWalkin")]pub event_walkin: ::unity2::Il2CppString, #[offset(472)]#[rename(name="message")]pub message:crate::app::gamemessage::GameMessage,}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomwakeupsequence/MyRoomWakeupSequence_RelianceWakeup.md"))]#[::unity2::class(namespace="App",name="MyRoomWakeupSequence.RelianceWakeup")]#[parent(crate::system::object::Object)]pub struct MyRoomWakeupSequence_RelianceWakeup{#[offset(16)]#[rename(name="m_pid")]pub m_pid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_level")]pub m_level:crate::app::reliancedata::RelianceData_Level, #[offset(28)]#[rename(name="m_pattern")]pub m_pattern:crate::app::gamesound::GameSound_WakeupVoicePattern,}
-
 }
 
 #[cfg(feature = "app-myroomwakeupsequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-myroomwakeupsequence")]pub trait IMyRoomWakeupSequence_RelianceWakeupMethods:IMyRoomWakeupSequence_RelianceWakeup{#[doc="`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]fn ctor(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level> ,pattern:impl::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoicePattern>)->(){unsafe{let __receiver= <MyRoomWakeupSequence_RelianceWakeup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209dbb0usize)as*mut u8,();
+(MyRoomWakeupSequence_RelianceWakeup)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(level),(crate::app::gamesound::GameSound_WakeupVoicePattern)::core::convert::Into::into(pattern))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomWakeupSequence_RelianceWakeup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <MyRoomWakeupSequence_RelianceWakeup as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(MyRoomWakeupSequence_RelianceWakeup, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-myroomwakeupsequence")]impl<__T:IMyRoomWakeupSequence_RelianceWakeup>IMyRoomWakeupSequence_RelianceWakeupMethods for __T{}
+
+#[cfg(feature="app-myroomwakeupsequence")]impl MyRoomWakeupSequence_RelianceWakeup{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-myroomwakeupsequence")]impl MyRoomWakeupSequence_RelianceWakeup{#[doc="Direct (non-virtual) call to `MyRoomWakeupSequence_RelianceWakeup`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-myroomwakeupsequence")]impl MyRoomWakeupSequence_RelianceWakeup{#[doc="`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` — overload selector"]pub fn new(pid: ::unity2::Il2CppString,level:crate::app::reliancedata::RelianceData_Level,pattern:crate::app::gamesound::GameSound_WakeupVoicePattern)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomWakeupSequence_RelianceWakeup), ::core::stringify!(new),));
+ <Self as IMyRoomWakeupSequence_RelianceWakeupMethods> ::ctor(this,pid,level,pattern);
+this}
+}
 
 #[cfg(feature="app-myroomwakeupsequence")]impl MyRoomWakeupSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x239c710usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -433,51 +469,16 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-myroomwakeupsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomWakeupSequence_RelianceWakeup_unity2_raw{use super:: * ;
-pub unsafe fn to_string(this:MyRoomWakeupSequence_RelianceWakeup,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <MyRoomWakeupSequence_RelianceWakeup as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(MyRoomWakeupSequence_RelianceWakeup, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-myroomwakeupsequence")]pub trait IMyRoomWakeupSequence_RelianceWakeupMethods:IMyRoomWakeupSequence_RelianceWakeup{#[doc="`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]fn ctor(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level> ,pattern:impl::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoicePattern>)->(){unsafe{let __receiver= <MyRoomWakeupSequence_RelianceWakeup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209dbb0usize)as*mut u8,();
-(MyRoomWakeupSequence_RelianceWakeup)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(level),(crate::app::gamesound::GameSound_WakeupVoicePattern)::core::convert::Into::into(pattern))}
-}
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomWakeupSequence_RelianceWakeup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomWakeupSequence_RelianceWakeup_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-myroomwakeupsequence")]impl<__T:IMyRoomWakeupSequence_RelianceWakeup>IMyRoomWakeupSequence_RelianceWakeupMethods for __T{}
-
-#[cfg(feature="app-myroomwakeupsequence")]impl MyRoomWakeupSequence_RelianceWakeup{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-myroomwakeupsequence")]impl MyRoomWakeupSequence_RelianceWakeup{#[doc="`.ctor(::unity2::Il2CppString, crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` — overload selector"]pub fn new(pid: ::unity2::Il2CppString,level:crate::app::reliancedata::RelianceData_Level,pattern:crate::app::gamesound::GameSound_WakeupVoicePattern)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomWakeupSequence_RelianceWakeup), ::core::stringify!(new),));
- <Self as IMyRoomWakeupSequence_RelianceWakeupMethods> ::ctor(this,pid,level,pattern);
-this}
-}
-
 #[cfg(feature = "app-myroomwakeupsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MyRoomWakeupSequence_RelianceWakeup;
+    pub use super::IMyRoomWakeupSequence_RelianceWakeup;
+    pub use super::IMyRoomWakeupSequence_RelianceWakeupMethods;
     pub use super::MyRoomWakeupSequence_Label;
     pub use super::MyRoomWakeupSequence;
     pub use super::IMyRoomWakeupSequence;
     pub use super::IMyRoomWakeupSequenceMethods;
-    pub use super::MyRoomWakeupSequence_RelianceWakeup;
-    pub use super::IMyRoomWakeupSequence_RelianceWakeup;
-    pub use super::IMyRoomWakeupSequence_RelianceWakeupMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

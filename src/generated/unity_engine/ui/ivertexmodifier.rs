@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "unity_engine-ui-ivertexmodifier-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ui-ivertexmodifier")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IVertexModifier_unity2_raw{use super:: * ;
-pub unsafe fn modify_vertices(this:IVertexModifier,verts:crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-ui-ivertexmodifier")]pub trait IIVertexModifierMethods:IIVertexModifier{#[doc="`ModifyVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"]fn modify_vertices(self,verts:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> >)->(){unsafe{let __receiver= <IVertexModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IVertexModifier as::unity2::ClassIdentity> ::NAME,"ModifyVertices",));
-let inner:extern "C" fn(IVertexModifier,crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IVertexModifier,crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,verts,__mi)}
+__inner(__receiver, ::core::convert::Into::into(verts),__mi)}
 }
-
-#[cfg(feature="unity_engine-ui-ivertexmodifier")]pub trait IIVertexModifierMethods:IIVertexModifier{#[doc="`ModifyVertices(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"]fn modify_vertices(self,verts:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> >)->(){unsafe{let __receiver= <IVertexModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IVertexModifier_unity2_raw::modify_vertices(__receiver, ::core::convert::Into::into(verts), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="unity_engine-ui-ivertexmodifier")]impl<__T:IIVertexModifier>IIVertexModifierMethods for __T{}
 
 #[cfg(feature="unity_engine-ui-ivertexmodifier")]impl IVertexModifier{pub fn modify_vertices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-ui-ivertexmodifier")]impl IVertexModifier{#[doc="Direct (non-virtual) call to `IVertexModifier`'s own `ModifyVertices`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn modify_vertices(this:impl::core::convert::Into< ::unity2::IlInstance> ,verts:crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> ,)->(){let __mi=Self::modify_vertices_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),verts, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-ui-ivertexmodifier")]

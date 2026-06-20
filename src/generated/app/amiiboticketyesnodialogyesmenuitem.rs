@@ -22,38 +22,33 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-amiiboticketyesnodialogyesmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-amiiboticketyesnodialogyesmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AmiiboTicketYesNoDialogYesMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:AmiiboTicketYesNoDialogYesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <AmiiboTicketYesNoDialogYesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(AmiiboTicketYesNoDialogYesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:AmiiboTicketYesNoDialogYesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <AmiiboTicketYesNoDialogYesMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(AmiiboTicketYesNoDialogYesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-amiiboticketyesnodialogyesmenuitem")]pub trait IAmiiboTicketYesNoDialogYesMenuItemMethods:IAmiiboTicketYesNoDialogYesMenuItem{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <AmiiboTicketYesNoDialogYesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8be50usize)as*mut u8,();
 (AmiiboTicketYesNoDialogYesMenuItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(yes_event_handler))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AmiiboTicketYesNoDialogYesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AmiiboTicketYesNoDialogYesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <AmiiboTicketYesNoDialogYesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(AmiiboTicketYesNoDialogYesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AmiiboTicketYesNoDialogYesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AmiiboTicketYesNoDialogYesMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <AmiiboTicketYesNoDialogYesMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(AmiiboTicketYesNoDialogYesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -62,6 +57,14 @@ __AmiiboTicketYesNoDialogYesMenuItem_unity2_raw::b_call(__receiver, ::core::opti
 #[cfg(feature="app-amiiboticketyesnodialogyesmenuitem")]impl AmiiboTicketYesNoDialogYesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-amiiboticketyesnodialogyesmenuitem")]impl AmiiboTicketYesNoDialogYesMenuItem{#[doc="Direct (non-virtual) call to `AmiiboTicketYesNoDialogYesMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AmiiboTicketYesNoDialogYesMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-amiiboticketyesnodialogyesmenuitem")]impl AmiiboTicketYesNoDialogYesMenuItem{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(yes_event_handler:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

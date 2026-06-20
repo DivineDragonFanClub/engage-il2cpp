@@ -26,19 +26,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-framework_2-types")]
 pub use __types::*;
 
-#[cfg(feature="app-framework_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Framework_2_unity2_raw{use super:: * ;
-pub unsafe fn awake(this:Framework_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Framework_2 as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(Framework_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-framework_2")]impl Framework_2{#[doc="`IsBoostMode()` overload"]pub fn is_boost_mode()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261afc0usize)as*mut u8,bool;
 )}
 }
@@ -123,7 +110,16 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-framework_2")]pub trait IFramework_2Methods:IFramework_2{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <Framework_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Framework_2_unity2_raw::awake(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Framework_2 as::unity2::ClassIdentity> ::NAME,"Awake",));
+let __inner:extern "C" fn(Framework_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <Framework_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x261bb70usize)as*mut u8,();
@@ -187,6 +183,11 @@ pub fn add_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn update_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+}
+
+#[cfg(feature="app-framework_2")]impl Framework_2{#[doc="Direct (non-virtual) call to `Framework_2`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-framework_2")]impl Framework_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

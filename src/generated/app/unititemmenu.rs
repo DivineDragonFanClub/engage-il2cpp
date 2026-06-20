@@ -17,139 +17,21 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititemmenu/UnitItemMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitItemMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitItemMenu_RequestCloseEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititemmenu/UnitItemMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitItemMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitItemMenu_DecideEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititemmenu/UnitItemMenu.md"))]#[::unity2::class(namespace="App",name="UnitItemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct UnitItemMenu{#[offset(208)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::unititemmenu::UnitItemMenu_SelectEventHandler, #[offset(216)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::unititemmenu::UnitItemMenu_DecideEventHandler, #[offset(224)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititemmenu/UnitItemMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitItemMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitItemMenu_SelectEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititemmenu/UnitItemMenu.md"))]#[::unity2::class(namespace="App",name="UnitItemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct UnitItemMenu{#[offset(208)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::unititemmenu::UnitItemMenu_SelectEventHandler, #[offset(216)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::unititemmenu::UnitItemMenu_DecideEventHandler, #[offset(224)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititemmenu/UnitItemMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitItemMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitItemMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititemmenu/UnitItemMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitItemMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitItemMenu_RequestCloseEventHandler{}
 
 }
 
 #[cfg(feature = "app-unititemmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-unititemmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitItemMenu_RequestCloseEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:UnitItemMenu_RequestCloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <UnitItemMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(UnitItemMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-unititemmenu")]pub trait IUnitItemMenu_RequestCloseEventHandlerMethods:IUnitItemMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitItemMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b52ee0usize)as*mut u8,();
-(UnitItemMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnitItemMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitItemMenu_RequestCloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-unititemmenu")]impl<__T:IUnitItemMenu_RequestCloseEventHandler>IUnitItemMenu_RequestCloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitItemMenu_RequestCloseEventHandler), ::core::stringify!(new),));
- <Self as IUnitItemMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-unititemmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitItemMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:UnitItemMenu_DecideEventHandler,unit_item:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <UnitItemMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(UnitItemMenu_DecideEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit_item,__mi)}
-}
-
-#[cfg(feature="app-unititemmenu")]pub trait IUnitItemMenu_DecideEventHandlerMethods:IUnitItemMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitItemMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b52b20usize)as*mut u8,();
-(UnitItemMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <UnitItemMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitItemMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit_item), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-unititemmenu")]impl<__T:IUnitItemMenu_DecideEventHandler>IUnitItemMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitItemMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IUnitItemMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-unititemmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitItemMenu_SelectEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:UnitItemMenu_SelectEventHandler,unit_item:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <UnitItemMenu_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(UnitItemMenu_SelectEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit_item,__mi)}
-}
-
-#[cfg(feature="app-unititemmenu")]pub trait IUnitItemMenu_SelectEventHandlerMethods:IUnitItemMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitItemMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b53150usize)as*mut u8,();
-(UnitItemMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <UnitItemMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitItemMenu_SelectEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit_item), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-unititemmenu")]impl<__T:IUnitItemMenu_SelectEventHandler>IUnitItemMenu_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitItemMenu_SelectEventHandler), ::core::stringify!(new),));
- <Self as IUnitItemMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-unititemmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitItemMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:UnitItemMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <UnitItemMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(UnitItemMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-unititemmenu")]impl UnitItemMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unititemmenucontent::UnitItemMenuContent, crate::app::unit::Unit, crate::app::unititemmenu::UnitItemMenu_SelectEventHandler, crate::app::unititemmenu::UnitItemMenu_DecideEventHandler, crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::unititemmenucontent::UnitItemMenuContent> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,select_event_handler:impl::core::convert::Into<crate::app::unititemmenu::UnitItemMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::unititemmenu::UnitItemMenu_DecideEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler>)->crate::app::unititemmenu::UnitItemMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9050usize)as*mut u8,crate::app::unititemmenu::UnitItemMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unititemmenucontent::UnitItemMenuContent)::core::convert::Into::into(menu_content),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unititemmenu::UnitItemMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::unititemmenu::UnitItemMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
@@ -176,7 +58,16 @@ inner(this,__mi)}
 (UnitItemMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitItemMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <UnitItemMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(UnitItemMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`EnableMenu()` overload"]fn enable_menu(self,)->(){unsafe{let __receiver= <UnitItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9690usize)as*mut u8,();
@@ -211,6 +102,11 @@ pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 }
 
+#[cfg(feature="app-unititemmenu")]impl UnitItemMenu{#[doc="Direct (non-virtual) call to `UnitItemMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-unititemmenu")]impl UnitItemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::unititemmenucontent::UnitItemMenuContent, crate::app::unit::Unit, crate::app::unititemmenu::UnitItemMenu_SelectEventHandler, crate::app::unititemmenu::UnitItemMenu_DecideEventHandler, crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::unititemmenucontent::UnitItemMenuContent,unit:crate::app::unit::Unit,select_event_handler:crate::app::unititemmenu::UnitItemMenu_SelectEventHandler,decide_event_handler:crate::app::unititemmenu::UnitItemMenu_DecideEventHandler,request_close_event_handler:crate::app::unititemmenu::UnitItemMenu_RequestCloseEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(UnitItemMenu), ::core::stringify!(new),));
@@ -218,21 +114,129 @@ pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-unititemmenu")]pub trait IUnitItemMenu_SelectEventHandlerMethods:IUnitItemMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitItemMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b53150usize)as*mut u8,();
+(UnitItemMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <UnitItemMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <UnitItemMenu_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(UnitItemMenu_SelectEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit_item),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-unititemmenu")]impl<__T:IUnitItemMenu_SelectEventHandler>IUnitItemMenu_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_SelectEventHandler{#[doc="Direct (non-virtual) call to `UnitItemMenu_SelectEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit_item:crate::app::unititem::UnitItem,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit_item, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitItemMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IUnitItemMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-unititemmenu")]pub trait IUnitItemMenu_DecideEventHandlerMethods:IUnitItemMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitItemMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b52b20usize)as*mut u8,();
+(UnitItemMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <UnitItemMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <UnitItemMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(UnitItemMenu_DecideEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit_item),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-unititemmenu")]impl<__T:IUnitItemMenu_DecideEventHandler>IUnitItemMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `UnitItemMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit_item:crate::app::unititem::UnitItem,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit_item, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitItemMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IUnitItemMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-unititemmenu")]pub trait IUnitItemMenu_RequestCloseEventHandlerMethods:IUnitItemMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitItemMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b52ee0usize)as*mut u8,();
+(UnitItemMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnitItemMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <UnitItemMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(UnitItemMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-unititemmenu")]impl<__T:IUnitItemMenu_RequestCloseEventHandler>IUnitItemMenu_RequestCloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_RequestCloseEventHandler{#[doc="Direct (non-virtual) call to `UnitItemMenu_RequestCloseEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unititemmenu")]impl UnitItemMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitItemMenu_RequestCloseEventHandler), ::core::stringify!(new),));
+ <Self as IUnitItemMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-unititemmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitItemMenu_RequestCloseEventHandler;
-    pub use super::IUnitItemMenu_RequestCloseEventHandler;
-    pub use super::IUnitItemMenu_RequestCloseEventHandlerMethods;
-    pub use super::UnitItemMenu_DecideEventHandler;
-    pub use super::IUnitItemMenu_DecideEventHandler;
-    pub use super::IUnitItemMenu_DecideEventHandlerMethods;
-    pub use super::UnitItemMenu_SelectEventHandler;
-    pub use super::IUnitItemMenu_SelectEventHandler;
-    pub use super::IUnitItemMenu_SelectEventHandlerMethods;
     pub use super::UnitItemMenu;
     pub use super::IUnitItemMenu;
     pub use super::IUnitItemMenuMethods;
+    pub use super::UnitItemMenu_SelectEventHandler;
+    pub use super::IUnitItemMenu_SelectEventHandler;
+    pub use super::IUnitItemMenu_SelectEventHandlerMethods;
+    pub use super::UnitItemMenu_DecideEventHandler;
+    pub use super::IUnitItemMenu_DecideEventHandler;
+    pub use super::IUnitItemMenu_DecideEventHandlerMethods;
+    pub use super::UnitItemMenu_RequestCloseEventHandler;
+    pub use super::IUnitItemMenu_RequestCloseEventHandler;
+    pub use super::IUnitItemMenu_RequestCloseEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

@@ -41,16 +41,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ReturnStatement as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn compile(this:ReturnStatement,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ReturnStatement as::unity2::ClassIdentity> ::NAME,"Compile",));
-let inner:extern "C" fn(ReturnStatement,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,bc,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-statements-returnstatement")]pub trait IReturnStatementMethods:IReturnStatement{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]fn ctor(self,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext> ,e:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression> ,sref:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>)->(){unsafe{let __receiver= <ReturnStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -62,7 +52,16 @@ inner(this,bc,__mi)}
 (ReturnStatement)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext))}
 }
 #[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <ReturnStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ReturnStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ReturnStatement as::unity2::ClassIdentity> ::NAME,"Compile",));
+let __inner:extern "C" fn(ReturnStatement,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(bc),__mi)}
+}
 }
 }
 
@@ -71,6 +70,11 @@ __ReturnStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc
 #[cfg(feature="moon_sharp-interpreter-tree-statements-returnstatement")]impl ReturnStatement{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn compile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-tree-statements-returnstatement")]impl ReturnStatement{#[doc="Direct (non-virtual) call to `ReturnStatement`'s own `Compile`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compile(this:impl::core::convert::Into< ::unity2::IlInstance> ,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,)->(){let __mi=Self::compile_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),bc, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-statements-returnstatement")]impl ReturnStatement{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` — overload selector"]pub fn new(lcontext:crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,e:crate::moon_sharp::interpreter::tree::expression::Expression,sref:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -19,9 +19,6 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="AnimationPlayableAsset.AnimationPlayableAssetUpgrade")]#[parent(crate::system::object::Object)]pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_LoopMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimationPlayableAsset_LoopMode{pub value:i32,}
 impl::unity2::ClassIdentity for AnimationPlayableAsset_LoopMode{const NAMESPACE: &'static str="UnityEngine.Timeline";
 const NAME: &'static str="AnimationPlayableAsset.LoopMode";
@@ -40,6 +37,9 @@ pub fn off()->Self{Self{value:2}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="AnimationPlayableAsset.AnimationPlayableAssetUpgrade")]#[parent(crate::system::object::Object)]pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="AnimationPlayableAsset")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct AnimationPlayableAsset{#[offset(24)]#[rename(name="m_Clip")]pub m_clip:crate::unity_engine::animationclip::AnimationClip, #[offset(32)]#[rename(name="m_Position")]pub m_position:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="m_EulerAngles")]pub m_euler_angles:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="m_UseTrackMatchFields")]pub m_use_track_match_fields:bool, #[offset(60)]#[rename(name="m_MatchTargetFields")]pub m_match_target_fields:crate::unity_engine::timeline::matchtargetfields::MatchTargetFields, #[offset(64)]#[rename(name="m_RemoveStartOffset")]pub m_remove_start_offset:bool, #[offset(65)]#[rename(name="m_ApplyFootIK")]pub m_apply_foot_ik:bool, #[offset(68)]#[rename(name="m_Loop")]pub m_loop:crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode, #[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(76)]#[rename(name="m_Version")]pub m_version:i32, #[offset(80)]#[rename(name="m_Rotation")]pub m_rotation:crate::unity_engine::quaternion::Quaternion,}
 
 }
@@ -53,79 +53,6 @@ pub use __types::*;
 }
 
 #[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade{pub fn convert_rotation_to_euler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-timeline-animationplayableasset")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimationPlayableAsset_unity2_raw{use super:: * ;
-pub unsafe fn get_duration(this:AnimationPlayableAsset,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"get_duration",));
-let inner:extern "C" fn(AnimationPlayableAsset, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_outputs(this:AnimationPlayableAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"get_outputs",));
-let inner:extern "C" fn(AnimationPlayableAsset, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn create_playable(this:AnimationPlayableAsset,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
-let inner:extern "C" fn(AnimationPlayableAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,graph,go,__mi)}
-pub unsafe fn get_clip_caps(this:AnimationPlayableAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"get_clipCaps",));
-let inner:extern "C" fn(AnimationPlayableAsset, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn gather_properties(this:AnimationPlayableAsset,director:crate::unity_engine::playables::playabledirector::PlayableDirector,driver:crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"GatherProperties",));
-let inner:extern "C" fn(AnimationPlayableAsset,crate::unity_engine::playables::playabledirector::PlayableDirector,crate::unity_engine::timeline::ipropertycollector::IPropertyCollector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,director,driver,__mi)}
-pub unsafe fn unity_engine_i_serialization_callback_receiver_on_before_serialize(this:AnimationPlayableAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",));
-let inner:extern "C" fn(AnimationPlayableAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(this:AnimationPlayableAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",));
-let inner:extern "C" fn(AnimationPlayableAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset{#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, bool, crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode, bool, crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode)` overload"]pub fn create_playable_2(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip> ,position_offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,euler_offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,remove_start_offset:impl::core::convert::Into<bool> ,mode:impl::core::convert::Into<crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode> ,apply_foot_ik:impl::core::convert::Into<bool> ,r#loop:impl::core::convert::Into<crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode>)->crate::unity_engine::playables::playable::Playable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d04d0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
@@ -230,29 +157,92 @@ inner(this,__mi)}
 (AnimationPlayableAsset)__receiver,(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(value))}
 }
 #[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationPlayableAsset_unity2_raw::get_duration(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"get_duration",));
+let __inner:extern "C" fn(AnimationPlayableAsset, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_outputs()` overload"]fn get_outputs(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationPlayableAsset_unity2_raw::get_outputs(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"get_outputs",));
+let __inner:extern "C" fn(AnimationPlayableAsset, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationPlayableAsset_unity2_raw::create_playable(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
+let __inner:extern "C" fn(AnimationPlayableAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go),__mi)}
+}
 }
 #[doc="`get_clipCaps()` overload"]fn get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationPlayableAsset_unity2_raw::get_clip_caps(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"get_clipCaps",));
+let __inner:extern "C" fn(AnimationPlayableAsset, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ResetOffsets()` overload"]fn reset_offsets(self,)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0ad0usize)as*mut u8,();
 (AnimationPlayableAsset)__receiver)}
 }
 #[doc="`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]fn gather_properties(self,director:impl::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector> ,driver:impl::core::convert::Into<crate::unity_engine::timeline::ipropertycollector::IPropertyCollector>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationPlayableAsset_unity2_raw::gather_properties(__receiver, ::core::convert::Into::into(director), ::core::convert::Into::into(driver), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"GatherProperties",));
+let __inner:extern "C" fn(AnimationPlayableAsset,crate::unity_engine::playables::playabledirector::PlayableDirector,crate::unity_engine::timeline::ipropertycollector::IPropertyCollector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(director), ::core::convert::Into::into(driver),__mi)}
+}
 }
 #[doc="`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_before_serialize(self,)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationPlayableAsset_unity2_raw::unity_engine_i_serialization_callback_receiver_on_before_serialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",));
+let __inner:extern "C" fn(AnimationPlayableAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(self,)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimationPlayableAsset_unity2_raw::unity_engine_i_serialization_callback_receiver_on_after_deserialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <AnimationPlayableAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",));
+let __inner:extern "C" fn(AnimationPlayableAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnUpgradeFromVersion(i32)` overload"]fn on_upgrade_from_version(self,old_version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AnimationPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d0d10usize)as*mut u8,();
@@ -304,6 +294,29 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
 }
 
+#[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset{#[doc="Direct (non-virtual) call to `AnimationPlayableAsset`'s own `get_duration`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_duration(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f64{let __mi=Self::get_duration_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimationPlayableAsset`'s own `get_outputs`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_outputs(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{let __mi=Self::get_outputs_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimationPlayableAsset`'s own `CreatePlayable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_playable(this:impl::core::convert::Into< ::unity2::IlInstance> ,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,)->crate::unity_engine::playables::playable::Playable{let __mi=Self::create_playable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),graph,go, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimationPlayableAsset`'s own `get_clipCaps`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_clip_caps(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::timeline::clipcaps::ClipCaps{let __mi=Self::get_clip_caps_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimationPlayableAsset`'s own `GatherProperties`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn gather_properties(this:impl::core::convert::Into< ::unity2::IlInstance> ,director:crate::unity_engine::playables::playabledirector::PlayableDirector,driver:crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,)->(){let __mi=Self::gather_properties_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playabledirector::PlayableDirector,crate::unity_engine::timeline::ipropertycollector::IPropertyCollector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),director,driver, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimationPlayableAsset`'s own `UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_i_serialization_callback_receiver_on_before_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::unity_engine_i_serialization_callback_receiver_on_before_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimationPlayableAsset`'s own `UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::unity_engine_i_serialization_callback_receiver_on_after_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-timeline-animationplayableasset")]impl AnimationPlayableAsset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(AnimationPlayableAsset), ::core::stringify!(new),));
@@ -314,9 +327,9 @@ this}
 #[cfg(feature = "unity_engine-timeline-animationplayableasset")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AnimationPlayableAsset_LoopMode;
     pub use super::AnimationPlayableAsset_AnimationPlayableAssetUpgrade;
     pub use super::IAnimationPlayableAsset_AnimationPlayableAssetUpgrade;
-    pub use super::AnimationPlayableAsset_LoopMode;
     pub use super::AnimationPlayableAsset;
     pub use super::IAnimationPlayableAsset;
     pub use super::IAnimationPlayableAssetMethods;

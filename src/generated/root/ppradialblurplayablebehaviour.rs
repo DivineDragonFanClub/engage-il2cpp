@@ -18,19 +18,6 @@ use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,Playa
 #[cfg(feature = "root-ppradialblurplayablebehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature="root-ppradialblurplayablebehaviour")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PPRadialBlurPlayableBehaviour_unity2_raw{use super:: * ;
-pub unsafe fn process_frame(this:PPRadialBlurPlayableBehaviour,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,player_data:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <PPRadialBlurPlayableBehaviour as::unity2::ClassIdentity> ::NAME,"ProcessFrame",));
-let inner:extern "C" fn(PPRadialBlurPlayableBehaviour,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,info,player_data,__mi)}
-}
-
 #[cfg(feature="root-ppradialblurplayablebehaviour")]pub trait IPPRadialBlurPlayableBehaviourMethods:IPPRadialBlurPlayableBehaviour{#[doc="`get_PPVolume()` overload"]fn get_pp_volume(self,)->crate::unity_engine::rendering::volume::Volume{unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f21f00usize)as*mut u8,crate::unity_engine::rendering::volume::Volume;
 (PPRadialBlurPlayableBehaviour)__receiver)}
@@ -56,7 +43,16 @@ inner(this,playable,info,player_data,__mi)}
 (PPRadialBlurPlayableBehaviour)__receiver,(f32)::core::convert::Into::into(value))}
 }
 #[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PPRadialBlurPlayableBehaviour_unity2_raw::process_frame(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::convert::Into::into(player_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <PPRadialBlurPlayableBehaviour as::unity2::ClassIdentity> ::NAME,"ProcessFrame",));
+let __inner:extern "C" fn(PPRadialBlurPlayableBehaviour,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::convert::Into::into(player_data),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PPRadialBlurPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f220e0usize)as*mut u8,();
@@ -74,6 +70,11 @@ pub fn get_end_intensity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn set_end_intensity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="root-ppradialblurplayablebehaviour")]impl PPRadialBlurPlayableBehaviour{#[doc="Direct (non-virtual) call to `PPRadialBlurPlayableBehaviour`'s own `ProcessFrame`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_frame(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,player_data:crate::system::object::Object,)->(){let __mi=Self::process_frame_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable,info,player_data, ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-ppradialblurplayablebehaviour")]impl PPRadialBlurPlayableBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

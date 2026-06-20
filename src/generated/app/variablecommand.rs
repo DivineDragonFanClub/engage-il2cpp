@@ -18,51 +18,45 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-variablecommand-types")]
 pub use __types::*;
 
-#[cfg(feature="app-variablecommand")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VariableCommand_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:VariableCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <VariableCommand as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(VariableCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get(this:VariableCommand,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <VariableCommand as::unity2::ClassIdentity> ::NAME,"Get",));
-let inner:extern "C" fn(VariableCommand, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set(this:VariableCommand,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <VariableCommand as::unity2::ClassIdentity> ::NAME,"Set",));
-let inner:extern "C" fn(VariableCommand,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-}
-
 #[cfg(feature="app-variablecommand")]pub trait IVariableCommandMethods:IVariableCommand{#[doc="`.ctor(::unity2::Il2CppString, f32)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VariableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26a5eb0usize)as*mut u8,();
 (VariableCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(f32)::core::convert::Into::into(value))}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VariableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VariableCommand_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VariableCommand as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let __inner:extern "C" fn(VariableCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <VariableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VariableCommand_unity2_raw::get(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <VariableCommand as::unity2::ClassIdentity> ::NAME,"Get",));
+let __inner:extern "C" fn(VariableCommand, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Set(f32)` overload"]fn set(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VariableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VariableCommand_unity2_raw::set(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <VariableCommand as::unity2::ClassIdentity> ::NAME,"Set",));
+let __inner:extern "C" fn(VariableCommand,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -72,6 +66,17 @@ __VariableCommand_unity2_raw::set(__receiver, ::core::convert::Into::into(value)
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-variablecommand")]impl VariableCommand{#[doc="Direct (non-virtual) call to `VariableCommand`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `VariableCommand`'s own `Get`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `VariableCommand`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::set_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-variablecommand")]impl VariableCommand{#[doc="`.ctor(::unity2::Il2CppString, f32)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,value:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

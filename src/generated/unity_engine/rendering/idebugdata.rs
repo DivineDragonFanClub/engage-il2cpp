@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "unity_engine-rendering-idebugdata-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-idebugdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IDebugData_unity2_raw{use super:: * ;
-pub unsafe fn get_reset(this:IDebugData,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::action::Action{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-rendering-idebugdata")]pub trait IIDebugDataMethods:IIDebugData{#[doc="`GetReset()` overload"]fn get_reset(self,)->crate::system::action::Action{unsafe{let __receiver= <IDebugData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IDebugData as::unity2::ClassIdentity> ::NAME,"GetReset",));
-let inner:extern "C" fn(IDebugData, ::unity2::OptionalMethod,)->crate::system::action::Action= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugData, ::unity2::OptionalMethod,)->crate::system::action::Action= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-rendering-idebugdata")]pub trait IIDebugDataMethods:IIDebugData{#[doc="`GetReset()` overload"]fn get_reset(self,)->crate::system::action::Action{unsafe{let __receiver= <IDebugData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugData_unity2_raw::get_reset(__receiver, ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="unity_engine-rendering-idebugdata")]impl<__T:IIDebugData>IIDebugDataMethods for __T{}
 
 #[cfg(feature="unity_engine-rendering-idebugdata")]impl IDebugData{pub fn get_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-rendering-idebugdata")]impl IDebugData{#[doc="Direct (non-virtual) call to `IDebugData`'s own `GetReset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_reset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::action::Action{let __mi=Self::get_reset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::action::Action= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-rendering-idebugdata")]

@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IGeneratorUserDataDescriptor_unity2_raw{use super:: * ;
-pub unsafe fn generate(this:IGeneratorUserDataDescriptor,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]pub trait IIGeneratorUserDataDescriptorMethods:IIGeneratorUserDataDescriptor{#[doc="`Generate(::unity2::SystemType)` overload"]fn generate(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor{unsafe{let __receiver= <IGeneratorUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IGeneratorUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"Generate",));
-let inner:extern "C" fn(IGeneratorUserDataDescriptor, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IGeneratorUserDataDescriptor, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,r#type,__mi)}
+__inner(__receiver, ::core::convert::Into::into(r#type),__mi)}
 }
-
-#[cfg(feature="moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]pub trait IIGeneratorUserDataDescriptorMethods:IIGeneratorUserDataDescriptor{#[doc="`Generate(::unity2::SystemType)` overload"]fn generate(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor{unsafe{let __receiver= <IGeneratorUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGeneratorUserDataDescriptor_unity2_raw::generate(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]impl<__T:IIGeneratorUserDataDescriptor>IIGeneratorUserDataDescriptorMethods for __T{}
 
 #[cfg(feature="moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]impl IGeneratorUserDataDescriptor{pub fn generate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]impl IGeneratorUserDataDescriptor{#[doc="Direct (non-virtual) call to `IGeneratorUserDataDescriptor`'s own `Generate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn generate(this:impl::core::convert::Into< ::unity2::IlInstance> ,r#type: ::unity2::SystemType,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor{let __mi=Self::generate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),r#type, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-igeneratoruserdatadescriptor")]

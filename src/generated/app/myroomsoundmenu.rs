@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsoundmenu/MyRoomSoundMenu.md"))]#[::unity2::class(namespace="App",name="MyRoomSoundMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MyRoomSoundMenu{#[offset(208)]#[rename(name="m_menuType")]pub m_menu_type:crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType, #[static_field]#[rename(name="DefaultBgmChangeSuppressCount")]pub default_bgm_change_suppress_count:i32, #[offset(212)]#[rename(name="m_bgmChangeSuppressCount")]pub m_bgm_change_suppress_count:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsoundmenu/MyRoomSoundMenu_MenuType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomSoundMenu_MenuType{pub value:i32,}
 impl::unity2::ClassIdentity for MyRoomSoundMenu_MenuType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MyRoomSoundMenu.MenuType";
@@ -34,46 +37,10 @@ pub fn bgm_select()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsoundmenu/MyRoomSoundMenu.md"))]#[::unity2::class(namespace="App",name="MyRoomSoundMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MyRoomSoundMenu{#[offset(208)]#[rename(name="m_menuType")]pub m_menu_type:crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType, #[static_field]#[rename(name="DefaultBgmChangeSuppressCount")]pub default_bgm_change_suppress_count:i32, #[offset(212)]#[rename(name="m_bgmChangeSuppressCount")]pub m_bgm_change_suppress_count:i32,}
-
 }
 
 #[cfg(feature = "app-myroomsoundmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-myroomsoundmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomSoundMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:MyRoomSoundMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <MyRoomSoundMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_close(this:MyRoomSoundMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <MyRoomSoundMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
-let inner:extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn tick(this:MyRoomSoundMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",38usize,__vt.len(), <MyRoomSoundMenu as::unity2::ClassIdentity> ::NAME,"Tick",));
-let inner:extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-myroomsoundmenu")]impl MyRoomSoundMenu{#[doc="`get_SelectBgm()` overload"]pub fn get_select_bgm()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x239e750usize)as*mut u8, ::unity2::Il2CppString;
 )}
@@ -104,10 +71,28 @@ inner(this,__mi)}
 (MyRoomSoundMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType)::core::convert::Into::into(menu_type),(::unity2::Il2CppString)::core::convert::Into::into(select_bgm))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomSoundMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MyRoomSoundMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MyRoomSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomSoundMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <MyRoomSoundMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let __inner:extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetMusicName(::unity2::Il2CppString)` overload"]fn set_music_name(self,music_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MyRoomSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x239ea10usize)as*mut u8,();
@@ -138,7 +123,16 @@ __MyRoomSoundMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)
 (MyRoomSoundMenu)__receiver,(crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem)::core::convert::Into::into(item))}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MyRoomSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomSoundMenu_unity2_raw::tick(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <MyRoomSoundMenu as::unity2::ClassIdentity> ::NAME,"Tick",));
+let __inner:extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -164,6 +158,17 @@ pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 }
 
+#[cfg(feature="app-myroomsoundmenu")]impl MyRoomSoundMenu{#[doc="Direct (non-virtual) call to `MyRoomSoundMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MyRoomSoundMenu`'s own `OnClose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MyRoomSoundMenu`'s own `Tick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-myroomsoundmenu")]impl MyRoomSoundMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType, ::unity2::Il2CppString)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,menu_type:crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType,select_bgm: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MyRoomSoundMenu), ::core::stringify!(new),));
@@ -174,10 +179,10 @@ this}
 #[cfg(feature = "app-myroomsoundmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomSoundMenu_MenuType;
     pub use super::MyRoomSoundMenu;
     pub use super::IMyRoomSoundMenu;
     pub use super::IMyRoomSoundMenuMethods;
+    pub use super::MyRoomSoundMenu_MenuType;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;

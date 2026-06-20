@@ -11,17 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/randomseed/RandomSeed_CastType_I2F.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RandomSeed_CastType_I2F{pub ivalue:u32,pub fvalue:f32,}
-impl::unity2::ClassIdentity for RandomSeed_CastType_I2F{const NAMESPACE: &'static str="App";
-const NAME: &'static str="RandomSeed.CastType_I2F";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for RandomSeed_CastType_I2F{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/randomseed/RandomSeed.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RandomSeed{pub seed1:u32,pub seed2:u32,pub seed3:u32,pub seed4:u32,}
 impl::unity2::ClassIdentity for RandomSeed{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RandomSeed";
@@ -38,6 +27,17 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Version");
 let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Version");
  ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/randomseed/RandomSeed_CastType_I2F.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RandomSeed_CastType_I2F{pub ivalue:u32,pub fvalue:f32,}
+impl::unity2::ClassIdentity for RandomSeed_CastType_I2F{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RandomSeed.CastType_I2F";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RandomSeed_CastType_I2F{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -88,8 +88,8 @@ pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 #[cfg(feature = "app-randomseed")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RandomSeed_CastType_I2F;
     pub use super::RandomSeed;
+    pub use super::RandomSeed_CastType_I2F;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

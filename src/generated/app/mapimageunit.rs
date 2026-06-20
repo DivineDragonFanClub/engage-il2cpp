@@ -17,20 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageunit/MapImageUnit_PositionScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapImageUnit_PositionScope{pub m_unit:crate::app::unit::Unit,pub m_x:i32,pub m_z:i32,}
-impl::unity2::ClassIdentity for MapImageUnit_PositionScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapImageUnit.PositionScope";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapImageUnit_PositionScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageunit/MapImageUnit.md"))]#[::unity2::class(namespace="App",name="MapImageUnit")]#[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]pub struct MapImageUnit{#[offset(24)]#[rename(name="m_Cells")]pub m_cells: ::unity2::Array<crate::app::mappos::MapPos> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageunit/MapImageUnit_UnitScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapImageUnit_UnitScope{pub m_unit:crate::app::unit::Unit,}
 impl::unity2::ClassIdentity for MapImageUnit_UnitScope{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapImageUnit.UnitScope";
@@ -41,20 +27,34 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for MapImageUnit_UnitScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageunit/MapImageUnit.md"))]#[::unity2::class(namespace="App",name="MapImageUnit")]#[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]pub struct MapImageUnit{#[offset(24)]#[rename(name="m_Cells")]pub m_cells: ::unity2::Array<crate::app::mappos::MapPos> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageunit/MapImageUnit_PositionScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapImageUnit_PositionScope{pub m_unit:crate::app::unit::Unit,pub m_x:i32,pub m_z:i32,}
+impl::unity2::ClassIdentity for MapImageUnit_PositionScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapImageUnit.PositionScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapImageUnit_PositionScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
 }
 
 #[cfg(feature = "app-mapimageunit-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapimageunit")]impl MapImageUnit_PositionScope{#[doc="`.ctor(crate::app::unit::Unit, i32, i32)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217cd60usize)as*mut u8,();
-(*mut MapImageUnit_PositionScope)self as*mut MapImageUnit_PositionScope,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+#[cfg(feature="app-mapimageunit")]impl MapImageUnit_UnitScope{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217ce10usize)as*mut u8,();
+(*mut MapImageUnit_UnitScope)self as*mut MapImageUnit_UnitScope,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217cdd0usize)as*mut u8,();
-(*mut MapImageUnit_PositionScope)self as*mut MapImageUnit_PositionScope)}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217ced0usize)as*mut u8,();
+(*mut MapImageUnit_UnitScope)self as*mut MapImageUnit_UnitScope)}
 }
 }
 
-#[cfg(feature="app-mapimageunit")]impl MapImageUnit_PositionScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-mapimageunit")]impl MapImageUnit_UnitScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
@@ -161,26 +161,26 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapimageunit")]impl MapImageUnit_UnitScope{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217ce10usize)as*mut u8,();
-(*mut MapImageUnit_UnitScope)self as*mut MapImageUnit_UnitScope,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+#[cfg(feature="app-mapimageunit")]impl MapImageUnit_PositionScope{#[doc="`.ctor(crate::app::unit::Unit, i32, i32)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217cd60usize)as*mut u8,();
+(*mut MapImageUnit_PositionScope)self as*mut MapImageUnit_PositionScope,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
 }
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217ced0usize)as*mut u8,();
-(*mut MapImageUnit_UnitScope)self as*mut MapImageUnit_UnitScope)}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217cdd0usize)as*mut u8,();
+(*mut MapImageUnit_PositionScope)self as*mut MapImageUnit_PositionScope)}
 }
 }
 
-#[cfg(feature="app-mapimageunit")]impl MapImageUnit_UnitScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-mapimageunit")]impl MapImageUnit_PositionScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
 #[cfg(feature = "app-mapimageunit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapImageUnit_PositionScope;
+    pub use super::MapImageUnit_UnitScope;
     pub use super::MapImageUnit;
     pub use super::IMapImageUnit;
     pub use super::IMapImageUnitMethods;
-    pub use super::MapImageUnit_UnitScope;
+    pub use super::MapImageUnit_PositionScope;
     pub use crate::app::mapimagecore_1::IMapImageCore_1;
     pub use crate::app::mapimagecorebyte::IMapImageCoreByte;
     pub use crate::app::mapimageindex::IMapImageIndex;

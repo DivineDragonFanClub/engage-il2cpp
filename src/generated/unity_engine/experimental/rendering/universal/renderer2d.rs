@@ -18,49 +18,6 @@ use crate::unity_engine::rendering::universal::scriptablerenderer::{IScriptableR
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-renderer2d")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Renderer2D_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:Renderer2D,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <Renderer2D as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(Renderer2D,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,disposing,__mi)}
-pub unsafe fn setup(this:Renderer2D,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <Renderer2D as::unity2::ClassIdentity> ::NAME,"Setup",));
-let inner:extern "C" fn(Renderer2D,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,context,rendering_data,__mi)}
-pub unsafe fn setup_culling_parameters(this:Renderer2D,culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <Renderer2D as::unity2::ClassIdentity> ::NAME,"SetupCullingParameters",));
-let inner:extern "C" fn(Renderer2D, *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mut crate::unity_engine::rendering::universal::cameradata::CameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,culling_parameters,camera_data,__mi)}
-pub unsafe fn finish_rendering(this:Renderer2D,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <Renderer2D as::unity2::ClassIdentity> ::NAME,"FinishRendering",));
-let inner:extern "C" fn(Renderer2D,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,cmd,__mi)}
-}
-
 #[cfg(feature="unity_engine-experimental-rendering-universal-renderer2d")]impl Renderer2D{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31ab8d0usize)as*mut u8,();
 )}
 }
@@ -79,7 +36,16 @@ inner(this,cmd,__mi)}
 (Renderer2D)__receiver,(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData)::core::convert::Into::into(data))}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Renderer2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Renderer2D_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Renderer2D as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(Renderer2D,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
+}
 }
 #[doc="`GetRenderer2DData()` overload"]fn get_renderer2_d_data(self,)->crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData{unsafe{let __receiver= <Renderer2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x31aaad0usize)as*mut u8,crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData;
@@ -95,17 +61,44 @@ let mut __out_2= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::uni
 }
 #[doc="`Setup(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn setup(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <Renderer2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
-__Renderer2D_unity2_raw::setup(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Renderer2D as::unity2::ClassIdentity> ::NAME,"Setup",));
+let __inner:extern "C" fn(Renderer2D,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`SetupCullingParameters(*mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]fn setup_culling_parameters(self,)->(crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,crate::unity_engine::rendering::universal::cameradata::CameraData){unsafe{let __receiver= <Renderer2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::cameradata::CameraData> ::uninit();
-__Renderer2D_unity2_raw::setup_culling_parameters(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Renderer2D as::unity2::ClassIdentity> ::NAME,"SetupCullingParameters",));
+let __inner:extern "C" fn(Renderer2D, *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mut crate::unity_engine::rendering::universal::cameradata::CameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(),__mi)}
+;
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`FinishRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn finish_rendering(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <Renderer2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Renderer2D_unity2_raw::finish_rendering(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <Renderer2D as::unity2::ClassIdentity> ::NAME,"FinishRendering",));
+let __inner:extern "C" fn(Renderer2D,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(cmd),__mi)}
+}
 }
 }
 
@@ -121,6 +114,20 @@ pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn setup_culling_parameters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn finish_rendering_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderer2d")]impl Renderer2D{#[doc="Direct (non-virtual) call to `Renderer2D`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),disposing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Renderer2D`'s own `Setup`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup(this:impl::core::convert::Into< ::unity2::IlInstance> ,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,)->(){let __mi=Self::setup_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),context,rendering_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Renderer2D`'s own `SetupCullingParameters`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup_culling_parameters(this:impl::core::convert::Into< ::unity2::IlInstance> ,culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,)->(){let __mi=Self::setup_culling_parameters_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mut crate::unity_engine::rendering::universal::cameradata::CameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),culling_parameters,camera_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Renderer2D`'s own `FinishRendering`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finish_rendering(this:impl::core::convert::Into< ::unity2::IlInstance> ,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,)->(){let __mi=Self::finish_rendering_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),cmd, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-renderer2d")]impl Renderer2D{#[doc="`.ctor(crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData)` — overload selector"]pub fn new(data:crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

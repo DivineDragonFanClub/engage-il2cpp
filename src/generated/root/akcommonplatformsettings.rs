@@ -22,164 +22,149 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "root-akcommonplatformsettings-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akcommonplatformsettings")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkCommonPlatformSettings_unity2_raw{use super:: * ;
-pub unsafe fn get_user_settings(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akcommonusersettings::AkCommonUserSettings{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-akcommonplatformsettings")]pub trait IAkCommonPlatformSettingsMethods:IAkCommonPlatformSettings{#[doc="`GetUserSettings()` overload"]fn get_user_settings(self,)->crate::root::akcommonusersettings::AkCommonUserSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",13usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"GetUserSettings",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommonusersettings::AkCommonUserSettings= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommonusersettings::AkCommonUserSettings= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_advanced_settings(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetAdvancedSettings()` overload"]fn get_advanced_settings(self,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",14usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"GetAdvancedSettings",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_comms_settings(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akcommoncommsettings::AkCommonCommSettings{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetCommsSettings()` overload"]fn get_comms_settings(self,)->crate::root::akcommoncommsettings::AkCommonCommSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",15usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"GetCommsSettings",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommoncommsettings::AkCommonCommSettings= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommoncommsettings::AkCommonCommSettings= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_ak_initialization_settings(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akinitializationsettings::AkInitializationSettings{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_AkInitializationSettings()` overload"]fn get_ak_initialization_settings(self,)->crate::root::akinitializationsettings::AkInitializationSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"get_AkInitializationSettings",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akinitializationsettings::AkInitializationSettings= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akinitializationsettings::AkInitializationSettings= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_ak_spatial_audio_init_settings(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_AkSpatialAudioInitSettings()` overload"]fn get_ak_spatial_audio_init_settings(self,)->crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"get_AkSpatialAudioInitSettings",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_callback_manager_initialization_settings(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_CallbackManagerInitializationSettings()` overload"]fn get_callback_manager_initialization_settings(self,)->crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"get_CallbackManagerInitializationSettings",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_initial_language(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_InitialLanguage()` overload"]fn get_initial_language(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"get_InitialLanguage",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_sound_bank_persistent_data_path(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_SoundBankPersistentDataPath()` overload"]fn get_sound_bank_persistent_data_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"get_SoundBankPersistentDataPath",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_render_during_focus_loss(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_RenderDuringFocusLoss()` overload"]fn get_render_during_focus_loss(self,)->bool{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",9usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"get_RenderDuringFocusLoss",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_soundbank_path(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_SoundbankPath()` overload"]fn get_soundbank_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"get_SoundbankPath",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_use_async_open(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_UseAsyncOpen()` overload"]fn get_use_async_open(self,)->bool{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",12usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"get_UseAsyncOpen",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_ak_communication_settings(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akcommunicationsettings::AkCommunicationSettings{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_AkCommunicationSettings()` overload"]fn get_ak_communication_settings(self,)->crate::root::akcommunicationsettings::AkCommunicationSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",11usize,__vt.len(), <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,"get_AkCommunicationSettings",));
-let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommunicationsettings::AkCommunicationSettings= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommunicationsettings::AkCommunicationSettings= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="root-akcommonplatformsettings")]pub trait IAkCommonPlatformSettingsMethods:IAkCommonPlatformSettings{#[doc="`GetUserSettings()` overload"]fn get_user_settings(self,)->crate::root::akcommonusersettings::AkCommonUserSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_user_settings(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetAdvancedSettings()` overload"]fn get_advanced_settings(self,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_advanced_settings(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetCommsSettings()` overload"]fn get_comms_settings(self,)->crate::root::akcommoncommsettings::AkCommonCommSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_comms_settings(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_AkInitializationSettings()` overload"]fn get_ak_initialization_settings(self,)->crate::root::akinitializationsettings::AkInitializationSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_ak_initialization_settings(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_AkSpatialAudioInitSettings()` overload"]fn get_ak_spatial_audio_init_settings(self,)->crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_ak_spatial_audio_init_settings(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_CallbackManagerInitializationSettings()` overload"]fn get_callback_manager_initialization_settings(self,)->crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_callback_manager_initialization_settings(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_InitialLanguage()` overload"]fn get_initial_language(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_initial_language(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_SoundBankPersistentDataPath()` overload"]fn get_sound_bank_persistent_data_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_sound_bank_persistent_data_path(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_RenderDuringFocusLoss()` overload"]fn get_render_during_focus_loss(self,)->bool{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_render_during_focus_loss(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_SoundbankPath()` overload"]fn get_soundbank_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_soundbank_path(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_UseAsyncOpen()` overload"]fn get_use_async_open(self,)->bool{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_use_async_open(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_AkCommunicationSettings()` overload"]fn get_ak_communication_settings(self,)->crate::root::akcommunicationsettings::AkCommunicationSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkCommonPlatformSettings_unity2_raw::get_ak_communication_settings(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14e00usize)as*mut u8,();
@@ -202,6 +187,44 @@ pub fn get_soundbank_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn get_use_async_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn get_ak_communication_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="root-akcommonplatformsettings")]impl AkCommonPlatformSettings{#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `GetUserSettings`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_user_settings(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::akcommonusersettings::AkCommonUserSettings{let __mi=Self::get_user_settings_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::akcommonusersettings::AkCommonUserSettings= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `GetAdvancedSettings`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_advanced_settings(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{let __mi=Self::get_advanced_settings_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `GetCommsSettings`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_comms_settings(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::akcommoncommsettings::AkCommonCommSettings{let __mi=Self::get_comms_settings_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::akcommoncommsettings::AkCommonCommSettings= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `get_AkInitializationSettings`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_ak_initialization_settings(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::akinitializationsettings::AkInitializationSettings{let __mi=Self::get_ak_initialization_settings_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::akinitializationsettings::AkInitializationSettings= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `get_AkSpatialAudioInitSettings`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_ak_spatial_audio_init_settings(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings{let __mi=Self::get_ak_spatial_audio_init_settings_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `get_CallbackManagerInitializationSettings`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_callback_manager_initialization_settings(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings{let __mi=Self::get_callback_manager_initialization_settings_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `get_InitialLanguage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_initial_language(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_initial_language_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `get_SoundBankPersistentDataPath`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sound_bank_persistent_data_path(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_sound_bank_persistent_data_path_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `get_RenderDuringFocusLoss`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_render_during_focus_loss(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_render_during_focus_loss_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `get_SoundbankPath`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_soundbank_path(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_soundbank_path_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `get_UseAsyncOpen`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_use_async_open(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_use_async_open_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkCommonPlatformSettings`'s own `get_AkCommunicationSettings`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_ak_communication_settings(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::akcommunicationsettings::AkCommunicationSettings{let __mi=Self::get_ak_communication_settings_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::akcommunicationsettings::AkCommunicationSettings= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-akcommonplatformsettings")]impl AkCommonPlatformSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

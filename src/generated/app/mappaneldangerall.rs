@@ -74,31 +74,17 @@ pub fn num()->Self{Self{value:4}
 #[cfg(feature = "app-mappaneldangerall-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mappaneldangerall")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapPanelDangerAll_unity2_raw{use super:: * ;
-pub unsafe fn get_sub_mesh_count(this:MapPanelDangerAll,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-mappaneldangerall")]pub trait IMapPanelDangerAllMethods:IMapPanelDangerAll{#[doc="`get_SubMeshCount()` overload"]fn get_sub_mesh_count(self,)->i32{unsafe{let __receiver= <MapPanelDangerAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <MapPanelDangerAll as::unity2::ClassIdentity> ::NAME,"get_SubMeshCount",));
-let inner:extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_source_materials(this:MapPanelDangerAll,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MapPanelDangerAll as::unity2::ClassIdentity> ::NAME,"GetSourceMaterials",));
-let inner:extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-mappaneldangerall")]pub trait IMapPanelDangerAllMethods:IMapPanelDangerAll{#[doc="`get_SubMeshCount()` overload"]fn get_sub_mesh_count(self,)->i32{unsafe{let __receiver= <MapPanelDangerAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapPanelDangerAll_unity2_raw::get_sub_mesh_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapPanelDangerAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e04520usize)as*mut u8,();
@@ -113,7 +99,16 @@ __MapPanelDangerAll_unity2_raw::get_sub_mesh_count(__receiver, ::core::option::O
 (MapPanelDangerAll)__receiver)}
 }
 #[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MapPanelDangerAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapPanelDangerAll_unity2_raw::get_source_materials(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapPanelDangerAll as::unity2::ClassIdentity> ::NAME,"GetSourceMaterials",));
+let __inner:extern "C" fn(MapPanelDangerAll, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetSourceMaterialsForMiniMapFill()` overload"]fn get_source_materials_for_mini_map_fill(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MapPanelDangerAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e04c40usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
@@ -194,6 +189,14 @@ pub fn set_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn set_mesh_for_gunner_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 pub fn get_is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="app-mappaneldangerall")]impl MapPanelDangerAll{#[doc="Direct (non-virtual) call to `MapPanelDangerAll`'s own `get_SubMeshCount`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sub_mesh_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_sub_mesh_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapPanelDangerAll`'s own `GetSourceMaterials`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_source_materials(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __mi=Self::get_source_materials_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-mappaneldangerall")]impl MapPanelDangerAll{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

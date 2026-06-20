@@ -20,42 +20,37 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "root-wwiseobjectreference-types")]
 pub use __types::*;
 
-#[cfg(feature="root-wwiseobjectreference")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WwiseObjectReference_unity2_raw{use super:: * ;
-pub unsafe fn get_display_name(this:WwiseObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <WwiseObjectReference as::unity2::ClassIdentity> ::NAME,"get_DisplayName",));
-let inner:extern "C" fn(WwiseObjectReference, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_wwise_object_type(this:WwiseObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <WwiseObjectReference as::unity2::ClassIdentity> ::NAME,"get_WwiseObjectType",));
-let inner:extern "C" fn(WwiseObjectReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="root-wwiseobjectreference")]pub trait IWwiseObjectReferenceMethods:IWwiseObjectReference{#[doc="`get_ObjectName()` overload"]fn get_object_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WwiseObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x293fe40usize)as*mut u8, ::unity2::Il2CppString;
 (WwiseObjectReference)__receiver)}
 }
 #[doc="`get_DisplayName()` overload"]fn get_display_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WwiseObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WwiseObjectReference_unity2_raw::get_display_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <WwiseObjectReference as::unity2::ClassIdentity> ::NAME,"get_DisplayName",));
+let __inner:extern "C" fn(WwiseObjectReference, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Id()` overload"]fn get_id(self,)->u32{unsafe{let __receiver= <WwiseObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x293fe60usize)as*mut u8,u32;
 (WwiseObjectReference)__receiver)}
 }
 #[doc="`get_WwiseObjectType()` overload"]fn get_wwise_object_type(self,)->crate::root::wwiseobjecttype::WwiseObjectType{unsafe{let __receiver= <WwiseObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WwiseObjectReference_unity2_raw::get_wwise_object_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <WwiseObjectReference as::unity2::ClassIdentity> ::NAME,"get_WwiseObjectType",));
+let __inner:extern "C" fn(WwiseObjectReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WwiseObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x293f9c0usize)as*mut u8,();
@@ -70,6 +65,14 @@ pub fn get_display_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn get_wwise_object_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="root-wwiseobjectreference")]impl WwiseObjectReference{#[doc="Direct (non-virtual) call to `WwiseObjectReference`'s own `get_DisplayName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_display_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_display_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WwiseObjectReference`'s own `get_WwiseObjectType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_wwise_object_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::wwiseobjecttype::WwiseObjectType{let __mi=Self::get_wwise_object_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-wwiseobjectreference")]impl WwiseObjectReference{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

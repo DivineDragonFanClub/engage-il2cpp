@@ -20,6 +20,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptsystem/ScriptSystem_CameraList.md"))]#[::unity2::class(namespace="App",name="ScriptSystem.CameraList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera>)]pub struct ScriptSystem_CameraList{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptsystem/ScriptSystem.md"))]#[::unity2::class(namespace="App",name="ScriptSystem")]#[parent(crate::app::scriptutil::ScriptUtil)]pub struct ScriptSystem{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptsystem/ScriptSystem_DebugButton.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ScriptSystem_DebugButton{pub value:i32,}
 impl::unity2::ClassIdentity for ScriptSystem_DebugButton{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ScriptSystem.DebugButton";
@@ -54,9 +57,6 @@ pub fn plus()->Self{Self{value:1024}
 pub fn minus()->Self{Self{value:2048}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptsystem/ScriptSystem.md"))]#[::unity2::class(namespace="App",name="ScriptSystem")]#[parent(crate::app::scriptutil::ScriptUtil)]pub struct ScriptSystem{}
 
 }
 
@@ -397,10 +397,10 @@ pub mod prelude {
     pub use super::ScriptSystem_CameraList;
     pub use super::IScriptSystem_CameraList;
     pub use super::IScriptSystem_CameraListMethods;
-    pub use super::ScriptSystem_DebugButton;
     pub use super::ScriptSystem;
     pub use super::IScriptSystem;
     pub use super::IScriptSystemMethods;
+    pub use super::ScriptSystem_DebugButton;
     pub use crate::app::scriptutil::IScriptUtil;
     pub use crate::system::collections::generic::list_1::IList_1;
     pub use crate::system::object::IObject;

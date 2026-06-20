@@ -18,25 +18,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-situation_converter-convertlastboss-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-situation_converter-convertlastboss")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConvertLastBoss_unity2_raw{use super:: * ;
-pub unsafe fn convert(this:ConvertLastBoss,situation:crate::combat::camerasituation::CameraSituation,arg: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ConvertLastBoss as::unity2::ClassIdentity> ::NAME,"Convert",));
-let inner:extern "C" fn(ConvertLastBoss,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,situation,arg,__mi)}
-}
-
 #[cfg(feature="combat-situation_converter-convertlastboss")]pub trait IConvertLastBossMethods:IConvertLastBoss{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2542100usize)as*mut u8,();
 (ConvertLastBoss)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
 }
 #[doc="`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]fn convert(self,situation:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ConvertLastBoss_unity2_raw::convert(__receiver, ::core::convert::Into::into(situation), ::core::convert::Into::into(arg), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ConvertLastBoss as::unity2::ClassIdentity> ::NAME,"Convert",));
+let __inner:extern "C" fn(ConvertLastBoss,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(situation), ::core::convert::Into::into(arg),__mi)}
+}
 }
 }
 
@@ -44,6 +40,11 @@ __ConvertLastBoss_unity2_raw::convert(__receiver, ::core::convert::Into::into(si
 
 #[cfg(feature="combat-situation_converter-convertlastboss")]impl ConvertLastBoss{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="combat-situation_converter-convertlastboss")]impl ConvertLastBoss{#[doc="Direct (non-virtual) call to `ConvertLastBoss`'s own `Convert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn convert(this:impl::core::convert::Into< ::unity2::IlInstance> ,situation:crate::combat::camerasituation::CameraSituation,arg: ::unity2::Il2CppString,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::convert_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),situation,arg, ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-situation_converter-convertlastboss")]impl ConvertLastBoss{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

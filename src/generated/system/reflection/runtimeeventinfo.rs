@@ -20,25 +20,21 @@ use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
 #[cfg(feature = "system-reflection-runtimeeventinfo-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-runtimeeventinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeEventInfo_unity2_raw{use super:: * ;
-pub unsafe fn get_module(this:RuntimeEventInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::module::Module{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <RuntimeEventInfo as::unity2::ClassIdentity> ::NAME,"get_Module",));
-let inner:extern "C" fn(RuntimeEventInfo, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="system-reflection-runtimeeventinfo")]pub trait IRuntimeEventInfoMethods:IRuntimeEventInfo{#[doc="`get_BindingFlags()` overload"]fn get_binding_flags(self,)->crate::system::reflection::bindingflags::BindingFlags{unsafe{let __receiver= <RuntimeEventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd4170usize)as*mut u8,crate::system::reflection::bindingflags::BindingFlags;
 (RuntimeEventInfo)__receiver)}
 }
 #[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <RuntimeEventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeEventInfo_unity2_raw::get_module(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <RuntimeEventInfo as::unity2::ClassIdentity> ::NAME,"get_Module",));
+let __inner:extern "C" fn(RuntimeEventInfo, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetDeclaringTypeInternal()` overload"]fn get_declaring_type_internal(self,)->crate::system::runtimetype::RuntimeType{unsafe{let __receiver= <RuntimeEventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd42a0usize)as*mut u8,crate::system::runtimetype::RuntimeType;
@@ -66,6 +62,11 @@ pub fn get_declaring_type_internal_method_info()-> & 'static::unity2::il2cpp::Me
 pub fn get_reflected_type_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn get_runtime_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="system-reflection-runtimeeventinfo")]impl RuntimeEventInfo{#[doc="Direct (non-virtual) call to `RuntimeEventInfo`'s own `get_Module`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::module::Module{let __mi=Self::get_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-reflection-runtimeeventinfo")]impl RuntimeEventInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

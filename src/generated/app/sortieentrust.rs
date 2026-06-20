@@ -9,55 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrust/SortieEntrust.md"))]#[::unity2::class(namespace="App",name="SortieEntrust")]#[parent(crate::system::object::Object)]pub struct SortieEntrust{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrust/SortieEntrust_Executor.md"))]#[::unity2::class(namespace="App",name="SortieEntrust.Executor")]#[parent(crate::system::object::Object)]pub struct SortieEntrust_Executor{#[offset(16)]#[rename(name="m_IsAll")]pub m_is_all:bool, #[offset(24)]#[rename(name="m_UnitDataHolder")]pub m_unit_data_holder:crate::app::sortieentrustunitdataholder::SortieEntrustUnitDataHolder, #[offset(32)]#[rename(name="m_StockDataHoler")]pub m_stock_data_holer:crate::app::sortieentruststockdataholder::SortieEntrustStockDataHolder,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrust/SortieEntrust.md"))]#[::unity2::class(namespace="App",name="SortieEntrust")]#[parent(crate::system::object::Object)]pub struct SortieEntrust{}
 
 }
 
 #[cfg(feature = "app-sortieentrust-types")]
 pub use __types::*;
-
-#[cfg(feature="app-sortieentrust")]impl SortieEntrust{#[doc="`Execute(crate::app::unit::Unit)` overload"]pub fn execute(unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::sortieentrustresult::SortieEntrustResult{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5c40usize)as*mut u8,crate::app::sortieentrustresult::SortieEntrustResult;
-(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`ExecuteAllSortieUnits()` overload"]pub fn execute_all_sortie_units()->crate::app::sortieentrustresult::SortieEntrustResult{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5cb0usize)as*mut u8,crate::app::sortieentrustresult::SortieEntrustResult;
-)}
-}
-#[doc="`ShowWarning(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]pub fn show_warning(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,result:impl::core::convert::Into<crate::app::sortieentrustresult::SortieEntrustResult>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5d10usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::sortieentrustresult::SortieEntrustResult)::core::convert::Into::into(result))}
-}
-#[doc="`ShowWarningAllSortieUnits(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]pub fn show_warning_all_sortie_units(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,result:impl::core::convert::Into<crate::app::sortieentrustresult::SortieEntrustResult>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5eb0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::sortieentrustresult::SortieEntrustResult)::core::convert::Into::into(result))}
-}
-#[doc="`ShowWarningCommon(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn show_warning_common(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5e30usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(mid))}
-}
-}
-
-#[cfg(feature="app-sortieentrust")]pub trait ISortieEntrustMethods:ISortieEntrust{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieEntrust as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5fd0usize)as*mut u8,();
-(SortieEntrust)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortieentrust")]impl<__T:ISortieEntrust>ISortieEntrustMethods for __T{}
-
-#[cfg(feature="app-sortieentrust")]impl SortieEntrust{pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn execute_all_sortie_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn show_warning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn show_warning_all_sortie_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn show_warning_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-sortieentrust")]impl SortieEntrust{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieEntrust), ::core::stringify!(new),));
- <Self as ISortieEntrustMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-sortieentrust")]pub trait ISortieEntrust_ExecutorMethods:ISortieEntrust_Executor{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieEntrust_Executor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d72da0usize)as*mut u8,();
@@ -117,15 +77,55 @@ pub fn is_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
+#[cfg(feature="app-sortieentrust")]impl SortieEntrust{#[doc="`Execute(crate::app::unit::Unit)` overload"]pub fn execute(unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::sortieentrustresult::SortieEntrustResult{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5c40usize)as*mut u8,crate::app::sortieentrustresult::SortieEntrustResult;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`ExecuteAllSortieUnits()` overload"]pub fn execute_all_sortie_units()->crate::app::sortieentrustresult::SortieEntrustResult{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5cb0usize)as*mut u8,crate::app::sortieentrustresult::SortieEntrustResult;
+)}
+}
+#[doc="`ShowWarning(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]pub fn show_warning(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,result:impl::core::convert::Into<crate::app::sortieentrustresult::SortieEntrustResult>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5d10usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::sortieentrustresult::SortieEntrustResult)::core::convert::Into::into(result))}
+}
+#[doc="`ShowWarningAllSortieUnits(crate::app::procinst::ProcInst, crate::app::sortieentrustresult::SortieEntrustResult)` overload"]pub fn show_warning_all_sortie_units(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,result:impl::core::convert::Into<crate::app::sortieentrustresult::SortieEntrustResult>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5eb0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::sortieentrustresult::SortieEntrustResult)::core::convert::Into::into(result))}
+}
+#[doc="`ShowWarningCommon(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn show_warning_common(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5e30usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+}
+
+#[cfg(feature="app-sortieentrust")]pub trait ISortieEntrustMethods:ISortieEntrust{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieEntrust as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5fd0usize)as*mut u8,();
+(SortieEntrust)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortieentrust")]impl<__T:ISortieEntrust>ISortieEntrustMethods for __T{}
+
+#[cfg(feature="app-sortieentrust")]impl SortieEntrust{pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_all_sortie_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn show_warning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn show_warning_all_sortie_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn show_warning_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-sortieentrust")]impl SortieEntrust{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieEntrust), ::core::stringify!(new),));
+ <Self as ISortieEntrustMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-sortieentrust")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieEntrust;
-    pub use super::ISortieEntrust;
-    pub use super::ISortieEntrustMethods;
     pub use super::SortieEntrust_Executor;
     pub use super::ISortieEntrust_Executor;
     pub use super::ISortieEntrust_ExecutorMethods;
+    pub use super::SortieEntrust;
+    pub use super::ISortieEntrust;
+    pub use super::ISortieEntrustMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -37,50 +37,15 @@ pub fn env()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talksound/TalkSound_WaitSE.md"))]#[::unity2::class(namespace="App",name="TalkSound.WaitSE")]#[parent(crate::app::procinst::ProcInst)]pub struct TalkSound_WaitSE{#[static_field]#[rename(name="MinimumWaitSec")]pub minimum_wait_sec:f32, #[offset(112)]#[rename(name="m_Sec")]pub m_sec:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talksound/TalkSound.md"))]#[::unity2::class(namespace="App",name="TalkSound")]#[parent(crate::system::object::Object)]pub struct TalkSound{#[offset(16)]#[rename(name="m_Mid")]pub m_mid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_SoundCmdExecBefore")]pub m_sound_cmd_exec_before: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_SoundCmdExecAfter")]pub m_sound_cmd_exec_after: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_ReservedTalkVoice")]pub m_reserved_talk_voice: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_ReservedPersonVoice")]pub m_reserved_person_voice: ::unity2::Il2CppString, #[offset(56)]#[rename(name="m_ReservedPersonPid")]pub m_reserved_person_pid: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_ReservedPersonSwitchName")]pub m_reserved_person_switch_name: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_PersonVoice")]pub m_person_voice: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talksound/TalkSound_WaitSE.md"))]#[::unity2::class(namespace="App",name="TalkSound.WaitSE")]#[parent(crate::app::procinst::ProcInst)]pub struct TalkSound_WaitSE{#[static_field]#[rename(name="MinimumWaitSec")]pub minimum_wait_sec:f32, #[offset(112)]#[rename(name="m_Sec")]pub m_sec:f32,}
 
 }
 
 #[cfg(feature = "app-talksound-types")]
 pub use __types::*;
-
-#[cfg(feature="app-talksound")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkSound_WaitSE_unity2_raw{use super:: * ;
-pub unsafe fn on_tick(this:TalkSound_WaitSE,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <TalkSound_WaitSE as::unity2::ClassIdentity> ::NAME,"OnTick",));
-let inner:extern "C" fn(TalkSound_WaitSE, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-talksound")]pub trait ITalkSound_WaitSEMethods:ITalkSound_WaitSE{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <TalkSound_WaitSE as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkSound_WaitSE_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkSound_WaitSE as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fc690usize)as*mut u8,();
-(TalkSound_WaitSE)__receiver)}
-}
-}
-
-#[cfg(feature="app-talksound")]impl<__T:ITalkSound_WaitSE>ITalkSound_WaitSEMethods for __T{}
-
-#[cfg(feature="app-talksound")]impl TalkSound_WaitSE{pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-talksound")]impl TalkSound_WaitSE{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TalkSound_WaitSE), ::core::stringify!(new),));
- <Self as ITalkSound_WaitSEMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-talksound")]impl TalkSound{#[doc="`MessFileNameToSoundBankName(::unity2::Il2CppString)` overload"]pub fn mess_file_name_to_sound_bank_name(mess_file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c1640usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
 (::unity2::Il2CppString)::core::convert::Into::into(mess_file_name))}
@@ -233,16 +198,52 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-talksound")]pub trait ITalkSound_WaitSEMethods:ITalkSound_WaitSE{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <TalkSound_WaitSE as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TalkSound_WaitSE as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let __inner:extern "C" fn(TalkSound_WaitSE, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkSound_WaitSE as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fc690usize)as*mut u8,();
+(TalkSound_WaitSE)__receiver)}
+}
+}
+
+#[cfg(feature="app-talksound")]impl<__T:ITalkSound_WaitSE>ITalkSound_WaitSEMethods for __T{}
+
+#[cfg(feature="app-talksound")]impl TalkSound_WaitSE{pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-talksound")]impl TalkSound_WaitSE{#[doc="Direct (non-virtual) call to `TalkSound_WaitSE`'s own `OnTick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-talksound")]impl TalkSound_WaitSE{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkSound_WaitSE), ::core::stringify!(new),));
+ <Self as ITalkSound_WaitSEMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-talksound")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TalkSound_SoundType;
-    pub use super::TalkSound_WaitSE;
-    pub use super::ITalkSound_WaitSE;
-    pub use super::ITalkSound_WaitSEMethods;
     pub use super::TalkSound;
     pub use super::ITalkSound;
     pub use super::ITalkSoundMethods;
+    pub use super::TalkSound_WaitSE;
+    pub use super::ITalkSound_WaitSE;
+    pub use super::ITalkSound_WaitSEMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

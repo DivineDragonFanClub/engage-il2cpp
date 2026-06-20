@@ -22,21 +22,17 @@ use crate::system::reflection::methodbase::{IMethodBase,MethodBase}
 #[cfg(feature = "system-reflection-runtimeconstructorinfo-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-runtimeconstructorinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeConstructorInfo_unity2_raw{use super:: * ;
-pub unsafe fn get_module(this:RuntimeConstructorInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::module::Module{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-reflection-runtimeconstructorinfo")]pub trait IRuntimeConstructorInfoMethods:IRuntimeConstructorInfo{#[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <RuntimeConstructorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",15usize,__vt.len(), <RuntimeConstructorInfo as::unity2::ClassIdentity> ::NAME,"get_Module",));
-let inner:extern "C" fn(RuntimeConstructorInfo, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RuntimeConstructorInfo, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="system-reflection-runtimeconstructorinfo")]pub trait IRuntimeConstructorInfoMethods:IRuntimeConstructorInfo{#[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <RuntimeConstructorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeConstructorInfo_unity2_raw::get_module(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetRuntimeModule()` overload"]fn get_runtime_module(self,)->crate::system::reflection::runtimemodule::RuntimeModule{unsafe{let __receiver= <RuntimeConstructorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd3bd0usize)as*mut u8,crate::system::reflection::runtimemodule::RuntimeModule;
@@ -68,6 +64,11 @@ pub fn get_binding_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn get_reflected_type_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn serialization_to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="system-reflection-runtimeconstructorinfo")]impl RuntimeConstructorInfo{#[doc="Direct (non-virtual) call to `RuntimeConstructorInfo`'s own `get_Module`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::module::Module{let __mi=Self::get_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-reflection-runtimeconstructorinfo")]impl RuntimeConstructorInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

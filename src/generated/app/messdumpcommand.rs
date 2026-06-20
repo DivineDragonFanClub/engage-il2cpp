@@ -18,34 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-messdumpcommand-types")]
 pub use __types::*;
 
-#[cfg(feature="app-messdumpcommand")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MessDumpCommand_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:MessDumpCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-messdumpcommand")]pub trait IMessDumpCommandMethods:IMessDumpCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MessDumpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <MessDumpCommand as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(MessDumpCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MessDumpCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn func(this:MessDumpCommand,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Func(crate::system::object::Object, crate::system::object::Object)` overload"]fn func(self,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <MessDumpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",23usize,__vt.len(), <MessDumpCommand as::unity2::ClassIdentity> ::NAME,"Func",));
-let inner:extern "C" fn(MessDumpCommand,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MessDumpCommand,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj1,obj2,__mi)}
+__inner(__receiver, ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2),__mi)}
 }
-
-#[cfg(feature="app-messdumpcommand")]pub trait IMessDumpCommandMethods:IMessDumpCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MessDumpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MessDumpCommand_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Func(crate::system::object::Object, crate::system::object::Object)` overload"]fn func(self,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <MessDumpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MessDumpCommand_unity2_raw::func(__receiver, ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MessDumpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25db3c0usize)as*mut u8,();
@@ -58,6 +53,14 @@ __MessDumpCommand_unity2_raw::func(__receiver, ::core::convert::Into::into(obj1)
 #[cfg(feature="app-messdumpcommand")]impl MessDumpCommand{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-messdumpcommand")]impl MessDumpCommand{#[doc="Direct (non-virtual) call to `MessDumpCommand`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MessDumpCommand`'s own `Func`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn func(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj1:crate::system::object::Object,obj2:crate::system::object::Object,)->f32{let __mi=Self::func_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj1,obj2, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-messdumpcommand")]impl MessDumpCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

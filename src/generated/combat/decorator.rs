@@ -16,131 +16,17 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-decorator-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-decorator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Decorator_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:Decorator,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="combat-decorator")]pub trait IDecoratorMethods:IDecorator{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_enter(this:Decorator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnEnter",));
-let inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_enter_attack(this:Decorator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnEnterAttack",));
-let inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_update(this:Decorator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
-let inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_exit(this:Decorator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnExit",));
-let inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_arrival_time_predicted(this:Decorator,world_arrival_time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnArrivalTimePredicted_",));
-let inner:extern "C" fn(Decorator,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,world_arrival_time,__mi)}
-pub unsafe fn on_hit_time_predicted(this:Decorator,world_hit_time:f32,weapon_style:crate::combat::weaponstyle::WeaponStyle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnHitTimePredicted_",));
-let inner:extern "C" fn(Decorator,f32,crate::combat::weaponstyle::WeaponStyle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,world_hit_time,weapon_style,__mi)}
-pub unsafe fn on_shoot(this:Decorator,ev:crate::unity_engine::animationevent::AnimationEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnShoot",));
-let inner:extern "C" fn(Decorator,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,ev,__mi)}
-pub unsafe fn on_miss_passed(this:Decorator,ev:crate::unity_engine::animationevent::AnimationEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnMissPassed",));
-let inner:extern "C" fn(Decorator,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,ev,__mi)}
-pub unsafe fn on_hit_passed(this:Decorator,ev:crate::unity_engine::animationevent::AnimationEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnHitPassed",));
-let inner:extern "C" fn(Decorator,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,ev,__mi)}
-pub unsafe fn on_enemy_damage(this:Decorator,ev:crate::unity_engine::animationevent::AnimationEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnEnemyDamage_",));
-let inner:extern "C" fn(Decorator,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,ev,__mi)}
-pub unsafe fn on_backward_cancel(this:Decorator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnBackwardCancel_",));
-let inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="combat-decorator")]pub trait IDecoratorMethods:IDecorator{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_m_Phase()` overload"]fn get_m_phase(self,)->crate::combat::phase::Phase{unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea020usize)as*mut u8,crate::combat::phase::Phase;
@@ -187,37 +73,136 @@ __Decorator_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 (Decorator)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr))}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let __inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnEnterAttack()` overload"]fn on_enter_attack(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_enter_attack(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnEnterAttack",));
+let __inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let __inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let __inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnArrivalTimePredicted_(f32)` overload"]fn on_arrival_time_predicted(self,world_arrival_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_arrival_time_predicted(__receiver, ::core::convert::Into::into(world_arrival_time), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnArrivalTimePredicted_",));
+let __inner:extern "C" fn(Decorator,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(world_arrival_time),__mi)}
+}
 }
 #[doc="`OnHitTimePredicted_(f32, crate::combat::weaponstyle::WeaponStyle)` overload"]fn on_hit_time_predicted(self,world_hit_time:impl::core::convert::Into<f32> ,weapon_style:impl::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_hit_time_predicted(__receiver, ::core::convert::Into::into(world_hit_time), ::core::convert::Into::into(weapon_style), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnHitTimePredicted_",));
+let __inner:extern "C" fn(Decorator,f32,crate::combat::weaponstyle::WeaponStyle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(world_hit_time), ::core::convert::Into::into(weapon_style),__mi)}
+}
 }
 #[doc="`OnShoot(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_shoot(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_shoot(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnShoot",));
+let __inner:extern "C" fn(Decorator,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(ev),__mi)}
+}
 }
 #[doc="`OnMissPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_miss_passed(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_miss_passed(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnMissPassed",));
+let __inner:extern "C" fn(Decorator,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(ev),__mi)}
+}
 }
 #[doc="`OnHitPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_hit_passed(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_hit_passed(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnHitPassed",));
+let __inner:extern "C" fn(Decorator,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(ev),__mi)}
+}
 }
 #[doc="`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_enemy_damage(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_enemy_damage(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnEnemyDamage_",));
+let __inner:extern "C" fn(Decorator,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(ev),__mi)}
+}
 }
 #[doc="`OnBackwardCancel_()` overload"]fn on_backward_cancel(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Decorator_unity2_raw::on_backward_cancel(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <Decorator as::unity2::ClassIdentity> ::NAME,"OnBackwardCancel_",));
+let __inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7d50usize)as*mut u8,();
@@ -251,6 +236,44 @@ pub fn on_hit_passed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn on_enemy_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
 pub fn on_backward_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+}
+
+#[cfg(feature="combat-decorator")]impl Decorator{#[doc="Direct (non-virtual) call to `Decorator`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enter_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnEnterAttack`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enter_attack(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enter_attack_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnUpdate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_exit(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_exit_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnArrivalTimePredicted_`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_arrival_time_predicted(this:impl::core::convert::Into< ::unity2::IlInstance> ,world_arrival_time:f32,)->(){let __mi=Self::on_arrival_time_predicted_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),world_arrival_time, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnHitTimePredicted_`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_hit_time_predicted(this:impl::core::convert::Into< ::unity2::IlInstance> ,world_hit_time:f32,weapon_style:crate::combat::weaponstyle::WeaponStyle,)->(){let __mi=Self::on_hit_time_predicted_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,crate::combat::weaponstyle::WeaponStyle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),world_hit_time,weapon_style, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnShoot`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_shoot(this:impl::core::convert::Into< ::unity2::IlInstance> ,ev:crate::unity_engine::animationevent::AnimationEvent,)->(){let __mi=Self::on_shoot_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),ev, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnMissPassed`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_miss_passed(this:impl::core::convert::Into< ::unity2::IlInstance> ,ev:crate::unity_engine::animationevent::AnimationEvent,)->(){let __mi=Self::on_miss_passed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),ev, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnHitPassed`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_hit_passed(this:impl::core::convert::Into< ::unity2::IlInstance> ,ev:crate::unity_engine::animationevent::AnimationEvent,)->(){let __mi=Self::on_hit_passed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),ev, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnEnemyDamage_`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enemy_damage(this:impl::core::convert::Into< ::unity2::IlInstance> ,ev:crate::unity_engine::animationevent::AnimationEvent,)->(){let __mi=Self::on_enemy_damage_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),ev, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Decorator`'s own `OnBackwardCancel_`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_backward_cancel(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_backward_cancel_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-decorator")]impl Decorator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

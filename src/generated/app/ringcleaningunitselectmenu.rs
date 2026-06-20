@@ -29,7 +29,13 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu.md"))]#[::unity2::class(namespace="App",name="RingCleaningUnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RingCleaningUnitSelectMenu{#[static_field]#[rename(name="ForceMask")]pub force_mask:u32, #[offset(200)]#[rename(name="m_GodList")]pub m_god_list:crate::system::collections::generic::list_1::List_1<crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_GodParam> , #[offset(208)]#[rename(name="m_GodListIndex")]pub m_god_list_index:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem{#[offset(100)]#[rename(name="m_Index")]pub m_index:i32, #[offset(104)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_bSelect")]pub m_b_select:bool, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_GodParam.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RingCleaningUnitSelectMenu_GodParam{pub god:crate::app::godunit::GodUnit,pub r#type:crate::app::ringcleaningsequence::RingCleaningSequence_GodType,}
@@ -43,97 +49,102 @@ impl::unity2::IlType for RingCleaningUnitSelectMenu_GodParam{fn il_type()-> &'st
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RingCleaningUnitSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RingCleaningUnitSelectMenu_DecideEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem{#[offset(100)]#[rename(name="m_Index")]pub m_index:i32, #[offset(104)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_bSelect")]pub m_b_select:bool, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu.md"))]#[::unity2::class(namespace="App",name="RingCleaningUnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RingCleaningUnitSelectMenu{#[static_field]#[rename(name="ForceMask")]pub force_mask:u32, #[offset(200)]#[rename(name="m_GodList")]pub m_god_list:crate::system::collections::generic::list_1::List_1<crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_GodParam> , #[offset(208)]#[rename(name="m_GodListIndex")]pub m_god_list_index:i32,}
 
 }
 
 #[cfg(feature = "app-ringcleaningunitselectmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-ringcleaningunitselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingCleaningUnitSelectMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:RingCleaningUnitSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-ringcleaningunitselectmenu")]pub trait IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItemMethods:IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem{#[doc="`.ctor(i32, crate::app::unit::Unit, crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_event_handler:impl::core::convert::Into<crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler> ,select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b115d0usize)as*mut u8,();
+(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem)__receiver,(i32)::core::convert::Into::into(index),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",30usize,__vt.len(), <RingCleaningUnitSelectMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RingCleaningUnitSelectMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn after_build(this:RingCleaningUnitSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",25usize,__vt.len(), <RingCleaningUnitSelectMenu as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
-let inner:extern "C" fn(RingCleaningUnitSelectMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",12usize,__vt.len(), <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn custom_call(this:RingCleaningUnitSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",58usize,__vt.len(), <RingCleaningUnitSelectMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
-let inner:extern "C" fn(RingCleaningUnitSelectMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_event_handler:impl::core::convert::Into<crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler> ,select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241a9d0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2421b10usize)as*mut u8,();
-)}
+__inner(__receiver,__mi)}
 }
 }
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]pub trait IRingCleaningUnitSelectMenuMethods:IRingCleaningUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2420ca0usize)as*mut u8,();
-(RingCleaningUnitSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)::core::convert::Into::into(menu_content))}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingCleaningUnitSelectMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
-#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingCleaningUnitSelectMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
-}
-#[doc="`UpdateUnit(crate::app::unit::Unit)` overload"]fn update_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2420f60usize)as*mut u8,();
-(RingCleaningUnitSelectMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingCleaningUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingCleaningUnitSelectMenu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b117f0usize)as*mut u8,crate::app::unit::Unit;
+(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-ringcleaningunitselectmenu")]impl<__T:IRingCleaningUnitSelectMenu>IRingCleaningUnitSelectMenuMethods for __T{}
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl<__T:IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem>IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItemMethods for __T{}
 
-#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn update_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem{#[doc="Direct (non-virtual) call to `RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem{#[doc="`.ctor(i32, crate::app::unit::Unit, crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` — overload selector"]pub fn new(index:i32,unit:crate::app::unit::Unit,decide_event_handler:crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler,select_unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RingCleaningUnitSelectMenu), ::core::stringify!(new),));
- <Self as IRingCleaningUnitSelectMenuMethods> ::ctor(this,menu_item_list,menu_content);
+ failed to instantiate", ::core::stringify!(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem), ::core::stringify!(new),));
+ <Self as IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItemMethods> ::ctor(this,index,unit,decide_event_handler,select_unit);
 this}
 }
 
@@ -161,142 +172,21 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-ringcleaningunitselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingCleaningUnitSelectMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RingCleaningUnitSelectMenu_DecideEventHandler,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <RingCleaningUnitSelectMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RingCleaningUnitSelectMenu_DecideEventHandler,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,__mi)}
-}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]pub trait IRingCleaningUnitSelectMenu_DecideEventHandlerMethods:IRingCleaningUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b11210usize)as*mut u8,();
-(RingCleaningUnitSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingCleaningUnitSelectMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]impl<__T:IRingCleaningUnitSelectMenu_DecideEventHandler>IRingCleaningUnitSelectMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingCleaningUnitSelectMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IRingCleaningUnitSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn build_attribute(this:RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_select(this:RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]pub trait IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItemMethods:IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem{#[doc="`.ctor(i32, crate::app::unit::Unit, crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_event_handler:impl::core::convert::Into<crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler> ,select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b115d0usize)as*mut u8,();
-(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem)__receiver,(i32)::core::convert::Into::into(index),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b117f0usize)as*mut u8,crate::app::unit::Unit;
-(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]impl<__T:IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem>IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItemMethods for __T{}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem{#[doc="`.ctor(i32, crate::app::unit::Unit, crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` — overload selector"]pub fn new(index:i32,unit:crate::app::unit::Unit,decide_event_handler:crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler,select_unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem), ::core::stringify!(new),));
- <Self as IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItemMethods> ::ctor(this,index,unit,decide_event_handler,select_unit);
-this}
-}
-
-#[cfg(feature="app-ringcleaningunitselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-ringcleaningunitselectmenu")]pub trait IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYesMethods:IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]fn ctor(self,action:impl::core::convert::Into<crate::system::action::Action> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7cba0usize)as*mut u8,();
 (RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(action),(::unity2::Il2CppString)::core::convert::Into::into(text))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -306,6 +196,11 @@ __RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes{#[doc="Direct (non-virtual) call to `RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]pub fn new(action:crate::system::action::Action,text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes), ::core::stringify!(new),));
@@ -313,25 +208,144 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-ringcleaningunitselectmenu")]pub trait IRingCleaningUnitSelectMenu_DecideEventHandlerMethods:IRingCleaningUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b11210usize)as*mut u8,();
+(RingCleaningUnitSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RingCleaningUnitSelectMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RingCleaningUnitSelectMenu_DecideEventHandler,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl<__T:IRingCleaningUnitSelectMenu_DecideEventHandler>IRingCleaningUnitSelectMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `RingCleaningUnitSelectMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningUnitSelectMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRingCleaningUnitSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_event_handler:impl::core::convert::Into<crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler> ,select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241a9d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2421b10usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]pub trait IRingCleaningUnitSelectMenuMethods:IRingCleaningUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2420ca0usize)as*mut u8,();
+(RingCleaningUnitSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RingCleaningUnitSelectMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RingCleaningUnitSelectMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <RingCleaningUnitSelectMenu as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let __inner:extern "C" fn(RingCleaningUnitSelectMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`UpdateUnit(crate::app::unit::Unit)` overload"]fn update_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2420f60usize)as*mut u8,();
+(RingCleaningUnitSelectMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingCleaningUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <RingCleaningUnitSelectMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let __inner:extern "C" fn(RingCleaningUnitSelectMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl<__T:IRingCleaningUnitSelectMenu>IRingCleaningUnitSelectMenuMethods for __T{}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu{#[doc="Direct (non-virtual) call to `RingCleaningUnitSelectMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingCleaningUnitSelectMenu`'s own `AfterBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn after_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::after_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingCleaningUnitSelectMenu`'s own `CustomCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn custom_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::custom_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-ringcleaningunitselectmenu")]impl RingCleaningUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningUnitSelectMenu), ::core::stringify!(new),));
+ <Self as IRingCleaningUnitSelectMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
 #[cfg(feature = "app-ringcleaningunitselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingCleaningUnitSelectMenu;
-    pub use super::IRingCleaningUnitSelectMenu;
-    pub use super::IRingCleaningUnitSelectMenuMethods;
-    pub use super::RingCleaningUnitSelectMenu_GodParam;
-    pub use super::RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog;
-    pub use super::IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog;
-    pub use super::IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogMethods;
-    pub use super::RingCleaningUnitSelectMenu_DecideEventHandler;
-    pub use super::IRingCleaningUnitSelectMenu_DecideEventHandler;
-    pub use super::IRingCleaningUnitSelectMenu_DecideEventHandlerMethods;
     pub use super::RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem;
     pub use super::IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem;
     pub use super::IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItemMethods;
+    pub use super::RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog;
+    pub use super::IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog;
+    pub use super::IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogMethods;
     pub use super::RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes;
     pub use super::IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes;
     pub use super::IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYesMethods;
+    pub use super::RingCleaningUnitSelectMenu_GodParam;
+    pub use super::RingCleaningUnitSelectMenu_DecideEventHandler;
+    pub use super::IRingCleaningUnitSelectMenu_DecideEventHandler;
+    pub use super::IRingCleaningUnitSelectMenu_DecideEventHandlerMethods;
+    pub use super::RingCleaningUnitSelectMenu;
+    pub use super::IRingCleaningUnitSelectMenu;
+    pub use super::IRingCleaningUnitSelectMenuMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

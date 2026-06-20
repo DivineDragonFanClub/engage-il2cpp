@@ -24,19 +24,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-debugwindow-types")]
 pub use __types::*;
 
-#[cfg(feature="app-debugwindow")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugWindow_unity2_raw{use super:: * ;
-pub unsafe fn on_draw(this:DebugWindow,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DebugWindow as::unity2::ClassIdentity> ::NAME,"OnDraw",));
-let inner:extern "C" fn(DebugWindow, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-debugwindow")]impl DebugWindow{#[doc="`ToScreenX(f32)` overload"]pub fn to_screen_x(x:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a121c0usize)as*mut u8,f32;
 (f32)::core::convert::Into::into(x))}
 }
@@ -101,7 +88,16 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2a12160usize)as*mut
 (DebugWindow)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(f32)::core::convert::Into::into(height),(f32)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(max))}
 }
 #[doc="`OnDraw()` overload"]fn on_draw(self,)->(){unsafe{let __receiver= <DebugWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugWindow_unity2_raw::on_draw(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DebugWindow as::unity2::ClassIdentity> ::NAME,"OnDraw",));
+let __inner:extern "C" fn(DebugWindow, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <DebugWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a13e90usize)as*mut u8,();
@@ -148,6 +144,11 @@ pub fn set_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn set_clip_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 pub fn get_anchor_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
+
+#[cfg(feature="app-debugwindow")]impl DebugWindow{#[doc="Direct (non-virtual) call to `DebugWindow`'s own `OnDraw`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_draw(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_draw_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-debugwindow")]impl DebugWindow{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

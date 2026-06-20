@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineClip")]#[parent(crate::system::object::Object)]pub struct TimelineClip{#[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(16)]#[rename(name="m_Version")]pub m_version:i32, #[static_field]#[rename(name="kDefaultClipCaps")]pub k_default_clip_caps:crate::unity_engine::timeline::clipcaps::ClipCaps, #[static_field]#[rename(name="kDefaultClipDurationInSeconds")]pub k_default_clip_duration_in_seconds:f32, #[static_field]#[rename(name="kTimeScaleMin")]pub k_time_scale_min:f64, #[static_field]#[rename(name="kTimeScaleMax")]pub k_time_scale_max:f64, #[static_field]#[rename(name="kDefaultCurvesName")]pub k_default_curves_name: ::unity2::Il2CppString, #[static_field]#[rename(name="kMinDuration")]pub k_min_duration:f64, #[static_field]#[rename(name="kMaxTimeValue")]pub k_max_time_value:f64, #[offset(24)]#[rename(name="m_Start")]pub m_start:f64, #[offset(32)]#[rename(name="m_ClipIn")]pub m_clip_in:f64, #[offset(40)]#[rename(name="m_Asset")]pub m_asset:crate::unity_engine::object_2::Object_2, #[offset(48)]#[rename(name="m_Duration")]pub m_duration:f64, #[offset(56)]#[rename(name="m_TimeScale")]pub m_time_scale:f64, #[offset(64)]#[rename(name="m_ParentTrack")]pub m_parent_track:crate::unity_engine::timeline::trackasset::TrackAsset, #[offset(72)]#[rename(name="m_EaseInDuration")]pub m_ease_in_duration:f64, #[offset(80)]#[rename(name="m_EaseOutDuration")]pub m_ease_out_duration:f64, #[offset(88)]#[rename(name="m_BlendInDuration")]pub m_blend_in_duration:f64, #[offset(96)]#[rename(name="m_BlendOutDuration")]pub m_blend_out_duration:f64, #[offset(104)]#[rename(name="m_MixInCurve")]pub m_mix_in_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(112)]#[rename(name="m_MixOutCurve")]pub m_mix_out_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(120)]#[rename(name="m_BlendInCurveMode")]pub m_blend_in_curve_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode, #[offset(124)]#[rename(name="m_BlendOutCurveMode")]pub m_blend_out_curve_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode, #[offset(128)]#[rename(name="m_ExposedParameterNames")]pub m_exposed_parameter_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_AnimationCurves")]pub m_animation_curves:crate::unity_engine::animationclip::AnimationClip, #[offset(144)]#[rename(name="m_Recordable")]pub m_recordable:bool, #[offset(148)]#[rename(name="m_PostExtrapolationMode")]pub m_post_extrapolation_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation, #[offset(152)]#[rename(name="m_PreExtrapolationMode")]pub m_pre_extrapolation_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation, #[offset(160)]#[rename(name="m_PostExtrapolationTime")]pub m_post_extrapolation_time:f64, #[offset(168)]#[rename(name="m_PreExtrapolationTime")]pub m_pre_extrapolation_time:f64, #[offset(176)]#[rename(name="m_DisplayName")]pub m_display_name: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TimelineClip_BlendCurveMode{pub value:i32,}
 impl::unity2::ClassIdentity for TimelineClip_BlendCurveMode{const NAMESPACE: &'static str="UnityEngine.Timeline";
 const NAME: &'static str="TimelineClip.BlendCurveMode";
@@ -27,12 +30,6 @@ impl TimelineClip_BlendCurveMode{pub fn auto()->Self{Self{value:0}
 pub fn manual()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineClip")]#[parent(crate::system::object::Object)]pub struct TimelineClip{#[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(16)]#[rename(name="m_Version")]pub m_version:i32, #[static_field]#[rename(name="kDefaultClipCaps")]pub k_default_clip_caps:crate::unity_engine::timeline::clipcaps::ClipCaps, #[static_field]#[rename(name="kDefaultClipDurationInSeconds")]pub k_default_clip_duration_in_seconds:f32, #[static_field]#[rename(name="kTimeScaleMin")]pub k_time_scale_min:f64, #[static_field]#[rename(name="kTimeScaleMax")]pub k_time_scale_max:f64, #[static_field]#[rename(name="kDefaultCurvesName")]pub k_default_curves_name: ::unity2::Il2CppString, #[static_field]#[rename(name="kMinDuration")]pub k_min_duration:f64, #[static_field]#[rename(name="kMaxTimeValue")]pub k_max_time_value:f64, #[offset(24)]#[rename(name="m_Start")]pub m_start:f64, #[offset(32)]#[rename(name="m_ClipIn")]pub m_clip_in:f64, #[offset(40)]#[rename(name="m_Asset")]pub m_asset:crate::unity_engine::object_2::Object_2, #[offset(48)]#[rename(name="m_Duration")]pub m_duration:f64, #[offset(56)]#[rename(name="m_TimeScale")]pub m_time_scale:f64, #[offset(64)]#[rename(name="m_ParentTrack")]pub m_parent_track:crate::unity_engine::timeline::trackasset::TrackAsset, #[offset(72)]#[rename(name="m_EaseInDuration")]pub m_ease_in_duration:f64, #[offset(80)]#[rename(name="m_EaseOutDuration")]pub m_ease_out_duration:f64, #[offset(88)]#[rename(name="m_BlendInDuration")]pub m_blend_in_duration:f64, #[offset(96)]#[rename(name="m_BlendOutDuration")]pub m_blend_out_duration:f64, #[offset(104)]#[rename(name="m_MixInCurve")]pub m_mix_in_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(112)]#[rename(name="m_MixOutCurve")]pub m_mix_out_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(120)]#[rename(name="m_BlendInCurveMode")]pub m_blend_in_curve_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode, #[offset(124)]#[rename(name="m_BlendOutCurveMode")]pub m_blend_out_curve_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode, #[offset(128)]#[rename(name="m_ExposedParameterNames")]pub m_exposed_parameter_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_AnimationCurves")]pub m_animation_curves:crate::unity_engine::animationclip::AnimationClip, #[offset(144)]#[rename(name="m_Recordable")]pub m_recordable:bool, #[offset(148)]#[rename(name="m_PostExtrapolationMode")]pub m_post_extrapolation_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation, #[offset(152)]#[rename(name="m_PreExtrapolationMode")]pub m_pre_extrapolation_mode:crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation, #[offset(160)]#[rename(name="m_PostExtrapolationTime")]pub m_post_extrapolation_time:f64, #[offset(168)]#[rename(name="m_PreExtrapolationTime")]pub m_pre_extrapolation_time:f64, #[offset(176)]#[rename(name="m_DisplayName")]pub m_display_name: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineClip.TimelineClipUpgrade")]#[parent(crate::system::object::Object)]pub struct TimelineClip_TimelineClipUpgrade{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip_ClipExtrapolation.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TimelineClip_ClipExtrapolation{pub value:i32,}
@@ -56,103 +53,13 @@ pub fn r#continue()->Self{Self{value:4}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineClip.TimelineClipUpgrade")]#[parent(crate::system::object::Object)]pub struct TimelineClip_TimelineClipUpgrade{}
+
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineclip-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-timeline-timelineclip")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TimelineClip_unity2_raw{use super:: * ;
-pub unsafe fn get_duration(this:TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"get_duration",));
-let inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_curves(this:TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"get_curves",));
-let inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_timeline_i_curves_owner_get_default_curves_name(this:TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName",));
-let inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_asset(this:TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"get_asset",));
-let inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_timeline_i_curves_owner_get_asset_owner(this:TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ICurvesOwner.get_assetOwner",));
-let inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_timeline_i_curves_owner_get_target_track(this:TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ICurvesOwner.get_targetTrack",));
-let inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_i_serialization_callback_receiver_on_before_serialize(this:TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",));
-let inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(this:TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",));
-let inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn to_string(this:TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="unity_engine-timeline-timelineclip")]impl TimelineClip{#[doc="`GetDefaultMixInCurve()` overload"]pub fn get_default_mix_in_curve()->crate::unity_engine::animationcurve::AnimationCurve{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35e1920usize)as*mut u8,crate::unity_engine::animationcurve::AnimationCurve;
 )}
@@ -192,7 +99,16 @@ inner(this,__mi)}
 (TimelineClip)__receiver,(f64)::core::convert::Into::into(value))}
 }
 #[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TimelineClip_unity2_raw::get_duration(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"get_duration",));
+let __inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_duration(f64)` overload"]fn set_duration(self,value:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d1e10usize)as*mut u8,();
@@ -215,23 +131,68 @@ __TimelineClip_unity2_raw::get_duration(__receiver, ::core::option::Option::None
 (TimelineClip)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`get_curves()` overload"]fn get_curves(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TimelineClip_unity2_raw::get_curves(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"get_curves",));
+let __inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName()` overload"]fn unity_engine_timeline_i_curves_owner_get_default_curves_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TimelineClip_unity2_raw::unity_engine_timeline_i_curves_owner_get_default_curves_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName",));
+let __inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_asset()` overload"]fn get_asset(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TimelineClip_unity2_raw::get_asset(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"get_asset",));
+let __inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_asset(crate::unity_engine::object_2::Object_2)` overload"]fn set_asset(self,value:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e1550usize)as*mut u8,();
 (TimelineClip)__receiver,(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(value))}
 }
 #[doc="`UnityEngine.Timeline.ICurvesOwner.get_assetOwner()` overload"]fn unity_engine_timeline_i_curves_owner_get_asset_owner(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TimelineClip_unity2_raw::unity_engine_timeline_i_curves_owner_get_asset_owner(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ICurvesOwner.get_assetOwner",));
+let __inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UnityEngine.Timeline.ICurvesOwner.get_targetTrack()` overload"]fn unity_engine_timeline_i_curves_owner_get_target_track(self,)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TimelineClip_unity2_raw::unity_engine_timeline_i_curves_owner_get_target_track(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ICurvesOwner.get_targetTrack",));
+let __inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_parentTrack()` overload"]fn get_parent_track(self,)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e1580usize)as*mut u8,crate::unity_engine::timeline::trackasset::TrackAsset;
@@ -366,13 +327,40 @@ __TimelineClip_unity2_raw::unity_engine_timeline_i_curves_owner_get_target_track
 (TimelineClip)__receiver)}
 }
 #[doc="`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_before_serialize(self,)->(){unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TimelineClip_unity2_raw::unity_engine_i_serialization_callback_receiver_on_before_serialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",));
+let __inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(self,)->(){unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TimelineClip_unity2_raw::unity_engine_i_serialization_callback_receiver_on_after_deserialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",));
+let __inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TimelineClip_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <TimelineClip as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(TimelineClip, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateDirty(f64, f64)` overload"]fn update_dirty(self,old_value:impl::core::convert::Into<f64> ,new_value:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <TimelineClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e12c0usize)as*mut u8,();
@@ -443,6 +431,35 @@ pub fn update_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
 }
 
+#[cfg(feature="unity_engine-timeline-timelineclip")]impl TimelineClip{#[doc="Direct (non-virtual) call to `TimelineClip`'s own `get_duration`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_duration(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f64{let __mi=Self::get_duration_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TimelineClip`'s own `get_curves`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_curves(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::animationclip::AnimationClip{let __mi=Self::get_curves_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TimelineClip`'s own `UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_timeline_i_curves_owner_get_default_curves_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::unity_engine_timeline_i_curves_owner_get_default_curves_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TimelineClip`'s own `get_asset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_asset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::object_2::Object_2{let __mi=Self::get_asset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TimelineClip`'s own `UnityEngine.Timeline.ICurvesOwner.get_assetOwner`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_timeline_i_curves_owner_get_asset_owner(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::object_2::Object_2{let __mi=Self::unity_engine_timeline_i_curves_owner_get_asset_owner_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TimelineClip`'s own `UnityEngine.Timeline.ICurvesOwner.get_targetTrack`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_timeline_i_curves_owner_get_target_track(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::timeline::trackasset::TrackAsset{let __mi=Self::unity_engine_timeline_i_curves_owner_get_target_track_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TimelineClip`'s own `UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_i_serialization_callback_receiver_on_before_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::unity_engine_i_serialization_callback_receiver_on_before_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TimelineClip`'s own `UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::unity_engine_i_serialization_callback_receiver_on_after_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TimelineClip`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-timeline-timelineclip")]impl TimelineClip{#[doc="`.ctor(crate::unity_engine::timeline::trackasset::TrackAsset)` — overload selector"]pub fn new(parent:crate::unity_engine::timeline::trackasset::TrackAsset)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TimelineClip), ::core::stringify!(new),));
@@ -461,13 +478,13 @@ this}
 #[cfg(feature = "unity_engine-timeline-timelineclip")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TimelineClip_BlendCurveMode;
     pub use super::TimelineClip;
     pub use super::ITimelineClip;
     pub use super::ITimelineClipMethods;
+    pub use super::TimelineClip_BlendCurveMode;
+    pub use super::TimelineClip_ClipExtrapolation;
     pub use super::TimelineClip_TimelineClipUpgrade;
     pub use super::ITimelineClip_TimelineClipUpgrade;
-    pub use super::TimelineClip_ClipExtrapolation;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

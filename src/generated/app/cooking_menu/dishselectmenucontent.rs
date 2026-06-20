@@ -26,51 +26,45 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-cooking_menu-dishselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-cooking_menu-dishselectmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DishSelectMenuContent_unity2_raw{use super:: * ;
-pub unsafe fn awake(this:DishSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-cooking_menu-dishselectmenucontent")]pub trait IDishSelectMenuContentMethods:IDishSelectMenuContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",30usize,__vt.len(), <DishSelectMenuContent as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(DishSelectMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DishSelectMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn after_build(this:DishSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <DishSelectMenuContent as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
-let inner:extern "C" fn(DishSelectMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn calc_cursor_moved_pos_y(this:DishSelectMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <DishSelectMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
-let inner:extern "C" fn(DishSelectMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,menu_item_index,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-cooking_menu-dishselectmenucontent")]pub trait IDishSelectMenuContentMethods:IDishSelectMenuContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DishSelectMenuContent_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetMessage()` overload"]fn set_message(self,)->(){unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf92b0usize)as*mut u8,();
 (DishSelectMenuContent)__receiver)}
 }
 #[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DishSelectMenuContent_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <DishSelectMenuContent as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let __inner:extern "C" fn(DishSelectMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DishSelectMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <DishSelectMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let __inner:extern "C" fn(DishSelectMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(menu_item_index),__mi)}
+}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf82a0usize)as*mut u8,bool;
@@ -100,6 +94,17 @@ pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn get_food_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenucontent")]impl DishSelectMenuContent{#[doc="Direct (non-virtual) call to `DishSelectMenuContent`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DishSelectMenuContent`'s own `AfterBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn after_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::after_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DishSelectMenuContent`'s own `CalcCursorMovedPosY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_cursor_moved_pos_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,menu_item_index:i32,)->f32{let __mi=Self::calc_cursor_moved_pos_y_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),menu_item_index, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-cooking_menu-dishselectmenucontent")]impl DishSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

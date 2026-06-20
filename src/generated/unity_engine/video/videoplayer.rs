@@ -19,10 +19,13 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/video/videoplayer/VideoPlayer.md"))]#[::unity2::class(namespace="UnityEngine.Video",name="VideoPlayer")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct VideoPlayer{#[offset(24)]#[rename(name="prepareCompleted")]pub prepare_completed:crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, #[offset(32)]#[rename(name="loopPointReached")]pub loop_point_reached:crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, #[offset(40)]#[rename(name="started")]pub started:crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, #[offset(48)]#[rename(name="frameDropped")]pub frame_dropped:crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, #[offset(56)]#[rename(name="errorReceived")]pub error_received:crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler, #[offset(64)]#[rename(name="seekCompleted")]pub seek_completed:crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, #[offset(72)]#[rename(name="clockResyncOccurred")]pub clock_resync_occurred:crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler, #[offset(80)]#[rename(name="frameReady")]pub frame_ready:crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/video/videoplayer/VideoPlayer_TimeEventHandler.md"))]#[::unity2::class(namespace="UnityEngine.Video",name="VideoPlayer.TimeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VideoPlayer_TimeEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/video/videoplayer/VideoPlayer.md"))]#[::unity2::class(namespace="UnityEngine.Video",name="VideoPlayer")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct VideoPlayer{#[offset(24)]#[rename(name="prepareCompleted")]pub prepare_completed:crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, #[offset(32)]#[rename(name="loopPointReached")]pub loop_point_reached:crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, #[offset(40)]#[rename(name="started")]pub started:crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, #[offset(48)]#[rename(name="frameDropped")]pub frame_dropped:crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, #[offset(56)]#[rename(name="errorReceived")]pub error_received:crate::unity_engine::video::videoplayer::VideoPlayer_ErrorEventHandler, #[offset(64)]#[rename(name="seekCompleted")]pub seek_completed:crate::unity_engine::video::videoplayer::VideoPlayer_EventHandler, #[offset(72)]#[rename(name="clockResyncOccurred")]pub clock_resync_occurred:crate::unity_engine::video::videoplayer::VideoPlayer_TimeEventHandler, #[offset(80)]#[rename(name="frameReady")]pub frame_ready:crate::unity_engine::video::videoplayer::VideoPlayer_FrameReadyEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/video/videoplayer/VideoPlayer_ErrorEventHandler.md"))]#[::unity2::class(namespace="UnityEngine.Video",name="VideoPlayer.ErrorEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VideoPlayer_ErrorEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/video/videoplayer/VideoPlayer_EventHandler.md"))]#[::unity2::class(namespace="UnityEngine.Video",name="VideoPlayer.EventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VideoPlayer_EventHandler{}
@@ -30,48 +33,10 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/video/videoplayer/VideoPlayer_FrameReadyEventHandler.md"))]#[::unity2::class(namespace="UnityEngine.Video",name="VideoPlayer.FrameReadyEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VideoPlayer_FrameReadyEventHandler{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/video/videoplayer/VideoPlayer_ErrorEventHandler.md"))]#[::unity2::class(namespace="UnityEngine.Video",name="VideoPlayer.ErrorEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VideoPlayer_ErrorEventHandler{}
-
 }
 
 #[cfg(feature = "unity_engine-video-videoplayer-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-video-videoplayer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VideoPlayer_TimeEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:VideoPlayer_TimeEventHandler,source:crate::unity_engine::video::videoplayer::VideoPlayer,seconds:f64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <VideoPlayer_TimeEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(VideoPlayer_TimeEventHandler,crate::unity_engine::video::videoplayer::VideoPlayer,f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,source,seconds,__mi)}
-}
-
-#[cfg(feature="unity_engine-video-videoplayer")]pub trait IVideoPlayer_TimeEventHandlerMethods:IVideoPlayer_TimeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VideoPlayer_TimeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f379e0usize)as*mut u8,();
-(VideoPlayer_TimeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, f64)` overload"]fn invoke(self,source:impl::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer> ,seconds:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <VideoPlayer_TimeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VideoPlayer_TimeEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(source), ::core::convert::Into::into(seconds), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="unity_engine-video-videoplayer")]impl<__T:IVideoPlayer_TimeEventHandler>IVideoPlayer_TimeEventHandlerMethods for __T{}
-
-#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_TimeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_TimeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VideoPlayer_TimeEventHandler), ::core::stringify!(new),));
- <Self as IVideoPlayer_TimeEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer{#[doc="`get_controlledAudioTrackMaxCount()` overload"]pub fn get_controlled_audio_track_max_count()->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f35800usize)as*mut u8,u16;
 )}
@@ -624,87 +589,40 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="unity_engine-video-videoplayer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VideoPlayer_EventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:VideoPlayer_EventHandler,source:crate::unity_engine::video::videoplayer::VideoPlayer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-video-videoplayer")]pub trait IVideoPlayer_TimeEventHandlerMethods:IVideoPlayer_TimeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VideoPlayer_TimeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f379e0usize)as*mut u8,();
+(VideoPlayer_TimeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, f64)` overload"]fn invoke(self,source:impl::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer> ,seconds:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <VideoPlayer_TimeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <VideoPlayer_EventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(VideoPlayer_EventHandler,crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <VideoPlayer_TimeEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(VideoPlayer_TimeEventHandler,crate::unity_engine::video::videoplayer::VideoPlayer,f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,source,__mi)}
+__inner(__receiver, ::core::convert::Into::into(source), ::core::convert::Into::into(seconds),__mi)}
 }
-
-#[cfg(feature="unity_engine-video-videoplayer")]pub trait IVideoPlayer_EventHandlerMethods:IVideoPlayer_EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VideoPlayer_EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f378b0usize)as*mut u8,();
-(VideoPlayer_EventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]fn invoke(self,source:impl::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>)->(){unsafe{let __receiver= <VideoPlayer_EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VideoPlayer_EventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(source), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="unity_engine-video-videoplayer")]impl<__T:IVideoPlayer_EventHandler>IVideoPlayer_EventHandlerMethods for __T{}
+#[cfg(feature="unity_engine-video-videoplayer")]impl<__T:IVideoPlayer_TimeEventHandler>IVideoPlayer_TimeEventHandlerMethods for __T{}
 
-#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_EventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_TimeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_TimeEventHandler{#[doc="Direct (non-virtual) call to `VideoPlayer_TimeEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,source:crate::unity_engine::video::videoplayer::VideoPlayer,seconds:f64,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::video::videoplayer::VideoPlayer,f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),source,seconds, ::core::option::Option::None)}
+}
+
+#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_TimeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(VideoPlayer_EventHandler), ::core::stringify!(new),));
- <Self as IVideoPlayer_EventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(VideoPlayer_TimeEventHandler), ::core::stringify!(new),));
+ <Self as IVideoPlayer_TimeEventHandlerMethods> ::ctor(this,object,method);
 this}
-}
-
-#[cfg(feature="unity_engine-video-videoplayer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VideoPlayer_FrameReadyEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:VideoPlayer_FrameReadyEventHandler,source:crate::unity_engine::video::videoplayer::VideoPlayer,frame_idx:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <VideoPlayer_FrameReadyEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(VideoPlayer_FrameReadyEventHandler,crate::unity_engine::video::videoplayer::VideoPlayer,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,source,frame_idx,__mi)}
-}
-
-#[cfg(feature="unity_engine-video-videoplayer")]pub trait IVideoPlayer_FrameReadyEventHandlerMethods:IVideoPlayer_FrameReadyEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VideoPlayer_FrameReadyEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37910usize)as*mut u8,();
-(VideoPlayer_FrameReadyEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, i64)` overload"]fn invoke(self,source:impl::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer> ,frame_idx:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <VideoPlayer_FrameReadyEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VideoPlayer_FrameReadyEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(source), ::core::convert::Into::into(frame_idx), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="unity_engine-video-videoplayer")]impl<__T:IVideoPlayer_FrameReadyEventHandler>IVideoPlayer_FrameReadyEventHandlerMethods for __T{}
-
-#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_FrameReadyEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_FrameReadyEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VideoPlayer_FrameReadyEventHandler), ::core::stringify!(new),));
- <Self as IVideoPlayer_FrameReadyEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="unity_engine-video-videoplayer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VideoPlayer_ErrorEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:VideoPlayer_ErrorEventHandler,source:crate::unity_engine::video::videoplayer::VideoPlayer,message: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <VideoPlayer_ErrorEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(VideoPlayer_ErrorEventHandler,crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,source,message,__mi)}
 }
 
 #[cfg(feature="unity_engine-video-videoplayer")]pub trait IVideoPlayer_ErrorEventHandlerMethods:IVideoPlayer_ErrorEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VideoPlayer_ErrorEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -712,7 +630,16 @@ inner(this,source,message,__mi)}
 (VideoPlayer_ErrorEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString)` overload"]fn invoke(self,source:impl::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VideoPlayer_ErrorEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VideoPlayer_ErrorEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(source), ::core::convert::Into::into(message), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <VideoPlayer_ErrorEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(VideoPlayer_ErrorEventHandler,crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(source), ::core::convert::Into::into(message),__mi)}
+}
 }
 }
 
@@ -722,6 +649,11 @@ __VideoPlayer_ErrorEventHandler_unity2_raw::invoke(__receiver, ::core::convert::
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_ErrorEventHandler{#[doc="Direct (non-virtual) call to `VideoPlayer_ErrorEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,source:crate::unity_engine::video::videoplayer::VideoPlayer,message: ::unity2::Il2CppString,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),source,message, ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_ErrorEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(VideoPlayer_ErrorEventHandler), ::core::stringify!(new),));
@@ -729,24 +661,96 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="unity_engine-video-videoplayer")]pub trait IVideoPlayer_EventHandlerMethods:IVideoPlayer_EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VideoPlayer_EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f378b0usize)as*mut u8,();
+(VideoPlayer_EventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]fn invoke(self,source:impl::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>)->(){unsafe{let __receiver= <VideoPlayer_EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <VideoPlayer_EventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(VideoPlayer_EventHandler,crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(source),__mi)}
+}
+}
+}
+
+#[cfg(feature="unity_engine-video-videoplayer")]impl<__T:IVideoPlayer_EventHandler>IVideoPlayer_EventHandlerMethods for __T{}
+
+#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_EventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_EventHandler{#[doc="Direct (non-virtual) call to `VideoPlayer_EventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,source:crate::unity_engine::video::videoplayer::VideoPlayer,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),source, ::core::option::Option::None)}
+}
+
+#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VideoPlayer_EventHandler), ::core::stringify!(new),));
+ <Self as IVideoPlayer_EventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="unity_engine-video-videoplayer")]pub trait IVideoPlayer_FrameReadyEventHandlerMethods:IVideoPlayer_FrameReadyEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VideoPlayer_FrameReadyEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37910usize)as*mut u8,();
+(VideoPlayer_FrameReadyEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, i64)` overload"]fn invoke(self,source:impl::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer> ,frame_idx:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <VideoPlayer_FrameReadyEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <VideoPlayer_FrameReadyEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(VideoPlayer_FrameReadyEventHandler,crate::unity_engine::video::videoplayer::VideoPlayer,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(source), ::core::convert::Into::into(frame_idx),__mi)}
+}
+}
+}
+
+#[cfg(feature="unity_engine-video-videoplayer")]impl<__T:IVideoPlayer_FrameReadyEventHandler>IVideoPlayer_FrameReadyEventHandlerMethods for __T{}
+
+#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_FrameReadyEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_FrameReadyEventHandler{#[doc="Direct (non-virtual) call to `VideoPlayer_FrameReadyEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,source:crate::unity_engine::video::videoplayer::VideoPlayer,frame_idx:i64,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::video::videoplayer::VideoPlayer,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),source,frame_idx, ::core::option::Option::None)}
+}
+
+#[cfg(feature="unity_engine-video-videoplayer")]impl VideoPlayer_FrameReadyEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VideoPlayer_FrameReadyEventHandler), ::core::stringify!(new),));
+ <Self as IVideoPlayer_FrameReadyEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "unity_engine-video-videoplayer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VideoPlayer_TimeEventHandler;
-    pub use super::IVideoPlayer_TimeEventHandler;
-    pub use super::IVideoPlayer_TimeEventHandlerMethods;
     pub use super::VideoPlayer;
     pub use super::IVideoPlayer;
     pub use super::IVideoPlayerMethods;
+    pub use super::VideoPlayer_TimeEventHandler;
+    pub use super::IVideoPlayer_TimeEventHandler;
+    pub use super::IVideoPlayer_TimeEventHandlerMethods;
+    pub use super::VideoPlayer_ErrorEventHandler;
+    pub use super::IVideoPlayer_ErrorEventHandler;
+    pub use super::IVideoPlayer_ErrorEventHandlerMethods;
     pub use super::VideoPlayer_EventHandler;
     pub use super::IVideoPlayer_EventHandler;
     pub use super::IVideoPlayer_EventHandlerMethods;
     pub use super::VideoPlayer_FrameReadyEventHandler;
     pub use super::IVideoPlayer_FrameReadyEventHandler;
     pub use super::IVideoPlayer_FrameReadyEventHandlerMethods;
-    pub use super::VideoPlayer_ErrorEventHandler;
-    pub use super::IVideoPlayer_ErrorEventHandler;
-    pub use super::IVideoPlayer_ErrorEventHandlerMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

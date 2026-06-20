@@ -18,49 +18,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-unitring-types")]
 pub use __types::*;
 
-#[cfg(feature="app-unitring")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitRing_unity2_raw{use super:: * ;
-pub unsafe fn get_sort_key(this:UnitRing,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <UnitRing as::unity2::ClassIdentity> ::NAME,"get_SortKey",));
-let inner:extern "C" fn(UnitRing, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:UnitRing,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <UnitRing as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(UnitRing,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:UnitRing,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <UnitRing as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(UnitRing,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
-pub unsafe fn is_valid(this:UnitRing,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <UnitRing as::unity2::ClassIdentity> ::NAME,"IsValid",));
-let inner:extern "C" fn(UnitRing, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-unitring")]impl UnitRing{#[doc="`IsSingleStockOnly(crate::app::ringdata::RingData, crate::app::unit::Unit)` overload"]pub fn is_single_stock_only_2(data:impl::core::convert::Into<crate::app::ringdata::RingData> ,owner:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c840usize)as*mut u8,bool;
 (crate::app::ringdata::RingData)::core::convert::Into::into(data),(crate::app::unit::Unit)::core::convert::Into::into(owner))}
 }
@@ -95,7 +52,16 @@ inner(this,__mi)}
 (UnitRing)__receiver,(i32)::core::convert::Into::into(stock_count))}
 }
 #[doc="`get_SortKey()` overload"]fn get_sort_key(self,)->i32{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitRing_unity2_raw::get_sort_key(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <UnitRing as::unity2::ClassIdentity> ::NAME,"get_SortKey",));
+let __inner:extern "C" fn(UnitRing, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsSingleStockOnly()` overload"]fn is_single_stock_only(self,)->bool{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c900usize)as*mut u8,bool;
@@ -118,13 +84,40 @@ __UnitRing_unity2_raw::get_sort_key(__receiver, ::core::option::Option::None)}
 (UnitRing)__receiver)}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitRing_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <UnitRing as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(UnitRing,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitRing_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <UnitRing as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(UnitRing,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
 }
 #[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitRing_unity2_raw::is_valid(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <UnitRing as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let __inner:extern "C" fn(UnitRing, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c800usize)as*mut u8,();
@@ -157,6 +150,20 @@ pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="app-unitring")]impl UnitRing{#[doc="Direct (non-virtual) call to `UnitRing`'s own `get_SortKey`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sort_key(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_sort_key_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnitRing`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnitRing`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnitRing`'s own `IsValid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_valid(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_valid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-unitring")]impl UnitRing{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

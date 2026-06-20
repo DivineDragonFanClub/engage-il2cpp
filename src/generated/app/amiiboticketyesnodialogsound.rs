@@ -24,19 +24,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-amiiboticketyesnodialogsound-types")]
 pub use __types::*;
 
-#[cfg(feature="app-amiiboticketyesnodialogsound")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AmiiboTicketYesNoDialogSound_unity2_raw{use super:: * ;
-pub unsafe fn on_close(this:AmiiboTicketYesNoDialogSound,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <AmiiboTicketYesNoDialogSound as::unity2::ClassIdentity> ::NAME,"OnClose",));
-let inner:extern "C" fn(AmiiboTicketYesNoDialogSound, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-amiiboticketyesnodialogsound")]impl AmiiboTicketYesNoDialogSound{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, i32, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,music_name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,ticket_num:impl::core::convert::Into<i32> ,yes_event_handler:impl::core::convert::Into<crate::system::action::Action>)->crate::app::exchangeyesnodialog::ExchangeYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8a440usize)as*mut u8,crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(music_name),(::unity2::Il2CppString)::core::convert::Into::into(event_name),(i32)::core::convert::Into::into(ticket_num),(crate::system::action::Action)::core::convert::Into::into(yes_event_handler))}
 }
@@ -47,7 +34,16 @@ inner(this,__mi)}
 (AmiiboTicketYesNoDialogSound)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::exchangedialogcontent::ExchangeDialogContent)::core::convert::Into::into(menu_content),(::unity2::Il2CppString)::core::convert::Into::into(top_message),(::unity2::Il2CppString)::core::convert::Into::into(get_item_title),(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam)::core::convert::Into::into(get_item_param),(::unity2::Il2CppString)::core::convert::Into::into(cost_item_title),(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)::core::convert::Into::into(cost_item_param_list),(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)::core::convert::Into::into(cost_money_param))}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <AmiiboTicketYesNoDialogSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AmiiboTicketYesNoDialogSound_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <AmiiboTicketYesNoDialogSound as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let __inner:extern "C" fn(AmiiboTicketYesNoDialogSound, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -56,6 +52,11 @@ __AmiiboTicketYesNoDialogSound_unity2_raw::on_close(__receiver, ::core::option::
 #[cfg(feature="app-amiiboticketyesnodialogsound")]impl AmiiboTicketYesNoDialogSound{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-amiiboticketyesnodialogsound")]impl AmiiboTicketYesNoDialogSound{#[doc="Direct (non-virtual) call to `AmiiboTicketYesNoDialogSound`'s own `OnClose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-amiiboticketyesnodialogsound")]impl AmiiboTicketYesNoDialogSound{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::exchangedialogcontent::ExchangeDialogContent,top_message: ::unity2::Il2CppString,get_item_title: ::unity2::Il2CppString,get_item_param:crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,cost_item_title: ::unity2::Il2CppString,cost_item_param_list:crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> ,cost_money_param:crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

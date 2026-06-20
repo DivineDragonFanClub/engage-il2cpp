@@ -21,25 +21,43 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_BackMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.BackMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_BackMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ReportItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubSystemMenu.ReportItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubSystemMenu_ReportItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_KizunaItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubFriendMenu.KizunaItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubFriendMenu_KizunaItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ConfigItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubSystemMenu.ConfigItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubSystemMenu_ConfigItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_NotebookItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubFriendMenu.NotebookItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubFriendMenu_NotebookItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ResetItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubSystemMenu.ResetItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubSystemMenu_ResetItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_StartMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.StartMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_StartMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_ShopMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.ShopMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_ShopMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_StartMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.StartMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_StartMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_GodMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.GodMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_GodMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_FriendMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.FriendMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_FriendMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ConfigItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubSystemMenu.ConfigItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubSystemMenu_ConfigItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_InventoryMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.InventoryMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_InventoryMenuItem{#[offset(104)]#[rename(name="m_SortieTopMenuContent")]pub m_sortie_top_menu_content:crate::app::sortietopmenucontent::SortieTopMenuContent,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_RelianceItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubFriendMenu.RelianceItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubFriendMenu_RelianceItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_RingListItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubFriendMenu.RingListItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubFriendMenu_RingListItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SaveMapMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SaveMapMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SaveMapMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_ResetMapMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.ResetMapMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_ResetMapMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_KizunaItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubFriendMenu.KizunaItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubFriendMenu_KizunaItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu")]#[parent(crate::app::minimapbasicmenu::MiniMapBasicMenu)]pub struct SortieTopMenu{#[static_field]#[rename(name="TUTID_SORTIE")]pub tutid_sortie: ::unity2::Il2CppString, #[static_field]#[rename(name="TUTID_GOD")]pub tutid_god: ::unity2::Il2CppString, #[static_field]#[rename(name="TUTID_GOD2")]pub tutid_god2: ::unity2::Il2CppString, #[static_field]#[rename(name="TUTID_ENTRY_PANEL")]pub tutid_entry_panel: ::unity2::Il2CppString, #[static_field]#[rename(name="ENGAGE_PLUS_ATTENTION_NETWORK")]pub engage_plus_attention_network: ::unity2::Il2CppString,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SelectionUnitMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SelectionUnitMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SelectionUnitMenuItem{}
@@ -48,252 +66,133 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubFriendMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct SortieTopMenu_SubFriendMenu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_GodMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.GodMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_GodMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SaveMapMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SaveMapMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SaveMapMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_TutorialItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubSystemMenu.TutorialItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubSystemMenu_TutorialItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_RelianceItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubFriendMenu.RelianceItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubFriendMenu_RelianceItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SaveMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SaveMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SaveMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_PositionChangeMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.PositionChangeMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_PositionChangeMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_FriendMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.FriendMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_FriendMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_InventoryMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.InventoryMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_InventoryMenuItem{#[offset(104)]#[rename(name="m_SortieTopMenuContent")]pub m_sortie_top_menu_content:crate::app::sortietopmenucontent::SortieTopMenuContent,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SystemMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SystemMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SystemMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu")]#[parent(crate::app::minimapbasicmenu::MiniMapBasicMenu)]pub struct SortieTopMenu{#[static_field]#[rename(name="TUTID_SORTIE")]pub tutid_sortie: ::unity2::Il2CppString, #[static_field]#[rename(name="TUTID_GOD")]pub tutid_god: ::unity2::Il2CppString, #[static_field]#[rename(name="TUTID_GOD2")]pub tutid_god2: ::unity2::Il2CppString, #[static_field]#[rename(name="TUTID_ENTRY_PANEL")]pub tutid_entry_panel: ::unity2::Il2CppString, #[static_field]#[rename(name="ENGAGE_PLUS_ATTENTION_NETWORK")]pub engage_plus_attention_network: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_NotebookItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubFriendMenu.NotebookItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubFriendMenu_NotebookItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SortieTopMenuItemBase.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SortieTopMenuItemBase")]#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]pub struct SortieTopMenu_SortieTopMenuItemBase{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_BackMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.BackMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_BackMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SaveMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SaveMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SaveMenuItem{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubSystemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct SortieTopMenu_SubSystemMenu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ReportItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubSystemMenu.ReportItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubSystemMenu_ReportItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_ResetMapMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.ResetMapMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_ResetMapMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubFriendMenu_RingListItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubFriendMenu.RingListItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubFriendMenu_RingListItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_PositionChangeMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.PositionChangeMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_PositionChangeMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_RelianceMenuItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.RelianceMenuItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_RelianceMenuItem{#[offset(100)]#[rename(name="m_CanTalk")]pub m_can_talk:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_TutorialItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubSystemMenu.TutorialItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubSystemMenu_TutorialItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenu/SortieTopMenu_SubSystemMenu_ResetItem.md"))]#[::unity2::class(namespace="App",name="SortieTopMenu.SubSystemMenu.ResetItem")]#[parent(crate::app::sortietopmenu::SortieTopMenu_SortieTopMenuItemBase)]pub struct SortieTopMenu_SubSystemMenu_ResetItem{}
 
 }
 
 #[cfg(feature = "app-sortietopmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_BackMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_BackMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubSystemMenu_ReportItemMethods:ISortieTopMenu_SubSystemMenu_ReportItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_BackMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_BackMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",27usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_BackMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_BackMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_BackMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_BackMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_BackMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_BackMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_BackMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_BackMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_BackMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",29usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_BackMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_BackMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_BackMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_BackMenuItemMethods:ISortieTopMenu_BackMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_BackMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_BackMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_BackMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_BackMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_BackMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d76620usize)as*mut u8,();
-(SortieTopMenu_BackMenuItem)__receiver)}
+__inner(__receiver,__mi)}
 }
 }
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_BackMenuItem>ISortieTopMenu_BackMenuItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_BackMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_BackMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_BackMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_BackMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SubFriendMenu_KizunaItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:SortieTopMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SortieTopMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",19usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",19usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubFriendMenu_KizunaItemMethods:ISortieTopMenu_SubFriendMenu_KizunaItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_KizunaItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_KizunaItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_KizunaItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_KizunaItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_KizunaItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_KizunaItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_KizunaItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ee260usize)as*mut u8,();
-(SortieTopMenu_SubFriendMenu_KizunaItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef190usize)as*mut u8,();
+(SortieTopMenu_SubSystemMenu_ReportItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubFriendMenu_KizunaItem>ISortieTopMenu_SubFriendMenu_KizunaItemMethods for __T{}
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubSystemMenu_ReportItem>ISortieTopMenu_SubSystemMenu_ReportItemMethods for __T{}
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_KizunaItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ReportItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
@@ -303,106 +202,535 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_KizunaItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ReportItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ReportItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ReportItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ReportItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ReportItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ReportItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ReportItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ReportItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ReportItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SubFriendMenu_KizunaItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SubFriendMenu_KizunaItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SubSystemMenu_ReportItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SubSystemMenu_ReportItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SubSystemMenu_ConfigItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_StartMenuItemMethods:ISortieTopMenu_StartMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let __inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79610usize)as*mut u8,();
+(SortieTopMenu_StartMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_StartMenuItem>ISortieTopMenu_StartMenuItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_StartMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_StartMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_StartMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_StartMenuItem`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_StartMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_StartMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_StartMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_StartMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_StartMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_StartMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_StartMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_ShopMenuItemMethods:ISortieTopMenu_ShopMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortieTopMenu_ShopMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_ShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_ShopMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_ShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_ShopMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_ShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_ShopMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_ShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_ShopMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_ShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d78d30usize)as*mut u8,();
+(SortieTopMenu_ShopMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_ShopMenuItem>ISortieTopMenu_ShopMenuItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_ShopMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_ShopMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_ShopMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_ShopMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_ShopMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_ShopMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_ShopMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_ShopMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_ShopMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_ShopMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_GodMenuItemMethods:ISortieTopMenu_GodMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortieTopMenu_GodMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_GodMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_GodMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_GodMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_GodMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_GodMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_GodMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_GodMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_GodMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_GodMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77130usize)as*mut u8,();
+(SortieTopMenu_GodMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_GodMenuItem>ISortieTopMenu_GodMenuItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_GodMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_GodMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_GodMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_GodMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_GodMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_GodMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_GodMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_GodMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_GodMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_GodMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_FriendMenuItemMethods:ISortieTopMenu_FriendMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortieTopMenu_FriendMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_FriendMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_FriendMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_FriendMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_FriendMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_FriendMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_FriendMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_FriendMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_FriendMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_FriendMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d76df0usize)as*mut u8,();
+(SortieTopMenu_FriendMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_FriendMenuItem>ISortieTopMenu_FriendMenuItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_FriendMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_FriendMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_FriendMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_FriendMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_FriendMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_FriendMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_FriendMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_FriendMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_FriendMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_FriendMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubSystemMenu_ConfigItemMethods:ISortieTopMenu_SubSystemMenu_ConfigItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",27usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",28usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",29usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:SortieTopMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",18usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SortieTopMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",19usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubSystemMenu_ConfigItemMethods:ISortieTopMenu_SubSystemMenu_ConfigItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ConfigItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ConfigItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ConfigItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ConfigItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ConfigItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ConfigItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ConfigItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22eef40usize)as*mut u8,();
@@ -422,6 +750,29 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ConfigItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ConfigItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ConfigItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ConfigItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ConfigItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ConfigItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ConfigItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ConfigItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ConfigItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SortieTopMenu_SubSystemMenu_ConfigItem), ::core::stringify!(new),));
@@ -429,754 +780,75 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SubFriendMenu_NotebookItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_InventoryMenuItemMethods:ISortieTopMenu_InventoryMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",27usize,__vt.len(), <SortieTopMenu_InventoryMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_InventoryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` overload"]fn ctor(self,sortie_top_menu_content:impl::core::convert::Into<crate::app::sortietopmenucontent::SortieTopMenuContent>)->(){unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77190usize)as*mut u8,();
+(SortieTopMenu_InventoryMenuItem)__receiver,(crate::app::sortietopmenucontent::SortieTopMenuContent)::core::convert::Into::into(sortie_top_menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <SortieTopMenu_InventoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_InventoryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <SortieTopMenu_InventoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_InventoryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",29usize,__vt.len(), <SortieTopMenu_InventoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_InventoryMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:SortieTopMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <SortieTopMenu_InventoryMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_InventoryMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SortieTopMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubFriendMenu_NotebookItemMethods:ISortieTopMenu_SubFriendMenu_NotebookItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_NotebookItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_NotebookItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_NotebookItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_NotebookItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_NotebookItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_NotebookItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_NotebookItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ee600usize)as*mut u8,();
-(SortieTopMenu_SubFriendMenu_NotebookItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubFriendMenu_NotebookItem>ISortieTopMenu_SubFriendMenu_NotebookItemMethods for __T{}
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_InventoryMenuItem>ISortieTopMenu_InventoryMenuItemMethods for __T{}
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_NotebookItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_NotebookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SubFriendMenu_NotebookItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SubFriendMenu_NotebookItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SubSystemMenu_ResetItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:SortieTopMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SortieTopMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubSystemMenu_ResetItemMethods:ISortieTopMenu_SubSystemMenu_ResetItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ResetItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ResetItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ResetItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ResetItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ResetItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ResetItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ResetItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef440usize)as*mut u8,();
-(SortieTopMenu_SubSystemMenu_ResetItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubSystemMenu_ResetItem>ISortieTopMenu_SubSystemMenu_ResetItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ResetItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ResetItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SubSystemMenu_ResetItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SubSystemMenu_ResetItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_ShopMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_ShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_ShopMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_ShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_ShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_ShopMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_ShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_ShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_ShopMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_ShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_ShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_ShopMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_ShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_ShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_ShopMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_ShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_ShopMenuItemMethods:ISortieTopMenu_ShopMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_ShopMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_ShopMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_ShopMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_ShopMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_ShopMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_ShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d78d30usize)as*mut u8,();
-(SortieTopMenu_ShopMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_ShopMenuItem>ISortieTopMenu_ShopMenuItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_ShopMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_ShopMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_ShopMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_ShopMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_StartMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_StartMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_build(this:SortieTopMenu_StartMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_StartMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_StartMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_StartMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_StartMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_StartMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_StartMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_StartMenuItemMethods:ISortieTopMenu_StartMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_StartMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_StartMenuItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_StartMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_StartMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_StartMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_StartMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_StartMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79610usize)as*mut u8,();
-(SortieTopMenu_StartMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_StartMenuItem>ISortieTopMenu_StartMenuItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_StartMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_StartMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_StartMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_StartMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SelectionUnitMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SelectionUnitMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_SelectionUnitMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SelectionUnitMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SelectionUnitMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_SelectionUnitMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SelectionUnitMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SelectionUnitMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_SelectionUnitMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SelectionUnitMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SelectionUnitMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_SelectionUnitMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SelectionUnitMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SelectionUnitMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_SelectionUnitMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SelectionUnitMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SelectionUnitMenuItemMethods:ISortieTopMenu_SelectionUnitMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SelectionUnitMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SelectionUnitMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SelectionUnitMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SelectionUnitMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SelectionUnitMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d78700usize)as*mut u8,();
-(SortieTopMenu_SelectionUnitMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SelectionUnitMenuItem>ISortieTopMenu_SelectionUnitMenuItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SelectionUnitMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SelectionUnitMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SelectionUnitMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SelectionUnitMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SubFriendMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:SortieTopMenu_SubFriendMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <SortieTopMenu_SubFriendMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SortieTopMenu_SubFriendMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <SortieTopMenu_SubFriendMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d76ba0usize)as*mut u8,();
-(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubFriendMenuMethods:ISortieTopMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <SortieTopMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79620usize)as*mut u8,();
-(SortieTopMenu_SubFriendMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubFriendMenu>ISortieTopMenu_SubFriendMenuMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SubFriendMenu), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SubFriendMenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_GodMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_GodMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_GodMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_GodMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_GodMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_GodMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_GodMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_GodMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_GodMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_GodMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_GodMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_GodMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_GodMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_GodMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_GodMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_GodMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_GodMenuItemMethods:ISortieTopMenu_GodMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_GodMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_GodMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_GodMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_GodMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_GodMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_GodMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77130usize)as*mut u8,();
-(SortieTopMenu_GodMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_GodMenuItem>ISortieTopMenu_GodMenuItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_GodMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_GodMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_GodMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_GodMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SaveMapMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SaveMapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_SaveMapMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SaveMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SaveMapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_SaveMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SaveMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SaveMapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_SaveMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SaveMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SaveMapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_SaveMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SaveMapMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SaveMapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_SaveMapMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SaveMapMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SaveMapMenuItemMethods:ISortieTopMenu_SaveMapMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SaveMapMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77cd0usize)as*mut u8,();
-(SortieTopMenu_SaveMapMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SaveMapMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SaveMapMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SaveMapMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SaveMapMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SaveMapMenuItem>ISortieTopMenu_SaveMapMenuItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SaveMapMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_InventoryMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
@@ -1184,225 +856,113 @@ pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SaveMapMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_InventoryMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_InventoryMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_InventoryMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_InventoryMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_InventoryMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_InventoryMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_InventoryMenuItem{#[doc="`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` — overload selector"]pub fn new(sortie_top_menu_content:crate::app::sortietopmenucontent::SortieTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SaveMapMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SaveMapMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(SortieTopMenu_InventoryMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_InventoryMenuItemMethods> ::ctor(this,sortie_top_menu_content);
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SubSystemMenu_TutorialItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:SortieTopMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SortieTopMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubSystemMenu_TutorialItemMethods:ISortieTopMenu_SubSystemMenu_TutorialItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_TutorialItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_TutorialItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_TutorialItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_TutorialItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_TutorialItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_TutorialItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_TutorialItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef630usize)as*mut u8,();
-(SortieTopMenu_SubSystemMenu_TutorialItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubSystemMenu_TutorialItem>ISortieTopMenu_SubSystemMenu_TutorialItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_TutorialItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_TutorialItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SubSystemMenu_TutorialItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SubSystemMenu_TutorialItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SubFriendMenu_RelianceItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubFriendMenu_RelianceItemMethods:ISortieTopMenu_SubFriendMenu_RelianceItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",27usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",28usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",29usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:SortieTopMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",18usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SortieTopMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",19usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubFriendMenu_RelianceItemMethods:ISortieTopMenu_SubFriendMenu_RelianceItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RelianceItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RelianceItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RelianceItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RelianceItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RelianceItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RelianceItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RelianceItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22eeac0usize)as*mut u8,();
@@ -1422,6 +982,29 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_RelianceItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RelianceItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RelianceItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RelianceItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RelianceItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RelianceItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RelianceItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RelianceItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_RelianceItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SortieTopMenu_SubFriendMenu_RelianceItem), ::core::stringify!(new),));
@@ -1429,356 +1012,207 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SaveMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SaveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubFriendMenu_RingListItemMethods:ISortieTopMenu_SubFriendMenu_RingListItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_SaveMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SaveMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",27usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SaveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_SaveMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SaveMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SaveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_SaveMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SaveMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SaveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_SaveMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SaveMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",29usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SaveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_SaveMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SaveMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SaveMenuItemMethods:ISortieTopMenu_SaveMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SaveMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SaveMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
 }
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SaveMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
 }
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SaveMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SaveMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d78250usize)as*mut u8,();
-(SortieTopMenu_SaveMenuItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eed50usize)as*mut u8,();
+(SortieTopMenu_SubFriendMenu_RingListItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SaveMenuItem>ISortieTopMenu_SaveMenuItemMethods for __T{}
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubFriendMenu_RingListItem>ISortieTopMenu_SubFriendMenu_RingListItemMethods for __T{}
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SaveMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_RingListItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SaveMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_RingListItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RingListItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RingListItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RingListItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RingListItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RingListItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RingListItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_RingListItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_RingListItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SaveMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SaveMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SubFriendMenu_RingListItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SubFriendMenu_RingListItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_PositionChangeMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_PositionChangeMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SaveMapMenuItemMethods:ISortieTopMenu_SaveMapMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_PositionChangeMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_PositionChangeMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",27usize,__vt.len(), <SortieTopMenu_SaveMapMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_SaveMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_PositionChangeMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77cd0usize)as*mut u8,();
+(SortieTopMenu_SaveMapMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_PositionChangeMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_PositionChangeMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <SortieTopMenu_SaveMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SaveMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_PositionChangeMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_PositionChangeMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_PositionChangeMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <SortieTopMenu_SaveMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_SaveMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_PositionChangeMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_PositionChangeMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_PositionChangeMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",29usize,__vt.len(), <SortieTopMenu_SaveMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SaveMapMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_PositionChangeMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SaveMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_PositionChangeMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_PositionChangeMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <SortieTopMenu_SaveMapMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_SaveMapMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_PositionChangeMenuItemMethods:ISortieTopMenu_PositionChangeMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_PositionChangeMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_PositionChangeMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_PositionChangeMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_PositionChangeMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_PositionChangeMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77720usize)as*mut u8,();
-(SortieTopMenu_PositionChangeMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_PositionChangeMenuItem>ISortieTopMenu_PositionChangeMenuItemMethods for __T{}
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SaveMapMenuItem>ISortieTopMenu_SaveMapMenuItemMethods for __T{}
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_PositionChangeMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_PositionChangeMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_PositionChangeMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_PositionChangeMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_FriendMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_FriendMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_FriendMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_FriendMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_FriendMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_FriendMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_FriendMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_FriendMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_FriendMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_FriendMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_FriendMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_FriendMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_FriendMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_FriendMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_FriendMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_FriendMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_FriendMenuItemMethods:ISortieTopMenu_FriendMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_FriendMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_FriendMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_FriendMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_FriendMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_FriendMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d76df0usize)as*mut u8,();
-(SortieTopMenu_FriendMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_FriendMenuItem>ISortieTopMenu_FriendMenuItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_FriendMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_FriendMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_FriendMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_FriendMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_InventoryMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_InventoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_InventoryMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_InventoryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_InventoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_InventoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_InventoryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_InventoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_InventoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_InventoryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_InventoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_InventoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_InventoryMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_InventoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_InventoryMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_InventoryMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_InventoryMenuItemMethods:ISortieTopMenu_InventoryMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_InventoryMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` overload"]fn ctor(self,sortie_top_menu_content:impl::core::convert::Into<crate::app::sortietopmenucontent::SortieTopMenuContent>)->(){unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77190usize)as*mut u8,();
-(SortieTopMenu_InventoryMenuItem)__receiver,(crate::app::sortietopmenucontent::SortieTopMenuContent)::core::convert::Into::into(sortie_top_menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_InventoryMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_InventoryMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_InventoryMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_InventoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_InventoryMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_InventoryMenuItem>ISortieTopMenu_InventoryMenuItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_InventoryMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SaveMapMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
@@ -1786,145 +1220,260 @@ pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_InventoryMenuItem{#[doc="`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` — overload selector"]pub fn new(sortie_top_menu_content:crate::app::sortietopmenucontent::SortieTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SaveMapMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SaveMapMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SaveMapMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SaveMapMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SaveMapMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SaveMapMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SaveMapMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_InventoryMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_InventoryMenuItemMethods> ::ctor(this,sortie_top_menu_content);
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SaveMapMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SaveMapMenuItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SystemMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SystemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_ResetMapMenuItemMethods:ISortieTopMenu_ResetMapMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_SystemMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SystemMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",27usize,__vt.len(), <SortieTopMenu_ResetMapMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_ResetMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SystemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77a80usize)as*mut u8,();
+(SortieTopMenu_ResetMapMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_SystemMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SystemMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <SortieTopMenu_ResetMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_ResetMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SystemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_SystemMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SystemMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <SortieTopMenu_ResetMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_ResetMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SystemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_SystemMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SystemMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",29usize,__vt.len(), <SortieTopMenu_ResetMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_ResetMapMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SystemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_SystemMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SystemMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <SortieTopMenu_ResetMapMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_ResetMapMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SystemMenuItemMethods:ISortieTopMenu_SystemMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SystemMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SystemMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SystemMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SystemMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SystemMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79d30usize)as*mut u8,();
-(SortieTopMenu_SystemMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SystemMenuItem>ISortieTopMenu_SystemMenuItemMethods for __T{}
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_ResetMapMenuItem>ISortieTopMenu_ResetMapMenuItemMethods for __T{}
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SystemMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_ResetMapMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SystemMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_ResetMapMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_ResetMapMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_ResetMapMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_ResetMapMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_ResetMapMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_ResetMapMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_ResetMapMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SystemMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SystemMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(SortieTopMenu_ResetMapMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_ResetMapMenuItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubFriendMenu_KizunaItemMethods:ISortieTopMenu_SubFriendMenu_KizunaItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",64usize,__vt.len(), <SortieTopMenu as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",27usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn create_desc(this:SortieTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(65usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",65usize,__vt.len(), <SortieTopMenu as::unity2::ClassIdentity> ::NAME,"CreateDesc",));
-let inner:extern "C" fn(SortieTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",30usize,__vt.len(), <SortieTopMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_tutorial(this:SortieTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",63usize,__vt.len(), <SortieTopMenu as::unity2::ClassIdentity> ::NAME,"GetTutorial",));
-let inner:extern "C" fn(SortieTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",29usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ee260usize)as*mut u8,();
+(SortieTopMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubFriendMenu_KizunaItem>ISortieTopMenu_SubFriendMenu_KizunaItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_KizunaItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_KizunaItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_KizunaItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_KizunaItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_KizunaItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_KizunaItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_KizunaItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_KizunaItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_KizunaItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_KizunaItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SubFriendMenu_KizunaItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SubFriendMenu_KizunaItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-sortietopmenu")]impl SortieTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24eb880usize)as*mut u8,();
@@ -1933,20 +1482,56 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenuMethods:ISortieTopMenu{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",64usize,__vt.len(), <SortieTopMenu as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <SortieTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_unity2_raw::create_desc(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(65usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",65usize,__vt.len(), <SortieTopMenu as::unity2::ClassIdentity> ::NAME,"CreateDesc",));
+let __inner:extern "C" fn(SortieTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortietopmenucontent::SortieTopMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,sortie_top_menu_content:impl::core::convert::Into<crate::app::sortietopmenucontent::SortieTopMenuContent>)->(){unsafe{let __receiver= <SortieTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24ebeb0usize)as*mut u8,();
 (SortieTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortietopmenucontent::SortieTopMenuContent)::core::convert::Into::into(sortie_top_menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SortieTopMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_unity2_raw::get_tutorial(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",63usize,__vt.len(), <SortieTopMenu as::unity2::ClassIdentity> ::NAME,"GetTutorial",));
+let __inner:extern "C" fn(SortieTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CheckEngagePlus()` overload"]fn check_engage_plus(self,)->(){unsafe{let __receiver= <SortieTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24ed530usize)as*mut u8,();
@@ -1970,6 +1555,20 @@ pub fn check_engage_plus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn help_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu{#[doc="Direct (non-virtual) call to `SortieTopMenu`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu`'s own `CreateDesc`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_desc(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{let __mi=Self::create_desc_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu`'s own `GetTutorial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_tutorial(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_tutorial_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-sortietopmenu")]impl SortieTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortietopmenucontent::SortieTopMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,sortie_top_menu_content:crate::app::sortietopmenucontent::SortieTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SortieTopMenu), ::core::stringify!(new),));
@@ -1977,60 +1576,443 @@ pub fn help_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SortieTopMenuItemBase_unity2_raw{use super:: * ;
-pub unsafe fn b_call(this:SortieTopMenu_SortieTopMenuItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SelectionUnitMenuItemMethods:ISortieTopMenu_SelectionUnitMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortieTopMenu_SelectionUnitMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_SelectionUnitMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_SelectionUnitMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SelectionUnitMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_SelectionUnitMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_SelectionUnitMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_SelectionUnitMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SelectionUnitMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_SelectionUnitMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_SelectionUnitMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SelectionUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d78700usize)as*mut u8,();
+(SortieTopMenu_SelectionUnitMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SelectionUnitMenuItem>ISortieTopMenu_SelectionUnitMenuItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SelectionUnitMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SelectionUnitMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SelectionUnitMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SelectionUnitMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SelectionUnitMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SelectionUnitMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SelectionUnitMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SelectionUnitMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SelectionUnitMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SelectionUnitMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d76ba0usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubFriendMenuMethods:ISortieTopMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <SortieTopMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79620usize)as*mut u8,();
+(SortieTopMenu_SubFriendMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SortieTopMenu_SubFriendMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <SortieTopMenu_SubFriendMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubFriendMenu>ISortieTopMenu_SubFriendMenuMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu{#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SubFriendMenu), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SubFriendMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SystemMenuItemMethods:ISortieTopMenu_SystemMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortieTopMenu_SystemMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_SystemMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_SystemMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SystemMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_SystemMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_SystemMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_SystemMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SystemMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_SystemMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_SystemMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79d30usize)as*mut u8,();
+(SortieTopMenu_SystemMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SystemMenuItem>ISortieTopMenu_SystemMenuItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SystemMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SystemMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SystemMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SystemMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SystemMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SystemMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SystemMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SystemMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SystemMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SystemMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubFriendMenu_NotebookItemMethods:ISortieTopMenu_SubFriendMenu_NotebookItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(SortieTopMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ee600usize)as*mut u8,();
+(SortieTopMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubFriendMenu_NotebookItem>ISortieTopMenu_SubFriendMenu_NotebookItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_NotebookItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_NotebookItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_NotebookItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_NotebookItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_NotebookItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_NotebookItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_NotebookItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_NotebookItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubFriendMenu_NotebookItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_NotebookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SubFriendMenu_NotebookItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SubFriendMenu_NotebookItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SortieTopMenuItemBaseMethods:ISortieTopMenu_SortieTopMenuItemBase{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SortieTopMenuItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",19usize,__vt.len(), <SortieTopMenu_SortieTopMenuItemBase as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SortieTopMenuItemBase, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SortieTopMenuItemBase, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn plus_call(this:SortieTopMenu_SortieTopMenuItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SortieTopMenuItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",24usize,__vt.len(), <SortieTopMenu_SortieTopMenuItemBase as::unity2::ClassIdentity> ::NAME,"PlusCall",));
-let inner:extern "C" fn(SortieTopMenu_SortieTopMenuItemBase, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SortieTopMenuItemBase, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_select(this:SortieTopMenu_SortieTopMenuItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <SortieTopMenu_SortieTopMenuItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",12usize,__vt.len(), <SortieTopMenu_SortieTopMenuItemBase as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(SortieTopMenu_SortieTopMenuItemBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SortieTopMenuItemBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_deselect(this:SortieTopMenu_SortieTopMenuItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <SortieTopMenu_SortieTopMenuItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",13usize,__vt.len(), <SortieTopMenu_SortieTopMenuItemBase as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
-let inner:extern "C" fn(SortieTopMenu_SortieTopMenuItemBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_SortieTopMenuItemBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SortieTopMenuItemBaseMethods:ISortieTopMenu_SortieTopMenuItemBase{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SortieTopMenuItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SortieTopMenuItemBase_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SortieTopMenuItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SortieTopMenuItemBase_unity2_raw::plus_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <SortieTopMenu_SortieTopMenuItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SortieTopMenuItemBase_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <SortieTopMenu_SortieTopMenuItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SortieTopMenuItemBase_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)}
 }
 #[doc="`HelpOn()` overload"]fn help_on(self,)->(){unsafe{let __receiver= <SortieTopMenu_SortieTopMenuItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d79130usize)as*mut u8,();
@@ -2067,6 +2049,20 @@ pub fn save_menu_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 }
 
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SortieTopMenuItemBase{#[doc="Direct (non-virtual) call to `SortieTopMenu_SortieTopMenuItemBase`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SortieTopMenuItemBase`'s own `PlusCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn plus_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::plus_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SortieTopMenuItemBase`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SortieTopMenuItemBase`'s own `OnDeselect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deselect(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_deselect_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SortieTopMenuItemBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SortieTopMenu_SortieTopMenuItemBase), ::core::stringify!(new),));
@@ -2074,27 +2070,204 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SubSystemMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:SortieTopMenu_SubSystemMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_BackMenuItemMethods:ISortieTopMenu_BackMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",30usize,__vt.len(), <SortieTopMenu_SubSystemMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",27usize,__vt.len(), <SortieTopMenu_BackMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_BackMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SortieTopMenu_SubSystemMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",51usize,__vt.len(), <SortieTopMenu_SubSystemMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <SortieTopMenu_BackMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_BackMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_BackMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_BackMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_BackMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_BackMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_BackMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_BackMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_BackMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d76620usize)as*mut u8,();
+(SortieTopMenu_BackMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_BackMenuItem>ISortieTopMenu_BackMenuItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_BackMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_BackMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_BackMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_BackMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_BackMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_BackMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_BackMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_BackMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_BackMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_BackMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SaveMenuItemMethods:ISortieTopMenu_SaveMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortieTopMenu_SaveMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_SaveMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_SaveMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SaveMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_SaveMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_SaveMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_SaveMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SaveMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_SaveMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_SaveMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SaveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d78250usize)as*mut u8,();
+(SortieTopMenu_SaveMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SaveMenuItem>ISortieTopMenu_SaveMenuItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SaveMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SaveMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SaveMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SaveMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SaveMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SaveMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SaveMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SaveMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SaveMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SaveMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d79770usize)as*mut u8,();
@@ -2107,10 +2280,28 @@ inner(this,__mi)}
 (SortieTopMenu_SubSystemMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SortieTopMenu_SubSystemMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <SortieTopMenu_SubSystemMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -2122,6 +2313,14 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu{#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SortieTopMenu_SubSystemMenu), ::core::stringify!(new),));
@@ -2129,393 +2328,157 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SubSystemMenu_ReportItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SubSystemMenu_ReportItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_PositionChangeMenuItemMethods:ISortieTopMenu_PositionChangeMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",27usize,__vt.len(), <SortieTopMenu_PositionChangeMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_PositionChangeMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SubSystemMenu_ReportItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <SortieTopMenu_PositionChangeMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_PositionChangeMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SubSystemMenu_ReportItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <SortieTopMenu_PositionChangeMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_PositionChangeMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SubSystemMenu_ReportItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",29usize,__vt.len(), <SortieTopMenu_PositionChangeMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_PositionChangeMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:SortieTopMenu_SubSystemMenu_ReportItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SubSystemMenu_ReportItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <SortieTopMenu_PositionChangeMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_PositionChangeMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SortieTopMenu_SubSystemMenu_ReportItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ReportItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubSystemMenu_ReportItemMethods:ISortieTopMenu_SubSystemMenu_ReportItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ReportItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ReportItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ReportItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ReportItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ReportItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ReportItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubSystemMenu_ReportItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ReportItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef190usize)as*mut u8,();
-(SortieTopMenu_SubSystemMenu_ReportItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_PositionChangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77720usize)as*mut u8,();
+(SortieTopMenu_PositionChangeMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubSystemMenu_ReportItem>ISortieTopMenu_SubSystemMenu_ReportItemMethods for __T{}
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_PositionChangeMenuItem>ISortieTopMenu_PositionChangeMenuItemMethods for __T{}
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ReportItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_PositionChangeMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ReportItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_PositionChangeMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_PositionChangeMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_PositionChangeMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_PositionChangeMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_PositionChangeMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_PositionChangeMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_PositionChangeMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SubSystemMenu_ReportItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SubSystemMenu_ReportItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(SortieTopMenu_PositionChangeMenuItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_PositionChangeMenuItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_ResetMapMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_ResetMapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_ResetMapMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_ResetMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_ResetMapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_ResetMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_ResetMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_ResetMapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_ResetMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_ResetMapMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_ResetMapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_ResetMapMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_ResetMapMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_ResetMapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_ResetMapMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_ResetMapMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_ResetMapMenuItemMethods:ISortieTopMenu_ResetMapMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_ResetMapMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77a80usize)as*mut u8,();
-(SortieTopMenu_ResetMapMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_ResetMapMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_ResetMapMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_ResetMapMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_ResetMapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_ResetMapMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_ResetMapMenuItem>ISortieTopMenu_ResetMapMenuItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_ResetMapMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_ResetMapMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_ResetMapMenuItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_ResetMapMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_SubFriendMenu_RingListItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_SubFriendMenu_RingListItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_SubFriendMenu_RingListItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:SortieTopMenu_SubFriendMenu_RingListItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_SubFriendMenu_RingListItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:SortieTopMenu_SubFriendMenu_RingListItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_SubFriendMenu_RingListItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:SortieTopMenu_SubFriendMenu_RingListItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(SortieTopMenu_SubFriendMenu_RingListItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubFriendMenu_RingListItemMethods:ISortieTopMenu_SubFriendMenu_RingListItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RingListItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RingListItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RingListItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RingListItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RingListItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RingListItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_SubFriendMenu_RingListItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22eed50usize)as*mut u8,();
-(SortieTopMenu_SubFriendMenu_RingListItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubFriendMenu_RingListItem>ISortieTopMenu_SubFriendMenu_RingListItemMethods for __T{}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_RingListItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubFriendMenu_RingListItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieTopMenu_SubFriendMenu_RingListItem), ::core::stringify!(new),));
- <Self as ISortieTopMenu_SubFriendMenu_RingListItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortietopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenu_RelianceMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:SortieTopMenu_RelianceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_RelianceMenuItemMethods:ISortieTopMenu_RelianceMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",27usize,__vt.len(), <SortieTopMenu_RelianceMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(SortieTopMenu_RelianceMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SortieTopMenu_RelianceMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:SortieTopMenu_RelianceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SortieTopMenu_RelianceMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(SortieTopMenu_RelianceMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:SortieTopMenu_RelianceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <SortieTopMenu_RelianceMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(SortieTopMenu_RelianceMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:SortieTopMenu_RelianceMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieTopMenu_RelianceMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(SortieTopMenu_RelianceMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_RelianceMenuItemMethods:ISortieTopMenu_RelianceMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_RelianceMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d77780usize)as*mut u8,();
 (SortieTopMenu_RelianceMenuItem)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_RelianceMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_RelianceMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_RelianceMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_RelianceMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_RelianceMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_RelianceMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_RelianceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieTopMenu_RelianceMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_RelianceMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_RelianceMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -2528,6 +2491,20 @@ pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_RelianceMenuItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_RelianceMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_RelianceMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_RelianceMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_RelianceMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_RelianceMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SortieTopMenu_RelianceMenuItem), ::core::stringify!(new),));
@@ -2535,84 +2512,348 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubSystemMenu_TutorialItemMethods:ISortieTopMenu_SubSystemMenu_TutorialItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef630usize)as*mut u8,();
+(SortieTopMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubSystemMenu_TutorialItem>ISortieTopMenu_SubSystemMenu_TutorialItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_TutorialItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_TutorialItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_TutorialItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_TutorialItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_TutorialItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_TutorialItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_TutorialItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_TutorialItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_TutorialItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_TutorialItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SubSystemMenu_TutorialItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SubSystemMenu_TutorialItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortietopmenu")]pub trait ISortieTopMenu_SubSystemMenu_ResetItemMethods:ISortieTopMenu_SubSystemMenu_ResetItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(SortieTopMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef440usize)as*mut u8,();
+(SortieTopMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl<__T:ISortieTopMenu_SubSystemMenu_ResetItem>ISortieTopMenu_SubSystemMenu_ResetItemMethods for __T{}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ResetItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ResetItem{#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ResetItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ResetItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ResetItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ResetItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ResetItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ResetItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieTopMenu_SubSystemMenu_ResetItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-sortietopmenu")]impl SortieTopMenu_SubSystemMenu_ResetItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenu_SubSystemMenu_ResetItem), ::core::stringify!(new),));
+ <Self as ISortieTopMenu_SubSystemMenu_ResetItemMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-sortietopmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieTopMenu_BackMenuItem;
-    pub use super::ISortieTopMenu_BackMenuItem;
-    pub use super::ISortieTopMenu_BackMenuItemMethods;
-    pub use super::SortieTopMenu_SubFriendMenu_KizunaItem;
-    pub use super::ISortieTopMenu_SubFriendMenu_KizunaItem;
-    pub use super::ISortieTopMenu_SubFriendMenu_KizunaItemMethods;
-    pub use super::SortieTopMenu_SubSystemMenu_ConfigItem;
-    pub use super::ISortieTopMenu_SubSystemMenu_ConfigItem;
-    pub use super::ISortieTopMenu_SubSystemMenu_ConfigItemMethods;
-    pub use super::SortieTopMenu_SubFriendMenu_NotebookItem;
-    pub use super::ISortieTopMenu_SubFriendMenu_NotebookItem;
-    pub use super::ISortieTopMenu_SubFriendMenu_NotebookItemMethods;
-    pub use super::SortieTopMenu_SubSystemMenu_ResetItem;
-    pub use super::ISortieTopMenu_SubSystemMenu_ResetItem;
-    pub use super::ISortieTopMenu_SubSystemMenu_ResetItemMethods;
-    pub use super::SortieTopMenu_ShopMenuItem;
-    pub use super::ISortieTopMenu_ShopMenuItem;
-    pub use super::ISortieTopMenu_ShopMenuItemMethods;
+    pub use super::SortieTopMenu_SubSystemMenu_ReportItem;
+    pub use super::ISortieTopMenu_SubSystemMenu_ReportItem;
+    pub use super::ISortieTopMenu_SubSystemMenu_ReportItemMethods;
     pub use super::SortieTopMenu_StartMenuItem;
     pub use super::ISortieTopMenu_StartMenuItem;
     pub use super::ISortieTopMenu_StartMenuItemMethods;
+    pub use super::SortieTopMenu_ShopMenuItem;
+    pub use super::ISortieTopMenu_ShopMenuItem;
+    pub use super::ISortieTopMenu_ShopMenuItemMethods;
+    pub use super::SortieTopMenu_GodMenuItem;
+    pub use super::ISortieTopMenu_GodMenuItem;
+    pub use super::ISortieTopMenu_GodMenuItemMethods;
+    pub use super::SortieTopMenu_FriendMenuItem;
+    pub use super::ISortieTopMenu_FriendMenuItem;
+    pub use super::ISortieTopMenu_FriendMenuItemMethods;
+    pub use super::SortieTopMenu_SubSystemMenu_ConfigItem;
+    pub use super::ISortieTopMenu_SubSystemMenu_ConfigItem;
+    pub use super::ISortieTopMenu_SubSystemMenu_ConfigItemMethods;
+    pub use super::SortieTopMenu_InventoryMenuItem;
+    pub use super::ISortieTopMenu_InventoryMenuItem;
+    pub use super::ISortieTopMenu_InventoryMenuItemMethods;
+    pub use super::SortieTopMenu_SubFriendMenu_RelianceItem;
+    pub use super::ISortieTopMenu_SubFriendMenu_RelianceItem;
+    pub use super::ISortieTopMenu_SubFriendMenu_RelianceItemMethods;
+    pub use super::SortieTopMenu_SubFriendMenu_RingListItem;
+    pub use super::ISortieTopMenu_SubFriendMenu_RingListItem;
+    pub use super::ISortieTopMenu_SubFriendMenu_RingListItemMethods;
+    pub use super::SortieTopMenu_SaveMapMenuItem;
+    pub use super::ISortieTopMenu_SaveMapMenuItem;
+    pub use super::ISortieTopMenu_SaveMapMenuItemMethods;
+    pub use super::SortieTopMenu_ResetMapMenuItem;
+    pub use super::ISortieTopMenu_ResetMapMenuItem;
+    pub use super::ISortieTopMenu_ResetMapMenuItemMethods;
+    pub use super::SortieTopMenu_SubFriendMenu_KizunaItem;
+    pub use super::ISortieTopMenu_SubFriendMenu_KizunaItem;
+    pub use super::ISortieTopMenu_SubFriendMenu_KizunaItemMethods;
+    pub use super::SortieTopMenu;
+    pub use super::ISortieTopMenu;
+    pub use super::ISortieTopMenuMethods;
     pub use super::SortieTopMenu_SelectionUnitMenuItem;
     pub use super::ISortieTopMenu_SelectionUnitMenuItem;
     pub use super::ISortieTopMenu_SelectionUnitMenuItemMethods;
     pub use super::SortieTopMenu_SubFriendMenu;
     pub use super::ISortieTopMenu_SubFriendMenu;
     pub use super::ISortieTopMenu_SubFriendMenuMethods;
-    pub use super::SortieTopMenu_GodMenuItem;
-    pub use super::ISortieTopMenu_GodMenuItem;
-    pub use super::ISortieTopMenu_GodMenuItemMethods;
-    pub use super::SortieTopMenu_SaveMapMenuItem;
-    pub use super::ISortieTopMenu_SaveMapMenuItem;
-    pub use super::ISortieTopMenu_SaveMapMenuItemMethods;
-    pub use super::SortieTopMenu_SubSystemMenu_TutorialItem;
-    pub use super::ISortieTopMenu_SubSystemMenu_TutorialItem;
-    pub use super::ISortieTopMenu_SubSystemMenu_TutorialItemMethods;
-    pub use super::SortieTopMenu_SubFriendMenu_RelianceItem;
-    pub use super::ISortieTopMenu_SubFriendMenu_RelianceItem;
-    pub use super::ISortieTopMenu_SubFriendMenu_RelianceItemMethods;
-    pub use super::SortieTopMenu_SaveMenuItem;
-    pub use super::ISortieTopMenu_SaveMenuItem;
-    pub use super::ISortieTopMenu_SaveMenuItemMethods;
-    pub use super::SortieTopMenu_PositionChangeMenuItem;
-    pub use super::ISortieTopMenu_PositionChangeMenuItem;
-    pub use super::ISortieTopMenu_PositionChangeMenuItemMethods;
-    pub use super::SortieTopMenu_FriendMenuItem;
-    pub use super::ISortieTopMenu_FriendMenuItem;
-    pub use super::ISortieTopMenu_FriendMenuItemMethods;
-    pub use super::SortieTopMenu_InventoryMenuItem;
-    pub use super::ISortieTopMenu_InventoryMenuItem;
-    pub use super::ISortieTopMenu_InventoryMenuItemMethods;
     pub use super::SortieTopMenu_SystemMenuItem;
     pub use super::ISortieTopMenu_SystemMenuItem;
     pub use super::ISortieTopMenu_SystemMenuItemMethods;
-    pub use super::SortieTopMenu;
-    pub use super::ISortieTopMenu;
-    pub use super::ISortieTopMenuMethods;
+    pub use super::SortieTopMenu_SubFriendMenu_NotebookItem;
+    pub use super::ISortieTopMenu_SubFriendMenu_NotebookItem;
+    pub use super::ISortieTopMenu_SubFriendMenu_NotebookItemMethods;
     pub use super::SortieTopMenu_SortieTopMenuItemBase;
     pub use super::ISortieTopMenu_SortieTopMenuItemBase;
     pub use super::ISortieTopMenu_SortieTopMenuItemBaseMethods;
+    pub use super::SortieTopMenu_BackMenuItem;
+    pub use super::ISortieTopMenu_BackMenuItem;
+    pub use super::ISortieTopMenu_BackMenuItemMethods;
+    pub use super::SortieTopMenu_SaveMenuItem;
+    pub use super::ISortieTopMenu_SaveMenuItem;
+    pub use super::ISortieTopMenu_SaveMenuItemMethods;
     pub use super::SortieTopMenu_SubSystemMenu;
     pub use super::ISortieTopMenu_SubSystemMenu;
     pub use super::ISortieTopMenu_SubSystemMenuMethods;
-    pub use super::SortieTopMenu_SubSystemMenu_ReportItem;
-    pub use super::ISortieTopMenu_SubSystemMenu_ReportItem;
-    pub use super::ISortieTopMenu_SubSystemMenu_ReportItemMethods;
-    pub use super::SortieTopMenu_ResetMapMenuItem;
-    pub use super::ISortieTopMenu_ResetMapMenuItem;
-    pub use super::ISortieTopMenu_ResetMapMenuItemMethods;
-    pub use super::SortieTopMenu_SubFriendMenu_RingListItem;
-    pub use super::ISortieTopMenu_SubFriendMenu_RingListItem;
-    pub use super::ISortieTopMenu_SubFriendMenu_RingListItemMethods;
+    pub use super::SortieTopMenu_PositionChangeMenuItem;
+    pub use super::ISortieTopMenu_PositionChangeMenuItem;
+    pub use super::ISortieTopMenu_PositionChangeMenuItemMethods;
     pub use super::SortieTopMenu_RelianceMenuItem;
     pub use super::ISortieTopMenu_RelianceMenuItem;
     pub use super::ISortieTopMenu_RelianceMenuItemMethods;
+    pub use super::SortieTopMenu_SubSystemMenu_TutorialItem;
+    pub use super::ISortieTopMenu_SubSystemMenu_TutorialItem;
+    pub use super::ISortieTopMenu_SubSystemMenu_TutorialItemMethods;
+    pub use super::SortieTopMenu_SubSystemMenu_ResetItem;
+    pub use super::ISortieTopMenu_SubSystemMenu_ResetItem;
+    pub use super::ISortieTopMenu_SubSystemMenu_ResetItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::mapbasicmenu::IMapBasicMenu;

@@ -14,34 +14,29 @@ mod __types {
 #[cfg(feature = "unity_engine-resource_management-async_operations-icachable-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resource_management-async_operations-icachable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ICachable_unity2_raw{use super:: * ;
-pub unsafe fn get_key(this:ICachable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-resource_management-async_operations-icachable")]pub trait IICachableMethods:IICachable{#[doc="`get_Key()` overload"]fn get_key(self,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey{unsafe{let __receiver= <ICachable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <ICachable as::unity2::ClassIdentity> ::NAME,"get_Key",));
-let inner:extern "C" fn(ICachable, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ICachable, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_key(this:ICachable,value:crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_Key(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"]fn set_key(self,value:impl::core::convert::Into<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey>)->(){unsafe{let __receiver= <ICachable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <ICachable as::unity2::ClassIdentity> ::NAME,"set_Key",));
-let inner:extern "C" fn(ICachable,crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ICachable,crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="unity_engine-resource_management-async_operations-icachable")]pub trait IICachableMethods:IICachable{#[doc="`get_Key()` overload"]fn get_key(self,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey{unsafe{let __receiver= <ICachable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ICachable_unity2_raw::get_key(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_Key(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"]fn set_key(self,value:impl::core::convert::Into<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey>)->(){unsafe{let __receiver= <ICachable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ICachable_unity2_raw::set_key(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 }
 
@@ -49,6 +44,14 @@ __ICachable_unity2_raw::set_key(__receiver, ::core::convert::Into::into(value), 
 
 #[cfg(feature="unity_engine-resource_management-async_operations-icachable")]impl ICachable{pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn set_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-resource_management-async_operations-icachable")]impl ICachable{#[doc="Direct (non-virtual) call to `ICachable`'s own `get_Key`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_key(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey{let __mi=Self::get_key_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ICachable`'s own `set_Key`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_key(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,)->(){let __mi=Self::set_key_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-icachable")]

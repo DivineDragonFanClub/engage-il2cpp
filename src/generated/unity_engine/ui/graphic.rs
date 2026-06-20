@@ -26,379 +26,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-ui-graphic-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ui-graphic")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Graphic_unity2_raw{use super:: * ;
-pub unsafe fn get_color(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_color",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_color(this:Graphic,value:crate::unity_engine::color::Color,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"set_color",));
-let inner:extern "C" fn(Graphic,crate::unity_engine::color::Color, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_raycast_target(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",24usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_raycastTarget",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_raycast_target(this:Graphic,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"set_raycastTarget",));
-let inner:extern "C" fn(Graphic,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn set_all_dirty(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"SetAllDirty",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_layout_dirty(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"SetLayoutDirty",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_vertices_dirty(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"SetVerticesDirty",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_material_dirty(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"SetMaterialDirty",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_rect_transform_dimensions_change(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_before_transform_parent_changed(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnBeforeTransformParentChanged",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_transform_parent_changed(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_rect_transform(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_rectTransform",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default_material(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_defaultMaterial",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_material(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_material",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_material(this:Graphic,value:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"set_material",));
-let inner:extern "C" fn(Graphic,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_material_for_rendering(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",34usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_materialForRendering",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_main_texture(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",35usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_mainTexture",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_enable(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnEnable",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_disable(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnDisable",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_destroy(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_canvas_hierarchy_changed(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnCanvasHierarchyChanged",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_culling_changed(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",36usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnCullingChanged",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn rebuild(this:Graphic,update:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",37usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"Rebuild",));
-let inner:extern "C" fn(Graphic,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,update,__mi)}
-pub unsafe fn layout_complete(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",38usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn graphic_update_complete(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",39usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update_material(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",40usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"UpdateMaterial",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update_geometry(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",41usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_fill_vbo(this:Graphic,vbo:crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnFillVBO",));
-let inner:extern "C" fn(Graphic,crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,vbo,__mi)}
-pub unsafe fn on_populate_mesh(this:Graphic,m:crate::unity_engine::mesh::Mesh,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnPopulateMesh",));
-let inner:extern "C" fn(Graphic,crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,m,__mi)}
-pub unsafe fn on_populate_mesh_2(this:Graphic,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",44usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnPopulateMesh",));
-let inner:extern "C" fn(Graphic,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,vh,__mi)}
-pub unsafe fn on_did_apply_animation_properties(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_native_size(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",45usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"SetNativeSize",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn raycast(this:Graphic,sp:crate::unity_engine::vector2::Vector2,event_camera:crate::unity_engine::camera::Camera,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",46usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"Raycast",));
-let inner:extern "C" fn(Graphic,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sp,event_camera,__mi)}
-pub unsafe fn cross_fade_color(this:Graphic,target_color:crate::unity_engine::color::Color,duration:f32,ignore_time_scale:bool,use_alpha:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",47usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"CrossFadeColor",));
-let inner:extern "C" fn(Graphic,crate::unity_engine::color::Color,f32,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,target_color,duration,ignore_time_scale,use_alpha,__mi)}
-pub unsafe fn cross_fade_color_2(this:Graphic,target_color:crate::unity_engine::color::Color,duration:f32,ignore_time_scale:bool,use_alpha:bool,use_rgb:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",48usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"CrossFadeColor",));
-let inner:extern "C" fn(Graphic,crate::unity_engine::color::Color,f32,bool,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,target_color,duration,ignore_time_scale,use_alpha,use_rgb,__mi)}
-pub unsafe fn cross_fade_alpha(this:Graphic,alpha:f32,duration:f32,ignore_time_scale:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",49usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"CrossFadeAlpha",));
-let inner:extern "C" fn(Graphic,f32,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,alpha,duration,ignore_time_scale,__mi)}
-pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(this:Graphic,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.ICanvasElement.get_transform",));
-let inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-ui-graphic")]impl Graphic{#[doc="`get_defaultGraphicMaterial()` overload"]pub fn get_default_graphic_material()->crate::unity_engine::material::Material{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318bf10usize)as*mut u8,crate::unity_engine::material::Material;
 )}
 }
@@ -414,16 +41,52 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-ui-graphic")]pub trait IGraphicMethods:IGraphic{#[doc="`get_color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::get_color(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_color",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_color(crate::unity_engine::color::Color)` overload"]fn set_color(self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::set_color(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"set_color",));
+let __inner:extern "C" fn(Graphic,crate::unity_engine::color::Color, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_raycastTarget()` overload"]fn get_raycast_target(self,)->bool{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::get_raycast_target(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_raycastTarget",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_raycastTarget(bool)` overload"]fn set_raycast_target(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::set_raycast_target(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"set_raycastTarget",));
+let __inner:extern "C" fn(Graphic,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_raycastPadding()` overload"]fn get_raycast_padding(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x318c660usize)as*mut u8,crate::unity_engine::vector4::Vector4;
@@ -446,32 +109,104 @@ __Graphic_unity2_raw::set_raycast_target(__receiver, ::core::convert::Into::into
 (Graphic)__receiver)}
 }
 #[doc="`SetAllDirty()` overload"]fn set_all_dirty(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::set_all_dirty(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"SetAllDirty",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetLayoutDirty()` overload"]fn set_layout_dirty(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::set_layout_dirty(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"SetLayoutDirty",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetVerticesDirty()` overload"]fn set_vertices_dirty(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::set_vertices_dirty(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"SetVerticesDirty",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetMaterialDirty()` overload"]fn set_material_dirty(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::set_material_dirty(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"SetMaterialDirty",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnBeforeTransformParentChanged()` overload"]fn on_before_transform_parent_changed(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_before_transform_parent_changed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnBeforeTransformParentChanged",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_depth()` overload"]fn get_depth(self,)->i32{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x318d490usize)as*mut u8,i32;
 (Graphic)__receiver)}
 }
 #[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::get_rect_transform(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_rectTransform",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_canvas()` overload"]fn get_canvas(self,)->crate::unity_engine::canvas::Canvas{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x318c240usize)as*mut u8,crate::unity_engine::canvas::Canvas;
@@ -486,49 +221,184 @@ __Graphic_unity2_raw::get_rect_transform(__receiver, ::core::option::Option::Non
 (Graphic)__receiver)}
 }
 #[doc="`get_defaultMaterial()` overload"]fn get_default_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::get_default_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_defaultMaterial",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_material()` overload"]fn get_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::get_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_material",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_material(crate::unity_engine::material::Material)` overload"]fn set_material(self,value:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::set_material(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"set_material",));
+let __inner:extern "C" fn(Graphic,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_materialForRendering()` overload"]fn get_material_for_rendering(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::get_material_for_rendering(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_materialForRendering",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_mainTexture()` overload"]fn get_main_texture(self,)->crate::unity_engine::texture::Texture{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::get_main_texture(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"get_mainTexture",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_canvas_hierarchy_changed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnCanvasHierarchyChanged",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnCullingChanged()` overload"]fn on_culling_changed(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_culling_changed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnCullingChanged",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,update:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(update), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"Rebuild",));
+let __inner:extern "C" fn(Graphic,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(update),__mi)}
+}
 }
 #[doc="`LayoutComplete()` overload"]fn layout_complete(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GraphicUpdateComplete()` overload"]fn graphic_update_complete(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::graphic_update_complete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateMaterial()` overload"]fn update_material(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::update_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"UpdateMaterial",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`DoMeshGeneration()` overload"]fn do_mesh_generation(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x318e7d0usize)as*mut u8,();
@@ -539,22 +409,76 @@ __Graphic_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)}
 (Graphic)__receiver)}
 }
 #[doc="`OnFillVBO(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)` overload"]fn on_fill_vbo(self,vbo:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> >)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_fill_vbo(__receiver, ::core::convert::Into::into(vbo), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnFillVBO",));
+let __inner:extern "C" fn(Graphic,crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(vbo),__mi)}
+}
 }
 #[doc="`OnPopulateMesh(crate::unity_engine::mesh::Mesh)` overload"]fn on_populate_mesh(self,m:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_populate_mesh(__receiver, ::core::convert::Into::into(m), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnPopulateMesh",));
+let __inner:extern "C" fn(Graphic,crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(m),__mi)}
+}
 }
 #[doc="`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn on_populate_mesh_2(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_populate_mesh_2(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnPopulateMesh",));
+let __inner:extern "C" fn(Graphic,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(vh),__mi)}
+}
 }
 #[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetNativeSize()` overload"]fn set_native_size(self,)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::set_native_size(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"SetNativeSize",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Raycast(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]fn raycast(self,sp:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::raycast(__receiver, ::core::convert::Into::into(sp), ::core::convert::Into::into(event_camera), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",46usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"Raycast",));
+let __inner:extern "C" fn(Graphic,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(sp), ::core::convert::Into::into(event_camera),__mi)}
+}
 }
 #[doc="`PixelAdjustPoint(crate::unity_engine::vector2::Vector2)` overload"]fn pixel_adjust_point(self,point:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x318f9e0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
@@ -565,13 +489,40 @@ __Graphic_unity2_raw::raycast(__receiver, ::core::convert::Into::into(sp), ::cor
 (Graphic)__receiver)}
 }
 #[doc="`CrossFadeColor(crate::unity_engine::color::Color, f32, bool, bool)` overload"]fn cross_fade_color(self,target_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32> ,ignore_time_scale:impl::core::convert::Into<bool> ,use_alpha:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::cross_fade_color(__receiver, ::core::convert::Into::into(target_color), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::convert::Into::into(use_alpha), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"CrossFadeColor",));
+let __inner:extern "C" fn(Graphic,crate::unity_engine::color::Color,f32,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(target_color), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::convert::Into::into(use_alpha),__mi)}
+}
 }
 #[doc="`CrossFadeColor(crate::unity_engine::color::Color, f32, bool, bool, bool)` overload"]fn cross_fade_color_2(self,target_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32> ,ignore_time_scale:impl::core::convert::Into<bool> ,use_alpha:impl::core::convert::Into<bool> ,use_rgb:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::cross_fade_color_2(__receiver, ::core::convert::Into::into(target_color), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::convert::Into::into(use_alpha), ::core::convert::Into::into(use_rgb), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",48usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"CrossFadeColor",));
+let __inner:extern "C" fn(Graphic,crate::unity_engine::color::Color,f32,bool,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(target_color), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::convert::Into::into(use_alpha), ::core::convert::Into::into(use_rgb),__mi)}
+}
 }
 #[doc="`CrossFadeAlpha(f32, f32, bool)` overload"]fn cross_fade_alpha(self,alpha:impl::core::convert::Into<f32> ,duration:impl::core::convert::Into<f32> ,ignore_time_scale:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::cross_fade_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",49usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"CrossFadeAlpha",));
+let __inner:extern "C" fn(Graphic,f32,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(alpha), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale),__mi)}
+}
 }
 #[doc="`RegisterDirtyLayoutCallback(crate::unity_engine::events::unityaction::UnityAction)` overload"]fn register_dirty_layout_callback(self,action:impl::core::convert::Into<crate::unity_engine::events::unityaction::UnityAction>)->(){unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3190090usize)as*mut u8,();
@@ -598,7 +549,16 @@ __Graphic_unity2_raw::cross_fade_alpha(__receiver, ::core::convert::Into::into(a
 (Graphic)__receiver,(crate::unity_engine::events::unityaction::UnityAction)::core::convert::Into::into(action))}
 }
 #[doc="`UnityEngine.UI.ICanvasElement.get_transform()` overload"]fn unity_engine_ui_i_canvas_element_get_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Graphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Graphic_unity2_raw::unity_engine_ui_i_canvas_element_get_transform(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <Graphic as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.ICanvasElement.get_transform",));
+let __inner:extern "C" fn(Graphic, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -664,6 +624,119 @@ pub fn register_dirty_material_callback_method_info()-> & 'static::unity2::il2cp
 pub fn unregister_dirty_material_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
 pub fn unity_engine_ui_i_canvas_element_get_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+}
+
+#[cfg(feature="unity_engine-ui-graphic")]impl Graphic{#[doc="Direct (non-virtual) call to `Graphic`'s own `get_color`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::color::Color{let __mi=Self::get_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `set_color`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::unity_engine::color::Color,)->(){let __mi=Self::set_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::color::Color, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `get_raycastTarget`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_raycast_target(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_raycast_target_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `set_raycastTarget`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_raycast_target(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_raycast_target_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `SetAllDirty`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_all_dirty(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_all_dirty_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `SetLayoutDirty`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_layout_dirty(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_layout_dirty_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `SetVerticesDirty`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_vertices_dirty(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_vertices_dirty_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `SetMaterialDirty`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_material_dirty(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_material_dirty_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnRectTransformDimensionsChange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_rect_transform_dimensions_change(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_rect_transform_dimensions_change_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnBeforeTransformParentChanged`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_before_transform_parent_changed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_before_transform_parent_changed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnTransformParentChanged`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_transform_parent_changed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_transform_parent_changed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `get_rectTransform`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_rect_transform(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::recttransform::RectTransform{let __mi=Self::get_rect_transform_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `get_defaultMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_default_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `get_material`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `set_material`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::unity_engine::material::Material,)->(){let __mi=Self::set_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `get_materialForRendering`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_material_for_rendering(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_material_for_rendering_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `get_mainTexture`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_main_texture(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::texture::Texture{let __mi=Self::get_main_texture_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnDisable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_disable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_disable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnDestroy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_destroy(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_destroy_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnCanvasHierarchyChanged`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_canvas_hierarchy_changed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_canvas_hierarchy_changed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnCullingChanged`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_culling_changed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_culling_changed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `Rebuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn rebuild(this:impl::core::convert::Into< ::unity2::IlInstance> ,update:crate::unity_engine::ui::canvasupdate::CanvasUpdate,)->(){let __mi=Self::rebuild_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),update, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `LayoutComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn layout_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::layout_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `GraphicUpdateComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn graphic_update_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::graphic_update_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `UpdateMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `UpdateGeometry`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_geometry(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_geometry_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnFillVBO`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_fill_vbo(this:impl::core::convert::Into< ::unity2::IlInstance> ,vbo:crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> ,)->(){let __mi=Self::on_fill_vbo_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),vbo, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnPopulateMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_populate_mesh(this:impl::core::convert::Into< ::unity2::IlInstance> ,m:crate::unity_engine::mesh::Mesh,)->(){let __mi=Self::on_populate_mesh_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),m, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnPopulateMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_populate_mesh_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,)->(){let __mi=Self::on_populate_mesh_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),vh, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `OnDidApplyAnimationProperties`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_did_apply_animation_properties(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_did_apply_animation_properties_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `SetNativeSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_native_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_native_size_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `Raycast`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn raycast(this:impl::core::convert::Into< ::unity2::IlInstance> ,sp:crate::unity_engine::vector2::Vector2,event_camera:crate::unity_engine::camera::Camera,)->bool{let __mi=Self::raycast_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sp,event_camera, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `CrossFadeColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn cross_fade_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,target_color:crate::unity_engine::color::Color,duration:f32,ignore_time_scale:bool,use_alpha:bool,)->(){let __mi=Self::cross_fade_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::color::Color,f32,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),target_color,duration,ignore_time_scale,use_alpha, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `CrossFadeColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn cross_fade_color_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,target_color:crate::unity_engine::color::Color,duration:f32,ignore_time_scale:bool,use_alpha:bool,use_rgb:bool,)->(){let __mi=Self::cross_fade_color_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::color::Color,f32,bool,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),target_color,duration,ignore_time_scale,use_alpha,use_rgb, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `CrossFadeAlpha`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn cross_fade_alpha(this:impl::core::convert::Into< ::unity2::IlInstance> ,alpha:f32,duration:f32,ignore_time_scale:bool,)->(){let __mi=Self::cross_fade_alpha_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),alpha,duration,ignore_time_scale, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Graphic`'s own `UnityEngine.UI.ICanvasElement.get_transform`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::transform::Transform{let __mi=Self::unity_engine_ui_i_canvas_element_get_transform_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-ui-graphic")]impl Graphic{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -42,77 +42,69 @@ pub fn behindから初撃()->Self{Self{value:2}
 #[cfg(feature = "combat-situation_converter-convertbrawl-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-situation_converter-convertbrawl")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConvertBrawl_unity2_raw{use super:: * ;
-pub unsafe fn on_begin(this:ConvertBrawl,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <ConvertBrawl as::unity2::ClassIdentity> ::NAME,"OnBegin",));
-let inner:extern "C" fn(ConvertBrawl, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_approach(this:ConvertBrawl,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <ConvertBrawl as::unity2::ClassIdentity> ::NAME,"OnApproach",));
-let inner:extern "C" fn(ConvertBrawl, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_attack(this:ConvertBrawl,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <ConvertBrawl as::unity2::ClassIdentity> ::NAME,"OnAttack",));
-let inner:extern "C" fn(ConvertBrawl, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_damage(this:ConvertBrawl,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <ConvertBrawl as::unity2::ClassIdentity> ::NAME,"OnDamage",));
-let inner:extern "C" fn(ConvertBrawl, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_unusable(this:ConvertBrawl,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <ConvertBrawl as::unity2::ClassIdentity> ::NAME,"OnUnusable",));
-let inner:extern "C" fn(ConvertBrawl, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="combat-situation_converter-convertbrawl")]pub trait IConvertBrawlMethods:IConvertBrawl{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x253f6b0usize)as*mut u8,();
 (ConvertBrawl)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
 }
 #[doc="`OnBegin()` overload"]fn on_begin(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ConvertBrawl_unity2_raw::on_begin(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ConvertBrawl as::unity2::ClassIdentity> ::NAME,"OnBegin",));
+let __inner:extern "C" fn(ConvertBrawl, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnApproach()` overload"]fn on_approach(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ConvertBrawl_unity2_raw::on_approach(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ConvertBrawl as::unity2::ClassIdentity> ::NAME,"OnApproach",));
+let __inner:extern "C" fn(ConvertBrawl, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnAttack()` overload"]fn on_attack(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ConvertBrawl_unity2_raw::on_attack(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ConvertBrawl as::unity2::ClassIdentity> ::NAME,"OnAttack",));
+let __inner:extern "C" fn(ConvertBrawl, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDamage()` overload"]fn on_damage(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ConvertBrawl_unity2_raw::on_damage(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ConvertBrawl as::unity2::ClassIdentity> ::NAME,"OnDamage",));
+let __inner:extern "C" fn(ConvertBrawl, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnUnusable()` overload"]fn on_unusable(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ConvertBrawl_unity2_raw::on_unusable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ConvertBrawl as::unity2::ClassIdentity> ::NAME,"OnUnusable",));
+let __inner:extern "C" fn(ConvertBrawl, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -124,6 +116,23 @@ pub fn on_approach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn on_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn on_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn on_unusable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="combat-situation_converter-convertbrawl")]impl ConvertBrawl{#[doc="Direct (non-virtual) call to `ConvertBrawl`'s own `OnBegin`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_begin(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_begin_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ConvertBrawl`'s own `OnApproach`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_approach(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_approach_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ConvertBrawl`'s own `OnAttack`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_attack(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_attack_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ConvertBrawl`'s own `OnDamage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_damage(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_damage_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ConvertBrawl`'s own `OnUnusable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_unusable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_unusable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-situation_converter-convertbrawl")]impl ConvertBrawl{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

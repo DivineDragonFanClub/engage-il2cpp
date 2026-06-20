@@ -14,73 +14,65 @@ mod __types {
 #[cfg(feature = "unity_engine-bindings-nativemethodattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-bindings-nativemethodattribute")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NativeMethodAttribute_unity2_raw{use super:: * ;
-pub unsafe fn set_name(this:NativeMethodAttribute,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-bindings-nativemethodattribute")]pub trait INativeMethodAttributeMethods:INativeMethodAttribute{#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <NativeMethodAttribute as::unity2::ClassIdentity> ::NAME,"set_Name",));
-let inner:extern "C" fn(NativeMethodAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(NativeMethodAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn set_is_thread_safe(this:NativeMethodAttribute,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`set_IsThreadSafe(bool)` overload"]fn set_is_thread_safe(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <NativeMethodAttribute as::unity2::ClassIdentity> ::NAME,"set_IsThreadSafe",));
-let inner:extern "C" fn(NativeMethodAttribute,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(NativeMethodAttribute,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn set_is_free_function(this:NativeMethodAttribute,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`set_IsFreeFunction(bool)` overload"]fn set_is_free_function(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <NativeMethodAttribute as::unity2::ClassIdentity> ::NAME,"set_IsFreeFunction",));
-let inner:extern "C" fn(NativeMethodAttribute,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(NativeMethodAttribute,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn set_throws_exception(this:NativeMethodAttribute,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`set_ThrowsException(bool)` overload"]fn set_throws_exception(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <NativeMethodAttribute as::unity2::ClassIdentity> ::NAME,"set_ThrowsException",));
-let inner:extern "C" fn(NativeMethodAttribute,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(NativeMethodAttribute,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn set_has_explicit_this(this:NativeMethodAttribute,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`set_HasExplicitThis(bool)` overload"]fn set_has_explicit_this(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <NativeMethodAttribute as::unity2::ClassIdentity> ::NAME,"set_HasExplicitThis",));
-let inner:extern "C" fn(NativeMethodAttribute,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(NativeMethodAttribute,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="unity_engine-bindings-nativemethodattribute")]pub trait INativeMethodAttributeMethods:INativeMethodAttribute{#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NativeMethodAttribute_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`set_IsThreadSafe(bool)` overload"]fn set_is_thread_safe(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NativeMethodAttribute_unity2_raw::set_is_thread_safe(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`set_IsFreeFunction(bool)` overload"]fn set_is_free_function(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NativeMethodAttribute_unity2_raw::set_is_free_function(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`set_ThrowsException(bool)` overload"]fn set_throws_exception(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NativeMethodAttribute_unity2_raw::set_throws_exception(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`set_HasExplicitThis(bool)` overload"]fn set_has_explicit_this(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NativeMethodAttribute_unity2_raw::set_has_explicit_this(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NativeMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37b30usize)as*mut u8,();
@@ -111,6 +103,23 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="unity_engine-bindings-nativemethodattribute")]impl NativeMethodAttribute{#[doc="Direct (non-virtual) call to `NativeMethodAttribute`'s own `set_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::set_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NativeMethodAttribute`'s own `set_IsThreadSafe`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_is_thread_safe(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_is_thread_safe_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NativeMethodAttribute`'s own `set_IsFreeFunction`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_is_free_function(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_is_free_function_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NativeMethodAttribute`'s own `set_ThrowsException`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_throws_exception(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_throws_exception_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NativeMethodAttribute`'s own `set_HasExplicitThis`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_has_explicit_this(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_has_explicit_this_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-bindings-nativemethodattribute")]impl NativeMethodAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

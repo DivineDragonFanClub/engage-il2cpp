@@ -31,26 +31,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ChunkStatement as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn compile(this:ChunkStatement,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ChunkStatement as::unity2::ClassIdentity> ::NAME,"Compile",));
-let inner:extern "C" fn(ChunkStatement,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,bc,__mi)}
-pub unsafe fn create_upvalue(this:ChunkStatement,scope:crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,symbol:crate::moon_sharp::interpreter::symbolref::SymbolRef,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <ChunkStatement as::unity2::ClassIdentity> ::NAME,"CreateUpvalue",));
-let inner:extern "C" fn(ChunkStatement,crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,crate::moon_sharp::interpreter::symbolref::SymbolRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,scope,symbol,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-statements-chunkstatement")]pub trait IChunkStatementMethods:IChunkStatement{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]fn ctor(self,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>)->(){unsafe{let __receiver= <ChunkStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -58,10 +38,28 @@ inner(this,scope,symbol,__mi)}
 (ChunkStatement)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext))}
 }
 #[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <ChunkStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ChunkStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ChunkStatement as::unity2::ClassIdentity> ::NAME,"Compile",));
+let __inner:extern "C" fn(ChunkStatement,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(bc),__mi)}
+}
 }
 #[doc="`CreateUpvalue(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]fn create_upvalue(self,scope:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope> ,symbol:impl::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{let __receiver= <ChunkStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ChunkStatement_unity2_raw::create_upvalue(__receiver, ::core::convert::Into::into(scope), ::core::convert::Into::into(symbol), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ChunkStatement as::unity2::ClassIdentity> ::NAME,"CreateUpvalue",));
+let __inner:extern "C" fn(ChunkStatement,crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,crate::moon_sharp::interpreter::symbolref::SymbolRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(scope), ::core::convert::Into::into(symbol),__mi)}
+}
 }
 }
 
@@ -70,6 +68,14 @@ __ChunkStatement_unity2_raw::create_upvalue(__receiver, ::core::convert::Into::i
 #[cfg(feature="moon_sharp-interpreter-tree-statements-chunkstatement")]impl ChunkStatement{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn compile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn create_upvalue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-tree-statements-chunkstatement")]impl ChunkStatement{#[doc="Direct (non-virtual) call to `ChunkStatement`'s own `Compile`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compile(this:impl::core::convert::Into< ::unity2::IlInstance> ,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,)->(){let __mi=Self::compile_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),bc, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ChunkStatement`'s own `CreateUpvalue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_upvalue(this:impl::core::convert::Into< ::unity2::IlInstance> ,scope:crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,symbol:crate::moon_sharp::interpreter::symbolref::SymbolRef,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{let __mi=Self::create_upvalue_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,crate::moon_sharp::interpreter::symbolref::SymbolRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),scope,symbol, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-statements-chunkstatement")]impl ChunkStatement{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]pub fn new(lcontext:crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

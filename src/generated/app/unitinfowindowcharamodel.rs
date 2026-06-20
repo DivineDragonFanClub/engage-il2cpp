@@ -9,43 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel_ReservedCharaVoice.md"))]#[::unity2::class(namespace="App",name="UnitInfoWindowCharaModel.ReservedCharaVoice")]#[parent(crate::system::object::Object)]pub struct UnitInfoWindowCharaModel_ReservedCharaVoice{#[offset(16)]#[rename(name="m_PersonSwitchName")]pub m_person_switch_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_EngageSwitchName")]pub m_engage_switch_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_EventName")]pub m_event_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Chara")]pub m_chara:crate::combat::character::Character,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel.md"))]#[::unity2::class(namespace="App",name="UnitInfoWindowCharaModel")]#[parent(crate::system::object::Object)]pub struct UnitInfoWindowCharaModel{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="AnimHashIsCharaOnly")]pub anim_hash_is_chara_only:i32, #[static_field]#[rename(name="AnimHashIsStandBy")]pub anim_hash_is_stand_by:i32, #[static_field]#[rename(name="AnimHashIsTransition")]pub anim_hash_is_transition:i32, #[static_field]#[rename(name="AnimHashIsTransparent")]pub anim_hash_is_transparent:i32, #[static_field]#[rename(name="AnimHashBasicFace")]pub anim_hash_basic_face:i32, #[static_field]#[rename(name="AnimHashBasicBody")]pub anim_hash_basic_body:i32, #[static_field]#[rename(name="AnimHashRingSelectFace")]pub anim_hash_ring_select_face:i32, #[static_field]#[rename(name="AnimHashRingSelectBody")]pub anim_hash_ring_select_body:i32, #[static_field]#[rename(name="AnimHashFortuneTellingBodyIdle")]pub anim_hash_fortune_telling_body_idle:i32, #[static_field]#[rename(name="AnimHashFortuneTellingFaceGood")]pub anim_hash_fortune_telling_face_good:i32, #[static_field]#[rename(name="AnimHashFortuneTellingBodyGood")]pub anim_hash_fortune_telling_body_good:i32, #[static_field]#[rename(name="AnimHashFortuneTellingFaceBad")]pub anim_hash_fortune_telling_face_bad:i32, #[static_field]#[rename(name="AnimHashFortuneTellingBodyBad")]pub anim_hash_fortune_telling_body_bad:i32, #[offset(16)]#[rename(name="m_AnimHashFortuneTellingFace")]pub m_anim_hash_fortune_telling_face:i32, #[static_field]#[rename(name="AnimHashStandByFace")]pub anim_hash_stand_by_face:i32, #[static_field]#[rename(name="AnimHashStandByFacePain")]pub anim_hash_stand_by_face_pain:i32, #[static_field]#[rename(name="AnimHashStandByBodyNoWeapon")]pub anim_hash_stand_by_body_no_weapon:i32, #[static_field]#[rename(name="StandByAnimeHashTable")]pub stand_by_anime_hash_table: ::unity2::Array<i32> , #[offset(24)]#[rename(name="m_ReservedCharaVoice")]pub m_reserved_chara_voice:crate::app::unitinfowindowcharamodel::UnitInfoWindowCharaModel_ReservedCharaVoice, #[offset(32)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_CameraObject")]pub m_camera_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_RenderTexture")]pub m_render_texture:crate::unity_engine::rendertexture::RenderTexture, #[offset(64)]#[rename(name="m_OffscreenCamera")]pub m_offscreen_camera:crate::unity_engine::rendering::universal::custom::customoffscreencamera::CustomOffscreenCamera, #[offset(72)]#[rename(name="m_CharaUpdater")]pub m_chara_updater:crate::app::unitinfowindowcharaupdater::UnitInfoWindowCharaUpdater, #[offset(80)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(88)]#[rename(name="m_IsValid")]pub m_is_valid:bool, #[offset(89)]#[rename(name="m_IsCharaStandBy")]pub m_is_chara_stand_by:bool, #[offset(90)]#[rename(name="m_IsReverse")]pub m_is_reverse:bool, #[offset(91)]#[rename(name="m_IsReverseRotation")]pub m_is_reverse_rotation:bool, #[offset(96)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(104)]#[rename(name="m_God")]pub m_god:crate::app::godunit::GodUnit, #[offset(112)]#[rename(name="m_NextLoadUnit")]pub m_next_load_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_NextLoadGod")]pub m_next_load_god:crate::app::godunit::GodUnit, #[offset(128)]#[rename(name="m_NextCallback")]pub m_next_callback:crate::app::talk3_d::characterfactoryasync_2::CharacterFactoryAsync_onLoad, #[offset(144)]#[rename(name="m_Chara")]pub m_chara:crate::combat::character::Character, #[offset(152)]#[rename(name="m_CreateReserveUnitItem")]pub m_create_reserve_unit_item:crate::app::unititem::UnitItem, #[offset(160)]#[rename(name="m_IsEfficacy")]pub m_is_efficacy:bool, #[offset(168)]#[rename(name="m_LookAtTransform")]pub m_look_at_transform:crate::unity_engine::transform::Transform, #[static_field]#[rename(name="c_LookSpeed")]pub c_look_speed:f32, #[offset(176)]#[rename(name="m_OnSetupDoneCallback")]pub m_on_setup_done_callback:crate::system::action::Action, #[offset(184)]#[rename(name="m_DelayFrameCount")]pub m_delay_frame_count:crate::app::gameparam::GameParam_Holder,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel_ReservedCharaVoice.md"))]#[::unity2::class(namespace="App",name="UnitInfoWindowCharaModel.ReservedCharaVoice")]#[parent(crate::system::object::Object)]pub struct UnitInfoWindowCharaModel_ReservedCharaVoice{#[offset(16)]#[rename(name="m_PersonSwitchName")]pub m_person_switch_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_EngageSwitchName")]pub m_engage_switch_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_EventName")]pub m_event_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Chara")]pub m_chara:crate::combat::character::Character,}
 
 }
 
 #[cfg(feature = "app-unitinfowindowcharamodel-types")]
 pub use __types::*;
-
-#[cfg(feature="app-unitinfowindowcharamodel")]pub trait IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods:IUnitInfoWindowCharaModel_ReservedCharaVoice{#[doc="`ReserveVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::character::Character)` overload"]fn reserve_voice(self,person_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,engage_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,chara:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <UnitInfoWindowCharaModel_ReservedCharaVoice as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b52780usize)as*mut u8,();
-(UnitInfoWindowCharaModel_ReservedCharaVoice)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(person_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(engage_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(event_name),(crate::combat::character::Character)::core::convert::Into::into(chara))}
-}
-#[doc="`PlayVoice()` overload"]fn play_voice(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaModel_ReservedCharaVoice as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b527f0usize)as*mut u8,();
-(UnitInfoWindowCharaModel_ReservedCharaVoice)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaModel_ReservedCharaVoice as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b528e0usize)as*mut u8,();
-(UnitInfoWindowCharaModel_ReservedCharaVoice)__receiver)}
-}
-}
-
-#[cfg(feature="app-unitinfowindowcharamodel")]impl<__T:IUnitInfoWindowCharaModel_ReservedCharaVoice>IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods for __T{}
-
-#[cfg(feature="app-unitinfowindowcharamodel")]impl UnitInfoWindowCharaModel_ReservedCharaVoice{pub fn reserve_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn play_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-unitinfowindowcharamodel")]impl UnitInfoWindowCharaModel_ReservedCharaVoice{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitInfoWindowCharaModel_ReservedCharaVoice), ::core::stringify!(new),));
- <Self as IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-unitinfowindowcharamodel")]impl UnitInfoWindowCharaModel{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fac920usize)as*mut u8,();
 )}
@@ -391,15 +363,43 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-unitinfowindowcharamodel")]pub trait IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods:IUnitInfoWindowCharaModel_ReservedCharaVoice{#[doc="`ReserveVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::character::Character)` overload"]fn reserve_voice(self,person_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,engage_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,chara:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <UnitInfoWindowCharaModel_ReservedCharaVoice as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b52780usize)as*mut u8,();
+(UnitInfoWindowCharaModel_ReservedCharaVoice)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(person_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(engage_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(event_name),(crate::combat::character::Character)::core::convert::Into::into(chara))}
+}
+#[doc="`PlayVoice()` overload"]fn play_voice(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaModel_ReservedCharaVoice as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b527f0usize)as*mut u8,();
+(UnitInfoWindowCharaModel_ReservedCharaVoice)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaModel_ReservedCharaVoice as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b528e0usize)as*mut u8,();
+(UnitInfoWindowCharaModel_ReservedCharaVoice)__receiver)}
+}
+}
+
+#[cfg(feature="app-unitinfowindowcharamodel")]impl<__T:IUnitInfoWindowCharaModel_ReservedCharaVoice>IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods for __T{}
+
+#[cfg(feature="app-unitinfowindowcharamodel")]impl UnitInfoWindowCharaModel_ReservedCharaVoice{pub fn reserve_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn play_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-unitinfowindowcharamodel")]impl UnitInfoWindowCharaModel_ReservedCharaVoice{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitInfoWindowCharaModel_ReservedCharaVoice), ::core::stringify!(new),));
+ <Self as IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-unitinfowindowcharamodel")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitInfoWindowCharaModel_ReservedCharaVoice;
-    pub use super::IUnitInfoWindowCharaModel_ReservedCharaVoice;
-    pub use super::IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods;
     pub use super::UnitInfoWindowCharaModel;
     pub use super::IUnitInfoWindowCharaModel;
     pub use super::IUnitInfoWindowCharaModelMethods;
+    pub use super::UnitInfoWindowCharaModel_ReservedCharaVoice;
+    pub use super::IUnitInfoWindowCharaModel_ReservedCharaVoice;
+    pub use super::IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

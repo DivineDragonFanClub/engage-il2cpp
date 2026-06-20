@@ -26,81 +26,17 @@ use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWid
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerbitfield-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-ui-debuguihandlerbitfield")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUIHandlerBitField_unity2_raw{use super:: * ;
-pub unsafe fn set_widget(this:DebugUIHandlerBitField,widget:crate::unity_engine::rendering::debugui::DebugUI_Widget,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerbitfield")]pub trait IDebugUIHandlerBitFieldMethods:IDebugUIHandlerBitField{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"SetWidget",));
-let inner:extern "C" fn(DebugUIHandlerBitField,crate::unity_engine::rendering::debugui::DebugUI_Widget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DebugUIHandlerBitField,crate::unity_engine::rendering::debugui::DebugUI_Widget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,widget,__mi)}
-pub unsafe fn on_selection(this:DebugUIHandlerBitField,from_next:bool,previous:crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"OnSelection",));
-let inner:extern "C" fn(DebugUIHandlerBitField,bool,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,from_next,previous,__mi)}
-pub unsafe fn on_deselection(this:DebugUIHandlerBitField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"OnDeselection",));
-let inner:extern "C" fn(DebugUIHandlerBitField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_increment(this:DebugUIHandlerBitField,fast:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"OnIncrement",));
-let inner:extern "C" fn(DebugUIHandlerBitField,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,fast,__mi)}
-pub unsafe fn on_decrement(this:DebugUIHandlerBitField,fast:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"OnDecrement",));
-let inner:extern "C" fn(DebugUIHandlerBitField,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,fast,__mi)}
-pub unsafe fn on_action(this:DebugUIHandlerBitField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"OnAction",));
-let inner:extern "C" fn(DebugUIHandlerBitField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn next(this:DebugUIHandlerBitField,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"Next",));
-let inner:extern "C" fn(DebugUIHandlerBitField, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver, ::core::convert::Into::into(widget),__mi)}
 }
-
-#[cfg(feature="unity_engine-rendering-ui-debuguihandlerbitfield")]pub trait IDebugUIHandlerBitFieldMethods:IDebugUIHandlerBitField{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerBitField_unity2_raw::set_widget(__receiver, ::core::convert::Into::into(widget), ::core::option::Option::None)}
 }
 #[doc="`GetValue(i32)` overload"]fn get_value(self,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x353bbd0usize)as*mut u8,bool;
@@ -111,22 +47,76 @@ __DebugUIHandlerBitField_unity2_raw::set_widget(__receiver, ::core::convert::Int
 (DebugUIHandlerBitField)__receiver,(i32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(value))}
 }
 #[doc="`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn on_selection(self,from_next:impl::core::convert::Into<bool> ,previous:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->bool{unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerBitField_unity2_raw::on_selection(__receiver, ::core::convert::Into::into(from_next), ::core::convert::Into::into(previous), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"OnSelection",));
+let __inner:extern "C" fn(DebugUIHandlerBitField,bool,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(from_next), ::core::convert::Into::into(previous),__mi)}
+}
 }
 #[doc="`OnDeselection()` overload"]fn on_deselection(self,)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerBitField_unity2_raw::on_deselection(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"OnDeselection",));
+let __inner:extern "C" fn(DebugUIHandlerBitField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnIncrement(bool)` overload"]fn on_increment(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerBitField_unity2_raw::on_increment(__receiver, ::core::convert::Into::into(fast), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"OnIncrement",));
+let __inner:extern "C" fn(DebugUIHandlerBitField,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(fast),__mi)}
+}
 }
 #[doc="`OnDecrement(bool)` overload"]fn on_decrement(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerBitField_unity2_raw::on_decrement(__receiver, ::core::convert::Into::into(fast), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"OnDecrement",));
+let __inner:extern "C" fn(DebugUIHandlerBitField,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(fast),__mi)}
+}
 }
 #[doc="`OnAction()` overload"]fn on_action(self,)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerBitField_unity2_raw::on_action(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"OnAction",));
+let __inner:extern "C" fn(DebugUIHandlerBitField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Next()` overload"]fn next(self,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerBitField_unity2_raw::next(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugUIHandlerBitField as::unity2::ClassIdentity> ::NAME,"Next",));
+let __inner:extern "C" fn(DebugUIHandlerBitField, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x353c460usize)as*mut u8,();
@@ -146,6 +136,29 @@ pub fn on_decrement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn on_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerbitfield")]impl DebugUIHandlerBitField{#[doc="Direct (non-virtual) call to `DebugUIHandlerBitField`'s own `SetWidget`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_widget(this:impl::core::convert::Into< ::unity2::IlInstance> ,widget:crate::unity_engine::rendering::debugui::DebugUI_Widget,)->(){let __mi=Self::set_widget_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::debugui::DebugUI_Widget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),widget, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUIHandlerBitField`'s own `OnSelection`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_selection(this:impl::core::convert::Into< ::unity2::IlInstance> ,from_next:bool,previous:crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,)->bool{let __mi=Self::on_selection_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),from_next,previous, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUIHandlerBitField`'s own `OnDeselection`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deselection(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_deselection_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUIHandlerBitField`'s own `OnIncrement`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_increment(this:impl::core::convert::Into< ::unity2::IlInstance> ,fast:bool,)->(){let __mi=Self::on_increment_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),fast, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUIHandlerBitField`'s own `OnDecrement`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_decrement(this:impl::core::convert::Into< ::unity2::IlInstance> ,fast:bool,)->(){let __mi=Self::on_decrement_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),fast, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUIHandlerBitField`'s own `OnAction`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_action(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_action_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUIHandlerBitField`'s own `Next`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn next(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{let __mi=Self::next_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-ui-debuguihandlerbitfield")]impl DebugUIHandlerBitField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

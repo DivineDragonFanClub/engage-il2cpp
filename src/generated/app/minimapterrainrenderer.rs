@@ -30,19 +30,6 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 #[cfg(feature = "app-minimapterrainrenderer-types")]
 pub use __types::*;
 
-#[cfg(feature="app-minimapterrainrenderer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MiniMapTerrainRenderer_unity2_raw{use super:: * ;
-pub unsafe fn update_geometry(this:MiniMapTerrainRenderer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",41usize,__vt.len(), <MiniMapTerrainRenderer as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
-let inner:extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-minimapterrainrenderer")]pub trait IMiniMapTerrainRendererMethods:IMiniMapTerrainRenderer{#[doc="`get_Texture()` overload"]fn get_texture(self,)->crate::unity_engine::texture2d::Texture2D{unsafe{let __receiver= <MiniMapTerrainRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x277a850usize)as*mut u8,crate::unity_engine::texture2d::Texture2D;
 (MiniMapTerrainRenderer)__receiver)}
@@ -80,7 +67,16 @@ inner(this,__mi)}
 (MiniMapTerrainRenderer)__receiver)}
 }
 #[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <MiniMapTerrainRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MiniMapTerrainRenderer_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <MiniMapTerrainRenderer as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
+let __inner:extern "C" fn(MiniMapTerrainRenderer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CreateTerrainMesh()` overload"]fn create_terrain_mesh(self,)->(){unsafe{let __receiver= <MiniMapTerrainRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x277ad90usize)as*mut u8,();
@@ -121,6 +117,11 @@ pub fn create_terrain_mesh_2_method_info()-> & 'static::unity2::il2cpp::MethodIn
 pub fn set_mesh_to_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 pub fn update_map_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="app-minimapterrainrenderer")]impl MiniMapTerrainRenderer{#[doc="Direct (non-virtual) call to `MiniMapTerrainRenderer`'s own `UpdateGeometry`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_geometry(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_geometry_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-minimapterrainrenderer")]impl MiniMapTerrainRenderer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

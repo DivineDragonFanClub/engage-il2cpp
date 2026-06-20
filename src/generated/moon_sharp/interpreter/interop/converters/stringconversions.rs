@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop.Converters",name="StringConversions")]#[parent(crate::system::object::Object)]pub struct StringConversions{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions_StringSubtype.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct StringConversions_StringSubtype{pub value:i32,}
 impl::unity2::ClassIdentity for StringConversions_StringSubtype{const NAMESPACE: &'static str="MoonSharp.Interpreter.Interop.Converters";
 const NAME: &'static str="StringConversions.StringSubtype";
@@ -34,6 +31,9 @@ pub fn string_builder()->Self{Self{value:2}
 pub fn char()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop.Converters",name="StringConversions")]#[parent(crate::system::object::Object)]pub struct StringConversions{}
 
 }
 
@@ -78,9 +78,9 @@ pub fn convert_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::StringConversions_StringSubtype;
     pub use super::StringConversions;
     pub use super::IStringConversions;
-    pub use super::StringConversions_StringSubtype;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

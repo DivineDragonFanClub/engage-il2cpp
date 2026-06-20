@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/controllersupportapplet/ControllerSupportApplet.md"))]#[::unity2::class(namespace="App",name="ControllerSupportApplet")]#[parent(crate::system::object::Object)]pub struct ControllerSupportApplet{#[static_field]#[rename(name="c_appletWaitTime")]pub c_applet_wait_time:f32, #[offset(16)]#[rename(name="m_preOperationMode")]pub m_pre_operation_mode:crate::unity_engine::switch::operation::Operation_OperationMode, #[offset(32)]#[rename(name="m_npadIds")]pub m_npad_ids: ::unity2::Array<crate::nn::hid::npadid::NpadId> , #[offset(40)]#[rename(name="m_isHandheldMode")]pub m_is_handheld_mode:bool, #[offset(44)]#[rename(name="m_DisableCallCount")]pub m_disable_call_count:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/controllersupportapplet/ControllerSupportApplet_CallState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ControllerSupportApplet_CallState{pub value:i32,}
 impl::unity2::ClassIdentity for ControllerSupportApplet_CallState{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ControllerSupportApplet.CallState";
@@ -34,6 +31,9 @@ pub fn timer_reset()->Self{Self{value:2}
 pub fn immediate()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/controllersupportapplet/ControllerSupportApplet.md"))]#[::unity2::class(namespace="App",name="ControllerSupportApplet")]#[parent(crate::system::object::Object)]pub struct ControllerSupportApplet{#[static_field]#[rename(name="c_appletWaitTime")]pub c_applet_wait_time:f32, #[offset(16)]#[rename(name="m_preOperationMode")]pub m_pre_operation_mode:crate::unity_engine::switch::operation::Operation_OperationMode, #[offset(32)]#[rename(name="m_npadIds")]pub m_npad_ids: ::unity2::Array<crate::nn::hid::npadid::NpadId> , #[offset(40)]#[rename(name="m_isHandheldMode")]pub m_is_handheld_mode:bool, #[offset(44)]#[rename(name="m_DisableCallCount")]pub m_disable_call_count:i32,}
 
 }
 
@@ -86,10 +86,10 @@ this}
 #[cfg(feature = "app-controllersupportapplet")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ControllerSupportApplet_CallState;
     pub use super::ControllerSupportApplet;
     pub use super::IControllerSupportApplet;
     pub use super::IControllerSupportAppletMethods;
-    pub use super::ControllerSupportApplet_CallState;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

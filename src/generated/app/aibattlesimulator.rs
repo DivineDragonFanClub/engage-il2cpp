@@ -11,21 +11,102 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aibattlesimulator/AIBattleSimulator.md"))]#[::unity2::class(namespace="App",name="AIBattleSimulator")]#[parent(crate::app::aisimulatorbase::AISimulatorBase)]pub struct AIBattleSimulator{#[static_field]#[rename(name="MaxSceneTimes")]pub max_scene_times:i32, #[static_field]#[rename(name="BattleSideOf")]pub battle_side_of:i32, #[static_field]#[rename(name="BattleSideDf")]pub battle_side_df:i32, #[offset(56)]#[rename(name="m_aIndication")]pub m_a_indication: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_Indication> , #[offset(72)]#[rename(name="m_Kill")]pub m_kill:f32, #[offset(76)]#[rename(name="m_Dead")]pub m_dead:f32, #[offset(80)]#[rename(name="m_Expectation")]pub m_expectation:f32, #[offset(84)]#[rename(name="m_ExpectationReceived")]pub m_expectation_received:f32, #[offset(88)]#[rename(name="m_Attack")]pub m_attack:f32, #[offset(92)]#[rename(name="m_Follow")]pub m_follow:f32, #[offset(96)]#[rename(name="m_aChainAttackCandidate")]pub m_a_chain_attack_candidate: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_ChainAttackCandidate> , #[offset(104)]#[rename(name="m_ChainAttackExpectation")]pub m_chain_attack_expectation:f32, #[offset(112)]#[rename(name="m_aBreak")]pub m_a_break: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_Break> , #[offset(120)]#[rename(name="m_BattleSides")]pub m_battle_sides: ::unity2::Array<i32> , #[offset(128)]#[rename(name="m_OffenseBattleTimes")]pub m_offense_battle_times:i32, #[offset(132)]#[rename(name="m_DefenseBattleTimes")]pub m_defense_battle_times:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aibattlesimulator/AIBattleSimulator_ChainAttackCandidate.md"))]#[::unity2::class(namespace="App",name="AIBattleSimulator.ChainAttackCandidate")]#[parent(crate::system::object::Object)]pub struct AIBattleSimulator_ChainAttackCandidate{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aibattlesimulator/AIBattleSimulator_Indication.md"))]#[::unity2::class(namespace="App",name="AIBattleSimulator.Indication")]#[parent(crate::system::object::Object)]pub struct AIBattleSimulator_Indication{#[offset(16)]#[rename(name="m_Power")]pub m_power:i32, #[offset(20)]#[rename(name="m_SkillPower")]pub m_skill_power:i32, #[offset(24)]#[rename(name="m_Hit")]pub m_hit:f32, #[offset(28)]#[rename(name="m_Critical")]pub m_critical:f32, #[offset(32)]#[rename(name="m_Skill")]pub m_skill:f32, #[offset(36)]#[rename(name="m_SkillCritical")]pub m_skill_critical:f32, #[offset(40)]#[rename(name="m_Prevent")]pub m_prevent:f32, #[offset(44)]#[rename(name="m_Miss")]pub m_miss:f32, #[offset(48)]#[rename(name="m_Expectation")]pub m_expectation:f32, #[offset(52)]#[rename(name="m_IsSkillKill")]pub m_is_skill_kill:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aibattlesimulator/AIBattleSimulator_Break.md"))]#[::unity2::class(namespace="App",name="AIBattleSimulator.Break")]#[parent(crate::system::object::Object)]pub struct AIBattleSimulator_Break{#[static_field]#[rename(name="MaxStun")]pub max_stun:f32, #[offset(16)]#[rename(name="m_BreakAttack")]pub m_break_attack:f32, #[offset(20)]#[rename(name="m_Stun")]pub m_stun:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aibattlesimulator/AIBattleSimulator.md"))]#[::unity2::class(namespace="App",name="AIBattleSimulator")]#[parent(crate::app::aisimulatorbase::AISimulatorBase)]pub struct AIBattleSimulator{#[static_field]#[rename(name="MaxSceneTimes")]pub max_scene_times:i32, #[static_field]#[rename(name="BattleSideOf")]pub battle_side_of:i32, #[static_field]#[rename(name="BattleSideDf")]pub battle_side_df:i32, #[offset(56)]#[rename(name="m_aIndication")]pub m_a_indication: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_Indication> , #[offset(72)]#[rename(name="m_Kill")]pub m_kill:f32, #[offset(76)]#[rename(name="m_Dead")]pub m_dead:f32, #[offset(80)]#[rename(name="m_Expectation")]pub m_expectation:f32, #[offset(84)]#[rename(name="m_ExpectationReceived")]pub m_expectation_received:f32, #[offset(88)]#[rename(name="m_Attack")]pub m_attack:f32, #[offset(92)]#[rename(name="m_Follow")]pub m_follow:f32, #[offset(96)]#[rename(name="m_aChainAttackCandidate")]pub m_a_chain_attack_candidate: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_ChainAttackCandidate> , #[offset(104)]#[rename(name="m_ChainAttackExpectation")]pub m_chain_attack_expectation:f32, #[offset(112)]#[rename(name="m_aBreak")]pub m_a_break: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_Break> , #[offset(120)]#[rename(name="m_BattleSides")]pub m_battle_sides: ::unity2::Array<i32> , #[offset(128)]#[rename(name="m_OffenseBattleTimes")]pub m_offense_battle_times:i32, #[offset(132)]#[rename(name="m_DefenseBattleTimes")]pub m_defense_battle_times:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aibattlesimulator/AIBattleSimulator_Indication.md"))]#[::unity2::class(namespace="App",name="AIBattleSimulator.Indication")]#[parent(crate::system::object::Object)]pub struct AIBattleSimulator_Indication{#[offset(16)]#[rename(name="m_Power")]pub m_power:i32, #[offset(20)]#[rename(name="m_SkillPower")]pub m_skill_power:i32, #[offset(24)]#[rename(name="m_Hit")]pub m_hit:f32, #[offset(28)]#[rename(name="m_Critical")]pub m_critical:f32, #[offset(32)]#[rename(name="m_Skill")]pub m_skill:f32, #[offset(36)]#[rename(name="m_SkillCritical")]pub m_skill_critical:f32, #[offset(40)]#[rename(name="m_Prevent")]pub m_prevent:f32, #[offset(44)]#[rename(name="m_Miss")]pub m_miss:f32, #[offset(48)]#[rename(name="m_Expectation")]pub m_expectation:f32, #[offset(52)]#[rename(name="m_IsSkillKill")]pub m_is_skill_kill:bool,}
 
 }
 
 #[cfg(feature = "app-aibattlesimulator-types")]
 pub use __types::*;
+
+#[cfg(feature="app-aibattlesimulator")]pub trait IAIBattleSimulator_ChainAttackCandidateMethods:IAIBattleSimulator_ChainAttackCandidate{#[doc="`get_Side()` overload"]fn get_side(self,)->crate::app::battleinfoside::BattleInfoSide{unsafe{let __receiver= <AIBattleSimulator_ChainAttackCandidate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2941100usize)as*mut u8,crate::app::battleinfoside::BattleInfoSide;
+(AIBattleSimulator_ChainAttackCandidate)__receiver)}
+}
+#[doc="`set_Side(crate::app::battleinfoside::BattleInfoSide)` overload"]fn set_side(self,value:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->(){unsafe{let __receiver= <AIBattleSimulator_ChainAttackCandidate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2941110usize)as*mut u8,();
+(AIBattleSimulator_ChainAttackCandidate)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AIBattleSimulator_ChainAttackCandidate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2941120usize)as*mut u8,();
+(AIBattleSimulator_ChainAttackCandidate)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIBattleSimulator_ChainAttackCandidate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2941130usize)as*mut u8,();
+(AIBattleSimulator_ChainAttackCandidate)__receiver)}
+}
+}
+
+#[cfg(feature="app-aibattlesimulator")]impl<__T:IAIBattleSimulator_ChainAttackCandidate>IAIBattleSimulator_ChainAttackCandidateMethods for __T{}
+
+#[cfg(feature="app-aibattlesimulator")]impl AIBattleSimulator_ChainAttackCandidate{pub fn get_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-aibattlesimulator")]impl AIBattleSimulator_ChainAttackCandidate{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIBattleSimulator_ChainAttackCandidate), ::core::stringify!(new),));
+ <Self as IAIBattleSimulator_ChainAttackCandidateMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-aibattlesimulator")]pub trait IAIBattleSimulator_BreakMethods:IAIBattleSimulator_Break{#[doc="`Setup(crate::app::battleinfoside::BattleInfoSide, crate::app::aibattlesimulator::AIBattleSimulator_Indication)` overload"]fn setup(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,indication:impl::core::convert::Into<crate::app::aibattlesimulator::AIBattleSimulator_Indication>)->(){unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2940ff0usize)as*mut u8,();
+(AIBattleSimulator_Break)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side),(crate::app::aibattlesimulator::AIBattleSimulator_Indication)::core::convert::Into::into(indication))}
+}
+#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2941060usize)as*mut u8,();
+(AIBattleSimulator_Break)__receiver)}
+}
+#[doc="`Add(f32)` overload"]fn add(self,break_attack:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2941070usize)as*mut u8,();
+(AIBattleSimulator_Break)__receiver,(f32)::core::convert::Into::into(break_attack))}
+}
+#[doc="`get_BreakAttack()` overload"]fn get_break_attack(self,)->f32{unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29410b0usize)as*mut u8,f32;
+(AIBattleSimulator_Break)__receiver)}
+}
+#[doc="`get_Stun()` overload"]fn get_stun(self,)->f32{unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29410c0usize)as*mut u8,f32;
+(AIBattleSimulator_Break)__receiver)}
+}
+#[doc="`get_IsNotBreak()` overload"]fn get_is_not_break(self,)->bool{unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29410d0usize)as*mut u8,bool;
+(AIBattleSimulator_Break)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29410f0usize)as*mut u8,();
+(AIBattleSimulator_Break)__receiver)}
+}
+}
+
+#[cfg(feature="app-aibattlesimulator")]impl<__T:IAIBattleSimulator_Break>IAIBattleSimulator_BreakMethods for __T{}
+
+#[cfg(feature="app-aibattlesimulator")]impl AIBattleSimulator_Break{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_break_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_stun_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_not_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-aibattlesimulator")]impl AIBattleSimulator_Break{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIBattleSimulator_Break), ::core::stringify!(new),));
+ <Self as IAIBattleSimulator_BreakMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-aibattlesimulator")]pub trait IAIBattleSimulatorMethods:IAIBattleSimulator{#[doc="`get_Kill()` overload"]fn get_kill(self,)->f32{unsafe{let __receiver= <AIBattleSimulator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1927170usize)as*mut u8,f32;
@@ -155,39 +236,6 @@ pub fn expectation_score_normalize_method_info()-> & 'static::unity2::il2cpp::Me
 this}
 }
 
-#[cfg(feature="app-aibattlesimulator")]pub trait IAIBattleSimulator_ChainAttackCandidateMethods:IAIBattleSimulator_ChainAttackCandidate{#[doc="`get_Side()` overload"]fn get_side(self,)->crate::app::battleinfoside::BattleInfoSide{unsafe{let __receiver= <AIBattleSimulator_ChainAttackCandidate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2941100usize)as*mut u8,crate::app::battleinfoside::BattleInfoSide;
-(AIBattleSimulator_ChainAttackCandidate)__receiver)}
-}
-#[doc="`set_Side(crate::app::battleinfoside::BattleInfoSide)` overload"]fn set_side(self,value:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->(){unsafe{let __receiver= <AIBattleSimulator_ChainAttackCandidate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2941110usize)as*mut u8,();
-(AIBattleSimulator_ChainAttackCandidate)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(value))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AIBattleSimulator_ChainAttackCandidate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2941120usize)as*mut u8,();
-(AIBattleSimulator_ChainAttackCandidate)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIBattleSimulator_ChainAttackCandidate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2941130usize)as*mut u8,();
-(AIBattleSimulator_ChainAttackCandidate)__receiver)}
-}
-}
-
-#[cfg(feature="app-aibattlesimulator")]impl<__T:IAIBattleSimulator_ChainAttackCandidate>IAIBattleSimulator_ChainAttackCandidateMethods for __T{}
-
-#[cfg(feature="app-aibattlesimulator")]impl AIBattleSimulator_ChainAttackCandidate{pub fn get_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-aibattlesimulator")]impl AIBattleSimulator_ChainAttackCandidate{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIBattleSimulator_ChainAttackCandidate), ::core::stringify!(new),));
- <Self as IAIBattleSimulator_ChainAttackCandidateMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-aibattlesimulator")]pub trait IAIBattleSimulator_IndicationMethods:IAIBattleSimulator_Indication{#[doc="`get_Power()` overload"]fn get_power(self,)->i32{unsafe{let __receiver= <AIBattleSimulator_Indication as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2941140usize)as*mut u8,i32;
 (AIBattleSimulator_Indication)__receiver)}
@@ -311,69 +359,21 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-aibattlesimulator")]pub trait IAIBattleSimulator_BreakMethods:IAIBattleSimulator_Break{#[doc="`Setup(crate::app::battleinfoside::BattleInfoSide, crate::app::aibattlesimulator::AIBattleSimulator_Indication)` overload"]fn setup(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,indication:impl::core::convert::Into<crate::app::aibattlesimulator::AIBattleSimulator_Indication>)->(){unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2940ff0usize)as*mut u8,();
-(AIBattleSimulator_Break)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side),(crate::app::aibattlesimulator::AIBattleSimulator_Indication)::core::convert::Into::into(indication))}
-}
-#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2941060usize)as*mut u8,();
-(AIBattleSimulator_Break)__receiver)}
-}
-#[doc="`Add(f32)` overload"]fn add(self,break_attack:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2941070usize)as*mut u8,();
-(AIBattleSimulator_Break)__receiver,(f32)::core::convert::Into::into(break_attack))}
-}
-#[doc="`get_BreakAttack()` overload"]fn get_break_attack(self,)->f32{unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29410b0usize)as*mut u8,f32;
-(AIBattleSimulator_Break)__receiver)}
-}
-#[doc="`get_Stun()` overload"]fn get_stun(self,)->f32{unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29410c0usize)as*mut u8,f32;
-(AIBattleSimulator_Break)__receiver)}
-}
-#[doc="`get_IsNotBreak()` overload"]fn get_is_not_break(self,)->bool{unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29410d0usize)as*mut u8,bool;
-(AIBattleSimulator_Break)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIBattleSimulator_Break as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29410f0usize)as*mut u8,();
-(AIBattleSimulator_Break)__receiver)}
-}
-}
-
-#[cfg(feature="app-aibattlesimulator")]impl<__T:IAIBattleSimulator_Break>IAIBattleSimulator_BreakMethods for __T{}
-
-#[cfg(feature="app-aibattlesimulator")]impl AIBattleSimulator_Break{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_break_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_stun_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_is_not_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-aibattlesimulator")]impl AIBattleSimulator_Break{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIBattleSimulator_Break), ::core::stringify!(new),));
- <Self as IAIBattleSimulator_BreakMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-aibattlesimulator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AIBattleSimulator;
-    pub use super::IAIBattleSimulator;
-    pub use super::IAIBattleSimulatorMethods;
     pub use super::AIBattleSimulator_ChainAttackCandidate;
     pub use super::IAIBattleSimulator_ChainAttackCandidate;
     pub use super::IAIBattleSimulator_ChainAttackCandidateMethods;
-    pub use super::AIBattleSimulator_Indication;
-    pub use super::IAIBattleSimulator_Indication;
-    pub use super::IAIBattleSimulator_IndicationMethods;
     pub use super::AIBattleSimulator_Break;
     pub use super::IAIBattleSimulator_Break;
     pub use super::IAIBattleSimulator_BreakMethods;
+    pub use super::AIBattleSimulator;
+    pub use super::IAIBattleSimulator;
+    pub use super::IAIBattleSimulatorMethods;
+    pub use super::AIBattleSimulator_Indication;
+    pub use super::IAIBattleSimulator_Indication;
+    pub use super::IAIBattleSimulator_IndicationMethods;
     pub use crate::app::aisimulatorbase::IAISimulatorBase;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-aisimulatorbase")] pub use crate::app::aisimulatorbase::IAISimulatorBaseMethods;

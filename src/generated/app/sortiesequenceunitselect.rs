@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceunitselect/SortieSequenceUnitSelect.md"))]#[::unity2::class(namespace="App",name="SortieSequenceUnitSelect")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequenceunitselect::SortieSequenceUnitSelect>)]pub struct SortieSequenceUnitSelect{#[static_field]#[rename(name="ResNameC")]pub res_name_c: ::unity2::Il2CppString, #[static_field]#[rename(name="SortieResNameC")]pub sortie_res_name_c: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_Window")]pub m_window:crate::app::unitselectroot::UnitSelectRoot, #[offset(136)]#[rename(name="m_unitSelectMenu")]pub m_unit_select_menu:crate::app::basicmenu::BasicMenu, #[offset(144)]#[rename(name="m_rootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(152)]#[rename(name="m_menuSelect")]pub m_menu_select:crate::app::basicmenuselect::BasicMenuSelect,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceunitselect/SortieSequenceUnitSelect_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSequenceUnitSelect_Label{pub value:i32,}
 impl::unity2::ClassIdentity for SortieSequenceUnitSelect_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SortieSequenceUnitSelect.Label";
@@ -45,9 +48,6 @@ pub fn end()->Self{Self{value:7}
 pub fn end_from_troop()->Self{Self{value:8}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceunitselect/SortieSequenceUnitSelect.md"))]#[::unity2::class(namespace="App",name="SortieSequenceUnitSelect")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequenceunitselect::SortieSequenceUnitSelect>)]pub struct SortieSequenceUnitSelect{#[static_field]#[rename(name="ResNameC")]pub res_name_c: ::unity2::Il2CppString, #[static_field]#[rename(name="SortieResNameC")]pub sortie_res_name_c: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_Window")]pub m_window:crate::app::unitselectroot::UnitSelectRoot, #[offset(136)]#[rename(name="m_unitSelectMenu")]pub m_unit_select_menu:crate::app::basicmenu::BasicMenu, #[offset(144)]#[rename(name="m_rootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(152)]#[rename(name="m_menuSelect")]pub m_menu_select:crate::app::basicmenuselect::BasicMenuSelect,}
 
 }
 
@@ -178,10 +178,10 @@ this}
 #[cfg(feature = "app-sortiesequenceunitselect")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieSequenceUnitSelect_Label;
     pub use super::SortieSequenceUnitSelect;
     pub use super::ISortieSequenceUnitSelect;
     pub use super::ISortieSequenceUnitSelectMethods;
+    pub use super::SortieSequenceUnitSelect_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

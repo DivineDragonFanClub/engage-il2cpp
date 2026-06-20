@@ -16,29 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-terrainmap-types")]
 pub use __types::*;
 
-#[cfg(feature="app-terrainmap")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TerrainMap_unity2_raw{use super:: * ;
-pub unsafe fn read_data(this:TerrainMap,data:crate::unity_engine::terraindata::TerrainData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TerrainMap as::unity2::ClassIdentity> ::NAME,"ReadData",));
-let inner:extern "C" fn(TerrainMap,crate::unity_engine::terraindata::TerrainData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,data,__mi)}
-pub unsafe fn write_data(this:TerrainMap,data:crate::unity_engine::terraindata::TerrainData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <TerrainMap as::unity2::ClassIdentity> ::NAME,"WriteData",));
-let inner:extern "C" fn(TerrainMap,crate::unity_engine::terraindata::TerrainData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,data,__mi)}
-}
-
 #[cfg(feature="app-terrainmap")]pub trait ITerrainMapMethods:ITerrainMap{#[doc="`get_Width()` overload"]fn get_width(self,)->i32{unsafe{let __receiver= <TerrainMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21e5470usize)as*mut u8,i32;
 (TerrainMap)__receiver)}
@@ -80,10 +57,28 @@ inner(this,data,__mi)}
 (TerrainMap)__receiver,(crate::unity_engine::terraindata::TerrainData)::core::convert::Into::into(data))}
 }
 #[doc="`ReadData(crate::unity_engine::terraindata::TerrainData)` overload"]fn read_data(self,data:impl::core::convert::Into<crate::unity_engine::terraindata::TerrainData>)->(){unsafe{let __receiver= <TerrainMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TerrainMap_unity2_raw::read_data(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TerrainMap as::unity2::ClassIdentity> ::NAME,"ReadData",));
+let __inner:extern "C" fn(TerrainMap,crate::unity_engine::terraindata::TerrainData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(data),__mi)}
+}
 }
 #[doc="`WriteData(crate::unity_engine::terraindata::TerrainData)` overload"]fn write_data(self,data:impl::core::convert::Into<crate::unity_engine::terraindata::TerrainData>)->(){unsafe{let __receiver= <TerrainMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TerrainMap_unity2_raw::write_data(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TerrainMap as::unity2::ClassIdentity> ::NAME,"WriteData",));
+let __inner:extern "C" fn(TerrainMap,crate::unity_engine::terraindata::TerrainData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(data),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21e3d40usize)as*mut u8,();
@@ -106,6 +101,14 @@ pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn read_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn write_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-terrainmap")]impl TerrainMap{#[doc="Direct (non-virtual) call to `TerrainMap`'s own `ReadData`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_data(this:impl::core::convert::Into< ::unity2::IlInstance> ,data:crate::unity_engine::terraindata::TerrainData,)->(){let __mi=Self::read_data_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::terraindata::TerrainData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TerrainMap`'s own `WriteData`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_data(this:impl::core::convert::Into< ::unity2::IlInstance> ,data:crate::unity_engine::terraindata::TerrainData,)->(){let __mi=Self::write_data_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::terraindata::TerrainData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),data, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-terrainmap")]impl TerrainMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

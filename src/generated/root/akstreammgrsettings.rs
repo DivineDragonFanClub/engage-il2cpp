@@ -16,39 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akstreammgrsettings-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akstreammgrsettings")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkStreamMgrSettings_unity2_raw{use super:: * ;
-pub unsafe fn set_c_ptr(this:AkStreamMgrSettings,c_ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <AkStreamMgrSettings as::unity2::ClassIdentity> ::NAME,"setCPtr",));
-let inner:extern "C" fn(AkStreamMgrSettings, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,c_ptr,__mi)}
-pub unsafe fn finalize(this:AkStreamMgrSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <AkStreamMgrSettings as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(AkStreamMgrSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:AkStreamMgrSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <AkStreamMgrSettings as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(AkStreamMgrSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="root-akstreammgrsettings")]impl AkStreamMgrSettings{#[doc="`getCPtr(crate::root::akstreammgrsettings::AkStreamMgrSettings)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akstreammgrsettings::AkStreamMgrSettings>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d1a800usize)as*mut u8, ::unity2::IntPtr;
 (crate::root::akstreammgrsettings::AkStreamMgrSettings)::core::convert::Into::into(obj))}
 }
@@ -59,13 +26,40 @@ inner(this,__mi)}
 (AkStreamMgrSettings)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
 }
 #[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkStreamMgrSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkStreamMgrSettings_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkStreamMgrSettings as::unity2::ClassIdentity> ::NAME,"setCPtr",));
+let __inner:extern "C" fn(AkStreamMgrSettings, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(c_ptr),__mi)}
+}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkStreamMgrSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkStreamMgrSettings_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AkStreamMgrSettings as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(AkStreamMgrSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkStreamMgrSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkStreamMgrSettings_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkStreamMgrSettings as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(AkStreamMgrSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -76,6 +70,17 @@ pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="root-akstreammgrsettings")]impl AkStreamMgrSettings{#[doc="Direct (non-virtual) call to `AkStreamMgrSettings`'s own `setCPtr`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_c_ptr(this:impl::core::convert::Into< ::unity2::IlInstance> ,c_ptr: ::unity2::IntPtr,)->(){let __mi=Self::set_c_ptr_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),c_ptr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkStreamMgrSettings`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkStreamMgrSettings`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-akstreammgrsettings")]impl AkStreamMgrSettings{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

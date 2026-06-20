@@ -14,73 +14,65 @@ mod __types {
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-imemberdescriptor_interface-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-imemberdescriptor_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMemberDescriptor_Interface_unity2_raw{use super:: * ;
-pub unsafe fn get_is_static(this:IMemberDescriptor_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-imemberdescriptor_interface")]pub trait IIMemberDescriptor_InterfaceMethods:IIMemberDescriptor_Interface{#[doc="`get_IsStatic()` overload"]fn get_is_static(self,)->bool{unsafe{let __receiver= <IMemberDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IMemberDescriptor_Interface as::unity2::ClassIdentity> ::NAME,"get_IsStatic",));
-let inner:extern "C" fn(IMemberDescriptor_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IMemberDescriptor_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:IMemberDescriptor_Interface,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IMemberDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IMemberDescriptor_Interface as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(IMemberDescriptor_Interface, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IMemberDescriptor_Interface, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_member_access(this:IMemberDescriptor_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_MemberAccess()` overload"]fn get_member_access(self,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{unsafe{let __receiver= <IMemberDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <IMemberDescriptor_Interface as::unity2::ClassIdentity> ::NAME,"get_MemberAccess",));
-let inner:extern "C" fn(IMemberDescriptor_Interface, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IMemberDescriptor_Interface, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_value(this:IMemberDescriptor_Interface,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]fn get_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <IMemberDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",3usize,__vt.len(), <IMemberDescriptor_Interface as::unity2::ClassIdentity> ::NAME,"GetValue",));
-let inner:extern "C" fn(IMemberDescriptor_Interface,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IMemberDescriptor_Interface,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,__mi)}
-pub unsafe fn set_value(this:IMemberDescriptor_Interface,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,value:crate::moon_sharp::interpreter::dynvalue::DynValue,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj),__mi)}
+}
+}
+#[doc="`SetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <IMemberDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <IMemberDescriptor_Interface as::unity2::ClassIdentity> ::NAME,"SetValue",));
-let inner:extern "C" fn(IMemberDescriptor_Interface,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IMemberDescriptor_Interface,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-imemberdescriptor_interface")]pub trait IIMemberDescriptor_InterfaceMethods:IIMemberDescriptor_Interface{#[doc="`get_IsStatic()` overload"]fn get_is_static(self,)->bool{unsafe{let __receiver= <IMemberDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IMemberDescriptor_Interface_unity2_raw::get_is_static(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IMemberDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IMemberDescriptor_Interface_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_MemberAccess()` overload"]fn get_member_access(self,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{unsafe{let __receiver= <IMemberDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IMemberDescriptor_Interface_unity2_raw::get_member_access(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]fn get_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <IMemberDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IMemberDescriptor_Interface_unity2_raw::get_value(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::option::Option::None)}
-}
-#[doc="`SetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <IMemberDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IMemberDescriptor_Interface_unity2_raw::set_value(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 }
 
@@ -91,6 +83,23 @@ pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn get_member_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-imemberdescriptor_interface")]impl IMemberDescriptor_Interface{#[doc="Direct (non-virtual) call to `IMemberDescriptor_Interface`'s own `get_IsStatic`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_static(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_static_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IMemberDescriptor_Interface`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IMemberDescriptor_Interface`'s own `get_MemberAccess`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_member_access(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{let __mi=Self::get_member_access_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IMemberDescriptor_Interface`'s own `GetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::get_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IMemberDescriptor_Interface`'s own `SetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,value:crate::moon_sharp::interpreter::dynvalue::DynValue,)->(){let __mi=Self::set_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj,value, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-imemberdescriptor_interface")]

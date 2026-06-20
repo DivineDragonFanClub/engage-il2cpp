@@ -20,35 +20,21 @@ use crate::system::reflection::propertyinfo::{IPropertyInfo,PropertyInfo}
 #[cfg(feature = "system-reflection-runtimepropertyinfo-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-runtimepropertyinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimePropertyInfo_unity2_raw{use super:: * ;
-pub unsafe fn get_module(this:RuntimePropertyInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::module::Module{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <RuntimePropertyInfo as::unity2::ClassIdentity> ::NAME,"get_Module",));
-let inner:extern "C" fn(RuntimePropertyInfo, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn to_string(this:RuntimePropertyInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <RuntimePropertyInfo as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(RuntimePropertyInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="system-reflection-runtimepropertyinfo")]pub trait IRuntimePropertyInfoMethods:IRuntimePropertyInfo{#[doc="`get_BindingFlags()` overload"]fn get_binding_flags(self,)->crate::system::reflection::bindingflags::BindingFlags{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6320usize)as*mut u8,crate::system::reflection::bindingflags::BindingFlags;
 (RuntimePropertyInfo)__receiver)}
 }
 #[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimePropertyInfo_unity2_raw::get_module(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <RuntimePropertyInfo as::unity2::ClassIdentity> ::NAME,"get_Module",));
+let __inner:extern "C" fn(RuntimePropertyInfo, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetDeclaringTypeInternal()` overload"]fn get_declaring_type_internal(self,)->crate::system::runtimetype::RuntimeType{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6450usize)as*mut u8,crate::system::runtimetype::RuntimeType;
@@ -63,7 +49,16 @@ __RuntimePropertyInfo_unity2_raw::get_module(__receiver, ::core::option::Option:
 (RuntimePropertyInfo)__receiver)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimePropertyInfo_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <RuntimePropertyInfo as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(RuntimePropertyInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`FormatNameAndSig(bool)` overload"]fn format_name_and_sig(self,serialization:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6580usize)as*mut u8, ::unity2::Il2CppString;
@@ -90,6 +85,14 @@ pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn format_name_and_sig_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn serialization_to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="system-reflection-runtimepropertyinfo")]impl RuntimePropertyInfo{#[doc="Direct (non-virtual) call to `RuntimePropertyInfo`'s own `get_Module`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::module::Module{let __mi=Self::get_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimePropertyInfo`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-reflection-runtimepropertyinfo")]impl RuntimePropertyInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

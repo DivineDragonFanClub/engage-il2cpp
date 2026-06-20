@@ -18,49 +18,6 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 #[cfg(feature = "unity_engine-addressable_assets-updatecatalogsoperation-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-addressable_assets-updatecatalogsoperation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UpdateCatalogsOperation_unity2_raw{use super:: * ;
-pub unsafe fn invoke_wait_for_completion(this:UpdateCatalogsOperation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <UpdateCatalogsOperation as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
-let inner:extern "C" fn(UpdateCatalogsOperation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn destroy(this:UpdateCatalogsOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <UpdateCatalogsOperation as::unity2::ClassIdentity> ::NAME,"Destroy",));
-let inner:extern "C" fn(UpdateCatalogsOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_dependencies(this:UpdateCatalogsOperation,dependencies:crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <UpdateCatalogsOperation as::unity2::ClassIdentity> ::NAME,"GetDependencies",));
-let inner:extern "C" fn(UpdateCatalogsOperation,crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,dependencies,__mi)}
-pub unsafe fn execute(this:UpdateCatalogsOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <UpdateCatalogsOperation as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(UpdateCatalogsOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-addressable_assets-updatecatalogsoperation")]pub trait IUpdateCatalogsOperationMethods:IUpdateCatalogsOperation{#[doc="`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` overload"]fn ctor(self,aa:impl::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>)->(){unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db04e0usize)as*mut u8,();
 (UpdateCatalogsOperation)__receiver,(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)::core::convert::Into::into(aa))}
@@ -70,16 +27,52 @@ inner(this,__mi)}
 (UpdateCatalogsOperation)__receiver,(crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString>)::core::convert::Into::into(catalog_ids))}
 }
 #[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UpdateCatalogsOperation_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <UpdateCatalogsOperation as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
+let __inner:extern "C" fn(UpdateCatalogsOperation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UpdateCatalogsOperation_unity2_raw::destroy(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <UpdateCatalogsOperation as::unity2::ClassIdentity> ::NAME,"Destroy",));
+let __inner:extern "C" fn(UpdateCatalogsOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetDependencies(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]fn get_dependencies(self,dependencies:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >)->(){unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UpdateCatalogsOperation_unity2_raw::get_dependencies(__receiver, ::core::convert::Into::into(dependencies), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <UpdateCatalogsOperation as::unity2::ClassIdentity> ::NAME,"GetDependencies",));
+let __inner:extern "C" fn(UpdateCatalogsOperation,crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(dependencies),__mi)}
+}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UpdateCatalogsOperation_unity2_raw::execute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <UpdateCatalogsOperation as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(UpdateCatalogsOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -91,6 +84,20 @@ pub fn invoke_wait_for_completion_method_info()-> & 'static::unity2::il2cpp::Met
 pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn get_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-updatecatalogsoperation")]impl UpdateCatalogsOperation{#[doc="Direct (non-virtual) call to `UpdateCatalogsOperation`'s own `InvokeWaitForCompletion`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke_wait_for_completion(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::invoke_wait_for_completion_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UpdateCatalogsOperation`'s own `Destroy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn destroy(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::destroy_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UpdateCatalogsOperation`'s own `GetDependencies`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_dependencies(this:impl::core::convert::Into< ::unity2::IlInstance> ,dependencies:crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,)->(){let __mi=Self::get_dependencies_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),dependencies, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UpdateCatalogsOperation`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-addressable_assets-updatecatalogsoperation")]impl UpdateCatalogsOperation{#[doc="`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` — overload selector"]pub fn new(aa:crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

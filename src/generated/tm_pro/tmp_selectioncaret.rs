@@ -30,34 +30,29 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 #[cfg(feature = "tm_pro-tmp_selectioncaret-types")]
 pub use __types::*;
 
-#[cfg(feature="tm_pro-tmp_selectioncaret")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_SelectionCaret_unity2_raw{use super:: * ;
-pub unsafe fn cull(this:TMP_SelectionCaret,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="tm_pro-tmp_selectioncaret")]pub trait ITMP_SelectionCaretMethods:ITMP_SelectionCaret{#[doc="`Cull(crate::unity_engine::rect::Rect, bool)` overload"]fn cull(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",59usize,__vt.len(), <TMP_SelectionCaret as::unity2::ClassIdentity> ::NAME,"Cull",));
-let inner:extern "C" fn(TMP_SelectionCaret,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TMP_SelectionCaret,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,clip_rect,valid_rect,__mi)}
-pub unsafe fn update_geometry(this:TMP_SelectionCaret,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect),__mi)}
+}
+}
+#[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",41usize,__vt.len(), <TMP_SelectionCaret as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
-let inner:extern "C" fn(TMP_SelectionCaret, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TMP_SelectionCaret, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="tm_pro-tmp_selectioncaret")]pub trait ITMP_SelectionCaretMethods:ITMP_SelectionCaret{#[doc="`Cull(crate::unity_engine::rect::Rect, bool)` overload"]fn cull(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_SelectionCaret_unity2_raw::cull(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect), ::core::option::Option::None)}
-}
-#[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TMP_SelectionCaret_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x282a8e0usize)as*mut u8,();
@@ -70,6 +65,14 @@ __TMP_SelectionCaret_unity2_raw::update_geometry(__receiver, ::core::option::Opt
 #[cfg(feature="tm_pro-tmp_selectioncaret")]impl TMP_SelectionCaret{pub fn cull_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn update_geometry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="tm_pro-tmp_selectioncaret")]impl TMP_SelectionCaret{#[doc="Direct (non-virtual) call to `TMP_SelectionCaret`'s own `Cull`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn cull(this:impl::core::convert::Into< ::unity2::IlInstance> ,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,)->(){let __mi=Self::cull_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),clip_rect,valid_rect, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TMP_SelectionCaret`'s own `UpdateGeometry`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_geometry(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_geometry_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="tm_pro-tmp_selectioncaret")]impl TMP_SelectionCaret{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

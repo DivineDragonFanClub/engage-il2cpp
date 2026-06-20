@@ -11,6 +11,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/spookyhash/SpookyHash.md"))]#[::unity2::class(namespace="UnityEngine",name="SpookyHash")]#[parent(crate::system::object::Object)]pub struct SpookyHash{#[static_field]#[rename(name="AllowUnalignedRead")]pub allow_unaligned_read:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/spookyhash/SpookyHash_U.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SpookyHash_U{}
 impl::unity2::ClassIdentity for SpookyHash_U{const NAMESPACE: &'static str="UnityEngine";
 const NAME: &'static str="SpookyHash.U";
@@ -20,9 +23,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for SpookyHash_U{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/spookyhash/SpookyHash.md"))]#[::unity2::class(namespace="UnityEngine",name="SpookyHash")]#[parent(crate::system::object::Object)]pub struct SpookyHash{#[static_field]#[rename(name="AllowUnalignedRead")]pub allow_unaligned_read:bool,}
 
 }
 
@@ -85,9 +85,9 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 #[cfg(feature = "unity_engine-spookyhash")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SpookyHash_U;
     pub use super::SpookyHash;
     pub use super::ISpookyHash;
+    pub use super::SpookyHash_U;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

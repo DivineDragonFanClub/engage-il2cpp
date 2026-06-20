@@ -9,200 +9,133 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryEnumerator.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="OrderedDictionary.OrderedDictionaryEnumerator")]#[parent(crate::system::object::Object)]pub struct OrderedDictionary_OrderedDictionaryEnumerator{#[offset(16)]#[rename(name="_objectReturnType")]pub object_return_type:i32, #[offset(24)]#[rename(name="arrayEnumerator")]pub array_enumerator:crate::system::collections::ienumerator::IEnumerator,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/ordereddictionary/OrderedDictionary.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="OrderedDictionary")]#[parent(crate::system::object::Object)]pub struct OrderedDictionary{#[offset(16)]#[rename(name="_objectsArray")]pub objects_array:crate::system::collections::arraylist::ArrayList, #[offset(24)]#[rename(name="_objectsTable")]pub objects_table:crate::system::collections::hashtable::Hashtable, #[offset(32)]#[rename(name="_initialCapacity")]pub initial_capacity:i32, #[offset(40)]#[rename(name="_comparer")]pub comparer:crate::system::collections::iequalitycomparer::IEqualityComparer, #[offset(48)]#[rename(name="_readOnly")]pub read_only:bool, #[offset(56)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryKeyValueCollection.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="OrderedDictionary.OrderedDictionaryKeyValueCollection")]#[parent(crate::system::object::Object)]pub struct OrderedDictionary_OrderedDictionaryKeyValueCollection{#[offset(16)]#[rename(name="_objects")]pub objects:crate::system::collections::arraylist::ArrayList, #[offset(24)]#[rename(name="isKeys")]pub is_keys:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/ordereddictionary/OrderedDictionary_OrderedDictionaryEnumerator.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="OrderedDictionary.OrderedDictionaryEnumerator")]#[parent(crate::system::object::Object)]pub struct OrderedDictionary_OrderedDictionaryEnumerator{#[offset(16)]#[rename(name="_objectReturnType")]pub object_return_type:i32, #[offset(24)]#[rename(name="arrayEnumerator")]pub array_enumerator:crate::system::collections::ienumerator::IEnumerator,}
 
 }
 
 #[cfg(feature = "system-collections-specialized-ordereddictionary-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-specialized-ordereddictionary")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __OrderedDictionary_unity2_raw{use super:: * ;
-pub unsafe fn get_count(this:OrderedDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"get_Count",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_dictionary_get_is_fixed_size(this:OrderedDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"System.Collections.IDictionary.get_IsFixedSize",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_is_read_only(this:OrderedDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_collection_get_is_synchronized(this:OrderedDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_IsSynchronized",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_keys(this:OrderedDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"get_Keys",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_collection_get_sync_root(this:OrderedDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_SyncRoot",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_item(this:OrderedDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"get_Item",));
-let inner:extern "C" fn(OrderedDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn set_item(this:OrderedDictionary,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"set_Item",));
-let inner:extern "C" fn(OrderedDictionary,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,value,__mi)}
-pub unsafe fn get_values(this:OrderedDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"get_Values",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn add(this:OrderedDictionary,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"Add",));
-let inner:extern "C" fn(OrderedDictionary,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,value,__mi)}
-pub unsafe fn clear(this:OrderedDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"Clear",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn contains(this:OrderedDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-collections-specialized-ordereddictionary")]pub trait IOrderedDictionary_OrderedDictionaryEnumeratorMethods:IOrderedDictionary_OrderedDictionaryEnumerator{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, i32)` overload"]fn ctor(self,array:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList> ,object_return_type:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85f30usize)as*mut u8,();
+(OrderedDictionary_OrderedDictionaryEnumerator)__receiver,(crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(array),(i32)::core::convert::Into::into(object_return_type))}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"Contains",));
-let inner:extern "C" fn(OrderedDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn copy_to(this:OrderedDictionary,array: ::unity2::IlInstance,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",14usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"CopyTo",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",6usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Entry",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,index,__mi)}
-pub unsafe fn on_deserialization(this:OrderedDictionary,sender:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",22usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"OnDeserialization",));
-let inner:extern "C" fn(OrderedDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Key",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sender,__mi)}
-pub unsafe fn remove(this:OrderedDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"Remove",));
-let inner:extern "C" fn(OrderedDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",5usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Value",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,key,__mi)}
-pub unsafe fn get_enumerator(this:OrderedDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",23usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",7usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_enumerable_get_enumerator(this:OrderedDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
-let inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",9usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_runtime_serialization_i_deserialization_callback_on_deserialization(this:OrderedDictionary,sender:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",));
-let inner:extern "C" fn(OrderedDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sender,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="system-collections-specialized-ordereddictionary")]impl<__T:IOrderedDictionary_OrderedDictionaryEnumerator>IOrderedDictionary_OrderedDictionaryEnumeratorMethods for __T{}
+
+#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryEnumerator{#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryEnumerator`'s own `get_Current`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_current(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_current_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryEnumerator`'s own `get_Entry`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_entry(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::dictionaryentry::DictionaryEntry{let __mi=Self::get_entry_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryEnumerator`'s own `get_Key`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_key(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_key_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryEnumerator`'s own `get_Value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryEnumerator`'s own `MoveNext`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn move_next(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::move_next_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryEnumerator`'s own `Reset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn reset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::reset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryEnumerator{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, i32)` — overload selector"]pub fn new(array:crate::system::collections::arraylist::ArrayList,object_return_type:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(OrderedDictionary_OrderedDictionaryEnumerator), ::core::stringify!(new),));
+ <Self as IOrderedDictionary_OrderedDictionaryEnumeratorMethods> ::ctor(this,array,object_return_type);
+this}
 }
 
 #[cfg(feature="system-collections-specialized-ordereddictionary")]pub trait IOrderedDictionaryMethods:IOrderedDictionary{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -218,19 +151,64 @@ inner(this,sender,__mi)}
 (OrderedDictionary)__receiver,(i32)::core::convert::Into::into(capacity),(crate::system::collections::iequalitycomparer::IEqualityComparer)::core::convert::Into::into(comparer))}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.IDictionary.get_IsFixedSize()` overload"]fn system_collections_i_dictionary_get_is_fixed_size(self,)->bool{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::system_collections_i_dictionary_get_is_fixed_size(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"System.Collections.IDictionary.get_IsFixedSize",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.ICollection.get_IsSynchronized()` overload"]fn system_collections_i_collection_get_is_synchronized(self,)->bool{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::system_collections_i_collection_get_is_synchronized(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_IsSynchronized",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::get_keys(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"get_Keys",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_objectsArray()` overload"]fn get_objects_array(self,)->crate::system::collections::arraylist::ArrayList{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x348c3e0usize)as*mut u8,crate::system::collections::arraylist::ArrayList;
@@ -241,47 +219,164 @@ __OrderedDictionary_unity2_raw::get_keys(__receiver, ::core::option::Option::Non
 (OrderedDictionary)__receiver)}
 }
 #[doc="`System.Collections.ICollection.get_SyncRoot()` overload"]fn system_collections_i_collection_get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::system_collections_i_collection_get_sync_root(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_SyncRoot",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Item(crate::system::object::Object)` overload"]fn get_item(self,key:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::get_item(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"get_Item",));
+let __inner:extern "C" fn(OrderedDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_item(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::set_item(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"set_Item",));
+let __inner:extern "C" fn(OrderedDictionary,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_Values()` overload"]fn get_values(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::get_values(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"get_Values",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Add(crate::system::object::Object, crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::add(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"Add",));
+let __inner:extern "C" fn(OrderedDictionary,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::clear(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"Clear",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::contains(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"Contains",));
+let __inner:extern "C" fn(OrderedDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index),__mi)}
+}
 }
 #[doc="`IndexOfKey(crate::system::object::Object)` overload"]fn index_of_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x348ca30usize)as*mut u8,i32;
 (OrderedDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
 }
 #[doc="`OnDeserialization(crate::system::object::Object)` overload"]fn on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::on_deserialization(__receiver, ::core::convert::Into::into(sender), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"OnDeserialization",));
+let __inner:extern "C" fn(OrderedDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(sender),__mi)}
+}
 }
 #[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::remove(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"Remove",));
+let __inner:extern "C" fn(OrderedDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(key),__mi)}
+}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::system_collections_i_enumerable_get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
+let __inner:extern "C" fn(OrderedDictionary, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]fn system_runtime_serialization_i_deserialization_callback_on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <OrderedDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_unity2_raw::system_runtime_serialization_i_deserialization_callback_on_deserialization(__receiver, ::core::convert::Into::into(sender), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <OrderedDictionary as::unity2::ClassIdentity> ::NAME,"System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",));
+let __inner:extern "C" fn(OrderedDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(sender),__mi)}
+}
 }
 }
 
@@ -313,6 +408,62 @@ pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static:
 pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
 }
 
+#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary{#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `get_Count`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `System.Collections.IDictionary.get_IsFixedSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_dictionary_get_is_fixed_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::system_collections_i_dictionary_get_is_fixed_size_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `get_IsReadOnly`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_read_only(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_read_only_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `System.Collections.ICollection.get_IsSynchronized`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_get_is_synchronized(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::system_collections_i_collection_get_is_synchronized_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `get_Keys`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_keys(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::icollection::ICollection{let __mi=Self::get_keys_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `System.Collections.ICollection.get_SyncRoot`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_get_sync_root(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::system_collections_i_collection_get_sync_root_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `get_Item`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->crate::system::object::Object{let __mi=Self::get_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `set_Item`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,value:crate::system::object::Object,)->(){let __mi=Self::set_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `get_Values`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_values(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::icollection::ICollection{let __mi=Self::get_values_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,value:crate::system::object::Object,)->(){let __mi=Self::add_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `Clear`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clear(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::clear_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `Contains`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn contains(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->bool{let __mi=Self::contains_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `CopyTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn copy_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::IlInstance,index:i32,)->(){let __mi=Self::copy_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `OnDeserialization`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialization(this:impl::core::convert::Into< ::unity2::IlInstance> ,sender:crate::system::object::Object,)->(){let __mi=Self::on_deserialization_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sender, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `Remove`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn remove(this:impl::core::convert::Into< ::unity2::IlInstance> ,key:crate::system::object::Object,)->(){let __mi=Self::remove_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),key, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __mi=Self::get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `System.Collections.IEnumerable.GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_enumerable_get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::system_collections_i_enumerable_get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary`'s own `System.Runtime.Serialization.IDeserializationCallback.OnDeserialization`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_runtime_serialization_i_deserialization_callback_on_deserialization(this:impl::core::convert::Into< ::unity2::IlInstance> ,sender:crate::system::object::Object,)->(){let __mi=Self::system_runtime_serialization_i_deserialization_callback_on_deserialization_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sender, ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(OrderedDictionary), ::core::stringify!(new),));
@@ -330,77 +481,69 @@ this}
 this}
 }
 
-#[cfg(feature="system-collections-specialized-ordereddictionary")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw{use super:: * ;
-pub unsafe fn system_collections_i_collection_copy_to(this:OrderedDictionary_OrderedDictionaryKeyValueCollection,array: ::unity2::IlInstance,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.CopyTo",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,index,__mi)}
-pub unsafe fn system_collections_i_collection_get_count(this:OrderedDictionary_OrderedDictionaryKeyValueCollection,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_Count",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_collection_get_is_synchronized(this:OrderedDictionary_OrderedDictionaryKeyValueCollection,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_IsSynchronized",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_collection_get_sync_root(this:OrderedDictionary_OrderedDictionaryKeyValueCollection,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_SyncRoot",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_enumerable_get_enumerator(this:OrderedDictionary_OrderedDictionaryKeyValueCollection,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="system-collections-specialized-ordereddictionary")]pub trait IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods:IOrderedDictionary_OrderedDictionaryKeyValueCollection{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, bool)` overload"]fn ctor(self,array:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList> ,is_keys:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a866a0usize)as*mut u8,();
 (OrderedDictionary_OrderedDictionaryKeyValueCollection)__receiver,(crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(array),(bool)::core::convert::Into::into(is_keys))}
 }
 #[doc="`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]fn system_collections_i_collection_copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.CopyTo",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index),__mi)}
+}
 }
 #[doc="`System.Collections.ICollection.get_Count()` overload"]fn system_collections_i_collection_get_count(self,)->i32{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_get_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_Count",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.ICollection.get_IsSynchronized()` overload"]fn system_collections_i_collection_get_is_synchronized(self,)->bool{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_get_is_synchronized(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_IsSynchronized",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.ICollection.get_SyncRoot()` overload"]fn system_collections_i_collection_get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_collection_get_sync_root(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_SyncRoot",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryKeyValueCollection_unity2_raw::system_collections_i_enumerable_get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <OrderedDictionary_OrderedDictionaryKeyValueCollection as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
+let __inner:extern "C" fn(OrderedDictionary_OrderedDictionaryKeyValueCollection, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -414,6 +557,23 @@ pub fn system_collections_i_collection_get_sync_root_method_info()-> & 'static::
 pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
+#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryKeyValueCollection{#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryKeyValueCollection`'s own `System.Collections.ICollection.CopyTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_copy_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::IlInstance,index:i32,)->(){let __mi=Self::system_collections_i_collection_copy_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryKeyValueCollection`'s own `System.Collections.ICollection.get_Count`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_get_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::system_collections_i_collection_get_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryKeyValueCollection`'s own `System.Collections.ICollection.get_IsSynchronized`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_get_is_synchronized(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::system_collections_i_collection_get_is_synchronized_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryKeyValueCollection`'s own `System.Collections.ICollection.get_SyncRoot`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_get_sync_root(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::system_collections_i_collection_get_sync_root_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `OrderedDictionary_OrderedDictionaryKeyValueCollection`'s own `System.Collections.IEnumerable.GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_enumerable_get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::system_collections_i_enumerable_get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryKeyValueCollection{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, bool)` — overload selector"]pub fn new(array:crate::system::collections::arraylist::ArrayList,is_keys:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(OrderedDictionary_OrderedDictionaryKeyValueCollection), ::core::stringify!(new),));
@@ -421,123 +581,18 @@ pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static:
 this}
 }
 
-#[cfg(feature="system-collections-specialized-ordereddictionary")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw{use super:: * ;
-pub unsafe fn get_current(this:OrderedDictionary_OrderedDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_entry(this:OrderedDictionary_OrderedDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Entry",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_key(this:OrderedDictionary_OrderedDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Key",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_value(this:OrderedDictionary_OrderedDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Value",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn move_next(this:OrderedDictionary_OrderedDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn reset(this:OrderedDictionary_OrderedDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
-let inner:extern "C" fn(OrderedDictionary_OrderedDictionaryEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="system-collections-specialized-ordereddictionary")]pub trait IOrderedDictionary_OrderedDictionaryEnumeratorMethods:IOrderedDictionary_OrderedDictionaryEnumerator{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, i32)` overload"]fn ctor(self,array:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList> ,object_return_type:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85f30usize)as*mut u8,();
-(OrderedDictionary_OrderedDictionaryEnumerator)__receiver,(crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(array),(i32)::core::convert::Into::into(object_return_type))}
-}
-#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::get_entry(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::get_key(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
-}
-#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <OrderedDictionary_OrderedDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__OrderedDictionary_OrderedDictionaryEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="system-collections-specialized-ordereddictionary")]impl<__T:IOrderedDictionary_OrderedDictionaryEnumerator>IOrderedDictionary_OrderedDictionaryEnumeratorMethods for __T{}
-
-#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="system-collections-specialized-ordereddictionary")]impl OrderedDictionary_OrderedDictionaryEnumerator{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList, i32)` — overload selector"]pub fn new(array:crate::system::collections::arraylist::ArrayList,object_return_type:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(OrderedDictionary_OrderedDictionaryEnumerator), ::core::stringify!(new),));
- <Self as IOrderedDictionary_OrderedDictionaryEnumeratorMethods> ::ctor(this,array,object_return_type);
-this}
-}
-
 #[cfg(feature = "system-collections-specialized-ordereddictionary")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::OrderedDictionary_OrderedDictionaryEnumerator;
+    pub use super::IOrderedDictionary_OrderedDictionaryEnumerator;
+    pub use super::IOrderedDictionary_OrderedDictionaryEnumeratorMethods;
     pub use super::OrderedDictionary;
     pub use super::IOrderedDictionary;
     pub use super::IOrderedDictionaryMethods;
     pub use super::OrderedDictionary_OrderedDictionaryKeyValueCollection;
     pub use super::IOrderedDictionary_OrderedDictionaryKeyValueCollection;
     pub use super::IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods;
-    pub use super::OrderedDictionary_OrderedDictionaryEnumerator;
-    pub use super::IOrderedDictionary_OrderedDictionaryEnumerator;
-    pub use super::IOrderedDictionary_OrderedDictionaryEnumeratorMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

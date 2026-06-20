@@ -18,372 +18,333 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-gamecalculatorcommand-types")]
 pub use __types::*;
 
-#[cfg(feature="app-gamecalculatorcommand")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameCalculatorCommand_unity2_raw{use super:: * ;
-pub unsafe fn get_impl(this:GameCalculatorCommand,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gamecalculatorcommand")]pub trait IGameCalculatorCommandMethods:IGameCalculatorCommand{#[doc="`GetImpl(crate::app::unit::Unit)` overload"]fn get_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",30usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"GetImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,__mi)}
-pub unsafe fn get_impl_2(this:GameCalculatorCommand,side:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(unit),__mi)}
+}
+}
+#[doc="`GetImpl(crate::app::battleinfoside::BattleInfoSide)` overload"]fn get_impl_2(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",31usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"GetImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,side,__mi)}
-pub unsafe fn set_impl(this:GameCalculatorCommand,unit:crate::app::unit::Unit,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"SetImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,value,__mi)}
-pub unsafe fn set_impl_2(this:GameCalculatorCommand,side:crate::app::battleinfoside::BattleInfoSide,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"SetImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,side,value,__mi)}
-pub unsafe fn func_impl(this:GameCalculatorCommand,unit:crate::app::unit::Unit,args:crate::system::collections::generic::list_1::List_1<f32> ,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",34usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"FuncImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit,crate::system::collections::generic::list_1::List_1<f32> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,args,__mi)}
-pub unsafe fn func_impl_2(this:GameCalculatorCommand,side:crate::app::battleinfoside::BattleInfoSide,args:crate::system::collections::generic::list_1::List_1<f32> ,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",35usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"FuncImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide,crate::system::collections::generic::list_1::List_1<f32> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,side,args,__mi)}
-pub unsafe fn func_impl_3(this:GameCalculatorCommand,unit:crate::app::unit::Unit,arg: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",36usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"FuncImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,arg,__mi)}
-pub unsafe fn func_impl_4(this:GameCalculatorCommand,side:crate::app::battleinfoside::BattleInfoSide,arg: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",37usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"FuncImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,side,arg,__mi)}
-pub unsafe fn add_impl(this:GameCalculatorCommand,unit:crate::app::unit::Unit,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",38usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"AddImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,value,__mi)}
-pub unsafe fn add_impl_2(this:GameCalculatorCommand,side:crate::app::battleinfoside::BattleInfoSide,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",39usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"AddImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,side,value,__mi)}
-pub unsafe fn scale_impl(this:GameCalculatorCommand,unit:crate::app::unit::Unit,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",40usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"ScaleImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,value,__mi)}
-pub unsafe fn scale_impl_2(this:GameCalculatorCommand,side:crate::app::battleinfoside::BattleInfoSide,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",41usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"ScaleImpl",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,side,value,__mi)}
-pub unsafe fn get_invalid(this:GameCalculatorCommand,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"GetInvalid",));
-let inner:extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get(this:GameCalculatorCommand,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Get",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
-pub unsafe fn get_2(this:GameCalculatorCommand,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Get",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj1,obj2,__mi)}
-pub unsafe fn set(this:GameCalculatorCommand,value:f32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Set",));
-let inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,obj,__mi)}
-pub unsafe fn set_2(this:GameCalculatorCommand,value:f32,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Set",));
-let inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,obj1,obj2,__mi)}
-pub unsafe fn func(this:GameCalculatorCommand,args:crate::system::collections::generic::list_1::List_1<f32> ,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::system::collections::generic::list_1::List_1<f32> ,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,args,obj,__mi)}
-pub unsafe fn func_2(this:GameCalculatorCommand,args:crate::system::collections::generic::list_1::List_1<f32> ,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
-let inner:extern "C" fn(GameCalculatorCommand,crate::system::collections::generic::list_1::List_1<f32> ,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,args,obj1,obj2,__mi)}
-pub unsafe fn func_3(this:GameCalculatorCommand,arg: ::unity2::Il2CppString,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
-let inner:extern "C" fn(GameCalculatorCommand, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,arg,obj,__mi)}
-pub unsafe fn func_4(this:GameCalculatorCommand,arg: ::unity2::Il2CppString,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
-let inner:extern "C" fn(GameCalculatorCommand, ::unity2::Il2CppString,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,arg,obj1,obj2,__mi)}
-pub unsafe fn add(this:GameCalculatorCommand,value:f32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Add",));
-let inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,obj,__mi)}
-pub unsafe fn add_2(this:GameCalculatorCommand,value:f32,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Add",));
-let inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,obj1,obj2,__mi)}
-pub unsafe fn scale(this:GameCalculatorCommand,value:f32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Scale",));
-let inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,obj,__mi)}
-pub unsafe fn scale_2(this:GameCalculatorCommand,value:f32,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Scale",));
-let inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,obj1,obj2,__mi)}
-pub unsafe fn get_header(this:GameCalculatorCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"get_Header",));
-let inner:extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_visible(this:GameCalculatorCommand,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"IsVisible",));
-let inner:extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver, ::core::convert::Into::into(side),__mi)}
 }
-
-#[cfg(feature="app-gamecalculatorcommand")]pub trait IGameCalculatorCommandMethods:IGameCalculatorCommand{#[doc="`GetImpl(crate::app::unit::Unit)` overload"]fn get_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::get_impl(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)}
-}
-#[doc="`GetImpl(crate::app::battleinfoside::BattleInfoSide)` overload"]fn get_impl_2(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::get_impl_2(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)}
 }
 #[doc="`TryGetImpl(crate::app::unit::Unit)` overload"]fn try_get_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2278710usize)as*mut u8,f32;
 (GameCalculatorCommand)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
 #[doc="`SetImpl(crate::app::unit::Unit, f32)` overload"]fn set_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::set_impl(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"SetImpl",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`SetImpl(crate::app::battleinfoside::BattleInfoSide, f32)` overload"]fn set_impl_2(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::set_impl_2(__receiver, ::core::convert::Into::into(side), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"SetImpl",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(side), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`TrySetImpl(crate::app::unit::Unit, f32)` overload"]fn try_set_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2278760usize)as*mut u8,();
 (GameCalculatorCommand)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(f32)::core::convert::Into::into(value))}
 }
 #[doc="`FuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn func_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::func_impl(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(args), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"FuncImpl",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit,crate::system::collections::generic::list_1::List_1<f32> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(args),__mi)}
+}
 }
 #[doc="`FuncImpl(crate::app::battleinfoside::BattleInfoSide, crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn func_impl_2(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::func_impl_2(__receiver, ::core::convert::Into::into(side), ::core::convert::Into::into(args), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"FuncImpl",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide,crate::system::collections::generic::list_1::List_1<f32> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(side), ::core::convert::Into::into(args),__mi)}
+}
 }
 #[doc="`TryFuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn try_func_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22787c0usize)as*mut u8,f32;
 (GameCalculatorCommand)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args))}
 }
 #[doc="`FuncImpl(crate::app::unit::Unit, ::unity2::Il2CppString)` overload"]fn func_impl_3(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::func_impl_3(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(arg), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"FuncImpl",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(arg),__mi)}
+}
 }
 #[doc="`FuncImpl(crate::app::battleinfoside::BattleInfoSide, ::unity2::Il2CppString)` overload"]fn func_impl_4(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::func_impl_4(__receiver, ::core::convert::Into::into(side), ::core::convert::Into::into(arg), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"FuncImpl",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(side), ::core::convert::Into::into(arg),__mi)}
+}
 }
 #[doc="`TryFuncImpl(crate::app::unit::Unit, ::unity2::Il2CppString)` overload"]fn try_func_impl_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2278820usize)as*mut u8,f32;
 (GameCalculatorCommand)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
 }
 #[doc="`AddImpl(crate::app::unit::Unit, f32)` overload"]fn add_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::add_impl(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"AddImpl",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`AddImpl(crate::app::battleinfoside::BattleInfoSide, f32)` overload"]fn add_impl_2(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::add_impl_2(__receiver, ::core::convert::Into::into(side), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"AddImpl",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(side), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`ScaleImpl(crate::app::unit::Unit, f32)` overload"]fn scale_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::scale_impl(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"ScaleImpl",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::unit::Unit,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`ScaleImpl(crate::app::battleinfoside::BattleInfoSide, f32)` overload"]fn scale_impl_2(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::scale_impl_2(__receiver, ::core::convert::Into::into(side), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"ScaleImpl",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::app::battleinfoside::BattleInfoSide,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(side), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`GetInvalid()` overload"]fn get_invalid(self,)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::get_invalid(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"GetInvalid",));
+let __inner:extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Get(crate::system::object::Object)` overload"]fn get(self,obj:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::get(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Get",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`Get(crate::system::object::Object, crate::system::object::Object)` overload"]fn get_2(self,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::get_2(__receiver, ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Get",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2),__mi)}
+}
 }
 #[doc="`Set(f32, crate::system::object::Object)` overload"]fn set(self,value:impl::core::convert::Into<f32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::set(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Set",));
+let __inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`Set(f32, crate::system::object::Object, crate::system::object::Object)` overload"]fn set_2(self,value:impl::core::convert::Into<f32> ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::set_2(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Set",));
+let __inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2),__mi)}
+}
 }
 #[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object)` overload"]fn func(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> > ,obj:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::func(__receiver, ::core::convert::Into::into(args), ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::system::collections::generic::list_1::List_1<f32> ,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(args), ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object, crate::system::object::Object)` overload"]fn func_2(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> > ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::func_2(__receiver, ::core::convert::Into::into(args), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let __inner:extern "C" fn(GameCalculatorCommand,crate::system::collections::generic::list_1::List_1<f32> ,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(args), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2),__mi)}
+}
 }
 #[doc="`Func(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn func_3(self,arg:impl::core::convert::Into< ::unity2::Il2CppString> ,obj:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::func_3(__receiver, ::core::convert::Into::into(arg), ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let __inner:extern "C" fn(GameCalculatorCommand, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(arg), ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`Func(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]fn func_4(self,arg:impl::core::convert::Into< ::unity2::Il2CppString> ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::func_4(__receiver, ::core::convert::Into::into(arg), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let __inner:extern "C" fn(GameCalculatorCommand, ::unity2::Il2CppString,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(arg), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2),__mi)}
+}
 }
 #[doc="`Add(f32, crate::system::object::Object)` overload"]fn add(self,value:impl::core::convert::Into<f32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::add(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Add",));
+let __inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`Add(f32, crate::system::object::Object, crate::system::object::Object)` overload"]fn add_2(self,value:impl::core::convert::Into<f32> ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::add_2(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Add",));
+let __inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2),__mi)}
+}
 }
 #[doc="`Scale(f32, crate::system::object::Object)` overload"]fn scale(self,value:impl::core::convert::Into<f32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::scale(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Scale",));
+let __inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`Scale(f32, crate::system::object::Object, crate::system::object::Object)` overload"]fn scale_2(self,value:impl::core::convert::Into<f32> ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::scale_2(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"Scale",));
+let __inner:extern "C" fn(GameCalculatorCommand,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2),__mi)}
+}
 }
 #[doc="`get_Header()` overload"]fn get_header(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::get_header(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"get_Header",));
+let __inner:extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Reverse()` overload"]fn reverse(self,)->crate::app::gamecalculatorcommand::GameCalculatorCommand{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22791b0usize)as*mut u8,crate::app::gamecalculatorcommand::GameCalculatorCommand;
@@ -402,7 +363,16 @@ __GameCalculatorCommand_unity2_raw::get_header(__receiver, ::core::option::Optio
 (GameCalculatorCommand)__receiver)}
 }
 #[doc="`IsVisible()` overload"]fn is_visible(self,)->bool{unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameCalculatorCommand_unity2_raw::is_visible(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <GameCalculatorCommand as::unity2::ClassIdentity> ::NAME,"IsVisible",));
+let __inner:extern "C" fn(GameCalculatorCommand, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameCalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22792e0usize)as*mut u8,();
@@ -448,6 +418,89 @@ pub fn is_reverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
 pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+}
+
+#[cfg(feature="app-gamecalculatorcommand")]impl GameCalculatorCommand{#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `GetImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,)->f32{let __mi=Self::get_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `GetImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_impl_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,side:crate::app::battleinfoside::BattleInfoSide,)->f32{let __mi=Self::get_impl_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),side, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `SetImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,value:f32,)->(){let __mi=Self::set_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `SetImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_impl_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,side:crate::app::battleinfoside::BattleInfoSide,value:f32,)->(){let __mi=Self::set_impl_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::battleinfoside::BattleInfoSide,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),side,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `FuncImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn func_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,args:crate::system::collections::generic::list_1::List_1<f32> ,)->f32{let __mi=Self::func_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit,crate::system::collections::generic::list_1::List_1<f32> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit,args, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `FuncImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn func_impl_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,side:crate::app::battleinfoside::BattleInfoSide,args:crate::system::collections::generic::list_1::List_1<f32> ,)->f32{let __mi=Self::func_impl_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::battleinfoside::BattleInfoSide,crate::system::collections::generic::list_1::List_1<f32> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),side,args, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `FuncImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn func_impl_3(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,arg: ::unity2::Il2CppString,)->f32{let __mi=Self::func_impl_3_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit,arg, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `FuncImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn func_impl_4(this:impl::core::convert::Into< ::unity2::IlInstance> ,side:crate::app::battleinfoside::BattleInfoSide,arg: ::unity2::Il2CppString,)->f32{let __mi=Self::func_impl_4_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::battleinfoside::BattleInfoSide, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),side,arg, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `AddImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,value:f32,)->(){let __mi=Self::add_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `AddImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add_impl_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,side:crate::app::battleinfoside::BattleInfoSide,value:f32,)->(){let __mi=Self::add_impl_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::battleinfoside::BattleInfoSide,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),side,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `ScaleImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn scale_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,value:f32,)->(){let __mi=Self::scale_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `ScaleImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn scale_impl_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,side:crate::app::battleinfoside::BattleInfoSide,value:f32,)->(){let __mi=Self::scale_impl_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::battleinfoside::BattleInfoSide,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),side,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `GetInvalid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_invalid(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_invalid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Get`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)->f32{let __mi=Self::get_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Get`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj1:crate::system::object::Object,obj2:crate::system::object::Object,)->f32{let __mi=Self::get_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj1,obj2, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,obj:crate::system::object::Object,)->(){let __mi=Self::set_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value,obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,obj1:crate::system::object::Object,obj2:crate::system::object::Object,)->(){let __mi=Self::set_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value,obj1,obj2, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Func`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn func(this:impl::core::convert::Into< ::unity2::IlInstance> ,args:crate::system::collections::generic::list_1::List_1<f32> ,obj:crate::system::object::Object,)->f32{let __mi=Self::func_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::list_1::List_1<f32> ,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),args,obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Func`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn func_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,args:crate::system::collections::generic::list_1::List_1<f32> ,obj1:crate::system::object::Object,obj2:crate::system::object::Object,)->f32{let __mi=Self::func_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::list_1::List_1<f32> ,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),args,obj1,obj2, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Func`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn func_3(this:impl::core::convert::Into< ::unity2::IlInstance> ,arg: ::unity2::Il2CppString,obj:crate::system::object::Object,)->f32{let __mi=Self::func_3_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),arg,obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Func`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn func_4(this:impl::core::convert::Into< ::unity2::IlInstance> ,arg: ::unity2::Il2CppString,obj1:crate::system::object::Object,obj2:crate::system::object::Object,)->f32{let __mi=Self::func_4_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),arg,obj1,obj2, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,obj:crate::system::object::Object,)->(){let __mi=Self::add_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value,obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,obj1:crate::system::object::Object,obj2:crate::system::object::Object,)->(){let __mi=Self::add_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value,obj1,obj2, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Scale`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn scale(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,obj:crate::system::object::Object,)->(){let __mi=Self::scale_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value,obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `Scale`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn scale_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,obj1:crate::system::object::Object,obj2:crate::system::object::Object,)->(){let __mi=Self::scale_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value,obj1,obj2, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `get_Header`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_header(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_header_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameCalculatorCommand`'s own `IsVisible`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_visible(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_visible_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-gamecalculatorcommand")]impl GameCalculatorCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

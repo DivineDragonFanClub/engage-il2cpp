@@ -31,16 +31,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionDefinitionStatement as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn compile(this:FunctionDefinitionStatement,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <FunctionDefinitionStatement as::unity2::ClassIdentity> ::NAME,"Compile",));
-let inner:extern "C" fn(FunctionDefinitionStatement,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,bc,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_method{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionDefinitionStatement as::unity2::ClassIdentity> ::class(),"SetMethod",1,param_types,false,)}
@@ -68,7 +58,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (FunctionDefinitionStatement)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext),(bool)::core::convert::Into::into(local),(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(local_token))}
 }
 #[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <FunctionDefinitionStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionDefinitionStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <FunctionDefinitionStatement as::unity2::ClassIdentity> ::NAME,"Compile",));
+let __inner:extern "C" fn(FunctionDefinitionStatement,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(bc),__mi)}
+}
 }
 #[doc="`SetMethod(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn set_method(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->i32{unsafe{let __receiver= <FunctionDefinitionStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FunctionDefinitionStatement_unity2_raw::__lookup_set_method::get_method_info().method_ptr,i32;
@@ -86,6 +85,11 @@ __FunctionDefinitionStatement_unity2_raw::compile(__receiver, ::core::convert::I
 pub fn compile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn set_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn set_function_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-tree-statements-functiondefinitionstatement")]impl FunctionDefinitionStatement{#[doc="Direct (non-virtual) call to `FunctionDefinitionStatement`'s own `Compile`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compile(this:impl::core::convert::Into< ::unity2::IlInstance> ,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,)->(){let __mi=Self::compile_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),bc, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-statements-functiondefinitionstatement")]impl FunctionDefinitionStatement{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, bool, crate::moon_sharp::interpreter::tree::token::Token)` — overload selector"]pub fn new(lcontext:crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,local:bool,local_token:crate::moon_sharp::interpreter::tree::token::Token)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

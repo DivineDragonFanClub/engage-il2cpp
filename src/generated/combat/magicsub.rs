@@ -24,19 +24,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "combat-magicsub-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-magicsub")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MagicSub_unity2_raw{use super:: * ;
-pub unsafe fn setup(this:MagicSub,chr:crate::combat::character::Character,initial_start_pos: *mut crate::unity_engine::vector3::Vector3,initial_end_pos: *mut crate::unity_engine::vector3::Vector3,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MagicSub as::unity2::ClassIdentity> ::NAME,"Setup",));
-let inner:extern "C" fn(MagicSub,crate::combat::character::Character, *mut crate::unity_engine::vector3::Vector3, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,chr,initial_start_pos,initial_end_pos,__mi)}
-}
-
 #[cfg(feature="combat-magicsub")]pub trait IMagicSubMethods:IMagicSub{#[doc="`Track(i32)` overload"]fn track(self,i:impl::core::convert::Into<i32>)->crate::combat::magicsignaltrack::MagicSignalTrack{unsafe{let __receiver= <MagicSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5c10usize)as*mut u8,crate::combat::magicsignaltrack::MagicSignalTrack;
 (MagicSub)__receiver,(i32)::core::convert::Into::into(i))}
@@ -44,7 +31,16 @@ inner(this,chr,initial_start_pos,initial_end_pos,__mi)}
 #[doc="`Setup(crate::combat::character::Character, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]fn setup(self,chr:impl::core::convert::Into<crate::combat::character::Character>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let __receiver= <MagicSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
-__MagicSub_unity2_raw::setup(__receiver, ::core::convert::Into::into(chr),__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MagicSub as::unity2::ClassIdentity> ::NAME,"Setup",));
+let __inner:extern "C" fn(MagicSub,crate::combat::character::Character, *mut crate::unity_engine::vector3::Vector3, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(chr),__out_0.as_mut_ptr(),__out_1.as_mut_ptr(),__mi)}
+;
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`ManualUpdate()` overload"]fn manual_update(self,)->(){unsafe{let __receiver= <MagicSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -63,6 +59,11 @@ __MagicSub_unity2_raw::setup(__receiver, ::core::convert::Into::into(chr),__out_
 pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn manual_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="combat-magicsub")]impl MagicSub{#[doc="Direct (non-virtual) call to `MagicSub`'s own `Setup`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup(this:impl::core::convert::Into< ::unity2::IlInstance> ,chr:crate::combat::character::Character,initial_start_pos: *mut crate::unity_engine::vector3::Vector3,initial_end_pos: *mut crate::unity_engine::vector3::Vector3,)->(){let __mi=Self::setup_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::combat::character::Character, *mut crate::unity_engine::vector3::Vector3, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),chr,initial_start_pos,initial_end_pos, ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-magicsub")]impl MagicSub{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

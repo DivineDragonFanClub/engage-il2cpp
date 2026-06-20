@@ -30,16 +30,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <GlobalPerformanceStopwatch as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn get_result(this:GlobalPerformanceStopwatch,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GlobalPerformanceStopwatch as::unity2::ClassIdentity> ::NAME,"GetResult",));
-let inner:extern "C" fn(GlobalPerformanceStopwatch, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch")]pub trait IGlobalPerformanceStopwatchMethods:IGlobalPerformanceStopwatch{#[doc="`.ctor(crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter)` overload"]fn ctor(self,perfcounter:impl::core::convert::Into<crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter>)->(){unsafe{let __receiver= <GlobalPerformanceStopwatch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -47,7 +37,16 @@ inner(this,__mi)}
 (GlobalPerformanceStopwatch)__receiver,(crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter)::core::convert::Into::into(perfcounter))}
 }
 #[doc="`GetResult()` overload"]fn get_result(self,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult{unsafe{let __receiver= <GlobalPerformanceStopwatch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GlobalPerformanceStopwatch_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GlobalPerformanceStopwatch as::unity2::ClassIdentity> ::NAME,"GetResult",));
+let __inner:extern "C" fn(GlobalPerformanceStopwatch, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -55,6 +54,11 @@ __GlobalPerformanceStopwatch_unity2_raw::get_result(__receiver, ::core::option::
 
 #[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch")]impl GlobalPerformanceStopwatch{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch")]impl GlobalPerformanceStopwatch{#[doc="Direct (non-virtual) call to `GlobalPerformanceStopwatch`'s own `GetResult`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_result(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult{let __mi=Self::get_result_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch")]impl GlobalPerformanceStopwatch{#[doc="`.ctor(crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter)` — overload selector"]pub fn new(perfcounter:crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -75,16 +79,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn dispose(this:GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch")]pub trait IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObjectMethods:IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject{#[doc="`.ctor(crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch)` overload"]fn ctor(self,parent:impl::core::convert::Into<crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch>)->(){unsafe{let __receiver= <GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -92,7 +86,16 @@ inner(this,__mi)}
 (GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject)__receiver,(crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch)::core::convert::Into::into(parent))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -100,6 +103,11 @@ __GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject_unity2_r
 
 #[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch")]impl GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch")]impl GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject{#[doc="Direct (non-virtual) call to `GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch")]impl GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject{#[doc="`.ctor(crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch)` — overload selector"]pub fn new(parent:crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

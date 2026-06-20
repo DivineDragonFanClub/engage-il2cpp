@@ -19,10 +19,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaytakeovermenu/RelayTakeOverMenu.md"))]#[::unity2::class(namespace="App",name="RelayTakeOverMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RelayTakeOverMenu{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaytakeovermenu/RelayTakeOverMenu_MenuItem.md"))]#[::unity2::class(namespace="App",name="RelayTakeOverMenu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RelayTakeOverMenu_MenuItem{#[offset(104)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(112)]#[rename(name="m_CommentText")]pub m_comment_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_NameLabel")]pub m_name_label: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_CommentLabel")]pub m_comment_label: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_Mode")]pub m_mode:crate::app::relay::Relay_TakeOverModes,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaytakeovermenu/RelayTakeOverMenu.md"))]#[::unity2::class(namespace="App",name="RelayTakeOverMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RelayTakeOverMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaytakeovermenu/RelayTakeOverMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayTakeOverMenu_Result2{pub value:i32,}
@@ -45,27 +45,72 @@ pub fn data_code()->Self{Self{value:1}
 #[cfg(feature = "app-relaytakeovermenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-relaytakeovermenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayTakeOverMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:RelayTakeOverMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-relaytakeovermenu")]pub trait IRelayTakeOverMenu_MenuItemMethods:IRelayTakeOverMenu_MenuItem{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)` overload"]fn ctor(self,menu_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,result:impl::core::convert::Into<crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2>)->(){unsafe{let __receiver= <RelayTakeOverMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c040usize)as*mut u8,();
+(RelayTakeOverMenu_MenuItem)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_obj),(crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)::core::convert::Into::into(result))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayTakeOverMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",30usize,__vt.len(), <RelayTakeOverMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RelayTakeOverMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <RelayTakeOverMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RelayTakeOverMenu_MenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_tutorial(this:RelayTakeOverMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayTakeOverMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",63usize,__vt.len(), <RelayTakeOverMenu as::unity2::ClassIdentity> ::NAME,"GetTutorial",));
-let inner:extern "C" fn(RelayTakeOverMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <RelayTakeOverMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RelayTakeOverMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RelayTakeOverMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RelayTakeOverMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(RelayTakeOverMenu_MenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-relaytakeovermenu")]impl<__T:IRelayTakeOverMenu_MenuItem>IRelayTakeOverMenu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-relaytakeovermenu")]impl RelayTakeOverMenu_MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-relaytakeovermenu")]impl RelayTakeOverMenu_MenuItem{#[doc="Direct (non-virtual) call to `RelayTakeOverMenu_MenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayTakeOverMenu_MenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayTakeOverMenu_MenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-relaytakeovermenu")]impl RelayTakeOverMenu_MenuItem{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)` — overload selector"]pub fn new(menu_obj:crate::unity_engine::gameobject::GameObject,result:crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayTakeOverMenu_MenuItem), ::core::stringify!(new),));
+ <Self as IRelayTakeOverMenu_MenuItemMethods> ::ctor(this,menu_obj,result);
+this}
 }
 
 #[cfg(feature="app-relaytakeovermenu")]impl RelayTakeOverMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200d600usize)as*mut u8,();
@@ -78,10 +123,28 @@ inner(this,__mi)}
 (RelayTakeOverMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::relaymodemenucontent::RelayModeMenuContent)::core::convert::Into::into(menu_content),(crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)::core::convert::Into::into(initial_selected))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayTakeOverMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayTakeOverMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RelayTakeOverMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RelayTakeOverMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayTakeOverMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayTakeOverMenu_unity2_raw::get_tutorial(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",63usize,__vt.len(), <RelayTakeOverMenu as::unity2::ClassIdentity> ::NAME,"GetTutorial",));
+let __inner:extern "C" fn(RelayTakeOverMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -93,6 +156,14 @@ pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-relaytakeovermenu")]impl RelayTakeOverMenu{#[doc="Direct (non-virtual) call to `RelayTakeOverMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayTakeOverMenu`'s own `GetTutorial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_tutorial(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_tutorial_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-relaytakeovermenu")]impl RelayTakeOverMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymodemenucontent::RelayModeMenuContent, crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::relaymodemenucontent::RelayModeMenuContent,initial_selected:crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RelayTakeOverMenu), ::core::stringify!(new),));
@@ -100,78 +171,15 @@ pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 this}
 }
 
-#[cfg(feature="app-relaytakeovermenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayTakeOverMenu_MenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:RelayTakeOverMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <RelayTakeOverMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RelayTakeOverMenu_MenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:RelayTakeOverMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <RelayTakeOverMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RelayTakeOverMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_select(this:RelayTakeOverMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <RelayTakeOverMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(RelayTakeOverMenu_MenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-relaytakeovermenu")]pub trait IRelayTakeOverMenu_MenuItemMethods:IRelayTakeOverMenu_MenuItem{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)` overload"]fn ctor(self,menu_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,result:impl::core::convert::Into<crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2>)->(){unsafe{let __receiver= <RelayTakeOverMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c040usize)as*mut u8,();
-(RelayTakeOverMenu_MenuItem)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_obj),(crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)::core::convert::Into::into(result))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayTakeOverMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayTakeOverMenu_MenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayTakeOverMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayTakeOverMenu_MenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RelayTakeOverMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayTakeOverMenu_MenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-relaytakeovermenu")]impl<__T:IRelayTakeOverMenu_MenuItem>IRelayTakeOverMenu_MenuItemMethods for __T{}
-
-#[cfg(feature="app-relaytakeovermenu")]impl RelayTakeOverMenu_MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-relaytakeovermenu")]impl RelayTakeOverMenu_MenuItem{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)` — overload selector"]pub fn new(menu_obj:crate::unity_engine::gameobject::GameObject,result:crate::app::relaytakeovermenu::RelayTakeOverMenu_Result2)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayTakeOverMenu_MenuItem), ::core::stringify!(new),));
- <Self as IRelayTakeOverMenu_MenuItemMethods> ::ctor(this,menu_obj,result);
-this}
-}
-
 #[cfg(feature = "app-relaytakeovermenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayTakeOverMenu;
-    pub use super::IRelayTakeOverMenu;
-    pub use super::IRelayTakeOverMenuMethods;
     pub use super::RelayTakeOverMenu_MenuItem;
     pub use super::IRelayTakeOverMenu_MenuItem;
     pub use super::IRelayTakeOverMenu_MenuItemMethods;
+    pub use super::RelayTakeOverMenu;
+    pub use super::IRelayTakeOverMenu;
+    pub use super::IRelayTakeOverMenuMethods;
     pub use super::RelayTakeOverMenu_Result2;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

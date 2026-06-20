@@ -16,39 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-androidjavaobject-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-androidjavaobject")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AndroidJavaObject_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:AndroidJavaObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AndroidJavaObject as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(AndroidJavaObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn finalize(this:AndroidJavaObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <AndroidJavaObject as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(AndroidJavaObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose_2(this:AndroidJavaObject,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <AndroidJavaObject as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(AndroidJavaObject,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,disposing,__mi)}
-}
-
 #[cfg(feature="unity_engine-androidjavaobject")]impl AndroidJavaObject{#[doc="`AndroidJavaObjectDeleteLocalRef(::unity2::IntPtr)` overload"]pub fn android_java_object_delete_local_ref(jobject:impl::core::convert::Into< ::unity2::IntPtr>)->crate::unity_engine::androidjavaobject::AndroidJavaObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f126e0usize)as*mut u8,crate::unity_engine::androidjavaobject::AndroidJavaObject;
 (::unity2::IntPtr)::core::convert::Into::into(jobject))}
 }
@@ -65,7 +32,16 @@ inner(this,disposing,__mi)}
 (AndroidJavaObject)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(class_name),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AndroidJavaObject_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AndroidJavaObject as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(AndroidJavaObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetRawObject()` overload"]fn get_raw_object(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f12260usize)as*mut u8, ::unity2::IntPtr;
@@ -134,10 +110,28 @@ __f(__receiver, ::core::convert::Into::into(method_name), ::core::convert::Into:
 (AndroidJavaObject)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AndroidJavaObject_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AndroidJavaObject as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(AndroidJavaObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose_2(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AndroidJavaObject_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AndroidJavaObject as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(AndroidJavaObject,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
+}
 }
 }
 
@@ -156,6 +150,17 @@ pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn android_java_object_delete_local_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
 pub fn android_java_class_delete_local_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="unity_engine-androidjavaobject")]impl AndroidJavaObject{#[doc="Direct (non-virtual) call to `AndroidJavaObject`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AndroidJavaObject`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AndroidJavaObject`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),disposing, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-androidjavaobject")]impl AndroidJavaObject{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"]pub fn new(class_name: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

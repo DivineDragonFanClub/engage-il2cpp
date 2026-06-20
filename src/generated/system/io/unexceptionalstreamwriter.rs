@@ -20,73 +20,65 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-unexceptionalstreamwriter-types")]
 pub use __types::*;
 
-#[cfg(feature="system-io-unexceptionalstreamwriter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnexceptionalStreamWriter_unity2_raw{use super:: * ;
-pub unsafe fn flush(this:UnexceptionalStreamWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-io-unexceptionalstreamwriter")]pub trait IUnexceptionalStreamWriterMethods:IUnexceptionalStreamWriter{#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <UnexceptionalStreamWriter as::unity2::ClassIdentity> ::NAME,"Flush",));
-let inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn write(this:UnexceptionalStreamWriter,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",14usize,__vt.len(), <UnexceptionalStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,buffer,index,count,__mi)}
-pub unsafe fn write_2(this:UnexceptionalStreamWriter,value:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count),__mi)}
+}
+}
+#[doc="`Write(u16)` overload"]fn write_2(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",12usize,__vt.len(), <UnexceptionalStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(UnexceptionalStreamWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(UnexceptionalStreamWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_3(this:UnexceptionalStreamWriter,value: ::unity2::Array<u16> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`Write(::unity2::Array<u16>)` overload"]fn write_3(self,value:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",13usize,__vt.len(), <UnexceptionalStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_4(this:UnexceptionalStreamWriter,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",15usize,__vt.len(), <UnexceptionalStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="system-io-unexceptionalstreamwriter")]pub trait IUnexceptionalStreamWriterMethods:IUnexceptionalStreamWriter{#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnexceptionalStreamWriter_unity2_raw::flush(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnexceptionalStreamWriter_unity2_raw::write(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
-}
-#[doc="`Write(u16)` overload"]fn write_2(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnexceptionalStreamWriter_unity2_raw::write_2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`Write(::unity2::Array<u16>)` overload"]fn write_3(self,value:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnexceptionalStreamWriter_unity2_raw::write_3(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnexceptionalStreamWriter_unity2_raw::write_4(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 }
 
@@ -97,6 +89,23 @@ pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn write_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn write_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-io-unexceptionalstreamwriter")]impl UnexceptionalStreamWriter{#[doc="Direct (non-virtual) call to `UnexceptionalStreamWriter`'s own `Flush`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn flush(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::flush_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnexceptionalStreamWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::Array<u16> ,index:i32,count:i32,)->(){let __mi=Self::write_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),buffer,index,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnexceptionalStreamWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:u16,)->(){let __mi=Self::write_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnexceptionalStreamWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_3(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Array<u16> ,)->(){let __mi=Self::write_3_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnexceptionalStreamWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_4(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::write_4_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "system-io-unexceptionalstreamwriter")]

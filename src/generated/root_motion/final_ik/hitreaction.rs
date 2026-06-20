@@ -19,242 +19,27 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreaction/HitReaction_HitPointBone_BoneLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReaction.HitPointBone.BoneLink")]#[parent(crate::system::object::Object)]pub struct HitReaction_HitPointBone_BoneLink{#[offset(16)]#[rename(name="bone")]pub bone:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="weight")]pub weight:f32, #[offset(28)]#[rename(name="lastValue")]pub last_value:crate::unity_engine::quaternion::Quaternion, #[offset(44)]#[rename(name="current")]pub current:crate::unity_engine::quaternion::Quaternion,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreaction/HitReaction_HitPointEffector.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReaction.HitPointEffector")]#[parent(crate::root_motion::final_ik::hitreaction::HitReaction_HitPoint)]pub struct HitReaction_HitPointEffector{#[offset(80)]#[rename(name="offsetInForceDirection")]pub offset_in_force_direction:crate::unity_engine::animationcurve::AnimationCurve, #[offset(88)]#[rename(name="offsetInUpDirection")]pub offset_in_up_direction:crate::unity_engine::animationcurve::AnimationCurve, #[offset(96)]#[rename(name="effectorLinks")]pub effector_links: ::unity2::Array<crate::root_motion::final_ik::hitreaction::HitReaction_HitPointEffector_EffectorLink> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreaction/HitReaction_HitPointBone.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReaction.HitPointBone")]#[parent(crate::root_motion::final_ik::hitreaction::HitReaction_HitPoint)]pub struct HitReaction_HitPointBone{#[offset(80)]#[rename(name="aroundCenterOfMass")]pub around_center_of_mass:crate::unity_engine::animationcurve::AnimationCurve, #[offset(88)]#[rename(name="boneLinks")]pub bone_links: ::unity2::Array<crate::root_motion::final_ik::hitreaction::HitReaction_HitPointBone_BoneLink> , #[offset(96)]#[rename(name="rigidbody")]pub rigidbody:crate::unity_engine::rigidbody::Rigidbody,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreaction/HitReaction_HitPointEffector_EffectorLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReaction.HitPointEffector.EffectorLink")]#[parent(crate::system::object::Object)]pub struct HitReaction_HitPointEffector_EffectorLink{#[offset(16)]#[rename(name="effector")]pub effector:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, #[offset(20)]#[rename(name="weight")]pub weight:f32, #[offset(24)]#[rename(name="lastValue")]pub last_value:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="current")]pub current:crate::unity_engine::vector3::Vector3,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreaction/HitReaction_HitPoint.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReaction.HitPoint")]#[parent(crate::system::object::Object)]pub struct HitReaction_HitPoint{#[offset(16)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="collider")]pub collider:crate::unity_engine::collider::Collider, #[offset(32)]#[rename(name="crossFadeTime")]pub cross_fade_time:f32, #[offset(68)]#[rename(name="length")]pub length:f32, #[offset(72)]#[rename(name="crossFadeSpeed")]pub cross_fade_speed:f32, #[offset(76)]#[rename(name="lastTime")]pub last_time:f32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreaction/HitReaction.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReaction")]#[parent(crate::root_motion::final_ik::offsetmodifier::OffsetModifier)]pub struct HitReaction{#[offset(48)]#[rename(name="effectorHitPoints")]pub effector_hit_points: ::unity2::Array<crate::root_motion::final_ik::hitreaction::HitReaction_HitPointEffector> , #[offset(56)]#[rename(name="boneHitPoints")]pub bone_hit_points: ::unity2::Array<crate::root_motion::final_ik::hitreaction::HitReaction_HitPointBone> ,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreaction/HitReaction_HitPointBone_BoneLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReaction.HitPointBone.BoneLink")]#[parent(crate::system::object::Object)]pub struct HitReaction_HitPointBone_BoneLink{#[offset(16)]#[rename(name="bone")]pub bone:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="weight")]pub weight:f32, #[offset(28)]#[rename(name="lastValue")]pub last_value:crate::unity_engine::quaternion::Quaternion, #[offset(44)]#[rename(name="current")]pub current:crate::unity_engine::quaternion::Quaternion,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreaction/HitReaction_HitPointBone.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReaction.HitPointBone")]#[parent(crate::root_motion::final_ik::hitreaction::HitReaction_HitPoint)]pub struct HitReaction_HitPointBone{#[offset(80)]#[rename(name="aroundCenterOfMass")]pub around_center_of_mass:crate::unity_engine::animationcurve::AnimationCurve, #[offset(88)]#[rename(name="boneLinks")]pub bone_links: ::unity2::Array<crate::root_motion::final_ik::hitreaction::HitReaction_HitPointBone_BoneLink> , #[offset(96)]#[rename(name="rigidbody")]pub rigidbody:crate::unity_engine::rigidbody::Rigidbody,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreaction/HitReaction_HitPointEffector.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReaction.HitPointEffector")]#[parent(crate::root_motion::final_ik::hitreaction::HitReaction_HitPoint)]pub struct HitReaction_HitPointEffector{#[offset(80)]#[rename(name="offsetInForceDirection")]pub offset_in_force_direction:crate::unity_engine::animationcurve::AnimationCurve, #[offset(88)]#[rename(name="offsetInUpDirection")]pub offset_in_up_direction:crate::unity_engine::animationcurve::AnimationCurve, #[offset(96)]#[rename(name="effectorLinks")]pub effector_links: ::unity2::Array<crate::root_motion::final_ik::hitreaction::HitReaction_HitPointEffector_EffectorLink> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreaction/HitReaction_HitPointEffector_EffectorLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReaction.HitPointEffector.EffectorLink")]#[parent(crate::system::object::Object)]pub struct HitReaction_HitPointEffector_EffectorLink{#[offset(16)]#[rename(name="effector")]pub effector:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, #[offset(20)]#[rename(name="weight")]pub weight:f32, #[offset(24)]#[rename(name="lastValue")]pub last_value:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="current")]pub current:crate::unity_engine::vector3::Vector3,}
+
 }
 
 #[cfg(feature = "root_motion-final_ik-hitreaction-types")]
 pub use __types::*;
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]pub trait IHitReaction_HitPointBone_BoneLinkMethods:IHitReaction_HitPointBone_BoneLink{#[doc="`Apply(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped, crate::unity_engine::quaternion::Quaternion, f32)` overload"]fn apply(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped> ,offset:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,cross_fader:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReaction_HitPointBone_BoneLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63600usize)as*mut u8,();
-(HitReaction_HitPointBone_BoneLink)__receiver,(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped)::core::convert::Into::into(solver),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(offset),(f32)::core::convert::Into::into(cross_fader))}
-}
-#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReaction_HitPointBone_BoneLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63710usize)as*mut u8,();
-(HitReaction_HitPointBone_BoneLink)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReaction_HitPointBone_BoneLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63730usize)as*mut u8,();
-(HitReaction_HitPointBone_BoneLink)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl<__T:IHitReaction_HitPointBone_BoneLink>IHitReaction_HitPointBone_BoneLinkMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointBone_BoneLink{pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointBone_BoneLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HitReaction_HitPointBone_BoneLink), ::core::stringify!(new),));
- <Self as IHitReaction_HitPointBone_BoneLinkMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HitReaction_HitPointEffector_unity2_raw{use super:: * ;
-pub unsafe fn get_length(this:HitReaction_HitPointEffector,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HitReaction_HitPointEffector as::unity2::ClassIdentity> ::NAME,"GetLength",));
-let inner:extern "C" fn(HitReaction_HitPointEffector, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn cross_fade_start(this:HitReaction_HitPointEffector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <HitReaction_HitPointEffector as::unity2::ClassIdentity> ::NAME,"CrossFadeStart",));
-let inner:extern "C" fn(HitReaction_HitPointEffector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_apply(this:HitReaction_HitPointEffector,solver:crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,weight:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <HitReaction_HitPointEffector as::unity2::ClassIdentity> ::NAME,"OnApply",));
-let inner:extern "C" fn(HitReaction_HitPointEffector,crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,solver,weight,__mi)}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]pub trait IHitReaction_HitPointEffectorMethods:IHitReaction_HitPointEffector{#[doc="`GetLength()` overload"]fn get_length(self,)->f32{unsafe{let __receiver= <HitReaction_HitPointEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HitReaction_HitPointEffector_unity2_raw::get_length(__receiver, ::core::option::Option::None)}
-}
-#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReaction_HitPointEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HitReaction_HitPointEffector_unity2_raw::cross_fade_start(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnApply(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped, f32)` overload"]fn on_apply(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReaction_HitPointEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HitReaction_HitPointEffector_unity2_raw::on_apply(__receiver, ::core::convert::Into::into(solver), ::core::convert::Into::into(weight), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReaction_HitPointEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce1e80usize)as*mut u8,();
-(HitReaction_HitPointEffector)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl<__T:IHitReaction_HitPointEffector>IHitReaction_HitPointEffectorMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointEffector{pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointEffector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HitReaction_HitPointEffector), ::core::stringify!(new),));
- <Self as IHitReaction_HitPointEffectorMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HitReaction_HitPointBone_unity2_raw{use super:: * ;
-pub unsafe fn get_length(this:HitReaction_HitPointBone,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HitReaction_HitPointBone as::unity2::ClassIdentity> ::NAME,"GetLength",));
-let inner:extern "C" fn(HitReaction_HitPointBone, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn cross_fade_start(this:HitReaction_HitPointBone,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <HitReaction_HitPointBone as::unity2::ClassIdentity> ::NAME,"CrossFadeStart",));
-let inner:extern "C" fn(HitReaction_HitPointBone, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_apply(this:HitReaction_HitPointBone,solver:crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,weight:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <HitReaction_HitPointBone as::unity2::ClassIdentity> ::NAME,"OnApply",));
-let inner:extern "C" fn(HitReaction_HitPointBone,crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,solver,weight,__mi)}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]pub trait IHitReaction_HitPointBoneMethods:IHitReaction_HitPointBone{#[doc="`GetLength()` overload"]fn get_length(self,)->f32{unsafe{let __receiver= <HitReaction_HitPointBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HitReaction_HitPointBone_unity2_raw::get_length(__receiver, ::core::option::Option::None)}
-}
-#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReaction_HitPointBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HitReaction_HitPointBone_unity2_raw::cross_fade_start(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnApply(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped, f32)` overload"]fn on_apply(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReaction_HitPointBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HitReaction_HitPointBone_unity2_raw::on_apply(__receiver, ::core::convert::Into::into(solver), ::core::convert::Into::into(weight), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReaction_HitPointBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce1b90usize)as*mut u8,();
-(HitReaction_HitPointBone)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl<__T:IHitReaction_HitPointBone>IHitReaction_HitPointBoneMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointBone{pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointBone{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HitReaction_HitPointBone), ::core::stringify!(new),));
- <Self as IHitReaction_HitPointBoneMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]pub trait IHitReaction_HitPointEffector_EffectorLinkMethods:IHitReaction_HitPointEffector_EffectorLink{#[doc="`Apply(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped, crate::unity_engine::vector3::Vector3, f32)` overload"]fn apply(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped> ,offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,cross_fader:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReaction_HitPointEffector_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63790usize)as*mut u8,();
-(HitReaction_HitPointEffector_EffectorLink)__receiver,(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped)::core::convert::Into::into(solver),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(offset),(f32)::core::convert::Into::into(cross_fader))}
-}
-#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReaction_HitPointEffector_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63850usize)as*mut u8,();
-(HitReaction_HitPointEffector_EffectorLink)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReaction_HitPointEffector_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63870usize)as*mut u8,();
-(HitReaction_HitPointEffector_EffectorLink)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl<__T:IHitReaction_HitPointEffector_EffectorLink>IHitReaction_HitPointEffector_EffectorLinkMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointEffector_EffectorLink{pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointEffector_EffectorLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HitReaction_HitPointEffector_EffectorLink), ::core::stringify!(new),));
- <Self as IHitReaction_HitPointEffector_EffectorLinkMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreaction")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HitReaction_HitPoint_unity2_raw{use super:: * ;
-pub unsafe fn get_length(this:HitReaction_HitPoint,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HitReaction_HitPoint as::unity2::ClassIdentity> ::NAME,"GetLength",));
-let inner:extern "C" fn(HitReaction_HitPoint, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn cross_fade_start(this:HitReaction_HitPoint,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <HitReaction_HitPoint as::unity2::ClassIdentity> ::NAME,"CrossFadeStart",));
-let inner:extern "C" fn(HitReaction_HitPoint, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_apply(this:HitReaction_HitPoint,solver:crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,weight:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <HitReaction_HitPoint as::unity2::ClassIdentity> ::NAME,"OnApply",));
-let inner:extern "C" fn(HitReaction_HitPoint,crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,solver,weight,__mi)}
-}
 
 #[cfg(feature="root_motion-final_ik-hitreaction")]pub trait IHitReaction_HitPointMethods:IHitReaction_HitPoint{#[doc="`get_inProgress()` overload"]fn get_in_progress(self,)->bool{unsafe{let __receiver= <HitReaction_HitPoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce1630usize)as*mut u8,bool;
@@ -301,13 +86,40 @@ inner(this,solver,weight,__mi)}
 (HitReaction_HitPoint)__receiver,(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped)::core::convert::Into::into(solver),(f32)::core::convert::Into::into(weight))}
 }
 #[doc="`GetLength()` overload"]fn get_length(self,)->f32{unsafe{let __receiver= <HitReaction_HitPoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HitReaction_HitPoint_unity2_raw::get_length(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HitReaction_HitPoint as::unity2::ClassIdentity> ::NAME,"GetLength",));
+let __inner:extern "C" fn(HitReaction_HitPoint, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReaction_HitPoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HitReaction_HitPoint_unity2_raw::cross_fade_start(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <HitReaction_HitPoint as::unity2::ClassIdentity> ::NAME,"CrossFadeStart",));
+let __inner:extern "C" fn(HitReaction_HitPoint, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnApply(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped, f32)` overload"]fn on_apply(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReaction_HitPoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HitReaction_HitPoint_unity2_raw::on_apply(__receiver, ::core::convert::Into::into(solver), ::core::convert::Into::into(weight), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HitReaction_HitPoint as::unity2::ClassIdentity> ::NAME,"OnApply",));
+let __inner:extern "C" fn(HitReaction_HitPoint,crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(solver), ::core::convert::Into::into(weight),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReaction_HitPoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce1880usize)as*mut u8,();
@@ -334,6 +146,17 @@ pub fn on_apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
 }
 
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPoint{#[doc="Direct (non-virtual) call to `HitReaction_HitPoint`'s own `GetLength`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_length(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_length_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HitReaction_HitPoint`'s own `CrossFadeStart`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn cross_fade_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::cross_fade_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HitReaction_HitPoint`'s own `OnApply`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_apply(this:impl::core::convert::Into< ::unity2::IlInstance> ,solver:crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,weight:f32,)->(){let __mi=Self::on_apply_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),solver,weight, ::core::option::Option::None)}
+}
+
 #[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPoint{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(HitReaction_HitPoint), ::core::stringify!(new),));
@@ -341,25 +164,21 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-hitreaction")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HitReaction_unity2_raw{use super:: * ;
-pub unsafe fn on_modify_offset(this:HitReaction,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HitReaction as::unity2::ClassIdentity> ::NAME,"OnModifyOffset",));
-let inner:extern "C" fn(HitReaction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="root_motion-final_ik-hitreaction")]pub trait IHitReactionMethods:IHitReaction{#[doc="`get_inProgress()` overload"]fn get_in_progress(self,)->bool{unsafe{let __receiver= <HitReaction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2166b00usize)as*mut u8,bool;
 (HitReaction)__receiver)}
 }
 #[doc="`OnModifyOffset()` overload"]fn on_modify_offset(self,)->(){unsafe{let __receiver= <HitReaction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HitReaction_unity2_raw::on_modify_offset(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HitReaction as::unity2::ClassIdentity> ::NAME,"OnModifyOffset",));
+let __inner:extern "C" fn(HitReaction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Hit(crate::unity_engine::collider::Collider, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn hit(self,collider:impl::core::convert::Into<crate::unity_engine::collider::Collider> ,force:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,point:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <HitReaction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2166ca0usize)as*mut u8,();
@@ -379,6 +198,11 @@ pub fn hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction{#[doc="Direct (non-virtual) call to `HitReaction`'s own `OnModifyOffset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_modify_offset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_modify_offset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(HitReaction), ::core::stringify!(new),));
@@ -386,27 +210,219 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-hitreaction")]pub trait IHitReaction_HitPointBone_BoneLinkMethods:IHitReaction_HitPointBone_BoneLink{#[doc="`Apply(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped, crate::unity_engine::quaternion::Quaternion, f32)` overload"]fn apply(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped> ,offset:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,cross_fader:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReaction_HitPointBone_BoneLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63600usize)as*mut u8,();
+(HitReaction_HitPointBone_BoneLink)__receiver,(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped)::core::convert::Into::into(solver),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(offset),(f32)::core::convert::Into::into(cross_fader))}
+}
+#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReaction_HitPointBone_BoneLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63710usize)as*mut u8,();
+(HitReaction_HitPointBone_BoneLink)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReaction_HitPointBone_BoneLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63730usize)as*mut u8,();
+(HitReaction_HitPointBone_BoneLink)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl<__T:IHitReaction_HitPointBone_BoneLink>IHitReaction_HitPointBone_BoneLinkMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointBone_BoneLink{pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointBone_BoneLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HitReaction_HitPointBone_BoneLink), ::core::stringify!(new),));
+ <Self as IHitReaction_HitPointBone_BoneLinkMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]pub trait IHitReaction_HitPointBoneMethods:IHitReaction_HitPointBone{#[doc="`GetLength()` overload"]fn get_length(self,)->f32{unsafe{let __receiver= <HitReaction_HitPointBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HitReaction_HitPointBone as::unity2::ClassIdentity> ::NAME,"GetLength",));
+let __inner:extern "C" fn(HitReaction_HitPointBone, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReaction_HitPointBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <HitReaction_HitPointBone as::unity2::ClassIdentity> ::NAME,"CrossFadeStart",));
+let __inner:extern "C" fn(HitReaction_HitPointBone, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnApply(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped, f32)` overload"]fn on_apply(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReaction_HitPointBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HitReaction_HitPointBone as::unity2::ClassIdentity> ::NAME,"OnApply",));
+let __inner:extern "C" fn(HitReaction_HitPointBone,crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(solver), ::core::convert::Into::into(weight),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReaction_HitPointBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce1b90usize)as*mut u8,();
+(HitReaction_HitPointBone)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl<__T:IHitReaction_HitPointBone>IHitReaction_HitPointBoneMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointBone{pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointBone{#[doc="Direct (non-virtual) call to `HitReaction_HitPointBone`'s own `GetLength`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_length(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_length_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HitReaction_HitPointBone`'s own `CrossFadeStart`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn cross_fade_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::cross_fade_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HitReaction_HitPointBone`'s own `OnApply`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_apply(this:impl::core::convert::Into< ::unity2::IlInstance> ,solver:crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,weight:f32,)->(){let __mi=Self::on_apply_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),solver,weight, ::core::option::Option::None)}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointBone{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HitReaction_HitPointBone), ::core::stringify!(new),));
+ <Self as IHitReaction_HitPointBoneMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]pub trait IHitReaction_HitPointEffectorMethods:IHitReaction_HitPointEffector{#[doc="`GetLength()` overload"]fn get_length(self,)->f32{unsafe{let __receiver= <HitReaction_HitPointEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HitReaction_HitPointEffector as::unity2::ClassIdentity> ::NAME,"GetLength",));
+let __inner:extern "C" fn(HitReaction_HitPointEffector, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReaction_HitPointEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <HitReaction_HitPointEffector as::unity2::ClassIdentity> ::NAME,"CrossFadeStart",));
+let __inner:extern "C" fn(HitReaction_HitPointEffector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnApply(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped, f32)` overload"]fn on_apply(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReaction_HitPointEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HitReaction_HitPointEffector as::unity2::ClassIdentity> ::NAME,"OnApply",));
+let __inner:extern "C" fn(HitReaction_HitPointEffector,crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(solver), ::core::convert::Into::into(weight),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReaction_HitPointEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce1e80usize)as*mut u8,();
+(HitReaction_HitPointEffector)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl<__T:IHitReaction_HitPointEffector>IHitReaction_HitPointEffectorMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointEffector{pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointEffector{#[doc="Direct (non-virtual) call to `HitReaction_HitPointEffector`'s own `GetLength`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_length(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_length_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HitReaction_HitPointEffector`'s own `CrossFadeStart`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn cross_fade_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::cross_fade_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HitReaction_HitPointEffector`'s own `OnApply`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_apply(this:impl::core::convert::Into< ::unity2::IlInstance> ,solver:crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,weight:f32,)->(){let __mi=Self::on_apply_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),solver,weight, ::core::option::Option::None)}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointEffector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HitReaction_HitPointEffector), ::core::stringify!(new),));
+ <Self as IHitReaction_HitPointEffectorMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]pub trait IHitReaction_HitPointEffector_EffectorLinkMethods:IHitReaction_HitPointEffector_EffectorLink{#[doc="`Apply(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped, crate::unity_engine::vector3::Vector3, f32)` overload"]fn apply(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped> ,offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,cross_fader:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReaction_HitPointEffector_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63790usize)as*mut u8,();
+(HitReaction_HitPointEffector_EffectorLink)__receiver,(crate::root_motion::final_ik::iksolverfullbodybiped::IKSolverFullBodyBiped)::core::convert::Into::into(solver),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(offset),(f32)::core::convert::Into::into(cross_fader))}
+}
+#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReaction_HitPointEffector_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63850usize)as*mut u8,();
+(HitReaction_HitPointEffector_EffectorLink)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReaction_HitPointEffector_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63870usize)as*mut u8,();
+(HitReaction_HitPointEffector_EffectorLink)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl<__T:IHitReaction_HitPointEffector_EffectorLink>IHitReaction_HitPointEffector_EffectorLinkMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointEffector_EffectorLink{pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreaction")]impl HitReaction_HitPointEffector_EffectorLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HitReaction_HitPointEffector_EffectorLink), ::core::stringify!(new),));
+ <Self as IHitReaction_HitPointEffector_EffectorLinkMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root_motion-final_ik-hitreaction")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HitReaction_HitPointBone_BoneLink;
-    pub use super::IHitReaction_HitPointBone_BoneLink;
-    pub use super::IHitReaction_HitPointBone_BoneLinkMethods;
-    pub use super::HitReaction_HitPointEffector;
-    pub use super::IHitReaction_HitPointEffector;
-    pub use super::IHitReaction_HitPointEffectorMethods;
-    pub use super::HitReaction_HitPointBone;
-    pub use super::IHitReaction_HitPointBone;
-    pub use super::IHitReaction_HitPointBoneMethods;
-    pub use super::HitReaction_HitPointEffector_EffectorLink;
-    pub use super::IHitReaction_HitPointEffector_EffectorLink;
-    pub use super::IHitReaction_HitPointEffector_EffectorLinkMethods;
     pub use super::HitReaction_HitPoint;
     pub use super::IHitReaction_HitPoint;
     pub use super::IHitReaction_HitPointMethods;
     pub use super::HitReaction;
     pub use super::IHitReaction;
     pub use super::IHitReactionMethods;
+    pub use super::HitReaction_HitPointBone_BoneLink;
+    pub use super::IHitReaction_HitPointBone_BoneLink;
+    pub use super::IHitReaction_HitPointBone_BoneLinkMethods;
+    pub use super::HitReaction_HitPointBone;
+    pub use super::IHitReaction_HitPointBone;
+    pub use super::IHitReaction_HitPointBoneMethods;
+    pub use super::HitReaction_HitPointEffector;
+    pub use super::IHitReaction_HitPointEffector;
+    pub use super::IHitReaction_HitPointEffectorMethods;
+    pub use super::HitReaction_HitPointEffector_EffectorLink;
+    pub use super::IHitReaction_HitPointEffector_EffectorLink;
+    pub use super::IHitReaction_HitPointEffector_EffectorLinkMethods;
     pub use crate::root_motion::final_ik::offsetmodifier::IOffsetModifier;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

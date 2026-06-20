@@ -13,27 +13,82 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/transform/Transform.md"))]#[::unity2::class(namespace="UnityEngine",name="Transform")]#[parent(crate::unity_engine::component::Component)]pub struct Transform{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/transform/Transform_Enumerator.md"))]#[::unity2::class(namespace="UnityEngine",name="Transform.Enumerator")]#[parent(crate::system::object::Object)]pub struct Transform_Enumerator{#[offset(16)]#[rename(name="outer")]pub outer:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="currentIndex")]pub current_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/transform/Transform.md"))]#[::unity2::class(namespace="UnityEngine",name="Transform")]#[parent(crate::unity_engine::component::Component)]pub struct Transform{}
 
 }
 
 #[cfg(feature = "unity_engine-transform-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-transform")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Transform_unity2_raw{use super:: * ;
-pub unsafe fn get_enumerator(this:Transform,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-transform")]pub trait ITransform_EnumeratorMethods:ITransform_Enumerator{#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]fn ctor(self,outer:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <Transform_Enumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3792b60usize)as*mut u8,();
+(Transform_Enumerator)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(outer))}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <Transform_Enumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Transform_Enumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
+let __inner:extern "C" fn(Transform_Enumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <Transform_Enumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <Transform as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
-let inner:extern "C" fn(Transform, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <Transform_Enumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
+let __inner:extern "C" fn(Transform_Enumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Transform_Enumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Transform_Enumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
+let __inner:extern "C" fn(Transform_Enumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="unity_engine-transform")]impl<__T:ITransform_Enumerator>ITransform_EnumeratorMethods for __T{}
+
+#[cfg(feature="unity_engine-transform")]impl Transform_Enumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="unity_engine-transform")]impl Transform_Enumerator{#[doc="Direct (non-virtual) call to `Transform_Enumerator`'s own `get_Current`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_current(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_current_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Transform_Enumerator`'s own `MoveNext`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn move_next(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::move_next_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Transform_Enumerator`'s own `Reset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn reset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::reset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="unity_engine-transform")]impl Transform_Enumerator{#[doc="`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(outer:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Transform_Enumerator), ::core::stringify!(new),));
+ <Self as ITransform_EnumeratorMethods> ::ctor(this,outer);
+this}
 }
 
 #[cfg(feature="unity_engine-transform")]impl Transform{#[doc="`FindRelativeTransformWithPath(crate::unity_engine::transform::Transform, ::unity2::Il2CppString, bool)` overload"]pub fn find_relative_transform_with_path(transform:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,path:impl::core::convert::Into< ::unity2::Il2CppString> ,is_active_only:impl::core::convert::Into<bool>)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37927e0usize)as*mut u8,crate::unity_engine::transform::Transform;
@@ -370,7 +425,16 @@ inner(this,__mi)}
 (Transform)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(n))}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Transform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Transform_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Transform as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let __inner:extern "C" fn(Transform, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`RotateAround(crate::unity_engine::vector3::Vector3, f32)` overload"]fn rotate_around_2(self,axis:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,angle:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Transform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3792ba0usize)as*mut u8,();
@@ -709,6 +773,11 @@ pub fn rotate_around_injected_method_info()-> & 'static::unity2::il2cpp::MethodI
 pub fn rotate_around_local_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[124]}
 }
 
+#[cfg(feature="unity_engine-transform")]impl Transform{#[doc="Direct (non-virtual) call to `Transform`'s own `GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-transform")]impl Transform{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(Transform), ::core::stringify!(new),));
@@ -716,78 +785,15 @@ pub fn rotate_around_local_injected_method_info()-> & 'static::unity2::il2cpp::M
 this}
 }
 
-#[cfg(feature="unity_engine-transform")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Transform_Enumerator_unity2_raw{use super:: * ;
-pub unsafe fn get_current(this:Transform_Enumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <Transform_Enumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
-let inner:extern "C" fn(Transform_Enumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn move_next(this:Transform_Enumerator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Transform_Enumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
-let inner:extern "C" fn(Transform_Enumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn reset(this:Transform_Enumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <Transform_Enumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
-let inner:extern "C" fn(Transform_Enumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="unity_engine-transform")]pub trait ITransform_EnumeratorMethods:ITransform_Enumerator{#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]fn ctor(self,outer:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <Transform_Enumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3792b60usize)as*mut u8,();
-(Transform_Enumerator)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(outer))}
-}
-#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <Transform_Enumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Transform_Enumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)}
-}
-#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <Transform_Enumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Transform_Enumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Transform_Enumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Transform_Enumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="unity_engine-transform")]impl<__T:ITransform_Enumerator>ITransform_EnumeratorMethods for __T{}
-
-#[cfg(feature="unity_engine-transform")]impl Transform_Enumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="unity_engine-transform")]impl Transform_Enumerator{#[doc="`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(outer:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Transform_Enumerator), ::core::stringify!(new),));
- <Self as ITransform_EnumeratorMethods> ::ctor(this,outer);
-this}
-}
-
 #[cfg(feature = "unity_engine-transform")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Transform;
-    pub use super::ITransform;
-    pub use super::ITransformMethods;
     pub use super::Transform_Enumerator;
     pub use super::ITransform_Enumerator;
     pub use super::ITransform_EnumeratorMethods;
+    pub use super::Transform;
+    pub use super::ITransform;
+    pub use super::ITransformMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::component::IComponent;
     pub use crate::unity_engine::object_2::IObject_2;

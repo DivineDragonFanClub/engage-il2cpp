@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procscenemanager/ProcSceneManager.md"))]#[::unity2::class(namespace="App",name="ProcSceneManager")]#[parent(crate::app::procinst::ProcInst)]pub struct ProcSceneManager{#[static_field]#[rename(name="Empty")]pub empty: ::unity2::Il2CppString, #[static_field]#[rename(name="s_Handles")]pub s_handles:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::resourcehandle_2::ResourceHandle_2> , #[static_field]#[rename(name="s_Releases")]pub s_releases:crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2> , #[offset(112)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_Mode")]pub m_mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, #[offset(128)]#[rename(name="m_Empty")]pub m_empty:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(136)]#[rename(name="m_Handle")]pub m_handle:crate::app::resourcehandle_2::ResourceHandle_2,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procscenemanager/ProcSceneManager_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProcSceneManager_Label{pub value:i32,}
 impl::unity2::ClassIdentity for ProcSceneManager_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProcSceneManager.Label";
@@ -30,6 +27,9 @@ impl::unity2::IlType for ProcSceneManager_Label{fn il_type()-> &'static::unity2:
 impl ProcSceneManager_Label{pub fn skip()->Self{Self{value:0}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procscenemanager/ProcSceneManager.md"))]#[::unity2::class(namespace="App",name="ProcSceneManager")]#[parent(crate::app::procinst::ProcInst)]pub struct ProcSceneManager{#[static_field]#[rename(name="Empty")]pub empty: ::unity2::Il2CppString, #[static_field]#[rename(name="s_Handles")]pub s_handles:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::resourcehandle_2::ResourceHandle_2> , #[static_field]#[rename(name="s_Releases")]pub s_releases:crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2> , #[offset(112)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_Mode")]pub m_mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, #[offset(128)]#[rename(name="m_Empty")]pub m_empty:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(136)]#[rename(name="m_Handle")]pub m_handle:crate::app::resourcehandle_2::ResourceHandle_2,}
 
 }
 
@@ -113,10 +113,10 @@ this}
 #[cfg(feature = "app-procscenemanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProcSceneManager_Label;
     pub use super::ProcSceneManager;
     pub use super::IProcSceneManager;
     pub use super::IProcSceneManagerMethods;
-    pub use super::ProcSceneManager_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

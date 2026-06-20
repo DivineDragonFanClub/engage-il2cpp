@@ -16,286 +16,225 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-binaryreader-types")]
 pub use __types::*;
 
-#[cfg(feature="system-io-binaryreader")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BinaryReader_unity2_raw{use super:: * ;
-pub unsafe fn get_base_stream(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::io::stream::Stream{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"get_BaseStream",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn close(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Close",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:BinaryReader,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(BinaryReader,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,disposing,__mi)}
-pub unsafe fn dispose_2(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Read",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_boolean(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadBoolean",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_byte(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u8{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadByte",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u8= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_s_byte(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i8{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadSByte",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i8= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_char(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadChar",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_int16(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt16",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i16= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_u_int16(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt16",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_int32(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt32",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_u_int32(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt32",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_int64(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt64",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_u_int64(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt64",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_single(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadSingle",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_double(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadDouble",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_string(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadString",));
-let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_chars(this:BinaryReader,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<u16>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadChars",));
-let inner:extern "C" fn(BinaryReader,i32, ::unity2::OptionalMethod,)-> ::unity2::Array<u16> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,count,__mi)}
-pub unsafe fn read_2(this:BinaryReader,buffer: ::unity2::Array<u8> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",24usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Read",));
-let inner:extern "C" fn(BinaryReader, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,buffer,index,count,__mi)}
-pub unsafe fn read_bytes(this:BinaryReader,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<u8>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadBytes",));
-let inner:extern "C" fn(BinaryReader,i32, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,count,__mi)}
-pub unsafe fn fill_buffer(this:BinaryReader,num_bytes:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"FillBuffer",));
-let inner:extern "C" fn(BinaryReader,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,num_bytes,__mi)}
-}
-
 #[cfg(feature="system-io-binaryreader")]pub trait IBinaryReaderMethods:IBinaryReader{#[doc="`.ctor(crate::system::io::stream::Stream)` overload"]fn ctor(self,input:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x338e130usize)as*mut u8,();
 (BinaryReader)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(input))}
 }
 #[doc="`get_BaseStream()` overload"]fn get_base_stream(self,)->crate::system::io::stream::Stream{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::get_base_stream(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"get_BaseStream",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Close",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(BinaryReader,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
+}
 }
 #[doc="`Dispose()` overload"]fn dispose_2(self,)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::dispose_2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Read",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadBoolean()` overload"]fn read_boolean(self,)->bool{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_boolean(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadBoolean",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadByte()` overload"]fn read_byte(self,)->u8{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_byte(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadByte",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u8= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadSByte()` overload"]fn read_s_byte(self,)->i8{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_s_byte(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadSByte",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i8= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadChar()` overload"]fn read_char(self,)->u16{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_char(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadChar",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadInt16()` overload"]fn read_int16(self,)->i16{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_int16(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt16",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i16= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadUInt16()` overload"]fn read_u_int16(self,)->u16{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_u_int16(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt16",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadInt32()` overload"]fn read_int32(self,)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_int32(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt32",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadUInt32()` overload"]fn read_u_int32(self,)->u32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_u_int32(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt32",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadInt64()` overload"]fn read_int64(self,)->i64{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_int64(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt64",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadUInt64()` overload"]fn read_u_int64(self,)->u64{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_u_int64(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt64",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u64= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadSingle()` overload"]fn read_single(self,)->f32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_single(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadSingle",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadDouble()` overload"]fn read_double(self,)->f64{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_double(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadDouble",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReadString()` overload"]fn read_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadString",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`InternalReadChars(::unity2::Array<u16>, i32, i32)` overload"]fn internal_read_chars(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x338f370usize)as*mut u8,i32;
@@ -306,16 +245,52 @@ __BinaryReader_unity2_raw::read_string(__receiver, ::core::option::Option::None)
 (BinaryReader)__receiver)}
 }
 #[doc="`ReadChars(i32)` overload"]fn read_chars(self,count:impl::core::convert::Into<i32>)-> ::unity2::Array<u16>{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_chars(__receiver, ::core::convert::Into::into(count), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadChars",));
+let __inner:extern "C" fn(BinaryReader,i32, ::unity2::OptionalMethod,)-> ::unity2::Array<u16> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(count),__mi)}
+}
 }
 #[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_2(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Read",));
+let __inner:extern "C" fn(BinaryReader, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count),__mi)}
+}
 }
 #[doc="`ReadBytes(i32)` overload"]fn read_bytes(self,count:impl::core::convert::Into<i32>)-> ::unity2::Array<u8>{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::read_bytes(__receiver, ::core::convert::Into::into(count), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadBytes",));
+let __inner:extern "C" fn(BinaryReader,i32, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(count),__mi)}
+}
 }
 #[doc="`FillBuffer(i32)` overload"]fn fill_buffer(self,num_bytes:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BinaryReader_unity2_raw::fill_buffer(__receiver, ::core::convert::Into::into(num_bytes), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"FillBuffer",));
+let __inner:extern "C" fn(BinaryReader,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(num_bytes),__mi)}
+}
 }
 #[doc="`Read7BitEncodedInt()` overload"]fn read7_bit_encoded_int(self,)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x338f2c0usize)as*mut u8,i32;
@@ -351,6 +326,74 @@ pub fn read_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn read_bytes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
 pub fn fill_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
 pub fn read7_bit_encoded_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
+
+#[cfg(feature="system-io-binaryreader")]impl BinaryReader{#[doc="Direct (non-virtual) call to `BinaryReader`'s own `get_BaseStream`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_base_stream(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::io::stream::Stream{let __mi=Self::get_base_stream_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `Close`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),disposing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `Read`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::read_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadBoolean`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_boolean(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::read_boolean_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadByte`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_byte(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->u8{let __mi=Self::read_byte_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->u8= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadSByte`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_s_byte(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i8{let __mi=Self::read_s_byte_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i8= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadChar`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_char(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->u16{let __mi=Self::read_char_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadInt16`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_int16(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i16{let __mi=Self::read_int16_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i16= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadUInt16`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_u_int16(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->u16{let __mi=Self::read_u_int16_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadInt32`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_int32(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::read_int32_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadUInt32`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_u_int32(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->u32{let __mi=Self::read_u_int32_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadInt64`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_int64(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i64{let __mi=Self::read_int64_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadUInt64`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_u_int64(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->u64{let __mi=Self::read_u_int64_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->u64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadSingle`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_single(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::read_single_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadDouble`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_double(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f64{let __mi=Self::read_double_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::read_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadChars`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_chars(this:impl::core::convert::Into< ::unity2::IlInstance> ,count:i32,)-> ::unity2::Array<u16>{let __mi=Self::read_chars_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)-> ::unity2::Array<u16> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `Read`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::Array<u8> ,index:i32,count:i32,)->i32{let __mi=Self::read_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),buffer,index,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `ReadBytes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_bytes(this:impl::core::convert::Into< ::unity2::IlInstance> ,count:i32,)-> ::unity2::Array<u8>{let __mi=Self::read_bytes_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BinaryReader`'s own `FillBuffer`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn fill_buffer(this:impl::core::convert::Into< ::unity2::IlInstance> ,num_bytes:i32,)->(){let __mi=Self::fill_buffer_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),num_bytes, ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-io-binaryreader")]impl BinaryReader{#[doc="`.ctor(crate::system::io::stream::Stream)` — overload selector"]pub fn new(input:crate::system::io::stream::Stream)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

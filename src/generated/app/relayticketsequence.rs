@@ -15,13 +15,13 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayticketsequence/RelayTicketSequence_ProcDaily.md"))]#[::unity2::class(namespace="App",name="RelayTicketSequence.ProcDaily")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayTicketSequence_ProcDaily{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayticketsequence/RelayTicketSequence.md"))]#[::unity2::class(namespace="App",name="RelayTicketSequence")]#[parent(crate::system::object::Object)]pub struct RelayTicketSequence{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayticketsequence/RelayTicketSequence_ProcUse.md"))]#[::unity2::class(namespace="App",name="RelayTicketSequence.ProcUse")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayTicketSequence_ProcUse{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayticketsequence/RelayTicketSequence_ProcDaily.md"))]#[::unity2::class(namespace="App",name="RelayTicketSequence.ProcDaily")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayTicketSequence_ProcDaily{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayticketsequence/RelayTicketSequence_ProcDaily_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayTicketSequence_ProcDaily_Label{pub value:i32,}
@@ -41,45 +41,6 @@ impl RelayTicketSequence_ProcDaily_Label{pub fn end()->Self{Self{value:0}
 
 #[cfg(feature = "app-relayticketsequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-relayticketsequence")]impl RelayTicketSequence_ProcDaily{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c720usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-relayticketsequence")]pub trait IRelayTicketSequence_ProcDailyMethods:IRelayTicketSequence_ProcDaily{#[doc="`Check()` overload"]fn check(self,)->(){unsafe{let __receiver= <RelayTicketSequence_ProcDaily as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c3b0usize)as*mut u8,();
-(RelayTicketSequence_ProcDaily)__receiver)}
-}
-#[doc="`Message()` overload"]fn message(self,)->(){unsafe{let __receiver= <RelayTicketSequence_ProcDaily as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c550usize)as*mut u8,();
-(RelayTicketSequence_ProcDaily)__receiver)}
-}
-#[doc="`AddTicketCount()` overload"]fn add_ticket_count(self,)->(){unsafe{let __receiver= <RelayTicketSequence_ProcDaily as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c680usize)as*mut u8,();
-(RelayTicketSequence_ProcDaily)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayTicketSequence_ProcDaily as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ca90usize)as*mut u8,();
-(RelayTicketSequence_ProcDaily)__receiver)}
-}
-}
-
-#[cfg(feature="app-relayticketsequence")]impl<__T:IRelayTicketSequence_ProcDaily>IRelayTicketSequence_ProcDailyMethods for __T{}
-
-#[cfg(feature="app-relayticketsequence")]impl RelayTicketSequence_ProcDaily{pub fn check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn add_ticket_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-relayticketsequence")]impl RelayTicketSequence_ProcDaily{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayTicketSequence_ProcDaily), ::core::stringify!(new),));
- <Self as IRelayTicketSequence_ProcDailyMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-relayticketsequence")]impl RelayTicketSequence{#[doc="`CreateBindUse(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_use(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200d970usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -127,17 +88,56 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-relayticketsequence")]impl RelayTicketSequence_ProcDaily{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c720usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-relayticketsequence")]pub trait IRelayTicketSequence_ProcDailyMethods:IRelayTicketSequence_ProcDaily{#[doc="`Check()` overload"]fn check(self,)->(){unsafe{let __receiver= <RelayTicketSequence_ProcDaily as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c3b0usize)as*mut u8,();
+(RelayTicketSequence_ProcDaily)__receiver)}
+}
+#[doc="`Message()` overload"]fn message(self,)->(){unsafe{let __receiver= <RelayTicketSequence_ProcDaily as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c550usize)as*mut u8,();
+(RelayTicketSequence_ProcDaily)__receiver)}
+}
+#[doc="`AddTicketCount()` overload"]fn add_ticket_count(self,)->(){unsafe{let __receiver= <RelayTicketSequence_ProcDaily as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c680usize)as*mut u8,();
+(RelayTicketSequence_ProcDaily)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayTicketSequence_ProcDaily as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ca90usize)as*mut u8,();
+(RelayTicketSequence_ProcDaily)__receiver)}
+}
+}
+
+#[cfg(feature="app-relayticketsequence")]impl<__T:IRelayTicketSequence_ProcDaily>IRelayTicketSequence_ProcDailyMethods for __T{}
+
+#[cfg(feature="app-relayticketsequence")]impl RelayTicketSequence_ProcDaily{pub fn check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_ticket_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-relayticketsequence")]impl RelayTicketSequence_ProcDaily{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayTicketSequence_ProcDaily), ::core::stringify!(new),));
+ <Self as IRelayTicketSequence_ProcDailyMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-relayticketsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayTicketSequence_ProcDaily;
-    pub use super::IRelayTicketSequence_ProcDaily;
-    pub use super::IRelayTicketSequence_ProcDailyMethods;
     pub use super::RelayTicketSequence;
     pub use super::IRelayTicketSequence;
     pub use super::RelayTicketSequence_ProcUse;
     pub use super::IRelayTicketSequence_ProcUse;
     pub use super::IRelayTicketSequence_ProcUseMethods;
+    pub use super::RelayTicketSequence_ProcDaily;
+    pub use super::IRelayTicketSequence_ProcDaily;
+    pub use super::IRelayTicketSequence_ProcDailyMethods;
     pub use super::RelayTicketSequence_ProcDaily_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;

@@ -20,52 +20,46 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-sortiesequenceweaponshop-types")]
 pub use __types::*;
 
-#[cfg(feature="app-sortiesequenceweaponshop")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieSequenceWeaponShop_unity2_raw{use super:: * ;
-pub unsafe fn create_weapon_shop_top_menu(this:SortieSequenceWeaponShop,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <SortieSequenceWeaponShop as::unity2::ClassIdentity> ::NAME,"CreateWeaponShopTopMenu",));
-let inner:extern "C" fn(SortieSequenceWeaponShop, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn create_weapon_shop_buy_menu(this:SortieSequenceWeaponShop,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <SortieSequenceWeaponShop as::unity2::ClassIdentity> ::NAME,"CreateWeaponShopBuyMenu",));
-let inner:extern "C" fn(SortieSequenceWeaponShop, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:SortieSequenceWeaponShop,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <SortieSequenceWeaponShop as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(SortieSequenceWeaponShop, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-sortiesequenceweaponshop")]impl SortieSequenceWeaponShop{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ea600usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
 }
 
 #[cfg(feature="app-sortiesequenceweaponshop")]pub trait ISortieSequenceWeaponShopMethods:ISortieSequenceWeaponShop{#[doc="`CreateWeaponShopTopMenu()` overload"]fn create_weapon_shop_top_menu(self,)->(){unsafe{let __receiver= <SortieSequenceWeaponShop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieSequenceWeaponShop_unity2_raw::create_weapon_shop_top_menu(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieSequenceWeaponShop as::unity2::ClassIdentity> ::NAME,"CreateWeaponShopTopMenu",));
+let __inner:extern "C" fn(SortieSequenceWeaponShop, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CreateWeaponShopBuyMenu()` overload"]fn create_weapon_shop_buy_menu(self,)->(){unsafe{let __receiver= <SortieSequenceWeaponShop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieSequenceWeaponShop_unity2_raw::create_weapon_shop_buy_menu(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SortieSequenceWeaponShop as::unity2::ClassIdentity> ::NAME,"CreateWeaponShopBuyMenu",));
+let __inner:extern "C" fn(SortieSequenceWeaponShop, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <SortieSequenceWeaponShop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieSequenceWeaponShop_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SortieSequenceWeaponShop as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(SortieSequenceWeaponShop, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieSequenceWeaponShop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24ea680usize)as*mut u8,();
@@ -80,6 +74,17 @@ pub fn create_weapon_shop_top_menu_method_info()-> & 'static::unity2::il2cpp::Me
 pub fn create_weapon_shop_buy_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-sortiesequenceweaponshop")]impl SortieSequenceWeaponShop{#[doc="Direct (non-virtual) call to `SortieSequenceWeaponShop`'s own `CreateWeaponShopTopMenu`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_weapon_shop_top_menu(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::create_weapon_shop_top_menu_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieSequenceWeaponShop`'s own `CreateWeaponShopBuyMenu`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_weapon_shop_buy_menu(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::create_weapon_shop_buy_menu_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SortieSequenceWeaponShop`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-sortiesequenceweaponshop")]impl SortieSequenceWeaponShop{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

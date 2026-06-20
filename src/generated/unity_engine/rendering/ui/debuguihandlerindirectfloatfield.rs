@@ -26,64 +26,57 @@ use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWid
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerindirectfloatfield-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-ui-debuguihandlerindirectfloatfield")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUIHandlerIndirectFloatField_unity2_raw{use super:: * ;
-pub unsafe fn on_selection(this:DebugUIHandlerIndirectFloatField,from_next:bool,previous:crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <DebugUIHandlerIndirectFloatField as::unity2::ClassIdentity> ::NAME,"OnSelection",));
-let inner:extern "C" fn(DebugUIHandlerIndirectFloatField,bool,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,from_next,previous,__mi)}
-pub unsafe fn on_deselection(this:DebugUIHandlerIndirectFloatField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <DebugUIHandlerIndirectFloatField as::unity2::ClassIdentity> ::NAME,"OnDeselection",));
-let inner:extern "C" fn(DebugUIHandlerIndirectFloatField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_increment(this:DebugUIHandlerIndirectFloatField,fast:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <DebugUIHandlerIndirectFloatField as::unity2::ClassIdentity> ::NAME,"OnIncrement",));
-let inner:extern "C" fn(DebugUIHandlerIndirectFloatField,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,fast,__mi)}
-pub unsafe fn on_decrement(this:DebugUIHandlerIndirectFloatField,fast:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <DebugUIHandlerIndirectFloatField as::unity2::ClassIdentity> ::NAME,"OnDecrement",));
-let inner:extern "C" fn(DebugUIHandlerIndirectFloatField,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,fast,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-ui-debuguihandlerindirectfloatfield")]pub trait IDebugUIHandlerIndirectFloatFieldMethods:IDebugUIHandlerIndirectFloatField{#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <DebugUIHandlerIndirectFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3f40usize)as*mut u8,();
 (DebugUIHandlerIndirectFloatField)__receiver)}
 }
 #[doc="`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn on_selection(self,from_next:impl::core::convert::Into<bool> ,previous:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->bool{unsafe{let __receiver= <DebugUIHandlerIndirectFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerIndirectFloatField_unity2_raw::on_selection(__receiver, ::core::convert::Into::into(from_next), ::core::convert::Into::into(previous), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <DebugUIHandlerIndirectFloatField as::unity2::ClassIdentity> ::NAME,"OnSelection",));
+let __inner:extern "C" fn(DebugUIHandlerIndirectFloatField,bool,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(from_next), ::core::convert::Into::into(previous),__mi)}
+}
 }
 #[doc="`OnDeselection()` overload"]fn on_deselection(self,)->(){unsafe{let __receiver= <DebugUIHandlerIndirectFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerIndirectFloatField_unity2_raw::on_deselection(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DebugUIHandlerIndirectFloatField as::unity2::ClassIdentity> ::NAME,"OnDeselection",));
+let __inner:extern "C" fn(DebugUIHandlerIndirectFloatField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnIncrement(bool)` overload"]fn on_increment(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerIndirectFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerIndirectFloatField_unity2_raw::on_increment(__receiver, ::core::convert::Into::into(fast), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <DebugUIHandlerIndirectFloatField as::unity2::ClassIdentity> ::NAME,"OnIncrement",));
+let __inner:extern "C" fn(DebugUIHandlerIndirectFloatField,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(fast),__mi)}
+}
 }
 #[doc="`OnDecrement(bool)` overload"]fn on_decrement(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerIndirectFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUIHandlerIndirectFloatField_unity2_raw::on_decrement(__receiver, ::core::convert::Into::into(fast), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <DebugUIHandlerIndirectFloatField as::unity2::ClassIdentity> ::NAME,"OnDecrement",));
+let __inner:extern "C" fn(DebugUIHandlerIndirectFloatField,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(fast),__mi)}
+}
 }
 #[doc="`ChangeValue(bool, f32)` overload"]fn change_value(self,fast:impl::core::convert::Into<bool> ,multiplier:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DebugUIHandlerIndirectFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30a4130usize)as*mut u8,();
@@ -109,6 +102,20 @@ pub fn on_decrement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn change_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn update_value_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerindirectfloatfield")]impl DebugUIHandlerIndirectFloatField{#[doc="Direct (non-virtual) call to `DebugUIHandlerIndirectFloatField`'s own `OnSelection`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_selection(this:impl::core::convert::Into< ::unity2::IlInstance> ,from_next:bool,previous:crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,)->bool{let __mi=Self::on_selection_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),from_next,previous, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUIHandlerIndirectFloatField`'s own `OnDeselection`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deselection(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_deselection_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUIHandlerIndirectFloatField`'s own `OnIncrement`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_increment(this:impl::core::convert::Into< ::unity2::IlInstance> ,fast:bool,)->(){let __mi=Self::on_increment_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),fast, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUIHandlerIndirectFloatField`'s own `OnDecrement`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_decrement(this:impl::core::convert::Into< ::unity2::IlInstance> ,fast:bool,)->(){let __mi=Self::on_decrement_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),fast, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-ui-debuguihandlerindirectfloatfield")]impl DebugUIHandlerIndirectFloatField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

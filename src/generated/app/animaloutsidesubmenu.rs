@@ -15,114 +15,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu_RemoveMenuItem.md"))]#[::unity2::class(namespace="App",name="AnimalOutsideSubMenu.RemoveMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct AnimalOutsideSubMenu_RemoveMenuItem{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu.md"))]#[::unity2::class(namespace="App",name="AnimalOutsideSubMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct AnimalOutsideSubMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu_ExchangeMenuItem.md"))]#[::unity2::class(namespace="App",name="AnimalOutsideSubMenu.ExchangeMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct AnimalOutsideSubMenu_ExchangeMenuItem{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu_RemoveMenuItem.md"))]#[::unity2::class(namespace="App",name="AnimalOutsideSubMenu.RemoveMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct AnimalOutsideSubMenu_RemoveMenuItem{}
+
 }
 
 #[cfg(feature = "app-animaloutsidesubmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-animaloutsidesubmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimalOutsideSubMenu_RemoveMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn build_attribute(this:AnimalOutsideSubMenu_RemoveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(AnimalOutsideSubMenu_RemoveMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:AnimalOutsideSubMenu_RemoveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(AnimalOutsideSubMenu_RemoveMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:AnimalOutsideSubMenu_RemoveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(AnimalOutsideSubMenu_RemoveMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-animaloutsidesubmenu")]pub trait IAnimalOutsideSubMenu_RemoveMenuItemMethods:IAnimalOutsideSubMenu_RemoveMenuItem{#[doc="`get_ParentMenuItem()` overload"]fn get_parent_menu_item(self,)->crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem{unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5ee0usize)as*mut u8,crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem;
-(AnimalOutsideSubMenu_RemoveMenuItem)__receiver)}
-}
-#[doc="`set_ParentMenuItem(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` overload"]fn set_parent_menu_item(self,value:impl::core::convert::Into<crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem>)->(){unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5ef0usize)as*mut u8,();
-(AnimalOutsideSubMenu_RemoveMenuItem)__receiver,(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` overload"]fn ctor(self,parent_menu_item:impl::core::convert::Into<crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem>)->(){unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5f00usize)as*mut u8,();
-(AnimalOutsideSubMenu_RemoveMenuItem)__receiver,(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)::core::convert::Into::into(parent_menu_item))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimalOutsideSubMenu_RemoveMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimalOutsideSubMenu_RemoveMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimalOutsideSubMenu_RemoveMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-animaloutsidesubmenu")]impl<__T:IAnimalOutsideSubMenu_RemoveMenuItem>IAnimalOutsideSubMenu_RemoveMenuItemMethods for __T{}
-
-#[cfg(feature="app-animaloutsidesubmenu")]impl AnimalOutsideSubMenu_RemoveMenuItem{pub fn get_parent_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_parent_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-animaloutsidesubmenu")]impl AnimalOutsideSubMenu_RemoveMenuItem{#[doc="`.ctor(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` — overload selector"]pub fn new(parent_menu_item:crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AnimalOutsideSubMenu_RemoveMenuItem), ::core::stringify!(new),));
- <Self as IAnimalOutsideSubMenu_RemoveMenuItemMethods> ::ctor(this,parent_menu_item);
-this}
-}
-
-#[cfg(feature="app-animaloutsidesubmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimalOutsideSubMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:AnimalOutsideSubMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <AnimalOutsideSubMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(AnimalOutsideSubMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:AnimalOutsideSubMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <AnimalOutsideSubMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(AnimalOutsideSubMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-animaloutsidesubmenu")]impl AnimalOutsideSubMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,parent_menu_item:impl::core::convert::Into<crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c99bc0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)::core::convert::Into::into(parent_menu_item))}
@@ -134,10 +38,28 @@ inner(this,__mi)}
 (AnimalOutsideSubMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimalOutsideSubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimalOutsideSubMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <AnimalOutsideSubMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(AnimalOutsideSubMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalOutsideSubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimalOutsideSubMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <AnimalOutsideSubMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(AnimalOutsideSubMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -149,34 +71,19 @@ pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-animaloutsidesubmenu")]impl AnimalOutsideSubMenu{#[doc="Direct (non-virtual) call to `AnimalOutsideSubMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimalOutsideSubMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-animaloutsidesubmenu")]impl AnimalOutsideSubMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(AnimalOutsideSubMenu), ::core::stringify!(new),));
  <Self as IAnimalOutsideSubMenuMethods> ::ctor(this,menu_item_list);
 this}
-}
-
-#[cfg(feature="app-animaloutsidesubmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimalOutsideSubMenu_ExchangeMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:AnimalOutsideSubMenu_ExchangeMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AnimalOutsideSubMenu_ExchangeMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(AnimalOutsideSubMenu_ExchangeMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:AnimalOutsideSubMenu_ExchangeMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <AnimalOutsideSubMenu_ExchangeMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(AnimalOutsideSubMenu_ExchangeMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-animaloutsidesubmenu")]pub trait IAnimalOutsideSubMenu_ExchangeMenuItemMethods:IAnimalOutsideSubMenu_ExchangeMenuItem{#[doc="`get_ParentMenuItem()` overload"]fn get_parent_menu_item(self,)->crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem{unsafe{let __receiver= <AnimalOutsideSubMenu_ExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -192,10 +99,28 @@ inner(this,__mi)}
 (AnimalOutsideSubMenu_ExchangeMenuItem)__receiver,(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)::core::convert::Into::into(parent_menu_item))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimalOutsideSubMenu_ExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimalOutsideSubMenu_ExchangeMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AnimalOutsideSubMenu_ExchangeMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(AnimalOutsideSubMenu_ExchangeMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalOutsideSubMenu_ExchangeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimalOutsideSubMenu_ExchangeMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <AnimalOutsideSubMenu_ExchangeMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(AnimalOutsideSubMenu_ExchangeMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -208,6 +133,14 @@ pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-animaloutsidesubmenu")]impl AnimalOutsideSubMenu_ExchangeMenuItem{#[doc="Direct (non-virtual) call to `AnimalOutsideSubMenu_ExchangeMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimalOutsideSubMenu_ExchangeMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-animaloutsidesubmenu")]impl AnimalOutsideSubMenu_ExchangeMenuItem{#[doc="`.ctor(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` — overload selector"]pub fn new(parent_menu_item:crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(AnimalOutsideSubMenu_ExchangeMenuItem), ::core::stringify!(new),));
@@ -215,18 +148,96 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-animaloutsidesubmenu")]pub trait IAnimalOutsideSubMenu_RemoveMenuItemMethods:IAnimalOutsideSubMenu_RemoveMenuItem{#[doc="`get_ParentMenuItem()` overload"]fn get_parent_menu_item(self,)->crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem{unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5ee0usize)as*mut u8,crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem;
+(AnimalOutsideSubMenu_RemoveMenuItem)__receiver)}
+}
+#[doc="`set_ParentMenuItem(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` overload"]fn set_parent_menu_item(self,value:impl::core::convert::Into<crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem>)->(){unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5ef0usize)as*mut u8,();
+(AnimalOutsideSubMenu_RemoveMenuItem)__receiver,(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` overload"]fn ctor(self,parent_menu_item:impl::core::convert::Into<crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem>)->(){unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5f00usize)as*mut u8,();
+(AnimalOutsideSubMenu_RemoveMenuItem)__receiver,(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(AnimalOutsideSubMenu_RemoveMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(AnimalOutsideSubMenu_RemoveMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <AnimalOutsideSubMenu_RemoveMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(AnimalOutsideSubMenu_RemoveMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-animaloutsidesubmenu")]impl<__T:IAnimalOutsideSubMenu_RemoveMenuItem>IAnimalOutsideSubMenu_RemoveMenuItemMethods for __T{}
+
+#[cfg(feature="app-animaloutsidesubmenu")]impl AnimalOutsideSubMenu_RemoveMenuItem{pub fn get_parent_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_parent_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-animaloutsidesubmenu")]impl AnimalOutsideSubMenu_RemoveMenuItem{#[doc="Direct (non-virtual) call to `AnimalOutsideSubMenu_RemoveMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimalOutsideSubMenu_RemoveMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AnimalOutsideSubMenu_RemoveMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-animaloutsidesubmenu")]impl AnimalOutsideSubMenu_RemoveMenuItem{#[doc="`.ctor(crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)` — overload selector"]pub fn new(parent_menu_item:crate::app::animaloutsidemenuitem::AnimalOutsideMenuItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalOutsideSubMenu_RemoveMenuItem), ::core::stringify!(new),));
+ <Self as IAnimalOutsideSubMenu_RemoveMenuItemMethods> ::ctor(this,parent_menu_item);
+this}
+}
+
 #[cfg(feature = "app-animaloutsidesubmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimalOutsideSubMenu_RemoveMenuItem;
-    pub use super::IAnimalOutsideSubMenu_RemoveMenuItem;
-    pub use super::IAnimalOutsideSubMenu_RemoveMenuItemMethods;
     pub use super::AnimalOutsideSubMenu;
     pub use super::IAnimalOutsideSubMenu;
     pub use super::IAnimalOutsideSubMenuMethods;
     pub use super::AnimalOutsideSubMenu_ExchangeMenuItem;
     pub use super::IAnimalOutsideSubMenu_ExchangeMenuItem;
     pub use super::IAnimalOutsideSubMenu_ExchangeMenuItemMethods;
+    pub use super::AnimalOutsideSubMenu_RemoveMenuItem;
+    pub use super::IAnimalOutsideSubMenu_RemoveMenuItem;
+    pub use super::IAnimalOutsideSubMenu_RemoveMenuItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

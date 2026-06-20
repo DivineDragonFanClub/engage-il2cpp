@@ -24,29 +24,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-rendering-universal-universaladditionalcameradata-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-universal-universaladditionalcameradata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UniversalAdditionalCameraData_unity2_raw{use super:: * ;
-pub unsafe fn on_before_serialize(this:UniversalAdditionalCameraData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <UniversalAdditionalCameraData as::unity2::ClassIdentity> ::NAME,"OnBeforeSerialize",));
-let inner:extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_after_deserialize(this:UniversalAdditionalCameraData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <UniversalAdditionalCameraData as::unity2::ClassIdentity> ::NAME,"OnAfterDeserialize",));
-let inner:extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-universal-universaladditionalcameradata")]impl UniversalAdditionalCameraData{#[doc="`get_defaultAdditionalCameraData()` overload"]pub fn get_default_additional_camera_data()->crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ca43b0usize)as*mut u8,crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData;
 )}
 }
@@ -216,10 +193,28 @@ inner(this,__mi)}
 (UniversalAdditionalCameraData)__receiver,(crate::unity_engine::rendering::universal::customcamerarenderingflag::CustomCameraRenderingFlag)::core::convert::Into::into(value))}
 }
 #[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <UniversalAdditionalCameraData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalAdditionalCameraData_unity2_raw::on_before_serialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <UniversalAdditionalCameraData as::unity2::ClassIdentity> ::NAME,"OnBeforeSerialize",));
+let __inner:extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <UniversalAdditionalCameraData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalAdditionalCameraData_unity2_raw::on_after_deserialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <UniversalAdditionalCameraData as::unity2::ClassIdentity> ::NAME,"OnAfterDeserialize",));
+let __inner:extern "C" fn(UniversalAdditionalCameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDrawGizmos()` overload"]fn on_draw_gizmos(self,)->(){unsafe{let __receiver= <UniversalAdditionalCameraData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca5350usize)as*mut u8,();
@@ -279,6 +274,14 @@ pub fn on_after_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInf
 pub fn on_draw_gizmos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-universaladditionalcameradata")]impl UniversalAdditionalCameraData{#[doc="Direct (non-virtual) call to `UniversalAdditionalCameraData`'s own `OnBeforeSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_before_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_before_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalAdditionalCameraData`'s own `OnAfterDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_after_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_after_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-universal-universaladditionalcameradata")]impl UniversalAdditionalCameraData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

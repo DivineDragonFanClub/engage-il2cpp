@@ -13,7 +13,22 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/bipednaming/BipedNaming.md"))]#[::unity2::class(namespace="RootMotion",name="BipedNaming")]#[parent(crate::system::object::Object)]pub struct BipedNaming{#[static_field]#[rename(name="typeLeft")]pub type_left: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeRight")]pub type_right: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeSpine")]pub type_spine: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeHead")]pub type_head: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeArm")]pub type_arm: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeLeg")]pub type_leg: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeTail")]pub type_tail: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeEye")]pub type_eye: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExclude")]pub type_exclude: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeSpine")]pub type_exclude_spine: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeHead")]pub type_exclude_head: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeArm")]pub type_exclude_arm: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeLeg")]pub type_exclude_leg: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeTail")]pub type_exclude_tail: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeEye")]pub type_exclude_eye: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="pelvis")]pub pelvis: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="hand")]pub hand: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="foot")]pub foot: ::unity2::Array< ::unity2::Il2CppString> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/bipednaming/BipedNaming_BoneSide.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BipedNaming_BoneSide{pub value:i32,}
+impl::unity2::ClassIdentity for BipedNaming_BoneSide{const NAMESPACE: &'static str="RootMotion";
+const NAME: &'static str="BipedNaming.BoneSide";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for BipedNaming_BoneSide{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl BipedNaming_BoneSide{pub fn center()->Self{Self{value:0}
+}
+pub fn left()->Self{Self{value:1}
+}
+pub fn right()->Self{Self{value:2}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/bipednaming/BipedNaming_BoneType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BipedNaming_BoneType{pub value:i32,}
@@ -42,22 +57,7 @@ pub fn eye()->Self{Self{value:6}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/bipednaming/BipedNaming_BoneSide.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BipedNaming_BoneSide{pub value:i32,}
-impl::unity2::ClassIdentity for BipedNaming_BoneSide{const NAMESPACE: &'static str="RootMotion";
-const NAME: &'static str="BipedNaming.BoneSide";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for BipedNaming_BoneSide{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl BipedNaming_BoneSide{pub fn center()->Self{Self{value:0}
-}
-pub fn left()->Self{Self{value:1}
-}
-pub fn right()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/bipednaming/BipedNaming.md"))]#[::unity2::class(namespace="RootMotion",name="BipedNaming")]#[parent(crate::system::object::Object)]pub struct BipedNaming{#[static_field]#[rename(name="typeLeft")]pub type_left: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeRight")]pub type_right: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeSpine")]pub type_spine: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeHead")]pub type_head: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeArm")]pub type_arm: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeLeg")]pub type_leg: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeTail")]pub type_tail: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeEye")]pub type_eye: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExclude")]pub type_exclude: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeSpine")]pub type_exclude_spine: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeHead")]pub type_exclude_head: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeArm")]pub type_exclude_arm: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeLeg")]pub type_exclude_leg: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeTail")]pub type_exclude_tail: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="typeExcludeEye")]pub type_exclude_eye: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="pelvis")]pub pelvis: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="hand")]pub hand: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="foot")]pub foot: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
@@ -167,10 +167,10 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 #[cfg(feature = "root_motion-bipednaming")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::BipedNaming_BoneSide;
+    pub use super::BipedNaming_BoneType;
     pub use super::BipedNaming;
     pub use super::IBipedNaming;
-    pub use super::BipedNaming_BoneType;
-    pub use super::BipedNaming_BoneSide;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

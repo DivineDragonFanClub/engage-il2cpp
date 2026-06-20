@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaithread/MapAiThread.md"))]#[::unity2::class(namespace="App",name="MapAiThread")]#[parent(crate::system::object::Object)]pub struct MapAiThread{#[offset(24)]#[rename(name="m_Lock")]pub m_lock: ::unity2::IlInstance, #[offset(40)]#[rename(name="m_IsFirstRun")]pub m_is_first_run:bool, #[offset(44)]#[rename(name="m_Status")]pub m_status:crate::app::mapaithread::MapAiThread_Status,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaithread/MapAiThread_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapAiThread_Status{pub value:i32,}
 impl::unity2::ClassIdentity for MapAiThread_Status{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapAiThread.Status";
@@ -32,6 +29,9 @@ pub fn run()->Self{Self{value:1}
 pub fn finalize()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaithread/MapAiThread.md"))]#[::unity2::class(namespace="App",name="MapAiThread")]#[parent(crate::system::object::Object)]pub struct MapAiThread{#[offset(24)]#[rename(name="m_Lock")]pub m_lock: ::unity2::IlInstance, #[offset(40)]#[rename(name="m_IsFirstRun")]pub m_is_first_run:bool, #[offset(44)]#[rename(name="m_Status")]pub m_status:crate::app::mapaithread::MapAiThread_Status,}
 
 }
 
@@ -85,10 +85,10 @@ this}
 #[cfg(feature = "app-mapaithread")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapAiThread_Status;
     pub use super::MapAiThread;
     pub use super::IMapAiThread;
     pub use super::IMapAiThreadMethods;
-    pub use super::MapAiThread_Status;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

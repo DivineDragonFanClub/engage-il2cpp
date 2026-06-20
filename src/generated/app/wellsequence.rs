@@ -21,9 +21,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))]#[::unity2::class(namespace="App",name="WellSequence.DialogItemGotoEvilFirst")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct WellSequence_DialogItemGotoEvilFirst{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_EvilWeaponEventStates.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellSequence_EvilWeaponEventStates{pub value:i32,}
 impl::unity2::ClassIdentity for WellSequence_EvilWeaponEventStates{const NAMESPACE: &'static str="App";
 const NAME: &'static str="WellSequence.EvilWeaponEventStates";
@@ -42,27 +39,6 @@ pub fn already_get()->Self{Self{value:2}
 pub fn already_talk()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_UseFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellSequence_UseFlags{pub value:i32,}
-impl::unity2::ClassIdentity for WellSequence_UseFlags{const NAMESPACE: &'static str="App";
-const NAME: &'static str="WellSequence.UseFlags";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for WellSequence_UseFlags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl WellSequence_UseFlags{pub fn not_use()->Self{Self{value:0}
-}
-pub fn used()->Self{Self{value:1}
-}
-pub fn item_return()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_ChangeDifficultyMenuItem.md"))]#[::unity2::class(namespace="App",name="WellSequence.ChangeDifficultyMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct WellSequence_ChangeDifficultyMenuItem{#[offset(112)]#[rename(name="YesEventHandler")]pub yes_event_handler:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellSequence_Label{pub value:i32,}
@@ -101,32 +77,52 @@ pub fn end()->Self{Self{value:11}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_DialogItemGotoEvilFirst.md"))]#[::unity2::class(namespace="App",name="WellSequence.DialogItemGotoEvilFirst")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct WellSequence_DialogItemGotoEvilFirst{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence.md"))]#[::unity2::class(namespace="App",name="WellSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct WellSequence{#[static_field]#[rename(name="UseFlagName")]pub use_flag_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ExchangeLevelName")]pub exchange_level_name: ::unity2::Il2CppString, #[static_field]#[rename(name="SeedName")]pub seed_name: ::unity2::Il2CppString, #[static_field]#[rename(name="EvilWeaponState")]pub evil_weapon_state: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::welltopmenu::WellTopMenu_MenuResult, #[static_field]#[rename(name="m_WellEffectManager")]pub m_well_effect_manager:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="EFF_NAME_TABLE")]pub eff_name_table: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_ChangeDifficultyMenuItem.md"))]#[::unity2::class(namespace="App",name="WellSequence.ChangeDifficultyMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct WellSequence_ChangeDifficultyMenuItem{#[offset(112)]#[rename(name="YesEventHandler")]pub yes_event_handler:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellsequence/WellSequence_UseFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellSequence_UseFlags{pub value:i32,}
+impl::unity2::ClassIdentity for WellSequence_UseFlags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="WellSequence.UseFlags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for WellSequence_UseFlags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl WellSequence_UseFlags{pub fn not_use()->Self{Self{value:0}
+}
+pub fn used()->Self{Self{value:1}
+}
+pub fn item_return()->Self{Self{value:2}
+}
+}
 
 }
 
 #[cfg(feature = "app-wellsequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-wellsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WellSequence_DialogItemGotoEvilFirst_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:WellSequence_DialogItemGotoEvilFirst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <WellSequence_DialogItemGotoEvilFirst as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(WellSequence_DialogItemGotoEvilFirst, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-wellsequence")]pub trait IWellSequence_DialogItemGotoEvilFirstMethods:IWellSequence_DialogItemGotoEvilFirst{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,label:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <WellSequence_DialogItemGotoEvilFirst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2cc10usize)as*mut u8,();
 (WellSequence_DialogItemGotoEvilFirst)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellSequence_DialogItemGotoEvilFirst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WellSequence_DialogItemGotoEvilFirst_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <WellSequence_DialogItemGotoEvilFirst as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(WellSequence_DialogItemGotoEvilFirst, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -136,45 +132,15 @@ __WellSequence_DialogItemGotoEvilFirst_unity2_raw::a_call(__receiver, ::core::op
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-wellsequence")]impl WellSequence_DialogItemGotoEvilFirst{#[doc="Direct (non-virtual) call to `WellSequence_DialogItemGotoEvilFirst`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-wellsequence")]impl WellSequence_DialogItemGotoEvilFirst{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(label: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(WellSequence_DialogItemGotoEvilFirst), ::core::stringify!(new),));
  <Self as IWellSequence_DialogItemGotoEvilFirstMethods> ::ctor(this,label);
-this}
-}
-
-#[cfg(feature="app-wellsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WellSequence_ChangeDifficultyMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:WellSequence_ChangeDifficultyMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <WellSequence_ChangeDifficultyMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(WellSequence_ChangeDifficultyMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-wellsequence")]pub trait IWellSequence_ChangeDifficultyMenuItemMethods:IWellSequence_ChangeDifficultyMenuItem{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::system::action::Action> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <WellSequence_ChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2cba0usize)as*mut u8,();
-(WellSequence_ChangeDifficultyMenuItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(yes_event_handler),(::unity2::Il2CppString)::core::convert::Into::into(text))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellSequence_ChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WellSequence_ChangeDifficultyMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-wellsequence")]impl<__T:IWellSequence_ChangeDifficultyMenuItem>IWellSequence_ChangeDifficultyMenuItemMethods for __T{}
-
-#[cfg(feature="app-wellsequence")]impl WellSequence_ChangeDifficultyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-wellsequence")]impl WellSequence_ChangeDifficultyMenuItem{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]pub fn new(yes_event_handler:crate::system::action::Action,text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(WellSequence_ChangeDifficultyMenuItem), ::core::stringify!(new),));
- <Self as IWellSequence_ChangeDifficultyMenuItemMethods> ::ctor(this,yes_event_handler,text);
 this}
 }
 
@@ -402,21 +368,57 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-wellsequence")]pub trait IWellSequence_ChangeDifficultyMenuItemMethods:IWellSequence_ChangeDifficultyMenuItem{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::system::action::Action> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <WellSequence_ChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2cba0usize)as*mut u8,();
+(WellSequence_ChangeDifficultyMenuItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(yes_event_handler),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellSequence_ChangeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <WellSequence_ChangeDifficultyMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(WellSequence_ChangeDifficultyMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-wellsequence")]impl<__T:IWellSequence_ChangeDifficultyMenuItem>IWellSequence_ChangeDifficultyMenuItemMethods for __T{}
+
+#[cfg(feature="app-wellsequence")]impl WellSequence_ChangeDifficultyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-wellsequence")]impl WellSequence_ChangeDifficultyMenuItem{#[doc="Direct (non-virtual) call to `WellSequence_ChangeDifficultyMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-wellsequence")]impl WellSequence_ChangeDifficultyMenuItem{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]pub fn new(yes_event_handler:crate::system::action::Action,text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellSequence_ChangeDifficultyMenuItem), ::core::stringify!(new),));
+ <Self as IWellSequence_ChangeDifficultyMenuItemMethods> ::ctor(this,yes_event_handler,text);
+this}
+}
+
 #[cfg(feature = "app-wellsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::WellSequence_EvilWeaponEventStates;
+    pub use super::WellSequence_Label;
     pub use super::WellSequence_DialogItemGotoEvilFirst;
     pub use super::IWellSequence_DialogItemGotoEvilFirst;
     pub use super::IWellSequence_DialogItemGotoEvilFirstMethods;
-    pub use super::WellSequence_EvilWeaponEventStates;
-    pub use super::WellSequence_UseFlags;
-    pub use super::WellSequence_ChangeDifficultyMenuItem;
-    pub use super::IWellSequence_ChangeDifficultyMenuItem;
-    pub use super::IWellSequence_ChangeDifficultyMenuItemMethods;
-    pub use super::WellSequence_Label;
     pub use super::WellSequence;
     pub use super::IWellSequence;
     pub use super::IWellSequenceMethods;
+    pub use super::WellSequence_ChangeDifficultyMenuItem;
+    pub use super::IWellSequence_ChangeDifficultyMenuItem;
+    pub use super::IWellSequence_ChangeDifficultyMenuItemMethods;
+    pub use super::WellSequence_UseFlags;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

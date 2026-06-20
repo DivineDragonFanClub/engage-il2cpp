@@ -17,85 +17,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomwakeupselectroot/MyRoomWakeupSelectRoot.md"))]#[::unity2::class(namespace="App",name="MyRoomWakeupSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MyRoomWakeupSelectRoot{#[offset(24)]#[rename(name="m_RelianceSelect")]pub m_reliance_select:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_BackCursor")]pub m_back_cursor:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_CursorTop")]pub m_cursor_top:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_CharaImageRight")]pub m_chara_image_right:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomwakeupselectroot/MyRoomWakeupSelectRoot_CursorTop.md"))]#[::unity2::class(namespace="App",name="MyRoomWakeupSelectRoot.CursorTop")]#[parent(crate::system::object::Object)]pub struct MyRoomWakeupSelectRoot_CursorTop{#[static_field]#[rename(name="TYPE_MAX")]pub type_max:i32, #[offset(24)]#[rename(name="ResetRect")]pub reset_rect:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="RankC_PosX")]pub rank_c_pos_x:f32, #[offset(36)]#[rename(name="RankB_PosX")]pub rank_b_pos_x:f32, #[offset(40)]#[rename(name="RankA_PosX")]pub rank_a_pos_x:f32, #[offset(44)]#[rename(name="RankS_PosX")]pub rank_s_pos_x:f32, #[offset(48)]#[rename(name="Upper_PosY")]pub upper_pos_y:f32, #[offset(52)]#[rename(name="Lower_PosY")]pub lower_pos_y:f32, #[offset(56)]#[rename(name="MoveFrame")]pub move_frame:f32, #[offset(64)]#[rename(name="m_cursorTop")]pub m_cursor_top:crate::unity_engine::recttransform::RectTransform, #[offset(72)]#[rename(name="m_selectIndex")]pub m_select_index:i32, #[offset(76)]#[rename(name="m_prevIndex")]pub m_prev_index:i32, #[offset(80)]#[rename(name="m_moveTick")]pub m_move_tick:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomwakeupselectroot/MyRoomWakeupSelectRoot.md"))]#[::unity2::class(namespace="App",name="MyRoomWakeupSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MyRoomWakeupSelectRoot{#[offset(24)]#[rename(name="m_RelianceSelect")]pub m_reliance_select:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_BackCursor")]pub m_back_cursor:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_CursorTop")]pub m_cursor_top:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_CharaImageRight")]pub m_chara_image_right:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-myroomwakeupselectroot-types")]
 pub use __types::*;
-
-#[cfg(feature="app-myroomwakeupselectroot")]impl MyRoomWakeupSelectRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a7bb0usize)as*mut u8,();
-)}
-}
-#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a7c50usize)as*mut u8,bool;
-)}
-}
-#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a7cd0usize)as*mut u8,();
-)}
-}
-#[doc="`Create()` overload"]pub fn create()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a7d50usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-)}
-}
-#[doc="`Destroy()` overload"]pub fn destroy()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a7e00usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-myroomwakeupselectroot")]pub trait IMyRoomWakeupSelectRootMethods:IMyRoomWakeupSelectRoot{#[doc="`get_Cursor()` overload"]fn get_cursor(self,)->crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop{unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a7b90usize)as*mut u8,crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop;
-(MyRoomWakeupSelectRoot)__receiver)}
-}
-#[doc="`set_Cursor(crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop)` overload"]fn set_cursor(self,value:impl::core::convert::Into<crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop>)->(){unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a7ba0usize)as*mut u8,();
-(MyRoomWakeupSelectRoot)__receiver,(crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop)::core::convert::Into::into(value))}
-}
-#[doc="`GetWakeupSelectMenuContent()` overload"]fn get_wakeup_select_menu_content(self,)->crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent{unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a7e90usize)as*mut u8,crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent;
-(MyRoomWakeupSelectRoot)__receiver)}
-}
-#[doc="`CloseRelianceRank()` overload"]fn close_reliance_rank(self,)->(){unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a6350usize)as*mut u8,();
-(MyRoomWakeupSelectRoot)__receiver)}
-}
-#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a7ef0usize)as*mut u8,();
-(MyRoomWakeupSelectRoot)__receiver)}
-}
-#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a8080usize)as*mut u8,();
-(MyRoomWakeupSelectRoot)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a80d0usize)as*mut u8,();
-(MyRoomWakeupSelectRoot)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroomwakeupselectroot")]impl<__T:IMyRoomWakeupSelectRoot>IMyRoomWakeupSelectRootMethods for __T{}
-
-#[cfg(feature="app-myroomwakeupselectroot")]impl MyRoomWakeupSelectRoot{pub fn get_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_wakeup_select_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn close_reliance_rank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-myroomwakeupselectroot")]impl MyRoomWakeupSelectRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomWakeupSelectRoot), ::core::stringify!(new),));
- <Self as IMyRoomWakeupSelectRootMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-myroomwakeupselectroot")]pub trait IMyRoomWakeupSelectRoot_CursorTopMethods:IMyRoomWakeupSelectRoot_CursorTop{#[doc="`IsOpen(i32)` overload"]fn is_open(self,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MyRoomWakeupSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x209b0a0usize)as*mut u8,bool;
@@ -175,15 +105,85 @@ pub fn get_position_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 this}
 }
 
+#[cfg(feature="app-myroomwakeupselectroot")]impl MyRoomWakeupSelectRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a7bb0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a7c50usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a7cd0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a7d50usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+#[doc="`Destroy()` overload"]pub fn destroy()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a7e00usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-myroomwakeupselectroot")]pub trait IMyRoomWakeupSelectRootMethods:IMyRoomWakeupSelectRoot{#[doc="`get_Cursor()` overload"]fn get_cursor(self,)->crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop{unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a7b90usize)as*mut u8,crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop;
+(MyRoomWakeupSelectRoot)__receiver)}
+}
+#[doc="`set_Cursor(crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop)` overload"]fn set_cursor(self,value:impl::core::convert::Into<crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop>)->(){unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a7ba0usize)as*mut u8,();
+(MyRoomWakeupSelectRoot)__receiver,(crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot_CursorTop)::core::convert::Into::into(value))}
+}
+#[doc="`GetWakeupSelectMenuContent()` overload"]fn get_wakeup_select_menu_content(self,)->crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent{unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a7e90usize)as*mut u8,crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent;
+(MyRoomWakeupSelectRoot)__receiver)}
+}
+#[doc="`CloseRelianceRank()` overload"]fn close_reliance_rank(self,)->(){unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a6350usize)as*mut u8,();
+(MyRoomWakeupSelectRoot)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a7ef0usize)as*mut u8,();
+(MyRoomWakeupSelectRoot)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a8080usize)as*mut u8,();
+(MyRoomWakeupSelectRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomWakeupSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a80d0usize)as*mut u8,();
+(MyRoomWakeupSelectRoot)__receiver)}
+}
+}
+
+#[cfg(feature="app-myroomwakeupselectroot")]impl<__T:IMyRoomWakeupSelectRoot>IMyRoomWakeupSelectRootMethods for __T{}
+
+#[cfg(feature="app-myroomwakeupselectroot")]impl MyRoomWakeupSelectRoot{pub fn get_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_wakeup_select_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn close_reliance_rank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-myroomwakeupselectroot")]impl MyRoomWakeupSelectRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomWakeupSelectRoot), ::core::stringify!(new),));
+ <Self as IMyRoomWakeupSelectRootMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-myroomwakeupselectroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomWakeupSelectRoot;
-    pub use super::IMyRoomWakeupSelectRoot;
-    pub use super::IMyRoomWakeupSelectRootMethods;
     pub use super::MyRoomWakeupSelectRoot_CursorTop;
     pub use super::IMyRoomWakeupSelectRoot_CursorTop;
     pub use super::IMyRoomWakeupSelectRoot_CursorTopMethods;
+    pub use super::MyRoomWakeupSelectRoot;
+    pub use super::IMyRoomWakeupSelectRoot;
+    pub use super::IMyRoomWakeupSelectRootMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

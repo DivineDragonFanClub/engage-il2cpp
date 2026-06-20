@@ -17,17 +17,7 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-interop-functionmemberdescriptorbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FunctionMemberDescriptorBase_unity2_raw{use super:: * ;
-pub unsafe fn get_is_static(this:FunctionMemberDescriptorBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_IsStatic",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_is_static{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_is_static{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::class(),"set_IsStatic",1,param_types,false,)}
 );
@@ -37,16 +27,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"set_IsStatic",e),}
 }
 }
-pub unsafe fn get_name(this:FunctionMemberDescriptorBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_name{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::class(),"set_Name",1,param_types,false,)}
@@ -57,16 +37,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"set_Name",e),}
 }
 }
-pub unsafe fn get_sort_discriminant(this:FunctionMemberDescriptorBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_SortDiscriminant",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_sort_discriminant{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::class(),"set_SortDiscriminant",1,param_types,false,)}
@@ -77,16 +47,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"set_SortDiscriminant",e),}
 }
 }
-pub unsafe fn get_parameters(this:FunctionMemberDescriptorBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_Parameters",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_parameters{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::class(),"set_Parameters",1,param_types,false,)}
@@ -97,16 +57,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"set_Parameters",e),}
 }
 }
-pub unsafe fn get_extension_method_type(this:FunctionMemberDescriptorBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_ExtensionMethodType",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_extension_method_type{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::class(),"set_ExtensionMethodType",1,param_types,false,)}
@@ -117,16 +67,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"set_ExtensionMethodType",e),}
 }
 }
-pub unsafe fn get_var_args_array_type(this:FunctionMemberDescriptorBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_VarArgsArrayType",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_var_args_array_type{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::class(),"set_VarArgsArrayType",1,param_types,false,)}
@@ -137,16 +77,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"set_VarArgsArrayType",e),}
 }
 }
-pub unsafe fn get_var_args_element_type(this:FunctionMemberDescriptorBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_VarArgsElementType",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_var_args_element_type{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::class(),"set_VarArgsElementType",1,param_types,false,)}
@@ -207,16 +137,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"CreateCallbackDynValue",e),}
 }
 }
-pub unsafe fn build_argument_list(this:FunctionMemberDescriptorBase,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,args:crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,out_params: *mut crate::system::collections::generic::list_1::List_1<i32> ,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"BuildArgumentList",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, *mut crate::system::collections::generic::list_1::List_1<i32> , ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,context,args,out_params,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_build_return_value{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::collections::generic::list_1::List_1<i32>as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::system::object::Object>as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::class(),"BuildReturnValue",4,param_types,true,)}
@@ -227,46 +147,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"BuildReturnValue",e),}
 }
 }
-pub unsafe fn execute(this:FunctionMemberDescriptorBase,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,args:crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,context,args,__mi)}
-pub unsafe fn get_member_access(this:FunctionMemberDescriptorBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_MemberAccess",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_value(this:FunctionMemberDescriptorBase,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"GetValue",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,__mi)}
-pub unsafe fn set_value(this:FunctionMemberDescriptorBase,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,v:crate::moon_sharp::interpreter::dynvalue::DynValue,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"SetValue",));
-let inner:extern "C" fn(FunctionMemberDescriptorBase,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,v,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -288,49 +168,112 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-functionmemberdescriptorbase")]pub trait IFunctionMemberDescriptorBaseMethods:IFunctionMemberDescriptorBase{#[doc="`get_IsStatic()` overload"]fn get_is_static(self,)->bool{unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::get_is_static(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_IsStatic",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_IsStatic(bool)` overload"]fn set_is_static(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FunctionMemberDescriptorBase_unity2_raw::__lookup_set_is_static::get_method_info().method_ptr,();
 (FunctionMemberDescriptorBase)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FunctionMemberDescriptorBase_unity2_raw::__lookup_set_name::get_method_info().method_ptr,();
 (FunctionMemberDescriptorBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`get_SortDiscriminant()` overload"]fn get_sort_discriminant(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::get_sort_discriminant(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_SortDiscriminant",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_SortDiscriminant(::unity2::Il2CppString)` overload"]fn set_sort_discriminant(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FunctionMemberDescriptorBase_unity2_raw::__lookup_set_sort_discriminant::get_method_info().method_ptr,();
 (FunctionMemberDescriptorBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`get_Parameters()` overload"]fn get_parameters(self,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>{unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::get_parameters(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_Parameters",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_Parameters(::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)` overload"]fn set_parameters(self,value:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> >)->(){unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FunctionMemberDescriptorBase_unity2_raw::__lookup_set_parameters::get_method_info().method_ptr,();
 (FunctionMemberDescriptorBase)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)::core::convert::Into::into(value))}
 }
 #[doc="`get_ExtensionMethodType()` overload"]fn get_extension_method_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::get_extension_method_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_ExtensionMethodType",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_ExtensionMethodType(::unity2::SystemType)` overload"]fn set_extension_method_type(self,value:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FunctionMemberDescriptorBase_unity2_raw::__lookup_set_extension_method_type::get_method_info().method_ptr,();
 (FunctionMemberDescriptorBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(value))}
 }
 #[doc="`get_VarArgsArrayType()` overload"]fn get_var_args_array_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::get_var_args_array_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_VarArgsArrayType",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_VarArgsArrayType(::unity2::SystemType)` overload"]fn set_var_args_array_type(self,value:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FunctionMemberDescriptorBase_unity2_raw::__lookup_set_var_args_array_type::get_method_info().method_ptr,();
 (FunctionMemberDescriptorBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(value))}
 }
 #[doc="`get_VarArgsElementType()` overload"]fn get_var_args_element_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::get_var_args_element_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_VarArgsElementType",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_VarArgsElementType(::unity2::SystemType)` overload"]fn set_var_args_element_type(self,value:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FunctionMemberDescriptorBase_unity2_raw::__lookup_set_var_args_element_type::get_method_info().method_ptr,();
@@ -354,21 +297,66 @@ __FunctionMemberDescriptorBase_unity2_raw::get_var_args_element_type(__receiver,
 }
 #[doc="`BuildArgumentList(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, *mutcrate::system::collections::generic::list_1::List_1<i32>)` overload"]fn build_argument_list(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>)->(::unity2::Array<crate::system::object::Object> ,crate::system::collections::generic::list_1::List_1<i32>){unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<i32> > ::uninit();
-let __ret={__FunctionMemberDescriptorBase_unity2_raw::build_argument_list(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(context), ::core::convert::Into::into(args),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+let __ret={{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"BuildArgumentList",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, *mut crate::system::collections::generic::list_1::List_1<i32> , ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(context), ::core::convert::Into::into(args),__out_0.as_mut_ptr(),__mi)}
+}
 ;
 (__ret,__out_0.assume_init())}
 }
 #[doc="`Execute(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]fn execute(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::execute(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(context), ::core::convert::Into::into(args), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(context), ::core::convert::Into::into(args),__mi)}
+}
 }
 #[doc="`get_MemberAccess()` overload"]fn get_member_access(self,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::get_member_access(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"get_MemberAccess",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]fn get_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::get_value(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`SetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,v:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FunctionMemberDescriptorBase_unity2_raw::set_value(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(v), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <FunctionMemberDescriptorBase as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let __inner:extern "C" fn(FunctionMemberDescriptorBase,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(v),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FunctionMemberDescriptorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FunctionMemberDescriptorBase_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
@@ -404,6 +392,44 @@ pub fn get_member_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
 pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-functionmemberdescriptorbase")]impl FunctionMemberDescriptorBase{#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `get_IsStatic`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_static(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_static_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `get_SortDiscriminant`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sort_discriminant(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_sort_discriminant_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `get_Parameters`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_parameters(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>{let __mi=Self::get_parameters_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `get_ExtensionMethodType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_extension_method_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_extension_method_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `get_VarArgsArrayType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_var_args_array_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_var_args_array_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `get_VarArgsElementType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_var_args_element_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_var_args_element_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `BuildArgumentList`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_argument_list(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,args:crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,out_params: *mut crate::system::collections::generic::list_1::List_1<i32> ,)-> ::unity2::Array<crate::system::object::Object>{let __mi=Self::build_argument_list_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, *mut crate::system::collections::generic::list_1::List_1<i32> , ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj,context,args,out_params, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,args:crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj,context,args, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `get_MemberAccess`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_member_access(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{let __mi=Self::get_member_access_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `GetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::get_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FunctionMemberDescriptorBase`'s own `SetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,v:crate::moon_sharp::interpreter::dynvalue::DynValue,)->(){let __mi=Self::set_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj,v, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-functionmemberdescriptorbase")]impl FunctionMemberDescriptorBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

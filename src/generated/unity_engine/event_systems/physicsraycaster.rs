@@ -31,26 +31,22 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-event_systems-physicsraycaster-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-event_systems-physicsraycaster")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhysicsRaycaster_RaycastHitComparer_unity2_raw{use super:: * ;
-pub unsafe fn compare(this:PhysicsRaycaster_RaycastHitComparer,x:crate::unity_engine::raycasthit::RaycastHit,y:crate::unity_engine::raycasthit::RaycastHit,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <PhysicsRaycaster_RaycastHitComparer as::unity2::ClassIdentity> ::NAME,"Compare",));
-let inner:extern "C" fn(PhysicsRaycaster_RaycastHitComparer,crate::unity_engine::raycasthit::RaycastHit,crate::unity_engine::raycasthit::RaycastHit, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,y,__mi)}
-}
-
 #[cfg(feature="unity_engine-event_systems-physicsraycaster")]impl PhysicsRaycaster_RaycastHitComparer{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c0df50usize)as*mut u8,();
 )}
 }
 }
 
 #[cfg(feature="unity_engine-event_systems-physicsraycaster")]pub trait IPhysicsRaycaster_RaycastHitComparerMethods:IPhysicsRaycaster_RaycastHitComparer{#[doc="`Compare(crate::unity_engine::raycasthit::RaycastHit, crate::unity_engine::raycasthit::RaycastHit)` overload"]fn compare(self,x:impl::core::convert::Into<crate::unity_engine::raycasthit::RaycastHit> ,y:impl::core::convert::Into<crate::unity_engine::raycasthit::RaycastHit>)->i32{unsafe{let __receiver= <PhysicsRaycaster_RaycastHitComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PhysicsRaycaster_RaycastHitComparer_unity2_raw::compare(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <PhysicsRaycaster_RaycastHitComparer as::unity2::ClassIdentity> ::NAME,"Compare",));
+let __inner:extern "C" fn(PhysicsRaycaster_RaycastHitComparer,crate::unity_engine::raycasthit::RaycastHit,crate::unity_engine::raycasthit::RaycastHit, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhysicsRaycaster_RaycastHitComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0df40usize)as*mut u8,();
@@ -65,6 +61,11 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="unity_engine-event_systems-physicsraycaster")]impl PhysicsRaycaster_RaycastHitComparer{#[doc="Direct (non-virtual) call to `PhysicsRaycaster_RaycastHitComparer`'s own `Compare`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compare(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:crate::unity_engine::raycasthit::RaycastHit,y:crate::unity_engine::raycasthit::RaycastHit,)->i32{let __mi=Self::compare_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::raycasthit::RaycastHit,crate::unity_engine::raycasthit::RaycastHit, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,y, ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-event_systems-physicsraycaster")]impl PhysicsRaycaster_RaycastHitComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(PhysicsRaycaster_RaycastHitComparer), ::core::stringify!(new),));
@@ -72,48 +73,33 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="unity_engine-event_systems-physicsraycaster")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhysicsRaycaster_unity2_raw{use super:: * ;
-pub unsafe fn get_event_camera(this:PhysicsRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <PhysicsRaycaster as::unity2::ClassIdentity> ::NAME,"get_eventCamera",));
-let inner:extern "C" fn(PhysicsRaycaster, ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_depth(this:PhysicsRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <PhysicsRaycaster as::unity2::ClassIdentity> ::NAME,"get_depth",));
-let inner:extern "C" fn(PhysicsRaycaster, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn raycast(this:PhysicsRaycaster,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,result_append_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <PhysicsRaycaster as::unity2::ClassIdentity> ::NAME,"Raycast",));
-let inner:extern "C" fn(PhysicsRaycaster,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,result_append_list,__mi)}
-}
-
 #[cfg(feature="unity_engine-event_systems-physicsraycaster")]pub trait IPhysicsRaycasterMethods:IPhysicsRaycaster{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhysicsRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371df70usize)as*mut u8,();
 (PhysicsRaycaster)__receiver)}
 }
 #[doc="`get_eventCamera()` overload"]fn get_event_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <PhysicsRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PhysicsRaycaster_unity2_raw::get_event_camera(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <PhysicsRaycaster as::unity2::ClassIdentity> ::NAME,"get_eventCamera",));
+let __inner:extern "C" fn(PhysicsRaycaster, ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_depth()` overload"]fn get_depth(self,)->i32{unsafe{let __receiver= <PhysicsRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PhysicsRaycaster_unity2_raw::get_depth(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <PhysicsRaycaster as::unity2::ClassIdentity> ::NAME,"get_depth",));
+let __inner:extern "C" fn(PhysicsRaycaster, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_finalEventMask()` overload"]fn get_final_event_mask(self,)->i32{unsafe{let __receiver= <PhysicsRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371e920usize)as*mut u8,i32;
@@ -145,7 +131,16 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x371e590usize)as*mut
 (__ret,__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
 }
 #[doc="`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]fn raycast(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,result_append_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> >)->(){unsafe{let __receiver= <PhysicsRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PhysicsRaycaster_unity2_raw::raycast(__receiver, ::core::convert::Into::into(event_data), ::core::convert::Into::into(result_append_list), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <PhysicsRaycaster as::unity2::ClassIdentity> ::NAME,"Raycast",));
+let __inner:extern "C" fn(PhysicsRaycaster,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data), ::core::convert::Into::into(result_append_list),__mi)}
+}
 }
 }
 
@@ -161,6 +156,17 @@ pub fn get_max_ray_intersections_method_info()-> & 'static::unity2::il2cpp::Meth
 pub fn set_max_ray_intersections_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn compute_ray_and_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="unity_engine-event_systems-physicsraycaster")]impl PhysicsRaycaster{#[doc="Direct (non-virtual) call to `PhysicsRaycaster`'s own `get_eventCamera`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_event_camera(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::camera::Camera{let __mi=Self::get_event_camera_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PhysicsRaycaster`'s own `get_depth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_depth(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_depth_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PhysicsRaycaster`'s own `Raycast`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn raycast(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,result_append_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> ,)->(){let __mi=Self::raycast_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data,result_append_list, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-event_systems-physicsraycaster")]impl PhysicsRaycaster{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

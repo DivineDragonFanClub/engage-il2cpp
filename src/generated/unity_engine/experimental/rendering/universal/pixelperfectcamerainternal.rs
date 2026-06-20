@@ -16,38 +16,33 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PixelPerfectCameraInternal_unity2_raw{use super:: * ;
-pub unsafe fn on_before_serialize(this:PixelPerfectCameraInternal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <PixelPerfectCameraInternal as::unity2::ClassIdentity> ::NAME,"OnBeforeSerialize",));
-let inner:extern "C" fn(PixelPerfectCameraInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_after_deserialize(this:PixelPerfectCameraInternal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <PixelPerfectCameraInternal as::unity2::ClassIdentity> ::NAME,"OnAfterDeserialize",));
-let inner:extern "C" fn(PixelPerfectCameraInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]pub trait IPixelPerfectCameraInternalMethods:IPixelPerfectCameraInternal{#[doc="`.ctor(crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)` overload"]fn ctor(self,component:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface>)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3196210usize)as*mut u8,();
 (PixelPerfectCameraInternal)__receiver,(crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)::core::convert::Into::into(component))}
 }
 #[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCameraInternal_unity2_raw::on_before_serialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <PixelPerfectCameraInternal as::unity2::ClassIdentity> ::NAME,"OnBeforeSerialize",));
+let __inner:extern "C" fn(PixelPerfectCameraInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCameraInternal_unity2_raw::on_after_deserialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <PixelPerfectCameraInternal as::unity2::ClassIdentity> ::NAME,"OnAfterDeserialize",));
+let __inner:extern "C" fn(PixelPerfectCameraInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CalculateCameraProperties(i32, i32)` overload"]fn calculate_camera_properties(self,screen_width:impl::core::convert::Into<i32> ,screen_height:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3196430usize)as*mut u8,();
@@ -71,6 +66,14 @@ pub fn on_after_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInf
 pub fn calculate_camera_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn calculate_final_blit_pixel_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn correct_cinemachine_ortho_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]impl PixelPerfectCameraInternal{#[doc="Direct (non-virtual) call to `PixelPerfectCameraInternal`'s own `OnBeforeSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_before_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_before_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCameraInternal`'s own `OnAfterDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_after_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_after_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]impl PixelPerfectCameraInternal{#[doc="`.ctor(crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)` — overload selector"]pub fn new(component:crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

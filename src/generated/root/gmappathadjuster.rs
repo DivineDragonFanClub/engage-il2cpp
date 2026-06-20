@@ -19,6 +19,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/gmappathadjuster/GmapPathAdjuster.md"))]#[::unity2::class(namespace="",name="GmapPathAdjuster")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapPathAdjuster{#[offset(24)]#[rename(name="両端をモデル位置に合わせる")]pub 両端をモデル位置に合わせる:bool, #[offset(25)]#[rename(name="移動時に地面に吸着させる")]pub 移動時に地面に吸着させる:bool, #[offset(32)]#[rename(name="吸着対象")]pub 吸着対象:crate::system::collections::generic::list_1::List_1<crate::root::gmappathadjuster::GmapPathAdjuster_TargetModel> , #[offset(40)]#[rename(name="m_TargetColliders")]pub m_target_colliders:crate::system::collections::generic::list_1::List_1<crate::unity_engine::collider::Collider> , #[offset(56)]#[rename(name="m_LastPositions")]pub m_last_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(64)]#[rename(name="m_BothSpotTransforms")]pub m_both_spot_transforms:crate::system::collections::generic::list_1::List_1<crate::unity_engine::transform::Transform> , #[offset(72)]#[rename(name="m_IsInitialized")]pub m_is_initialized:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/gmappathadjuster/GmapPathAdjuster_TargetModel.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GmapPathAdjuster_TargetModel{pub メモ: ::unity2::Il2CppString,pub 対象とする地面: ::unity2::Il2CppString,pub 吸着する:bool,}
 impl::unity2::ClassIdentity for GmapPathAdjuster_TargetModel{const NAMESPACE: &'static str="";
 const NAME: &'static str="GmapPathAdjuster.TargetModel";
@@ -28,9 +31,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for GmapPathAdjuster_TargetModel{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/gmappathadjuster/GmapPathAdjuster.md"))]#[::unity2::class(namespace="",name="GmapPathAdjuster")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapPathAdjuster{#[offset(24)]#[rename(name="両端をモデル位置に合わせる")]pub 両端をモデル位置に合わせる:bool, #[offset(25)]#[rename(name="移動時に地面に吸着させる")]pub 移動時に地面に吸着させる:bool, #[offset(32)]#[rename(name="吸着対象")]pub 吸着対象:crate::system::collections::generic::list_1::List_1<crate::root::gmappathadjuster::GmapPathAdjuster_TargetModel> , #[offset(40)]#[rename(name="m_TargetColliders")]pub m_target_colliders:crate::system::collections::generic::list_1::List_1<crate::unity_engine::collider::Collider> , #[offset(56)]#[rename(name="m_LastPositions")]pub m_last_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(64)]#[rename(name="m_BothSpotTransforms")]pub m_both_spot_transforms:crate::system::collections::generic::list_1::List_1<crate::unity_engine::transform::Transform> , #[offset(72)]#[rename(name="m_IsInitialized")]pub m_is_initialized:bool,}
 
 }
 
@@ -117,10 +117,10 @@ this}
 #[cfg(feature = "root-gmappathadjuster")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapPathAdjuster_TargetModel;
     pub use super::GmapPathAdjuster;
     pub use super::IGmapPathAdjuster;
     pub use super::IGmapPathAdjusterMethods;
+    pub use super::GmapPathAdjuster_TargetModel;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

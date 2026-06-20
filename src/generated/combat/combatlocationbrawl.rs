@@ -18,90 +18,81 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-combatlocationbrawl-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-combatlocationbrawl")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CombatLocationBrawl_unity2_raw{use super:: * ;
-pub unsafe fn setup(this:CombatLocationBrawl,gs: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"Setup",));
-let inner:extern "C" fn(CombatLocationBrawl, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,gs,__mi)}
-pub unsafe fn get_rough_pos_count(this:CombatLocationBrawl,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"get_RoughPosCount",));
-let inner:extern "C" fn(CombatLocationBrawl, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_rough_pos(this:CombatLocationBrawl,try_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"SetRoughPos",));
-let inner:extern "C" fn(CombatLocationBrawl,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,try_count,__mi)}
-pub unsafe fn get_pattern_count(this:CombatLocationBrawl,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"get_PatternCount",));
-let inner:extern "C" fn(CombatLocationBrawl, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_battle_patern(this:CombatLocationBrawl,pattern:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"SetBattlePatern",));
-let inner:extern "C" fn(CombatLocationBrawl,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,pattern,__mi)}
-pub unsafe fn calc_location(this:CombatLocationBrawl,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"CalcLocation",));
-let inner:extern "C" fn(CombatLocationBrawl, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="combat-combatlocationbrawl")]pub trait ICombatLocationBrawlMethods:ICombatLocationBrawl{#[doc="`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]fn ctor(self,record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->(){unsafe{let __receiver= <CombatLocationBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1eadcd0usize)as*mut u8,();
 (CombatLocationBrawl)__receiver,(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))}
 }
 #[doc="`Setup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]fn setup(self,gs:impl::core::convert::Into< ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> >)->(){unsafe{let __receiver= <CombatLocationBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CombatLocationBrawl_unity2_raw::setup(__receiver, ::core::convert::Into::into(gs), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"Setup",));
+let __inner:extern "C" fn(CombatLocationBrawl, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(gs),__mi)}
+}
 }
 #[doc="`get_RoughPosCount()` overload"]fn get_rough_pos_count(self,)->i32{unsafe{let __receiver= <CombatLocationBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CombatLocationBrawl_unity2_raw::get_rough_pos_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"get_RoughPosCount",));
+let __inner:extern "C" fn(CombatLocationBrawl, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetRoughPos(i32)` overload"]fn set_rough_pos(self,try_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatLocationBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CombatLocationBrawl_unity2_raw::set_rough_pos(__receiver, ::core::convert::Into::into(try_count), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"SetRoughPos",));
+let __inner:extern "C" fn(CombatLocationBrawl,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(try_count),__mi)}
+}
 }
 #[doc="`get_PatternCount()` overload"]fn get_pattern_count(self,)->i32{unsafe{let __receiver= <CombatLocationBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CombatLocationBrawl_unity2_raw::get_pattern_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"get_PatternCount",));
+let __inner:extern "C" fn(CombatLocationBrawl, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetBattlePatern(i32)` overload"]fn set_battle_patern(self,pattern:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatLocationBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CombatLocationBrawl_unity2_raw::set_battle_patern(__receiver, ::core::convert::Into::into(pattern), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"SetBattlePatern",));
+let __inner:extern "C" fn(CombatLocationBrawl,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(pattern),__mi)}
+}
 }
 #[doc="`CalcLocation()` overload"]fn calc_location(self,)->(){unsafe{let __receiver= <CombatLocationBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CombatLocationBrawl_unity2_raw::calc_location(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <CombatLocationBrawl as::unity2::ClassIdentity> ::NAME,"CalcLocation",));
+let __inner:extern "C" fn(CombatLocationBrawl, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -114,6 +105,26 @@ pub fn set_rough_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn get_pattern_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn set_battle_patern_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn calc_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="combat-combatlocationbrawl")]impl CombatLocationBrawl{#[doc="Direct (non-virtual) call to `CombatLocationBrawl`'s own `Setup`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup(this:impl::core::convert::Into< ::unity2::IlInstance> ,gs: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> ,)->(){let __mi=Self::setup_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),gs, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CombatLocationBrawl`'s own `get_RoughPosCount`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_rough_pos_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_rough_pos_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CombatLocationBrawl`'s own `SetRoughPos`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_rough_pos(this:impl::core::convert::Into< ::unity2::IlInstance> ,try_count:i32,)->(){let __mi=Self::set_rough_pos_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),try_count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CombatLocationBrawl`'s own `get_PatternCount`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_pattern_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_pattern_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CombatLocationBrawl`'s own `SetBattlePatern`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_battle_patern(this:impl::core::convert::Into< ::unity2::IlInstance> ,pattern:i32,)->(){let __mi=Self::set_battle_patern_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),pattern, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CombatLocationBrawl`'s own `CalcLocation`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_location(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calc_location_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-combatlocationbrawl")]impl CombatLocationBrawl{#[doc="`.ctor(crate::combat::combatrecord::CombatRecord)` — overload selector"]pub fn new(record:crate::combat::combatrecord::CombatRecord)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -51,26 +51,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <LiteralExpression as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn compile(this:LiteralExpression,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <LiteralExpression as::unity2::ClassIdentity> ::NAME,"Compile",));
-let inner:extern "C" fn(LiteralExpression,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,bc,__mi)}
-pub unsafe fn eval(this:LiteralExpression,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <LiteralExpression as::unity2::ClassIdentity> ::NAME,"Eval",));
-let inner:extern "C" fn(LiteralExpression,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,context,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-expressions-literalexpression")]pub trait ILiteralExpressionMethods:ILiteralExpression{#[doc="`get_Value()` overload"]fn get_value(self,)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <LiteralExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -86,10 +66,28 @@ inner(this,context,__mi)}
 (LiteralExpression)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext),(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(t))}
 }
 #[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <LiteralExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LiteralExpression_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <LiteralExpression as::unity2::ClassIdentity> ::NAME,"Compile",));
+let __inner:extern "C" fn(LiteralExpression,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(bc),__mi)}
+}
 }
 #[doc="`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]fn eval(self,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <LiteralExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LiteralExpression_unity2_raw::eval(__receiver, ::core::convert::Into::into(context), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <LiteralExpression as::unity2::ClassIdentity> ::NAME,"Eval",));
+let __inner:extern "C" fn(LiteralExpression,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(context),__mi)}
+}
 }
 }
 
@@ -100,6 +98,14 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn compile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn eval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-tree-expressions-literalexpression")]impl LiteralExpression{#[doc="Direct (non-virtual) call to `LiteralExpression`'s own `Compile`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compile(this:impl::core::convert::Into< ::unity2::IlInstance> ,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,)->(){let __mi=Self::compile_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),bc, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `LiteralExpression`'s own `Eval`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn eval(this:impl::core::convert::Into< ::unity2::IlInstance> ,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::eval_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),context, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-expressions-literalexpression")]impl LiteralExpression{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::dynvalue::DynValue)` — overload selector"]pub fn new(lcontext:crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,value:crate::moon_sharp::interpreter::dynvalue::DynValue)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

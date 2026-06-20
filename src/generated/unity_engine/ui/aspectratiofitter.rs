@@ -23,9 +23,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="AspectRatioFitter")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct AspectRatioFitter{#[offset(24)]#[rename(name="m_AspectMode")]pub m_aspect_mode:crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode, #[offset(28)]#[rename(name="m_AspectRatio")]pub m_aspect_ratio:f32, #[offset(32)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::recttransform::RectTransform, #[offset(40)]#[rename(name="m_DelayedSetDirty")]pub m_delayed_set_dirty:bool, #[offset(41)]#[rename(name="m_DoesParentExist")]pub m_does_parent_exist:bool, #[offset(42)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter_AspectMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AspectRatioFitter_AspectMode{pub value:i32,}
 impl::unity2::ClassIdentity for AspectRatioFitter_AspectMode{const NAMESPACE: &'static str="UnityEngine.UI";
 const NAME: &'static str="AspectRatioFitter.AspectMode";
@@ -47,93 +44,13 @@ pub fn envelope_parent()->Self{Self{value:4}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="AspectRatioFitter")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct AspectRatioFitter{#[offset(24)]#[rename(name="m_AspectMode")]pub m_aspect_mode:crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode, #[offset(28)]#[rename(name="m_AspectRatio")]pub m_aspect_ratio:f32, #[offset(32)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::recttransform::RectTransform, #[offset(40)]#[rename(name="m_DelayedSetDirty")]pub m_delayed_set_dirty:bool, #[offset(41)]#[rename(name="m_DoesParentExist")]pub m_does_parent_exist:bool, #[offset(42)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,}
+
 }
 
 #[cfg(feature = "unity_engine-ui-aspectratiofitter-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-ui-aspectratiofitter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AspectRatioFitter_unity2_raw{use super:: * ;
-pub unsafe fn on_enable(this:AspectRatioFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"OnEnable",));
-let inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn start(this:AspectRatioFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"Start",));
-let inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_disable(this:AspectRatioFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"OnDisable",));
-let inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_transform_parent_changed(this:AspectRatioFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
-let inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update(this:AspectRatioFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"Update",));
-let inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_rect_transform_dimensions_change(this:AspectRatioFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
-let inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_layout_horizontal(this:AspectRatioFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"SetLayoutHorizontal",));
-let inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_layout_vertical(this:AspectRatioFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"SetLayoutVertical",));
-let inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="unity_engine-ui-aspectratiofitter")]pub trait IAspectRatioFitterMethods:IAspectRatioFitter{#[doc="`get_aspectMode()` overload"]fn get_aspect_mode(self,)->crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode{unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x31795b0usize)as*mut u8,crate::unity_engine::ui::aspectratiofitter::AspectRatioFitter_AspectMode;
@@ -160,22 +77,76 @@ inner(this,__mi)}
 (AspectRatioFitter)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AspectRatioFitter_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let __inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AspectRatioFitter_unity2_raw::start(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"Start",));
+let __inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AspectRatioFitter_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let __inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AspectRatioFitter_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
+let __inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AspectRatioFitter_unity2_raw::update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"Update",));
+let __inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AspectRatioFitter_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
+let __inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateRect()` overload"]fn update_rect(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3179b40usize)as*mut u8,();
@@ -190,10 +161,28 @@ __AspectRatioFitter_unity2_raw::on_rect_transform_dimensions_change(__receiver, 
 (AspectRatioFitter)__receiver)}
 }
 #[doc="`SetLayoutHorizontal()` overload"]fn set_layout_horizontal(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AspectRatioFitter_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"SetLayoutHorizontal",));
+let __inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetLayoutVertical()` overload"]fn set_layout_vertical(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AspectRatioFitter_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <AspectRatioFitter as::unity2::ClassIdentity> ::NAME,"SetLayoutVertical",));
+let __inner:extern "C" fn(AspectRatioFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetDirty()` overload"]fn set_dirty(self,)->(){unsafe{let __receiver= <AspectRatioFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3179640usize)as*mut u8,();
@@ -238,6 +227,32 @@ pub fn is_aspect_mode_valid_method_info()-> & 'static::unity2::il2cpp::MethodInf
 pub fn does_parent_exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 }
 
+#[cfg(feature="unity_engine-ui-aspectratiofitter")]impl AspectRatioFitter{#[doc="Direct (non-virtual) call to `AspectRatioFitter`'s own `OnEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AspectRatioFitter`'s own `Start`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AspectRatioFitter`'s own `OnDisable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_disable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_disable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AspectRatioFitter`'s own `OnTransformParentChanged`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_transform_parent_changed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_transform_parent_changed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AspectRatioFitter`'s own `Update`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AspectRatioFitter`'s own `OnRectTransformDimensionsChange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_rect_transform_dimensions_change(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_rect_transform_dimensions_change_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AspectRatioFitter`'s own `SetLayoutHorizontal`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_layout_horizontal(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_layout_horizontal_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AspectRatioFitter`'s own `SetLayoutVertical`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_layout_vertical(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_layout_vertical_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-ui-aspectratiofitter")]impl AspectRatioFitter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(AspectRatioFitter), ::core::stringify!(new),));
@@ -248,10 +263,10 @@ this}
 #[cfg(feature = "unity_engine-ui-aspectratiofitter")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AspectRatioFitter_AspectMode;
     pub use super::AspectRatioFitter;
     pub use super::IAspectRatioFitter;
     pub use super::IAspectRatioFitterMethods;
-    pub use super::AspectRatioFitter_AspectMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

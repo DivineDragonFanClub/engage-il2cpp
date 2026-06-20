@@ -17,6 +17,28 @@ use crate::unity_engine::integratedsubsystem_1::{IIntegratedSubsystem_1,Integrat
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRMirrorViewBlitDesc.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRDisplaySubsystem_XRMirrorViewBlitDesc{pub display_subsystem_instance: ::unity2::IntPtr,pub native_blit_available:bool,pub native_blit_invalid_states:bool,pub blit_params_count:i32,}
+impl::unity2::ClassIdentity for XRDisplaySubsystem_XRMirrorViewBlitDesc{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="XRDisplaySubsystem.XRMirrorViewBlitDesc";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for XRDisplaySubsystem_XRMirrorViewBlitDesc{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRBlitParams.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRDisplaySubsystem_XRBlitParams{pub src_tex:crate::unity_engine::rendertexture::RenderTexture,pub src_tex_array_slice:i32,pub src_rect:crate::unity_engine::rect::Rect,pub dest_rect:crate::unity_engine::rect::Rect,}
+impl::unity2::ClassIdentity for XRDisplaySubsystem_XRBlitParams{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="XRDisplaySubsystem.XRBlitParams";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for XRDisplaySubsystem_XRBlitParams{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_TextureLayout.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct XRDisplaySubsystem_TextureLayout{pub value:i32,}
 impl::unity2::ClassIdentity for XRDisplaySubsystem_TextureLayout{const NAMESPACE: &'static str="UnityEngine.XR";
 const NAME: &'static str="XRDisplaySubsystem.TextureLayout";
@@ -35,14 +57,14 @@ pub fn separate_texture2_ds()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRMirrorViewBlitDesc.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRDisplaySubsystem_XRMirrorViewBlitDesc{pub display_subsystem_instance: ::unity2::IntPtr,pub native_blit_available:bool,pub native_blit_invalid_states:bool,pub blit_params_count:i32,}
-impl::unity2::ClassIdentity for XRDisplaySubsystem_XRMirrorViewBlitDesc{const NAMESPACE: &'static str="UnityEngine.XR";
-const NAME: &'static str="XRDisplaySubsystem.XRMirrorViewBlitDesc";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderParameter.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRDisplaySubsystem_XRRenderParameter{pub view:crate::unity_engine::matrix4x4::Matrix4x4,pub projection:crate::unity_engine::matrix4x4::Matrix4x4,pub viewport:crate::unity_engine::rect::Rect,pub occlusion_mesh:crate::unity_engine::mesh::Mesh,pub texture_array_slice:i32,}
+impl::unity2::ClassIdentity for XRDisplaySubsystem_XRRenderParameter{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="XRDisplaySubsystem.XRRenderParameter";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for XRDisplaySubsystem_XRMirrorViewBlitDesc{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for XRDisplaySubsystem_XRRenderParameter{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -54,28 +76,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 )}
 }
 impl::unity2::IlType for XRDisplaySubsystem_XRRenderPass{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRBlitParams.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRDisplaySubsystem_XRBlitParams{pub src_tex:crate::unity_engine::rendertexture::RenderTexture,pub src_tex_array_slice:i32,pub src_rect:crate::unity_engine::rect::Rect,pub dest_rect:crate::unity_engine::rect::Rect,}
-impl::unity2::ClassIdentity for XRDisplaySubsystem_XRBlitParams{const NAMESPACE: &'static str="UnityEngine.XR";
-const NAME: &'static str="XRDisplaySubsystem.XRBlitParams";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for XRDisplaySubsystem_XRBlitParams{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrdisplaysubsystem/XRDisplaySubsystem_XRRenderParameter.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRDisplaySubsystem_XRRenderParameter{pub view:crate::unity_engine::matrix4x4::Matrix4x4,pub projection:crate::unity_engine::matrix4x4::Matrix4x4,pub viewport:crate::unity_engine::rect::Rect,pub occlusion_mesh:crate::unity_engine::mesh::Mesh,pub texture_array_slice:i32,}
-impl::unity2::ClassIdentity for XRDisplaySubsystem_XRRenderParameter{const NAMESPACE: &'static str="UnityEngine.XR";
-const NAME: &'static str="XRDisplaySubsystem.XRRenderParameter";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for XRDisplaySubsystem_XRRenderParameter{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -249,11 +249,11 @@ this}
 #[cfg(feature = "unity_engine-xr-xrdisplaysubsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::XRDisplaySubsystem_TextureLayout;
     pub use super::XRDisplaySubsystem_XRMirrorViewBlitDesc;
-    pub use super::XRDisplaySubsystem_XRRenderPass;
     pub use super::XRDisplaySubsystem_XRBlitParams;
+    pub use super::XRDisplaySubsystem_TextureLayout;
     pub use super::XRDisplaySubsystem_XRRenderParameter;
+    pub use super::XRDisplaySubsystem_XRRenderPass;
     pub use super::XRDisplaySubsystem;
     pub use super::IXRDisplaySubsystem;
     pub use super::IXRDisplaySubsystemMethods;

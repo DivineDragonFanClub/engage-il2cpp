@@ -9,127 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubvariable/HubVariable_Mascot.md"))]#[::unity2::class(namespace="App",name="HubVariable.Mascot")]#[parent(crate::system::object::Object)]pub struct HubVariable_Mascot{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubvariable/HubVariable.md"))]#[::unity2::class(namespace="App",name="HubVariable")]#[parent(crate::system::object::Object)]pub struct HubVariable{#[static_field]#[rename(name="MaxAnimalNum")]pub max_animal_num:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubvariable/HubVariable_Mascot.md"))]#[::unity2::class(namespace="App",name="HubVariable.Mascot")]#[parent(crate::system::object::Object)]pub struct HubVariable_Mascot{}
 
 }
 
 #[cfg(feature = "app-hubvariable-types")]
 pub use __types::*;
-
-#[cfg(feature="app-hubvariable")]impl HubVariable_Mascot{#[doc="`get_CanFollow()` overload"]pub fn get_can_follow()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee140usize)as*mut u8,bool;
-)}
-}
-#[doc="`IsFound()` overload"]pub fn is_found()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee390usize)as*mut u8,bool;
-)}
-}
-#[doc="`Found()` overload"]pub fn found()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee4b0usize)as*mut u8,();
-)}
-}
-#[doc="`GetPoint()` overload"]pub fn get_point()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee270usize)as*mut u8,i32;
-)}
-}
-#[doc="`SetPoint(i32)` overload"]pub fn set_point(point:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee6b0usize)as*mut u8,();
-(i32)::core::convert::Into::into(point))}
-}
-#[doc="`get_IgnorePoint()` overload"]pub fn get_ignore_point()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee8f0usize)as*mut u8,i32;
-)}
-}
-#[doc="`get_TurnLimitPoint()` overload"]pub fn get_turn_limit_point()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee990usize)as*mut u8,i32;
-)}
-}
-#[doc="`GetLimitPoint()` overload"]pub fn get_limit_point()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee9e0usize)as*mut u8,i32;
-)}
-}
-#[doc="`SetLimitPoint(i32)` overload"]pub fn set_limit_point(point:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeeb00usize)as*mut u8,();
-(i32)::core::convert::Into::into(point))}
-}
-#[doc="`AddPoint(i32)` overload"]pub fn add_point(point:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeed20usize)as*mut u8,();
-(i32)::core::convert::Into::into(point))}
-}
-#[doc="`DecPoint(i32)` overload"]pub fn dec_point(point:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeed60usize)as*mut u8,();
-(i32)::core::convert::Into::into(point))}
-}
-#[doc="`SetHeadAccName(::unity2::Il2CppString)` overload"]pub fn set_head_acc_name(acc_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeed90usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(acc_name))}
-}
-#[doc="`GetHeadAccName()` overload"]pub fn get_head_acc_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeef90usize)as*mut u8, ::unity2::Il2CppString;
-)}
-}
-#[doc="`SetTailAccName(::unity2::Il2CppString)` overload"]pub fn set_tail_acc_name(acc_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef0b0usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(acc_name))}
-}
-#[doc="`GetTailAccName()` overload"]pub fn get_tail_acc_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef2b0usize)as*mut u8, ::unity2::Il2CppString;
-)}
-}
-#[doc="`SetColorIndex(i32)` overload"]pub fn set_color_index(color_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef3d0usize)as*mut u8,();
-(i32)::core::convert::Into::into(color_index))}
-}
-#[doc="`GetColorIndex()` overload"]pub fn get_color_index()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef5d0usize)as*mut u8,i32;
-)}
-}
-#[doc="`DoneStrok()` overload"]pub fn done_strok()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef6f0usize)as*mut u8,();
-)}
-}
-#[doc="`IsDoneStrok()` overload"]pub fn is_done_strok()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef8f0usize)as*mut u8,bool;
-)}
-}
-#[doc="`DoneEatFood()` overload"]pub fn done_eat_food()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aefa10usize)as*mut u8,();
-)}
-}
-#[doc="`IsDoneEatFood()` overload"]pub fn is_done_eat_food()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aefc10usize)as*mut u8,bool;
-)}
-}
-#[doc="`DoneChangeEquip()` overload"]pub fn done_change_equip()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aefd30usize)as*mut u8,();
-)}
-}
-#[doc="`IsDoneChangeEquip()` overload"]pub fn is_done_change_equip()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeff30usize)as*mut u8,bool;
-)}
-}
-}
-
-#[cfg(feature="app-hubvariable")]pub trait IHubVariable_MascotMethods:IHubVariable_Mascot{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubVariable_Mascot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af0050usize)as*mut u8,();
-(HubVariable_Mascot)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubvariable")]impl<__T:IHubVariable_Mascot>IHubVariable_MascotMethods for __T{}
-
-#[cfg(feature="app-hubvariable")]impl HubVariable_Mascot{pub fn get_can_follow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_found_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn found_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_ignore_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_turn_limit_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_limit_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_limit_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn add_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn dec_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_head_acc_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_head_acc_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn set_tail_acc_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_tail_acc_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn set_color_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn get_color_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn done_strok_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn is_done_strok_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn done_eat_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn is_done_eat_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn done_change_equip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn is_done_change_equip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-}
-
-#[cfg(feature="app-hubvariable")]impl HubVariable_Mascot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubVariable_Mascot), ::core::stringify!(new),));
- <Self as IHubVariable_MascotMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-hubvariable")]impl HubVariable{#[doc="`get_Variable()` overload"]pub fn get_variable()->crate::app::gamevariable::GameVariable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a68e60usize)as*mut u8,crate::app::gamevariable::GameVariable;
 )}
@@ -351,15 +239,127 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-hubvariable")]impl HubVariable_Mascot{#[doc="`get_CanFollow()` overload"]pub fn get_can_follow()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee140usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsFound()` overload"]pub fn is_found()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee390usize)as*mut u8,bool;
+)}
+}
+#[doc="`Found()` overload"]pub fn found()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee4b0usize)as*mut u8,();
+)}
+}
+#[doc="`GetPoint()` overload"]pub fn get_point()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee270usize)as*mut u8,i32;
+)}
+}
+#[doc="`SetPoint(i32)` overload"]pub fn set_point(point:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee6b0usize)as*mut u8,();
+(i32)::core::convert::Into::into(point))}
+}
+#[doc="`get_IgnorePoint()` overload"]pub fn get_ignore_point()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee8f0usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_TurnLimitPoint()` overload"]pub fn get_turn_limit_point()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee990usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetLimitPoint()` overload"]pub fn get_limit_point()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aee9e0usize)as*mut u8,i32;
+)}
+}
+#[doc="`SetLimitPoint(i32)` overload"]pub fn set_limit_point(point:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeeb00usize)as*mut u8,();
+(i32)::core::convert::Into::into(point))}
+}
+#[doc="`AddPoint(i32)` overload"]pub fn add_point(point:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeed20usize)as*mut u8,();
+(i32)::core::convert::Into::into(point))}
+}
+#[doc="`DecPoint(i32)` overload"]pub fn dec_point(point:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeed60usize)as*mut u8,();
+(i32)::core::convert::Into::into(point))}
+}
+#[doc="`SetHeadAccName(::unity2::Il2CppString)` overload"]pub fn set_head_acc_name(acc_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeed90usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(acc_name))}
+}
+#[doc="`GetHeadAccName()` overload"]pub fn get_head_acc_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeef90usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`SetTailAccName(::unity2::Il2CppString)` overload"]pub fn set_tail_acc_name(acc_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef0b0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(acc_name))}
+}
+#[doc="`GetTailAccName()` overload"]pub fn get_tail_acc_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef2b0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`SetColorIndex(i32)` overload"]pub fn set_color_index(color_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef3d0usize)as*mut u8,();
+(i32)::core::convert::Into::into(color_index))}
+}
+#[doc="`GetColorIndex()` overload"]pub fn get_color_index()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef5d0usize)as*mut u8,i32;
+)}
+}
+#[doc="`DoneStrok()` overload"]pub fn done_strok()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef6f0usize)as*mut u8,();
+)}
+}
+#[doc="`IsDoneStrok()` overload"]pub fn is_done_strok()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aef8f0usize)as*mut u8,bool;
+)}
+}
+#[doc="`DoneEatFood()` overload"]pub fn done_eat_food()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aefa10usize)as*mut u8,();
+)}
+}
+#[doc="`IsDoneEatFood()` overload"]pub fn is_done_eat_food()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aefc10usize)as*mut u8,bool;
+)}
+}
+#[doc="`DoneChangeEquip()` overload"]pub fn done_change_equip()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aefd30usize)as*mut u8,();
+)}
+}
+#[doc="`IsDoneChangeEquip()` overload"]pub fn is_done_change_equip()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeff30usize)as*mut u8,bool;
+)}
+}
+}
+
+#[cfg(feature="app-hubvariable")]pub trait IHubVariable_MascotMethods:IHubVariable_Mascot{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubVariable_Mascot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af0050usize)as*mut u8,();
+(HubVariable_Mascot)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubvariable")]impl<__T:IHubVariable_Mascot>IHubVariable_MascotMethods for __T{}
+
+#[cfg(feature="app-hubvariable")]impl HubVariable_Mascot{pub fn get_can_follow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_found_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn found_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_ignore_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_turn_limit_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_limit_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_limit_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn dec_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_head_acc_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_head_acc_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_tail_acc_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_tail_acc_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_color_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_color_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn done_strok_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_done_strok_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn done_eat_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_done_eat_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn done_change_equip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn is_done_change_equip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
+
+#[cfg(feature="app-hubvariable")]impl HubVariable_Mascot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubVariable_Mascot), ::core::stringify!(new),));
+ <Self as IHubVariable_MascotMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-hubvariable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubVariable_Mascot;
-    pub use super::IHubVariable_Mascot;
-    pub use super::IHubVariable_MascotMethods;
     pub use super::HubVariable;
     pub use super::IHubVariable;
     pub use super::IHubVariableMethods;
+    pub use super::HubVariable_Mascot;
+    pub use super::IHubVariable_Mascot;
+    pub use super::IHubVariable_MascotMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -18,29 +18,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-procbattlecallback-types")]
 pub use __types::*;
 
-#[cfg(feature="app-procbattlecallback")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcBattleCallback_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:ProcBattleCallback,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <ProcBattleCallback as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(ProcBattleCallback, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:ProcBattleCallback,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <ProcBattleCallback as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(ProcBattleCallback, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-procbattlecallback")]impl ProcBattleCallback{#[doc="`GetCurrent(crate::app::procinst::ProcInst)` overload"]pub fn get_current(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c630usize)as*mut u8,crate::app::procinst::ProcInst;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -51,10 +28,28 @@ inner(this,__mi)}
 (ProcBattleCallback)__receiver,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::system::action::Action)::core::convert::Into::into(completed),(bool)::core::convert::Into::into(skipable))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <ProcBattleCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProcBattleCallback_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ProcBattleCallback as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(ProcBattleCallback, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProcBattleCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProcBattleCallback_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ProcBattleCallback as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(ProcBattleCallback, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -64,6 +59,14 @@ __ProcBattleCallback_unity2_raw::on_dispose(__receiver, ::core::option::Option::
 pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-procbattlecallback")]impl ProcBattleCallback{#[doc="Direct (non-virtual) call to `ProcBattleCallback`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ProcBattleCallback`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-procbattlecallback")]impl ProcBattleCallback{#[doc="`.ctor(crate::app::battlecalculator::BattleCalculator, crate::system::action::Action, bool)` — overload selector"]pub fn new(calculator:crate::app::battlecalculator::BattleCalculator,completed:crate::system::action::Action,skipable:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

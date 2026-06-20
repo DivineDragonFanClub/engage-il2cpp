@@ -19,95 +19,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/adhocassetloader/AdhocAssetLoader_Asset.md"))]#[::unity2::class(namespace="Combat",name="AdhocAssetLoader.Asset")]#[parent(crate::system::object::Object)]pub struct AdhocAssetLoader_Asset{#[offset(40)]#[rename(name="m_FileHandle")]pub m_file_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/adhocassetloader/AdhocAssetLoader.md"))]#[::unity2::class(namespace="Combat",name="AdhocAssetLoader")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::combat::adhocassetloader::AdhocAssetLoader>)]pub struct AdhocAssetLoader{#[offset(32)]#[rename(name="assets")]pub assets:crate::system::collections::generic::list_1::List_1<crate::combat::adhocassetloader::AdhocAssetLoader_Asset> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/adhocassetloader/AdhocAssetLoader_Asset.md"))]#[::unity2::class(namespace="Combat",name="AdhocAssetLoader.Asset")]#[parent(crate::system::object::Object)]pub struct AdhocAssetLoader_Asset{#[offset(40)]#[rename(name="m_FileHandle")]pub m_file_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "combat-adhocassetloader-types")]
 pub use __types::*;
-
-#[cfg(feature="combat-adhocassetloader")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AdhocAssetLoader_Asset_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:AdhocAssetLoader_Asset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AdhocAssetLoader_Asset as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(AdhocAssetLoader_Asset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="combat-adhocassetloader")]pub trait IAdhocAssetLoader_AssetMethods:IAdhocAssetLoader_Asset{#[doc="`get_NameHash()` overload"]fn get_name_hash(self,)->i32{unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a8d0usize)as*mut u8,i32;
-(AdhocAssetLoader_Asset)__receiver)}
-}
-#[doc="`set_NameHash(i32)` overload"]fn set_name_hash(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a8e0usize)as*mut u8,();
-(AdhocAssetLoader_Asset)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AddressablePath()` overload"]fn get_addressable_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a8f0usize)as*mut u8, ::unity2::Il2CppString;
-(AdhocAssetLoader_Asset)__receiver)}
-}
-#[doc="`set_AddressablePath(::unity2::Il2CppString)` overload"]fn set_addressable_path(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a900usize)as*mut u8,();
-(AdhocAssetLoader_Asset)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Prefab()` overload"]fn get_prefab(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a910usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(AdhocAssetLoader_Asset)__receiver)}
-}
-#[doc="`set_Prefab(crate::unity_engine::gameobject::GameObject)` overload"]fn set_prefab(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a920usize)as*mut u8,();
-(AdhocAssetLoader_Asset)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
-}
-#[doc="`Is(i32)` overload"]fn is(self,hash:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a930usize)as*mut u8,bool;
-(AdhocAssetLoader_Asset)__receiver,(i32)::core::convert::Into::into(hash))}
-}
-#[doc="`.ctor(::unity2::Il2CppString, i32)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a940usize)as*mut u8,();
-(AdhocAssetLoader_Asset)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(hash))}
-}
-#[doc="`Load()` overload"]fn load(self,)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9aa00usize)as*mut u8,();
-(AdhocAssetLoader_Asset)__receiver)}
-}
-#[doc="`IsReady()` overload"]fn is_ready(self,)->bool{unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9aa60usize)as*mut u8,bool;
-(AdhocAssetLoader_Asset)__receiver)}
-}
-#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AdhocAssetLoader_Asset_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="combat-adhocassetloader")]impl<__T:IAdhocAssetLoader_Asset>IAdhocAssetLoader_AssetMethods for __T{}
-
-#[cfg(feature="combat-adhocassetloader")]impl AdhocAssetLoader_Asset{pub fn get_name_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_name_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_addressable_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_addressable_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn is_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn is_ready_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="combat-adhocassetloader")]impl AdhocAssetLoader_Asset{#[doc="`.ctor(::unity2::Il2CppString, i32)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,hash:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AdhocAssetLoader_Asset), ::core::stringify!(new),));
- <Self as IAdhocAssetLoader_AssetMethods> ::ctor(this,name,hash);
-this}
-}
 
 #[cfg(feature="combat-adhocassetloader")]pub trait IAdhocAssetLoaderMethods:IAdhocAssetLoader{#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <AdhocAssetLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9d80usize)as*mut u8,();
@@ -152,15 +72,96 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="combat-adhocassetloader")]pub trait IAdhocAssetLoader_AssetMethods:IAdhocAssetLoader_Asset{#[doc="`get_NameHash()` overload"]fn get_name_hash(self,)->i32{unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a8d0usize)as*mut u8,i32;
+(AdhocAssetLoader_Asset)__receiver)}
+}
+#[doc="`set_NameHash(i32)` overload"]fn set_name_hash(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a8e0usize)as*mut u8,();
+(AdhocAssetLoader_Asset)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AddressablePath()` overload"]fn get_addressable_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a8f0usize)as*mut u8, ::unity2::Il2CppString;
+(AdhocAssetLoader_Asset)__receiver)}
+}
+#[doc="`set_AddressablePath(::unity2::Il2CppString)` overload"]fn set_addressable_path(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a900usize)as*mut u8,();
+(AdhocAssetLoader_Asset)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Prefab()` overload"]fn get_prefab(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a910usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(AdhocAssetLoader_Asset)__receiver)}
+}
+#[doc="`set_Prefab(crate::unity_engine::gameobject::GameObject)` overload"]fn set_prefab(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a920usize)as*mut u8,();
+(AdhocAssetLoader_Asset)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`Is(i32)` overload"]fn is(self,hash:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a930usize)as*mut u8,bool;
+(AdhocAssetLoader_Asset)__receiver,(i32)::core::convert::Into::into(hash))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, i32)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9a940usize)as*mut u8,();
+(AdhocAssetLoader_Asset)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(hash))}
+}
+#[doc="`Load()` overload"]fn load(self,)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9aa00usize)as*mut u8,();
+(AdhocAssetLoader_Asset)__receiver)}
+}
+#[doc="`IsReady()` overload"]fn is_ready(self,)->bool{unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9aa60usize)as*mut u8,bool;
+(AdhocAssetLoader_Asset)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AdhocAssetLoader_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AdhocAssetLoader_Asset as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(AdhocAssetLoader_Asset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="combat-adhocassetloader")]impl<__T:IAdhocAssetLoader_Asset>IAdhocAssetLoader_AssetMethods for __T{}
+
+#[cfg(feature="combat-adhocassetloader")]impl AdhocAssetLoader_Asset{pub fn get_name_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_name_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_addressable_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_addressable_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_ready_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="combat-adhocassetloader")]impl AdhocAssetLoader_Asset{#[doc="Direct (non-virtual) call to `AdhocAssetLoader_Asset`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="combat-adhocassetloader")]impl AdhocAssetLoader_Asset{#[doc="`.ctor(::unity2::Il2CppString, i32)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,hash:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AdhocAssetLoader_Asset), ::core::stringify!(new),));
+ <Self as IAdhocAssetLoader_AssetMethods> ::ctor(this,name,hash);
+this}
+}
+
 #[cfg(feature = "combat-adhocassetloader")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AdhocAssetLoader_Asset;
-    pub use super::IAdhocAssetLoader_Asset;
-    pub use super::IAdhocAssetLoader_AssetMethods;
     pub use super::AdhocAssetLoader;
     pub use super::IAdhocAssetLoader;
     pub use super::IAdhocAssetLoaderMethods;
+    pub use super::AdhocAssetLoader_Asset;
+    pub use super::IAdhocAssetLoader_Asset;
+    pub use super::IAdhocAssetLoader_AssetMethods;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

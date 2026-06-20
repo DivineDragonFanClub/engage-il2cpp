@@ -24,39 +24,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-gamemessagecontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-gamemessagecontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameMessageContent_unity2_raw{use super:: * ;
-pub unsafe fn calc_pos_x(this:GameMessageContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GameMessageContent as::unity2::ClassIdentity> ::NAME,"CalcPosX",));
-let inner:extern "C" fn(GameMessageContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn calc_pos_y(this:GameMessageContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GameMessageContent as::unity2::ClassIdentity> ::NAME,"CalcPosY",));
-let inner:extern "C" fn(GameMessageContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_destroy(this:GameMessageContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <GameMessageContent as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
-let inner:extern "C" fn(GameMessageContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-gamemessagecontent")]impl GameMessageContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22802c0usize)as*mut u8,();
 )}
 }
@@ -105,13 +72,40 @@ inner(this,__mi)}
 (GameMessageContent)__receiver)}
 }
 #[doc="`CalcPosX()` overload"]fn calc_pos_x(self,)->f32{unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameMessageContent_unity2_raw::calc_pos_x(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GameMessageContent as::unity2::ClassIdentity> ::NAME,"CalcPosX",));
+let __inner:extern "C" fn(GameMessageContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CalcPosY()` overload"]fn calc_pos_y(self,)->f32{unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameMessageContent_unity2_raw::calc_pos_y(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GameMessageContent as::unity2::ClassIdentity> ::NAME,"CalcPosY",));
+let __inner:extern "C" fn(GameMessageContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameMessageContent_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GameMessageContent as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let __inner:extern "C" fn(GameMessageContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetShadowOff()` overload"]fn set_shadow_off(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x227fc80usize)as*mut u8,();
@@ -147,6 +141,17 @@ pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
+
+#[cfg(feature="app-gamemessagecontent")]impl GameMessageContent{#[doc="Direct (non-virtual) call to `GameMessageContent`'s own `CalcPosX`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_pos_x(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::calc_pos_x_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameMessageContent`'s own `CalcPosY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_pos_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::calc_pos_y_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameMessageContent`'s own `OnDestroy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_destroy(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_destroy_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-gamemessagecontent")]impl GameMessageContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

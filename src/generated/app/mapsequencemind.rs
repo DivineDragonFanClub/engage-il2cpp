@@ -15,13 +15,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencemind/MapSequenceMind_ProcEscape.md"))]#[::unity2::class(namespace="App",name="MapSequenceMind.ProcEscape")]#[parent(crate::app::mapsequencemind::MapSequenceMind_ProcMindBase)]pub struct MapSequenceMind_ProcEscape{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencemind/MapSequenceMind.md"))]#[::unity2::class(namespace="App",name="MapSequenceMind")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceMind{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_Target")]pub m_target:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_IsMoveOnly")]pub m_is_move_only:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencemind/MapSequenceMind_ProcMindBase.md"))]#[::unity2::class(namespace="App",name="MapSequenceMind.ProcMindBase")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceMind_ProcMindBase{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencemind/MapSequenceMind_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceMind_Label{pub value:i32,}
@@ -95,69 +89,16 @@ pub fn end()->Self{Self{value:29}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencemind/MapSequenceMind_ProcEscape.md"))]#[::unity2::class(namespace="App",name="MapSequenceMind.ProcEscape")]#[parent(crate::app::mapsequencemind::MapSequenceMind_ProcMindBase)]pub struct MapSequenceMind_ProcEscape{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencemind/MapSequenceMind_ProcMindBase.md"))]#[::unity2::class(namespace="App",name="MapSequenceMind.ProcMindBase")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceMind_ProcMindBase{}
+
 }
 
 #[cfg(feature = "app-mapsequencemind-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapsequencemind")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceMind_ProcEscape_unity2_raw{use super:: * ;
-pub unsafe fn on_dispose(this:MapSequenceMind_ProcEscape,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MapSequenceMind_ProcEscape as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(MapSequenceMind_ProcEscape, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcEscape{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e39db0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mapsequencemind")]pub trait IMapSequenceMind_ProcEscapeMethods:IMapSequenceMind_ProcEscape{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcEscape as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e39e20usize)as*mut u8,();
-(MapSequenceMind_ProcEscape)__receiver)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcEscape as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceMind_ProcEscape_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetDir()` overload"]fn get_dir(self,)->crate::app::dir_2::Dir_Type{unsafe{let __receiver= <MapSequenceMind_ProcEscape as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e39f40usize)as*mut u8,crate::app::dir_2::Dir_Type;
-(MapSequenceMind_ProcEscape)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapsequencemind")]impl<__T:IMapSequenceMind_ProcEscape>IMapSequenceMind_ProcEscapeMethods for __T{}
-
-#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcEscape{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcEscape{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceMind_ProcEscape), ::core::stringify!(new),));
- <Self as IMapSequenceMind_ProcEscapeMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapsequencemind")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceMind_unity2_raw{use super:: * ;
-pub unsafe fn get_can_wait_skip(this:MapSequenceMind,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapSequenceMind as::unity2::ClassIdentity> ::NAME,"get_CanWaitSkip",));
-let inner:extern "C" fn(MapSequenceMind, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-mapsequencemind")]impl MapSequenceMind{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26837e0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -327,7 +268,16 @@ inner(this,__mi)}
 (MapSequenceMind)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
 #[doc="`get_CanWaitSkip()` overload"]fn get_can_wait_skip(self,)->bool{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceMind_unity2_raw::get_can_wait_skip(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapSequenceMind as::unity2::ClassIdentity> ::NAME,"get_CanWaitSkip",));
+let __inner:extern "C" fn(MapSequenceMind, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`FixedSkill()` overload"]fn fixed_skill(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceMind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2681ad0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
@@ -474,6 +424,11 @@ pub fn create_bind_move_only_method_info()-> & 'static::unity2::il2cpp::MethodIn
 pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
 }
 
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind{#[doc="Direct (non-virtual) call to `MapSequenceMind`'s own `get_CanWaitSkip`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_can_wait_skip(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_can_wait_skip_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapsequencemind")]impl MapSequenceMind{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,target:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapSequenceMind), ::core::stringify!(new),));
@@ -481,21 +436,64 @@ pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 this}
 }
 
-#[cfg(feature="app-mapsequencemind")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceMind_ProcMindBase_unity2_raw{use super:: * ;
-pub unsafe fn on_tick(this:MapSequenceMind_ProcMindBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcEscape{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e39db0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapsequencemind")]pub trait IMapSequenceMind_ProcEscapeMethods:IMapSequenceMind_ProcEscape{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcEscape as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e39e20usize)as*mut u8,();
+(MapSequenceMind_ProcEscape)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcEscape as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequenceMind_ProcEscape as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(MapSequenceMind_ProcEscape, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetDir()` overload"]fn get_dir(self,)->crate::app::dir_2::Dir_Type{unsafe{let __receiver= <MapSequenceMind_ProcEscape as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e39f40usize)as*mut u8,crate::app::dir_2::Dir_Type;
+(MapSequenceMind_ProcEscape)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequencemind")]impl<__T:IMapSequenceMind_ProcEscape>IMapSequenceMind_ProcEscapeMethods for __T{}
+
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcEscape{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcEscape{#[doc="Direct (non-virtual) call to `MapSequenceMind_ProcEscape`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcEscape{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceMind_ProcEscape), ::core::stringify!(new),));
+ <Self as IMapSequenceMind_ProcEscapeMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsequencemind")]pub trait IMapSequenceMind_ProcMindBaseMethods:IMapSequenceMind_ProcMindBase{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcMindBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <MapSequenceMind_ProcMindBase as::unity2::ClassIdentity> ::NAME,"OnTick",));
-let inner:extern "C" fn(MapSequenceMind_ProcMindBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MapSequenceMind_ProcMindBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-mapsequencemind")]pub trait IMapSequenceMind_ProcMindBaseMethods:IMapSequenceMind_ProcMindBase{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcMindBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceMind_ProcMindBase_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceMind_ProcMindBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e39f30usize)as*mut u8,();
@@ -509,6 +507,11 @@ __MapSequenceMind_ProcMindBase_unity2_raw::on_tick(__receiver, ::core::option::O
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcMindBase{#[doc="Direct (non-virtual) call to `MapSequenceMind_ProcMindBase`'s own `OnTick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapsequencemind")]impl MapSequenceMind_ProcMindBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapSequenceMind_ProcMindBase), ::core::stringify!(new),));
@@ -519,16 +522,16 @@ this}
 #[cfg(feature = "app-mapsequencemind")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceMind_ProcEscape;
-    pub use super::IMapSequenceMind_ProcEscape;
-    pub use super::IMapSequenceMind_ProcEscapeMethods;
     pub use super::MapSequenceMind;
     pub use super::IMapSequenceMind;
     pub use super::IMapSequenceMindMethods;
+    pub use super::MapSequenceMind_Label;
+    pub use super::MapSequenceMind_ProcEscape;
+    pub use super::IMapSequenceMind_ProcEscape;
+    pub use super::IMapSequenceMind_ProcEscapeMethods;
     pub use super::MapSequenceMind_ProcMindBase;
     pub use super::IMapSequenceMind_ProcMindBase;
     pub use super::IMapSequenceMind_ProcMindBaseMethods;
-    pub use super::MapSequenceMind_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "unity_engine-event_systems-ideselecthandler-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-event_systems-ideselecthandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IDeselectHandler_unity2_raw{use super:: * ;
-pub unsafe fn on_deselect(this:IDeselectHandler,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-event_systems-ideselecthandler")]pub trait IIDeselectHandlerMethods:IIDeselectHandler{#[doc="`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_deselect(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <IDeselectHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IDeselectHandler as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
-let inner:extern "C" fn(IDeselectHandler,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDeselectHandler,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
 }
-
-#[cfg(feature="unity_engine-event_systems-ideselecthandler")]pub trait IIDeselectHandlerMethods:IIDeselectHandler{#[doc="`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_deselect(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <IDeselectHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDeselectHandler_unity2_raw::on_deselect(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="unity_engine-event_systems-ideselecthandler")]impl<__T:IIDeselectHandler>IIDeselectHandlerMethods for __T{}
 
 #[cfg(feature="unity_engine-event_systems-ideselecthandler")]impl IDeselectHandler{pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-event_systems-ideselecthandler")]impl IDeselectHandler{#[doc="Direct (non-virtual) call to `IDeselectHandler`'s own `OnDeselect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deselect(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,)->(){let __mi=Self::on_deselect_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-event_systems-ideselecthandler")]

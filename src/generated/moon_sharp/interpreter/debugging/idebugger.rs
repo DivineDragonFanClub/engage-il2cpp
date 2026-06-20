@@ -14,151 +14,137 @@ mod __types {
 #[cfg(feature = "moon_sharp-interpreter-debugging-idebugger-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-debugging-idebugger")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IDebugger_unity2_raw{use super:: * ;
-pub unsafe fn get_debugger_caps(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="moon_sharp-interpreter-debugging-idebugger")]pub trait IIDebuggerMethods:IIDebugger{#[doc="`GetDebuggerCaps()` overload"]fn get_debugger_caps(self,)->crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps{unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"GetDebuggerCaps",));
-let inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_debug_service(this:IDebugger,debug_service:crate::moon_sharp::interpreter::debugging::debugservice::DebugService,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`SetDebugService(crate::moon_sharp::interpreter::debugging::debugservice::DebugService)` overload"]fn set_debug_service(self,debug_service:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::debugservice::DebugService>)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"SetDebugService",));
-let inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::debugging::debugservice::DebugService, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::debugging::debugservice::DebugService, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,debug_service,__mi)}
-pub unsafe fn set_source_code(this:IDebugger,source_code:crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(debug_service),__mi)}
+}
+}
+#[doc="`SetSourceCode(crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode)` overload"]fn set_source_code(self,source_code:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode>)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"SetSourceCode",));
-let inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,source_code,__mi)}
-pub unsafe fn set_byte_code(this:IDebugger,byte_code: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(source_code),__mi)}
+}
+}
+#[doc="`SetByteCode(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_byte_code(self,byte_code:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",3usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"SetByteCode",));
-let inner:extern "C" fn(IDebugger, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,byte_code,__mi)}
-pub unsafe fn is_pause_requested(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(byte_code),__mi)}
+}
+}
+#[doc="`IsPauseRequested()` overload"]fn is_pause_requested(self,)->bool{unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"IsPauseRequested",));
-let inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn signal_runtime_exception(this:IDebugger,ex:crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`SignalRuntimeException(crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException)` overload"]fn signal_runtime_exception(self,ex:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException>)->bool{unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"SignalRuntimeException",));
-let inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,ex,__mi)}
-pub unsafe fn get_action(this:IDebugger,ip:i32,sourceref:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(ex),__mi)}
+}
+}
+#[doc="`GetAction(i32, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]fn get_action(self,ip:impl::core::convert::Into<i32> ,sourceref:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction{unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"GetAction",));
-let inner:extern "C" fn(IDebugger,i32,crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger,i32,crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,ip,sourceref,__mi)}
-pub unsafe fn signal_execution_ended(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(ip), ::core::convert::Into::into(sourceref),__mi)}
+}
+}
+#[doc="`SignalExecutionEnded()` overload"]fn signal_execution_ended(self,)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"SignalExecutionEnded",));
-let inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update(this:IDebugger,watch_type:crate::moon_sharp::interpreter::debugging::watchtype::WatchType,items:crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Update(crate::moon_sharp::interpreter::debugging::watchtype::WatchType, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>)` overload"]fn update(self,watch_type:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::watchtype::WatchType> ,items:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> >)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"Update",));
-let inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::debugging::watchtype::WatchType,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::debugging::watchtype::WatchType,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,watch_type,items,__mi)}
-pub unsafe fn get_watch_items(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(watch_type), ::core::convert::Into::into(items),__mi)}
+}
+}
+#[doc="`GetWatchItems()` overload"]fn get_watch_items(self,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression>{unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",9usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"GetWatchItems",));
-let inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn refresh_breakpoints(this:IDebugger,refs:crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`RefreshBreakpoints(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>)` overload"]fn refresh_breakpoints(self,refs:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> >)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"RefreshBreakpoints",));
-let inner:extern "C" fn(IDebugger,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDebugger,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,refs,__mi)}
+__inner(__receiver, ::core::convert::Into::into(refs),__mi)}
 }
-
-#[cfg(feature="moon_sharp-interpreter-debugging-idebugger")]pub trait IIDebuggerMethods:IIDebugger{#[doc="`GetDebuggerCaps()` overload"]fn get_debugger_caps(self,)->crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps{unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::get_debugger_caps(__receiver, ::core::option::Option::None)}
-}
-#[doc="`SetDebugService(crate::moon_sharp::interpreter::debugging::debugservice::DebugService)` overload"]fn set_debug_service(self,debug_service:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::debugservice::DebugService>)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::set_debug_service(__receiver, ::core::convert::Into::into(debug_service), ::core::option::Option::None)}
-}
-#[doc="`SetSourceCode(crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode)` overload"]fn set_source_code(self,source_code:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode>)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::set_source_code(__receiver, ::core::convert::Into::into(source_code), ::core::option::Option::None)}
-}
-#[doc="`SetByteCode(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_byte_code(self,byte_code:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::set_byte_code(__receiver, ::core::convert::Into::into(byte_code), ::core::option::Option::None)}
-}
-#[doc="`IsPauseRequested()` overload"]fn is_pause_requested(self,)->bool{unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::is_pause_requested(__receiver, ::core::option::Option::None)}
-}
-#[doc="`SignalRuntimeException(crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException)` overload"]fn signal_runtime_exception(self,ex:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException>)->bool{unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::signal_runtime_exception(__receiver, ::core::convert::Into::into(ex), ::core::option::Option::None)}
-}
-#[doc="`GetAction(i32, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]fn get_action(self,ip:impl::core::convert::Into<i32> ,sourceref:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction{unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::get_action(__receiver, ::core::convert::Into::into(ip), ::core::convert::Into::into(sourceref), ::core::option::Option::None)}
-}
-#[doc="`SignalExecutionEnded()` overload"]fn signal_execution_ended(self,)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::signal_execution_ended(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Update(crate::moon_sharp::interpreter::debugging::watchtype::WatchType, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>)` overload"]fn update(self,watch_type:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::watchtype::WatchType> ,items:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> >)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::update(__receiver, ::core::convert::Into::into(watch_type), ::core::convert::Into::into(items), ::core::option::Option::None)}
-}
-#[doc="`GetWatchItems()` overload"]fn get_watch_items(self,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression>{unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::get_watch_items(__receiver, ::core::option::Option::None)}
-}
-#[doc="`RefreshBreakpoints(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>)` overload"]fn refresh_breakpoints(self,refs:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> >)->(){unsafe{let __receiver= <IDebugger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDebugger_unity2_raw::refresh_breakpoints(__receiver, ::core::convert::Into::into(refs), ::core::option::Option::None)}
 }
 }
 
@@ -175,6 +161,41 @@ pub fn signal_execution_ended_method_info()-> & 'static::unity2::il2cpp::MethodI
 pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn get_watch_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn refresh_breakpoints_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-debugging-idebugger")]impl IDebugger{#[doc="Direct (non-virtual) call to `IDebugger`'s own `GetDebuggerCaps`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debugger_caps(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps{let __mi=Self::get_debugger_caps_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDebugger`'s own `SetDebugService`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_debug_service(this:impl::core::convert::Into< ::unity2::IlInstance> ,debug_service:crate::moon_sharp::interpreter::debugging::debugservice::DebugService,)->(){let __mi=Self::set_debug_service_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::debugging::debugservice::DebugService, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),debug_service, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDebugger`'s own `SetSourceCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_source_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,source_code:crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,)->(){let __mi=Self::set_source_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),source_code, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDebugger`'s own `SetByteCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_byte_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,byte_code: ::unity2::Array< ::unity2::Il2CppString> ,)->(){let __mi=Self::set_byte_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),byte_code, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDebugger`'s own `IsPauseRequested`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_pause_requested(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_pause_requested_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDebugger`'s own `SignalRuntimeException`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn signal_runtime_exception(this:impl::core::convert::Into< ::unity2::IlInstance> ,ex:crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException,)->bool{let __mi=Self::signal_runtime_exception_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),ex, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDebugger`'s own `GetAction`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_action(this:impl::core::convert::Into< ::unity2::IlInstance> ,ip:i32,sourceref:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction{let __mi=Self::get_action_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),ip,sourceref, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDebugger`'s own `SignalExecutionEnded`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn signal_execution_ended(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::signal_execution_ended_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDebugger`'s own `Update`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update(this:impl::core::convert::Into< ::unity2::IlInstance> ,watch_type:crate::moon_sharp::interpreter::debugging::watchtype::WatchType,items:crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> ,)->(){let __mi=Self::update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::debugging::watchtype::WatchType,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),watch_type,items, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDebugger`'s own `GetWatchItems`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_watch_items(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression>{let __mi=Self::get_watch_items_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDebugger`'s own `RefreshBreakpoints`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn refresh_breakpoints(this:impl::core::convert::Into< ::unity2::IlInstance> ,refs:crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> ,)->(){let __mi=Self::refresh_breakpoints_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),refs, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-idebugger")]

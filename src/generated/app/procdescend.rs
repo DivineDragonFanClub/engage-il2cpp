@@ -18,25 +18,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-procdescend-types")]
 pub use __types::*;
 
-#[cfg(feature="app-procdescend")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDescEnd_unity2_raw{use super:: * ;
-pub unsafe fn execute(this:ProcDescEnd,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ProcDescEnd as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(ProcDescEnd,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,inst,__mi)}
-}
-
 #[cfg(feature="app-procdescend")]pub trait IProcDescEndMethods:IProcDescEnd{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProcDescEnd as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x281acd0usize)as*mut u8,();
 (ProcDescEnd)__receiver)}
 }
 #[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescEnd as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProcDescEnd_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ProcDescEnd as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(ProcDescEnd,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(inst),__mi)}
+}
 }
 }
 
@@ -44,6 +40,11 @@ __ProcDescEnd_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst),
 
 #[cfg(feature="app-procdescend")]impl ProcDescEnd{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-procdescend")]impl ProcDescEnd{#[doc="Direct (non-virtual) call to `ProcDescEnd`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,inst:crate::app::procinst::ProcInst,)->crate::app::procdesc::ProcDesc_Result{let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),inst, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-procdescend")]impl ProcDescEnd{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

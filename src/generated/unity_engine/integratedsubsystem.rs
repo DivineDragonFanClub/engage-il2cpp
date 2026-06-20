@@ -16,25 +16,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-integratedsubsystem-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-integratedsubsystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IntegratedSubsystem_unity2_raw{use super:: * ;
-pub unsafe fn get_running(this:IntegratedSubsystem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <IntegratedSubsystem as::unity2::ClassIdentity> ::NAME,"get_running",));
-let inner:extern "C" fn(IntegratedSubsystem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-integratedsubsystem")]pub trait IIntegratedSubsystemMethods:IIntegratedSubsystem{#[doc="`SetHandle(crate::unity_engine::integratedsubsystem::IntegratedSubsystem)` overload"]fn set_handle(self,subsystem:impl::core::convert::Into<crate::unity_engine::integratedsubsystem::IntegratedSubsystem>)->(){unsafe{let __receiver= <IntegratedSubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a690usize)as*mut u8,();
 (IntegratedSubsystem)__receiver,(crate::unity_engine::integratedsubsystem::IntegratedSubsystem)::core::convert::Into::into(subsystem))}
 }
 #[doc="`get_running()` overload"]fn get_running(self,)->bool{unsafe{let __receiver= <IntegratedSubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IntegratedSubsystem_unity2_raw::get_running(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IntegratedSubsystem as::unity2::ClassIdentity> ::NAME,"get_running",));
+let __inner:extern "C" fn(IntegratedSubsystem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_valid()` overload"]fn get_valid(self,)->bool{unsafe{let __receiver= <IntegratedSubsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a780usize)as*mut u8,bool;
@@ -57,6 +53,11 @@ pub fn get_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn get_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn is_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-integratedsubsystem")]impl IntegratedSubsystem{#[doc="Direct (non-virtual) call to `IntegratedSubsystem`'s own `get_running`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_running(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_running_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-integratedsubsystem")]impl IntegratedSubsystem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

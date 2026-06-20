@@ -20,19 +20,6 @@ use crate::unity_engine::texture::{ITexture,Texture}
 #[cfg(feature = "unity_engine-texture2d-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-texture2d")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Texture2D_unity2_raw{use super:: * ;
-pub unsafe fn get_is_readable(this:Texture2D,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <Texture2D as::unity2::ClassIdentity> ::NAME,"get_isReadable",));
-let inner:extern "C" fn(Texture2D, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-texture2d")]impl Texture2D{#[doc="`get_whiteTexture()` overload"]pub fn get_white_texture()->crate::unity_engine::texture2d::Texture2D{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3789ff0usize)as*mut u8,crate::unity_engine::texture2d::Texture2D;
 )}
 }
@@ -77,7 +64,16 @@ inner(this,__mi)}
 (Texture2D)__receiver,(bool)::core::convert::Into::into(high_quality))}
 }
 #[doc="`get_isReadable()` overload"]fn get_is_readable(self,)->bool{unsafe{let __receiver= <Texture2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Texture2D_unity2_raw::get_is_readable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Texture2D as::unity2::ClassIdentity> ::NAME,"get_isReadable",));
+let __inner:extern "C" fn(Texture2D, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_vtOnly()` overload"]fn get_vt_only(self,)->bool{unsafe{let __receiver= <Texture2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x378a380usize)as*mut u8,bool;
@@ -531,6 +527,11 @@ pub fn set_pixel_impl_injected_method_info()-> & 'static::unity2::il2cpp::Method
 pub fn get_pixel_impl_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[97]}
 pub fn get_pixel_bilinear_impl_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[98]}
 pub fn read_pixels_impl_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[99]}
+}
+
+#[cfg(feature="unity_engine-texture2d")]impl Texture2D{#[doc="Direct (non-virtual) call to `Texture2D`'s own `get_isReadable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_readable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_readable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-texture2d")]impl Texture2D{#[doc="`.ctor(i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags, i32, ::unity2::IntPtr)` — overload selector"]pub fn new(width:i32,height:i32,format:crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,flags:crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags,mip_count:i32,native_tex: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

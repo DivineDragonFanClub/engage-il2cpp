@@ -27,7 +27,28 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollrect/ScrollRect_MovementType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ScrollRect_MovementType{pub value:i32,}
+impl::unity2::ClassIdentity for ScrollRect_MovementType{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="ScrollRect.MovementType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ScrollRect_MovementType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ScrollRect_MovementType{pub fn unrestricted()->Self{Self{value:0}
+}
+pub fn elastic()->Self{Self{value:1}
+}
+pub fn clamped()->Self{Self{value:2}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollrect/ScrollRect.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ScrollRect")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct ScrollRect{#[offset(24)]#[rename(name="m_Content")]pub m_content:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="m_Horizontal")]pub m_horizontal:bool, #[offset(33)]#[rename(name="m_Vertical")]pub m_vertical:bool, #[offset(36)]#[rename(name="m_MovementType")]pub m_movement_type:crate::unity_engine::ui::scrollrect::ScrollRect_MovementType, #[offset(40)]#[rename(name="m_Elasticity")]pub m_elasticity:f32, #[offset(44)]#[rename(name="m_Inertia")]pub m_inertia:bool, #[offset(48)]#[rename(name="m_DecelerationRate")]pub m_deceleration_rate:f32, #[offset(52)]#[rename(name="m_ScrollSensitivity")]pub m_scroll_sensitivity:f32, #[offset(56)]#[rename(name="m_Viewport")]pub m_viewport:crate::unity_engine::recttransform::RectTransform, #[offset(64)]#[rename(name="m_HorizontalScrollbar")]pub m_horizontal_scrollbar:crate::unity_engine::ui::scrollbar::Scrollbar, #[offset(72)]#[rename(name="m_VerticalScrollbar")]pub m_vertical_scrollbar:crate::unity_engine::ui::scrollbar::Scrollbar, #[offset(80)]#[rename(name="m_HorizontalScrollbarVisibility")]pub m_horizontal_scrollbar_visibility:crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility, #[offset(84)]#[rename(name="m_VerticalScrollbarVisibility")]pub m_vertical_scrollbar_visibility:crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility, #[offset(88)]#[rename(name="m_HorizontalScrollbarSpacing")]pub m_horizontal_scrollbar_spacing:f32, #[offset(92)]#[rename(name="m_VerticalScrollbarSpacing")]pub m_vertical_scrollbar_spacing:f32, #[offset(96)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::unity_engine::ui::scrollrect::ScrollRect_ScrollRectEvent, #[offset(104)]#[rename(name="m_PointerStartLocalCursor")]pub m_pointer_start_local_cursor:crate::unity_engine::vector2::Vector2, #[offset(112)]#[rename(name="m_ContentStartPosition")]pub m_content_start_position:crate::unity_engine::vector2::Vector2, #[offset(120)]#[rename(name="m_ViewRect")]pub m_view_rect:crate::unity_engine::recttransform::RectTransform, #[offset(128)]#[rename(name="m_ContentBounds")]pub m_content_bounds:crate::unity_engine::bounds::Bounds, #[offset(152)]#[rename(name="m_ViewBounds")]pub m_view_bounds:crate::unity_engine::bounds::Bounds, #[offset(176)]#[rename(name="m_Velocity")]pub m_velocity:crate::unity_engine::vector2::Vector2, #[offset(184)]#[rename(name="m_Dragging")]pub m_dragging:bool, #[offset(185)]#[rename(name="m_Scrolling")]pub m_scrolling:bool, #[offset(188)]#[rename(name="m_PrevPosition")]pub m_prev_position:crate::unity_engine::vector2::Vector2, #[offset(196)]#[rename(name="m_PrevContentBounds")]pub m_prev_content_bounds:crate::unity_engine::bounds::Bounds, #[offset(220)]#[rename(name="m_PrevViewBounds")]pub m_prev_view_bounds:crate::unity_engine::bounds::Bounds, #[offset(244)]#[rename(name="m_HasRebuiltLayout")]pub m_has_rebuilt_layout:bool, #[offset(245)]#[rename(name="m_HSliderExpand")]pub m_h_slider_expand:bool, #[offset(246)]#[rename(name="m_VSliderExpand")]pub m_v_slider_expand:bool, #[offset(248)]#[rename(name="m_HSliderHeight")]pub m_h_slider_height:f32, #[offset(252)]#[rename(name="m_VSliderWidth")]pub m_v_slider_width:f32, #[offset(256)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::recttransform::RectTransform, #[offset(264)]#[rename(name="m_HorizontalScrollbarRect")]pub m_horizontal_scrollbar_rect:crate::unity_engine::recttransform::RectTransform, #[offset(272)]#[rename(name="m_VerticalScrollbarRect")]pub m_vertical_scrollbar_rect:crate::unity_engine::recttransform::RectTransform, #[offset(280)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker, #[offset(288)]#[rename(name="m_Corners")]pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollrect/ScrollRect_ScrollRectEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ScrollRect.ScrollRectEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::vector2::Vector2>)]pub struct ScrollRect_ScrollRectEvent{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollrect/ScrollRect_ScrollbarVisibility.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ScrollRect_ScrollbarVisibility{pub value:i32,}
@@ -47,314 +68,10 @@ pub fn auto_hide_and_expand_viewport()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollrect/ScrollRect_ScrollRectEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ScrollRect.ScrollRectEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::vector2::Vector2>)]pub struct ScrollRect_ScrollRectEvent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollrect/ScrollRect_MovementType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ScrollRect_MovementType{pub value:i32,}
-impl::unity2::ClassIdentity for ScrollRect_MovementType{const NAMESPACE: &'static str="UnityEngine.UI";
-const NAME: &'static str="ScrollRect.MovementType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ScrollRect_MovementType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl ScrollRect_MovementType{pub fn unrestricted()->Self{Self{value:0}
-}
-pub fn elastic()->Self{Self{value:1}
-}
-pub fn clamped()->Self{Self{value:2}
-}
-}
-
 }
 
 #[cfg(feature = "unity_engine-ui-scrollrect-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-ui-scrollrect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScrollRect_unity2_raw{use super:: * ;
-pub unsafe fn rebuild(this:ScrollRect,executing:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",38usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"Rebuild",));
-let inner:extern "C" fn(ScrollRect,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,executing,__mi)}
-pub unsafe fn layout_complete(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",39usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn graphic_update_complete(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",40usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_enable(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnEnable",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_disable(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnDisable",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_active(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"IsActive",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn stop_movement(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",41usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"StopMovement",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_scroll(this:ScrollRect,data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnScroll",));
-let inner:extern "C" fn(ScrollRect,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,data,__mi)}
-pub unsafe fn on_initialize_potential_drag(this:ScrollRect,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnInitializePotentialDrag",));
-let inner:extern "C" fn(ScrollRect,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn on_begin_drag(this:ScrollRect,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",44usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnBeginDrag",));
-let inner:extern "C" fn(ScrollRect,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn on_end_drag(this:ScrollRect,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",45usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnEndDrag",));
-let inner:extern "C" fn(ScrollRect,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn on_drag(this:ScrollRect,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",46usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnDrag",));
-let inner:extern "C" fn(ScrollRect,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn set_content_anchored_position(this:ScrollRect,position:crate::unity_engine::vector2::Vector2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",47usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"SetContentAnchoredPosition",));
-let inner:extern "C" fn(ScrollRect,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,position,__mi)}
-pub unsafe fn late_update(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",48usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"LateUpdate",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_normalized_position_2(this:ScrollRect,value:f32,axis:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",49usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"SetNormalizedPosition",));
-let inner:extern "C" fn(ScrollRect,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,axis,__mi)}
-pub unsafe fn on_rect_transform_dimensions_change(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn calculate_layout_input_horizontal(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",50usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn calculate_layout_input_vertical(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_min_width(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",52usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_minWidth",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_preferred_width(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(53usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",53usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_preferredWidth",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_flexible_width(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(54usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",54usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_flexibleWidth",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_min_height(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(55usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",55usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_minHeight",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_preferred_height(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(56usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",56usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_preferredHeight",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_flexible_height(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(57usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",57usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_flexibleHeight",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_layout_priority(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",58usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_layoutPriority",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_layout_horizontal(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",59usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"SetLayoutHorizontal",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_layout_vertical(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(60usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",60usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"SetLayoutVertical",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(this:ScrollRect,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.ICanvasElement.get_transform",));
-let inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="unity_engine-ui-scrollrect")]impl ScrollRect{#[doc="`RubberDelta(f32, f32)` overload"]pub fn rubber_delta(over_stretching:impl::core::convert::Into<f32> ,view_size:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3727070usize)as*mut u8,f32;
 (f32)::core::convert::Into::into(over_stretching),(f32)::core::convert::Into::into(view_size))}
@@ -535,54 +252,180 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x37290b0usize)as*mut
 (ScrollRect)__receiver)}
 }
 #[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,executing:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(executing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"Rebuild",));
+let __inner:extern "C" fn(ScrollRect,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(executing),__mi)}
+}
 }
 #[doc="`LayoutComplete()` overload"]fn layout_complete(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GraphicUpdateComplete()` overload"]fn graphic_update_complete(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::graphic_update_complete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateCachedData()` overload"]fn update_cached_data(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3725710usize)as*mut u8,();
 (ScrollRect)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::is_active(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"IsActive",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`EnsureLayoutHasRebuilt()` overload"]fn ensure_layout_has_rebuilt(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3726940usize)as*mut u8,();
 (ScrollRect)__receiver)}
 }
 #[doc="`StopMovement()` overload"]fn stop_movement(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::stop_movement(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"StopMovement",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnScroll(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_scroll(self,data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::on_scroll(__receiver, ::core::convert::Into::into(data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnScroll",));
+let __inner:extern "C" fn(ScrollRect,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(data),__mi)}
+}
 }
 #[doc="`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_initialize_potential_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::on_initialize_potential_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnInitializePotentialDrag",));
+let __inner:extern "C" fn(ScrollRect,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_begin_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::on_begin_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnBeginDrag",));
+let __inner:extern "C" fn(ScrollRect,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`OnEndDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_end_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::on_end_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnEndDrag",));
+let __inner:extern "C" fn(ScrollRect,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::on_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",46usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnDrag",));
+let __inner:extern "C" fn(ScrollRect,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`SetContentAnchoredPosition(crate::unity_engine::vector2::Vector2)` overload"]fn set_content_anchored_position(self,position:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::set_content_anchored_position(__receiver, ::core::convert::Into::into(position), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"SetContentAnchoredPosition",));
+let __inner:extern "C" fn(ScrollRect,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(position),__mi)}
+}
 }
 #[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::late_update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",48usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"LateUpdate",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdatePrevData()` overload"]fn update_prev_data(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3726340usize)as*mut u8,();
@@ -617,10 +460,28 @@ __ScrollRect_unity2_raw::late_update(__receiver, ::core::option::Option::None)}
 (ScrollRect)__receiver,(f32)::core::convert::Into::into(value))}
 }
 #[doc="`SetNormalizedPosition(f32, i32)` overload"]fn set_normalized_position_2(self,value:impl::core::convert::Into<f32> ,axis:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::set_normalized_position_2(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(axis), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",49usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"SetNormalizedPosition",));
+let __inner:extern "C" fn(ScrollRect,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(axis),__mi)}
+}
 }
 #[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_hScrollingNeeded()` overload"]fn get_h_scrolling_needed(self,)->bool{unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3728010usize)as*mut u8,bool;
@@ -631,37 +492,136 @@ __ScrollRect_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core:
 (ScrollRect)__receiver)}
 }
 #[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",52usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_minWidth",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(53usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",53usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_preferredWidth",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(54usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",54usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_flexibleWidth",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(55usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",55usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_minHeight",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(56usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",56usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_preferredHeight",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(57usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",57usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_flexibleHeight",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"get_layoutPriority",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetLayoutHorizontal()` overload"]fn set_layout_horizontal(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",59usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"SetLayoutHorizontal",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetLayoutVertical()` overload"]fn set_layout_vertical(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(60usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",60usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"SetLayoutVertical",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateScrollbarVisibility()` overload"]fn update_scrollbar_visibility(self,)->(){unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3727920usize)as*mut u8,();
@@ -692,7 +652,16 @@ __ScrollRect_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option:
 (ScrollRect)__receiver)}
 }
 #[doc="`UnityEngine.UI.ICanvasElement.get_transform()` overload"]fn unity_engine_ui_i_canvas_element_get_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <ScrollRect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScrollRect_unity2_raw::unity_engine_ui_i_canvas_element_get_transform(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <ScrollRect as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.ICanvasElement.get_transform",));
+let __inner:extern "C" fn(ScrollRect, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -789,6 +758,92 @@ pub fn set_dirty_caching_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn unity_engine_ui_i_canvas_element_get_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
 }
 
+#[cfg(feature="unity_engine-ui-scrollrect")]impl ScrollRect{#[doc="Direct (non-virtual) call to `ScrollRect`'s own `Rebuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn rebuild(this:impl::core::convert::Into< ::unity2::IlInstance> ,executing:crate::unity_engine::ui::canvasupdate::CanvasUpdate,)->(){let __mi=Self::rebuild_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),executing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `LayoutComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn layout_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::layout_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `GraphicUpdateComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn graphic_update_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::graphic_update_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `OnEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `OnDisable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_disable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_disable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `IsActive`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_active(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_active_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `StopMovement`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn stop_movement(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::stop_movement_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `OnScroll`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_scroll(this:impl::core::convert::Into< ::unity2::IlInstance> ,data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_scroll_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `OnInitializePotentialDrag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_initialize_potential_drag(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_initialize_potential_drag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `OnBeginDrag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_begin_drag(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_begin_drag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `OnEndDrag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_end_drag(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_end_drag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `OnDrag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_drag(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_drag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `SetContentAnchoredPosition`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_content_anchored_position(this:impl::core::convert::Into< ::unity2::IlInstance> ,position:crate::unity_engine::vector2::Vector2,)->(){let __mi=Self::set_content_anchored_position_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),position, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `LateUpdate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn late_update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::late_update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `SetNormalizedPosition`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_normalized_position_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,axis:i32,)->(){let __mi=Self::set_normalized_position_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value,axis, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `OnRectTransformDimensionsChange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_rect_transform_dimensions_change(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_rect_transform_dimensions_change_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `CalculateLayoutInputHorizontal`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calculate_layout_input_horizontal(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calculate_layout_input_horizontal_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `CalculateLayoutInputVertical`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calculate_layout_input_vertical(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calculate_layout_input_vertical_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `get_minWidth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_min_width(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_min_width_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `get_preferredWidth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_preferred_width(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_preferred_width_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `get_flexibleWidth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flexible_width(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_flexible_width_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `get_minHeight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_min_height(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_min_height_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `get_preferredHeight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_preferred_height(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_preferred_height_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `get_flexibleHeight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flexible_height(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_flexible_height_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `get_layoutPriority`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_layout_priority(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_layout_priority_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `SetLayoutHorizontal`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_layout_horizontal(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_layout_horizontal_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `SetLayoutVertical`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_layout_vertical(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_layout_vertical_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScrollRect`'s own `UnityEngine.UI.ICanvasElement.get_transform`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::transform::Transform{let __mi=Self::unity_engine_ui_i_canvas_element_get_transform_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-ui-scrollrect")]impl ScrollRect{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(ScrollRect), ::core::stringify!(new),));
@@ -817,14 +872,14 @@ this}
 #[cfg(feature = "unity_engine-ui-scrollrect")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ScrollRect_MovementType;
     pub use super::ScrollRect;
     pub use super::IScrollRect;
     pub use super::IScrollRectMethods;
-    pub use super::ScrollRect_ScrollbarVisibility;
     pub use super::ScrollRect_ScrollRectEvent;
     pub use super::IScrollRect_ScrollRectEvent;
     pub use super::IScrollRect_ScrollRectEventMethods;
-    pub use super::ScrollRect_MovementType;
+    pub use super::ScrollRect_ScrollbarVisibility;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

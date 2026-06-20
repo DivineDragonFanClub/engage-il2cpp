@@ -22,19 +22,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-canvasgroup-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-canvasgroup")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CanvasGroup_unity2_raw{use super:: * ;
-pub unsafe fn is_raycast_location_valid(this:CanvasGroup,sp:crate::unity_engine::vector2::Vector2,event_camera:crate::unity_engine::camera::Camera,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <CanvasGroup as::unity2::ClassIdentity> ::NAME,"IsRaycastLocationValid",));
-let inner:extern "C" fn(CanvasGroup,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sp,event_camera,__mi)}
-}
-
 #[cfg(feature="unity_engine-canvasgroup")]pub trait ICanvasGroupMethods:ICanvasGroup{#[doc="`get_alpha()` overload"]fn get_alpha(self,)->f32{unsafe{let __receiver= <CanvasGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f213f0usize)as*mut u8,f32;
 (CanvasGroup)__receiver)}
@@ -68,7 +55,16 @@ inner(this,sp,event_camera,__mi)}
 (CanvasGroup)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]fn is_raycast_location_valid(self,sp:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <CanvasGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CanvasGroup_unity2_raw::is_raycast_location_valid(__receiver, ::core::convert::Into::into(sp), ::core::convert::Into::into(event_camera), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CanvasGroup as::unity2::ClassIdentity> ::NAME,"IsRaycastLocationValid",));
+let __inner:extern "C" fn(CanvasGroup,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(sp), ::core::convert::Into::into(event_camera),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CanvasGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f216c0usize)as*mut u8,();
@@ -88,6 +84,11 @@ pub fn get_ignore_parent_groups_method_info()-> & 'static::unity2::il2cpp::Metho
 pub fn set_ignore_parent_groups_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn is_raycast_location_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="unity_engine-canvasgroup")]impl CanvasGroup{#[doc="Direct (non-virtual) call to `CanvasGroup`'s own `IsRaycastLocationValid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_raycast_location_valid(this:impl::core::convert::Into< ::unity2::IlInstance> ,sp:crate::unity_engine::vector2::Vector2,event_camera:crate::unity_engine::camera::Camera,)->bool{let __mi=Self::is_raycast_location_valid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sp,event_camera, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-canvasgroup")]impl CanvasGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

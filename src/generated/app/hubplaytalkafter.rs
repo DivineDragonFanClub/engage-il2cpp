@@ -27,37 +27,28 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_TalkGiftMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.TalkGiftMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_TalkGiftMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_SelectListMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.SelectListMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct HubPlayTalkAfter_SelectListMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_GodRelianceMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.GodRelianceMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_GodRelianceMenu{#[offset(104)]#[rename(name="m_access")]pub m_access:crate::app::hubaccess::HubAccess,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_YesItem.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubPlayTalkAfter_RingMenu_YesItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_DragonRideMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.DragonRideMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_DragonRideMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingPictureBookMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FishingPictureBookMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FishingPictureBookMenu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_ReplacePerson.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.ReplacePerson")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayTalkAfter_ReplacePerson{#[offset(112)]#[rename(name="m_LoadingCharacterCount")]pub m_loading_character_count:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_GodRelianceMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.GodRelianceMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_GodRelianceMenu{#[offset(104)]#[rename(name="m_access")]pub m_access:crate::app::hubaccess::HubAccess,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RelianceMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RelianceMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_RelianceMenu{#[offset(104)]#[rename(name="m_access")]pub m_access:crate::app::hubaccess::HubAccess, #[offset(112)]#[rename(name="m_relianceLevelUp")]pub m_reliance_level_up:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FleaMarketMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FleaMarketMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FleaMarketMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FortuneTellingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FortuneTellingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FortuneTellingMenu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_NoItem.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu.NoItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubPlayTalkAfter_RingMenu_NoItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RelianceMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RelianceMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_RelianceMenu{#[offset(104)]#[rename(name="m_access")]pub m_access:crate::app::hubaccess::HubAccess, #[offset(112)]#[rename(name="m_relianceLevelUp")]pub m_reliance_level_up:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_DragonRideMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.DragonRideMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_DragonRideMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_YesItem.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubPlayTalkAfter_RingMenu_YesItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FishingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FishingMenu{#[offset(104)]#[rename(name="m_FishingTopMenu")]pub m_fishing_top_menu:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_PlayCount")]pub m_play_count:i32, #[offset(116)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(120)]#[rename(name="m_gyotakuSprite")]pub m_gyotaku_sprite:crate::unity_engine::sprite::Sprite,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_ReplacePerson.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.ReplacePerson")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayTalkAfter_ReplacePerson{#[offset(112)]#[rename(name="m_LoadingCharacterCount")]pub m_loading_character_count:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_MuscleMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.MuscleMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_MuscleMenu{}
@@ -104,172 +95,162 @@ pub fn end()->Self{Self{value:12}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FleaMarketMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FleaMarketMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FleaMarketMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_CookingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.CookingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_CookingMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_SelectListMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.SelectListMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct HubPlayTalkAfter_SelectListMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_RingMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FishingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FishingMenu{#[offset(104)]#[rename(name="m_FishingTopMenu")]pub m_fishing_top_menu:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_PlayCount")]pub m_play_count:i32, #[offset(116)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(120)]#[rename(name="m_gyotakuSprite")]pub m_gyotaku_sprite:crate::unity_engine::sprite::Sprite,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_NoItem.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu.NoItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubPlayTalkAfter_RingMenu_NoItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_TalkGiftMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.TalkGiftMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_TalkGiftMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_CookingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.CookingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_CookingMenu{}
 
 }
 
 #[cfg(feature = "app-hubplaytalkafter-types")]
 pub use __types::*;
 
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_TalkGiftMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:HubPlayTalkAfter_TalkGiftMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_DragonRideMenuMethods:IHubPlayTalkAfter_DragonRideMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2f40usize)as*mut u8,();
+(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_TalkGiftMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_TalkGiftMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <HubPlayTalkAfter_DragonRideMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_DragonRideMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_TalkGiftMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_TalkGiftMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_TalkGiftMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <HubPlayTalkAfter_DragonRideMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_DragonRideMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_TalkGiftMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_TalkGiftMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_TalkGiftMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <HubPlayTalkAfter_DragonRideMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_DragonRideMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_TalkGiftMenuMethods:IHubPlayTalkAfter_TalkGiftMenu{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_TalkGiftMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_TalkGiftMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_TalkGiftMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae8610usize)as*mut u8,();
-(HubPlayTalkAfter_TalkGiftMenu)__receiver)}
 }
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_TalkGiftMenu>IHubPlayTalkAfter_TalkGiftMenuMethods for __T{}
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_DragonRideMenu>IHubPlayTalkAfter_DragonRideMenuMethods for __T{}
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_TalkGiftMenu{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_TalkGiftMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_DragonRideMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_DragonRideMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_DragonRideMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_TalkGiftMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_TalkGiftMenuMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_DragonRideMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_DragonRideMenuMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_SelectListMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:HubPlayTalkAfter_SelectListMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <HubPlayTalkAfter_SelectListMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_SelectListMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FishingPictureBookMenuMethods:IHubPlayTalkAfter_FishingPictureBookMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4990usize)as*mut u8,();
+(HubPlayTalkAfter_FishingPictureBookMenu)__receiver)}
 }
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="`get_CurrentMenuSelect()` overload"]pub fn get_current_menu_select()->crate::app::basicmenuselect::BasicMenuSelect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7e80usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7f80usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae8620usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_SelectListMenuMethods:IHubPlayTalkAfter_SelectListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <HubPlayTalkAfter_SelectListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7ef0usize)as*mut u8,();
-(HubPlayTalkAfter_SelectListMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_SelectListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_SelectListMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_SelectListMenu>IHubPlayTalkAfter_SelectListMenuMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{pub fn get_current_menu_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,super_:crate::app::procinst::ProcInst)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_SelectListMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_SelectListMenuMethods> ::ctor(this,menu_item_list,super_);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_GodRelianceMenu_unity2_raw{use super:: * ;
-pub unsafe fn on_build(this:HubPlayTalkAfter_GodRelianceMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <HubPlayTalkAfter_GodRelianceMenu as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let inner:extern "C" fn(HubPlayTalkAfter_GodRelianceMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:HubPlayTalkAfter_GodRelianceMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_GodRelianceMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_GodRelianceMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FishingPictureBookMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_GodRelianceMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_GodRelianceMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_GodRelianceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FishingPictureBookMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_GodRelianceMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_GodRelianceMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_GodRelianceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FishingPictureBookMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FishingPictureBookMenu>IHubPlayTalkAfter_FishingPictureBookMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingPictureBookMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingPictureBookMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FishingPictureBookMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FishingPictureBookMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FishingPictureBookMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingPictureBookMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FishingPictureBookMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_FishingPictureBookMenuMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_GodRelianceMenuMethods:IHubPlayTalkAfter_GodRelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -277,16 +258,52 @@ inner(this,__mi)}
 (HubPlayTalkAfter_GodRelianceMenu)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_GodRelianceMenu_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <HubPlayTalkAfter_GodRelianceMenu as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let __inner:extern "C" fn(HubPlayTalkAfter_GodRelianceMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_GodRelianceMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubPlayTalkAfter_GodRelianceMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_GodRelianceMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_GodRelianceMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubPlayTalkAfter_GodRelianceMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_GodRelianceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_GodRelianceMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubPlayTalkAfter_GodRelianceMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_GodRelianceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -299,6 +316,20 @@ pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_GodRelianceMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_GodRelianceMenu`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_GodRelianceMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_GodRelianceMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_GodRelianceMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_GodRelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(HubPlayTalkAfter_GodRelianceMenu), ::core::stringify!(new),));
@@ -306,17 +337,224 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_RingMenu_YesItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:HubPlayTalkAfter_RingMenu_YesItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FleaMarketMenuMethods:IHubPlayTalkAfter_FleaMarketMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4b90usize)as*mut u8,();
+(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubPlayTalkAfter_FleaMarketMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FleaMarketMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubPlayTalkAfter_FleaMarketMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FleaMarketMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_RingMenu_YesItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_RingMenu_YesItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <HubPlayTalkAfter_FleaMarketMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FleaMarketMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FleaMarketMenu>IHubPlayTalkAfter_FleaMarketMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FleaMarketMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FleaMarketMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FleaMarketMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FleaMarketMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_FleaMarketMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FortuneTellingMenuMethods:IHubPlayTalkAfter_FortuneTellingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4dc0usize)as*mut u8,();
+(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubPlayTalkAfter_FortuneTellingMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FortuneTellingMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubPlayTalkAfter_FortuneTellingMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FortuneTellingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubPlayTalkAfter_FortuneTellingMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FortuneTellingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FortuneTellingMenu>IHubPlayTalkAfter_FortuneTellingMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FortuneTellingMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FortuneTellingMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FortuneTellingMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FortuneTellingMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_FortuneTellingMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RelianceMenuMethods:IHubPlayTalkAfter_RelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess, bool)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess> ,reliance_level_up:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5510usize)as*mut u8,();
+(HubPlayTalkAfter_RelianceMenu)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access),(bool)::core::convert::Into::into(reliance_level_up))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <HubPlayTalkAfter_RelianceMenu as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let __inner:extern "C" fn(HubPlayTalkAfter_RelianceMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubPlayTalkAfter_RelianceMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_RelianceMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubPlayTalkAfter_RelianceMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_RelianceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubPlayTalkAfter_RelianceMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_RelianceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RelianceMenu>IHubPlayTalkAfter_RelianceMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_RelianceMenu`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_RelianceMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_RelianceMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_RelianceMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess, bool)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess,reliance_level_up:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RelianceMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_RelianceMenuMethods> ::ctor(this,access,reliance_level_up);
+this}
 }
 
 #[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenu_YesItemMethods:IHubPlayTalkAfter_RingMenu_YesItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -324,7 +562,16 @@ inner(this,__mi)}
 (HubPlayTalkAfter_RingMenu_YesItem)__receiver)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_RingMenu_YesItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubPlayTalkAfter_RingMenu_YesItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_RingMenu_YesItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -334,73 +581,15 @@ __HubPlayTalkAfter_RingMenu_YesItem_unity2_raw::a_call(__receiver, ::core::optio
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_YesItem{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_RingMenu_YesItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_YesItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu_YesItem), ::core::stringify!(new),));
  <Self as IHubPlayTalkAfter_RingMenu_YesItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_FishingPictureBookMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:HubPlayTalkAfter_FishingPictureBookMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_FishingPictureBookMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_FishingPictureBookMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_FishingPictureBookMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_FishingPictureBookMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_FishingPictureBookMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FishingPictureBookMenuMethods:IHubPlayTalkAfter_FishingPictureBookMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4990usize)as*mut u8,();
-(HubPlayTalkAfter_FishingPictureBookMenu)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FishingPictureBookMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FishingPictureBookMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FishingPictureBookMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FishingPictureBookMenu>IHubPlayTalkAfter_FishingPictureBookMenuMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingPictureBookMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingPictureBookMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FishingPictureBookMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_FishingPictureBookMenuMethods> ::ctor(this,);
 this}
 }
 
@@ -485,387 +674,45 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_RelianceMenu_unity2_raw{use super:: * ;
-pub unsafe fn on_build(this:HubPlayTalkAfter_RelianceMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <HubPlayTalkAfter_RelianceMenu as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let inner:extern "C" fn(HubPlayTalkAfter_RelianceMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:HubPlayTalkAfter_RelianceMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_RelianceMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_RelianceMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_RelianceMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_RelianceMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_RelianceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_RelianceMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_RelianceMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_RelianceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RelianceMenuMethods:IHubPlayTalkAfter_RelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess, bool)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess> ,reliance_level_up:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5510usize)as*mut u8,();
-(HubPlayTalkAfter_RelianceMenu)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access),(bool)::core::convert::Into::into(reliance_level_up))}
-}
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_RelianceMenu_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_RelianceMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_RelianceMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_RelianceMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RelianceMenu>IHubPlayTalkAfter_RelianceMenuMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess, bool)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess,reliance_level_up:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RelianceMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_RelianceMenuMethods> ::ctor(this,access,reliance_level_up);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_FortuneTellingMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:HubPlayTalkAfter_FortuneTellingMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_FortuneTellingMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_FortuneTellingMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_FortuneTellingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_FortuneTellingMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_FortuneTellingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_FortuneTellingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_FortuneTellingMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_FortuneTellingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FortuneTellingMenuMethods:IHubPlayTalkAfter_FortuneTellingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4dc0usize)as*mut u8,();
-(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FortuneTellingMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FortuneTellingMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FortuneTellingMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FortuneTellingMenu>IHubPlayTalkAfter_FortuneTellingMenuMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FortuneTellingMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_FortuneTellingMenuMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenu_NoItemMethods:IHubPlayTalkAfter_RingMenu_NoItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_NoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65690usize)as*mut u8,();
-(HubPlayTalkAfter_RingMenu_NoItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu_NoItem>IHubPlayTalkAfter_RingMenu_NoItemMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_NoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_NoItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu_NoItem), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_RingMenu_NoItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_DragonRideMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:HubPlayTalkAfter_DragonRideMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_DragonRideMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_DragonRideMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_DragonRideMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_DragonRideMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_DragonRideMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_DragonRideMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_DragonRideMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_DragonRideMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_DragonRideMenuMethods:IHubPlayTalkAfter_DragonRideMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2f40usize)as*mut u8,();
-(HubPlayTalkAfter_DragonRideMenu)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_DragonRideMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_DragonRideMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_DragonRideMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_DragonRideMenu>IHubPlayTalkAfter_DragonRideMenuMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_DragonRideMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_DragonRideMenuMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_FishingMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:HubPlayTalkAfter_FishingMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_FishingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_FishingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_select(this:HubPlayTalkAfter_FishingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_deselect(this:HubPlayTalkAfter_FishingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
-let inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_close(this:HubPlayTalkAfter_FishingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
-let inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FishingMenuMethods:IHubPlayTalkAfter_FishingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae3170usize)as*mut u8,();
-(HubPlayTalkAfter_FishingMenu)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FishingMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FishingMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FishingMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FishingMenu_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FishingMenu_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FishingMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsEnableFishing()` overload"]fn is_enable_fishing(self,)->bool{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae3f30usize)as*mut u8,bool;
-(HubPlayTalkAfter_FishingMenu)__receiver)}
-}
-#[doc="`SetTargetFish()` overload"]fn set_target_fish(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4030usize)as*mut u8,();
-(HubPlayTalkAfter_FishingMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FishingMenu>IHubPlayTalkAfter_FishingMenuMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_enable_fishing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_target_fish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FishingMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_FishingMenuMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_MuscleMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:HubPlayTalkAfter_MuscleMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_MuscleMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_MuscleMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_MuscleMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_MuscleMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_MuscleMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_MuscleMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_MuscleMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_MuscleMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_MuscleMenuMethods:IHubPlayTalkAfter_MuscleMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_MuscleMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae52e0usize)as*mut u8,();
 (HubPlayTalkAfter_MuscleMenu)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_MuscleMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_MuscleMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubPlayTalkAfter_MuscleMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_MuscleMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_MuscleMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_MuscleMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubPlayTalkAfter_MuscleMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_MuscleMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_MuscleMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_MuscleMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubPlayTalkAfter_MuscleMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_MuscleMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -875,6 +722,17 @@ __HubPlayTalkAfter_MuscleMenu_unity2_raw::a_call(__receiver, ::core::option::Opt
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_MuscleMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_MuscleMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_MuscleMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_MuscleMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_MuscleMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -1132,173 +990,54 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_FleaMarketMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:HubPlayTalkAfter_FleaMarketMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="`get_CurrentMenuSelect()` overload"]pub fn get_current_menu_select()->crate::app::basicmenuselect::BasicMenuSelect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7e80usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7f80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae8620usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_SelectListMenuMethods:IHubPlayTalkAfter_SelectListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <HubPlayTalkAfter_SelectListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7ef0usize)as*mut u8,();
+(HubPlayTalkAfter_SelectListMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_SelectListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_FleaMarketMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_FleaMarketMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",30usize,__vt.len(), <HubPlayTalkAfter_SelectListMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_SelectListMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_FleaMarketMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_FleaMarketMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_FleaMarketMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_FleaMarketMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_FleaMarketMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_FleaMarketMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FleaMarketMenuMethods:IHubPlayTalkAfter_FleaMarketMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4b90usize)as*mut u8,();
-(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FleaMarketMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FleaMarketMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_FleaMarketMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FleaMarketMenu>IHubPlayTalkAfter_FleaMarketMenuMethods for __T{}
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_SelectListMenu>IHubPlayTalkAfter_SelectListMenuMethods for __T{}
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{pub fn get_current_menu_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_SelectListMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,super_:crate::app::procinst::ProcInst)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FleaMarketMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_FleaMarketMenuMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_SelectListMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_SelectListMenuMethods> ::ctor(this,menu_item_list,super_);
 this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_CookingMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:HubPlayTalkAfter_CookingMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_CookingMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_CookingMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_CookingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_CookingMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_CookingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_CookingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_CookingMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_CookingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_CookingMenuMethods:IHubPlayTalkAfter_CookingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2c20usize)as*mut u8,();
-(HubPlayTalkAfter_CookingMenu)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_CookingMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_CookingMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_CookingMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_CookingMenu>IHubPlayTalkAfter_CookingMenuMethods for __T{}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_CookingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_CookingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalkAfter_CookingMenu), ::core::stringify!(new),));
- <Self as IHubPlayTalkAfter_CookingMenuMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubplaytalkafter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubPlayTalkAfter_RingMenu_unity2_raw{use super:: * ;
-pub unsafe fn on_build(this:HubPlayTalkAfter_RingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <HubPlayTalkAfter_RingMenu as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let inner:extern "C" fn(HubPlayTalkAfter_RingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:HubPlayTalkAfter_RingMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HubPlayTalkAfter_RingMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(HubPlayTalkAfter_RingMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:HubPlayTalkAfter_RingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HubPlayTalkAfter_RingMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(HubPlayTalkAfter_RingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:HubPlayTalkAfter_RingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <HubPlayTalkAfter_RingMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(HubPlayTalkAfter_RingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenuMethods:IHubPlayTalkAfter_RingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -1306,16 +1045,52 @@ inner(this,__mi)}
 (HubPlayTalkAfter_RingMenu)__receiver)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_RingMenu_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <HubPlayTalkAfter_RingMenu as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let __inner:extern "C" fn(HubPlayTalkAfter_RingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_RingMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubPlayTalkAfter_RingMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_RingMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_RingMenu_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubPlayTalkAfter_RingMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_RingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubPlayTalkAfter_RingMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubPlayTalkAfter_RingMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_RingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -1328,6 +1103,20 @@ pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_RingMenu`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_RingMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_RingMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_RingMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu), ::core::stringify!(new),));
@@ -1335,42 +1124,313 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FishingMenuMethods:IHubPlayTalkAfter_FishingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae3170usize)as*mut u8,();
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <HubPlayTalkAfter_FishingMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let __inner:extern "C" fn(HubPlayTalkAfter_FishingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsEnableFishing()` overload"]fn is_enable_fishing(self,)->bool{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae3f30usize)as*mut u8,bool;
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+#[doc="`SetTargetFish()` overload"]fn set_target_fish(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4030usize)as*mut u8,();
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FishingMenu>IHubPlayTalkAfter_FishingMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_enable_fishing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_target_fish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FishingMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FishingMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FishingMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FishingMenu`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FishingMenu`'s own `OnDeselect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deselect(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_deselect_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_FishingMenu`'s own `OnClose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FishingMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_FishingMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenu_NoItemMethods:IHubPlayTalkAfter_RingMenu_NoItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_NoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65690usize)as*mut u8,();
+(HubPlayTalkAfter_RingMenu_NoItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu_NoItem>IHubPlayTalkAfter_RingMenu_NoItemMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_NoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_NoItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu_NoItem), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_RingMenu_NoItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_TalkGiftMenuMethods:IHubPlayTalkAfter_TalkGiftMenu{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubPlayTalkAfter_TalkGiftMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_TalkGiftMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubPlayTalkAfter_TalkGiftMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_TalkGiftMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubPlayTalkAfter_TalkGiftMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_TalkGiftMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae8610usize)as*mut u8,();
+(HubPlayTalkAfter_TalkGiftMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_TalkGiftMenu>IHubPlayTalkAfter_TalkGiftMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_TalkGiftMenu{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_TalkGiftMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_TalkGiftMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_TalkGiftMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_TalkGiftMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_TalkGiftMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_TalkGiftMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_TalkGiftMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_CookingMenuMethods:IHubPlayTalkAfter_CookingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2c20usize)as*mut u8,();
+(HubPlayTalkAfter_CookingMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubPlayTalkAfter_CookingMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(HubPlayTalkAfter_CookingMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubPlayTalkAfter_CookingMenu as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(HubPlayTalkAfter_CookingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubPlayTalkAfter_CookingMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(HubPlayTalkAfter_CookingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_CookingMenu>IHubPlayTalkAfter_CookingMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_CookingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_CookingMenu{#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_CookingMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_CookingMenu`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubPlayTalkAfter_CookingMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_CookingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_CookingMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_CookingMenuMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-hubplaytalkafter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubPlayTalkAfter_TalkGiftMenu;
-    pub use super::IHubPlayTalkAfter_TalkGiftMenu;
-    pub use super::IHubPlayTalkAfter_TalkGiftMenuMethods;
-    pub use super::HubPlayTalkAfter_SelectListMenu;
-    pub use super::IHubPlayTalkAfter_SelectListMenu;
-    pub use super::IHubPlayTalkAfter_SelectListMenuMethods;
-    pub use super::HubPlayTalkAfter_GodRelianceMenu;
-    pub use super::IHubPlayTalkAfter_GodRelianceMenu;
-    pub use super::IHubPlayTalkAfter_GodRelianceMenuMethods;
-    pub use super::HubPlayTalkAfter_RingMenu_YesItem;
-    pub use super::IHubPlayTalkAfter_RingMenu_YesItem;
-    pub use super::IHubPlayTalkAfter_RingMenu_YesItemMethods;
-    pub use super::HubPlayTalkAfter_FishingPictureBookMenu;
-    pub use super::IHubPlayTalkAfter_FishingPictureBookMenu;
-    pub use super::IHubPlayTalkAfter_FishingPictureBookMenuMethods;
-    pub use super::HubPlayTalkAfter_ReplacePerson;
-    pub use super::IHubPlayTalkAfter_ReplacePerson;
-    pub use super::IHubPlayTalkAfter_ReplacePersonMethods;
-    pub use super::HubPlayTalkAfter_RelianceMenu;
-    pub use super::IHubPlayTalkAfter_RelianceMenu;
-    pub use super::IHubPlayTalkAfter_RelianceMenuMethods;
-    pub use super::HubPlayTalkAfter_FortuneTellingMenu;
-    pub use super::IHubPlayTalkAfter_FortuneTellingMenu;
-    pub use super::IHubPlayTalkAfter_FortuneTellingMenuMethods;
-    pub use super::HubPlayTalkAfter_RingMenu_NoItem;
-    pub use super::IHubPlayTalkAfter_RingMenu_NoItem;
-    pub use super::IHubPlayTalkAfter_RingMenu_NoItemMethods;
     pub use super::HubPlayTalkAfter_DragonRideMenu;
     pub use super::IHubPlayTalkAfter_DragonRideMenu;
     pub use super::IHubPlayTalkAfter_DragonRideMenuMethods;
-    pub use super::HubPlayTalkAfter_FishingMenu;
-    pub use super::IHubPlayTalkAfter_FishingMenu;
-    pub use super::IHubPlayTalkAfter_FishingMenuMethods;
+    pub use super::HubPlayTalkAfter_FishingPictureBookMenu;
+    pub use super::IHubPlayTalkAfter_FishingPictureBookMenu;
+    pub use super::IHubPlayTalkAfter_FishingPictureBookMenuMethods;
+    pub use super::HubPlayTalkAfter_GodRelianceMenu;
+    pub use super::IHubPlayTalkAfter_GodRelianceMenu;
+    pub use super::IHubPlayTalkAfter_GodRelianceMenuMethods;
+    pub use super::HubPlayTalkAfter_FleaMarketMenu;
+    pub use super::IHubPlayTalkAfter_FleaMarketMenu;
+    pub use super::IHubPlayTalkAfter_FleaMarketMenuMethods;
+    pub use super::HubPlayTalkAfter_FortuneTellingMenu;
+    pub use super::IHubPlayTalkAfter_FortuneTellingMenu;
+    pub use super::IHubPlayTalkAfter_FortuneTellingMenuMethods;
+    pub use super::HubPlayTalkAfter_RelianceMenu;
+    pub use super::IHubPlayTalkAfter_RelianceMenu;
+    pub use super::IHubPlayTalkAfter_RelianceMenuMethods;
+    pub use super::HubPlayTalkAfter_RingMenu_YesItem;
+    pub use super::IHubPlayTalkAfter_RingMenu_YesItem;
+    pub use super::IHubPlayTalkAfter_RingMenu_YesItemMethods;
+    pub use super::HubPlayTalkAfter_ReplacePerson;
+    pub use super::IHubPlayTalkAfter_ReplacePerson;
+    pub use super::IHubPlayTalkAfter_ReplacePersonMethods;
     pub use super::HubPlayTalkAfter_MuscleMenu;
     pub use super::IHubPlayTalkAfter_MuscleMenu;
     pub use super::IHubPlayTalkAfter_MuscleMenuMethods;
@@ -1378,15 +1438,24 @@ pub mod prelude {
     pub use super::IHubPlayTalkAfter;
     pub use super::IHubPlayTalkAfterMethods;
     pub use super::HubPlayTalkAfter_Label;
-    pub use super::HubPlayTalkAfter_FleaMarketMenu;
-    pub use super::IHubPlayTalkAfter_FleaMarketMenu;
-    pub use super::IHubPlayTalkAfter_FleaMarketMenuMethods;
-    pub use super::HubPlayTalkAfter_CookingMenu;
-    pub use super::IHubPlayTalkAfter_CookingMenu;
-    pub use super::IHubPlayTalkAfter_CookingMenuMethods;
+    pub use super::HubPlayTalkAfter_SelectListMenu;
+    pub use super::IHubPlayTalkAfter_SelectListMenu;
+    pub use super::IHubPlayTalkAfter_SelectListMenuMethods;
     pub use super::HubPlayTalkAfter_RingMenu;
     pub use super::IHubPlayTalkAfter_RingMenu;
     pub use super::IHubPlayTalkAfter_RingMenuMethods;
+    pub use super::HubPlayTalkAfter_FishingMenu;
+    pub use super::IHubPlayTalkAfter_FishingMenu;
+    pub use super::IHubPlayTalkAfter_FishingMenuMethods;
+    pub use super::HubPlayTalkAfter_RingMenu_NoItem;
+    pub use super::IHubPlayTalkAfter_RingMenu_NoItem;
+    pub use super::IHubPlayTalkAfter_RingMenu_NoItemMethods;
+    pub use super::HubPlayTalkAfter_TalkGiftMenu;
+    pub use super::IHubPlayTalkAfter_TalkGiftMenu;
+    pub use super::IHubPlayTalkAfter_TalkGiftMenuMethods;
+    pub use super::HubPlayTalkAfter_CookingMenu;
+    pub use super::IHubPlayTalkAfter_CookingMenu;
+    pub use super::IHubPlayTalkAfter_CookingMenuMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

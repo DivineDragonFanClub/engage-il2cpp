@@ -24,216 +24,197 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamera-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamera")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PixelPerfectCamera_unity2_raw{use super:: * ;
-pub unsafe fn get_assets_ppu(this:PixelPerfectCamera,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamera")]pub trait IPixelPerfectCameraMethods:IPixelPerfectCamera{#[doc="`get_assetsPPU()` overload"]fn get_assets_ppu(self,)->i32{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"get_assetsPPU",));
-let inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_assets_ppu(this:PixelPerfectCamera,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_assetsPPU(i32)` overload"]fn set_assets_ppu(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"set_assetsPPU",));
-let inner:extern "C" fn(PixelPerfectCamera,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_ref_resolution_x(this:PixelPerfectCamera,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_refResolutionX()` overload"]fn get_ref_resolution_x(self,)->i32{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"get_refResolutionX",));
-let inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_ref_resolution_x(this:PixelPerfectCamera,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_refResolutionX(i32)` overload"]fn set_ref_resolution_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"set_refResolutionX",));
-let inner:extern "C" fn(PixelPerfectCamera,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_ref_resolution_y(this:PixelPerfectCamera,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_refResolutionY()` overload"]fn get_ref_resolution_y(self,)->i32{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"get_refResolutionY",));
-let inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_ref_resolution_y(this:PixelPerfectCamera,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_refResolutionY(i32)` overload"]fn set_ref_resolution_y(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",9usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"set_refResolutionY",));
-let inner:extern "C" fn(PixelPerfectCamera,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_upscale_rt(this:PixelPerfectCamera,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_upscaleRT()` overload"]fn get_upscale_rt(self,)->bool{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"get_upscaleRT",));
-let inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_upscale_rt(this:PixelPerfectCamera,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_upscaleRT(bool)` overload"]fn set_upscale_rt(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",11usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"set_upscaleRT",));
-let inner:extern "C" fn(PixelPerfectCamera,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_pixel_snapping(this:PixelPerfectCamera,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_pixelSnapping()` overload"]fn get_pixel_snapping(self,)->bool{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",12usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"get_pixelSnapping",));
-let inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_pixel_snapping(this:PixelPerfectCamera,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_pixelSnapping(bool)` overload"]fn set_pixel_snapping(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",13usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"set_pixelSnapping",));
-let inner:extern "C" fn(PixelPerfectCamera,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_crop_frame_x(this:PixelPerfectCamera,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_cropFrameX()` overload"]fn get_crop_frame_x(self,)->bool{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",14usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"get_cropFrameX",));
-let inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_crop_frame_x(this:PixelPerfectCamera,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_cropFrameX(bool)` overload"]fn set_crop_frame_x(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",15usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"set_cropFrameX",));
-let inner:extern "C" fn(PixelPerfectCamera,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_crop_frame_y(this:PixelPerfectCamera,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_cropFrameY()` overload"]fn get_crop_frame_y(self,)->bool{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",16usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"get_cropFrameY",));
-let inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_crop_frame_y(this:PixelPerfectCamera,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_cropFrameY(bool)` overload"]fn set_crop_frame_y(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",17usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"set_cropFrameY",));
-let inner:extern "C" fn(PixelPerfectCamera,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_stretch_fill(this:PixelPerfectCamera,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_stretchFill()` overload"]fn get_stretch_fill(self,)->bool{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",18usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"get_stretchFill",));
-let inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_stretch_fill(this:PixelPerfectCamera,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_stretchFill(bool)` overload"]fn set_stretch_fill(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",19usize,__vt.len(), <PixelPerfectCamera as::unity2::ClassIdentity> ::NAME,"set_stretchFill",));
-let inner:extern "C" fn(PixelPerfectCamera,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PixelPerfectCamera,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamera")]pub trait IPixelPerfectCameraMethods:IPixelPerfectCamera{#[doc="`get_assetsPPU()` overload"]fn get_assets_ppu(self,)->i32{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::get_assets_ppu(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_assetsPPU(i32)` overload"]fn set_assets_ppu(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::set_assets_ppu(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_refResolutionX()` overload"]fn get_ref_resolution_x(self,)->i32{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::get_ref_resolution_x(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_refResolutionX(i32)` overload"]fn set_ref_resolution_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::set_ref_resolution_x(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_refResolutionY()` overload"]fn get_ref_resolution_y(self,)->i32{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::get_ref_resolution_y(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_refResolutionY(i32)` overload"]fn set_ref_resolution_y(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::set_ref_resolution_y(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_upscaleRT()` overload"]fn get_upscale_rt(self,)->bool{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::get_upscale_rt(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_upscaleRT(bool)` overload"]fn set_upscale_rt(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::set_upscale_rt(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_pixelSnapping()` overload"]fn get_pixel_snapping(self,)->bool{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::get_pixel_snapping(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_pixelSnapping(bool)` overload"]fn set_pixel_snapping(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::set_pixel_snapping(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_cropFrameX()` overload"]fn get_crop_frame_x(self,)->bool{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::get_crop_frame_x(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_cropFrameX(bool)` overload"]fn set_crop_frame_x(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::set_crop_frame_x(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_cropFrameY()` overload"]fn get_crop_frame_y(self,)->bool{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::get_crop_frame_y(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_cropFrameY(bool)` overload"]fn set_crop_frame_y(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::set_crop_frame_y(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_stretchFill()` overload"]fn get_stretch_fill(self,)->bool{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::get_stretch_fill(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_stretchFill(bool)` overload"]fn set_stretch_fill(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PixelPerfectCamera_unity2_raw::set_stretch_fill(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_pixelRatio()` overload"]fn get_pixel_ratio(self,)->i32{unsafe{let __receiver= <PixelPerfectCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3195a00usize)as*mut u8,i32;
@@ -320,6 +301,56 @@ pub fn on_end_camera_rendering_method_info()-> & 'static::unity2::il2cpp::Method
 pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
 pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamera")]impl PixelPerfectCamera{#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `get_assetsPPU`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_assets_ppu(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_assets_ppu_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `set_assetsPPU`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_assets_ppu(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:i32,)->(){let __mi=Self::set_assets_ppu_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `get_refResolutionX`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_ref_resolution_x(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_ref_resolution_x_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `set_refResolutionX`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_ref_resolution_x(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:i32,)->(){let __mi=Self::set_ref_resolution_x_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `get_refResolutionY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_ref_resolution_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_ref_resolution_y_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `set_refResolutionY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_ref_resolution_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:i32,)->(){let __mi=Self::set_ref_resolution_y_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `get_upscaleRT`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_upscale_rt(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_upscale_rt_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `set_upscaleRT`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_upscale_rt(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_upscale_rt_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `get_pixelSnapping`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_pixel_snapping(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_pixel_snapping_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `set_pixelSnapping`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_pixel_snapping(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_pixel_snapping_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `get_cropFrameX`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_crop_frame_x(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_crop_frame_x_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `set_cropFrameX`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_crop_frame_x(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_crop_frame_x_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `get_cropFrameY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_crop_frame_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_crop_frame_y_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `set_cropFrameY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_crop_frame_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_crop_frame_y_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `get_stretchFill`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_stretch_fill(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_stretch_fill_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PixelPerfectCamera`'s own `set_stretchFill`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_stretch_fill(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_stretch_fill_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamera")]impl PixelPerfectCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

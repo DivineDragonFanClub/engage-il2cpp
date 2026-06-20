@@ -21,6 +21,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionattack/ActionAttack.md"))]#[::unity2::class(namespace="Combat",name="ActionAttack")]#[parent(crate::combat::actionobservable::ActionObservable)]pub struct ActionAttack{#[offset(48)]#[rename(name="m_ChainAttackTimeout")]pub m_chain_attack_timeout:f32, #[offset(52)]#[rename(name="m_ChainSpeedRate")]pub m_chain_speed_rate:f32, #[offset(56)]#[rename(name="m_Stage")]pub m_stage:crate::combat::actionattack::ActionAttack_Stage, #[offset(60)]#[rename(name="m_WorldArrivalTime")]pub m_world_arrival_time:f32, #[offset(64)]#[rename(name="m_FarAttackRangeSq")]pub m_far_attack_range_sq:f32, #[offset(72)]#[rename(name="m_ChainGuard")]pub m_chain_guard:crate::combat::character::Character, #[offset(80)]#[rename(name="m_bHitPassed")]pub m_b_hit_passed:bool, #[offset(84)]#[rename(name="m_TimeToNext")]pub m_time_to_next:f32, #[offset(88)]#[rename(name="m_IsNotRepelled")]pub m_is_not_repelled:bool, #[offset(89)]#[rename(name="m_再生ジャンプPassed")]pub m_再生ジャンプpassed:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionattack/ActionAttack_Stage.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ActionAttack_Stage{pub value:i32,}
 impl::unity2::ClassIdentity for ActionAttack_Stage{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="ActionAttack.Stage";
@@ -40,69 +43,22 @@ pub fn end()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionattack/ActionAttack.md"))]#[::unity2::class(namespace="Combat",name="ActionAttack")]#[parent(crate::combat::actionobservable::ActionObservable)]pub struct ActionAttack{#[offset(48)]#[rename(name="m_ChainAttackTimeout")]pub m_chain_attack_timeout:f32, #[offset(52)]#[rename(name="m_ChainSpeedRate")]pub m_chain_speed_rate:f32, #[offset(56)]#[rename(name="m_Stage")]pub m_stage:crate::combat::actionattack::ActionAttack_Stage, #[offset(60)]#[rename(name="m_WorldArrivalTime")]pub m_world_arrival_time:f32, #[offset(64)]#[rename(name="m_FarAttackRangeSq")]pub m_far_attack_range_sq:f32, #[offset(72)]#[rename(name="m_ChainGuard")]pub m_chain_guard:crate::combat::character::Character, #[offset(80)]#[rename(name="m_bHitPassed")]pub m_b_hit_passed:bool, #[offset(84)]#[rename(name="m_TimeToNext")]pub m_time_to_next:f32, #[offset(88)]#[rename(name="m_IsNotRepelled")]pub m_is_not_repelled:bool, #[offset(89)]#[rename(name="m_再生ジャンプPassed")]pub m_再生ジャンプpassed:bool,}
-
 }
 
 #[cfg(feature = "combat-actionattack-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-actionattack")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionAttack_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:ActionAttack,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="combat-actionattack")]pub trait IActionAttackMethods:IActionAttack{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <ActionAttack as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(ActionAttack, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ActionAttack, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_enter(this:ActionAttack,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <ActionAttack as::unity2::ClassIdentity> ::NAME,"OnEnter",));
-let inner:extern "C" fn(ActionAttack, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_update(this:ActionAttack,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <ActionAttack as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
-let inner:extern "C" fn(ActionAttack, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_exit(this:ActionAttack,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <ActionAttack as::unity2::ClassIdentity> ::NAME,"OnExit",));
-let inner:extern "C" fn(ActionAttack, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_abort_by_interrupt(this:ActionAttack,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <ActionAttack as::unity2::ClassIdentity> ::NAME,"get_AbortByInterrupt",));
-let inner:extern "C" fn(ActionAttack, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="combat-actionattack")]pub trait IActionAttackMethods:IActionAttack{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ActionAttack_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,time_to_chain_attack:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bbef50usize)as*mut u8,();
@@ -113,13 +69,40 @@ __ActionAttack_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 (ActionAttack)__receiver)}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ActionAttack_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ActionAttack as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let __inner:extern "C" fn(ActionAttack, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ActionAttack_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ActionAttack as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let __inner:extern "C" fn(ActionAttack, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ActionAttack_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ActionAttack as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let __inner:extern "C" fn(ActionAttack, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`EnterApproach()` overload"]fn enter_approach(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bbefe0usize)as*mut u8,();
@@ -134,7 +117,16 @@ __ActionAttack_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
 (ActionAttack)__receiver)}
 }
 #[doc="`get_AbortByInterrupt()` overload"]fn get_abort_by_interrupt(self,)->bool{unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ActionAttack_unity2_raw::get_abort_by_interrupt(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ActionAttack as::unity2::ClassIdentity> ::NAME,"get_AbortByInterrupt",));
+let __inner:extern "C" fn(ActionAttack, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`EnterAttack()` overload"]fn enter_attack(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bbf9d0usize)as*mut u8,();
@@ -182,6 +174,23 @@ pub fn self_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn guard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
+#[cfg(feature="combat-actionattack")]impl ActionAttack{#[doc="Direct (non-virtual) call to `ActionAttack`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ActionAttack`'s own `OnEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enter_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ActionAttack`'s own `OnUpdate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ActionAttack`'s own `OnExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_exit(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_exit_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ActionAttack`'s own `get_AbortByInterrupt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_abort_by_interrupt(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_abort_by_interrupt_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="combat-actionattack")]impl ActionAttack{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` — overload selector"]pub fn new(chr:crate::combat::character::Character,phase:crate::combat::phase::Phase,time_to_chain_attack:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(ActionAttack), ::core::stringify!(new),));
@@ -192,10 +201,10 @@ this}
 #[cfg(feature = "combat-actionattack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ActionAttack_Stage;
     pub use super::ActionAttack;
     pub use super::IActionAttack;
     pub use super::IActionAttackMethods;
+    pub use super::ActionAttack_Stage;
     pub use crate::combat::actionbase::IActionBase;
     pub use crate::combat::actiondisposerholder::IActionDisposerHolder;
     pub use crate::combat::actionobservable::IActionObservable;

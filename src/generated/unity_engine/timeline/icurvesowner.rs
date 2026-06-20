@@ -14,60 +14,53 @@ mod __types {
 #[cfg(feature = "unity_engine-timeline-icurvesowner-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-icurvesowner")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ICurvesOwner_unity2_raw{use super:: * ;
-pub unsafe fn get_default_curves_name(this:ICurvesOwner,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-timeline-icurvesowner")]pub trait IICurvesOwnerMethods:IICurvesOwner{#[doc="`get_defaultCurvesName()` overload"]fn get_default_curves_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ICurvesOwner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <ICurvesOwner as::unity2::ClassIdentity> ::NAME,"get_defaultCurvesName",));
-let inner:extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_asset(this:ICurvesOwner,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_asset()` overload"]fn get_asset(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <ICurvesOwner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <ICurvesOwner as::unity2::ClassIdentity> ::NAME,"get_asset",));
-let inner:extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_asset_owner(this:ICurvesOwner,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_assetOwner()` overload"]fn get_asset_owner(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <ICurvesOwner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <ICurvesOwner as::unity2::ClassIdentity> ::NAME,"get_assetOwner",));
-let inner:extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_target_track(this:ICurvesOwner,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_targetTrack()` overload"]fn get_target_track(self,)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <ICurvesOwner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",3usize,__vt.len(), <ICurvesOwner as::unity2::ClassIdentity> ::NAME,"get_targetTrack",));
-let inner:extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ICurvesOwner, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-timeline-icurvesowner")]pub trait IICurvesOwnerMethods:IICurvesOwner{#[doc="`get_defaultCurvesName()` overload"]fn get_default_curves_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ICurvesOwner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ICurvesOwner_unity2_raw::get_default_curves_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_asset()` overload"]fn get_asset(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <ICurvesOwner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ICurvesOwner_unity2_raw::get_asset(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_assetOwner()` overload"]fn get_asset_owner(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <ICurvesOwner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ICurvesOwner_unity2_raw::get_asset_owner(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_targetTrack()` overload"]fn get_target_track(self,)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <ICurvesOwner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ICurvesOwner_unity2_raw::get_target_track(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -77,6 +70,20 @@ __ICurvesOwner_unity2_raw::get_target_track(__receiver, ::core::option::Option::
 pub fn get_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_asset_owner_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_target_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="unity_engine-timeline-icurvesowner")]impl ICurvesOwner{#[doc="Direct (non-virtual) call to `ICurvesOwner`'s own `get_defaultCurvesName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_curves_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_default_curves_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ICurvesOwner`'s own `get_asset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_asset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::object_2::Object_2{let __mi=Self::get_asset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ICurvesOwner`'s own `get_assetOwner`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_asset_owner(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::object_2::Object_2{let __mi=Self::get_asset_owner_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ICurvesOwner`'s own `get_targetTrack`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_target_track(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::timeline::trackasset::TrackAsset{let __mi=Self::get_target_track_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-timeline-icurvesowner")]

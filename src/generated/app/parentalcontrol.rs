@@ -11,39 +11,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/parentalcontrol/ParentalControl.md"))]#[::unity2::class(namespace="App",name="ParentalControl")]#[parent(crate::system::object::Object)]pub struct ParentalControl{#[static_field]#[rename(name="s_IsBeginFC")]pub s_is_begin_fc:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/parentalcontrol/ParentalControl_BeginFCSequence.md"))]#[::unity2::class(namespace="App",name="ParentalControl.BeginFCSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct ParentalControl_BeginFCSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/parentalcontrol/ParentalControl.md"))]#[::unity2::class(namespace="App",name="ParentalControl")]#[parent(crate::system::object::Object)]pub struct ParentalControl{#[static_field]#[rename(name="s_IsBeginFC")]pub s_is_begin_fc:bool,}
 
 }
 
 #[cfg(feature = "app-parentalcontrol-types")]
 pub use __types::*;
-
-#[cfg(feature="app-parentalcontrol")]impl ParentalControl{#[doc="`BeginFreeCommunication(crate::app::procinst::ProcInst)` overload"]pub fn begin_free_communication(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f24ef0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`get_ResultBeginFreeCommunication()` overload"]pub fn get_result_begin_free_communication()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f24f70usize)as*mut u8,bool;
-)}
-}
-#[doc="`EndFreeCommunication()` overload"]pub fn end_free_communication()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f24fe0usize)as*mut u8,();
-)}
-}
-#[doc="`IsFreeCommunicationAvailable()` overload"]pub fn is_free_communication_available()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f25060usize)as*mut u8,bool;
-)}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f250a0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-parentalcontrol")]impl ParentalControl{pub fn begin_free_communication_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_result_begin_free_communication_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn end_free_communication_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_free_communication_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
 
 #[cfg(feature="app-parentalcontrol")]impl ParentalControl_BeginFCSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2260a20usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -84,14 +60,38 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-parentalcontrol")]impl ParentalControl{#[doc="`BeginFreeCommunication(crate::app::procinst::ProcInst)` overload"]pub fn begin_free_communication(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f24ef0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`get_ResultBeginFreeCommunication()` overload"]pub fn get_result_begin_free_communication()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f24f70usize)as*mut u8,bool;
+)}
+}
+#[doc="`EndFreeCommunication()` overload"]pub fn end_free_communication()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f24fe0usize)as*mut u8,();
+)}
+}
+#[doc="`IsFreeCommunicationAvailable()` overload"]pub fn is_free_communication_available()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f25060usize)as*mut u8,bool;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f250a0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-parentalcontrol")]impl ParentalControl{pub fn begin_free_communication_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_result_begin_free_communication_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn end_free_communication_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_free_communication_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
 #[cfg(feature = "app-parentalcontrol")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ParentalControl;
-    pub use super::IParentalControl;
     pub use super::ParentalControl_BeginFCSequence;
     pub use super::IParentalControl_BeginFCSequence;
     pub use super::IParentalControl_BeginFCSequenceMethods;
+    pub use super::ParentalControl;
+    pub use super::IParentalControl;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;

@@ -16,69 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-resourcesapi-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resourcesapi")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ResourcesAPI_unity2_raw{use super:: * ;
-pub unsafe fn find_objects_of_type_all(this:ResourcesAPI,system_type_instance: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"FindObjectsOfTypeAll",));
-let inner:extern "C" fn(ResourcesAPI, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,system_type_instance,__mi)}
-pub unsafe fn find_shader_by_name(this:ResourcesAPI,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::shader::Shader{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"FindShaderByName",));
-let inner:extern "C" fn(ResourcesAPI, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::unity_engine::shader::Shader= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,__mi)}
-pub unsafe fn load(this:ResourcesAPI,path: ::unity2::Il2CppString,system_type_instance: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"Load",));
-let inner:extern "C" fn(ResourcesAPI, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,path,system_type_instance,__mi)}
-pub unsafe fn load_all(this:ResourcesAPI,path: ::unity2::Il2CppString,system_type_instance: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"LoadAll",));
-let inner:extern "C" fn(ResourcesAPI, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,path,system_type_instance,__mi)}
-pub unsafe fn load_async(this:ResourcesAPI,path: ::unity2::Il2CppString,system_type_instance: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resourcerequest::ResourceRequest{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"LoadAsync",));
-let inner:extern "C" fn(ResourcesAPI, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::unity_engine::resourcerequest::ResourceRequest= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,path,system_type_instance,__mi)}
-pub unsafe fn unload_asset(this:ResourcesAPI,asset_to_unload:crate::unity_engine::object_2::Object_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"UnloadAsset",));
-let inner:extern "C" fn(ResourcesAPI,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,asset_to_unload,__mi)}
-}
-
 #[cfg(feature="unity_engine-resourcesapi")]impl ResourcesAPI{#[doc="`get_ActiveAPI()` overload"]pub fn get_active_api()->crate::unity_engine::resourcesapi::ResourcesAPI{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f890f0usize)as*mut u8,crate::unity_engine::resourcesapi::ResourcesAPI;
 )}
 }
@@ -95,22 +32,76 @@ inner(this,asset_to_unload,__mi)}
 (ResourcesAPI)__receiver)}
 }
 #[doc="`FindObjectsOfTypeAll(::unity2::SystemType)` overload"]fn find_objects_of_type_all(self,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourcesAPI_unity2_raw::find_objects_of_type_all(__receiver, ::core::convert::Into::into(system_type_instance), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"FindObjectsOfTypeAll",));
+let __inner:extern "C" fn(ResourcesAPI, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(system_type_instance),__mi)}
+}
 }
 #[doc="`FindShaderByName(::unity2::Il2CppString)` overload"]fn find_shader_by_name(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::shader::Shader{unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourcesAPI_unity2_raw::find_shader_by_name(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"FindShaderByName",));
+let __inner:extern "C" fn(ResourcesAPI, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::unity_engine::shader::Shader= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(name),__mi)}
+}
 }
 #[doc="`Load(::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn load(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourcesAPI_unity2_raw::load(__receiver, ::core::convert::Into::into(path), ::core::convert::Into::into(system_type_instance), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"Load",));
+let __inner:extern "C" fn(ResourcesAPI, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(path), ::core::convert::Into::into(system_type_instance),__mi)}
+}
 }
 #[doc="`LoadAll(::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn load_all(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourcesAPI_unity2_raw::load_all(__receiver, ::core::convert::Into::into(path), ::core::convert::Into::into(system_type_instance), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"LoadAll",));
+let __inner:extern "C" fn(ResourcesAPI, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(path), ::core::convert::Into::into(system_type_instance),__mi)}
+}
 }
 #[doc="`LoadAsync(::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn load_async(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)->crate::unity_engine::resourcerequest::ResourceRequest{unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourcesAPI_unity2_raw::load_async(__receiver, ::core::convert::Into::into(path), ::core::convert::Into::into(system_type_instance), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"LoadAsync",));
+let __inner:extern "C" fn(ResourcesAPI, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::unity_engine::resourcerequest::ResourceRequest= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(path), ::core::convert::Into::into(system_type_instance),__mi)}
+}
 }
 #[doc="`UnloadAsset(crate::unity_engine::object_2::Object_2)` overload"]fn unload_asset(self,asset_to_unload:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourcesAPI_unity2_raw::unload_asset(__receiver, ::core::convert::Into::into(asset_to_unload), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ResourcesAPI as::unity2::ClassIdentity> ::NAME,"UnloadAsset",));
+let __inner:extern "C" fn(ResourcesAPI,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(asset_to_unload),__mi)}
+}
 }
 }
 
@@ -126,6 +117,26 @@ pub fn load_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn unload_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="unity_engine-resourcesapi")]impl ResourcesAPI{#[doc="Direct (non-virtual) call to `ResourcesAPI`'s own `FindObjectsOfTypeAll`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn find_objects_of_type_all(this:impl::core::convert::Into< ::unity2::IlInstance> ,system_type_instance: ::unity2::SystemType,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{let __mi=Self::find_objects_of_type_all_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),system_type_instance, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ResourcesAPI`'s own `FindShaderByName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn find_shader_by_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,)->crate::unity_engine::shader::Shader{let __mi=Self::find_shader_by_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::unity_engine::shader::Shader= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ResourcesAPI`'s own `Load`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn load(this:impl::core::convert::Into< ::unity2::IlInstance> ,path: ::unity2::Il2CppString,system_type_instance: ::unity2::SystemType,)->crate::unity_engine::object_2::Object_2{let __mi=Self::load_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),path,system_type_instance, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ResourcesAPI`'s own `LoadAll`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn load_all(this:impl::core::convert::Into< ::unity2::IlInstance> ,path: ::unity2::Il2CppString,system_type_instance: ::unity2::SystemType,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{let __mi=Self::load_all_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::object_2::Object_2> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),path,system_type_instance, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ResourcesAPI`'s own `LoadAsync`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn load_async(this:impl::core::convert::Into< ::unity2::IlInstance> ,path: ::unity2::Il2CppString,system_type_instance: ::unity2::SystemType,)->crate::unity_engine::resourcerequest::ResourceRequest{let __mi=Self::load_async_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::unity_engine::resourcerequest::ResourceRequest= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),path,system_type_instance, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ResourcesAPI`'s own `UnloadAsset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unload_asset(this:impl::core::convert::Into< ::unity2::IlInstance> ,asset_to_unload:crate::unity_engine::object_2::Object_2,)->(){let __mi=Self::unload_asset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),asset_to_unload, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-resourcesapi")]impl ResourcesAPI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

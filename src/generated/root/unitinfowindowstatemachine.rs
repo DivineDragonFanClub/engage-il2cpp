@@ -22,34 +22,29 @@ use crate::unity_engine::statemachinebehaviour::{IStateMachineBehaviour,StateMac
 #[cfg(feature = "root-unitinfowindowstatemachine-types")]
 pub use __types::*;
 
-#[cfg(feature="root-unitinfowindowstatemachine")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitInfoWindowStateMachine_unity2_raw{use super:: * ;
-pub unsafe fn on_state_enter(this:UnitInfoWindowStateMachine,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-unitinfowindowstatemachine")]pub trait IUnitInfoWindowStateMachineMethods:IUnitInfoWindowStateMachine{#[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitInfoWindowStateMachine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <UnitInfoWindowStateMachine as::unity2::ClassIdentity> ::NAME,"OnStateEnter",));
-let inner:extern "C" fn(UnitInfoWindowStateMachine,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(UnitInfoWindowStateMachine,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,animator,state_info,layer_index,__mi)}
-pub unsafe fn on_state_exit(this:UnitInfoWindowStateMachine,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index),__mi)}
+}
+}
+#[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitInfoWindowStateMachine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <UnitInfoWindowStateMachine as::unity2::ClassIdentity> ::NAME,"OnStateExit",));
-let inner:extern "C" fn(UnitInfoWindowStateMachine,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(UnitInfoWindowStateMachine,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,animator,state_info,layer_index,__mi)}
+__inner(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index),__mi)}
 }
-
-#[cfg(feature="root-unitinfowindowstatemachine")]pub trait IUnitInfoWindowStateMachineMethods:IUnitInfoWindowStateMachine{#[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitInfoWindowStateMachine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitInfoWindowStateMachine_unity2_raw::on_state_enter(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
-}
-#[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitInfoWindowStateMachine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitInfoWindowStateMachine_unity2_raw::on_state_exit(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfoWindowStateMachine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fad790usize)as*mut u8,();
@@ -62,6 +57,14 @@ __UnitInfoWindowStateMachine_unity2_raw::on_state_exit(__receiver, ::core::conve
 #[cfg(feature="root-unitinfowindowstatemachine")]impl UnitInfoWindowStateMachine{pub fn on_state_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn on_state_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root-unitinfowindowstatemachine")]impl UnitInfoWindowStateMachine{#[doc="Direct (non-virtual) call to `UnitInfoWindowStateMachine`'s own `OnStateEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_state_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,)->(){let __mi=Self::on_state_enter_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),animator,state_info,layer_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnitInfoWindowStateMachine`'s own `OnStateExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_state_exit(this:impl::core::convert::Into< ::unity2::IlInstance> ,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,)->(){let __mi=Self::on_state_exit_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),animator,state_info,layer_index, ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-unitinfowindowstatemachine")]impl UnitInfoWindowStateMachine{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

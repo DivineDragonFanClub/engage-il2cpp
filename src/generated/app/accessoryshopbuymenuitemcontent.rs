@@ -26,51 +26,45 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-accessoryshopbuymenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-accessoryshopbuymenuitemcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopBuyMenuItemContent_unity2_raw{use super:: * ;
-pub unsafe fn start(this:AccessoryShopBuyMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <AccessoryShopBuyMenuItemContent as::unity2::ClassIdentity> ::NAME,"Start",));
-let inner:extern "C" fn(AccessoryShopBuyMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_text(this:AccessoryShopBuyMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <AccessoryShopBuyMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildText",));
-let inner:extern "C" fn(AccessoryShopBuyMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update_text_color(this:AccessoryShopBuyMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <AccessoryShopBuyMenuItemContent as::unity2::ClassIdentity> ::NAME,"UpdateTextColor",));
-let inner:extern "C" fn(AccessoryShopBuyMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-accessoryshopbuymenuitemcontent")]pub trait IAccessoryShopBuyMenuItemContentMethods:IAccessoryShopBuyMenuItemContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27bb740usize)as*mut u8,();
 (AccessoryShopBuyMenuItemContent)__receiver)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AccessoryShopBuyMenuItemContent_unity2_raw::start(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <AccessoryShopBuyMenuItemContent as::unity2::ClassIdentity> ::NAME,"Start",));
+let __inner:extern "C" fn(AccessoryShopBuyMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AccessoryShopBuyMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <AccessoryShopBuyMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildText",));
+let __inner:extern "C" fn(AccessoryShopBuyMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AccessoryShopBuyMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AccessoryShopBuyMenuItemContent as::unity2::ClassIdentity> ::NAME,"UpdateTextColor",));
+let __inner:extern "C" fn(AccessoryShopBuyMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SynchronizeNewIconAnimationTime()` overload"]fn synchronize_new_icon_animation_time(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27bc070usize)as*mut u8,();
@@ -85,6 +79,17 @@ pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn synchronize_new_icon_animation_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-accessoryshopbuymenuitemcontent")]impl AccessoryShopBuyMenuItemContent{#[doc="Direct (non-virtual) call to `AccessoryShopBuyMenuItemContent`'s own `Start`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AccessoryShopBuyMenuItemContent`'s own `BuildText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AccessoryShopBuyMenuItemContent`'s own `UpdateTextColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_text_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_text_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-accessoryshopbuymenuitemcontent")]impl AccessoryShopBuyMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

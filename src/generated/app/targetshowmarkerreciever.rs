@@ -24,19 +24,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-targetshowmarkerreciever-types")]
 pub use __types::*;
 
-#[cfg(feature="app-targetshowmarkerreciever")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TargetShowMarkerReciever_unity2_raw{use super:: * ;
-pub unsafe fn on_notify(this:TargetShowMarkerReciever,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TargetShowMarkerReciever as::unity2::ClassIdentity> ::NAME,"OnNotify",));
-let inner:extern "C" fn(TargetShowMarkerReciever,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,origin,notification,context,__mi)}
-}
-
 #[cfg(feature="app-targetshowmarkerreciever")]pub trait ITargetShowMarkerRecieverMethods:ITargetShowMarkerReciever{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TargetShowMarkerReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21de0f0usize)as*mut u8,();
 (TargetShowMarkerReciever)__receiver)}
@@ -50,7 +37,16 @@ inner(this,origin,notification,context,__mi)}
 (TargetShowMarkerReciever)__receiver)}
 }
 #[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <TargetShowMarkerReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TargetShowMarkerReciever_unity2_raw::on_notify(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TargetShowMarkerReciever as::unity2::ClassIdentity> ::NAME,"OnNotify",));
+let __inner:extern "C" fn(TargetShowMarkerReciever,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TargetShowMarkerReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21de290usize)as*mut u8,();
@@ -65,6 +61,11 @@ pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn on_notify_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-targetshowmarkerreciever")]impl TargetShowMarkerReciever{#[doc="Direct (non-virtual) call to `TargetShowMarkerReciever`'s own `OnNotify`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_notify(this:impl::core::convert::Into< ::unity2::IlInstance> ,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,)->(){let __mi=Self::on_notify_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),origin,notification,context, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-targetshowmarkerreciever")]impl TargetShowMarkerReciever{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

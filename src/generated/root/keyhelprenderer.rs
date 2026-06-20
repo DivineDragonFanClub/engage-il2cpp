@@ -28,21 +28,17 @@ use crate::unity_engine::ui::graphic::{Graphic,IGraphic}
 #[cfg(feature = "root-keyhelprenderer-types")]
 pub use __types::*;
 
-#[cfg(feature="root-keyhelprenderer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __KeyHelpRenderer_unity2_raw{use super:: * ;
-pub unsafe fn on_populate_mesh(this:KeyHelpRenderer,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-keyhelprenderer")]pub trait IKeyHelpRendererMethods:IKeyHelpRenderer{#[doc="`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn on_populate_mesh(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <KeyHelpRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",44usize,__vt.len(), <KeyHelpRenderer as::unity2::ClassIdentity> ::NAME,"OnPopulateMesh",));
-let inner:extern "C" fn(KeyHelpRenderer,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(KeyHelpRenderer,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,vh,__mi)}
+__inner(__receiver, ::core::convert::Into::into(vh),__mi)}
 }
-
-#[cfg(feature="root-keyhelprenderer")]pub trait IKeyHelpRendererMethods:IKeyHelpRenderer{#[doc="`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn on_populate_mesh(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <KeyHelpRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__KeyHelpRenderer_unity2_raw::on_populate_mesh(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)}
 }
 #[doc="`GetPadding()` overload"]fn get_padding(self,)->crate::unity_engine::rectoffset::RectOffset{unsafe{let __receiver= <KeyHelpRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bda480usize)as*mut u8,crate::unity_engine::rectoffset::RectOffset;
@@ -59,6 +55,11 @@ __KeyHelpRenderer_unity2_raw::on_populate_mesh(__receiver, ::core::convert::Into
 #[cfg(feature="root-keyhelprenderer")]impl KeyHelpRenderer{pub fn on_populate_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_padding_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root-keyhelprenderer")]impl KeyHelpRenderer{#[doc="Direct (non-virtual) call to `KeyHelpRenderer`'s own `OnPopulateMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_populate_mesh(this:impl::core::convert::Into< ::unity2::IlInstance> ,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,)->(){let __mi=Self::on_populate_mesh_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),vh, ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-keyhelprenderer")]impl KeyHelpRenderer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

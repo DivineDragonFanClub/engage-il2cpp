@@ -19,9 +19,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspotadjuster/GmapSpotAdjuster.md"))]#[::unity2::class(namespace="App",name="GmapSpotAdjuster")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapSpotAdjuster{#[offset(24)]#[rename(name="移動時に地面に吸着させる")]pub 移動時に地面に吸着させる:bool, #[offset(32)]#[rename(name="吸着対象")]pub 吸着対象:crate::system::collections::generic::list_1::List_1<crate::app::gmapspotadjuster::GmapSpotAdjuster_TargetModel> , #[offset(40)]#[rename(name="m_TargetColliders")]pub m_target_colliders:crate::system::collections::generic::list_1::List_1<crate::unity_engine::collider::Collider> , #[offset(48)]#[rename(name="m_OldCheck")]pub m_old_check:bool, #[offset(56)]#[rename(name="m_Transform")]pub m_transform:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="m_LastPosition")]pub m_last_position:crate::unity_engine::vector3::Vector3,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspotadjuster/GmapSpotAdjuster_TargetModel.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GmapSpotAdjuster_TargetModel{pub メモ: ::unity2::Il2CppString,pub 対象とする地面: ::unity2::Il2CppString,pub 吸着する:bool,}
 impl::unity2::ClassIdentity for GmapSpotAdjuster_TargetModel{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GmapSpotAdjuster.TargetModel";
@@ -31,6 +28,9 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for GmapSpotAdjuster_TargetModel{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapspotadjuster/GmapSpotAdjuster.md"))]#[::unity2::class(namespace="App",name="GmapSpotAdjuster")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapSpotAdjuster{#[offset(24)]#[rename(name="移動時に地面に吸着させる")]pub 移動時に地面に吸着させる:bool, #[offset(32)]#[rename(name="吸着対象")]pub 吸着対象:crate::system::collections::generic::list_1::List_1<crate::app::gmapspotadjuster::GmapSpotAdjuster_TargetModel> , #[offset(40)]#[rename(name="m_TargetColliders")]pub m_target_colliders:crate::system::collections::generic::list_1::List_1<crate::unity_engine::collider::Collider> , #[offset(48)]#[rename(name="m_OldCheck")]pub m_old_check:bool, #[offset(56)]#[rename(name="m_Transform")]pub m_transform:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="m_LastPosition")]pub m_last_position:crate::unity_engine::vector3::Vector3,}
 
 }
 
@@ -92,10 +92,10 @@ this}
 #[cfg(feature = "app-gmapspotadjuster")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GmapSpotAdjuster_TargetModel;
     pub use super::GmapSpotAdjuster;
     pub use super::IGmapSpotAdjuster;
     pub use super::IGmapSpotAdjusterMethods;
-    pub use super::GmapSpotAdjuster_TargetModel;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

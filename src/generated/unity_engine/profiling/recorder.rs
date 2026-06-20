@@ -16,19 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-profiling-recorder-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-profiling-recorder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Recorder_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:Recorder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <Recorder as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(Recorder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-profiling-recorder")]impl Recorder{#[doc="`DisposeNative(::unity2::IntPtr)` overload"]pub fn dispose_native(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a620usize)as*mut u8,();
 (::unity2::IntPtr)::core::convert::Into::into(ptr))}
 }
@@ -46,7 +33,16 @@ inner(this,__mi)}
 (Recorder)__receiver,(::unity2::IntPtr)::core::convert::Into::into(ptr))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Recorder_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <Recorder as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(Recorder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_isValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a670usize)as*mut u8,bool;
@@ -97,6 +93,11 @@ pub fn get_gpu_elapsed_nanoseconds_method_info()-> & 'static::unity2::il2cpp::Me
 pub fn get_sample_block_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 pub fn get_gpu_sample_block_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
+
+#[cfg(feature="unity_engine-profiling-recorder")]impl Recorder{#[doc="Direct (non-virtual) call to `Recorder`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-profiling-recorder")]impl Recorder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

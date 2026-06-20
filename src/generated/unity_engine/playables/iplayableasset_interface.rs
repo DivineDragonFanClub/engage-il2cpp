@@ -14,34 +14,29 @@ mod __types {
 #[cfg(feature = "unity_engine-playables-iplayableasset_interface-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-playables-iplayableasset_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPlayableAsset_Interface_unity2_raw{use super:: * ;
-pub unsafe fn create_playable(this:IPlayableAsset_Interface,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,owner:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-playables-iplayableasset_interface")]pub trait IIPlayableAsset_InterfaceMethods:IIPlayableAsset_Interface{#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <IPlayableAsset_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IPlayableAsset_Interface as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
-let inner:extern "C" fn(IPlayableAsset_Interface,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableAsset_Interface,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,graph,owner,__mi)}
-pub unsafe fn get_duration(this:IPlayableAsset_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(owner),__mi)}
+}
+}
+#[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <IPlayableAsset_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IPlayableAsset_Interface as::unity2::ClassIdentity> ::NAME,"get_duration",));
-let inner:extern "C" fn(IPlayableAsset_Interface, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableAsset_Interface, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-playables-iplayableasset_interface")]pub trait IIPlayableAsset_InterfaceMethods:IIPlayableAsset_Interface{#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <IPlayableAsset_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableAsset_Interface_unity2_raw::create_playable(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(owner), ::core::option::Option::None)}
-}
-#[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <IPlayableAsset_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableAsset_Interface_unity2_raw::get_duration(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -49,6 +44,14 @@ __IPlayableAsset_Interface_unity2_raw::get_duration(__receiver, ::core::option::
 
 #[cfg(feature="unity_engine-playables-iplayableasset_interface")]impl IPlayableAsset_Interface{pub fn create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-playables-iplayableasset_interface")]impl IPlayableAsset_Interface{#[doc="Direct (non-virtual) call to `IPlayableAsset_Interface`'s own `CreatePlayable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_playable(this:impl::core::convert::Into< ::unity2::IlInstance> ,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,owner:crate::unity_engine::gameobject::GameObject,)->crate::unity_engine::playables::playable::Playable{let __mi=Self::create_playable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),graph,owner, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPlayableAsset_Interface`'s own `get_duration`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_duration(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f64{let __mi=Self::get_duration_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-playables-iplayableasset_interface")]

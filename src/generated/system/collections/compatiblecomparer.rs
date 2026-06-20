@@ -16,29 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-compatiblecomparer-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-compatiblecomparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CompatibleComparer_unity2_raw{use super:: * ;
-pub unsafe fn equals(this:CompatibleComparer,a:crate::system::object::Object,b:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <CompatibleComparer as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(CompatibleComparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,a,b,__mi)}
-pub unsafe fn get_hash_code(this:CompatibleComparer,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <CompatibleComparer as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(CompatibleComparer,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
-}
-
 #[cfg(feature="system-collections-compatiblecomparer")]pub trait ICompatibleComparerMethods:ICompatibleComparer{#[doc="`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface, crate::system::collections::ihashcodeprovider::IHashCodeProvider)` overload"]fn ctor(self,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface> ,hash_code_provider:impl::core::convert::Into<crate::system::collections::ihashcodeprovider::IHashCodeProvider>)->(){unsafe{let __receiver= <CompatibleComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x31ddb90usize)as*mut u8,();
 (CompatibleComparer)__receiver,(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer),(crate::system::collections::ihashcodeprovider::IHashCodeProvider)::core::convert::Into::into(hash_code_provider))}
@@ -48,10 +25,28 @@ inner(this,obj,__mi)}
 (CompatibleComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(a),(crate::system::object::Object)::core::convert::Into::into(b))}
 }
 #[doc="`Equals(crate::system::object::Object, crate::system::object::Object)` overload"]fn equals(self,a:impl::core::convert::Into<crate::system::object::Object> ,b:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <CompatibleComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CompatibleComparer_unity2_raw::equals(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CompatibleComparer as::unity2::ClassIdentity> ::NAME,"Equals",));
+let __inner:extern "C" fn(CompatibleComparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b),__mi)}
+}
 }
 #[doc="`GetHashCode(crate::system::object::Object)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <CompatibleComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CompatibleComparer_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CompatibleComparer as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let __inner:extern "C" fn(CompatibleComparer,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`get_Comparer()` overload"]fn get_comparer(self,)->crate::system::collections::icomparer_interface::IComparer_Interface{unsafe{let __receiver= <CompatibleComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x31ddf10usize)as*mut u8,crate::system::collections::icomparer_interface::IComparer_Interface;
@@ -71,6 +66,14 @@ pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn get_comparer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn get_hash_code_provider_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-collections-compatiblecomparer")]impl CompatibleComparer{#[doc="Direct (non-virtual) call to `CompatibleComparer`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,a:crate::system::object::Object,b:crate::system::object::Object,)->bool{let __mi=Self::equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),a,b, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CompatibleComparer`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-collections-compatiblecomparer")]impl CompatibleComparer{#[doc="`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface, crate::system::collections::ihashcodeprovider::IHashCodeProvider)` — overload selector"]pub fn new(comparer:crate::system::collections::icomparer_interface::IComparer_Interface,hash_code_provider:crate::system::collections::ihashcodeprovider::IHashCodeProvider)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

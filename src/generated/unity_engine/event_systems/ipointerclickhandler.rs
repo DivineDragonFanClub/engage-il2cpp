@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "unity_engine-event_systems-ipointerclickhandler-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-event_systems-ipointerclickhandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPointerClickHandler_unity2_raw{use super:: * ;
-pub unsafe fn on_pointer_click(this:IPointerClickHandler,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-event_systems-ipointerclickhandler")]pub trait IIPointerClickHandlerMethods:IIPointerClickHandler{#[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <IPointerClickHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IPointerClickHandler as::unity2::ClassIdentity> ::NAME,"OnPointerClick",));
-let inner:extern "C" fn(IPointerClickHandler,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPointerClickHandler,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
 }
-
-#[cfg(feature="unity_engine-event_systems-ipointerclickhandler")]pub trait IIPointerClickHandlerMethods:IIPointerClickHandler{#[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <IPointerClickHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPointerClickHandler_unity2_raw::on_pointer_click(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="unity_engine-event_systems-ipointerclickhandler")]impl<__T:IIPointerClickHandler>IIPointerClickHandlerMethods for __T{}
 
 #[cfg(feature="unity_engine-event_systems-ipointerclickhandler")]impl IPointerClickHandler{pub fn on_pointer_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-event_systems-ipointerclickhandler")]impl IPointerClickHandler{#[doc="Direct (non-virtual) call to `IPointerClickHandler`'s own `OnPointerClick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_pointer_click(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_pointer_click_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-event_systems-ipointerclickhandler")]

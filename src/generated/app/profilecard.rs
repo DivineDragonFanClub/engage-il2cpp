@@ -11,23 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecard/ProfileCard_Achievement.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ProfileCard_Achievement{pub m_acheve_catetory:crate::app::achievedata::AchieveData_Categories,pub m_count:i32,}
-impl::unity2::ClassIdentity for ProfileCard_Achievement{const NAMESPACE: &'static str="App";
-const NAME: &'static str="ProfileCard.Achievement";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ProfileCard_Achievement{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecard/ProfileCard_FreeStamp.md"))]#[::unity2::class(namespace="App",name="ProfileCard.FreeStamp")]#[parent(crate::system::object::Object)]pub struct ProfileCard_FreeStamp{#[offset(16)]#[rename(name="m_Stamp")]pub m_stamp:crate::app::profilecardstampdata::ProfileCardStampData, #[offset(24)]#[rename(name="m_X")]pub m_x:i32, #[offset(28)]#[rename(name="m_Y")]pub m_y:i32, #[offset(32)]#[rename(name="m_Rotation")]pub m_rotation:f32, #[offset(36)]#[rename(name="m_ScaleX")]pub m_scale_x:f32, #[offset(40)]#[rename(name="m_ScaleY")]pub m_scale_y:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecard/ProfileCard.md"))]#[::unity2::class(namespace="App",name="ProfileCard")]#[parent(crate::system::object::Object)]pub struct ProfileCard{#[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="MessageMax")]pub message_max:i32, #[static_field]#[rename(name="StampMax")]pub stamp_max:i32, #[static_field]#[rename(name="SortieCountMax")]pub sortie_count_max:i32, #[static_field]#[rename(name="PageCount")]pub page_count:i32, #[static_field]#[rename(name="StampMaxVer5")]pub stamp_max_ver5:i32, #[offset(16)]#[rename(name="m_UserName")]pub m_user_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Lang")]pub m_lang:crate::app::language::Language_Langs, #[offset(32)]#[rename(name="m_Title")]pub m_title:crate::app::profilecardtitledata::ProfileCardTitleData, #[offset(40)]#[rename(name="m_Bg")]pub m_bg:crate::app::profilecardbgdata::ProfileCardBgData, #[offset(48)]#[rename(name="m_Frame")]pub m_frame:crate::app::profilecardframedata::ProfileCardFrameData, #[offset(56)]#[rename(name="m_TextDeco")]pub m_text_deco:crate::app::profilecardtextdecodata::ProfileCardTextDecoData, #[offset(64)]#[rename(name="m_TextColor")]pub m_text_color:crate::app::profilecardtextcolordata::ProfileCardTextColorData, #[offset(72)]#[rename(name="m_CharacterStamp")]pub m_character_stamp:crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData, #[offset(80)]#[rename(name="m_Comment")]pub m_comment: ::unity2::Array<crate::app::profilecardcommentdata::ProfileCardCommentData> , #[offset(88)]#[rename(name="m_CommentString")]pub m_comment_string: ::unity2::Il2CppString, #[offset(96)]#[rename(name="m_PlayTime")]pub m_play_time:f32, #[offset(100)]#[rename(name="m_BirthMonth")]pub m_birth_month:u8, #[offset(101)]#[rename(name="m_BirthDay")]pub m_birth_day:u8, #[offset(104)]#[rename(name="m_Difficulty")]pub m_difficulty:crate::app::difficulty::Difficulty, #[offset(108)]#[rename(name="m_GameMode")]pub m_game_mode:crate::app::gamemode::GameMode, #[offset(112)]#[rename(name="m_Gender")]pub m_gender:crate::app::gender::Gender, #[offset(120)]#[rename(name="m_FavoriteCharacter")]pub m_favorite_character:crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData, #[offset(128)]#[rename(name="m_FavoriteMap")]pub m_favorite_map:crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData, #[offset(136)]#[rename(name="m_RelayPlayingCount")]pub m_relay_playing_count:u32, #[offset(144)]#[rename(name="m_VersusThemeOfEditMap")]pub m_versus_theme_of_edit_map:crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData, #[offset(152)]#[rename(name="m_VersusRate")]pub m_versus_rate:i32, #[offset(156)]#[rename(name="m_VersusPlayingCount")]pub m_versus_playing_count:u32, #[offset(160)]#[rename(name="m_OwnerID")]pub m_owner_id:u64, #[offset(168)]#[rename(name="m_IsPublic")]pub m_is_public:bool, #[offset(176)]#[rename(name="m_FreeStamp")]pub m_free_stamp: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp> > , #[offset(184)]#[rename(name="m_SortieCount")]pub m_sortie_count: ::unity2::Array<crate::app::profilecard::ProfileCard_SortieCount> , #[offset(192)]#[rename(name="m_Achievements")]pub m_achievements: ::unity2::Array<crate::app::profilecard::ProfileCard_Achievement> , #[offset(200)]#[rename(name="m_Images")]pub m_images: ::unity2::Array<u8> , #[static_field]#[rename(name="m_MessageBufferTemp")]pub m_message_buffer_temp: ::unity2::IlInstance,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecard/ProfileCard_SortieCount.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ProfileCard_SortieCount{pub m_person:crate::app::persondata::PersonData,pub m_job:crate::app::jobdata::JobData,pub m_count:i32,}
 impl::unity2::ClassIdentity for ProfileCard_SortieCount{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCard.SortieCount";
@@ -38,23 +21,40 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for ProfileCard_SortieCount{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecard/ProfileCard_FreeStamp.md"))]#[::unity2::class(namespace="App",name="ProfileCard.FreeStamp")]#[parent(crate::system::object::Object)]pub struct ProfileCard_FreeStamp{#[offset(16)]#[rename(name="m_Stamp")]pub m_stamp:crate::app::profilecardstampdata::ProfileCardStampData, #[offset(24)]#[rename(name="m_X")]pub m_x:i32, #[offset(28)]#[rename(name="m_Y")]pub m_y:i32, #[offset(32)]#[rename(name="m_Rotation")]pub m_rotation:f32, #[offset(36)]#[rename(name="m_ScaleX")]pub m_scale_x:f32, #[offset(40)]#[rename(name="m_ScaleY")]pub m_scale_y:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecard/ProfileCard.md"))]#[::unity2::class(namespace="App",name="ProfileCard")]#[parent(crate::system::object::Object)]pub struct ProfileCard{#[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="MessageMax")]pub message_max:i32, #[static_field]#[rename(name="StampMax")]pub stamp_max:i32, #[static_field]#[rename(name="SortieCountMax")]pub sortie_count_max:i32, #[static_field]#[rename(name="PageCount")]pub page_count:i32, #[static_field]#[rename(name="StampMaxVer5")]pub stamp_max_ver5:i32, #[offset(16)]#[rename(name="m_UserName")]pub m_user_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Lang")]pub m_lang:crate::app::language::Language_Langs, #[offset(32)]#[rename(name="m_Title")]pub m_title:crate::app::profilecardtitledata::ProfileCardTitleData, #[offset(40)]#[rename(name="m_Bg")]pub m_bg:crate::app::profilecardbgdata::ProfileCardBgData, #[offset(48)]#[rename(name="m_Frame")]pub m_frame:crate::app::profilecardframedata::ProfileCardFrameData, #[offset(56)]#[rename(name="m_TextDeco")]pub m_text_deco:crate::app::profilecardtextdecodata::ProfileCardTextDecoData, #[offset(64)]#[rename(name="m_TextColor")]pub m_text_color:crate::app::profilecardtextcolordata::ProfileCardTextColorData, #[offset(72)]#[rename(name="m_CharacterStamp")]pub m_character_stamp:crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData, #[offset(80)]#[rename(name="m_Comment")]pub m_comment: ::unity2::Array<crate::app::profilecardcommentdata::ProfileCardCommentData> , #[offset(88)]#[rename(name="m_CommentString")]pub m_comment_string: ::unity2::Il2CppString, #[offset(96)]#[rename(name="m_PlayTime")]pub m_play_time:f32, #[offset(100)]#[rename(name="m_BirthMonth")]pub m_birth_month:u8, #[offset(101)]#[rename(name="m_BirthDay")]pub m_birth_day:u8, #[offset(104)]#[rename(name="m_Difficulty")]pub m_difficulty:crate::app::difficulty::Difficulty, #[offset(108)]#[rename(name="m_GameMode")]pub m_game_mode:crate::app::gamemode::GameMode, #[offset(112)]#[rename(name="m_Gender")]pub m_gender:crate::app::gender::Gender, #[offset(120)]#[rename(name="m_FavoriteCharacter")]pub m_favorite_character:crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData, #[offset(128)]#[rename(name="m_FavoriteMap")]pub m_favorite_map:crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData, #[offset(136)]#[rename(name="m_RelayPlayingCount")]pub m_relay_playing_count:u32, #[offset(144)]#[rename(name="m_VersusThemeOfEditMap")]pub m_versus_theme_of_edit_map:crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData, #[offset(152)]#[rename(name="m_VersusRate")]pub m_versus_rate:i32, #[offset(156)]#[rename(name="m_VersusPlayingCount")]pub m_versus_playing_count:u32, #[offset(160)]#[rename(name="m_OwnerID")]pub m_owner_id:u64, #[offset(168)]#[rename(name="m_IsPublic")]pub m_is_public:bool, #[offset(176)]#[rename(name="m_FreeStamp")]pub m_free_stamp: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard_FreeStamp> > , #[offset(184)]#[rename(name="m_SortieCount")]pub m_sortie_count: ::unity2::Array<crate::app::profilecard::ProfileCard_SortieCount> , #[offset(192)]#[rename(name="m_Achievements")]pub m_achievements: ::unity2::Array<crate::app::profilecard::ProfileCard_Achievement> , #[offset(200)]#[rename(name="m_Images")]pub m_images: ::unity2::Array<u8> , #[static_field]#[rename(name="m_MessageBufferTemp")]pub m_message_buffer_temp: ::unity2::IlInstance,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecard/ProfileCard_Achievement.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ProfileCard_Achievement{pub m_acheve_catetory:crate::app::achievedata::AchieveData_Categories,pub m_count:i32,}
+impl::unity2::ClassIdentity for ProfileCard_Achievement{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ProfileCard.Achievement";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ProfileCard_Achievement{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
 }
 
 #[cfg(feature = "app-profilecard-types")]
 pub use __types::*;
 
-#[cfg(feature="app-profilecard")]impl ProfileCard_Achievement{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2264e50usize)as*mut u8,();
-(*mut ProfileCard_Achievement)self as*mut ProfileCard_Achievement)}
+#[cfg(feature="app-profilecard")]impl ProfileCard_SortieCount{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22656c0usize)as*mut u8,();
+(*mut ProfileCard_SortieCount)self as*mut ProfileCard_SortieCount)}
 }
-#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2264e60usize)as*mut u8,();
-(*mut ProfileCard_Achievement)self as*mut ProfileCard_Achievement,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2265700usize)as*mut u8,();
+(*mut ProfileCard_SortieCount)self as*mut ProfileCard_SortieCount,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
 }
-#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2264ea0usize)as*mut u8,();
-(*mut ProfileCard_Achievement)self as*mut ProfileCard_Achievement,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]pub fn deserialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22657a0usize)as*mut u8,();
+(*mut ProfileCard_SortieCount)self as*mut ProfileCard_SortieCount,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
 }
 }
 
-#[cfg(feature="app-profilecard")]impl ProfileCard_Achievement{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-profilecard")]impl ProfileCard_SortieCount{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
@@ -541,18 +541,18 @@ this}
 this}
 }
 
-#[cfg(feature="app-profilecard")]impl ProfileCard_SortieCount{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22656c0usize)as*mut u8,();
-(*mut ProfileCard_SortieCount)self as*mut ProfileCard_SortieCount)}
+#[cfg(feature="app-profilecard")]impl ProfileCard_Achievement{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2264e50usize)as*mut u8,();
+(*mut ProfileCard_Achievement)self as*mut ProfileCard_Achievement)}
 }
-#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2265700usize)as*mut u8,();
-(*mut ProfileCard_SortieCount)self as*mut ProfileCard_SortieCount,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2264e60usize)as*mut u8,();
+(*mut ProfileCard_Achievement)self as*mut ProfileCard_Achievement,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
 }
-#[doc="`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]pub fn deserialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22657a0usize)as*mut u8,();
-(*mut ProfileCard_SortieCount)self as*mut ProfileCard_SortieCount,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2264ea0usize)as*mut u8,();
+(*mut ProfileCard_Achievement)self as*mut ProfileCard_Achievement,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
 }
 }
 
-#[cfg(feature="app-profilecard")]impl ProfileCard_SortieCount{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-profilecard")]impl ProfileCard_Achievement{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
@@ -560,14 +560,14 @@ pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 #[cfg(feature = "app-profilecard")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCard_Achievement;
+    pub use super::ProfileCard_SortieCount;
     pub use super::ProfileCard_FreeStamp;
     pub use super::IProfileCard_FreeStamp;
     pub use super::IProfileCard_FreeStampMethods;
     pub use super::ProfileCard;
     pub use super::IProfileCard;
     pub use super::IProfileCardMethods;
-    pub use super::ProfileCard_SortieCount;
+    pub use super::ProfileCard_Achievement;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

@@ -12,61 +12,55 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectKeysEnumerator.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase.NameObjectKeysEnumerator")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase_NameObjectKeysEnumerator{#[offset(16)]#[rename(name="_pos")]pub pos:i32, #[offset(24)]#[rename(name="_coll")]pub coll:crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase, #[offset(32)]#[rename(name="_version")]pub version:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase.NameObjectEntry")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase_NameObjectEntry{#[offset(16)]#[rename(name="Key")]pub key: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Value")]pub value: ::unity2::IlInstance,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase{#[offset(16)]#[rename(name="_readOnly")]pub read_only:bool, #[offset(24)]#[rename(name="_entriesArray")]pub entries_array:crate::system::collections::arraylist::ArrayList, #[offset(32)]#[rename(name="_keyComparer")]pub key_comparer:crate::system::collections::iequalitycomparer::IEqualityComparer, #[offset(40)]#[rename(name="_entriesTable")]pub entries_table:crate::system::collections::hashtable::Hashtable, #[offset(48)]#[rename(name="_nullKeyEntry")]pub null_key_entry:crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase_NameObjectEntry, #[offset(64)]#[rename(name="_version")]pub version:i32, #[offset(72)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance, #[static_field]#[rename(name="defaultComparer")]pub default_comparer: ::unity2::IlInstance,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="NameObjectCollectionBase.NameObjectEntry")]#[parent(crate::system::object::Object)]pub struct NameObjectCollectionBase_NameObjectEntry{#[offset(16)]#[rename(name="Key")]pub key: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Value")]pub value: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw{use super:: * ;
-pub unsafe fn move_next(this:NameObjectCollectionBase_NameObjectKeysEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
-let inner:extern "C" fn(NameObjectCollectionBase_NameObjectKeysEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn reset(this:NameObjectCollectionBase_NameObjectKeysEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
-let inner:extern "C" fn(NameObjectCollectionBase_NameObjectKeysEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_current(this:NameObjectCollectionBase_NameObjectKeysEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
-let inner:extern "C" fn(NameObjectCollectionBase_NameObjectKeysEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub trait INameObjectCollectionBase_NameObjectKeysEnumeratorMethods:INameObjectCollectionBase_NameObjectKeysEnumerator{#[doc="`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` overload"]fn ctor(self,coll:impl::core::convert::Into<crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase>)->(){unsafe{let __receiver= <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85c00usize)as*mut u8,();
 (NameObjectCollectionBase_NameObjectKeysEnumerator)__receiver,(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)::core::convert::Into::into(coll))}
 }
 #[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
+let __inner:extern "C" fn(NameObjectCollectionBase_NameObjectKeysEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
+let __inner:extern "C" fn(NameObjectCollectionBase_NameObjectKeysEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NameObjectCollectionBase_NameObjectKeysEnumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <NameObjectCollectionBase_NameObjectKeysEnumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
+let __inner:extern "C" fn(NameObjectCollectionBase_NameObjectKeysEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -78,92 +72,22 @@ pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectKeysEnumerator{#[doc="Direct (non-virtual) call to `NameObjectCollectionBase_NameObjectKeysEnumerator`'s own `MoveNext`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn move_next(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::move_next_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NameObjectCollectionBase_NameObjectKeysEnumerator`'s own `Reset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn reset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::reset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NameObjectCollectionBase_NameObjectKeysEnumerator`'s own `get_Current`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_current(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_current_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectKeysEnumerator{#[doc="`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` — overload selector"]pub fn new(coll:crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(NameObjectCollectionBase_NameObjectKeysEnumerator), ::core::stringify!(new),));
  <Self as INameObjectCollectionBase_NameObjectKeysEnumeratorMethods> ::ctor(this,coll);
 this}
-}
-
-#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub trait INameObjectCollectionBase_NameObjectEntryMethods:INameObjectCollectionBase_NameObjectEntry{#[doc="`.ctor(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <NameObjectCollectionBase_NameObjectEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85bb0usize)as*mut u8,();
-(NameObjectCollectionBase_NameObjectEntry)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::object::Object)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl<__T:INameObjectCollectionBase_NameObjectEntry>INameObjectCollectionBase_NameObjectEntryMethods for __T{}
-
-#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectEntry{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectEntry{#[doc="`.ctor(::unity2::Il2CppString, crate::system::object::Object)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,value:crate::system::object::Object)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NameObjectCollectionBase_NameObjectEntry), ::core::stringify!(new),));
- <Self as INameObjectCollectionBase_NameObjectEntryMethods> ::ctor(this,name,value);
-this}
-}
-
-#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NameObjectCollectionBase_unity2_raw{use super:: * ;
-pub unsafe fn on_deserialization(this:NameObjectCollectionBase,sender:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"OnDeserialization",));
-let inner:extern "C" fn(NameObjectCollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sender,__mi)}
-pub unsafe fn get_enumerator(this:NameObjectCollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
-let inner:extern "C" fn(NameObjectCollectionBase, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_count(this:NameObjectCollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"get_Count",));
-let inner:extern "C" fn(NameObjectCollectionBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_collection_copy_to(this:NameObjectCollectionBase,array: ::unity2::IlInstance,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.CopyTo",));
-let inner:extern "C" fn(NameObjectCollectionBase, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,index,__mi)}
-pub unsafe fn system_collections_i_collection_get_sync_root(this:NameObjectCollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_SyncRoot",));
-let inner:extern "C" fn(NameObjectCollectionBase, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn system_collections_i_collection_get_is_synchronized(this:NameObjectCollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_IsSynchronized",));
-let inner:extern "C" fn(NameObjectCollectionBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3486d30usize)as*mut u8,();
@@ -184,7 +108,16 @@ inner(this,__mi)}
 (NameObjectCollectionBase)__receiver,(i32)::core::convert::Into::into(capacity),(crate::system::collections::iequalitycomparer::IEqualityComparer)::core::convert::Into::into(equality_comparer))}
 }
 #[doc="`OnDeserialization(crate::system::object::Object)` overload"]fn on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NameObjectCollectionBase_unity2_raw::on_deserialization(__receiver, ::core::convert::Into::into(sender), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"OnDeserialization",));
+let __inner:extern "C" fn(NameObjectCollectionBase,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(sender),__mi)}
+}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3484fd0usize)as*mut u8,();
@@ -227,19 +160,64 @@ __NameObjectCollectionBase_unity2_raw::on_deserialization(__receiver, ::core::co
 (NameObjectCollectionBase)__receiver,(i32)::core::convert::Into::into(index))}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NameObjectCollectionBase_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let __inner:extern "C" fn(NameObjectCollectionBase, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NameObjectCollectionBase_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let __inner:extern "C" fn(NameObjectCollectionBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]fn system_collections_i_collection_copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NameObjectCollectionBase_unity2_raw::system_collections_i_collection_copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.CopyTo",));
+let __inner:extern "C" fn(NameObjectCollectionBase, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index),__mi)}
+}
 }
 #[doc="`System.Collections.ICollection.get_SyncRoot()` overload"]fn system_collections_i_collection_get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NameObjectCollectionBase_unity2_raw::system_collections_i_collection_get_sync_root(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_SyncRoot",));
+let __inner:extern "C" fn(NameObjectCollectionBase, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`System.Collections.ICollection.get_IsSynchronized()` overload"]fn system_collections_i_collection_get_is_synchronized(self,)->bool{unsafe{let __receiver= <NameObjectCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NameObjectCollectionBase_unity2_raw::system_collections_i_collection_get_is_synchronized(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <NameObjectCollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_IsSynchronized",));
+let __inner:extern "C" fn(NameObjectCollectionBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -267,6 +245,26 @@ pub fn system_collections_i_collection_get_is_synchronized_method_info()-> & 'st
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
 }
 
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase{#[doc="Direct (non-virtual) call to `NameObjectCollectionBase`'s own `OnDeserialization`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialization(this:impl::core::convert::Into< ::unity2::IlInstance> ,sender:crate::system::object::Object,)->(){let __mi=Self::on_deserialization_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sender, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NameObjectCollectionBase`'s own `GetEnumerator`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_enumerator(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::get_enumerator_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NameObjectCollectionBase`'s own `get_Count`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NameObjectCollectionBase`'s own `System.Collections.ICollection.CopyTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_copy_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::IlInstance,index:i32,)->(){let __mi=Self::system_collections_i_collection_copy_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NameObjectCollectionBase`'s own `System.Collections.ICollection.get_SyncRoot`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_get_sync_root(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::system_collections_i_collection_get_sync_root_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NameObjectCollectionBase`'s own `System.Collections.ICollection.get_IsSynchronized`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_collections_i_collection_get_is_synchronized(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::system_collections_i_collection_get_is_synchronized_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(NameObjectCollectionBase), ::core::stringify!(new),));
@@ -284,18 +282,36 @@ this}
 this}
 }
 
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub trait INameObjectCollectionBase_NameObjectEntryMethods:INameObjectCollectionBase_NameObjectEntry{#[doc="`.ctor(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <NameObjectCollectionBase_NameObjectEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a85bb0usize)as*mut u8,();
+(NameObjectCollectionBase_NameObjectEntry)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl<__T:INameObjectCollectionBase_NameObjectEntry>INameObjectCollectionBase_NameObjectEntryMethods for __T{}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectEntry{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]impl NameObjectCollectionBase_NameObjectEntry{#[doc="`.ctor(::unity2::Il2CppString, crate::system::object::Object)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,value:crate::system::object::Object)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NameObjectCollectionBase_NameObjectEntry), ::core::stringify!(new),));
+ <Self as INameObjectCollectionBase_NameObjectEntryMethods> ::ctor(this,name,value);
+this}
+}
+
 #[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::NameObjectCollectionBase_NameObjectKeysEnumerator;
     pub use super::INameObjectCollectionBase_NameObjectKeysEnumerator;
     pub use super::INameObjectCollectionBase_NameObjectKeysEnumeratorMethods;
-    pub use super::NameObjectCollectionBase_NameObjectEntry;
-    pub use super::INameObjectCollectionBase_NameObjectEntry;
-    pub use super::INameObjectCollectionBase_NameObjectEntryMethods;
     pub use super::NameObjectCollectionBase;
     pub use super::INameObjectCollectionBase;
     pub use super::INameObjectCollectionBaseMethods;
+    pub use super::NameObjectCollectionBase_NameObjectEntry;
+    pub use super::INameObjectCollectionBase_NameObjectEntry;
+    pub use super::INameObjectCollectionBase_NameObjectEntryMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

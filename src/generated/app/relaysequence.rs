@@ -17,6 +17,15 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysequence/RelaySequence_RelaySequenceNet.md"))]#[::unity2::class(namespace="App",name="RelaySequence.RelaySequenceNet")]#[parent(crate::app::relaysequence::RelaySequence_RelaySequenceBase_1<crate::app::relaysequence::RelaySequence_RelaySequenceNet>)]pub struct RelaySequence_RelaySequenceNet{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysequence/RelaySequence_IRelaySequenceBase.md"))]#[::unity2::class(namespace="App",name="RelaySequence.IRelaySequenceBase")]pub struct RelaySequence_IRelaySequenceBase{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysequence/RelaySequence_RelaySequenceBase_1.md"))]#[::unity2::class(namespace="App",name="RelaySequence.RelaySequenceBase`1")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<T0>)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct RelaySequence_RelaySequenceBase_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_SearchResults")]pub m_search_results:crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> , #[rename(name="m_DownloadMetaResult")]pub m_download_meta_result:crate::app::relayservermetadata::RelayServerMetaData, #[rename(name="m_DataCode")]pub m_data_code: ::unity2::Il2CppString, #[rename(name="m_ReplayCache")]pub m_replay_cache:crate::app::relayreplaycache::RelayReplayCache, #[rename(name="m_IsPublic")]pub m_is_public:bool, #[rename(name="m_Mode")]pub m_mode:crate::app::relay::Relay_Modes, #[rename(name="m_TakeOverMode")]pub m_take_over_mode:crate::app::relay::Relay_TakeOverModes, #[rename(name="m_Cid")]pub m_cid: ::unity2::Il2CppString, #[rename(name="m_IsAwarded")]pub m_is_awarded:bool, #[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysequence/RelaySequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelaySequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for RelaySequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RelaySequence.Label";
@@ -117,197 +126,15 @@ pub fn end()->Self{Self{value:43}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysequence/RelaySequence_RelaySequenceNet.md"))]#[::unity2::class(namespace="App",name="RelaySequence.RelaySequenceNet")]#[parent(crate::app::relaysequence::RelaySequence_RelaySequenceBase_1<crate::app::relaysequence::RelaySequence_RelaySequenceNet>)]pub struct RelaySequence_RelaySequenceNet{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysequence/RelaySequence_RelaySequenceLocal.md"))]#[::unity2::class(namespace="App",name="RelaySequence.RelaySequenceLocal")]#[parent(crate::app::relaysequence::RelaySequence_RelaySequenceBase_1<crate::app::relaysequence::RelaySequence_RelaySequenceLocal>)]pub struct RelaySequence_RelaySequenceLocal{#[offset(192)]#[rename(name="m_RootPath")]pub m_root_path: ::unity2::Il2CppString,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysequence/RelaySequence.md"))]#[::unity2::class(namespace="App",name="RelaySequence")]#[parent(crate::system::object::Object)]pub struct RelaySequence{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysequence/RelaySequence_IRelaySequenceBase.md"))]#[::unity2::class(namespace="App",name="RelaySequence.IRelaySequenceBase")]pub struct RelaySequence_IRelaySequenceBase{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysequence/RelaySequence_RelaySequenceBase_1.md"))]#[::unity2::class(namespace="App",name="RelaySequence.RelaySequenceBase`1")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<T0>)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct RelaySequence_RelaySequenceBase_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_SearchResults")]pub m_search_results:crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> , #[rename(name="m_DownloadMetaResult")]pub m_download_meta_result:crate::app::relayservermetadata::RelayServerMetaData, #[rename(name="m_DataCode")]pub m_data_code: ::unity2::Il2CppString, #[rename(name="m_ReplayCache")]pub m_replay_cache:crate::app::relayreplaycache::RelayReplayCache, #[rename(name="m_IsPublic")]pub m_is_public:bool, #[rename(name="m_Mode")]pub m_mode:crate::app::relay::Relay_Modes, #[rename(name="m_TakeOverMode")]pub m_take_over_mode:crate::app::relay::Relay_TakeOverModes, #[rename(name="m_Cid")]pub m_cid: ::unity2::Il2CppString, #[rename(name="m_IsAwarded")]pub m_is_awarded:bool, #[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg,}
-
 }
 
 #[cfg(feature = "app-relaysequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-relaysequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelaySequence_RelaySequenceNet_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_search_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverSearchImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_postsearch_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverPostsearchImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_download_meta_with_data_code_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverDownloadMetaWithDataCodeImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_postdownload_meta_with_data_code_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverPostdownloadMetaWithDataCodeImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_set_playing_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverSetPlayingImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_postset_playing_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverPostsetPlayingImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn replay_search_entered_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"ReplaySearchEnteredImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn replay_search_any_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",34usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"ReplaySearchAnyImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn replay_postsearch_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",35usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"ReplayPostsearchImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn download_impl(this:RelaySequence_RelaySequenceNet,with_meta_data:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",36usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"DownloadImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,with_meta_data,__mi)}
-pub unsafe fn postdownload_take_over_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",37usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"PostdownloadTakeOverImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn postdownload_replay_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",38usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"PostdownloadReplayImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn upload_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",39usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"UploadImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn postupload_impl(this:RelaySequence_RelaySequenceNet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",40usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"PostuploadImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn close_wait_message_impl(this:RelaySequence_RelaySequenceNet,super_:crate::app::procinst::ProcInst,is_success:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",41usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"CloseWaitMessageImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceNet,crate::app::procinst::ProcInst,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,super_,is_success,__mi)}
-}
 
 #[cfg(feature="app-relaysequence")]impl RelaySequence_RelaySequenceNet{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0bc50usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -315,55 +142,208 @@ inner(this,super_,is_success,__mi)}
 }
 
 #[cfg(feature="app-relaysequence")]pub trait IRelaySequence_RelaySequenceNetMethods:IRelaySequence_RelaySequenceNet{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`TakeOverSearchImpl()` overload"]fn take_over_search_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::take_over_search_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverSearchImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`TakeOverPostsearchImpl()` overload"]fn take_over_postsearch_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::take_over_postsearch_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverPostsearchImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`TakeOverDownloadMetaWithDataCodeImpl()` overload"]fn take_over_download_meta_with_data_code_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::take_over_download_meta_with_data_code_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverDownloadMetaWithDataCodeImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]fn take_over_postdownload_meta_with_data_code_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::take_over_postdownload_meta_with_data_code_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverPostdownloadMetaWithDataCodeImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`TakeOverSetPlayingImpl()` overload"]fn take_over_set_playing_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::take_over_set_playing_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverSetPlayingImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`TakeOverPostsetPlayingImpl()` overload"]fn take_over_postset_playing_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::take_over_postset_playing_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"TakeOverPostsetPlayingImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReplaySearchEnteredImpl()` overload"]fn replay_search_entered_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::replay_search_entered_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"ReplaySearchEnteredImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReplaySearchAnyImpl()` overload"]fn replay_search_any_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::replay_search_any_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"ReplaySearchAnyImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReplayPostsearchImpl()` overload"]fn replay_postsearch_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::replay_postsearch_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"ReplayPostsearchImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`DownloadImpl(bool)` overload"]fn download_impl(self,with_meta_data:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::download_impl(__receiver, ::core::convert::Into::into(with_meta_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"DownloadImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(with_meta_data),__mi)}
+}
 }
 #[doc="`PostdownloadTakeOverImpl()` overload"]fn postdownload_take_over_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::postdownload_take_over_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"PostdownloadTakeOverImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`PostdownloadReplayImpl()` overload"]fn postdownload_replay_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::postdownload_replay_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"PostdownloadReplayImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UploadImpl()` overload"]fn upload_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::upload_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"UploadImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`PostuploadImpl()` overload"]fn postupload_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::postupload_impl(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"PostuploadImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CloseWaitMessageImpl(crate::app::procinst::ProcInst, bool)` overload"]fn close_wait_message_impl(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_success:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceNet_unity2_raw::close_wait_message_impl(__receiver, ::core::convert::Into::into(super_), ::core::convert::Into::into(is_success), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <RelaySequence_RelaySequenceNet as::unity2::ClassIdentity> ::NAME,"CloseWaitMessageImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceNet,crate::app::procinst::ProcInst,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(super_), ::core::convert::Into::into(is_success),__mi)}
+}
 }
 #[doc="`DeleteSelectedFromSearchResults()` overload"]fn delete_selected_from_search_results(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceNet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ae80usize)as*mut u8,();
@@ -399,6 +379,59 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 }
 
+#[cfg(feature="app-relaysequence")]impl RelaySequence_RelaySequenceNet{#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `TakeOverSearchImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_search_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_search_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `TakeOverPostsearchImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_postsearch_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_postsearch_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `TakeOverDownloadMetaWithDataCodeImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_download_meta_with_data_code_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_download_meta_with_data_code_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `TakeOverPostdownloadMetaWithDataCodeImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_postdownload_meta_with_data_code_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_postdownload_meta_with_data_code_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `TakeOverSetPlayingImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_set_playing_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_set_playing_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `TakeOverPostsetPlayingImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_postset_playing_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_postset_playing_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `ReplaySearchEnteredImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn replay_search_entered_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::replay_search_entered_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `ReplaySearchAnyImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn replay_search_any_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::replay_search_any_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `ReplayPostsearchImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn replay_postsearch_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::replay_postsearch_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `DownloadImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn download_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,with_meta_data:bool,)->(){let __mi=Self::download_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),with_meta_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `PostdownloadTakeOverImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn postdownload_take_over_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::postdownload_take_over_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `PostdownloadReplayImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn postdownload_replay_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::postdownload_replay_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `UploadImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn upload_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::upload_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `PostuploadImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn postupload_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::postupload_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceNet`'s own `CloseWaitMessageImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn close_wait_message_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,super_:crate::app::procinst::ProcInst,is_success:bool,)->(){let __mi=Self::close_wait_message_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::procinst::ProcInst,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),super_,is_success, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-relaysequence")]impl RelaySequence_RelaySequenceNet{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RelaySequence_RelaySequenceNet), ::core::stringify!(new),));
@@ -406,379 +439,65 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-relaysequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelaySequence_RelaySequenceLocal_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_search_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverSearchImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_postsearch_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverPostsearchImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_download_meta_with_data_code_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverDownloadMetaWithDataCodeImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_postdownload_meta_with_data_code_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverPostdownloadMetaWithDataCodeImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_set_playing_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverSetPlayingImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn take_over_postset_playing_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverPostsetPlayingImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn replay_search_entered_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"ReplaySearchEnteredImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn replay_search_any_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",34usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"ReplaySearchAnyImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn replay_postsearch_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",35usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"ReplayPostsearchImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn download_impl(this:RelaySequence_RelaySequenceLocal,with_meta_data:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",36usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"DownloadImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,with_meta_data,__mi)}
-pub unsafe fn postdownload_take_over_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",37usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"PostdownloadTakeOverImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn postdownload_replay_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",38usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"PostdownloadReplayImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn upload_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",39usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"UploadImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn postupload_impl(this:RelaySequence_RelaySequenceLocal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",40usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"PostuploadImpl",));
-let inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-relaysequence")]impl RelaySequence_RelaySequenceLocal{#[doc="`GetDataFileName(crate::app::relayservermetadata::RelayServerMetaData)` overload"]pub fn get_data_file_name(meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b09dd0usize)as*mut u8, ::unity2::Il2CppString;
-(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data))}
-}
-#[doc="`GetMetaDataFileName(crate::app::relayservermetadata::RelayServerMetaData)` overload"]pub fn get_meta_data_file_name(meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0a400usize)as*mut u8, ::unity2::Il2CppString;
-(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data))}
-}
-#[doc="`GetPseudoPrincipalId(::unity2::Il2CppString)` overload"]pub fn get_pseudo_principal_id(player_name:impl::core::convert::Into< ::unity2::Il2CppString>)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0a290usize)as*mut u8,u64;
-(::unity2::Il2CppString)::core::convert::Into::into(player_name))}
-}
-#[doc="`GetPseudoDataId(::unity2::Il2CppString)` overload"]pub fn get_pseudo_data_id(meta_path:impl::core::convert::Into< ::unity2::Il2CppString>)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b09570usize)as*mut u8,u64;
-(::unity2::Il2CppString)::core::convert::Into::into(meta_path))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0a4d0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-relaysequence")]pub trait IRelaySequence_RelaySequenceLocalMethods:IRelaySequence_RelaySequenceLocal{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
-}
-#[doc="`InitializeLanRootPath()` overload"]fn initialize_lan_root_path(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b091a0usize)as*mut u8,();
-(RelaySequence_RelaySequenceLocal)__receiver)}
-}
-#[doc="`TakeOverSearchImpl()` overload"]fn take_over_search_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::take_over_search_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`TakeOverPostsearchImpl()` overload"]fn take_over_postsearch_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::take_over_postsearch_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`TakeOverDownloadMetaWithDataCodeImpl()` overload"]fn take_over_download_meta_with_data_code_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::take_over_download_meta_with_data_code_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]fn take_over_postdownload_meta_with_data_code_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::take_over_postdownload_meta_with_data_code_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`TakeOverSetPlayingImpl()` overload"]fn take_over_set_playing_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::take_over_set_playing_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`TakeOverPostsetPlayingImpl()` overload"]fn take_over_postset_playing_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::take_over_postset_playing_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ReplaySearchEnteredImpl()` overload"]fn replay_search_entered_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::replay_search_entered_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ReplaySearchAnyImpl()` overload"]fn replay_search_any_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::replay_search_any_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ReplayPostsearchImpl()` overload"]fn replay_postsearch_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::replay_postsearch_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`DownloadImpl(bool)` overload"]fn download_impl(self,with_meta_data:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::download_impl(__receiver, ::core::convert::Into::into(with_meta_data), ::core::option::Option::None)}
-}
-#[doc="`PostdownloadTakeOverImpl()` overload"]fn postdownload_take_over_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::postdownload_take_over_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`PostdownloadReplayImpl()` overload"]fn postdownload_replay_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::postdownload_replay_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`UploadImpl()` overload"]fn upload_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::upload_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`PostuploadImpl()` overload"]fn postupload_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_RelaySequenceLocal_unity2_raw::postupload_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0a530usize)as*mut u8,();
-(RelaySequence_RelaySequenceLocal)__receiver)}
-}
-}
-
-#[cfg(feature="app-relaysequence")]impl<__T:IRelaySequence_RelaySequenceLocal>IRelaySequence_RelaySequenceLocalMethods for __T{}
-
-#[cfg(feature="app-relaysequence")]impl RelaySequence_RelaySequenceLocal{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn initialize_lan_root_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn take_over_search_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn take_over_postsearch_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn take_over_download_meta_with_data_code_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn take_over_postdownload_meta_with_data_code_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn take_over_set_playing_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn take_over_postset_playing_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn replay_search_entered_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn replay_search_any_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn replay_postsearch_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn download_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn postdownload_take_over_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn postdownload_replay_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn upload_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn postupload_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn get_data_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn get_meta_data_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn get_pseudo_principal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn get_pseudo_data_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-}
-
-#[cfg(feature="app-relaysequence")]impl RelaySequence_RelaySequenceLocal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelaySequence_RelaySequenceLocal), ::core::stringify!(new),));
- <Self as IRelaySequence_RelaySequenceLocalMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-relaysequence")]impl RelaySequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2006e60usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`SelectMode(crate::app::relay::Relay_Modes)` overload"]pub fn select_mode(mode:impl::core::convert::Into<crate::app::relay::Relay_Modes>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2006f10usize)as*mut u8,();
-(crate::app::relay::Relay_Modes)::core::convert::Into::into(mode))}
-}
-#[doc="`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]pub fn select_take_over_mode(mode:impl::core::convert::Into<crate::app::relay::Relay_TakeOverModes>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2007110usize)as*mut u8,();
-(crate::app::relay::Relay_TakeOverModes)::core::convert::Into::into(mode))}
-}
-#[doc="`SelectMap(::unity2::Il2CppString)` overload"]pub fn select_map(cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20071d0usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(cid))}
-}
-#[doc="`NoSelectableMap()` overload"]pub fn no_selectable_map()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffe8f0usize)as*mut u8,();
-)}
-}
-#[doc="`JumpToTakeOverModeSelect()` overload"]pub fn jump_to_take_over_mode_select()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2007290usize)as*mut u8,();
-)}
-}
-#[doc="`JumpToTakeOverPredownloadMetaWithDataCode()` overload"]pub fn jump_to_take_over_predownload_meta_with_data_code()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2007340usize)as*mut u8,();
-)}
-}
-#[doc="`JumpToReplayDownload()` overload"]pub fn jump_to_replay_download()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20073f0usize)as*mut u8,();
-)}
-}
-#[doc="`JumpToAward()` overload"]pub fn jump_to_award()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20074a0usize)as*mut u8,();
-)}
-}
-#[doc="`SetPublic(bool)` overload"]pub fn set_public(is_public:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2007550usize)as*mut u8,();
-(bool)::core::convert::Into::into(is_public))}
-}
-#[doc="`GetSequence()` overload"]pub fn get_sequence()->crate::app::relaysequence::RelaySequence_IRelaySequenceBase{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2006fd0usize)as*mut u8,crate::app::relaysequence::RelaySequence_IRelaySequenceBase;
-)}
-}
-}
-
-#[cfg(feature="app-relaysequence")]impl RelaySequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn select_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn select_take_over_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn select_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn no_selectable_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn jump_to_take_over_mode_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn jump_to_take_over_predownload_meta_with_data_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn jump_to_replay_download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn jump_to_award_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_public_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="app-relaysequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelaySequence_IRelaySequenceBase_unity2_raw{use super:: * ;
-pub unsafe fn jump_to(this:RelaySequence_IRelaySequenceBase,label:crate::app::relaysequence::RelaySequence_Label,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-relaysequence")]pub trait IRelaySequence_IRelaySequenceBaseMethods:IRelaySequence_IRelaySequenceBase{#[doc="`JumpTo(crate::app::relaysequence::RelaySequence_Label)` overload"]fn jump_to(self,label:impl::core::convert::Into<crate::app::relaysequence::RelaySequence_Label>)->(){unsafe{let __receiver= <RelaySequence_IRelaySequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <RelaySequence_IRelaySequenceBase as::unity2::ClassIdentity> ::NAME,"JumpTo",));
-let inner:extern "C" fn(RelaySequence_IRelaySequenceBase,crate::app::relaysequence::RelaySequence_Label, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RelaySequence_IRelaySequenceBase,crate::app::relaysequence::RelaySequence_Label, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,label,__mi)}
-pub unsafe fn select_mode(this:RelaySequence_IRelaySequenceBase,mode:crate::app::relay::Relay_Modes,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(label),__mi)}
+}
+}
+#[doc="`SelectMode(crate::app::relay::Relay_Modes)` overload"]fn select_mode(self,mode:impl::core::convert::Into<crate::app::relay::Relay_Modes>)->(){unsafe{let __receiver= <RelaySequence_IRelaySequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <RelaySequence_IRelaySequenceBase as::unity2::ClassIdentity> ::NAME,"SelectMode",));
-let inner:extern "C" fn(RelaySequence_IRelaySequenceBase,crate::app::relay::Relay_Modes, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RelaySequence_IRelaySequenceBase,crate::app::relay::Relay_Modes, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,mode,__mi)}
-pub unsafe fn select_map(this:RelaySequence_IRelaySequenceBase,cid: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(mode),__mi)}
+}
+}
+#[doc="`SelectMap(::unity2::Il2CppString)` overload"]fn select_map(self,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelaySequence_IRelaySequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <RelaySequence_IRelaySequenceBase as::unity2::ClassIdentity> ::NAME,"SelectMap",));
-let inner:extern "C" fn(RelaySequence_IRelaySequenceBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RelaySequence_IRelaySequenceBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,cid,__mi)}
-pub unsafe fn select_take_over_mode(this:RelaySequence_IRelaySequenceBase,mode:crate::app::relay::Relay_TakeOverModes,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(cid),__mi)}
+}
+}
+#[doc="`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]fn select_take_over_mode(self,mode:impl::core::convert::Into<crate::app::relay::Relay_TakeOverModes>)->(){unsafe{let __receiver= <RelaySequence_IRelaySequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",3usize,__vt.len(), <RelaySequence_IRelaySequenceBase as::unity2::ClassIdentity> ::NAME,"SelectTakeOverMode",));
-let inner:extern "C" fn(RelaySequence_IRelaySequenceBase,crate::app::relay::Relay_TakeOverModes, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RelaySequence_IRelaySequenceBase,crate::app::relay::Relay_TakeOverModes, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,mode,__mi)}
-pub unsafe fn set_public(this:RelaySequence_IRelaySequenceBase,enable:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(mode),__mi)}
+}
+}
+#[doc="`SetPublic(bool)` overload"]fn set_public(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RelaySequence_IRelaySequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <RelaySequence_IRelaySequenceBase as::unity2::ClassIdentity> ::NAME,"SetPublic",));
-let inner:extern "C" fn(RelaySequence_IRelaySequenceBase,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RelaySequence_IRelaySequenceBase,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,enable,__mi)}
+__inner(__receiver, ::core::convert::Into::into(enable),__mi)}
 }
-
-#[cfg(feature="app-relaysequence")]pub trait IRelaySequence_IRelaySequenceBaseMethods:IRelaySequence_IRelaySequenceBase{#[doc="`JumpTo(crate::app::relaysequence::RelaySequence_Label)` overload"]fn jump_to(self,label:impl::core::convert::Into<crate::app::relaysequence::RelaySequence_Label>)->(){unsafe{let __receiver= <RelaySequence_IRelaySequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_IRelaySequenceBase_unity2_raw::jump_to(__receiver, ::core::convert::Into::into(label), ::core::option::Option::None)}
-}
-#[doc="`SelectMode(crate::app::relay::Relay_Modes)` overload"]fn select_mode(self,mode:impl::core::convert::Into<crate::app::relay::Relay_Modes>)->(){unsafe{let __receiver= <RelaySequence_IRelaySequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_IRelaySequenceBase_unity2_raw::select_mode(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)}
-}
-#[doc="`SelectMap(::unity2::Il2CppString)` overload"]fn select_map(self,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelaySequence_IRelaySequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_IRelaySequenceBase_unity2_raw::select_map(__receiver, ::core::convert::Into::into(cid), ::core::option::Option::None)}
-}
-#[doc="`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]fn select_take_over_mode(self,mode:impl::core::convert::Into<crate::app::relay::Relay_TakeOverModes>)->(){unsafe{let __receiver= <RelaySequence_IRelaySequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_IRelaySequenceBase_unity2_raw::select_take_over_mode(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)}
-}
-#[doc="`SetPublic(bool)` overload"]fn set_public(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RelaySequence_IRelaySequenceBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelaySequence_IRelaySequenceBase_unity2_raw::set_public(__receiver, ::core::convert::Into::into(enable), ::core::option::Option::None)}
 }
 }
 
@@ -789,6 +508,23 @@ pub fn select_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn select_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn select_take_over_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn set_public_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-relaysequence")]impl RelaySequence_IRelaySequenceBase{#[doc="Direct (non-virtual) call to `RelaySequence_IRelaySequenceBase`'s own `JumpTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn jump_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,label:crate::app::relaysequence::RelaySequence_Label,)->(){let __mi=Self::jump_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::relaysequence::RelaySequence_Label, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),label, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_IRelaySequenceBase`'s own `SelectMode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn select_mode(this:impl::core::convert::Into< ::unity2::IlInstance> ,mode:crate::app::relay::Relay_Modes,)->(){let __mi=Self::select_mode_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::relay::Relay_Modes, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),mode, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_IRelaySequenceBase`'s own `SelectMap`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn select_map(this:impl::core::convert::Into< ::unity2::IlInstance> ,cid: ::unity2::Il2CppString,)->(){let __mi=Self::select_map_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),cid, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_IRelaySequenceBase`'s own `SelectTakeOverMode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn select_take_over_mode(this:impl::core::convert::Into< ::unity2::IlInstance> ,mode:crate::app::relay::Relay_TakeOverModes,)->(){let __mi=Self::select_take_over_mode_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::relay::Relay_TakeOverModes, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),mode, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_IRelaySequenceBase`'s own `SetPublic`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_public(this:impl::core::convert::Into< ::unity2::IlInstance> ,enable:bool,)->(){let __mi=Self::set_public_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),enable, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-relaysequence")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>RelaySequence_RelaySequenceBase_1<T0>{#[doc="`OnCreate()` overload"]#[method(name="OnCreate",args=0)]pub fn on_create(self,)->();
@@ -893,24 +629,359 @@ pub fn set_public_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
+#[cfg(feature="app-relaysequence")]impl RelaySequence_RelaySequenceLocal{#[doc="`GetDataFileName(crate::app::relayservermetadata::RelayServerMetaData)` overload"]pub fn get_data_file_name(meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b09dd0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`GetMetaDataFileName(crate::app::relayservermetadata::RelayServerMetaData)` overload"]pub fn get_meta_data_file_name(meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0a400usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`GetPseudoPrincipalId(::unity2::Il2CppString)` overload"]pub fn get_pseudo_principal_id(player_name:impl::core::convert::Into< ::unity2::Il2CppString>)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0a290usize)as*mut u8,u64;
+(::unity2::Il2CppString)::core::convert::Into::into(player_name))}
+}
+#[doc="`GetPseudoDataId(::unity2::Il2CppString)` overload"]pub fn get_pseudo_data_id(meta_path:impl::core::convert::Into< ::unity2::Il2CppString>)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b09570usize)as*mut u8,u64;
+(::unity2::Il2CppString)::core::convert::Into::into(meta_path))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0a4d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-relaysequence")]pub trait IRelaySequence_RelaySequenceLocalMethods:IRelaySequence_RelaySequenceLocal{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`InitializeLanRootPath()` overload"]fn initialize_lan_root_path(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b091a0usize)as*mut u8,();
+(RelaySequence_RelaySequenceLocal)__receiver)}
+}
+#[doc="`TakeOverSearchImpl()` overload"]fn take_over_search_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverSearchImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`TakeOverPostsearchImpl()` overload"]fn take_over_postsearch_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverPostsearchImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`TakeOverDownloadMetaWithDataCodeImpl()` overload"]fn take_over_download_meta_with_data_code_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverDownloadMetaWithDataCodeImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`TakeOverPostdownloadMetaWithDataCodeImpl()` overload"]fn take_over_postdownload_meta_with_data_code_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverPostdownloadMetaWithDataCodeImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`TakeOverSetPlayingImpl()` overload"]fn take_over_set_playing_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverSetPlayingImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`TakeOverPostsetPlayingImpl()` overload"]fn take_over_postset_playing_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"TakeOverPostsetPlayingImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ReplaySearchEnteredImpl()` overload"]fn replay_search_entered_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"ReplaySearchEnteredImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ReplaySearchAnyImpl()` overload"]fn replay_search_any_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"ReplaySearchAnyImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ReplayPostsearchImpl()` overload"]fn replay_postsearch_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"ReplayPostsearchImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`DownloadImpl(bool)` overload"]fn download_impl(self,with_meta_data:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"DownloadImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(with_meta_data),__mi)}
+}
+}
+#[doc="`PostdownloadTakeOverImpl()` overload"]fn postdownload_take_over_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"PostdownloadTakeOverImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`PostdownloadReplayImpl()` overload"]fn postdownload_replay_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"PostdownloadReplayImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`UploadImpl()` overload"]fn upload_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"UploadImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`PostuploadImpl()` overload"]fn postupload_impl(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <RelaySequence_RelaySequenceLocal as::unity2::ClassIdentity> ::NAME,"PostuploadImpl",));
+let __inner:extern "C" fn(RelaySequence_RelaySequenceLocal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelaySequence_RelaySequenceLocal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0a530usize)as*mut u8,();
+(RelaySequence_RelaySequenceLocal)__receiver)}
+}
+}
+
+#[cfg(feature="app-relaysequence")]impl<__T:IRelaySequence_RelaySequenceLocal>IRelaySequence_RelaySequenceLocalMethods for __T{}
+
+#[cfg(feature="app-relaysequence")]impl RelaySequence_RelaySequenceLocal{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_lan_root_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn take_over_search_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn take_over_postsearch_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn take_over_download_meta_with_data_code_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn take_over_postdownload_meta_with_data_code_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn take_over_set_playing_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn take_over_postset_playing_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn replay_search_entered_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn replay_search_any_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn replay_postsearch_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn download_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn postdownload_take_over_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn postdownload_replay_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn upload_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn postupload_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_data_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_meta_data_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_pseudo_principal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_pseudo_data_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="app-relaysequence")]impl RelaySequence_RelaySequenceLocal{#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `TakeOverSearchImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_search_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_search_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `TakeOverPostsearchImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_postsearch_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_postsearch_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `TakeOverDownloadMetaWithDataCodeImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_download_meta_with_data_code_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_download_meta_with_data_code_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `TakeOverPostdownloadMetaWithDataCodeImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_postdownload_meta_with_data_code_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_postdownload_meta_with_data_code_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `TakeOverSetPlayingImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_set_playing_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_set_playing_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `TakeOverPostsetPlayingImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn take_over_postset_playing_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::take_over_postset_playing_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `ReplaySearchEnteredImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn replay_search_entered_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::replay_search_entered_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `ReplaySearchAnyImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn replay_search_any_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::replay_search_any_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `ReplayPostsearchImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn replay_postsearch_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::replay_postsearch_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `DownloadImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn download_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,with_meta_data:bool,)->(){let __mi=Self::download_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),with_meta_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `PostdownloadTakeOverImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn postdownload_take_over_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::postdownload_take_over_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `PostdownloadReplayImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn postdownload_replay_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::postdownload_replay_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `UploadImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn upload_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::upload_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelaySequence_RelaySequenceLocal`'s own `PostuploadImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn postupload_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::postupload_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-relaysequence")]impl RelaySequence_RelaySequenceLocal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelaySequence_RelaySequenceLocal), ::core::stringify!(new),));
+ <Self as IRelaySequence_RelaySequenceLocalMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-relaysequence")]impl RelaySequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2006e60usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`SelectMode(crate::app::relay::Relay_Modes)` overload"]pub fn select_mode(mode:impl::core::convert::Into<crate::app::relay::Relay_Modes>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2006f10usize)as*mut u8,();
+(crate::app::relay::Relay_Modes)::core::convert::Into::into(mode))}
+}
+#[doc="`SelectTakeOverMode(crate::app::relay::Relay_TakeOverModes)` overload"]pub fn select_take_over_mode(mode:impl::core::convert::Into<crate::app::relay::Relay_TakeOverModes>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2007110usize)as*mut u8,();
+(crate::app::relay::Relay_TakeOverModes)::core::convert::Into::into(mode))}
+}
+#[doc="`SelectMap(::unity2::Il2CppString)` overload"]pub fn select_map(cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20071d0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`NoSelectableMap()` overload"]pub fn no_selectable_map()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffe8f0usize)as*mut u8,();
+)}
+}
+#[doc="`JumpToTakeOverModeSelect()` overload"]pub fn jump_to_take_over_mode_select()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2007290usize)as*mut u8,();
+)}
+}
+#[doc="`JumpToTakeOverPredownloadMetaWithDataCode()` overload"]pub fn jump_to_take_over_predownload_meta_with_data_code()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2007340usize)as*mut u8,();
+)}
+}
+#[doc="`JumpToReplayDownload()` overload"]pub fn jump_to_replay_download()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20073f0usize)as*mut u8,();
+)}
+}
+#[doc="`JumpToAward()` overload"]pub fn jump_to_award()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20074a0usize)as*mut u8,();
+)}
+}
+#[doc="`SetPublic(bool)` overload"]pub fn set_public(is_public:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2007550usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_public))}
+}
+#[doc="`GetSequence()` overload"]pub fn get_sequence()->crate::app::relaysequence::RelaySequence_IRelaySequenceBase{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2006fd0usize)as*mut u8,crate::app::relaysequence::RelaySequence_IRelaySequenceBase;
+)}
+}
+}
+
+#[cfg(feature="app-relaysequence")]impl RelaySequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn select_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn select_take_over_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn select_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn no_selectable_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn jump_to_take_over_mode_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn jump_to_take_over_predownload_meta_with_data_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn jump_to_replay_download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn jump_to_award_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_public_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
 #[cfg(feature = "app-relaysequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelaySequence_Label;
     pub use super::RelaySequence_RelaySequenceNet;
     pub use super::IRelaySequence_RelaySequenceNet;
     pub use super::IRelaySequence_RelaySequenceNetMethods;
-    pub use super::RelaySequence_RelaySequenceLocal;
-    pub use super::IRelaySequence_RelaySequenceLocal;
-    pub use super::IRelaySequence_RelaySequenceLocalMethods;
-    pub use super::RelaySequence;
-    pub use super::IRelaySequence;
     pub use super::RelaySequence_IRelaySequenceBase;
     pub use super::IRelaySequence_IRelaySequenceBase;
     pub use super::IRelaySequence_IRelaySequenceBaseMethods;
     pub use super::RelaySequence_RelaySequenceBase_1;
     pub use super::IRelaySequence_RelaySequenceBase_1;
     pub use super::IRelaySequence_RelaySequenceBase_1Methods;
+    pub use super::RelaySequence_Label;
+    pub use super::RelaySequence_RelaySequenceLocal;
+    pub use super::IRelaySequence_RelaySequenceLocal;
+    pub use super::IRelaySequence_RelaySequenceLocalMethods;
+    pub use super::RelaySequence;
+    pub use super::IRelaySequence;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

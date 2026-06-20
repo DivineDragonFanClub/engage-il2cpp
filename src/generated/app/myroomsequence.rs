@@ -31,22 +31,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomsequence::MyRoomSequence>)]pub struct MyRoomSequence{#[offset(116)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult, #[offset(120)]#[rename(name="m_RecallMenuResult")]pub m_recall_menu_result:crate::app::myroomrecallmenu::MyRoomRecallMenu_MenuResult, #[offset(124)]#[rename(name="m_MenuItemResult")]pub m_menu_item_result:crate::app::basicmenu::BasicMenu_Result, #[static_field]#[rename(name="m_relianceActiveMenu")]pub m_reliance_active_menu:crate::app::myroomsequence::MyRoomSequence_RelianceUnitMenuItem, #[offset(128)]#[rename(name="messName")]pub mess_name: ::unity2::Il2CppString, #[offset(136)]#[rename(name="demoName")]pub demo_name: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence_RelianceUnitMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence.RelianceUnitMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomSequence_RelianceUnitMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence_RelianceListMenu.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence.RelianceListMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MyRoomSequence_RelianceListMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence.SleepConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MyRoomSequence_SleepConfirmDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence_RelianceUnitMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence.RelianceUnitMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomSequence_RelianceUnitMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomSequence_Label{pub value:i32,}
@@ -88,10 +76,168 @@ pub fn exit()->Self{Self{value:13}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomsequence::MyRoomSequence>)]pub struct MyRoomSequence{#[offset(116)]#[rename(name="m_TopMenuResult")]pub m_top_menu_result:crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult, #[offset(120)]#[rename(name="m_RecallMenuResult")]pub m_recall_menu_result:crate::app::myroomrecallmenu::MyRoomRecallMenu_MenuResult, #[offset(124)]#[rename(name="m_MenuItemResult")]pub m_menu_item_result:crate::app::basicmenu::BasicMenu_Result, #[static_field]#[rename(name="m_relianceActiveMenu")]pub m_reliance_active_menu:crate::app::myroomsequence::MyRoomSequence_RelianceUnitMenuItem, #[offset(128)]#[rename(name="messName")]pub mess_name: ::unity2::Il2CppString, #[offset(136)]#[rename(name="demoName")]pub demo_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence.SleepConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MyRoomSequence_SleepConfirmDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes{}
+
 }
 
 #[cfg(feature = "app-myroomsequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-myroomsequence")]pub trait IMyRoomSequence_RelianceUnitMenuItemMethods:IMyRoomSequence_RelianceUnitMenuItem{#[doc="`get_Self()` overload"]fn get_self(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209a080usize)as*mut u8,crate::app::persondata::PersonData;
+(MyRoomSequence_RelianceUnitMenuItem)__receiver)}
+}
+#[doc="`get_Target()` overload"]fn get_target(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209a090usize)as*mut u8,crate::app::persondata::PersonData;
+(MyRoomSequence_RelianceUnitMenuItem)__receiver)}
+}
+#[doc="`get_CanLevelUp()` overload"]fn get_can_level_up(self,)->bool{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209a0a0usize)as*mut u8,bool;
+(MyRoomSequence_RelianceUnitMenuItem)__receiver)}
+}
+#[doc="`get_Level()` overload"]fn get_level(self,)->crate::app::reliancedata::RelianceData_Level{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209a0b0usize)as*mut u8,crate::app::reliancedata::RelianceData_Level;
+(MyRoomSequence_RelianceUnitMenuItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::persondata::PersonData, crate::app::persondata::PersonData)` overload"]fn ctor(self,self_:impl::core::convert::Into<crate::app::persondata::PersonData> ,target:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2099fd0usize)as*mut u8,();
+(MyRoomSequence_RelianceUnitMenuItem)__receiver,(crate::app::persondata::PersonData)::core::convert::Into::into(self_),(crate::app::persondata::PersonData)::core::convert::Into::into(target))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MyRoomSequence_RelianceUnitMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(MyRoomSequence_RelianceUnitMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MyRoomSequence_RelianceUnitMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MyRoomSequence_RelianceUnitMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-myroomsequence")]impl<__T:IMyRoomSequence_RelianceUnitMenuItem>IMyRoomSequence_RelianceUnitMenuItemMethods for __T{}
+
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceUnitMenuItem{pub fn get_self_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_can_level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceUnitMenuItem{#[doc="Direct (non-virtual) call to `MyRoomSequence_RelianceUnitMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MyRoomSequence_RelianceUnitMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceUnitMenuItem{#[doc="`.ctor(crate::app::persondata::PersonData, crate::app::persondata::PersonData)` — overload selector"]pub fn new(self_:crate::app::persondata::PersonData,target:crate::app::persondata::PersonData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomSequence_RelianceUnitMenuItem), ::core::stringify!(new),));
+ <Self as IMyRoomSequence_RelianceUnitMenuItemMethods> ::ctor(this,self_,target);
+this}
+}
+
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceListMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2099ce0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-myroomsequence")]pub trait IMyRoomSequence_RelianceListMenuMethods:IMyRoomSequence_RelianceListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MyRoomSequence_RelianceListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2099bf0usize)as*mut u8,();
+(MyRoomSequence_RelianceListMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomSequence_RelianceListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MyRoomSequence_RelianceListMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(MyRoomSequence_RelianceListMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MyRoomSequence_RelianceListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MyRoomSequence_RelianceListMenu as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(MyRoomSequence_RelianceListMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MyRoomSequence_RelianceListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MyRoomSequence_RelianceListMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(MyRoomSequence_RelianceListMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-myroomsequence")]impl<__T:IMyRoomSequence_RelianceListMenu>IMyRoomSequence_RelianceListMenuMethods for __T{}
+
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceListMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceListMenu{#[doc="Direct (non-virtual) call to `MyRoomSequence_RelianceListMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MyRoomSequence_RelianceListMenu`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MyRoomSequence_RelianceListMenu`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,super_:crate::app::procinst::ProcInst)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomSequence_RelianceListMenu), ::core::stringify!(new),));
+ <Self as IMyRoomSequence_RelianceListMenuMethods> ::ctor(this,menu_item_list,super_);
+this}
+}
 
 #[cfg(feature="app-myroomsequence")]impl MyRoomSequence{#[doc="`ShowTitle()` overload"]pub fn show_title()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x239b870usize)as*mut u8,();
 )}
@@ -225,128 +371,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-myroomsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomSequence_RelianceListMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:MyRoomSequence_RelianceListMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <MyRoomSequence_RelianceListMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(MyRoomSequence_RelianceListMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_create(this:MyRoomSequence_RelianceListMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <MyRoomSequence_RelianceListMenu as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(MyRoomSequence_RelianceListMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:MyRoomSequence_RelianceListMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MyRoomSequence_RelianceListMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(MyRoomSequence_RelianceListMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceListMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2099ce0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-myroomsequence")]pub trait IMyRoomSequence_RelianceListMenuMethods:IMyRoomSequence_RelianceListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MyRoomSequence_RelianceListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2099bf0usize)as*mut u8,();
-(MyRoomSequence_RelianceListMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomSequence_RelianceListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomSequence_RelianceListMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MyRoomSequence_RelianceListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomSequence_RelianceListMenu_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MyRoomSequence_RelianceListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomSequence_RelianceListMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-myroomsequence")]impl<__T:IMyRoomSequence_RelianceListMenu>IMyRoomSequence_RelianceListMenuMethods for __T{}
-
-#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceListMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,super_:crate::app::procinst::ProcInst)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomSequence_RelianceListMenu), ::core::stringify!(new),));
- <Self as IMyRoomSequence_RelianceListMenuMethods> ::ctor(this,menu_item_list,super_);
-this}
-}
-
-#[cfg(feature="app-myroomsequence")]pub trait IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods:IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b741d0usize)as*mut u8,();
-(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroomsequence")]impl<__T:IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo>IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods for __T{}
-
-#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo), ::core::stringify!(new),));
- <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-myroomsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-myroomsequence")]pub trait IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods:IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b74260usize)as*mut u8,();
-(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-myroomsequence")]impl<__T:IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes>IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods for __T{}
-
-#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
- <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-myroomsequence")]impl MyRoomSequence_SleepConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x209a3f0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -371,97 +395,82 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-myroomsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomSequence_RelianceUnitMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:MyRoomSequence_RelianceUnitMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MyRoomSequence_RelianceUnitMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(MyRoomSequence_RelianceUnitMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:MyRoomSequence_RelianceUnitMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-myroomsequence")]pub trait IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods:IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b741d0usize)as*mut u8,();
+(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo)__receiver)}
+}
+}
+
+#[cfg(feature="app-myroomsequence")]impl<__T:IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo>IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods for __T{}
+
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo), ::core::stringify!(new),));
+ <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-myroomsequence")]pub trait IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods:IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b74260usize)as*mut u8,();
+(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <MyRoomSequence_RelianceUnitMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MyRoomSequence_RelianceUnitMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-myroomsequence")]pub trait IMyRoomSequence_RelianceUnitMenuItemMethods:IMyRoomSequence_RelianceUnitMenuItem{#[doc="`get_Self()` overload"]fn get_self(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209a080usize)as*mut u8,crate::app::persondata::PersonData;
-(MyRoomSequence_RelianceUnitMenuItem)__receiver)}
-}
-#[doc="`get_Target()` overload"]fn get_target(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209a090usize)as*mut u8,crate::app::persondata::PersonData;
-(MyRoomSequence_RelianceUnitMenuItem)__receiver)}
-}
-#[doc="`get_CanLevelUp()` overload"]fn get_can_level_up(self,)->bool{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209a0a0usize)as*mut u8,bool;
-(MyRoomSequence_RelianceUnitMenuItem)__receiver)}
-}
-#[doc="`get_Level()` overload"]fn get_level(self,)->crate::app::reliancedata::RelianceData_Level{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209a0b0usize)as*mut u8,crate::app::reliancedata::RelianceData_Level;
-(MyRoomSequence_RelianceUnitMenuItem)__receiver)}
-}
-#[doc="`.ctor(crate::app::persondata::PersonData, crate::app::persondata::PersonData)` overload"]fn ctor(self,self_:impl::core::convert::Into<crate::app::persondata::PersonData> ,target:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2099fd0usize)as*mut u8,();
-(MyRoomSequence_RelianceUnitMenuItem)__receiver,(crate::app::persondata::PersonData)::core::convert::Into::into(self_),(crate::app::persondata::PersonData)::core::convert::Into::into(target))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomSequence_RelianceUnitMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomSequence_RelianceUnitMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomSequence_RelianceUnitMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-myroomsequence")]impl<__T:IMyRoomSequence_RelianceUnitMenuItem>IMyRoomSequence_RelianceUnitMenuItemMethods for __T{}
+#[cfg(feature="app-myroomsequence")]impl<__T:IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes>IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods for __T{}
 
-#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceUnitMenuItem{pub fn get_self_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_can_level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_RelianceUnitMenuItem{#[doc="`.ctor(crate::app::persondata::PersonData, crate::app::persondata::PersonData)` — overload selector"]pub fn new(self_:crate::app::persondata::PersonData,target:crate::app::persondata::PersonData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes{#[doc="Direct (non-virtual) call to `MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-myroomsequence")]impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MyRoomSequence_RelianceUnitMenuItem), ::core::stringify!(new),));
- <Self as IMyRoomSequence_RelianceUnitMenuItemMethods> ::ctor(this,self_,target);
+ failed to instantiate", ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "app-myroomsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomSequence;
-    pub use super::IMyRoomSequence;
-    pub use super::IMyRoomSequenceMethods;
+    pub use super::MyRoomSequence_RelianceUnitMenuItem;
+    pub use super::IMyRoomSequence_RelianceUnitMenuItem;
+    pub use super::IMyRoomSequence_RelianceUnitMenuItemMethods;
     pub use super::MyRoomSequence_RelianceListMenu;
     pub use super::IMyRoomSequence_RelianceListMenu;
     pub use super::IMyRoomSequence_RelianceListMenuMethods;
+    pub use super::MyRoomSequence_Label;
+    pub use super::MyRoomSequence;
+    pub use super::IMyRoomSequence;
+    pub use super::IMyRoomSequenceMethods;
+    pub use super::MyRoomSequence_SleepConfirmDialog;
+    pub use super::IMyRoomSequence_SleepConfirmDialog;
+    pub use super::IMyRoomSequence_SleepConfirmDialogMethods;
     pub use super::MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo;
     pub use super::IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo;
     pub use super::IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods;
     pub use super::MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes;
     pub use super::IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes;
     pub use super::IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods;
-    pub use super::MyRoomSequence_SleepConfirmDialog;
-    pub use super::IMyRoomSequence_SleepConfirmDialog;
-    pub use super::IMyRoomSequence_SleepConfirmDialogMethods;
-    pub use super::MyRoomSequence_RelianceUnitMenuItem;
-    pub use super::IMyRoomSequence_RelianceUnitMenuItem;
-    pub use super::IMyRoomSequence_RelianceUnitMenuItemMethods;
-    pub use super::MyRoomSequence_Label;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

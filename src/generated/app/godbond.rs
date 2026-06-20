@@ -18,29 +18,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-godbond-types")]
 pub use __types::*;
 
-#[cfg(feature="app-godbond")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodBond_unity2_raw{use super:: * ;
-pub unsafe fn on_enter(this:GodBond,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GodBond as::unity2::ClassIdentity> ::NAME,"OnEnter",));
-let inner:extern "C" fn(GodBond, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_exit(this:GodBond,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GodBond as::unity2::ClassIdentity> ::NAME,"OnExit",));
-let inner:extern "C" fn(GodBond, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-godbond")]impl GodBond{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4f120usize)as*mut u8,();
 )}
 }
@@ -51,10 +28,28 @@ inner(this,__mi)}
 (GodBond)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(god_data),(crate::app::godreliances::GodRelianceS)::core::convert::Into::into(reliance_s),(::unity2::Il2CppString)::core::convert::Into::into(pid))}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <GodBond as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodBond_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GodBond as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let __inner:extern "C" fn(GodBond, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <GodBond as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodBond_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GodBond as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let __inner:extern "C" fn(GodBond, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`DbgSetExp(i32)` overload"]fn dbg_set_exp(self,exp:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodBond as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2b4d300usize)as*mut u8,();
@@ -335,6 +330,14 @@ pub fn get_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn get_engage_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+}
+
+#[cfg(feature="app-godbond")]impl GodBond{#[doc="Direct (non-virtual) call to `GodBond`'s own `OnEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enter_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodBond`'s own `OnExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_exit(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_exit_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-godbond")]impl GodBond{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

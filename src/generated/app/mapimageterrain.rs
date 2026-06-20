@@ -9,27 +9,32 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageterrain/MapImageTerrain.md"))]#[::unity2::class(namespace="App",name="MapImageTerrain")]#[parent(crate::system::object::Object)]pub struct MapImageTerrain{#[offset(16)]#[rename(name="m_Original")]pub m_original:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(24)]#[rename(name="m_Base")]pub m_base:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(32)]#[rename(name="m_Result")]pub m_result:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(40)]#[rename(name="m_MinimapInfos")]pub m_minimap_infos:crate::system::collections::generic::list_1::List_1<crate::app::mapimageterrain::MapImageTerrain_MinimapInfo> , #[offset(48)]#[rename(name="m_MinimapBuffer")]pub m_minimap_buffer:crate::system::collections::generic::list_1::List_1<crate::app::mapimageterrain::MapImageTerrain_MinimapInfo> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageterrain/MapImageTerrain_MinimapInfo.md"))]#[::unity2::class(namespace="App",name="MapImageTerrain.MinimapInfo")]#[parent(crate::system::object::Object)]pub struct MapImageTerrain_MinimapInfo{#[offset(16)]#[rename(name="X")]pub x:i32, #[offset(20)]#[rename(name="Z")]pub z:i32, #[offset(24)]#[rename(name="Terrain")]pub terrain:crate::app::terraindata_2::TerrainData_2,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimageterrain/MapImageTerrain.md"))]#[::unity2::class(namespace="App",name="MapImageTerrain")]#[parent(crate::system::object::Object)]pub struct MapImageTerrain{#[offset(16)]#[rename(name="m_Original")]pub m_original:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(24)]#[rename(name="m_Base")]pub m_base:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(32)]#[rename(name="m_Result")]pub m_result:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(40)]#[rename(name="m_MinimapInfos")]pub m_minimap_infos:crate::system::collections::generic::list_1::List_1<crate::app::mapimageterrain::MapImageTerrain_MinimapInfo> , #[offset(48)]#[rename(name="m_MinimapBuffer")]pub m_minimap_buffer:crate::system::collections::generic::list_1::List_1<crate::app::mapimageterrain::MapImageTerrain_MinimapInfo> ,}
 
 }
 
 #[cfg(feature = "app-mapimageterrain-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapimageterrain")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapImageTerrain_unity2_raw{use super:: * ;
-pub unsafe fn get_hash_code(this:MapImageTerrain,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",2usize,__vt.len(), <MapImageTerrain as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(MapImageTerrain, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="app-mapimageterrain")]pub trait IMapImageTerrain_MinimapInfoMethods:IMapImageTerrain_MinimapInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageTerrain_MinimapInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217cd50usize)as*mut u8,();
+(MapImageTerrain_MinimapInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapimageterrain")]impl<__T:IMapImageTerrain_MinimapInfo>IMapImageTerrain_MinimapInfoMethods for __T{}
+
+#[cfg(feature="app-mapimageterrain")]impl MapImageTerrain_MinimapInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapimageterrain")]impl MapImageTerrain_MinimapInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapImageTerrain_MinimapInfo), ::core::stringify!(new),));
+ <Self as IMapImageTerrain_MinimapInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-mapimageterrain")]pub trait IMapImageTerrainMethods:IMapImageTerrain{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageTerrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -73,7 +78,16 @@ inner(this,__mi)}
 (MapImageTerrain)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <MapImageTerrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapImageTerrain_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <MapImageTerrain as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let __inner:extern "C" fn(MapImageTerrain, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -92,6 +106,11 @@ pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 }
 
+#[cfg(feature="app-mapimageterrain")]impl MapImageTerrain{#[doc="Direct (non-virtual) call to `MapImageTerrain`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapimageterrain")]impl MapImageTerrain{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapImageTerrain), ::core::stringify!(new),));
@@ -99,33 +118,15 @@ pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 this}
 }
 
-#[cfg(feature="app-mapimageterrain")]pub trait IMapImageTerrain_MinimapInfoMethods:IMapImageTerrain_MinimapInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageTerrain_MinimapInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217cd50usize)as*mut u8,();
-(MapImageTerrain_MinimapInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapimageterrain")]impl<__T:IMapImageTerrain_MinimapInfo>IMapImageTerrain_MinimapInfoMethods for __T{}
-
-#[cfg(feature="app-mapimageterrain")]impl MapImageTerrain_MinimapInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-mapimageterrain")]impl MapImageTerrain_MinimapInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapImageTerrain_MinimapInfo), ::core::stringify!(new),));
- <Self as IMapImageTerrain_MinimapInfoMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapimageterrain")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapImageTerrain;
-    pub use super::IMapImageTerrain;
-    pub use super::IMapImageTerrainMethods;
     pub use super::MapImageTerrain_MinimapInfo;
     pub use super::IMapImageTerrain_MinimapInfo;
     pub use super::IMapImageTerrain_MinimapInfoMethods;
+    pub use super::MapImageTerrain;
+    pub use super::IMapImageTerrain;
+    pub use super::IMapImageTerrainMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

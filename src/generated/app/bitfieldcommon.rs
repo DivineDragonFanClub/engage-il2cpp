@@ -16,21 +16,17 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-bitfieldcommon-types")]
 pub use __types::*;
 
-#[cfg(feature="app-bitfieldcommon")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BitFieldCommon_unity2_raw{use super:: * ;
-pub unsafe fn get_value_type(this:BitFieldCommon,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-bitfieldcommon")]pub trait IBitFieldCommonMethods:IBitFieldCommon{#[doc="`get_ValueType()` overload"]fn get_value_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <BitFieldCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <BitFieldCommon as::unity2::ClassIdentity> ::NAME,"get_ValueType",));
-let inner:extern "C" fn(BitFieldCommon, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(BitFieldCommon, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-bitfieldcommon")]pub trait IBitFieldCommonMethods:IBitFieldCommon{#[doc="`get_ValueType()` overload"]fn get_value_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <BitFieldCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BitFieldCommon_unity2_raw::get_value_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BitFieldCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x29873d0usize)as*mut u8,();
@@ -42,6 +38,11 @@ __BitFieldCommon_unity2_raw::get_value_type(__receiver, ::core::option::Option::
 
 #[cfg(feature="app-bitfieldcommon")]impl BitFieldCommon{pub fn get_value_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-bitfieldcommon")]impl BitFieldCommon{#[doc="Direct (non-virtual) call to `BitFieldCommon`'s own `get_ValueType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_value_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-bitfieldcommon")]impl BitFieldCommon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

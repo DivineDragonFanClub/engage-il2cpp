@@ -13,30 +13,53 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestreamnative/DeflateStreamNative_UnmanagedReadOrWrite.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStreamNative.UnmanagedReadOrWrite")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStreamNative_UnmanagedReadOrWrite{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestreamnative/DeflateStreamNative.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStreamNative")]#[parent(crate::system::object::Object)]pub struct DeflateStreamNative{#[offset(16)]#[rename(name="feeder")]pub feeder:crate::system::io::compression::deflatestreamnative::DeflateStreamNative_UnmanagedReadOrWrite, #[offset(24)]#[rename(name="base_stream")]pub base_stream:crate::system::io::stream::Stream, #[offset(32)]#[rename(name="z_stream")]pub z_stream:crate::system::io::compression::deflatestreamnative::DeflateStreamNative_SafeDeflateStreamHandle, #[offset(44)]#[rename(name="disposed")]pub disposed:bool, #[offset(48)]#[rename(name="io_buffer")]pub io_buffer: ::unity2::Array<u8> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestreamnative/DeflateStreamNative_SafeDeflateStreamHandle.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStreamNative.SafeDeflateStreamHandle")]pub struct DeflateStreamNative_SafeDeflateStreamHandle{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestreamnative/DeflateStreamNative_UnmanagedReadOrWrite.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStreamNative.UnmanagedReadOrWrite")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStreamNative_UnmanagedReadOrWrite{}
 
 }
 
 #[cfg(feature = "system-io-compression-deflatestreamnative-types")]
 pub use __types::*;
 
-#[cfg(feature="system-io-compression-deflatestreamnative")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DeflateStreamNative_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:DeflateStreamNative,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="system-io-compression-deflatestreamnative")]pub trait IDeflateStreamNative_UnmanagedReadOrWriteMethods:IDeflateStreamNative_UnmanagedReadOrWrite{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStreamNative_UnmanagedReadOrWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7fd20usize)as*mut u8,();
+(DeflateStreamNative_UnmanagedReadOrWrite)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::IntPtr, i32, ::unity2::IntPtr)` overload"]fn invoke(self,buffer:impl::core::convert::Into< ::unity2::IntPtr> ,length:impl::core::convert::Into<i32> ,data:impl::core::convert::Into< ::unity2::IntPtr>)->i32{unsafe{let __receiver= <DeflateStreamNative_UnmanagedReadOrWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",1usize,__vt.len(), <DeflateStreamNative as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(DeflateStreamNative, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <DeflateStreamNative_UnmanagedReadOrWrite as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(DeflateStreamNative_UnmanagedReadOrWrite, ::unity2::IntPtr,i32, ::unity2::IntPtr, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(length), ::core::convert::Into::into(data),__mi)}
+}
+}
+}
+
+#[cfg(feature="system-io-compression-deflatestreamnative")]impl<__T:IDeflateStreamNative_UnmanagedReadOrWrite>IDeflateStreamNative_UnmanagedReadOrWriteMethods for __T{}
+
+#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_UnmanagedReadOrWrite{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_UnmanagedReadOrWrite{#[doc="Direct (non-virtual) call to `DeflateStreamNative_UnmanagedReadOrWrite`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::IntPtr,length:i32,data: ::unity2::IntPtr,)->i32{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IntPtr,i32, ::unity2::IntPtr, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),buffer,length,data, ::core::option::Option::None)}
+}
+
+#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_UnmanagedReadOrWrite{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStreamNative_UnmanagedReadOrWrite), ::core::stringify!(new),));
+ <Self as IDeflateStreamNative_UnmanagedReadOrWriteMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative{#[doc="`Create(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool)` overload"]pub fn create(compressed_stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,mode:impl::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode> ,gzip:impl::core::convert::Into<bool>)->crate::system::io::compression::deflatestreamnative::DeflateStreamNative{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35584f0usize)as*mut u8,crate::system::io::compression::deflatestreamnative::DeflateStreamNative;
@@ -73,7 +96,16 @@ inner(this,__mi)}
 (DeflateStreamNative)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <DeflateStreamNative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStreamNative_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <DeflateStreamNative as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(DeflateStreamNative, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DeflateStreamNative as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3558760usize)as*mut u8,();
@@ -122,6 +154,11 @@ pub fn read_z_stream_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn write_z_stream_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 }
 
+#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative{#[doc="Direct (non-virtual) call to `DeflateStreamNative`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DeflateStreamNative), ::core::stringify!(new),));
@@ -129,38 +166,33 @@ pub fn write_z_stream_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 this}
 }
 
-#[cfg(feature="system-io-compression-deflatestreamnative")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw{use super:: * ;
-pub unsafe fn get_is_invalid(this:DeflateStreamNative_SafeDeflateStreamHandle,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-io-compression-deflatestreamnative")]pub trait IDeflateStreamNative_SafeDeflateStreamHandleMethods:IDeflateStreamNative_SafeDeflateStreamHandle{#[doc="`get_IsInvalid()` overload"]fn get_is_invalid(self,)->bool{unsafe{let __receiver= <DeflateStreamNative_SafeDeflateStreamHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <DeflateStreamNative_SafeDeflateStreamHandle as::unity2::ClassIdentity> ::NAME,"get_IsInvalid",));
-let inner:extern "C" fn(DeflateStreamNative_SafeDeflateStreamHandle, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DeflateStreamNative_SafeDeflateStreamHandle, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn release_handle(this:DeflateStreamNative_SafeDeflateStreamHandle,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <DeflateStreamNative_SafeDeflateStreamHandle as::unity2::ClassIdentity> ::NAME,"ReleaseHandle",));
-let inner:extern "C" fn(DeflateStreamNative_SafeDeflateStreamHandle, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="system-io-compression-deflatestreamnative")]pub trait IDeflateStreamNative_SafeDeflateStreamHandleMethods:IDeflateStreamNative_SafeDeflateStreamHandle{#[doc="`get_IsInvalid()` overload"]fn get_is_invalid(self,)->bool{unsafe{let __receiver= <DeflateStreamNative_SafeDeflateStreamHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw::get_is_invalid(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DeflateStreamNative_SafeDeflateStreamHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7fcb0usize)as*mut u8,();
 (DeflateStreamNative_SafeDeflateStreamHandle)__receiver)}
 }
 #[doc="`ReleaseHandle()` overload"]fn release_handle(self,)->bool{unsafe{let __receiver= <DeflateStreamNative_SafeDeflateStreamHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStreamNative_SafeDeflateStreamHandle_unity2_raw::release_handle(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DeflateStreamNative_SafeDeflateStreamHandle as::unity2::ClassIdentity> ::NAME,"ReleaseHandle",));
+let __inner:extern "C" fn(DeflateStreamNative_SafeDeflateStreamHandle, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -171,6 +203,14 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn release_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_SafeDeflateStreamHandle{#[doc="Direct (non-virtual) call to `DeflateStreamNative_SafeDeflateStreamHandle`'s own `get_IsInvalid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_invalid(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_invalid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStreamNative_SafeDeflateStreamHandle`'s own `ReleaseHandle`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn release_handle(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::release_handle_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_SafeDeflateStreamHandle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DeflateStreamNative_SafeDeflateStreamHandle), ::core::stringify!(new),));
@@ -178,53 +218,18 @@ pub fn release_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 this}
 }
 
-#[cfg(feature="system-io-compression-deflatestreamnative")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DeflateStreamNative_UnmanagedReadOrWrite_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:DeflateStreamNative_UnmanagedReadOrWrite,buffer: ::unity2::IntPtr,length:i32,data: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <DeflateStreamNative_UnmanagedReadOrWrite as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(DeflateStreamNative_UnmanagedReadOrWrite, ::unity2::IntPtr,i32, ::unity2::IntPtr, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,buffer,length,data,__mi)}
-}
-
-#[cfg(feature="system-io-compression-deflatestreamnative")]pub trait IDeflateStreamNative_UnmanagedReadOrWriteMethods:IDeflateStreamNative_UnmanagedReadOrWrite{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStreamNative_UnmanagedReadOrWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7fd20usize)as*mut u8,();
-(DeflateStreamNative_UnmanagedReadOrWrite)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::IntPtr, i32, ::unity2::IntPtr)` overload"]fn invoke(self,buffer:impl::core::convert::Into< ::unity2::IntPtr> ,length:impl::core::convert::Into<i32> ,data:impl::core::convert::Into< ::unity2::IntPtr>)->i32{unsafe{let __receiver= <DeflateStreamNative_UnmanagedReadOrWrite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStreamNative_UnmanagedReadOrWrite_unity2_raw::invoke(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(length), ::core::convert::Into::into(data), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="system-io-compression-deflatestreamnative")]impl<__T:IDeflateStreamNative_UnmanagedReadOrWrite>IDeflateStreamNative_UnmanagedReadOrWriteMethods for __T{}
-
-#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_UnmanagedReadOrWrite{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="system-io-compression-deflatestreamnative")]impl DeflateStreamNative_UnmanagedReadOrWrite{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DeflateStreamNative_UnmanagedReadOrWrite), ::core::stringify!(new),));
- <Self as IDeflateStreamNative_UnmanagedReadOrWriteMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "system-io-compression-deflatestreamnative")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DeflateStreamNative_UnmanagedReadOrWrite;
+    pub use super::IDeflateStreamNative_UnmanagedReadOrWrite;
+    pub use super::IDeflateStreamNative_UnmanagedReadOrWriteMethods;
     pub use super::DeflateStreamNative;
     pub use super::IDeflateStreamNative;
     pub use super::IDeflateStreamNativeMethods;
     pub use super::DeflateStreamNative_SafeDeflateStreamHandle;
     pub use super::IDeflateStreamNative_SafeDeflateStreamHandle;
     pub use super::IDeflateStreamNative_SafeDeflateStreamHandleMethods;
-    pub use super::DeflateStreamNative_UnmanagedReadOrWrite;
-    pub use super::IDeflateStreamNative_UnmanagedReadOrWrite;
-    pub use super::IDeflateStreamNative_UnmanagedReadOrWriteMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

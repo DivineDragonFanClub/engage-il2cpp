@@ -24,21 +24,17 @@ use crate::unity_engine::timeline::trackasset::{ITrackAsset,TrackAsset}
 #[cfg(feature = "root-aktimelinertpctrack-types")]
 pub use __types::*;
 
-#[cfg(feature="root-aktimelinertpctrack")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkTimelineRtpcTrack_unity2_raw{use super:: * ;
-pub unsafe fn create_track_mixer(this:AkTimelineRtpcTrack,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,game_object:crate::unity_engine::gameobject::GameObject,input_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-aktimelinertpctrack")]pub trait IAkTimelineRtpcTrackMethods:IAkTimelineRtpcTrack{#[doc="`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]fn create_track_mixer(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AkTimelineRtpcTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",23usize,__vt.len(), <AkTimelineRtpcTrack as::unity2::ClassIdentity> ::NAME,"CreateTrackMixer",));
-let inner:extern "C" fn(AkTimelineRtpcTrack,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,i32, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkTimelineRtpcTrack,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,i32, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,graph,game_object,input_count,__mi)}
+__inner(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(game_object), ::core::convert::Into::into(input_count),__mi)}
 }
-
-#[cfg(feature="root-aktimelinertpctrack")]pub trait IAkTimelineRtpcTrackMethods:IAkTimelineRtpcTrack{#[doc="`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]fn create_track_mixer(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AkTimelineRtpcTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkTimelineRtpcTrack_unity2_raw::create_track_mixer(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(game_object), ::core::convert::Into::into(input_count), ::core::option::Option::None)}
 }
 #[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <AkTimelineRtpcTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d29350usize)as*mut u8,();
@@ -55,6 +51,11 @@ __AkTimelineRtpcTrack_unity2_raw::create_track_mixer(__receiver, ::core::convert
 #[cfg(feature="root-aktimelinertpctrack")]impl AkTimelineRtpcTrack{pub fn create_track_mixer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root-aktimelinertpctrack")]impl AkTimelineRtpcTrack{#[doc="Direct (non-virtual) call to `AkTimelineRtpcTrack`'s own `CreateTrackMixer`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_track_mixer(this:impl::core::convert::Into< ::unity2::IlInstance> ,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,game_object:crate::unity_engine::gameobject::GameObject,input_count:i32,)->crate::unity_engine::playables::playable::Playable{let __mi=Self::create_track_mixer_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,i32, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),graph,game_object,input_count, ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-aktimelinertpctrack")]impl AkTimelineRtpcTrack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

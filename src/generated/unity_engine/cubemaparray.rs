@@ -20,19 +20,6 @@ use crate::unity_engine::texture::{ITexture,Texture}
 #[cfg(feature = "unity_engine-cubemaparray-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-cubemaparray")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CubemapArray_unity2_raw{use super:: * ;
-pub unsafe fn get_is_readable(this:CubemapArray,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <CubemapArray as::unity2::ClassIdentity> ::NAME,"get_isReadable",));
-let inner:extern "C" fn(CubemapArray, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-cubemaparray")]impl CubemapArray{#[doc="`Internal_CreateImpl(crate::unity_engine::cubemaparray::CubemapArray, i32, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]pub fn internal_create_impl(mono:impl::core::convert::Into<crate::unity_engine::cubemaparray::CubemapArray> ,ext:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32> ,mip_count:impl::core::convert::Into<i32> ,format:impl::core::convert::Into<crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat> ,flags:impl::core::convert::Into<crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c48c40usize)as*mut u8,bool;
 (crate::unity_engine::cubemaparray::CubemapArray)::core::convert::Into::into(mono),(i32)::core::convert::Into::into(ext),(i32)::core::convert::Into::into(count),(i32)::core::convert::Into::into(mip_count),(crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat)::core::convert::Into::into(format),(crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)::core::convert::Into::into(flags))}
 }
@@ -45,7 +32,16 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-cubemaparray")]pub trait ICubemapArrayMethods:ICubemapArray{#[doc="`get_isReadable()` overload"]fn get_is_readable(self,)->bool{unsafe{let __receiver= <CubemapArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CubemapArray_unity2_raw::get_is_readable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <CubemapArray as::unity2::ClassIdentity> ::NAME,"get_isReadable",));
+let __inner:extern "C" fn(CubemapArray, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ApplyImpl(bool, bool)` overload"]fn apply_impl(self,update_mipmaps:impl::core::convert::Into<bool> ,make_no_longer_readable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CubemapArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c48d90usize)as*mut u8,();
@@ -110,6 +106,11 @@ pub fn ctor_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 pub fn apply_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 pub fn validate_is_not_crunched_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="unity_engine-cubemaparray")]impl CubemapArray{#[doc="Direct (non-virtual) call to `CubemapArray`'s own `get_isReadable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_readable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_readable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-cubemaparray")]impl CubemapArray{#[doc="`.ctor(i32, i32, crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` — overload selector"]pub fn new(width:i32,cubemap_count:i32,format:crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,flags:crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

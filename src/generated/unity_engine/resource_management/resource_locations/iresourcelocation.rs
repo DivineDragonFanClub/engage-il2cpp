@@ -14,125 +14,113 @@ mod __types {
 #[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resource_management-resource_locations-iresourcelocation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IResourceLocation_unity2_raw{use super:: * ;
-pub unsafe fn get_internal_id(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-resource_management-resource_locations-iresourcelocation")]pub trait IIResourceLocationMethods:IIResourceLocation{#[doc="`get_InternalId()` overload"]fn get_internal_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IResourceLocation as::unity2::ClassIdentity> ::NAME,"get_InternalId",));
-let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_provider_id(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_ProviderId()` overload"]fn get_provider_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IResourceLocation as::unity2::ClassIdentity> ::NAME,"get_ProviderId",));
-let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_dependencies(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Dependencies()` overload"]fn get_dependencies(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <IResourceLocation as::unity2::ClassIdentity> ::NAME,"get_Dependencies",));
-let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn hash(this:IResourceLocation,result_type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Hash(::unity2::SystemType)` overload"]fn hash(self,result_type:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",3usize,__vt.len(), <IResourceLocation as::unity2::ClassIdentity> ::NAME,"Hash",));
-let inner:extern "C" fn(IResourceLocation, ::unity2::SystemType, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceLocation, ::unity2::SystemType, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,result_type,__mi)}
-pub unsafe fn get_dependency_hash_code(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(result_type),__mi)}
+}
+}
+#[doc="`get_DependencyHashCode()` overload"]fn get_dependency_hash_code(self,)->i32{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <IResourceLocation as::unity2::ClassIdentity> ::NAME,"get_DependencyHashCode",));
-let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_has_dependencies(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_HasDependencies()` overload"]fn get_has_dependencies(self,)->bool{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <IResourceLocation as::unity2::ClassIdentity> ::NAME,"get_HasDependencies",));
-let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_data(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Data()` overload"]fn get_data(self,)->crate::system::object::Object{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <IResourceLocation as::unity2::ClassIdentity> ::NAME,"get_Data",));
-let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_primary_key(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_PrimaryKey()` overload"]fn get_primary_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <IResourceLocation as::unity2::ClassIdentity> ::NAME,"get_PrimaryKey",));
-let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_resource_type(this:IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_ResourceType()` overload"]fn get_resource_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <IResourceLocation as::unity2::ClassIdentity> ::NAME,"get_ResourceType",));
-let inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-resource_management-resource_locations-iresourcelocation")]pub trait IIResourceLocationMethods:IIResourceLocation{#[doc="`get_InternalId()` overload"]fn get_internal_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceLocation_unity2_raw::get_internal_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_ProviderId()` overload"]fn get_provider_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceLocation_unity2_raw::get_provider_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Dependencies()` overload"]fn get_dependencies(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceLocation_unity2_raw::get_dependencies(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Hash(::unity2::SystemType)` overload"]fn hash(self,result_type:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceLocation_unity2_raw::hash(__receiver, ::core::convert::Into::into(result_type), ::core::option::Option::None)}
-}
-#[doc="`get_DependencyHashCode()` overload"]fn get_dependency_hash_code(self,)->i32{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceLocation_unity2_raw::get_dependency_hash_code(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_HasDependencies()` overload"]fn get_has_dependencies(self,)->bool{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceLocation_unity2_raw::get_has_dependencies(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Data()` overload"]fn get_data(self,)->crate::system::object::Object{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceLocation_unity2_raw::get_data(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_PrimaryKey()` overload"]fn get_primary_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceLocation_unity2_raw::get_primary_key(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_ResourceType()` overload"]fn get_resource_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <IResourceLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IResourceLocation_unity2_raw::get_resource_type(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -147,6 +135,35 @@ pub fn get_has_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInf
 pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn get_primary_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn get_resource_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_locations-iresourcelocation")]impl IResourceLocation{#[doc="Direct (non-virtual) call to `IResourceLocation`'s own `get_InternalId`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_internal_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_internal_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceLocation`'s own `get_ProviderId`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_provider_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_provider_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceLocation`'s own `get_Dependencies`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_dependencies(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{let __mi=Self::get_dependencies_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceLocation`'s own `Hash`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn hash(this:impl::core::convert::Into< ::unity2::IlInstance> ,result_type: ::unity2::SystemType,)->i32{let __mi=Self::hash_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),result_type, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceLocation`'s own `get_DependencyHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_dependency_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_dependency_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceLocation`'s own `get_HasDependencies`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_has_dependencies(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_has_dependencies_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceLocation`'s own `get_Data`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_data(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_data_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceLocation`'s own `get_PrimaryKey`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_primary_key(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_primary_key_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IResourceLocation`'s own `get_ResourceType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_resource_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_resource_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_locations-iresourcelocation")]

@@ -113,19 +113,6 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-ringinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingInfo_unity2_raw{use super:: * ;
-pub unsafe fn on_dispose(this:RingInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <RingInfo as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(RingInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-ringinfo")]impl RingInfo{#[doc="`get_God()` overload"]pub fn get_god()->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x242a5d0usize)as*mut u8,crate::app::godunit::GodUnit;
 )}
 }
@@ -211,7 +198,16 @@ inner(this,__mi)}
 (RingInfo)__receiver)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RingInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingInfo_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RingInfo as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(RingInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetRingImpl(crate::app::godunit::GodUnit, crate::app::ringdata::RingData, bool, i32)` overload"]fn set_ring_impl(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData> ,is_play_animation:impl::core::convert::Into<bool> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x242ba00usize)as*mut u8,();
@@ -259,6 +255,11 @@ pub fn play_decision_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn set_animator_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+}
+
+#[cfg(feature="app-ringinfo")]impl RingInfo{#[doc="Direct (non-virtual) call to `RingInfo`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-ringinfo")]impl RingInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

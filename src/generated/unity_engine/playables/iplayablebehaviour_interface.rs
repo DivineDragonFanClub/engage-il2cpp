@@ -14,112 +14,101 @@ mod __types {
 #[cfg(feature = "unity_engine-playables-iplayablebehaviour_interface-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-playables-iplayablebehaviour_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPlayableBehaviour_Interface_unity2_raw{use super:: * ;
-pub unsafe fn on_graph_start(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-playables-iplayablebehaviour_interface")]pub trait IIPlayableBehaviour_InterfaceMethods:IIPlayableBehaviour_Interface{#[doc="`OnGraphStart(crate::unity_engine::playables::playable::Playable)` overload"]fn on_graph_start(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnGraphStart",));
-let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,__mi)}
-pub unsafe fn on_graph_stop(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(playable),__mi)}
+}
+}
+#[doc="`OnGraphStop(crate::unity_engine::playables::playable::Playable)` overload"]fn on_graph_stop(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnGraphStop",));
-let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,__mi)}
-pub unsafe fn on_playable_create(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(playable),__mi)}
+}
+}
+#[doc="`OnPlayableCreate(crate::unity_engine::playables::playable::Playable)` overload"]fn on_playable_create(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnPlayableCreate",));
-let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,__mi)}
-pub unsafe fn on_playable_destroy(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(playable),__mi)}
+}
+}
+#[doc="`OnPlayableDestroy(crate::unity_engine::playables::playable::Playable)` overload"]fn on_playable_destroy(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",3usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnPlayableDestroy",));
-let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,__mi)}
-pub unsafe fn on_behaviour_play(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(playable),__mi)}
+}
+}
+#[doc="`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_play(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnBehaviourPlay",));
-let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,info,__mi)}
-pub unsafe fn on_behaviour_pause(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info),__mi)}
+}
+}
+#[doc="`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_pause(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnBehaviourPause",));
-let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,info,__mi)}
-pub unsafe fn prepare_frame(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info),__mi)}
+}
+}
+#[doc="`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn prepare_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"PrepareFrame",));
-let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,info,__mi)}
-pub unsafe fn process_frame(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,player_data:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info),__mi)}
+}
+}
+#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"ProcessFrame",));
-let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,playable,info,player_data,__mi)}
+__inner(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::convert::Into::into(player_data),__mi)}
 }
-
-#[cfg(feature="unity_engine-playables-iplayablebehaviour_interface")]pub trait IIPlayableBehaviour_InterfaceMethods:IIPlayableBehaviour_Interface{#[doc="`OnGraphStart(crate::unity_engine::playables::playable::Playable)` overload"]fn on_graph_start(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableBehaviour_Interface_unity2_raw::on_graph_start(__receiver, ::core::convert::Into::into(playable), ::core::option::Option::None)}
-}
-#[doc="`OnGraphStop(crate::unity_engine::playables::playable::Playable)` overload"]fn on_graph_stop(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableBehaviour_Interface_unity2_raw::on_graph_stop(__receiver, ::core::convert::Into::into(playable), ::core::option::Option::None)}
-}
-#[doc="`OnPlayableCreate(crate::unity_engine::playables::playable::Playable)` overload"]fn on_playable_create(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableBehaviour_Interface_unity2_raw::on_playable_create(__receiver, ::core::convert::Into::into(playable), ::core::option::Option::None)}
-}
-#[doc="`OnPlayableDestroy(crate::unity_engine::playables::playable::Playable)` overload"]fn on_playable_destroy(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableBehaviour_Interface_unity2_raw::on_playable_destroy(__receiver, ::core::convert::Into::into(playable), ::core::option::Option::None)}
-}
-#[doc="`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_play(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableBehaviour_Interface_unity2_raw::on_behaviour_play(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::option::Option::None)}
-}
-#[doc="`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_pause(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableBehaviour_Interface_unity2_raw::on_behaviour_pause(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::option::Option::None)}
-}
-#[doc="`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn prepare_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableBehaviour_Interface_unity2_raw::prepare_frame(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::option::Option::None)}
-}
-#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <IPlayableBehaviour_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableBehaviour_Interface_unity2_raw::process_frame(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::convert::Into::into(player_data), ::core::option::Option::None)}
 }
 }
 
@@ -133,6 +122,32 @@ pub fn on_behaviour_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn on_behaviour_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn prepare_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="unity_engine-playables-iplayablebehaviour_interface")]impl IPlayableBehaviour_Interface{#[doc="Direct (non-virtual) call to `IPlayableBehaviour_Interface`'s own `OnGraphStart`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_graph_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,)->(){let __mi=Self::on_graph_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPlayableBehaviour_Interface`'s own `OnGraphStop`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_graph_stop(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,)->(){let __mi=Self::on_graph_stop_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPlayableBehaviour_Interface`'s own `OnPlayableCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_playable_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,)->(){let __mi=Self::on_playable_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPlayableBehaviour_Interface`'s own `OnPlayableDestroy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_playable_destroy(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,)->(){let __mi=Self::on_playable_destroy_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPlayableBehaviour_Interface`'s own `OnBehaviourPlay`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_behaviour_play(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,)->(){let __mi=Self::on_behaviour_play_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable,info, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPlayableBehaviour_Interface`'s own `OnBehaviourPause`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_behaviour_pause(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,)->(){let __mi=Self::on_behaviour_pause_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable,info, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPlayableBehaviour_Interface`'s own `PrepareFrame`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn prepare_frame(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,)->(){let __mi=Self::prepare_frame_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable,info, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IPlayableBehaviour_Interface`'s own `ProcessFrame`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_frame(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,player_data:crate::system::object::Object,)->(){let __mi=Self::process_frame_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),playable,info,player_data, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-playables-iplayablebehaviour_interface")]

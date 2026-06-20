@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalsequence/AnimalSequence.md"))]#[::unity2::class(namespace="App",name="AnimalSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::animalsequence::AnimalSequence>)]pub struct AnimalSequence{#[offset(128)]#[rename(name="AnimalList")]pub animal_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="AnimalLoadingCount")]pub animal_loading_count:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalsequence/AnimalSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimalSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for AnimalSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AnimalSequence.Label";
@@ -38,6 +35,9 @@ pub fn load()->Self{Self{value:2}
 pub fn end()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalsequence/AnimalSequence.md"))]#[::unity2::class(namespace="App",name="AnimalSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::animalsequence::AnimalSequence>)]pub struct AnimalSequence{#[offset(128)]#[rename(name="AnimalList")]pub animal_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="AnimalLoadingCount")]pub animal_loading_count:i32,}
 
 }
 
@@ -151,10 +151,10 @@ this}
 #[cfg(feature = "app-animalsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AnimalSequence_Label;
     pub use super::AnimalSequence;
     pub use super::IAnimalSequence;
     pub use super::IAnimalSequenceMethods;
-    pub use super::AnimalSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

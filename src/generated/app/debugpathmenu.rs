@@ -17,44 +17,19 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct DebugPathMenu{#[offset(112)]#[rename(name="m_Setting")]pub m_setting:crate::app::debugpathmenu::DebugPathMenu_Setting,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_PCDriveMenu.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.PCDriveMenu")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_PCDriveMenu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_EntryMenu.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.EntryMenu")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_EntryMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_Path.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.Path")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_Path{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DebugPathMenu_Result{pub value:i32,}
-impl::unity2::ClassIdentity for DebugPathMenu_Result{const NAMESPACE: &'static str="App";
-const NAME: &'static str="DebugPathMenu.Result";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for DebugPathMenu_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl DebugPathMenu_Result{pub fn selected()->Self{Self{value:0}
-}
-pub fn canceled()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_Setting.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.Setting")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_Setting{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_Directory.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.Directory")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_Directory{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu_AssetsMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.CategoriesMenu.AssetsMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugPathMenu_CategoriesMenu_AssetsMenuItem{#[offset(32)]#[rename(name="m_Setting")]pub m_setting:crate::app::debugpathmenu::DebugPathMenu_Setting,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_Directory_EnumResult.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.Directory.EnumResult")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_Directory_EnumResult{#[offset(16)]#[rename(name="Entries")]pub entries:crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData> , #[offset(24)]#[rename(name="ErrorMessage")]pub error_message: ::unity2::Il2CppString,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_ShowError_ErrorMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.ShowError.ErrorMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugPathMenu_ShowError_ErrorMenuItem{#[offset(32)]#[rename(name="m_Error")]pub m_error: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.CategoriesMenu")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_CategoriesMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_EntryData.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.EntryData")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_EntryData{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_Categories.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DebugPathMenu_Categories{pub value:i32,}
@@ -75,27 +50,243 @@ pub fn all()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_ShowError.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.ShowError")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_ShowError{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct DebugPathMenu{#[offset(112)]#[rename(name="m_Setting")]pub m_setting:crate::app::debugpathmenu::DebugPathMenu_Setting,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_EntryMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.EntryMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugPathMenu_EntryMenuItem{#[static_field]#[rename(name="MinWidth")]pub min_width:f32, #[offset(32)]#[rename(name="m_Setting")]pub m_setting:crate::app::debugpathmenu::DebugPathMenu_Setting, #[offset(40)]#[rename(name="m_CurrentPath")]pub m_current_path: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_EntryData")]pub m_entry_data:crate::app::debugpathmenu::DebugPathMenu_EntryData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_ShowError_ErrorMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.ShowError.ErrorMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugPathMenu_ShowError_ErrorMenuItem{#[offset(32)]#[rename(name="m_Error")]pub m_error: ::unity2::Il2CppString,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_Path.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.Path")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_Path{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_EntryData.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.EntryData")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_EntryData{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu_AssetsMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.CategoriesMenu.AssetsMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugPathMenu_CategoriesMenu_AssetsMenuItem{#[offset(32)]#[rename(name="m_Setting")]pub m_setting:crate::app::debugpathmenu::DebugPathMenu_Setting,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DebugPathMenu_Result{pub value:i32,}
+impl::unity2::ClassIdentity for DebugPathMenu_Result{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DebugPathMenu.Result";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DebugPathMenu_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl DebugPathMenu_Result{pub fn selected()->Self{Self{value:0}
+}
+pub fn canceled()->Self{Self{value:1}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu_PCMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.CategoriesMenu.PCMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugPathMenu_CategoriesMenu_PCMenuItem{#[offset(32)]#[rename(name="m_Setting")]pub m_setting:crate::app::debugpathmenu::DebugPathMenu_Setting,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_ShowError.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.ShowError")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_ShowError{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_CategoriesMenu.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.CategoriesMenu")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_CategoriesMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_Setting.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.Setting")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_Setting{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_Directory.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.Directory")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_Directory{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_EntryMenu.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.EntryMenu")]#[parent(crate::system::object::Object)]pub struct DebugPathMenu_EntryMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugpathmenu/DebugPathMenu_EntryMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugPathMenu.EntryMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugPathMenu_EntryMenuItem{#[static_field]#[rename(name="MinWidth")]pub min_width:f32, #[offset(32)]#[rename(name="m_Setting")]pub m_setting:crate::app::debugpathmenu::DebugPathMenu_Setting, #[offset(40)]#[rename(name="m_CurrentPath")]pub m_current_path: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_EntryData")]pub m_entry_data:crate::app::debugpathmenu::DebugPathMenu_EntryData,}
 
 }
 
 #[cfg(feature = "app-debugpathmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_PCDriveMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6c80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting))}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_PCDriveMenuMethods:IDebugPathMenu_PCDriveMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugPathMenu_PCDriveMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d6ef0usize)as*mut u8,();
+(DebugPathMenu_PCDriveMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_PCDriveMenu>IDebugPathMenu_PCDriveMenuMethods for __T{}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_PCDriveMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_PCDriveMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugPathMenu_PCDriveMenu), ::core::stringify!(new),));
+ <Self as IDebugPathMenu_PCDriveMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_Path{#[doc="`NormalizeForDirectory(::unity2::Il2CppString)` overload"]pub fn normalize_for_directory(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d5b70usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
+}
+#[doc="`NormalizeForFile(::unity2::Il2CppString)` overload"]pub fn normalize_for_file(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d5c10usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
+}
+#[doc="`NormalizePathSeparator(::unity2::Il2CppString)` overload"]pub fn normalize_path_separator(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6f00usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
+}
+#[doc="`GetParentDirectory(::unity2::Il2CppString)` overload"]pub fn get_parent_directory(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6be0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
+}
+#[doc="`GetDirectoryName(::unity2::Il2CppString)` overload"]pub fn get_directory_name(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6130usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
+}
+#[doc="`GetFileName(::unity2::Il2CppString)` overload"]pub fn get_file_name(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6240usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_PathMethods:IDebugPathMenu_Path{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugPathMenu_Path as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d6f10usize)as*mut u8,();
+(DebugPathMenu_Path)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_Path>IDebugPathMenu_PathMethods for __T{}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_Path{pub fn normalize_for_directory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn normalize_for_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn normalize_path_separator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_parent_directory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_directory_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_Path{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugPathMenu_Path), ::core::stringify!(new),));
+ <Self as IDebugPathMenu_PathMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods:IDebugPathMenu_CategoriesMenu_AssetsMenuItem{#[doc="`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]fn ctor(self,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>)->(){unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_AssetsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32e20usize)as*mut u8,();
+(DebugPathMenu_CategoriesMenu_AssetsMenuItem)__receiver,(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_AssetsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugPathMenu_CategoriesMenu_AssetsMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(DebugPathMenu_CategoriesMenu_AssetsMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_AssetsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugPathMenu_CategoriesMenu_AssetsMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(DebugPathMenu_CategoriesMenu_AssetsMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_CategoriesMenu_AssetsMenuItem>IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods for __T{}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu_AssetsMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu_AssetsMenuItem{#[doc="Direct (non-virtual) call to `DebugPathMenu_CategoriesMenu_AssetsMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugPathMenu_CategoriesMenu_AssetsMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu_AssetsMenuItem{#[doc="`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]pub fn new(setting:crate::app::debugpathmenu::DebugPathMenu_Setting)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugPathMenu_CategoriesMenu_AssetsMenuItem), ::core::stringify!(new),));
+ <Self as IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods> ::ctor(this,setting);
+this}
+}
+
+#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_Directory_EnumResultMethods:IDebugPathMenu_Directory_EnumResult{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` overload"]fn ctor(self,entries:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData> >)->(){unsafe{let __receiver= <DebugPathMenu_Directory_EnumResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32fc0usize)as*mut u8,();
+(DebugPathMenu_Directory_EnumResult)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)::core::convert::Into::into(entries))}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,error_message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugPathMenu_Directory_EnumResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b33000usize)as*mut u8,();
+(DebugPathMenu_Directory_EnumResult)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(error_message))}
+}
+#[doc="`IsFailure()` overload"]fn is_failure(self,)->bool{unsafe{let __receiver= <DebugPathMenu_Directory_EnumResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b33040usize)as*mut u8,bool;
+(DebugPathMenu_Directory_EnumResult)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_Directory_EnumResult>IDebugPathMenu_Directory_EnumResultMethods for __T{}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_Directory_EnumResult{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_failure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_Directory_EnumResult{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` — overload selector"]pub fn new(entries:crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugPathMenu_Directory_EnumResult), ::core::stringify!(new),));
+ <Self as IDebugPathMenu_Directory_EnumResultMethods> ::ctor(this,entries);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(error_message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugPathMenu_Directory_EnumResult), ::core::stringify!(new_2),));
+ <Self as IDebugPathMenu_Directory_EnumResultMethods> ::ctor_2(this,error_message);
+this}
+}
+
+#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_EntryDataMethods:IDebugPathMenu_EntryData{#[doc="`.ctor(bool, ::unity2::Il2CppString)` overload"]fn ctor(self,is_directory:impl::core::convert::Into<bool> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugPathMenu_EntryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d5c20usize)as*mut u8,();
+(DebugPathMenu_EntryData)__receiver,(bool)::core::convert::Into::into(is_directory),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`get_IsDirectory()` overload"]fn get_is_directory(self,)->bool{unsafe{let __receiver= <DebugPathMenu_EntryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d62d0usize)as*mut u8,bool;
+(DebugPathMenu_EntryData)__receiver)}
+}
+#[doc="`set_IsDirectory(bool)` overload"]fn set_is_directory(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugPathMenu_EntryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d62e0usize)as*mut u8,();
+(DebugPathMenu_EntryData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugPathMenu_EntryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d62f0usize)as*mut u8, ::unity2::Il2CppString;
+(DebugPathMenu_EntryData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugPathMenu_EntryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d6300usize)as*mut u8,();
+(DebugPathMenu_EntryData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_EntryData>IDebugPathMenu_EntryDataMethods for __T{}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_directory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_is_directory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryData{#[doc="`.ctor(bool, ::unity2::Il2CppString)` — overload selector"]pub fn new(is_directory:bool,name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugPathMenu_EntryData), ::core::stringify!(new),));
+ <Self as IDebugPathMenu_EntryDataMethods> ::ctor(this,is_directory,name);
+this}
+}
 
 #[cfg(feature="app-debugpathmenu")]impl DebugPathMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a0fa60usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting))}
@@ -142,51 +333,171 @@ pub fn create_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_PCDriveMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6c80usize)as*mut u8,();
+#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_ShowError_ErrorMenuItemMethods:IDebugPathMenu_ShowError_ErrorMenuItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,error:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b33050usize)as*mut u8,();
+(DebugPathMenu_ShowError_ErrorMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(error))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_ShowError_ErrorMenuItem>IDebugPathMenu_ShowError_ErrorMenuItemMethods for __T{}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError_ErrorMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError_ErrorMenuItem{#[doc="Direct (non-virtual) call to `DebugPathMenu_ShowError_ErrorMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugPathMenu_ShowError_ErrorMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugPathMenu_ShowError_ErrorMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError_ErrorMenuItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(error: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugPathMenu_ShowError_ErrorMenuItem), ::core::stringify!(new),));
+ <Self as IDebugPathMenu_ShowError_ErrorMenuItemMethods> ::ctor(this,error);
+this}
+}
+
+#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_CategoriesMenu_PCMenuItemMethods:IDebugPathMenu_CategoriesMenu_PCMenuItem{#[doc="`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]fn ctor(self,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>)->(){unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_PCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32f00usize)as*mut u8,();
+(DebugPathMenu_CategoriesMenu_PCMenuItem)__receiver,(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_PCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugPathMenu_CategoriesMenu_PCMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(DebugPathMenu_CategoriesMenu_PCMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_PCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugPathMenu_CategoriesMenu_PCMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(DebugPathMenu_CategoriesMenu_PCMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_CategoriesMenu_PCMenuItem>IDebugPathMenu_CategoriesMenu_PCMenuItemMethods for __T{}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu_PCMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu_PCMenuItem{#[doc="Direct (non-virtual) call to `DebugPathMenu_CategoriesMenu_PCMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugPathMenu_CategoriesMenu_PCMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu_PCMenuItem{#[doc="`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]pub fn new(setting:crate::app::debugpathmenu::DebugPathMenu_Setting)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugPathMenu_CategoriesMenu_PCMenuItem), ::core::stringify!(new),));
+ <Self as IDebugPathMenu_CategoriesMenu_PCMenuItemMethods> ::ctor(this,setting);
+this}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6580usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_ShowErrorMethods:IDebugPathMenu_ShowError{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugPathMenu_ShowError as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d7020usize)as*mut u8,();
+(DebugPathMenu_ShowError)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_ShowError>IDebugPathMenu_ShowErrorMethods for __T{}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugPathMenu_ShowError), ::core::stringify!(new),));
+ <Self as IDebugPathMenu_ShowErrorMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d5550usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting))}
 }
 }
 
-#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_PCDriveMenuMethods:IDebugPathMenu_PCDriveMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugPathMenu_PCDriveMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d6ef0usize)as*mut u8,();
-(DebugPathMenu_PCDriveMenu)__receiver)}
+#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_CategoriesMenuMethods:IDebugPathMenu_CategoriesMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugPathMenu_CategoriesMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d5660usize)as*mut u8,();
+(DebugPathMenu_CategoriesMenu)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_PCDriveMenu>IDebugPathMenu_PCDriveMenuMethods for __T{}
+#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_CategoriesMenu>IDebugPathMenu_CategoriesMenuMethods for __T{}
 
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_PCDriveMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_PCDriveMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_PCDriveMenu), ::core::stringify!(new),));
- <Self as IDebugPathMenu_PCDriveMenuMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting> ,parent_path:impl::core::convert::Into< ::unity2::Il2CppString> ,is_root:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6310usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting),(::unity2::Il2CppString)::core::convert::Into::into(parent_path),(bool)::core::convert::Into::into(is_root))}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_EntryMenuMethods:IDebugPathMenu_EntryMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugPathMenu_EntryMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d66e0usize)as*mut u8,();
-(DebugPathMenu_EntryMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_EntryMenu>IDebugPathMenu_EntryMenuMethods for __T{}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_EntryMenu), ::core::stringify!(new),));
- <Self as IDebugPathMenu_EntryMenuMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(DebugPathMenu_CategoriesMenu), ::core::stringify!(new),));
+ <Self as IDebugPathMenu_CategoriesMenuMethods> ::ctor(this,);
 this}
 }
 
@@ -310,211 +621,28 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_Directory_EnumResultMethods:IDebugPathMenu_Directory_EnumResult{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` overload"]fn ctor(self,entries:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData> >)->(){unsafe{let __receiver= <DebugPathMenu_Directory_EnumResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32fc0usize)as*mut u8,();
-(DebugPathMenu_Directory_EnumResult)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)::core::convert::Into::into(entries))}
-}
-#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,error_message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugPathMenu_Directory_EnumResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b33000usize)as*mut u8,();
-(DebugPathMenu_Directory_EnumResult)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(error_message))}
-}
-#[doc="`IsFailure()` overload"]fn is_failure(self,)->bool{unsafe{let __receiver= <DebugPathMenu_Directory_EnumResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b33040usize)as*mut u8,bool;
-(DebugPathMenu_Directory_EnumResult)__receiver)}
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting> ,parent_path:impl::core::convert::Into< ::unity2::Il2CppString> ,is_root:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6310usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting),(::unity2::Il2CppString)::core::convert::Into::into(parent_path),(bool)::core::convert::Into::into(is_root))}
 }
 }
 
-#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_Directory_EnumResult>IDebugPathMenu_Directory_EnumResultMethods for __T{}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_Directory_EnumResult{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_failure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_Directory_EnumResult{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)` — overload selector"]pub fn new(entries:crate::system::collections::generic::list_1::List_1<crate::app::debugpathmenu::DebugPathMenu_EntryData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_Directory_EnumResult), ::core::stringify!(new),));
- <Self as IDebugPathMenu_Directory_EnumResultMethods> ::ctor(this,entries);
-this}
-#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(error_message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_Directory_EnumResult), ::core::stringify!(new_2),));
- <Self as IDebugPathMenu_Directory_EnumResultMethods> ::ctor_2(this,error_message);
-this}
-}
-
-#[cfg(feature="app-debugpathmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:DebugPathMenu_ShowError_ErrorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:DebugPathMenu_ShowError_ErrorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:DebugPathMenu_ShowError_ErrorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(DebugPathMenu_ShowError_ErrorMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_ShowError_ErrorMenuItemMethods:IDebugPathMenu_ShowError_ErrorMenuItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,error:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b33050usize)as*mut u8,();
-(DebugPathMenu_ShowError_ErrorMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(error))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_ShowError_ErrorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_ShowError_ErrorMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_EntryMenuMethods:IDebugPathMenu_EntryMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugPathMenu_EntryMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d66e0usize)as*mut u8,();
+(DebugPathMenu_EntryMenu)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_ShowError_ErrorMenuItem>IDebugPathMenu_ShowError_ErrorMenuItemMethods for __T{}
+#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_EntryMenu>IDebugPathMenu_EntryMenuMethods for __T{}
 
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError_ErrorMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError_ErrorMenuItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(error: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_ShowError_ErrorMenuItem), ::core::stringify!(new),));
- <Self as IDebugPathMenu_ShowError_ErrorMenuItemMethods> ::ctor(this,error);
-this}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d5550usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting))}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_CategoriesMenuMethods:IDebugPathMenu_CategoriesMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugPathMenu_CategoriesMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d5660usize)as*mut u8,();
-(DebugPathMenu_CategoriesMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_CategoriesMenu>IDebugPathMenu_CategoriesMenuMethods for __T{}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_CategoriesMenu), ::core::stringify!(new),));
- <Self as IDebugPathMenu_CategoriesMenuMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(DebugPathMenu_EntryMenu), ::core::stringify!(new),));
+ <Self as IDebugPathMenu_EntryMenuMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6580usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_ShowErrorMethods:IDebugPathMenu_ShowError{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugPathMenu_ShowError as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d7020usize)as*mut u8,();
-(DebugPathMenu_ShowError)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_ShowError>IDebugPathMenu_ShowErrorMethods for __T{}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_ShowError{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_ShowError), ::core::stringify!(new),));
- <Self as IDebugPathMenu_ShowErrorMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugpathmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugPathMenu_EntryMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:DebugPathMenu_EntryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help(this:DebugPathMenu_EntryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
-let inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_width0(this:DebugPathMenu_EntryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
-let inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:DebugPathMenu_EntryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn x_call(this:DebugPathMenu_EntryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"XCall",));
-let inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:DebugPathMenu_EntryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_EntryMenuItemMethods:IDebugPathMenu_EntryMenuItem{#[doc="`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString, crate::app::debugpathmenu::DebugPathMenu_EntryData)` overload"]fn ctor(self,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting> ,current_path:impl::core::convert::Into< ::unity2::Il2CppString> ,entry_data:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_EntryData>)->(){unsafe{let __receiver= <DebugPathMenu_EntryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -522,22 +650,76 @@ inner(this,__mi)}
 (DebugPathMenu_EntryMenuItem)__receiver,(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting),(::unity2::Il2CppString)::core::convert::Into::into(current_path),(crate::app::debugpathmenu::DebugPathMenu_EntryData)::core::convert::Into::into(entry_data))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugPathMenu_EntryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_EntryMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugPathMenu_EntryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_EntryMenuItem_unity2_raw::get_help(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
+let __inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugPathMenu_EntryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_EntryMenuItem_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
+let __inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_EntryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_EntryMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_EntryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_EntryMenuItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"XCall",));
+let __inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_EntryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_EntryMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <DebugPathMenu_EntryMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(DebugPathMenu_EntryMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Decide()` overload"]fn decide(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_EntryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19d6a20usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
@@ -572,6 +754,26 @@ pub fn move_to_sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 }
 
+#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryMenuItem{#[doc="Direct (non-virtual) call to `DebugPathMenu_EntryMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugPathMenu_EntryMenuItem`'s own `GetHelp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugPathMenu_EntryMenuItem`'s own `GetColumnWidth0`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_width0(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_column_width0_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugPathMenu_EntryMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugPathMenu_EntryMenuItem`'s own `XCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn x_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::x_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugPathMenu_EntryMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryMenuItem{#[doc="`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting, ::unity2::Il2CppString, crate::app::debugpathmenu::DebugPathMenu_EntryData)` — overload selector"]pub fn new(setting:crate::app::debugpathmenu::DebugPathMenu_Setting,current_path: ::unity2::Il2CppString,entry_data:crate::app::debugpathmenu::DebugPathMenu_EntryData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DebugPathMenu_EntryMenuItem), ::core::stringify!(new),));
@@ -579,233 +781,53 @@ pub fn cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_Path{#[doc="`NormalizeForDirectory(::unity2::Il2CppString)` overload"]pub fn normalize_for_directory(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d5b70usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
-}
-#[doc="`NormalizeForFile(::unity2::Il2CppString)` overload"]pub fn normalize_for_file(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d5c10usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
-}
-#[doc="`NormalizePathSeparator(::unity2::Il2CppString)` overload"]pub fn normalize_path_separator(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6f00usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
-}
-#[doc="`GetParentDirectory(::unity2::Il2CppString)` overload"]pub fn get_parent_directory(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6be0usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
-}
-#[doc="`GetDirectoryName(::unity2::Il2CppString)` overload"]pub fn get_directory_name(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6130usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
-}
-#[doc="`GetFileName(::unity2::Il2CppString)` overload"]pub fn get_file_name(original_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d6240usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_PathMethods:IDebugPathMenu_Path{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugPathMenu_Path as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d6f10usize)as*mut u8,();
-(DebugPathMenu_Path)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_Path>IDebugPathMenu_PathMethods for __T{}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_Path{pub fn normalize_for_directory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn normalize_for_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn normalize_path_separator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_parent_directory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_directory_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_Path{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_Path), ::core::stringify!(new),));
- <Self as IDebugPathMenu_PathMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_EntryDataMethods:IDebugPathMenu_EntryData{#[doc="`.ctor(bool, ::unity2::Il2CppString)` overload"]fn ctor(self,is_directory:impl::core::convert::Into<bool> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugPathMenu_EntryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d5c20usize)as*mut u8,();
-(DebugPathMenu_EntryData)__receiver,(bool)::core::convert::Into::into(is_directory),(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-#[doc="`get_IsDirectory()` overload"]fn get_is_directory(self,)->bool{unsafe{let __receiver= <DebugPathMenu_EntryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d62d0usize)as*mut u8,bool;
-(DebugPathMenu_EntryData)__receiver)}
-}
-#[doc="`set_IsDirectory(bool)` overload"]fn set_is_directory(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugPathMenu_EntryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d62e0usize)as*mut u8,();
-(DebugPathMenu_EntryData)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugPathMenu_EntryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d62f0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugPathMenu_EntryData)__receiver)}
-}
-#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugPathMenu_EntryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d6300usize)as*mut u8,();
-(DebugPathMenu_EntryData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_EntryData>IDebugPathMenu_EntryDataMethods for __T{}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_is_directory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_is_directory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_EntryData{#[doc="`.ctor(bool, ::unity2::Il2CppString)` — overload selector"]pub fn new(is_directory:bool,name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_EntryData), ::core::stringify!(new),));
- <Self as IDebugPathMenu_EntryDataMethods> ::ctor(this,is_directory,name);
-this}
-}
-
-#[cfg(feature="app-debugpathmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:DebugPathMenu_CategoriesMenu_AssetsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DebugPathMenu_CategoriesMenu_AssetsMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(DebugPathMenu_CategoriesMenu_AssetsMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:DebugPathMenu_CategoriesMenu_AssetsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <DebugPathMenu_CategoriesMenu_AssetsMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(DebugPathMenu_CategoriesMenu_AssetsMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods:IDebugPathMenu_CategoriesMenu_AssetsMenuItem{#[doc="`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]fn ctor(self,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>)->(){unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_AssetsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32e20usize)as*mut u8,();
-(DebugPathMenu_CategoriesMenu_AssetsMenuItem)__receiver,(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_AssetsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_AssetsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_CategoriesMenu_AssetsMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_CategoriesMenu_AssetsMenuItem>IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods for __T{}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu_AssetsMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu_AssetsMenuItem{#[doc="`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]pub fn new(setting:crate::app::debugpathmenu::DebugPathMenu_Setting)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_CategoriesMenu_AssetsMenuItem), ::core::stringify!(new),));
- <Self as IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods> ::ctor(this,setting);
-this}
-}
-
-#[cfg(feature="app-debugpathmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:DebugPathMenu_CategoriesMenu_PCMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DebugPathMenu_CategoriesMenu_PCMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(DebugPathMenu_CategoriesMenu_PCMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:DebugPathMenu_CategoriesMenu_PCMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <DebugPathMenu_CategoriesMenu_PCMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(DebugPathMenu_CategoriesMenu_PCMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugpathmenu")]pub trait IDebugPathMenu_CategoriesMenu_PCMenuItemMethods:IDebugPathMenu_CategoriesMenu_PCMenuItem{#[doc="`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` overload"]fn ctor(self,setting:impl::core::convert::Into<crate::app::debugpathmenu::DebugPathMenu_Setting>)->(){unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_PCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32f00usize)as*mut u8,();
-(DebugPathMenu_CategoriesMenu_PCMenuItem)__receiver,(crate::app::debugpathmenu::DebugPathMenu_Setting)::core::convert::Into::into(setting))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_PCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugPathMenu_CategoriesMenu_PCMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugPathMenu_CategoriesMenu_PCMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl<__T:IDebugPathMenu_CategoriesMenu_PCMenuItem>IDebugPathMenu_CategoriesMenu_PCMenuItemMethods for __T{}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu_PCMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugpathmenu")]impl DebugPathMenu_CategoriesMenu_PCMenuItem{#[doc="`.ctor(crate::app::debugpathmenu::DebugPathMenu_Setting)` — overload selector"]pub fn new(setting:crate::app::debugpathmenu::DebugPathMenu_Setting)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugPathMenu_CategoriesMenu_PCMenuItem), ::core::stringify!(new),));
- <Self as IDebugPathMenu_CategoriesMenu_PCMenuItemMethods> ::ctor(this,setting);
-this}
-}
-
 #[cfg(feature = "app-debugpathmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugPathMenu;
-    pub use super::IDebugPathMenu;
-    pub use super::IDebugPathMenuMethods;
     pub use super::DebugPathMenu_PCDriveMenu;
     pub use super::IDebugPathMenu_PCDriveMenu;
     pub use super::IDebugPathMenu_PCDriveMenuMethods;
-    pub use super::DebugPathMenu_EntryMenu;
-    pub use super::IDebugPathMenu_EntryMenu;
-    pub use super::IDebugPathMenu_EntryMenuMethods;
+    pub use super::DebugPathMenu_Path;
+    pub use super::IDebugPathMenu_Path;
+    pub use super::IDebugPathMenu_PathMethods;
+    pub use super::DebugPathMenu_CategoriesMenu_AssetsMenuItem;
+    pub use super::IDebugPathMenu_CategoriesMenu_AssetsMenuItem;
+    pub use super::IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods;
+    pub use super::DebugPathMenu_Directory_EnumResult;
+    pub use super::IDebugPathMenu_Directory_EnumResult;
+    pub use super::IDebugPathMenu_Directory_EnumResultMethods;
+    pub use super::DebugPathMenu_EntryData;
+    pub use super::IDebugPathMenu_EntryData;
+    pub use super::IDebugPathMenu_EntryDataMethods;
+    pub use super::DebugPathMenu_Categories;
+    pub use super::DebugPathMenu;
+    pub use super::IDebugPathMenu;
+    pub use super::IDebugPathMenuMethods;
+    pub use super::DebugPathMenu_ShowError_ErrorMenuItem;
+    pub use super::IDebugPathMenu_ShowError_ErrorMenuItem;
+    pub use super::IDebugPathMenu_ShowError_ErrorMenuItemMethods;
     pub use super::DebugPathMenu_Result;
+    pub use super::DebugPathMenu_CategoriesMenu_PCMenuItem;
+    pub use super::IDebugPathMenu_CategoriesMenu_PCMenuItem;
+    pub use super::IDebugPathMenu_CategoriesMenu_PCMenuItemMethods;
+    pub use super::DebugPathMenu_ShowError;
+    pub use super::IDebugPathMenu_ShowError;
+    pub use super::IDebugPathMenu_ShowErrorMethods;
+    pub use super::DebugPathMenu_CategoriesMenu;
+    pub use super::IDebugPathMenu_CategoriesMenu;
+    pub use super::IDebugPathMenu_CategoriesMenuMethods;
     pub use super::DebugPathMenu_Setting;
     pub use super::IDebugPathMenu_Setting;
     pub use super::IDebugPathMenu_SettingMethods;
     pub use super::DebugPathMenu_Directory;
     pub use super::IDebugPathMenu_Directory;
     pub use super::IDebugPathMenu_DirectoryMethods;
-    pub use super::DebugPathMenu_Directory_EnumResult;
-    pub use super::IDebugPathMenu_Directory_EnumResult;
-    pub use super::IDebugPathMenu_Directory_EnumResultMethods;
-    pub use super::DebugPathMenu_ShowError_ErrorMenuItem;
-    pub use super::IDebugPathMenu_ShowError_ErrorMenuItem;
-    pub use super::IDebugPathMenu_ShowError_ErrorMenuItemMethods;
-    pub use super::DebugPathMenu_CategoriesMenu;
-    pub use super::IDebugPathMenu_CategoriesMenu;
-    pub use super::IDebugPathMenu_CategoriesMenuMethods;
-    pub use super::DebugPathMenu_Categories;
-    pub use super::DebugPathMenu_ShowError;
-    pub use super::IDebugPathMenu_ShowError;
-    pub use super::IDebugPathMenu_ShowErrorMethods;
+    pub use super::DebugPathMenu_EntryMenu;
+    pub use super::IDebugPathMenu_EntryMenu;
+    pub use super::IDebugPathMenu_EntryMenuMethods;
     pub use super::DebugPathMenu_EntryMenuItem;
     pub use super::IDebugPathMenu_EntryMenuItem;
     pub use super::IDebugPathMenu_EntryMenuItemMethods;
-    pub use super::DebugPathMenu_Path;
-    pub use super::IDebugPathMenu_Path;
-    pub use super::IDebugPathMenu_PathMethods;
-    pub use super::DebugPathMenu_EntryData;
-    pub use super::IDebugPathMenu_EntryData;
-    pub use super::IDebugPathMenu_EntryDataMethods;
-    pub use super::DebugPathMenu_CategoriesMenu_AssetsMenuItem;
-    pub use super::IDebugPathMenu_CategoriesMenu_AssetsMenuItem;
-    pub use super::IDebugPathMenu_CategoriesMenu_AssetsMenuItemMethods;
-    pub use super::DebugPathMenu_CategoriesMenu_PCMenuItem;
-    pub use super::IDebugPathMenu_CategoriesMenu_PCMenuItem;
-    pub use super::IDebugPathMenu_CategoriesMenu_PCMenuItemMethods;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;

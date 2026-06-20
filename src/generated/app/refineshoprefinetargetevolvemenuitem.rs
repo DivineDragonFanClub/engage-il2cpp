@@ -20,64 +20,57 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-refineshoprefinetargetevolvemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-refineshoprefinetargetevolvemenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopRefineTargetEvolveMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_m_target_unit_item(this:RefineShopRefineTargetEvolveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-refineshoprefinetargetevolvemenuitem")]pub trait IRefineShopRefineTargetEvolveMenuItemMethods:IRefineShopRefineTargetEvolveMenuItem{#[doc="`get_m_TargetUnitItem()` overload"]fn get_m_target_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <RefineShopRefineTargetEvolveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",27usize,__vt.len(), <RefineShopRefineTargetEvolveMenuItem as::unity2::ClassIdentity> ::NAME,"get_m_TargetUnitItem",));
-let inner:extern "C" fn(RefineShopRefineTargetEvolveMenuItem, ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RefineShopRefineTargetEvolveMenuItem, ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_m_target_unit_item(this:RefineShopRefineTargetEvolveMenuItem,value:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_m_TargetUnitItem(crate::app::unititem::UnitItem)` overload"]fn set_m_target_unit_item(self,value:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <RefineShopRefineTargetEvolveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",28usize,__vt.len(), <RefineShopRefineTargetEvolveMenuItem as::unity2::ClassIdentity> ::NAME,"set_m_TargetUnitItem",));
-let inner:extern "C" fn(RefineShopRefineTargetEvolveMenuItem,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RefineShopRefineTargetEvolveMenuItem,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn on_select(this:RefineShopRefineTargetEvolveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <RefineShopRefineTargetEvolveMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(RefineShopRefineTargetEvolveMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:RefineShopRefineTargetEvolveMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <RefineShopRefineTargetEvolveMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RefineShopRefineTargetEvolveMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="app-refineshoprefinetargetevolvemenuitem")]pub trait IRefineShopRefineTargetEvolveMenuItemMethods:IRefineShopRefineTargetEvolveMenuItem{#[doc="`get_m_TargetUnitItem()` overload"]fn get_m_target_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <RefineShopRefineTargetEvolveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineShopRefineTargetEvolveMenuItem_unity2_raw::get_m_target_unit_item(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_m_TargetUnitItem(crate::app::unititem::UnitItem)` overload"]fn set_m_target_unit_item(self,value:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <RefineShopRefineTargetEvolveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineShopRefineTargetEvolveMenuItem_unity2_raw::set_m_target_unit_item(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::app::unititem::UnitItem, i32, crate::app::itemevolvedata::ItemEvolveData, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler)` overload"]fn ctor(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,evolve_index:impl::core::convert::Into<i32> ,evolve_data:impl::core::convert::Into<crate::app::itemevolvedata::ItemEvolveData> ,select_event_handler:impl::core::convert::Into<crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler>)->(){unsafe{let __receiver= <RefineShopRefineTargetEvolveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x296a9d0usize)as*mut u8,();
 (RefineShopRefineTargetEvolveMenuItem)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(i32)::core::convert::Into::into(evolve_index),(crate::app::itemevolvedata::ItemEvolveData)::core::convert::Into::into(evolve_data),(crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler)::core::convert::Into::into(decide_event_handler))}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RefineShopRefineTargetEvolveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineShopRefineTargetEvolveMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RefineShopRefineTargetEvolveMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(RefineShopRefineTargetEvolveMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineShopRefineTargetEvolveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineShopRefineTargetEvolveMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RefineShopRefineTargetEvolveMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RefineShopRefineTargetEvolveMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -88,6 +81,20 @@ pub fn set_m_target_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodI
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-refineshoprefinetargetevolvemenuitem")]impl RefineShopRefineTargetEvolveMenuItem{#[doc="Direct (non-virtual) call to `RefineShopRefineTargetEvolveMenuItem`'s own `get_m_TargetUnitItem`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_m_target_unit_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::unititem::UnitItem{let __mi=Self::get_m_target_unit_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RefineShopRefineTargetEvolveMenuItem`'s own `set_m_TargetUnitItem`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_m_target_unit_item(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::unititem::UnitItem,)->(){let __mi=Self::set_m_target_unit_item_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RefineShopRefineTargetEvolveMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RefineShopRefineTargetEvolveMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-refineshoprefinetargetevolvemenuitem")]impl RefineShopRefineTargetEvolveMenuItem{#[doc="`.ctor(crate::app::unititem::UnitItem, i32, crate::app::itemevolvedata::ItemEvolveData, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler)` — overload selector"]pub fn new(unit_item:crate::app::unititem::UnitItem,evolve_index:i32,evolve_data:crate::app::itemevolvedata::ItemEvolveData,select_event_handler:crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler,decide_event_handler:crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToEvolveEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

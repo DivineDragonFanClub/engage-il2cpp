@@ -18,34 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-talk3_d-talktagfinish-types")]
 pub use __types::*;
 
-#[cfg(feature="app-talk3_d-talktagfinish")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkTagFinish_unity2_raw{use super:: * ;
-pub unsafe fn get_result(this:TalkTagFinish,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-talk3_d-talktagfinish")]pub trait ITalkTagFinishMethods:ITalkTagFinish{#[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagFinish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <TalkTagFinish as::unity2::ClassIdentity> ::NAME,"GetResult",));
-let inner:extern "C" fn(TalkTagFinish, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TalkTagFinish, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn need_fade_wait(this:TalkTagFinish,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`NeedFadeWait()` overload"]fn need_fade_wait(self,)->bool{unsafe{let __receiver= <TalkTagFinish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <TalkTagFinish as::unity2::ClassIdentity> ::NAME,"NeedFadeWait",));
-let inner:extern "C" fn(TalkTagFinish, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TalkTagFinish, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-talk3_d-talktagfinish")]pub trait ITalkTagFinishMethods:ITalkTagFinish{#[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagFinish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkTagFinish_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
-}
-#[doc="`NeedFadeWait()` overload"]fn need_fade_wait(self,)->bool{unsafe{let __receiver= <TalkTagFinish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkTagFinish_unity2_raw::need_fade_wait(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagFinish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9600usize)as*mut u8,();
@@ -58,6 +53,14 @@ __TalkTagFinish_unity2_raw::need_fade_wait(__receiver, ::core::option::Option::N
 #[cfg(feature="app-talk3_d-talktagfinish")]impl TalkTagFinish{pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn need_fade_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-talk3_d-talktagfinish")]impl TalkTagFinish{#[doc="Direct (non-virtual) call to `TalkTagFinish`'s own `GetResult`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_result(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::talk3_d::talktag::TalkTag_Result{let __mi=Self::get_result_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TalkTagFinish`'s own `NeedFadeWait`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn need_fade_wait(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::need_fade_wait_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-talk3_d-talktagfinish")]impl TalkTagFinish{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

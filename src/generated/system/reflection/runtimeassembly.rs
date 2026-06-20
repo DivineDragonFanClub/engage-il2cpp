@@ -18,21 +18,17 @@ use crate::system::reflection::assembly::{Assembly,IAssembly}
 #[cfg(feature = "system-reflection-runtimeassembly-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-runtimeassembly")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeAssembly_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:RuntimeAssembly,copied_name:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-reflection-runtimeassembly")]pub trait IRuntimeAssemblyMethods:IRuntimeAssembly{#[doc="`GetName(bool)` overload"]fn get_name(self,copied_name:impl::core::convert::Into<bool>)->crate::system::reflection::assemblyname::AssemblyName{unsafe{let __receiver= <RuntimeAssembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",18usize,__vt.len(), <RuntimeAssembly as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RuntimeAssembly,bool, ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RuntimeAssembly,bool, ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,copied_name,__mi)}
+__inner(__receiver, ::core::convert::Into::into(copied_name),__mi)}
 }
-
-#[cfg(feature="system-reflection-runtimeassembly")]pub trait IRuntimeAssemblyMethods:IRuntimeAssembly{#[doc="`GetName(bool)` overload"]fn get_name(self,copied_name:impl::core::convert::Into<bool>)->crate::system::reflection::assemblyname::AssemblyName{unsafe{let __receiver= <RuntimeAssembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeAssembly_unity2_raw::get_name(__receiver, ::core::convert::Into::into(copied_name), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeAssembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd3940usize)as*mut u8,();
@@ -44,6 +40,11 @@ __RuntimeAssembly_unity2_raw::get_name(__receiver, ::core::convert::Into::into(c
 
 #[cfg(feature="system-reflection-runtimeassembly")]impl RuntimeAssembly{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="system-reflection-runtimeassembly")]impl RuntimeAssembly{#[doc="Direct (non-virtual) call to `RuntimeAssembly`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,copied_name:bool,)->crate::system::reflection::assemblyname::AssemblyName{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),copied_name, ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-reflection-runtimeassembly")]impl RuntimeAssembly{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

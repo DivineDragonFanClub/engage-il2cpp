@@ -16,29 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-guistyle-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-guistyle")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GUIStyle_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:GUIStyle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <GUIStyle as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(GUIStyle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn to_string(this:GUIStyle,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <GUIStyle as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(GUIStyle, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-guistyle")]impl GUIStyle{#[doc="`Internal_Create(crate::unity_engine::guistyle::GUIStyle)` overload"]pub fn internal_create(self_:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c4f640usize)as*mut u8, ::unity2::IntPtr;
 (crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(self_))}
 }
@@ -187,7 +164,16 @@ __out_0.assume_init()}
 (GUIStyle)__receiver,(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(other))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <GUIStyle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GUIStyle_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <GUIStyle as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(GUIStyle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GUIStyle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c3de80usize)as*mut u8, ::unity2::Il2CppString;
@@ -257,7 +243,16 @@ let mut __out_1= ::core::mem::MaybeUninit:: <f32> ::uninit();
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GUIStyle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GUIStyle_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <GUIStyle as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(GUIStyle, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_contentOffset_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]fn set_content_offset_injected(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <GUIStyle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
@@ -362,6 +357,14 @@ pub fn internal_calc_size_injected_method_info()-> & 'static::unity2::il2cpp::Me
 pub fn internal_calc_size_with_constraints_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
 pub fn internal_calc_min_max_width_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
 pub fn set_mouse_tooltip_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+}
+
+#[cfg(feature="unity_engine-guistyle")]impl GUIStyle{#[doc="Direct (non-virtual) call to `GUIStyle`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GUIStyle`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-guistyle")]impl GUIStyle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

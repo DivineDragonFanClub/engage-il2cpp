@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindsequence/RewindSequence.md"))]#[::unity2::class(namespace="App",name="RewindSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::rewindsequence::RewindSequence>)]pub struct RewindSequence{#[static_field]#[rename(name="EffectForStartPath")]pub effect_for_start_path: ::unity2::Il2CppString, #[static_field]#[rename(name="EffectForStart_Sec")]pub effect_for_start_sec:f32, #[static_field]#[rename(name="EffectUnitForStart_Sec")]pub effect_unit_for_start_sec:f32, #[static_field]#[rename(name="EffectForExecuteRewind_Sec")]pub effect_for_execute_rewind_sec:f32, #[static_field]#[rename(name="EffectForCancelRewind_Sec")]pub effect_for_cancel_rewind_sec:f32, #[offset(114)]#[rename(name="m_IsRewindToPhaseBegin")]pub m_is_rewind_to_phase_begin:bool, #[offset(116)]#[rename(name="m_WaitTime")]pub m_wait_time:f32, #[offset(120)]#[rename(name="m_EffectForStartObject")]pub m_effect_for_start_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_CursorInitX")]pub m_cursor_init_x:i32, #[offset(132)]#[rename(name="m_CursorInitZ")]pub m_cursor_init_z:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindsequence/RewindSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RewindSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for RewindSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RewindSequence.Label";
@@ -41,33 +38,13 @@ pub fn end()->Self{Self{value:4}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindsequence/RewindSequence.md"))]#[::unity2::class(namespace="App",name="RewindSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::rewindsequence::RewindSequence>)]pub struct RewindSequence{#[static_field]#[rename(name="EffectForStartPath")]pub effect_for_start_path: ::unity2::Il2CppString, #[static_field]#[rename(name="EffectForStart_Sec")]pub effect_for_start_sec:f32, #[static_field]#[rename(name="EffectUnitForStart_Sec")]pub effect_unit_for_start_sec:f32, #[static_field]#[rename(name="EffectForExecuteRewind_Sec")]pub effect_for_execute_rewind_sec:f32, #[static_field]#[rename(name="EffectForCancelRewind_Sec")]pub effect_for_cancel_rewind_sec:f32, #[offset(114)]#[rename(name="m_IsRewindToPhaseBegin")]pub m_is_rewind_to_phase_begin:bool, #[offset(116)]#[rename(name="m_WaitTime")]pub m_wait_time:f32, #[offset(120)]#[rename(name="m_EffectForStartObject")]pub m_effect_for_start_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_CursorInitX")]pub m_cursor_init_x:i32, #[offset(132)]#[rename(name="m_CursorInitZ")]pub m_cursor_init_z:i32,}
+
 }
 
 #[cfg(feature = "app-rewindsequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-rewindsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RewindSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:RewindSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <RewindSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(RewindSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:RewindSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <RewindSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(RewindSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-rewindsequence")]impl RewindSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2416030usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -79,10 +56,28 @@ inner(this,__mi)}
 (RewindSequence)__receiver)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RewindSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RewindSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <RewindSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(RewindSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RewindSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RewindSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RewindSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(RewindSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`LoadResource()` overload"]fn load_resource(self,)->(){unsafe{let __receiver= <RewindSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2414470usize)as*mut u8,();
@@ -184,6 +179,14 @@ pub fn jump_to_cancel_rewind_method_info()-> & 'static::unity2::il2cpp::MethodIn
 pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
 }
 
+#[cfg(feature="app-rewindsequence")]impl RewindSequence{#[doc="Direct (non-virtual) call to `RewindSequence`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RewindSequence`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-rewindsequence")]impl RewindSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RewindSequence), ::core::stringify!(new),));
@@ -194,10 +197,10 @@ this}
 #[cfg(feature = "app-rewindsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RewindSequence_Label;
     pub use super::RewindSequence;
     pub use super::IRewindSequence;
     pub use super::IRewindSequenceMethods;
-    pub use super::RewindSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -16,29 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-versusserverdata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-versusserverdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VersusServerData_unity2_raw{use super:: * ;
-pub unsafe fn serialize(this:VersusServerData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <VersusServerData as::unity2::ClassIdentity> ::NAME,"Serialize",));
-let inner:extern "C" fn(VersusServerData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn deserialize(this:VersusServerData,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <VersusServerData as::unity2::ClassIdentity> ::NAME,"Deserialize",));
-let inner:extern "C" fn(VersusServerData, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-versusserverdata")]pub trait IVersusServerDataMethods:IVersusServerData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b49e0usize)as*mut u8,();
 (VersusServerData)__receiver)}
@@ -52,10 +29,28 @@ inner(this,__mi)}
 (VersusServerData)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(bin))}
 }
 #[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VersusServerData_unity2_raw::serialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VersusServerData as::unity2::ClassIdentity> ::NAME,"Serialize",));
+let __inner:extern "C" fn(VersusServerData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Deserialize()` overload"]fn deserialize(self,)->bool{unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VersusServerData_unity2_raw::deserialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <VersusServerData as::unity2::ClassIdentity> ::NAME,"Deserialize",));
+let __inner:extern "C" fn(VersusServerData, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Buffer()` overload"]fn get_buffer(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <VersusServerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b81a0usize)as*mut u8, ::unity2::Array<u8> ;
@@ -81,6 +76,14 @@ pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn get_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn get_is_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-versusserverdata")]impl VersusServerData{#[doc="Direct (non-virtual) call to `VersusServerData`'s own `Serialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `VersusServerData`'s own `Deserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-versusserverdata")]impl VersusServerData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

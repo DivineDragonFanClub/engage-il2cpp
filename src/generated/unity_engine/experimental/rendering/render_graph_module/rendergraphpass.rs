@@ -16,39 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphpass-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphpass")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RenderGraphPass_unity2_raw{use super:: * ;
-pub unsafe fn execute(this:RenderGraphPass,render_graph_context:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <RenderGraphPass as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(RenderGraphPass,crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,render_graph_context,__mi)}
-pub unsafe fn release(this:RenderGraphPass,pool:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <RenderGraphPass as::unity2::ClassIdentity> ::NAME,"Release",));
-let inner:extern "C" fn(RenderGraphPass,crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,pool,__mi)}
-pub unsafe fn has_render_func(this:RenderGraphPass,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <RenderGraphPass as::unity2::ClassIdentity> ::NAME,"HasRenderFunc",));
-let inner:extern "C" fn(RenderGraphPass, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphpass")]pub trait IRenderGraphPassMethods:IRenderGraphPass{fn get_execute_delegate<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,)->crate::unity_engine::experimental::rendering::render_graph_module::renderfunc_1::RenderFunc_1<M0>{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<RenderGraphPass as::unity2::ClassIdentity> ::class(),"GetExecuteDelegate",0,)}
 );
  #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
@@ -71,13 +38,40 @@ let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
 __f(__receiver, ::core::option::Option::Some(__mi_opaque),)}
 }
 #[doc="`Execute(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext)` overload"]fn execute(self,render_graph_context:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext>)->(){unsafe{let __receiver= <RenderGraphPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RenderGraphPass_unity2_raw::execute(__receiver, ::core::convert::Into::into(render_graph_context), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RenderGraphPass as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(RenderGraphPass,crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(render_graph_context),__mi)}
+}
 }
 #[doc="`Release(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool)` overload"]fn release(self,pool:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool>)->(){unsafe{let __receiver= <RenderGraphPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RenderGraphPass_unity2_raw::release(__receiver, ::core::convert::Into::into(pool), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RenderGraphPass as::unity2::ClassIdentity> ::NAME,"Release",));
+let __inner:extern "C" fn(RenderGraphPass,crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(pool),__mi)}
+}
 }
 #[doc="`HasRenderFunc()` overload"]fn has_render_func(self,)->bool{unsafe{let __receiver= <RenderGraphPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RenderGraphPass_unity2_raw::has_render_func(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <RenderGraphPass as::unity2::ClassIdentity> ::NAME,"HasRenderFunc",));
+let __inner:extern "C" fn(RenderGraphPass, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RenderGraphPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33db750usize)as*mut u8, ::unity2::Il2CppString;
@@ -247,6 +241,17 @@ pub fn allow_pass_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn generate_debug_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
 pub fn set_color_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
 pub fn set_depth_buffer_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphpass")]impl RenderGraphPass{#[doc="Direct (non-virtual) call to `RenderGraphPass`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,render_graph_context:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext,)->(){let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),render_graph_context, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RenderGraphPass`'s own `Release`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn release(this:impl::core::convert::Into< ::unity2::IlInstance> ,pool:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool,)->(){let __mi=Self::release_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),pool, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RenderGraphPass`'s own `HasRenderFunc`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn has_render_func(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::has_render_func_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphpass")]impl RenderGraphPass{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

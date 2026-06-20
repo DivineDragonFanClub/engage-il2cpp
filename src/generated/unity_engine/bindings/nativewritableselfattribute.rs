@@ -14,21 +14,17 @@ mod __types {
 #[cfg(feature = "unity_engine-bindings-nativewritableselfattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-bindings-nativewritableselfattribute")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NativeWritableSelfAttribute_unity2_raw{use super:: * ;
-pub unsafe fn set_writable_self(this:NativeWritableSelfAttribute,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-bindings-nativewritableselfattribute")]pub trait INativeWritableSelfAttributeMethods:INativeWritableSelfAttribute{#[doc="`set_WritableSelf(bool)` overload"]fn set_writable_self(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeWritableSelfAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <NativeWritableSelfAttribute as::unity2::ClassIdentity> ::NAME,"set_WritableSelf",));
-let inner:extern "C" fn(NativeWritableSelfAttribute,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(NativeWritableSelfAttribute,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="unity_engine-bindings-nativewritableselfattribute")]pub trait INativeWritableSelfAttributeMethods:INativeWritableSelfAttribute{#[doc="`set_WritableSelf(bool)` overload"]fn set_writable_self(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeWritableSelfAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NativeWritableSelfAttribute_unity2_raw::set_writable_self(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NativeWritableSelfAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38480usize)as*mut u8,();
@@ -40,6 +36,11 @@ __NativeWritableSelfAttribute_unity2_raw::set_writable_self(__receiver, ::core::
 
 #[cfg(feature="unity_engine-bindings-nativewritableselfattribute")]impl NativeWritableSelfAttribute{pub fn set_writable_self_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-bindings-nativewritableselfattribute")]impl NativeWritableSelfAttribute{#[doc="Direct (non-virtual) call to `NativeWritableSelfAttribute`'s own `set_WritableSelf`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_writable_self(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_writable_self_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-bindings-nativewritableselfattribute")]impl NativeWritableSelfAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

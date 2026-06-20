@@ -29,19 +29,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-tasteconditiondata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-tasteconditiondata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TasteConditionData_unity2_raw{use super:: * ;
-pub unsafe fn get_debug_name(this:TasteConditionData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <TasteConditionData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let inner:extern "C" fn(TasteConditionData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-tasteconditiondata")]impl TasteConditionData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21de2b0usize)as*mut u8,();
 )}
 }
@@ -64,7 +51,16 @@ inner(this,__mi)}
 (TasteConditionData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TasteConditionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TasteConditionData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TasteConditionData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let __inner:extern "C" fn(TasteConditionData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetConditionFunc()` overload"]fn get_condition_func(self,)->crate::app::tasteconditiondata::TasteConditionData_ConditionFunc{unsafe{let __receiver= <TasteConditionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21de460usize)as*mut u8,crate::app::tasteconditiondata::TasteConditionData_ConditionFunc;
@@ -88,6 +84,11 @@ pub fn get_condition_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 }
 
+#[cfg(feature="app-tasteconditiondata")]impl TasteConditionData{#[doc="Direct (non-virtual) call to `TasteConditionData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-tasteconditiondata")]impl TasteConditionData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TasteConditionData), ::core::stringify!(new),));
@@ -95,25 +96,21 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-tasteconditiondata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TasteConditionData_ConditionFunc_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:TasteConditionData_ConditionFunc,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <TasteConditionData_ConditionFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(TasteConditionData_ConditionFunc,crate::app::unit::Unit, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,__mi)}
-}
-
 #[cfg(feature="app-tasteconditiondata")]pub trait ITasteConditionData_ConditionFuncMethods:ITasteConditionData_ConditionFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TasteConditionData_ConditionFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21ff330usize)as*mut u8,();
 (TasteConditionData_ConditionFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <TasteConditionData_ConditionFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TasteConditionData_ConditionFunc_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TasteConditionData_ConditionFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(TasteConditionData_ConditionFunc,crate::app::unit::Unit, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit),__mi)}
+}
 }
 }
 
@@ -121,6 +118,11 @@ __TasteConditionData_ConditionFunc_unity2_raw::invoke(__receiver, ::core::conver
 
 #[cfg(feature="app-tasteconditiondata")]impl TasteConditionData_ConditionFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-tasteconditiondata")]impl TasteConditionData_ConditionFunc{#[doc="Direct (non-virtual) call to `TasteConditionData_ConditionFunc`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,)->bool{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-tasteconditiondata")]impl TasteConditionData_ConditionFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

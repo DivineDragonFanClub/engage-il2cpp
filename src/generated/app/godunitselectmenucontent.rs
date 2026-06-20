@@ -26,21 +26,17 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-godunitselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-godunitselectmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodUnitSelectMenuContent_unity2_raw{use super:: * ;
-pub unsafe fn calc_cursor_moved_pos_y(this:GodUnitSelectMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-godunitselectmenucontent")]pub trait IGodUnitSelectMenuContentMethods:IGodUnitSelectMenuContent{#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <GodUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <GodUnitSelectMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
-let inner:extern "C" fn(GodUnitSelectMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GodUnitSelectMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,menu_item_index,__mi)}
+__inner(__receiver, ::core::convert::Into::into(menu_item_index),__mi)}
 }
-
-#[cfg(feature="app-godunitselectmenucontent")]pub trait IGodUnitSelectMenuContentMethods:IGodUnitSelectMenuContent{#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <GodUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodUnitSelectMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`GetConditionsIcon(i32)` overload"]fn get_conditions_icon(self,dirty_level:impl::core::convert::Into<i32>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <GodUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2347620usize)as*mut u8,crate::unity_engine::sprite::Sprite;
@@ -57,6 +53,11 @@ __GodUnitSelectMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::cor
 #[cfg(feature="app-godunitselectmenucontent")]impl GodUnitSelectMenuContent{pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_conditions_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-godunitselectmenucontent")]impl GodUnitSelectMenuContent{#[doc="Direct (non-virtual) call to `GodUnitSelectMenuContent`'s own `CalcCursorMovedPosY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_cursor_moved_pos_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,menu_item_index:i32,)->f32{let __mi=Self::calc_cursor_moved_pos_y_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),menu_item_index, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-godunitselectmenucontent")]impl GodUnitSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

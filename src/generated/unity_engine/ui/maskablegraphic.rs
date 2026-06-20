@@ -53,129 +53,6 @@ pub use __types::*;
 this}
 }
 
-#[cfg(feature="unity_engine-ui-maskablegraphic")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MaskableGraphic_unity2_raw{use super:: * ;
-pub unsafe fn get_modified_material(this:MaskableGraphic,base_material:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",58usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"GetModifiedMaterial",));
-let inner:extern "C" fn(MaskableGraphic,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,base_material,__mi)}
-pub unsafe fn cull(this:MaskableGraphic,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",59usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"Cull",));
-let inner:extern "C" fn(MaskableGraphic,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,clip_rect,valid_rect,__mi)}
-pub unsafe fn set_clip_rect(this:MaskableGraphic,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(60usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",60usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"SetClipRect",));
-let inner:extern "C" fn(MaskableGraphic,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,clip_rect,valid_rect,__mi)}
-pub unsafe fn set_clip_softness(this:MaskableGraphic,clip_softness:crate::unity_engine::vector2::Vector2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(61usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",61usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"SetClipSoftness",));
-let inner:extern "C" fn(MaskableGraphic,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,clip_softness,__mi)}
-pub unsafe fn on_enable(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnEnable",));
-let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_disable(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnDisable",));
-let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_transform_parent_changed(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
-let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn parent_mask_state_changed(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(62usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",62usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"ParentMaskStateChanged",));
-let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_canvas_hierarchy_changed(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnCanvasHierarchyChanged",));
-let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn recalculate_clipping(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",63usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"RecalculateClipping",));
-let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn recalculate_masking(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",64usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"RecalculateMasking",));
-let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_ui_i_clippable_get_game_object(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",50usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.IClippable.get_gameObject",));
-let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-ui-maskablegraphic")]pub trait IMaskableGraphicMethods:IMaskableGraphic{#[doc="`get_onCullStateChanged()` overload"]fn get_on_cull_state_changed(self,)->crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent{unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371c250usize)as*mut u8,crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent;
 (MaskableGraphic)__receiver)}
@@ -201,35 +78,116 @@ inner(this,__mi)}
 (MaskableGraphic)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]fn get_modified_material(self,base_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::get_modified_material(__receiver, ::core::convert::Into::into(base_material), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"GetModifiedMaterial",));
+let __inner:extern "C" fn(MaskableGraphic,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(base_material),__mi)}
+}
 }
 #[doc="`Cull(crate::unity_engine::rect::Rect, bool)` overload"]fn cull(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::cull(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",59usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"Cull",));
+let __inner:extern "C" fn(MaskableGraphic,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect),__mi)}
+}
 }
 #[doc="`UpdateCull(bool)` overload"]fn update_cull(self,cull:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371c850usize)as*mut u8,();
 (MaskableGraphic)__receiver,(bool)::core::convert::Into::into(cull))}
 }
 #[doc="`SetClipRect(crate::unity_engine::rect::Rect, bool)` overload"]fn set_clip_rect(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::set_clip_rect(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(60usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",60usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"SetClipRect",));
+let __inner:extern "C" fn(MaskableGraphic,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect),__mi)}
+}
 }
 #[doc="`SetClipSoftness(crate::unity_engine::vector2::Vector2)` overload"]fn set_clip_softness(self,clip_softness:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::set_clip_softness(__receiver, ::core::convert::Into::into(clip_softness), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(61usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",61usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"SetClipSoftness",));
+let __inner:extern "C" fn(MaskableGraphic,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(clip_softness),__mi)}
+}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let __inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let __inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
+let __inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ParentMaskStateChanged()` overload"]fn parent_mask_state_changed(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::parent_mask_state_changed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(62usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",62usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"ParentMaskStateChanged",));
+let __inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::on_canvas_hierarchy_changed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnCanvasHierarchyChanged",));
+let __inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_rootCanvasRect()` overload"]fn get_root_canvas_rect(self,)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371c460usize)as*mut u8,crate::unity_engine::rect::Rect;
@@ -240,17 +198,44 @@ __MaskableGraphic_unity2_raw::on_canvas_hierarchy_changed(__receiver, ::core::op
 (MaskableGraphic)__receiver)}
 }
 #[doc="`RecalculateClipping()` overload"]fn recalculate_clipping(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::recalculate_clipping(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",63usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"RecalculateClipping",));
+let __inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`RecalculateMasking()` overload"]fn recalculate_masking(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::recalculate_masking(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",64usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"RecalculateMasking",));
+let __inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371d100usize)as*mut u8,();
 (MaskableGraphic)__receiver)}
 }
 #[doc="`UnityEngine.UI.IClippable.get_gameObject()` overload"]fn unity_engine_ui_i_clippable_get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaskableGraphic_unity2_raw::unity_engine_ui_i_clippable_get_game_object(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.IClippable.get_gameObject",));
+let __inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -278,6 +263,44 @@ pub fn recalculate_clipping_method_info()-> & 'static::unity2::il2cpp::MethodInf
 pub fn recalculate_masking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 pub fn unity_engine_ui_i_clippable_get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="unity_engine-ui-maskablegraphic")]impl MaskableGraphic{#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `GetModifiedMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_modified_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,base_material:crate::unity_engine::material::Material,)->crate::unity_engine::material::Material{let __mi=Self::get_modified_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),base_material, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `Cull`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn cull(this:impl::core::convert::Into< ::unity2::IlInstance> ,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,)->(){let __mi=Self::cull_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),clip_rect,valid_rect, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `SetClipRect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_clip_rect(this:impl::core::convert::Into< ::unity2::IlInstance> ,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,)->(){let __mi=Self::set_clip_rect_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),clip_rect,valid_rect, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `SetClipSoftness`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_clip_softness(this:impl::core::convert::Into< ::unity2::IlInstance> ,clip_softness:crate::unity_engine::vector2::Vector2,)->(){let __mi=Self::set_clip_softness_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),clip_softness, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `OnEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `OnDisable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_disable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_disable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `OnTransformParentChanged`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_transform_parent_changed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_transform_parent_changed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `ParentMaskStateChanged`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn parent_mask_state_changed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::parent_mask_state_changed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `OnCanvasHierarchyChanged`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_canvas_hierarchy_changed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_canvas_hierarchy_changed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `RecalculateClipping`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn recalculate_clipping(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::recalculate_clipping_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `RecalculateMasking`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn recalculate_masking(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::recalculate_masking_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaskableGraphic`'s own `UnityEngine.UI.IClippable.get_gameObject`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_ui_i_clippable_get_game_object(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::gameobject::GameObject{let __mi=Self::unity_engine_ui_i_clippable_get_game_object_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-ui-maskablegraphic")]impl MaskableGraphic{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

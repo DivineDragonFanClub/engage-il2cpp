@@ -9,141 +9,113 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptBaseAttribute.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptBaseAttribute")]pub struct DebugCommandline_OptBaseAttribute{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptProperty_IntSetter.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptProperty.IntSetter")]#[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]pub struct DebugCommandline_OptProperty_IntSetter{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptionAttribute.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptionAttribute")]#[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]pub struct DebugCommandline_OptionAttribute{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline.md"))]#[::unity2::class(namespace="App",name="DebugCommandline")]#[parent(crate::system::object::Object)]pub struct DebugCommandline{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptwProperty.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptwProperty")]#[parent(crate::app::debugcommandline::DebugCommandline_Property)]pub struct DebugCommandline_OptwProperty{#[offset(24)]#[rename(name="m_Attribute")]pub m_attribute:crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute, #[offset(32)]#[rename(name="m_IsValid")]pub m_is_valid:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptProperty.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptProperty")]#[parent(crate::app::debugcommandline::DebugCommandline_Property)]pub struct DebugCommandline_OptProperty{#[offset(24)]#[rename(name="m_Attribute")]pub m_attribute:crate::app::debugcommandline::DebugCommandline_OptionAttribute, #[offset(32)]#[rename(name="m_Setter")]pub m_setter:crate::app::debugcommandline::DebugCommandline_OptProperty_Setter,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptionAttribute.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptionAttribute")]#[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]pub struct DebugCommandline_OptionAttribute{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptProperty_IntSetter.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptProperty.IntSetter")]#[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]pub struct DebugCommandline_OptProperty_IntSetter{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptProperty_Setter.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptProperty.Setter")]#[parent(crate::system::object::Object)]pub struct DebugCommandline_OptProperty_Setter{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptProperty_BoolSetter.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptProperty.BoolSetter")]#[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]pub struct DebugCommandline_OptProperty_BoolSetter{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptionWildcardAttribute.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptionWildcardAttribute")]#[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]pub struct DebugCommandline_OptionWildcardAttribute{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline.md"))]#[::unity2::class(namespace="App",name="DebugCommandline")]#[parent(crate::system::object::Object)]pub struct DebugCommandline{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptProperty_FloatSetter.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptProperty.FloatSetter")]#[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]pub struct DebugCommandline_OptProperty_FloatSetter{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptProperty_StringSetter.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptProperty.StringSetter")]#[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]pub struct DebugCommandline_OptProperty_StringSetter{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptProperty_Setter.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptProperty.Setter")]#[parent(crate::system::object::Object)]pub struct DebugCommandline_OptProperty_Setter{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptProperty_FloatSetter.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptProperty.FloatSetter")]#[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]pub struct DebugCommandline_OptProperty_FloatSetter{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_Property.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.Property")]#[parent(crate::system::object::Object)]pub struct DebugCommandline_Property{#[static_field]#[rename(name="OptSortValue")]pub opt_sort_value:i32, #[static_field]#[rename(name="OptwSortValue")]pub optw_sort_value:i32, #[offset(16)]#[rename(name="m_Info")]pub m_info:crate::system::reflection::propertyinfo::PropertyInfo,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptBaseAttribute.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptBaseAttribute")]pub struct DebugCommandline_OptBaseAttribute{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandline/DebugCommandline_OptProperty_BoolSetter.md"))]#[::unity2::class(namespace="App",name="DebugCommandline.OptProperty.BoolSetter")]#[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]pub struct DebugCommandline_OptProperty_BoolSetter{}
 
 }
 
 #[cfg(feature = "app-debugcommandline-types")]
 pub use __types::*;
 
-#[cfg(feature="app-debugcommandline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugCommandline_OptwProperty_unity2_raw{use super:: * ;
-pub unsafe fn process(this:DebugCommandline_OptwProperty,obj:crate::system::object::Object,args: ::unity2::Array< ::unity2::Il2CppString> ,arg_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DebugCommandline_OptwProperty as::unity2::ClassIdentity> ::NAME,"Process",));
-let inner:extern "C" fn(DebugCommandline_OptwProperty,crate::system::object::Object, ::unity2::Array< ::unity2::Il2CppString> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,args,arg_index,__mi)}
-pub unsafe fn get_sort_value(this:DebugCommandline_OptwProperty,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DebugCommandline_OptwProperty as::unity2::ClassIdentity> ::NAME,"get_SortValue",));
-let inner:extern "C" fn(DebugCommandline_OptwProperty, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptwPropertyMethods:IDebugCommandline_OptwProperty{#[doc="`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)` overload"]fn ctor(self,info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,attribute:impl::core::convert::Into<crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute>)->(){unsafe{let __receiver= <DebugCommandline_OptwProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d41c0usize)as*mut u8,();
-(DebugCommandline_OptwProperty)__receiver,(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(info),(crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)::core::convert::Into::into(attribute))}
-}
-#[doc="`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]fn process(self,obj:impl::core::convert::Into<crate::system::object::Object> ,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,arg_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DebugCommandline_OptwProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptwProperty_unity2_raw::process(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(args), ::core::convert::Into::into(arg_index), ::core::option::Option::None)}
-}
-#[doc="`get_SortValue()` overload"]fn get_sort_value(self,)->i32{unsafe{let __receiver= <DebugCommandline_OptwProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptwProperty_unity2_raw::get_sort_value(__receiver, ::core::option::Option::None)}
+#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptBaseAttributeMethods:IDebugCommandline_OptBaseAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptBaseAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3b80usize)as*mut u8,();
+(DebugCommandline_OptBaseAttribute)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptwProperty>IDebugCommandline_OptwPropertyMethods for __T{}
+#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptBaseAttribute>IDebugCommandline_OptBaseAttributeMethods for __T{}
 
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptwProperty{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn process_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptBaseAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptwProperty{#[doc="`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)` — overload selector"]pub fn new(info:crate::system::reflection::propertyinfo::PropertyInfo,attribute:crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptBaseAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugCommandline_OptwProperty), ::core::stringify!(new),));
- <Self as IDebugCommandline_OptwPropertyMethods> ::ctor(this,info,attribute);
+ failed to instantiate", ::core::stringify!(DebugCommandline_OptBaseAttribute), ::core::stringify!(new),));
+ <Self as IDebugCommandline_OptBaseAttributeMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-debugcommandline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugCommandline_OptProperty_unity2_raw{use super:: * ;
-pub unsafe fn process(this:DebugCommandline_OptProperty,obj:crate::system::object::Object,args: ::unity2::Array< ::unity2::Il2CppString> ,arg_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptProperty_IntSetterMethods:IDebugCommandline_OptProperty_IntSetter{#[doc="`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]fn set(self,obj:impl::core::convert::Into<crate::system::object::Object> ,property_info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_IntSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <DebugCommandline_OptProperty as::unity2::ClassIdentity> ::NAME,"Process",));
-let inner:extern "C" fn(DebugCommandline_OptProperty,crate::system::object::Object, ::unity2::Array< ::unity2::Il2CppString> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <DebugCommandline_OptProperty_IntSetter as::unity2::ClassIdentity> ::NAME,"Set",));
+let __inner:extern "C" fn(DebugCommandline_OptProperty_IntSetter,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,args,arg_index,__mi)}
-pub unsafe fn get_sort_value(this:DebugCommandline_OptProperty,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(property_info), ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_IsNeedValue()` overload"]fn get_is_need_value(self,)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_IntSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <DebugCommandline_OptProperty as::unity2::ClassIdentity> ::NAME,"get_SortValue",));
-let inner:extern "C" fn(DebugCommandline_OptProperty, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",5usize,__vt.len(), <DebugCommandline_OptProperty_IntSetter as::unity2::ClassIdentity> ::NAME,"get_IsNeedValue",));
+let __inner:extern "C" fn(DebugCommandline_OptProperty_IntSetter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptPropertyMethods:IDebugCommandline_OptProperty{#[doc="`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionAttribute)` overload"]fn ctor(self,info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,attribute:impl::core::convert::Into<crate::app::debugcommandline::DebugCommandline_OptionAttribute>)->(){unsafe{let __receiver= <DebugCommandline_OptProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3b90usize)as*mut u8,();
-(DebugCommandline_OptProperty)__receiver,(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(info),(crate::app::debugcommandline::DebugCommandline_OptionAttribute)::core::convert::Into::into(attribute))}
 }
-#[doc="`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]fn process(self,obj:impl::core::convert::Into<crate::system::object::Object> ,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,arg_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DebugCommandline_OptProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_unity2_raw::process(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(args), ::core::convert::Into::into(arg_index), ::core::option::Option::None)}
-}
-#[doc="`get_SortValue()` overload"]fn get_sort_value(self,)->i32{unsafe{let __receiver= <DebugCommandline_OptProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_unity2_raw::get_sort_value(__receiver, ::core::option::Option::None)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptProperty_IntSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32dc0usize)as*mut u8,();
+(DebugCommandline_OptProperty_IntSetter)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptProperty>IDebugCommandline_OptPropertyMethods for __T{}
+#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptProperty_IntSetter>IDebugCommandline_OptProperty_IntSetterMethods for __T{}
 
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn process_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_IntSetter{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_need_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty{#[doc="`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionAttribute)` — overload selector"]pub fn new(info:crate::system::reflection::propertyinfo::PropertyInfo,attribute:crate::app::debugcommandline::DebugCommandline_OptionAttribute)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_IntSetter{#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty_IntSetter`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,property_info:crate::system::reflection::propertyinfo::PropertyInfo,value: ::unity2::Il2CppString,)->bool{let __mi=Self::set_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,property_info,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty_IntSetter`'s own `get_IsNeedValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_need_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_need_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_IntSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty), ::core::stringify!(new),));
- <Self as IDebugCommandline_OptPropertyMethods> ::ctor(this,info,attribute);
+ failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty_IntSetter), ::core::stringify!(new),));
+ <Self as IDebugCommandline_OptProperty_IntSetterMethods> ::ctor(this,);
 this}
 }
 
@@ -172,171 +144,6 @@ pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 ::{}
  failed to instantiate", ::core::stringify!(DebugCommandline_OptionAttribute), ::core::stringify!(new),));
  <Self as IDebugCommandline_OptionAttributeMethods> ::ctor(this,name);
-this}
-}
-
-#[cfg(feature="app-debugcommandline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugCommandline_OptProperty_IntSetter_unity2_raw{use super:: * ;
-pub unsafe fn set(this:DebugCommandline_OptProperty_IntSetter,obj:crate::system::object::Object,property_info:crate::system::reflection::propertyinfo::PropertyInfo,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DebugCommandline_OptProperty_IntSetter as::unity2::ClassIdentity> ::NAME,"Set",));
-let inner:extern "C" fn(DebugCommandline_OptProperty_IntSetter,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,property_info,value,__mi)}
-pub unsafe fn get_is_need_value(this:DebugCommandline_OptProperty_IntSetter,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DebugCommandline_OptProperty_IntSetter as::unity2::ClassIdentity> ::NAME,"get_IsNeedValue",));
-let inner:extern "C" fn(DebugCommandline_OptProperty_IntSetter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptProperty_IntSetterMethods:IDebugCommandline_OptProperty_IntSetter{#[doc="`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]fn set(self,obj:impl::core::convert::Into<crate::system::object::Object> ,property_info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_IntSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_IntSetter_unity2_raw::set(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(property_info), ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_IsNeedValue()` overload"]fn get_is_need_value(self,)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_IntSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_IntSetter_unity2_raw::get_is_need_value(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptProperty_IntSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32dc0usize)as*mut u8,();
-(DebugCommandline_OptProperty_IntSetter)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptProperty_IntSetter>IDebugCommandline_OptProperty_IntSetterMethods for __T{}
-
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_IntSetter{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_is_need_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_IntSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty_IntSetter), ::core::stringify!(new),));
- <Self as IDebugCommandline_OptProperty_IntSetterMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugcommandline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugCommandline_OptProperty_Setter_unity2_raw{use super:: * ;
-pub unsafe fn set(this:DebugCommandline_OptProperty_Setter,obj:crate::system::object::Object,property_info:crate::system::reflection::propertyinfo::PropertyInfo,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DebugCommandline_OptProperty_Setter as::unity2::ClassIdentity> ::NAME,"Set",));
-let inner:extern "C" fn(DebugCommandline_OptProperty_Setter,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,property_info,value,__mi)}
-pub unsafe fn get_is_need_value(this:DebugCommandline_OptProperty_Setter,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DebugCommandline_OptProperty_Setter as::unity2::ClassIdentity> ::NAME,"get_IsNeedValue",));
-let inner:extern "C" fn(DebugCommandline_OptProperty_Setter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptProperty_SetterMethods:IDebugCommandline_OptProperty_Setter{#[doc="`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]fn set(self,obj:impl::core::convert::Into<crate::system::object::Object> ,property_info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_Setter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_Setter_unity2_raw::set(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(property_info), ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_IsNeedValue()` overload"]fn get_is_need_value(self,)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_Setter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_Setter_unity2_raw::get_is_need_value(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptProperty_Setter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32c00usize)as*mut u8,();
-(DebugCommandline_OptProperty_Setter)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptProperty_Setter>IDebugCommandline_OptProperty_SetterMethods for __T{}
-
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_Setter{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_is_need_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_Setter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty_Setter), ::core::stringify!(new),));
- <Self as IDebugCommandline_OptProperty_SetterMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugcommandline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugCommandline_OptProperty_BoolSetter_unity2_raw{use super:: * ;
-pub unsafe fn set(this:DebugCommandline_OptProperty_BoolSetter,obj:crate::system::object::Object,property_info:crate::system::reflection::propertyinfo::PropertyInfo,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DebugCommandline_OptProperty_BoolSetter as::unity2::ClassIdentity> ::NAME,"Set",));
-let inner:extern "C" fn(DebugCommandline_OptProperty_BoolSetter,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,property_info,value,__mi)}
-pub unsafe fn get_is_need_value(this:DebugCommandline_OptProperty_BoolSetter,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DebugCommandline_OptProperty_BoolSetter as::unity2::ClassIdentity> ::NAME,"get_IsNeedValue",));
-let inner:extern "C" fn(DebugCommandline_OptProperty_BoolSetter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptProperty_BoolSetterMethods:IDebugCommandline_OptProperty_BoolSetter{#[doc="`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]fn set(self,obj:impl::core::convert::Into<crate::system::object::Object> ,property_info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_BoolSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_BoolSetter_unity2_raw::set(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(property_info), ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_IsNeedValue()` overload"]fn get_is_need_value(self,)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_BoolSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_BoolSetter_unity2_raw::get_is_need_value(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptProperty_BoolSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32bf0usize)as*mut u8,();
-(DebugCommandline_OptProperty_BoolSetter)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptProperty_BoolSetter>IDebugCommandline_OptProperty_BoolSetterMethods for __T{}
-
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_BoolSetter{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_is_need_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_BoolSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty_BoolSetter), ::core::stringify!(new),));
- <Self as IDebugCommandline_OptProperty_BoolSetterMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptionWildcardAttributeMethods:IDebugCommandline_OptionWildcardAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,pattern:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugCommandline_OptionWildcardAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4030usize)as*mut u8,();
-(DebugCommandline_OptionWildcardAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pattern))}
-}
-}
-
-#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptionWildcardAttribute>IDebugCommandline_OptionWildcardAttributeMethods for __T{}
-
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptionWildcardAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptionWildcardAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(pattern: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugCommandline_OptionWildcardAttribute), ::core::stringify!(new),));
- <Self as IDebugCommandline_OptionWildcardAttributeMethods> ::ctor(this,pattern);
 this}
 }
 
@@ -422,83 +229,151 @@ __f(::core::convert::Into::into(obj), ::core::convert::Into::into(args), ::core:
 }
 }
 
-#[cfg(feature="app-debugcommandline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugCommandline_OptProperty_FloatSetter_unity2_raw{use super:: * ;
-pub unsafe fn set(this:DebugCommandline_OptProperty_FloatSetter,obj:crate::system::object::Object,property_info:crate::system::reflection::propertyinfo::PropertyInfo,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptwPropertyMethods:IDebugCommandline_OptwProperty{#[doc="`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)` overload"]fn ctor(self,info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,attribute:impl::core::convert::Into<crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute>)->(){unsafe{let __receiver= <DebugCommandline_OptwProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d41c0usize)as*mut u8,();
+(DebugCommandline_OptwProperty)__receiver,(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(info),(crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)::core::convert::Into::into(attribute))}
+}
+#[doc="`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]fn process(self,obj:impl::core::convert::Into<crate::system::object::Object> ,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,arg_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DebugCommandline_OptwProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <DebugCommandline_OptProperty_FloatSetter as::unity2::ClassIdentity> ::NAME,"Set",));
-let inner:extern "C" fn(DebugCommandline_OptProperty_FloatSetter,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <DebugCommandline_OptwProperty as::unity2::ClassIdentity> ::NAME,"Process",));
+let __inner:extern "C" fn(DebugCommandline_OptwProperty,crate::system::object::Object, ::unity2::Array< ::unity2::Il2CppString> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,property_info,value,__mi)}
-pub unsafe fn get_is_need_value(this:DebugCommandline_OptProperty_FloatSetter,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(args), ::core::convert::Into::into(arg_index),__mi)}
+}
+}
+#[doc="`get_SortValue()` overload"]fn get_sort_value(self,)->i32{unsafe{let __receiver= <DebugCommandline_OptwProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <DebugCommandline_OptProperty_FloatSetter as::unity2::ClassIdentity> ::NAME,"get_IsNeedValue",));
-let inner:extern "C" fn(DebugCommandline_OptProperty_FloatSetter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",5usize,__vt.len(), <DebugCommandline_OptwProperty as::unity2::ClassIdentity> ::NAME,"get_SortValue",));
+let __inner:extern "C" fn(DebugCommandline_OptwProperty, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptProperty_FloatSetterMethods:IDebugCommandline_OptProperty_FloatSetter{#[doc="`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]fn set(self,obj:impl::core::convert::Into<crate::system::object::Object> ,property_info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_FloatSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_FloatSetter_unity2_raw::set(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(property_info), ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_IsNeedValue()` overload"]fn get_is_need_value(self,)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_FloatSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_FloatSetter_unity2_raw::get_is_need_value(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptProperty_FloatSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32ce0usize)as*mut u8,();
-(DebugCommandline_OptProperty_FloatSetter)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptProperty_FloatSetter>IDebugCommandline_OptProperty_FloatSetterMethods for __T{}
+#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptwProperty>IDebugCommandline_OptwPropertyMethods for __T{}
 
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_FloatSetter{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_is_need_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptwProperty{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn process_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_FloatSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptwProperty{#[doc="Direct (non-virtual) call to `DebugCommandline_OptwProperty`'s own `Process`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,args: ::unity2::Array< ::unity2::Il2CppString> ,arg_index:i32,)->i32{let __mi=Self::process_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::Array< ::unity2::Il2CppString> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,args,arg_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugCommandline_OptwProperty`'s own `get_SortValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sort_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_sort_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptwProperty{#[doc="`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)` — overload selector"]pub fn new(info:crate::system::reflection::propertyinfo::PropertyInfo,attribute:crate::app::debugcommandline::DebugCommandline_OptionWildcardAttribute)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty_FloatSetter), ::core::stringify!(new),));
- <Self as IDebugCommandline_OptProperty_FloatSetterMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(DebugCommandline_OptwProperty), ::core::stringify!(new),));
+ <Self as IDebugCommandline_OptwPropertyMethods> ::ctor(this,info,attribute);
 this}
 }
 
-#[cfg(feature="app-debugcommandline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugCommandline_OptProperty_StringSetter_unity2_raw{use super:: * ;
-pub unsafe fn set(this:DebugCommandline_OptProperty_StringSetter,obj:crate::system::object::Object,property_info:crate::system::reflection::propertyinfo::PropertyInfo,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptPropertyMethods:IDebugCommandline_OptProperty{#[doc="`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionAttribute)` overload"]fn ctor(self,info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,attribute:impl::core::convert::Into<crate::app::debugcommandline::DebugCommandline_OptionAttribute>)->(){unsafe{let __receiver= <DebugCommandline_OptProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3b90usize)as*mut u8,();
+(DebugCommandline_OptProperty)__receiver,(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(info),(crate::app::debugcommandline::DebugCommandline_OptionAttribute)::core::convert::Into::into(attribute))}
+}
+#[doc="`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]fn process(self,obj:impl::core::convert::Into<crate::system::object::Object> ,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,arg_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DebugCommandline_OptProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DebugCommandline_OptProperty as::unity2::ClassIdentity> ::NAME,"Process",));
+let __inner:extern "C" fn(DebugCommandline_OptProperty,crate::system::object::Object, ::unity2::Array< ::unity2::Il2CppString> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(args), ::core::convert::Into::into(arg_index),__mi)}
+}
+}
+#[doc="`get_SortValue()` overload"]fn get_sort_value(self,)->i32{unsafe{let __receiver= <DebugCommandline_OptProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugCommandline_OptProperty as::unity2::ClassIdentity> ::NAME,"get_SortValue",));
+let __inner:extern "C" fn(DebugCommandline_OptProperty, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptProperty>IDebugCommandline_OptPropertyMethods for __T{}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn process_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty{#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty`'s own `Process`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,args: ::unity2::Array< ::unity2::Il2CppString> ,arg_index:i32,)->i32{let __mi=Self::process_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::Array< ::unity2::Il2CppString> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,args,arg_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty`'s own `get_SortValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sort_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_sort_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty{#[doc="`.ctor(crate::system::reflection::propertyinfo::PropertyInfo, crate::app::debugcommandline::DebugCommandline_OptionAttribute)` — overload selector"]pub fn new(info:crate::system::reflection::propertyinfo::PropertyInfo,attribute:crate::app::debugcommandline::DebugCommandline_OptionAttribute)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty), ::core::stringify!(new),));
+ <Self as IDebugCommandline_OptPropertyMethods> ::ctor(this,info,attribute);
+this}
+}
+
+#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptionWildcardAttributeMethods:IDebugCommandline_OptionWildcardAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,pattern:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DebugCommandline_OptionWildcardAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4030usize)as*mut u8,();
+(DebugCommandline_OptionWildcardAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pattern))}
+}
+}
+
+#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptionWildcardAttribute>IDebugCommandline_OptionWildcardAttributeMethods for __T{}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptionWildcardAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptionWildcardAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(pattern: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugCommandline_OptionWildcardAttribute), ::core::stringify!(new),));
+ <Self as IDebugCommandline_OptionWildcardAttributeMethods> ::ctor(this,pattern);
+this}
+}
+
+#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptProperty_StringSetterMethods:IDebugCommandline_OptProperty_StringSetter{#[doc="`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]fn set(self,obj:impl::core::convert::Into<crate::system::object::Object> ,property_info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_StringSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <DebugCommandline_OptProperty_StringSetter as::unity2::ClassIdentity> ::NAME,"Set",));
-let inner:extern "C" fn(DebugCommandline_OptProperty_StringSetter,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DebugCommandline_OptProperty_StringSetter,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,property_info,value,__mi)}
-pub unsafe fn get_is_need_value(this:DebugCommandline_OptProperty_StringSetter,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(property_info), ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_IsNeedValue()` overload"]fn get_is_need_value(self,)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_StringSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <DebugCommandline_OptProperty_StringSetter as::unity2::ClassIdentity> ::NAME,"get_IsNeedValue",));
-let inner:extern "C" fn(DebugCommandline_OptProperty_StringSetter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DebugCommandline_OptProperty_StringSetter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptProperty_StringSetterMethods:IDebugCommandline_OptProperty_StringSetter{#[doc="`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]fn set(self,obj:impl::core::convert::Into<crate::system::object::Object> ,property_info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_StringSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_StringSetter_unity2_raw::set(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(property_info), ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_IsNeedValue()` overload"]fn get_is_need_value(self,)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_StringSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_OptProperty_StringSetter_unity2_raw::get_is_need_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptProperty_StringSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32e10usize)as*mut u8,();
@@ -513,6 +388,14 @@ pub fn get_is_need_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_StringSetter{#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty_StringSetter`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,property_info:crate::system::reflection::propertyinfo::PropertyInfo,value: ::unity2::Il2CppString,)->bool{let __mi=Self::set_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,property_info,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty_StringSetter`'s own `get_IsNeedValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_need_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_need_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_StringSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty_StringSetter), ::core::stringify!(new),));
@@ -520,27 +403,108 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-debugcommandline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugCommandline_Property_unity2_raw{use super:: * ;
-pub unsafe fn process(this:DebugCommandline_Property,obj:crate::system::object::Object,args: ::unity2::Array< ::unity2::Il2CppString> ,arg_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptProperty_SetterMethods:IDebugCommandline_OptProperty_Setter{#[doc="`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]fn set(self,obj:impl::core::convert::Into<crate::system::object::Object> ,property_info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_Setter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <DebugCommandline_Property as::unity2::ClassIdentity> ::NAME,"Process",));
-let inner:extern "C" fn(DebugCommandline_Property,crate::system::object::Object, ::unity2::Array< ::unity2::Il2CppString> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <DebugCommandline_OptProperty_Setter as::unity2::ClassIdentity> ::NAME,"Set",));
+let __inner:extern "C" fn(DebugCommandline_OptProperty_Setter,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,args,arg_index,__mi)}
-pub unsafe fn get_sort_value(this:DebugCommandline_Property,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(property_info), ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_IsNeedValue()` overload"]fn get_is_need_value(self,)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_Setter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <DebugCommandline_Property as::unity2::ClassIdentity> ::NAME,"get_SortValue",));
-let inner:extern "C" fn(DebugCommandline_Property, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",5usize,__vt.len(), <DebugCommandline_OptProperty_Setter as::unity2::ClassIdentity> ::NAME,"get_IsNeedValue",));
+let __inner:extern "C" fn(DebugCommandline_OptProperty_Setter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptProperty_Setter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32c00usize)as*mut u8,();
+(DebugCommandline_OptProperty_Setter)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptProperty_Setter>IDebugCommandline_OptProperty_SetterMethods for __T{}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_Setter{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_need_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_Setter{#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty_Setter`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,property_info:crate::system::reflection::propertyinfo::PropertyInfo,value: ::unity2::Il2CppString,)->bool{let __mi=Self::set_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,property_info,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty_Setter`'s own `get_IsNeedValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_need_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_need_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_Setter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty_Setter), ::core::stringify!(new),));
+ <Self as IDebugCommandline_OptProperty_SetterMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptProperty_FloatSetterMethods:IDebugCommandline_OptProperty_FloatSetter{#[doc="`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]fn set(self,obj:impl::core::convert::Into<crate::system::object::Object> ,property_info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_FloatSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DebugCommandline_OptProperty_FloatSetter as::unity2::ClassIdentity> ::NAME,"Set",));
+let __inner:extern "C" fn(DebugCommandline_OptProperty_FloatSetter,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(property_info), ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_IsNeedValue()` overload"]fn get_is_need_value(self,)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_FloatSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugCommandline_OptProperty_FloatSetter as::unity2::ClassIdentity> ::NAME,"get_IsNeedValue",));
+let __inner:extern "C" fn(DebugCommandline_OptProperty_FloatSetter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptProperty_FloatSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32ce0usize)as*mut u8,();
+(DebugCommandline_OptProperty_FloatSetter)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptProperty_FloatSetter>IDebugCommandline_OptProperty_FloatSetterMethods for __T{}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_FloatSetter{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_need_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_FloatSetter{#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty_FloatSetter`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,property_info:crate::system::reflection::propertyinfo::PropertyInfo,value: ::unity2::Il2CppString,)->bool{let __mi=Self::set_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,property_info,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty_FloatSetter`'s own `get_IsNeedValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_need_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_need_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_FloatSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty_FloatSetter), ::core::stringify!(new),));
+ <Self as IDebugCommandline_OptProperty_FloatSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_PropertyMethods:IDebugCommandline_Property{#[doc="`.ctor(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]fn ctor(self,info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>)->(){unsafe{let __receiver= <DebugCommandline_Property as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -548,10 +512,28 @@ inner(this,__mi)}
 (DebugCommandline_Property)__receiver,(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(info))}
 }
 #[doc="`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]fn process(self,obj:impl::core::convert::Into<crate::system::object::Object> ,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,arg_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DebugCommandline_Property as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_Property_unity2_raw::process(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(args), ::core::convert::Into::into(arg_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DebugCommandline_Property as::unity2::ClassIdentity> ::NAME,"Process",));
+let __inner:extern "C" fn(DebugCommandline_Property,crate::system::object::Object, ::unity2::Array< ::unity2::Il2CppString> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(args), ::core::convert::Into::into(arg_index),__mi)}
+}
 }
 #[doc="`get_SortValue()` overload"]fn get_sort_value(self,)->i32{unsafe{let __receiver= <DebugCommandline_Property as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugCommandline_Property_unity2_raw::get_sort_value(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugCommandline_Property as::unity2::ClassIdentity> ::NAME,"get_SortValue",));
+let __inner:extern "C" fn(DebugCommandline_Property, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -562,6 +544,14 @@ pub fn process_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn get_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_Property{#[doc="Direct (non-virtual) call to `DebugCommandline_Property`'s own `Process`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,args: ::unity2::Array< ::unity2::Il2CppString> ,arg_index:i32,)->i32{let __mi=Self::process_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::Array< ::unity2::Il2CppString> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,args,arg_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugCommandline_Property`'s own `get_SortValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sort_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_sort_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-debugcommandline")]impl DebugCommandline_Property{#[doc="`.ctor(crate::system::reflection::propertyinfo::PropertyInfo)` — overload selector"]pub fn new(info:crate::system::reflection::propertyinfo::PropertyInfo)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DebugCommandline_Property), ::core::stringify!(new),));
@@ -569,62 +559,96 @@ pub fn get_sort_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 this}
 }
 
-#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptBaseAttributeMethods:IDebugCommandline_OptBaseAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptBaseAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3b80usize)as*mut u8,();
-(DebugCommandline_OptBaseAttribute)__receiver)}
+#[cfg(feature="app-debugcommandline")]pub trait IDebugCommandline_OptProperty_BoolSetterMethods:IDebugCommandline_OptProperty_BoolSetter{#[doc="`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]fn set(self,obj:impl::core::convert::Into<crate::system::object::Object> ,property_info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_BoolSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DebugCommandline_OptProperty_BoolSetter as::unity2::ClassIdentity> ::NAME,"Set",));
+let __inner:extern "C" fn(DebugCommandline_OptProperty_BoolSetter,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(property_info), ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_IsNeedValue()` overload"]fn get_is_need_value(self,)->bool{unsafe{let __receiver= <DebugCommandline_OptProperty_BoolSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugCommandline_OptProperty_BoolSetter as::unity2::ClassIdentity> ::NAME,"get_IsNeedValue",));
+let __inner:extern "C" fn(DebugCommandline_OptProperty_BoolSetter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandline_OptProperty_BoolSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b32bf0usize)as*mut u8,();
+(DebugCommandline_OptProperty_BoolSetter)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptBaseAttribute>IDebugCommandline_OptBaseAttributeMethods for __T{}
+#[cfg(feature="app-debugcommandline")]impl<__T:IDebugCommandline_OptProperty_BoolSetter>IDebugCommandline_OptProperty_BoolSetterMethods for __T{}
 
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptBaseAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_BoolSetter{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_need_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptBaseAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_BoolSetter{#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty_BoolSetter`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,property_info:crate::system::reflection::propertyinfo::PropertyInfo,value: ::unity2::Il2CppString,)->bool{let __mi=Self::set_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,property_info,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugCommandline_OptProperty_BoolSetter`'s own `get_IsNeedValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_need_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_need_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugcommandline")]impl DebugCommandline_OptProperty_BoolSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugCommandline_OptBaseAttribute), ::core::stringify!(new),));
- <Self as IDebugCommandline_OptBaseAttributeMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(DebugCommandline_OptProperty_BoolSetter), ::core::stringify!(new),));
+ <Self as IDebugCommandline_OptProperty_BoolSetterMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "app-debugcommandline")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DebugCommandline_OptBaseAttribute;
+    pub use super::IDebugCommandline_OptBaseAttribute;
+    pub use super::IDebugCommandline_OptBaseAttributeMethods;
+    pub use super::DebugCommandline_OptProperty_IntSetter;
+    pub use super::IDebugCommandline_OptProperty_IntSetter;
+    pub use super::IDebugCommandline_OptProperty_IntSetterMethods;
+    pub use super::DebugCommandline_OptionAttribute;
+    pub use super::IDebugCommandline_OptionAttribute;
+    pub use super::IDebugCommandline_OptionAttributeMethods;
+    pub use super::DebugCommandline;
+    pub use super::IDebugCommandline;
     pub use super::DebugCommandline_OptwProperty;
     pub use super::IDebugCommandline_OptwProperty;
     pub use super::IDebugCommandline_OptwPropertyMethods;
     pub use super::DebugCommandline_OptProperty;
     pub use super::IDebugCommandline_OptProperty;
     pub use super::IDebugCommandline_OptPropertyMethods;
-    pub use super::DebugCommandline_OptionAttribute;
-    pub use super::IDebugCommandline_OptionAttribute;
-    pub use super::IDebugCommandline_OptionAttributeMethods;
-    pub use super::DebugCommandline_OptProperty_IntSetter;
-    pub use super::IDebugCommandline_OptProperty_IntSetter;
-    pub use super::IDebugCommandline_OptProperty_IntSetterMethods;
-    pub use super::DebugCommandline_OptProperty_Setter;
-    pub use super::IDebugCommandline_OptProperty_Setter;
-    pub use super::IDebugCommandline_OptProperty_SetterMethods;
-    pub use super::DebugCommandline_OptProperty_BoolSetter;
-    pub use super::IDebugCommandline_OptProperty_BoolSetter;
-    pub use super::IDebugCommandline_OptProperty_BoolSetterMethods;
     pub use super::DebugCommandline_OptionWildcardAttribute;
     pub use super::IDebugCommandline_OptionWildcardAttribute;
     pub use super::IDebugCommandline_OptionWildcardAttributeMethods;
-    pub use super::DebugCommandline;
-    pub use super::IDebugCommandline;
-    pub use super::DebugCommandline_OptProperty_FloatSetter;
-    pub use super::IDebugCommandline_OptProperty_FloatSetter;
-    pub use super::IDebugCommandline_OptProperty_FloatSetterMethods;
     pub use super::DebugCommandline_OptProperty_StringSetter;
     pub use super::IDebugCommandline_OptProperty_StringSetter;
     pub use super::IDebugCommandline_OptProperty_StringSetterMethods;
+    pub use super::DebugCommandline_OptProperty_Setter;
+    pub use super::IDebugCommandline_OptProperty_Setter;
+    pub use super::IDebugCommandline_OptProperty_SetterMethods;
+    pub use super::DebugCommandline_OptProperty_FloatSetter;
+    pub use super::IDebugCommandline_OptProperty_FloatSetter;
+    pub use super::IDebugCommandline_OptProperty_FloatSetterMethods;
     pub use super::DebugCommandline_Property;
     pub use super::IDebugCommandline_Property;
     pub use super::IDebugCommandline_PropertyMethods;
-    pub use super::DebugCommandline_OptBaseAttribute;
-    pub use super::IDebugCommandline_OptBaseAttribute;
-    pub use super::IDebugCommandline_OptBaseAttributeMethods;
+    pub use super::DebugCommandline_OptProperty_BoolSetter;
+    pub use super::IDebugCommandline_OptProperty_BoolSetter;
+    pub use super::IDebugCommandline_OptProperty_BoolSetterMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

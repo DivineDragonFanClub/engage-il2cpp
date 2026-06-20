@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dlcmanager/DLCManager_DLCList.md"))]#[::unity2::class(namespace="App",name="DLCManager.DLCList")]#[parent(crate::system::object::Object)]pub struct DLCManager_DLCList{#[offset(16)]#[rename(name="content")]pub content:crate::app::dlcmanager::DLCManager_Content, #[offset(20)]#[rename(name="hasContent")]pub has_content:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dlcmanager/DLCManager_Content.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DLCManager_Content{pub value:i32,}
 impl::unity2::ClassIdentity for DLCManager_Content{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DLCManager.Content";
@@ -34,51 +31,18 @@ pub fn num()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dlcmanager/DLCManager_MountData.md"))]#[::unity2::class(namespace="App",name="DLCManager.MountData")]#[parent(crate::system::object::Object)]pub struct DLCManager_MountData{#[offset(16)]#[rename(name="content")]pub content:crate::app::dlcmanager::DLCManager_Content, #[offset(24)]#[rename(name="mountBuffer")]pub mount_buffer: ::unity2::Array<u8> , #[offset(32)]#[rename(name="mountName")]pub mount_name: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dlcmanager/DLCManager.md"))]#[::unity2::class(namespace="App",name="DLCManager")]#[parent(crate::system::object::Object)]pub struct DLCManager{#[static_field]#[rename(name="ApplicationId")]pub application_id: ::unity2::Il2CppString, #[static_field]#[rename(name="StreamingAssetsPath")]pub streaming_assets_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_MountData")]pub s_mount_data:crate::system::collections::generic::list_1::List_1<crate::app::dlcmanager::DLCManager_MountData> , #[static_field]#[rename(name="s_AwakeChangedEvent")]pub s_awake_changed_event:bool, #[static_field]#[rename(name="s_ChangedEventListener")]pub s_changed_event_listener:crate::unity_engine::events::unityevent::UnityEvent, #[static_field]#[rename(name="s_IsInitialized")]pub s_is_initialized:bool, #[static_field]#[rename(name="s_HasList")]pub s_has_list: ::unity2::Array<crate::app::dlcmanager::DLCManager_DLCList> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dlcmanager/DLCManager_DLCList.md"))]#[::unity2::class(namespace="App",name="DLCManager.DLCList")]#[parent(crate::system::object::Object)]pub struct DLCManager_DLCList{#[offset(16)]#[rename(name="content")]pub content:crate::app::dlcmanager::DLCManager_Content, #[offset(20)]#[rename(name="hasContent")]pub has_content:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dlcmanager/DLCManager_MountData.md"))]#[::unity2::class(namespace="App",name="DLCManager.MountData")]#[parent(crate::system::object::Object)]pub struct DLCManager_MountData{#[offset(16)]#[rename(name="content")]pub content:crate::app::dlcmanager::DLCManager_Content, #[offset(24)]#[rename(name="mountBuffer")]pub mount_buffer: ::unity2::Array<u8> , #[offset(32)]#[rename(name="mountName")]pub mount_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-dlcmanager-types")]
 pub use __types::*;
-
-#[cfg(feature="app-dlcmanager")]pub trait IDLCManager_DLCListMethods:IDLCManager_DLCList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DLCManager_DLCList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19cedb0usize)as*mut u8,();
-(DLCManager_DLCList)__receiver)}
-}
-}
-
-#[cfg(feature="app-dlcmanager")]impl<__T:IDLCManager_DLCList>IDLCManager_DLCListMethods for __T{}
-
-#[cfg(feature="app-dlcmanager")]impl DLCManager_DLCList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-dlcmanager")]impl DLCManager_DLCList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DLCManager_DLCList), ::core::stringify!(new),));
- <Self as IDLCManager_DLCListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-dlcmanager")]pub trait IDLCManager_MountDataMethods:IDLCManager_MountData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DLCManager_MountData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19cedc0usize)as*mut u8,();
-(DLCManager_MountData)__receiver)}
-}
-}
-
-#[cfg(feature="app-dlcmanager")]impl<__T:IDLCManager_MountData>IDLCManager_MountDataMethods for __T{}
-
-#[cfg(feature="app-dlcmanager")]impl DLCManager_MountData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-dlcmanager")]impl DLCManager_MountData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DLCManager_MountData), ::core::stringify!(new),));
- <Self as IDLCManager_MountDataMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-dlcmanager")]impl DLCManager{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f32b0usize)as*mut u8,();
 )}
@@ -211,19 +175,55 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-dlcmanager")]pub trait IDLCManager_DLCListMethods:IDLCManager_DLCList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DLCManager_DLCList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cedb0usize)as*mut u8,();
+(DLCManager_DLCList)__receiver)}
+}
+}
+
+#[cfg(feature="app-dlcmanager")]impl<__T:IDLCManager_DLCList>IDLCManager_DLCListMethods for __T{}
+
+#[cfg(feature="app-dlcmanager")]impl DLCManager_DLCList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-dlcmanager")]impl DLCManager_DLCList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DLCManager_DLCList), ::core::stringify!(new),));
+ <Self as IDLCManager_DLCListMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-dlcmanager")]pub trait IDLCManager_MountDataMethods:IDLCManager_MountData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DLCManager_MountData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cedc0usize)as*mut u8,();
+(DLCManager_MountData)__receiver)}
+}
+}
+
+#[cfg(feature="app-dlcmanager")]impl<__T:IDLCManager_MountData>IDLCManager_MountDataMethods for __T{}
+
+#[cfg(feature="app-dlcmanager")]impl DLCManager_MountData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-dlcmanager")]impl DLCManager_MountData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DLCManager_MountData), ::core::stringify!(new),));
+ <Self as IDLCManager_MountDataMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-dlcmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DLCManager_DLCList;
-    pub use super::IDLCManager_DLCList;
-    pub use super::IDLCManager_DLCListMethods;
     pub use super::DLCManager_Content;
-    pub use super::DLCManager_MountData;
-    pub use super::IDLCManager_MountData;
-    pub use super::IDLCManager_MountDataMethods;
     pub use super::DLCManager;
     pub use super::IDLCManager;
     pub use super::IDLCManagerMethods;
+    pub use super::DLCManager_DLCList;
+    pub use super::IDLCManager_DLCList;
+    pub use super::IDLCManager_DLCListMethods;
+    pub use super::DLCManager_MountData;
+    pub use super::IDLCManager_MountData;
+    pub use super::IDLCManager_MountDataMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

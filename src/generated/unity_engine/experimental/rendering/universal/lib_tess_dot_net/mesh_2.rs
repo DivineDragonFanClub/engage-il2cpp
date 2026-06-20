@@ -18,38 +18,33 @@ use crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::m
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-mesh_2-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-mesh_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Mesh_2_unity2_raw{use super:: * ;
-pub unsafe fn reset(this:Mesh_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Mesh_2 as::unity2::ClassIdentity> ::NAME,"Reset",));
-let inner:extern "C" fn(Mesh_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_free(this:Mesh_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <Mesh_2 as::unity2::ClassIdentity> ::NAME,"OnFree",));
-let inner:extern "C" fn(Mesh_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-mesh_2")]pub trait IMesh_2Methods:IMesh_2{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Mesh_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3193a60usize)as*mut u8,();
 (Mesh_2)__receiver)}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Mesh_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Mesh_2_unity2_raw::reset(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Mesh_2 as::unity2::ClassIdentity> ::NAME,"Reset",));
+let __inner:extern "C" fn(Mesh_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnFree()` overload"]fn on_free(self,)->(){unsafe{let __receiver= <Mesh_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Mesh_2_unity2_raw::on_free(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Mesh_2 as::unity2::ClassIdentity> ::NAME,"OnFree",));
+let __inner:extern "C" fn(Mesh_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`MakeEdge()` overload"]fn make_edge(self,)->crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge{unsafe{let __receiver= <Mesh_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3193e10usize)as*mut u8,crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge;
@@ -103,6 +98,14 @@ pub fn connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn zap_face_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn merge_convex_faces_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-mesh_2")]impl Mesh_2{#[doc="Direct (non-virtual) call to `Mesh_2`'s own `Reset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn reset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::reset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Mesh_2`'s own `OnFree`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_free(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_free_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-mesh_2")]impl Mesh_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

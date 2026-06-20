@@ -47,16 +47,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <Token as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn to_string(this:Token,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <Token as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(Token, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_number_value{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"GetNumberValue",0,param_types,false,)}
@@ -142,7 +132,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (Token)__receiver,(crate::moon_sharp::interpreter::tree::tokentype::TokenType)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(source_id),(i32)::core::convert::Into::into(from_line),(i32)::core::convert::Into::into(from_col),(i32)::core::convert::Into::into(to_line),(i32)::core::convert::Into::into(to_col),(i32)::core::convert::Into::into(prev_line),(i32)::core::convert::Into::into(prev_col))}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Token_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <Token as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(Token, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetNumberValue()` overload"]fn get_number_value(self,)->f64{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_get_number_value::get_method_info().method_ptr,f64;
@@ -187,6 +186,11 @@ pub fn is_binary_operator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn get_source_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn get_source_ref_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn get_source_ref_up_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-tree-token")]impl Token{#[doc="Direct (non-virtual) call to `Token`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-token")]impl Token{#[doc="`.ctor(crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32, i32, i32, i32, i32, i32)` — overload selector"]pub fn new(r#type:crate::moon_sharp::interpreter::tree::tokentype::TokenType,source_id:i32,from_line:i32,from_col:i32,to_line:i32,to_col:i32,prev_line:i32,prev_col:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

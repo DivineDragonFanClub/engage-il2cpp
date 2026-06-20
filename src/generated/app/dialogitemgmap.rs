@@ -20,25 +20,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-dialogitemgmap-types")]
 pub use __types::*;
 
-#[cfg(feature="app-dialogitemgmap")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DialogItemGmap_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:DialogItemGmap,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <DialogItemGmap as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(DialogItemGmap, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-dialogitemgmap")]pub trait IDialogItemGmapMethods:IDialogItemGmap{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <DialogItemGmap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cec7e0usize)as*mut u8,();
 (DialogItemGmap)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::system::action::Action)::core::convert::Into::into(func))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DialogItemGmap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DialogItemGmap_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <DialogItemGmap as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(DialogItemGmap, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -46,6 +42,11 @@ __DialogItemGmap_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 
 #[cfg(feature="app-dialogitemgmap")]impl DialogItemGmap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-dialogitemgmap")]impl DialogItemGmap{#[doc="Direct (non-virtual) call to `DialogItemGmap`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-dialogitemgmap")]impl DialogItemGmap{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(label: ::unity2::Il2CppString,func:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

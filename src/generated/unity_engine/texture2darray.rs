@@ -20,19 +20,6 @@ use crate::unity_engine::texture::{ITexture,Texture}
 #[cfg(feature = "unity_engine-texture2darray-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-texture2darray")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Texture2DArray_unity2_raw{use super:: * ;
-pub unsafe fn get_is_readable(this:Texture2DArray,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <Texture2DArray as::unity2::ClassIdentity> ::NAME,"get_isReadable",));
-let inner:extern "C" fn(Texture2DArray, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-texture2darray")]impl Texture2DArray{#[doc="`get_allSlices()` overload"]pub fn get_all_slices()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378d250usize)as*mut u8,i32;
 )}
 }
@@ -48,7 +35,16 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-texture2darray")]pub trait ITexture2DArrayMethods:ITexture2DArray{#[doc="`get_isReadable()` overload"]fn get_is_readable(self,)->bool{unsafe{let __receiver= <Texture2DArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Texture2DArray_unity2_raw::get_is_readable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Texture2DArray as::unity2::ClassIdentity> ::NAME,"get_isReadable",));
+let __inner:extern "C" fn(Texture2DArray, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor(i32, i32, i32, crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` overload"]fn ctor(self,width:impl::core::convert::Into<i32> ,height:impl::core::convert::Into<i32> ,depth:impl::core::convert::Into<i32> ,format:impl::core::convert::Into<crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat> ,flags:impl::core::convert::Into<crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags>)->(){unsafe{let __receiver= <Texture2DArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x378d450usize)as*mut u8,();
@@ -89,6 +85,11 @@ pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn ctor_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn validate_is_not_crunched_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="unity_engine-texture2darray")]impl Texture2DArray{#[doc="Direct (non-virtual) call to `Texture2DArray`'s own `get_isReadable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_readable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_readable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-texture2darray")]impl Texture2DArray{#[doc="`.ctor(i32, i32, i32, crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)` — overload selector"]pub fn new(width:i32,height:i32,depth:i32,format:crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,flags:crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

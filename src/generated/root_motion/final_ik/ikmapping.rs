@@ -19,37 +19,32 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root_motion-final_ik-ikmapping-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-ikmapping")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKMapping_unity2_raw{use super:: * ;
-pub unsafe fn is_valid(this:IKMapping,solver:crate::root_motion::final_ik::iksolver::IKSolver,message: *mut::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root_motion-final_ik-ikmapping")]pub trait IIKMappingMethods:IIKMapping{#[doc="`IsValid(crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString)` overload"]fn is_valid(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolver::IKSolver>)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <IKMapping as::unity2::ClassIdentity> ::NAME,"IsValid",));
-let inner:extern "C" fn(IKMapping,crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IKMapping,crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,solver,message,__mi)}
-pub unsafe fn initiate(this:IKMapping,solver:crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(solver),__out_0.as_mut_ptr(),__mi)}
+}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`Initiate(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn initiate(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <IKMapping as::unity2::ClassIdentity> ::NAME,"Initiate",));
-let inner:extern "C" fn(IKMapping,crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IKMapping,crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,solver,__mi)}
+__inner(__receiver, ::core::convert::Into::into(solver),__mi)}
 }
-
-#[cfg(feature="root_motion-final_ik-ikmapping")]pub trait IIKMappingMethods:IIKMapping{#[doc="`IsValid(crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString)` overload"]fn is_valid(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolver::IKSolver>)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let __ret={__IKMapping_unity2_raw::is_valid(__receiver, ::core::convert::Into::into(solver),__out_0.as_mut_ptr(), ::core::option::Option::None)}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`Initiate(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn initiate(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKMapping_unity2_raw::initiate(__receiver, ::core::convert::Into::into(solver), ::core::option::Option::None)}
 }
 #[doc="`BoneIsValid(crate::unity_engine::transform::Transform, crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString, crate::root_motion::warning::Warning_Logger)` overload"]fn bone_is_valid(self,bone:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolver::IKSolver> ,logger:impl::core::convert::Into<crate::root_motion::warning::Warning_Logger>)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
@@ -75,6 +70,14 @@ pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn bone_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn solve_fabrik_joint_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="root_motion-final_ik-ikmapping")]impl IKMapping{#[doc="Direct (non-virtual) call to `IKMapping`'s own `IsValid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_valid(this:impl::core::convert::Into< ::unity2::IlInstance> ,solver:crate::root_motion::final_ik::iksolver::IKSolver,message: *mut::unity2::Il2CppString,)->bool{let __mi=Self::is_valid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),solver,message, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKMapping`'s own `Initiate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn initiate(this:impl::core::convert::Into< ::unity2::IlInstance> ,solver:crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody,)->(){let __mi=Self::initiate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),solver, ::core::option::Option::None)}
 }
 
 #[cfg(feature="root_motion-final_ik-ikmapping")]impl IKMapping{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

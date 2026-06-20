@@ -56,19 +56,6 @@ pub fn num()->Self{Self{value:6}
 #[cfg(feature = "app-noticemanager-types")]
 pub use __types::*;
 
-#[cfg(feature="app-noticemanager")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NoticeManager_unity2_raw{use super:: * ;
-pub unsafe fn awake(this:NoticeManager,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <NoticeManager as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(NoticeManager, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-noticemanager")]impl NoticeManager{#[doc="`Add(crate::app::noticemanager::NoticeManager_Kinds, ::unity2::Il2CppString)` overload"]pub fn add(kind:impl::core::convert::Into<crate::app::noticemanager::NoticeManager_Kinds> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1b540usize)as*mut u8,();
 (crate::app::noticemanager::NoticeManager_Kinds)::core::convert::Into::into(kind),(::unity2::Il2CppString)::core::convert::Into::into(text))}
 }
@@ -87,7 +74,16 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-noticemanager")]pub trait INoticeManagerMethods:INoticeManager{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <NoticeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeManager_unity2_raw::awake(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <NoticeManager as::unity2::ClassIdentity> ::NAME,"Awake",));
+let __inner:extern "C" fn(NoticeManager, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <NoticeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1c1e0usize)as*mut u8,();
@@ -129,6 +125,11 @@ pub fn can_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-noticemanager")]impl NoticeManager{#[doc="Direct (non-virtual) call to `NoticeManager`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-noticemanager")]impl NoticeManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

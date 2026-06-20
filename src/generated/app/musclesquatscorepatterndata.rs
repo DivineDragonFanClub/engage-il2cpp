@@ -22,19 +22,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-musclesquatscorepatterndata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-musclesquatscorepatterndata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MuscleSquatScorePatternData_unity2_raw{use super:: * ;
-pub unsafe fn on_build(this:MuscleSquatScorePatternData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MuscleSquatScorePatternData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let inner:extern "C" fn(MuscleSquatScorePatternData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-musclesquatscorepatterndata")]impl MuscleSquatScorePatternData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb310usize)as*mut u8,();
 )}
 }
@@ -133,7 +120,16 @@ inner(this,__mi)}
 (MuscleSquatScorePatternData)__receiver)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MuscleSquatScorePatternData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MuscleSquatScorePatternData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let __inner:extern "C" fn(MuscleSquatScorePatternData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -164,6 +160,11 @@ pub fn set_ensure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
 pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
 pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+}
+
+#[cfg(feature="app-musclesquatscorepatterndata")]impl MuscleSquatScorePatternData{#[doc="Direct (non-virtual) call to `MuscleSquatScorePatternData`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-musclesquatscorepatterndata")]impl MuscleSquatScorePatternData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

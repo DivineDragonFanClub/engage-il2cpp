@@ -20,59 +20,6 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-networking-player_connection-playerconnection-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-networking-player_connection-playerconnection")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PlayerConnection_unity2_raw{use super:: * ;
-pub unsafe fn register_connection(this:PlayerConnection,callback:crate::unity_engine::events::unityaction_1::UnityAction_1<i32> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <PlayerConnection as::unity2::ClassIdentity> ::NAME,"RegisterConnection",));
-let inner:extern "C" fn(PlayerConnection,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,callback,__mi)}
-pub unsafe fn register_disconnection(this:PlayerConnection,callback:crate::unity_engine::events::unityaction_1::UnityAction_1<i32> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <PlayerConnection as::unity2::ClassIdentity> ::NAME,"RegisterDisconnection",));
-let inner:extern "C" fn(PlayerConnection,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,callback,__mi)}
-pub unsafe fn unregister_connection(this:PlayerConnection,callback:crate::unity_engine::events::unityaction_1::UnityAction_1<i32> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <PlayerConnection as::unity2::ClassIdentity> ::NAME,"UnregisterConnection",));
-let inner:extern "C" fn(PlayerConnection,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,callback,__mi)}
-pub unsafe fn unregister_disconnection(this:PlayerConnection,callback:crate::unity_engine::events::unityaction_1::UnityAction_1<i32> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <PlayerConnection as::unity2::ClassIdentity> ::NAME,"UnregisterDisconnection",));
-let inner:extern "C" fn(PlayerConnection,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,callback,__mi)}
-pub unsafe fn disconnect_all(this:PlayerConnection,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <PlayerConnection as::unity2::ClassIdentity> ::NAME,"DisconnectAll",));
-let inner:extern "C" fn(PlayerConnection, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-networking-player_connection-playerconnection")]impl PlayerConnection{#[doc="`get_instance()` overload"]pub fn get_instance()->crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f5bd0usize)as*mut u8,crate::unity_engine::networking::player_connection::playerconnection::PlayerConnection;
 )}
 }
@@ -103,19 +50,64 @@ inner(this,__mi)}
 (PlayerConnection)__receiver)}
 }
 #[doc="`RegisterConnection(crate::unity_engine::events::unityaction_1::UnityAction_1<i32>)` overload"]fn register_connection(self,callback:impl::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<i32> >)->(){unsafe{let __receiver= <PlayerConnection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayerConnection_unity2_raw::register_connection(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <PlayerConnection as::unity2::ClassIdentity> ::NAME,"RegisterConnection",));
+let __inner:extern "C" fn(PlayerConnection,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(callback),__mi)}
+}
 }
 #[doc="`RegisterDisconnection(crate::unity_engine::events::unityaction_1::UnityAction_1<i32>)` overload"]fn register_disconnection(self,callback:impl::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<i32> >)->(){unsafe{let __receiver= <PlayerConnection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayerConnection_unity2_raw::register_disconnection(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <PlayerConnection as::unity2::ClassIdentity> ::NAME,"RegisterDisconnection",));
+let __inner:extern "C" fn(PlayerConnection,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(callback),__mi)}
+}
 }
 #[doc="`UnregisterConnection(crate::unity_engine::events::unityaction_1::UnityAction_1<i32>)` overload"]fn unregister_connection(self,callback:impl::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<i32> >)->(){unsafe{let __receiver= <PlayerConnection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayerConnection_unity2_raw::unregister_connection(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <PlayerConnection as::unity2::ClassIdentity> ::NAME,"UnregisterConnection",));
+let __inner:extern "C" fn(PlayerConnection,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(callback),__mi)}
+}
 }
 #[doc="`UnregisterDisconnection(crate::unity_engine::events::unityaction_1::UnityAction_1<i32>)` overload"]fn unregister_disconnection(self,callback:impl::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<i32> >)->(){unsafe{let __receiver= <PlayerConnection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayerConnection_unity2_raw::unregister_disconnection(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <PlayerConnection as::unity2::ClassIdentity> ::NAME,"UnregisterDisconnection",));
+let __inner:extern "C" fn(PlayerConnection,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(callback),__mi)}
+}
 }
 #[doc="`DisconnectAll()` overload"]fn disconnect_all(self,)->(){unsafe{let __receiver= <PlayerConnection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayerConnection_unity2_raw::disconnect_all(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <PlayerConnection as::unity2::ClassIdentity> ::NAME,"DisconnectAll",));
+let __inner:extern "C" fn(PlayerConnection, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayerConnection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x32f7a10usize)as*mut u8,();
@@ -139,6 +131,23 @@ pub fn message_callback_internal_method_info()-> & 'static::unity2::il2cpp::Meth
 pub fn connected_callback_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 pub fn disconnected_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="unity_engine-networking-player_connection-playerconnection")]impl PlayerConnection{#[doc="Direct (non-virtual) call to `PlayerConnection`'s own `RegisterConnection`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn register_connection(this:impl::core::convert::Into< ::unity2::IlInstance> ,callback:crate::unity_engine::events::unityaction_1::UnityAction_1<i32> ,)->(){let __mi=Self::register_connection_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),callback, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayerConnection`'s own `RegisterDisconnection`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn register_disconnection(this:impl::core::convert::Into< ::unity2::IlInstance> ,callback:crate::unity_engine::events::unityaction_1::UnityAction_1<i32> ,)->(){let __mi=Self::register_disconnection_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),callback, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayerConnection`'s own `UnregisterConnection`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unregister_connection(this:impl::core::convert::Into< ::unity2::IlInstance> ,callback:crate::unity_engine::events::unityaction_1::UnityAction_1<i32> ,)->(){let __mi=Self::unregister_connection_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),callback, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayerConnection`'s own `UnregisterDisconnection`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unregister_disconnection(this:impl::core::convert::Into< ::unity2::IlInstance> ,callback:crate::unity_engine::events::unityaction_1::UnityAction_1<i32> ,)->(){let __mi=Self::unregister_disconnection_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::events::unityaction_1::UnityAction_1<i32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),callback, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayerConnection`'s own `DisconnectAll`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn disconnect_all(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::disconnect_all_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-networking-player_connection-playerconnection")]impl PlayerConnection{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

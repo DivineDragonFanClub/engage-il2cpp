@@ -11,7 +11,15 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="RenderGraphDebugData")]#[parent(crate::system::object::Object)]pub struct RenderGraphDebugData{#[offset(16)]#[rename(name="passList")]pub pass_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData_PassDebugData> , #[offset(24)]#[rename(name="resourceLists")]pub resource_lists: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData_ResourceDebugData> > ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_ResourceDebugData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderGraphDebugData_ResourceDebugData{pub name: ::unity2::Il2CppString,pub imported:bool,pub creation_pass_index:i32,pub release_pass_index:i32,pub consumer_list:crate::system::collections::generic::list_1::List_1<i32>,pub producer_list:crate::system::collections::generic::list_1::List_1<i32>,}
+impl::unity2::ClassIdentity for RenderGraphDebugData_ResourceDebugData{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
+const NAME: &'static str="RenderGraphDebugData.ResourceDebugData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RenderGraphDebugData_ResourceDebugData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_PassDebugData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderGraphDebugData_PassDebugData{pub name: ::unity2::Il2CppString,pub resource_read_lists: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32> >,pub resource_write_lists: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32> >,pub culled:bool,pub generate_debug_data:bool,}
@@ -25,15 +33,7 @@ impl::unity2::IlType for RenderGraphDebugData_PassDebugData{fn il_type()-> &'sta
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_ResourceDebugData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderGraphDebugData_ResourceDebugData{pub name: ::unity2::Il2CppString,pub imported:bool,pub creation_pass_index:i32,pub release_pass_index:i32,pub consumer_list:crate::system::collections::generic::list_1::List_1<i32>,pub producer_list:crate::system::collections::generic::list_1::List_1<i32>,}
-impl::unity2::ClassIdentity for RenderGraphDebugData_ResourceDebugData{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
-const NAME: &'static str="RenderGraphDebugData.ResourceDebugData";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for RenderGraphDebugData_ResourceDebugData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="RenderGraphDebugData")]#[parent(crate::system::object::Object)]pub struct RenderGraphDebugData{#[offset(16)]#[rename(name="passList")]pub pass_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData_PassDebugData> , #[offset(24)]#[rename(name="resourceLists")]pub resource_lists: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData_ResourceDebugData> > ,}
 
 }
 
@@ -66,11 +66,11 @@ this}
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RenderGraphDebugData_ResourceDebugData;
+    pub use super::RenderGraphDebugData_PassDebugData;
     pub use super::RenderGraphDebugData;
     pub use super::IRenderGraphDebugData;
     pub use super::IRenderGraphDebugDataMethods;
-    pub use super::RenderGraphDebugData_PassDebugData;
-    pub use super::RenderGraphDebugData_ResourceDebugData;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

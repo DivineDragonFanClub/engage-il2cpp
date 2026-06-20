@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibotopsequence/AmiiboTopSequence.md"))]#[::unity2::class(namespace="App",name="AmiiboTopSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::amiibotopsequence::AmiiboTopSequence>)]pub struct AmiiboTopSequence{#[offset(116)]#[rename(name="m_menuResult")]pub m_menu_result:crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult, #[offset(120)]#[rename(name="m_AccessoryShopChangeRoot")]pub m_accessory_shop_change_root:crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibotopsequence/AmiiboTopSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AmiiboTopSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for AmiiboTopSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AmiiboTopSequence.Label";
@@ -41,9 +44,6 @@ pub fn exit()->Self{Self{value:5}
 pub fn end()->Self{Self{value:6}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibotopsequence/AmiiboTopSequence.md"))]#[::unity2::class(namespace="App",name="AmiiboTopSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::amiibotopsequence::AmiiboTopSequence>)]pub struct AmiiboTopSequence{#[offset(116)]#[rename(name="m_menuResult")]pub m_menu_result:crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult, #[offset(120)]#[rename(name="m_AccessoryShopChangeRoot")]pub m_accessory_shop_change_root:crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,}
 
 }
 
@@ -117,10 +117,10 @@ this}
 #[cfg(feature = "app-amiibotopsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AmiiboTopSequence_Label;
     pub use super::AmiiboTopSequence;
     pub use super::IAmiiboTopSequence;
     pub use super::IAmiiboTopSequenceMethods;
+    pub use super::AmiiboTopSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

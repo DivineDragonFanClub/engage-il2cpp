@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/operation/Operation.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="Operation")]#[parent(crate::system::object::Object)]pub struct Operation{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/operation/Operation_OperationMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Operation_OperationMode{pub value:i32,}
 impl::unity2::ClassIdentity for Operation_OperationMode{const NAMESPACE: &'static str="UnityEngine.Switch";
 const NAME: &'static str="Operation.OperationMode";
@@ -30,6 +27,9 @@ impl Operation_OperationMode{pub fn handheld()->Self{Self{value:0}
 pub fn console()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/operation/Operation.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="Operation")]#[parent(crate::system::object::Object)]pub struct Operation{}
 
 }
 
@@ -51,9 +51,9 @@ pub fn get_mode_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 #[cfg(feature = "unity_engine-switch-operation")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Operation_OperationMode;
     pub use super::Operation;
     pub use super::IOperation;
-    pub use super::Operation_OperationMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

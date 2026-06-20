@@ -27,17 +27,7 @@ use crate::unity_engine::resource_management::util::componentsingleton_1_2::{Com
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DiagnosticEventCollectorSingleton_unity2_raw{use super:: * ;
-pub unsafe fn get_game_object_name(this:DiagnosticEventCollectorSingleton,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DiagnosticEventCollectorSingleton as::unity2::ClassIdentity> ::NAME,"GetGameObjectName",));
-let inner:extern "C" fn(DiagnosticEventCollectorSingleton, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_register_event_handler{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_register_event_handler{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<DiagnosticEventCollectorSingleton as::unity2::ClassIdentity> ::class(),"RegisterEventHandler",3,param_types,true,)}
 );
@@ -115,7 +105,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]pub trait IDiagnosticEventCollectorSingletonMethods:IDiagnosticEventCollectorSingleton{#[doc="`GetGameObjectName()` overload"]fn get_game_object_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DiagnosticEventCollectorSingleton as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DiagnosticEventCollectorSingleton_unity2_raw::get_game_object_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DiagnosticEventCollectorSingleton as::unity2::ClassIdentity> ::NAME,"GetGameObjectName",));
+let __inner:extern "C" fn(DiagnosticEventCollectorSingleton, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`RegisterEventHandler(crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent>)` overload"]fn register_event_handler_2(self,handler:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent> >)->(){unsafe{let __receiver= <DiagnosticEventCollectorSingleton as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__DiagnosticEventCollectorSingleton_unity2_raw::__lookup_register_event_handler_2::get_method_info().method_ptr,();
@@ -153,6 +152,11 @@ pub fn post_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]impl DiagnosticEventCollectorSingleton{#[doc="Direct (non-virtual) call to `DiagnosticEventCollectorSingleton`'s own `GetGameObjectName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_game_object_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_game_object_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]impl DiagnosticEventCollectorSingleton{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

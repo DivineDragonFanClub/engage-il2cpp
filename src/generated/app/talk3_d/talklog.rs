@@ -26,26 +26,22 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-talk3_d-talklog-types")]
 pub use __types::*;
 
-#[cfg(feature="app-talk3_d-talklog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkLog_unity2_raw{use super:: * ;
-pub unsafe fn awake(this:TalkLog,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TalkLog as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(TalkLog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-talk3_d-talklog")]impl TalkLog{#[doc="`ResetLog()` overload"]pub fn reset_log()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c2b90usize)as*mut u8,();
 )}
 }
 }
 
 #[cfg(feature="app-talk3_d-talklog")]pub trait ITalkLogMethods:ITalkLog{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <TalkLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TalkLog_unity2_raw::awake(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TalkLog as::unity2::ClassIdentity> ::NAME,"Awake",));
+let __inner:extern "C" fn(TalkLog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <TalkLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20c0850usize)as*mut u8,();
@@ -193,6 +189,11 @@ pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
 pub fn reset_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+}
+
+#[cfg(feature="app-talk3_d-talklog")]impl TalkLog{#[doc="Direct (non-virtual) call to `TalkLog`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-talk3_d-talklog")]impl TalkLog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

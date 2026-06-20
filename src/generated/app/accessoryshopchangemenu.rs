@@ -17,10 +17,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangemenu/AccessoryShopChangeMenu.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct AccessoryShopChangeMenu{#[offset(196)]#[rename(name="m_Kind")]pub m_kind:crate::app::accessorydata::AccessoryData_Kinds, #[offset(200)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(208)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(216)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler, #[offset(224)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::accessorymenuitem::AccessoryMenuItem_DecideEventHandler, #[offset(232)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_RequestCloseEventHandler, #[offset(240)]#[rename(name="m_ChangeKindEventHandler")]pub m_change_kind_event_handler:crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_ChangeKindEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangemenu/AccessoryShopChangeMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopChangeMenu_RequestCloseEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangemenu/AccessoryShopChangeMenu.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct AccessoryShopChangeMenu{#[offset(196)]#[rename(name="m_Kind")]pub m_kind:crate::app::accessorydata::AccessoryData_Kinds, #[offset(200)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(208)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(216)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler, #[offset(224)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::accessorymenuitem::AccessoryMenuItem_DecideEventHandler, #[offset(232)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_RequestCloseEventHandler, #[offset(240)]#[rename(name="m_ChangeKindEventHandler")]pub m_change_kind_event_handler:crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_ChangeKindEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangemenu/AccessoryShopChangeMenu_ChangeKindEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeMenu.ChangeKindEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopChangeMenu_ChangeKindEventHandler{}
@@ -30,57 +30,40 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-accessoryshopchangemenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-accessoryshopchangemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeMenu_unity2_raw{use super:: * ;
-pub unsafe fn after_build(this:AccessoryShopChangeMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-accessoryshopchangemenu")]pub trait IAccessoryShopChangeMenu_RequestCloseEventHandlerMethods:IAccessoryShopChangeMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29048d0usize)as*mut u8,();
+(AccessoryShopChangeMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopChangeMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",25usize,__vt.len(), <AccessoryShopChangeMenu as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
-let inner:extern "C" fn(AccessoryShopChangeMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <AccessoryShopChangeMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(AccessoryShopChangeMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:AccessoryShopChangeMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <AccessoryShopChangeMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(AccessoryShopChangeMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn key_left(this:AccessoryShopChangeMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <AccessoryShopChangeMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
-let inner:extern "C" fn(AccessoryShopChangeMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-pub unsafe fn key_right(this:AccessoryShopChangeMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <AccessoryShopChangeMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
-let inner:extern "C" fn(AccessoryShopChangeMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-pub unsafe fn b_call(this:AccessoryShopChangeMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <AccessoryShopChangeMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(AccessoryShopChangeMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-accessoryshopchangemenu")]impl<__T:IAccessoryShopChangeMenu_RequestCloseEventHandler>IAccessoryShopChangeMenu_RequestCloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu_RequestCloseEventHandler{#[doc="Direct (non-virtual) call to `AccessoryShopChangeMenu_RequestCloseEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopChangeMenu_RequestCloseEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopChangeMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler, crate::app::accessorymenuitem::AccessoryMenuItem_DecideEventHandler, crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_RequestCloseEventHandler, crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_ChangeKindEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,select_event_handler:impl::core::convert::Into<crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::accessorymenuitem::AccessoryMenuItem_DecideEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_RequestCloseEventHandler> ,change_kind_event_handler:impl::core::convert::Into<crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_ChangeKindEventHandler>)->crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27bf610usize)as*mut u8,crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu;
@@ -111,10 +94,28 @@ inner(this,__mi)}
 (AccessoryShopChangeMenu)__receiver)}
 }
 #[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <AccessoryShopChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AccessoryShopChangeMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <AccessoryShopChangeMenu as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let __inner:extern "C" fn(AccessoryShopChangeMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AccessoryShopChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AccessoryShopChangeMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <AccessoryShopChangeMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(AccessoryShopChangeMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`EnableMenu()` overload"]fn enable_menu(self,)->(){unsafe{let __receiver= <AccessoryShopChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27c05e0usize)as*mut u8,();
@@ -157,13 +158,40 @@ __AccessoryShopChangeMenu_unity2_raw::get_name(__receiver, ::core::option::Optio
 (AccessoryShopChangeMenu)__receiver)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AccessoryShopChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AccessoryShopChangeMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <AccessoryShopChangeMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let __inner:extern "C" fn(AccessoryShopChangeMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AccessoryShopChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AccessoryShopChangeMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <AccessoryShopChangeMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let __inner:extern "C" fn(AccessoryShopChangeMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AccessoryShopChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AccessoryShopChangeMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <AccessoryShopChangeMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(AccessoryShopChangeMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -193,6 +221,23 @@ pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
 }
 
+#[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu{#[doc="Direct (non-virtual) call to `AccessoryShopChangeMenu`'s own `AfterBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn after_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::after_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AccessoryShopChangeMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AccessoryShopChangeMenu`'s own `KeyLeft`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_left(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::key_left_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AccessoryShopChangeMenu`'s own `KeyRight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_right(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::key_right_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AccessoryShopChangeMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::accessoryshopchangemenucontent::AccessoryShopChangeMenuContent, crate::app::unit::Unit, crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler, crate::app::accessorymenuitem::AccessoryMenuItem_DecideEventHandler, crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_RequestCloseEventHandler, crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_ChangeKindEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::accessoryshopchangemenucontent::AccessoryShopChangeMenuContent,unit:crate::app::unit::Unit,select_event_handler:crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler,decide_event_handler:crate::app::accessorymenuitem::AccessoryMenuItem_DecideEventHandler,request_close_event_handler:crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_RequestCloseEventHandler,change_kind_event_handler:crate::app::accessoryshopchangemenu::AccessoryShopChangeMenu_ChangeKindEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(AccessoryShopChangeMenu), ::core::stringify!(new),));
@@ -200,60 +245,21 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-accessoryshopchangemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeMenu_RequestCloseEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:AccessoryShopChangeMenu_RequestCloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <AccessoryShopChangeMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(AccessoryShopChangeMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-accessoryshopchangemenu")]pub trait IAccessoryShopChangeMenu_RequestCloseEventHandlerMethods:IAccessoryShopChangeMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29048d0usize)as*mut u8,();
-(AccessoryShopChangeMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopChangeMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AccessoryShopChangeMenu_RequestCloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-accessoryshopchangemenu")]impl<__T:IAccessoryShopChangeMenu_RequestCloseEventHandler>IAccessoryShopChangeMenu_RequestCloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AccessoryShopChangeMenu_RequestCloseEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryShopChangeMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-accessoryshopchangemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeMenu_ChangeKindEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:AccessoryShopChangeMenu_ChangeKindEventHandler,accessory_data:crate::app::accessorydata::AccessoryData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <AccessoryShopChangeMenu_ChangeKindEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(AccessoryShopChangeMenu_ChangeKindEventHandler,crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,accessory_data,__mi)}
-}
-
 #[cfg(feature="app-accessoryshopchangemenu")]pub trait IAccessoryShopChangeMenu_ChangeKindEventHandlerMethods:IAccessoryShopChangeMenu_ChangeKindEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeMenu_ChangeKindEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2904510usize)as*mut u8,();
 (AccessoryShopChangeMenu_ChangeKindEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::accessorydata::AccessoryData)` overload"]fn invoke(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryShopChangeMenu_ChangeKindEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AccessoryShopChangeMenu_ChangeKindEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(accessory_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopChangeMenu_ChangeKindEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(AccessoryShopChangeMenu_ChangeKindEventHandler,crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(accessory_data),__mi)}
+}
 }
 }
 
@@ -261,6 +267,11 @@ __AccessoryShopChangeMenu_ChangeKindEventHandler_unity2_raw::invoke(__receiver, 
 
 #[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu_ChangeKindEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu_ChangeKindEventHandler{#[doc="Direct (non-virtual) call to `AccessoryShopChangeMenu_ChangeKindEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,accessory_data:crate::app::accessorydata::AccessoryData,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),accessory_data, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-accessoryshopchangemenu")]impl AccessoryShopChangeMenu_ChangeKindEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -273,12 +284,12 @@ this}
 #[cfg(feature = "app-accessoryshopchangemenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryShopChangeMenu;
-    pub use super::IAccessoryShopChangeMenu;
-    pub use super::IAccessoryShopChangeMenuMethods;
     pub use super::AccessoryShopChangeMenu_RequestCloseEventHandler;
     pub use super::IAccessoryShopChangeMenu_RequestCloseEventHandler;
     pub use super::IAccessoryShopChangeMenu_RequestCloseEventHandlerMethods;
+    pub use super::AccessoryShopChangeMenu;
+    pub use super::IAccessoryShopChangeMenu;
+    pub use super::IAccessoryShopChangeMenuMethods;
     pub use super::AccessoryShopChangeMenu_ChangeKindEventHandler;
     pub use super::IAccessoryShopChangeMenu_ChangeKindEventHandler;
     pub use super::IAccessoryShopChangeMenu_ChangeKindEventHandlerMethods;

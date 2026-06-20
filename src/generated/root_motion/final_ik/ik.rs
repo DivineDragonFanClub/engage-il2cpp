@@ -26,86 +26,77 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root_motion-final_ik-ik-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-ik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IK_unity2_raw{use super:: * ;
-pub unsafe fn get_ik_solver(this:IK,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root_motion-final_ik-ik")]pub trait IIKMethods:IIK{#[doc="`GetIKSolver()` overload"]fn get_ik_solver(self,)->crate::root_motion::final_ik::iksolver::IKSolver{unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <IK as::unity2::ClassIdentity> ::NAME,"GetIKSolver",));
-let inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update_solver(this:IK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`UpdateSolver()` overload"]fn update_solver(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <IK as::unity2::ClassIdentity> ::NAME,"UpdateSolver",));
-let inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn initiate_solver(this:IK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`InitiateSolver()` overload"]fn initiate_solver(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <IK as::unity2::ClassIdentity> ::NAME,"InitiateSolver",));
-let inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn fix_transforms(this:IK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`FixTransforms()` overload"]fn fix_transforms(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <IK as::unity2::ClassIdentity> ::NAME,"FixTransforms",));
-let inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn open_user_manual(this:IK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <IK as::unity2::ClassIdentity> ::NAME,"OpenUserManual",));
-let inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn open_script_reference(this:IK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",9usize,__vt.len(), <IK as::unity2::ClassIdentity> ::NAME,"OpenScriptReference",));
-let inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="root_motion-final_ik-ik")]pub trait IIKMethods:IIK{#[doc="`GetIKSolver()` overload"]fn get_ik_solver(self,)->crate::root_motion::final_ik::iksolver::IKSolver{unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IK_unity2_raw::get_ik_solver(__receiver, ::core::option::Option::None)}
-}
-#[doc="`UpdateSolver()` overload"]fn update_solver(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IK_unity2_raw::update_solver(__receiver, ::core::option::Option::None)}
-}
-#[doc="`InitiateSolver()` overload"]fn initiate_solver(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IK_unity2_raw::initiate_solver(__receiver, ::core::option::Option::None)}
-}
-#[doc="`FixTransforms()` overload"]fn fix_transforms(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IK_unity2_raw::fix_transforms(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IK_unity2_raw::open_user_manual(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IK_unity2_raw::open_script_reference(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a77080usize)as*mut u8,();
@@ -122,6 +113,26 @@ pub fn fix_transforms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn open_user_manual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn open_script_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="root_motion-final_ik-ik")]impl IK{#[doc="Direct (non-virtual) call to `IK`'s own `GetIKSolver`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_ik_solver(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root_motion::final_ik::iksolver::IKSolver{let __mi=Self::get_ik_solver_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IK`'s own `UpdateSolver`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_solver(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_solver_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IK`'s own `InitiateSolver`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn initiate_solver(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::initiate_solver_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IK`'s own `FixTransforms`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn fix_transforms(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::fix_transforms_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IK`'s own `OpenUserManual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn open_user_manual(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::open_user_manual_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IK`'s own `OpenScriptReference`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn open_script_reference(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::open_script_reference_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root_motion-final_ik-ik")]impl IK{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

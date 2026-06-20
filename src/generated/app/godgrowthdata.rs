@@ -25,6 +25,15 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godgrowthdata/GodGrowthData_LevelData.md"))]#[::unity2::class(namespace="App",name="GodGrowthData.LevelData")]#[parent(crate::system::object::Object)]pub struct GodGrowthData_LevelData{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godgrowthdata/GodGrowthData.md"))]#[::unity2::class(namespace="App",name="GodGrowthData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::godgrowthdata::GodGrowthData>)]pub struct GodGrowthData{#[offset(216)]#[rename(name="m_StyleEngageItems")]pub m_style_engage_items:crate::app::godgrowthdata::GodGrowthData_StyleItems, #[static_field]#[rename(name="s_LevelLists")]pub s_level_lists:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::system::collections::generic::list_1::List_1<crate::app::godgrowthdata::GodGrowthData_LevelData> > ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godgrowthdata/GodGrowthData_FlagField.md"))]#[::unity2::class(namespace="App",name="GodGrowthData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::godgrowthdata::GodGrowthData_Flags>)]pub struct GodGrowthData_FlagField{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godgrowthdata/GodGrowthData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodGrowthData_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for GodGrowthData_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GodGrowthData.Flags";
@@ -43,15 +52,6 @@ pub fn sub_engage_count_limit()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godgrowthdata/GodGrowthData.md"))]#[::unity2::class(namespace="App",name="GodGrowthData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::godgrowthdata::GodGrowthData>)]pub struct GodGrowthData{#[offset(216)]#[rename(name="m_StyleEngageItems")]pub m_style_engage_items:crate::app::godgrowthdata::GodGrowthData_StyleItems, #[static_field]#[rename(name="s_LevelLists")]pub s_level_lists:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::system::collections::generic::list_1::List_1<crate::app::godgrowthdata::GodGrowthData_LevelData> > ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godgrowthdata/GodGrowthData_LevelData.md"))]#[::unity2::class(namespace="App",name="GodGrowthData.LevelData")]#[parent(crate::system::object::Object)]pub struct GodGrowthData_LevelData{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godgrowthdata/GodGrowthData_FlagField.md"))]#[::unity2::class(namespace="App",name="GodGrowthData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::godgrowthdata::GodGrowthData_Flags>)]pub struct GodGrowthData_FlagField{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godgrowthdata/GodGrowthData_StyleItems.md"))]#[::unity2::class(namespace="App",name="GodGrowthData.StyleItems")]#[parent(crate::system::object::Object)]pub struct GodGrowthData_StyleItems{#[offset(16)]#[rename(name="m_Items")]pub m_items: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> > , #[offset(24)]#[rename(name="m_TotalCount")]pub m_total_count:i32,}
 
 }
@@ -59,37 +59,97 @@ pub fn sub_engage_count_limit()->Self{Self{value:4}
 #[cfg(feature = "app-godgrowthdata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-godgrowthdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodGrowthData_unity2_raw{use super:: * ;
-pub unsafe fn on_completed(this:GodGrowthData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GodGrowthData as::unity2::ClassIdentity> ::NAME,"OnCompleted",));
-let inner:extern "C" fn(GodGrowthData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_completed_end(this:GodGrowthData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <GodGrowthData as::unity2::ClassIdentity> ::NAME,"OnCompletedEnd",));
-let inner:extern "C" fn(GodGrowthData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_debug_name(this:GodGrowthData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GodGrowthData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let inner:extern "C" fn(GodGrowthData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="app-godgrowthdata")]pub trait IGodGrowthData_LevelDataMethods:IGodGrowthData_LevelData{#[doc="`get_SynchroSkills()` overload"]fn get_synchro_skills(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6710usize)as*mut u8,crate::app::skillarray::SkillArray;
+(GodGrowthData_LevelData)__receiver)}
+}
+#[doc="`set_SynchroSkills(crate::app::skillarray::SkillArray)` overload"]fn set_synchro_skills(self,value:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6720usize)as*mut u8,();
+(GodGrowthData_LevelData)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngagedSkills()` overload"]fn get_engaged_skills(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6730usize)as*mut u8,crate::app::skillarray::SkillArray;
+(GodGrowthData_LevelData)__receiver)}
+}
+#[doc="`set_EngagedSkills(crate::app::skillarray::SkillArray)` overload"]fn set_engaged_skills(self,value:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6740usize)as*mut u8,();
+(GodGrowthData_LevelData)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(value))}
+}
+#[doc="`get_EngageSkills()` overload"]fn get_engage_skills(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6750usize)as*mut u8,crate::app::skillarray::SkillArray;
+(GodGrowthData_LevelData)__receiver)}
+}
+#[doc="`set_EngageSkills(crate::app::skillarray::SkillArray)` overload"]fn set_engage_skills(self,value:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6760usize)as*mut u8,();
+(GodGrowthData_LevelData)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(value))}
+}
+#[doc="`get_StyleEngageItems()` overload"]fn get_style_engage_items(self,)->crate::app::godgrowthdata::GodGrowthData_StyleItems{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6770usize)as*mut u8,crate::app::godgrowthdata::GodGrowthData_StyleItems;
+(GodGrowthData_LevelData)__receiver)}
+}
+#[doc="`set_StyleEngageItems(crate::app::godgrowthdata::GodGrowthData_StyleItems)` overload"]fn set_style_engage_items(self,value:impl::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_StyleItems>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6780usize)as*mut u8,();
+(GodGrowthData_LevelData)__receiver,(crate::app::godgrowthdata::GodGrowthData_StyleItems)::core::convert::Into::into(value))}
+}
+#[doc="`get_Aptitude()` overload"]fn get_aptitude(self,)->crate::app::weaponmask::WeaponMask{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6790usize)as*mut u8,crate::app::weaponmask::WeaponMask;
+(GodGrowthData_LevelData)__receiver)}
+}
+#[doc="`set_Aptitude(crate::app::weaponmask::WeaponMask)` overload"]fn set_aptitude(self,value:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd67a0usize)as*mut u8,();
+(GodGrowthData_LevelData)__receiver,(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flags()` overload"]fn get_flags(self,)->crate::app::godgrowthdata::GodGrowthData_FlagField{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd67b0usize)as*mut u8,crate::app::godgrowthdata::GodGrowthData_FlagField;
+(GodGrowthData_LevelData)__receiver)}
+}
+#[doc="`set_Flags(crate::app::godgrowthdata::GodGrowthData_FlagField)` overload"]fn set_flags(self,value:impl::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_FlagField>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd67c0usize)as*mut u8,();
+(GodGrowthData_LevelData)__receiver,(crate::app::godgrowthdata::GodGrowthData_FlagField)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd67d0usize)as*mut u8,();
+(GodGrowthData_LevelData)__receiver)}
+}
+#[doc="`.ctor(crate::app::godgrowthdata::GodGrowthData_LevelData)` overload"]fn ctor_2(self,src:impl::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_LevelData>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6b00usize)as*mut u8,();
+(GodGrowthData_LevelData)__receiver,(crate::app::godgrowthdata::GodGrowthData_LevelData)::core::convert::Into::into(src))}
+}
+#[doc="`Add(crate::app::godgrowthdata::GodGrowthData)` overload"]fn add(self,data:impl::core::convert::Into<crate::app::godgrowthdata::GodGrowthData>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd7500usize)as*mut u8,();
+(GodGrowthData_LevelData)__receiver,(crate::app::godgrowthdata::GodGrowthData)::core::convert::Into::into(data))}
+}
+}
+
+#[cfg(feature="app-godgrowthdata")]impl<__T:IGodGrowthData_LevelData>IGodGrowthData_LevelDataMethods for __T{}
+
+#[cfg(feature="app-godgrowthdata")]impl GodGrowthData_LevelData{pub fn get_synchro_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_synchro_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_engaged_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_engaged_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_engage_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_engage_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_style_engage_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_style_engage_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_aptitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_aptitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="app-godgrowthdata")]impl GodGrowthData_LevelData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodGrowthData_LevelData), ::core::stringify!(new),));
+ <Self as IGodGrowthData_LevelDataMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::app::godgrowthdata::GodGrowthData_LevelData)` — overload selector"]pub fn new_2(src:crate::app::godgrowthdata::GodGrowthData_LevelData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodGrowthData_LevelData), ::core::stringify!(new_2),));
+ <Self as IGodGrowthData_LevelDataMethods> ::ctor_2(this,src);
+this}
 }
 
 #[cfg(feature="app-godgrowthdata")]impl GodGrowthData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2330b60usize)as*mut u8,();
@@ -361,10 +421,28 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x23327e0usize)as*mut
 (GodGrowthData)__receiver,(crate::app::battlestyle::BattleStyle_Types)::core::convert::Into::into(style),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(items))}
 }
 #[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <GodGrowthData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodGrowthData_unity2_raw::on_completed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GodGrowthData as::unity2::ClassIdentity> ::NAME,"OnCompleted",));
+let __inner:extern "C" fn(GodGrowthData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnCompletedEnd()` overload"]fn on_completed_end(self,)->(){unsafe{let __receiver= <GodGrowthData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodGrowthData_unity2_raw::on_completed_end(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GodGrowthData as::unity2::ClassIdentity> ::NAME,"OnCompletedEnd",));
+let __inner:extern "C" fn(GodGrowthData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetStyleEngageItems(crate::app::battlestyle::BattleStyle_Types)` overload"]fn get_style_engage_items(self,style:impl::core::convert::Into<crate::app::battlestyle::BattleStyle_Types>)->crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>{unsafe{let __receiver= <GodGrowthData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2332910usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> ;
@@ -375,7 +453,16 @@ __GodGrowthData_unity2_raw::on_completed_end(__receiver, ::core::option::Option:
 (GodGrowthData)__receiver)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodGrowthData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodGrowthData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GodGrowthData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let __inner:extern "C" fn(GodGrowthData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodGrowthData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23331e0usize)as*mut u8,();
@@ -461,117 +548,22 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
 }
 
+#[cfg(feature="app-godgrowthdata")]impl GodGrowthData{#[doc="Direct (non-virtual) call to `GodGrowthData`'s own `OnCompleted`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_completed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_completed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodGrowthData`'s own `OnCompletedEnd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_completed_end(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_completed_end_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GodGrowthData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-godgrowthdata")]impl GodGrowthData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GodGrowthData), ::core::stringify!(new),));
  <Self as IGodGrowthDataMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="app-godgrowthdata")]pub trait IGodGrowthData_LevelDataMethods:IGodGrowthData_LevelData{#[doc="`get_SynchroSkills()` overload"]fn get_synchro_skills(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6710usize)as*mut u8,crate::app::skillarray::SkillArray;
-(GodGrowthData_LevelData)__receiver)}
-}
-#[doc="`set_SynchroSkills(crate::app::skillarray::SkillArray)` overload"]fn set_synchro_skills(self,value:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6720usize)as*mut u8,();
-(GodGrowthData_LevelData)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(value))}
-}
-#[doc="`get_EngagedSkills()` overload"]fn get_engaged_skills(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6730usize)as*mut u8,crate::app::skillarray::SkillArray;
-(GodGrowthData_LevelData)__receiver)}
-}
-#[doc="`set_EngagedSkills(crate::app::skillarray::SkillArray)` overload"]fn set_engaged_skills(self,value:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6740usize)as*mut u8,();
-(GodGrowthData_LevelData)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(value))}
-}
-#[doc="`get_EngageSkills()` overload"]fn get_engage_skills(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6750usize)as*mut u8,crate::app::skillarray::SkillArray;
-(GodGrowthData_LevelData)__receiver)}
-}
-#[doc="`set_EngageSkills(crate::app::skillarray::SkillArray)` overload"]fn set_engage_skills(self,value:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6760usize)as*mut u8,();
-(GodGrowthData_LevelData)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(value))}
-}
-#[doc="`get_StyleEngageItems()` overload"]fn get_style_engage_items(self,)->crate::app::godgrowthdata::GodGrowthData_StyleItems{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6770usize)as*mut u8,crate::app::godgrowthdata::GodGrowthData_StyleItems;
-(GodGrowthData_LevelData)__receiver)}
-}
-#[doc="`set_StyleEngageItems(crate::app::godgrowthdata::GodGrowthData_StyleItems)` overload"]fn set_style_engage_items(self,value:impl::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_StyleItems>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6780usize)as*mut u8,();
-(GodGrowthData_LevelData)__receiver,(crate::app::godgrowthdata::GodGrowthData_StyleItems)::core::convert::Into::into(value))}
-}
-#[doc="`get_Aptitude()` overload"]fn get_aptitude(self,)->crate::app::weaponmask::WeaponMask{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6790usize)as*mut u8,crate::app::weaponmask::WeaponMask;
-(GodGrowthData_LevelData)__receiver)}
-}
-#[doc="`set_Aptitude(crate::app::weaponmask::WeaponMask)` overload"]fn set_aptitude(self,value:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd67a0usize)as*mut u8,();
-(GodGrowthData_LevelData)__receiver,(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(value))}
-}
-#[doc="`get_Flags()` overload"]fn get_flags(self,)->crate::app::godgrowthdata::GodGrowthData_FlagField{unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd67b0usize)as*mut u8,crate::app::godgrowthdata::GodGrowthData_FlagField;
-(GodGrowthData_LevelData)__receiver)}
-}
-#[doc="`set_Flags(crate::app::godgrowthdata::GodGrowthData_FlagField)` overload"]fn set_flags(self,value:impl::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_FlagField>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd67c0usize)as*mut u8,();
-(GodGrowthData_LevelData)__receiver,(crate::app::godgrowthdata::GodGrowthData_FlagField)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd67d0usize)as*mut u8,();
-(GodGrowthData_LevelData)__receiver)}
-}
-#[doc="`.ctor(crate::app::godgrowthdata::GodGrowthData_LevelData)` overload"]fn ctor_2(self,src:impl::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_LevelData>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6b00usize)as*mut u8,();
-(GodGrowthData_LevelData)__receiver,(crate::app::godgrowthdata::GodGrowthData_LevelData)::core::convert::Into::into(src))}
-}
-#[doc="`Add(crate::app::godgrowthdata::GodGrowthData)` overload"]fn add(self,data:impl::core::convert::Into<crate::app::godgrowthdata::GodGrowthData>)->(){unsafe{let __receiver= <GodGrowthData_LevelData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd7500usize)as*mut u8,();
-(GodGrowthData_LevelData)__receiver,(crate::app::godgrowthdata::GodGrowthData)::core::convert::Into::into(data))}
-}
-}
-
-#[cfg(feature="app-godgrowthdata")]impl<__T:IGodGrowthData_LevelData>IGodGrowthData_LevelDataMethods for __T{}
-
-#[cfg(feature="app-godgrowthdata")]impl GodGrowthData_LevelData{pub fn get_synchro_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_synchro_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_engaged_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_engaged_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_engage_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_engage_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_style_engage_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_style_engage_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_aptitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_aptitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-}
-
-#[cfg(feature="app-godgrowthdata")]impl GodGrowthData_LevelData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GodGrowthData_LevelData), ::core::stringify!(new),));
- <Self as IGodGrowthData_LevelDataMethods> ::ctor(this,);
-this}
-#[doc="`.ctor(crate::app::godgrowthdata::GodGrowthData_LevelData)` — overload selector"]pub fn new_2(src:crate::app::godgrowthdata::GodGrowthData_LevelData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GodGrowthData_LevelData), ::core::stringify!(new_2),));
- <Self as IGodGrowthData_LevelDataMethods> ::ctor_2(this,src);
-this}
-}
-
-#[cfg(feature="app-godgrowthdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodGrowthData_FlagField_unity2_raw{use super:: * ;
-pub unsafe fn to_int(this:GodGrowthData_FlagField,value:crate::app::godgrowthdata::GodGrowthData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GodGrowthData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
-let inner:extern "C" fn(GodGrowthData_FlagField,crate::app::godgrowthdata::GodGrowthData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
 }
 
 #[cfg(feature="app-godgrowthdata")]pub trait IGodGrowthData_FlagFieldMethods:IGodGrowthData_FlagField{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodGrowthData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -587,7 +579,16 @@ inner(this,value,__mi)}
 (GodGrowthData_FlagField)__receiver,(crate::app::godgrowthdata::GodGrowthData_Flags)::core::convert::Into::into(f))}
 }
 #[doc="`ToInt(crate::app::godgrowthdata::GodGrowthData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::godgrowthdata::GodGrowthData_Flags>)->i32{unsafe{let __receiver= <GodGrowthData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GodGrowthData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GodGrowthData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let __inner:extern "C" fn(GodGrowthData_FlagField,crate::app::godgrowthdata::GodGrowthData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -597,6 +598,11 @@ __GodGrowthData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::
 pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-godgrowthdata")]impl GodGrowthData_FlagField{#[doc="Direct (non-virtual) call to `GodGrowthData_FlagField`'s own `ToInt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_int(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::godgrowthdata::GodGrowthData_Flags,)->i32{let __mi=Self::to_int_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::godgrowthdata::GodGrowthData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-godgrowthdata")]impl GodGrowthData_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -667,16 +673,16 @@ this}
 #[cfg(feature = "app-godgrowthdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodGrowthData_Flags;
-    pub use super::GodGrowthData;
-    pub use super::IGodGrowthData;
-    pub use super::IGodGrowthDataMethods;
     pub use super::GodGrowthData_LevelData;
     pub use super::IGodGrowthData_LevelData;
     pub use super::IGodGrowthData_LevelDataMethods;
+    pub use super::GodGrowthData;
+    pub use super::IGodGrowthData;
+    pub use super::IGodGrowthDataMethods;
     pub use super::GodGrowthData_FlagField;
     pub use super::IGodGrowthData_FlagField;
     pub use super::IGodGrowthData_FlagFieldMethods;
+    pub use super::GodGrowthData_Flags;
     pub use super::GodGrowthData_StyleItems;
     pub use super::IGodGrowthData_StyleItems;
     pub use super::IGodGrowthData_StyleItemsMethods;

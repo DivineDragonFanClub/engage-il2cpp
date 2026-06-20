@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "system-collections-istructuralcomparable-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-istructuralcomparable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IStructuralComparable_unity2_raw{use super:: * ;
-pub unsafe fn compare_to(this:IStructuralComparable,other:crate::system::object::Object,comparer:crate::system::collections::icomparer_interface::IComparer_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-collections-istructuralcomparable")]pub trait IIStructuralComparableMethods:IIStructuralComparable{#[doc="`CompareTo(crate::system::object::Object, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]fn compare_to(self,other:impl::core::convert::Into<crate::system::object::Object> ,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>)->i32{unsafe{let __receiver= <IStructuralComparable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IStructuralComparable as::unity2::ClassIdentity> ::NAME,"CompareTo",));
-let inner:extern "C" fn(IStructuralComparable,crate::system::object::Object,crate::system::collections::icomparer_interface::IComparer_Interface, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IStructuralComparable,crate::system::object::Object,crate::system::collections::icomparer_interface::IComparer_Interface, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,other,comparer,__mi)}
+__inner(__receiver, ::core::convert::Into::into(other), ::core::convert::Into::into(comparer),__mi)}
 }
-
-#[cfg(feature="system-collections-istructuralcomparable")]pub trait IIStructuralComparableMethods:IIStructuralComparable{#[doc="`CompareTo(crate::system::object::Object, crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]fn compare_to(self,other:impl::core::convert::Into<crate::system::object::Object> ,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>)->i32{unsafe{let __receiver= <IStructuralComparable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IStructuralComparable_unity2_raw::compare_to(__receiver, ::core::convert::Into::into(other), ::core::convert::Into::into(comparer), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="system-collections-istructuralcomparable")]impl<__T:IIStructuralComparable>IIStructuralComparableMethods for __T{}
 
 #[cfg(feature="system-collections-istructuralcomparable")]impl IStructuralComparable{pub fn compare_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="system-collections-istructuralcomparable")]impl IStructuralComparable{#[doc="Direct (non-virtual) call to `IStructuralComparable`'s own `CompareTo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compare_to(this:impl::core::convert::Into< ::unity2::IlInstance> ,other:crate::system::object::Object,comparer:crate::system::collections::icomparer_interface::IComparer_Interface,)->i32{let __mi=Self::compare_to_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::collections::icomparer_interface::IComparer_Interface, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),other,comparer, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "system-collections-istructuralcomparable")]

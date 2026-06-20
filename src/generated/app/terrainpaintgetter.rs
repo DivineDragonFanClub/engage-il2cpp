@@ -24,21 +24,17 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-terrainpaintgetter-types")]
 pub use __types::*;
 
-#[cfg(feature="app-terrainpaintgetter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TerrainPaintGetter_unity2_raw{use super:: * ;
-pub unsafe fn get(this:TerrainPaintGetter,x:f32,y:f32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-terrainpaintgetter")]pub trait ITerrainPaintGetterMethods:ITerrainPaintGetter{#[doc="`Get(f32, f32)` overload"]fn get(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <TerrainPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <TerrainPaintGetter as::unity2::ClassIdentity> ::NAME,"Get",));
-let inner:extern "C" fn(TerrainPaintGetter,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(TerrainPaintGetter,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,y,__mi)}
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y),__mi)}
 }
-
-#[cfg(feature="app-terrainpaintgetter")]pub trait ITerrainPaintGetterMethods:ITerrainPaintGetter{#[doc="`Get(f32, f32)` overload"]fn get(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <TerrainPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TerrainPaintGetter_unity2_raw::get(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
 }
 #[doc="`Get(crate::unity_engine::vector2::Vector2)` overload"]fn get_2(self,pos:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)-> ::unity2::Il2CppString{unsafe{let __receiver= <TerrainPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7320usize)as*mut u8, ::unity2::Il2CppString;
@@ -60,6 +56,11 @@ __TerrainPaintGetter_unity2_raw::get(__receiver, ::core::convert::Into::into(x),
 pub fn get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn on_draw_gizmos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-terrainpaintgetter")]impl TerrainPaintGetter{#[doc="Direct (non-virtual) call to `TerrainPaintGetter`'s own `Get`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:f32,y:f32,)-> ::unity2::Il2CppString{let __mi=Self::get_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,y, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-terrainpaintgetter")]impl TerrainPaintGetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

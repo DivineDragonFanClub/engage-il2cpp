@@ -9,23 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/xrsystem/XRSystem_XRShaderIDs.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="XRSystem.XRShaderIDs")]#[parent(crate::system::object::Object)]pub struct XRSystem_XRShaderIDs{#[static_field]#[rename(name="_SourceTexArraySlice")]pub source_tex_array_slice:i32, #[static_field]#[rename(name="_SRGBRead")]pub srgb_read:i32, #[static_field]#[rename(name="_SRGBWrite")]pub srgb_write:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/xrsystem/XRSystem.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="XRSystem")]#[parent(crate::system::object::Object)]pub struct XRSystem{#[offset(16)]#[rename(name="emptyPass")]pub empty_pass:crate::unity_engine::rendering::universal::xrpass::XRPass, #[offset(24)]#[rename(name="framePasses")]pub frame_passes:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::xrpass::XRPass> , #[static_field]#[rename(name="displayList")]pub display_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem> , #[offset(32)]#[rename(name="display")]pub display:crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem, #[static_field]#[rename(name="msaaLevel")]pub msaa_level:i32, #[offset(40)]#[rename(name="occlusionMeshMaterial")]pub occlusion_mesh_material:crate::unity_engine::material::Material, #[offset(48)]#[rename(name="mirrorViewMaterial")]pub mirror_view_material:crate::unity_engine::material::Material, #[offset(56)]#[rename(name="mirrorViewMaterialProperty")]pub mirror_view_material_property:crate::unity_engine::materialpropertyblock::MaterialPropertyBlock, #[offset(64)]#[rename(name="testRenderTexture")]pub test_render_texture:crate::unity_engine::rendertexture::RenderTexture, #[static_field]#[rename(name="k_XRMirrorTag")]pub k_xr_mirror_tag: ::unity2::Il2CppString, #[static_field]#[rename(name="_XRMirrorProfilingSampler")]pub xr_mirror_profiling_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/xrsystem/XRSystem_XRShaderIDs.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="XRSystem.XRShaderIDs")]#[parent(crate::system::object::Object)]pub struct XRSystem_XRShaderIDs{#[static_field]#[rename(name="_SourceTexArraySlice")]pub source_tex_array_slice:i32, #[static_field]#[rename(name="_SRGBRead")]pub srgb_read:i32, #[static_field]#[rename(name="_SRGBWrite")]pub srgb_write:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-xrsystem-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-rendering-universal-xrsystem")]impl XRSystem_XRShaderIDs{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbacd0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-xrsystem")]impl XRSystem_XRShaderIDs{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
 
 #[cfg(feature="unity_engine-rendering-universal-xrsystem")]impl XRSystem{#[doc="`GetDisplaySubsystem()` overload"]pub fn get_display_subsystem()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb4bc0usize)as*mut u8,();
 )}
@@ -131,14 +123,22 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="unity_engine-rendering-universal-xrsystem")]impl XRSystem_XRShaderIDs{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbacd0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-xrsystem")]impl XRSystem_XRShaderIDs{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::XRSystem_XRShaderIDs;
-    pub use super::IXRSystem_XRShaderIDs;
     pub use super::XRSystem;
     pub use super::IXRSystem;
     pub use super::IXRSystemMethods;
+    pub use super::XRSystem_XRShaderIDs;
+    pub use super::IXRSystem_XRShaderIDs;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

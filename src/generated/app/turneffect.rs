@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/turneffect/TurnEffect.md"))]#[::unity2::class(namespace="App",name="TurnEffect")]#[parent(crate::app::procinst::ProcInst)]pub struct TurnEffect{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/turneffect/TurnEffect_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TurnEffect_Label{pub value:i32,}
 impl::unity2::ClassIdentity for TurnEffect_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="TurnEffect.Label";
@@ -35,33 +32,13 @@ pub fn end()->Self{Self{value:2}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/turneffect/TurnEffect.md"))]#[::unity2::class(namespace="App",name="TurnEffect")]#[parent(crate::app::procinst::ProcInst)]pub struct TurnEffect{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
+
 }
 
 #[cfg(feature = "app-turneffect-types")]
 pub use __types::*;
-
-#[cfg(feature="app-turneffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TurnEffect_unity2_raw{use super:: * ;
-pub unsafe fn get_can_wait_skip(this:TurnEffect,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TurnEffect as::unity2::ClassIdentity> ::NAME,"get_CanWaitSkip",));
-let inner:extern "C" fn(TurnEffect, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn execute(this:TurnEffect,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <TurnEffect as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(TurnEffect, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-turneffect")]impl TurnEffect{pub fn create_bind<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<TurnEffect as::unity2::ClassIdentity> ::class(),"CreateBind",1,)}
 );
@@ -90,7 +67,16 @@ __f(::core::convert::Into::into(super_), ::core::option::Option::Some(__mi_opaqu
 (TurnEffect)__receiver)}
 }
 #[doc="`get_CanWaitSkip()` overload"]fn get_can_wait_skip(self,)->bool{unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TurnEffect_unity2_raw::get_can_wait_skip(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TurnEffect as::unity2::ClassIdentity> ::NAME,"get_CanWaitSkip",));
+let __inner:extern "C" fn(TurnEffect, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Search()` overload"]fn search(self,)->(){unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22ace80usize)as*mut u8,();
@@ -109,7 +95,16 @@ __TurnEffect_unity2_raw::get_can_wait_skip(__receiver, ::core::option::Option::N
 (TurnEffect)__receiver,(i32)::core::convert::Into::into(heal))}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TurnEffect_unity2_raw::execute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <TurnEffect as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(TurnEffect, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`TryWaitTime(f32)` overload"]fn try_wait_time(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22ad170usize)as*mut u8,();
@@ -129,6 +124,14 @@ pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn try_wait_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="app-turneffect")]impl TurnEffect{#[doc="Direct (non-virtual) call to `TurnEffect`'s own `get_CanWaitSkip`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_can_wait_skip(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_can_wait_skip_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TurnEffect`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-turneffect")]impl TurnEffect{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TurnEffect), ::core::stringify!(new),));
@@ -139,10 +142,10 @@ this}
 #[cfg(feature = "app-turneffect")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TurnEffect_Label;
     pub use super::TurnEffect;
     pub use super::ITurnEffect;
     pub use super::ITurnEffectMethods;
-    pub use super::TurnEffect_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

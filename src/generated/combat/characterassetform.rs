@@ -24,49 +24,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "combat-characterassetform-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-characterassetform")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CharacterAssetForm_unity2_raw{use super:: * ;
-pub unsafe fn build_hierarchy(this:CharacterAssetForm,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <CharacterAssetForm as::unity2::ClassIdentity> ::NAME,"BuildHierarchy",));
-let inner:extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn co_build_hierarchy(this:CharacterAssetForm,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <CharacterAssetForm as::unity2::ClassIdentity> ::NAME,"CoBuildHierarchy",));
-let inner:extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_via_table_result(this:CharacterAssetForm,r:crate::app::assettable::AssetTable_Result,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <CharacterAssetForm as::unity2::ClassIdentity> ::NAME,"SetViaTableResult",));
-let inner:extern "C" fn(CharacterAssetForm,crate::app::assettable::AssetTable_Result, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,r,__mi)}
-pub unsafe fn unload_d(this:CharacterAssetForm,chr:crate::unity_engine::transform::Transform,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <CharacterAssetForm as::unity2::ClassIdentity> ::NAME,"UnloadD",));
-let inner:extern "C" fn(CharacterAssetForm,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,chr,__mi)}
-}
-
 #[cfg(feature="combat-characterassetform")]impl CharacterAssetForm{#[doc="`Attach(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform)` overload"]pub fn attach(me:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d3f30usize)as*mut u8,();
 (crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(me),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent))}
 }
@@ -112,10 +69,28 @@ inner(this,chr,__mi)}
 (CharacterAssetForm)__receiver)}
 }
 #[doc="`BuildHierarchy()` overload"]fn build_hierarchy(self,)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CharacterAssetForm_unity2_raw::build_hierarchy(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CharacterAssetForm as::unity2::ClassIdentity> ::NAME,"BuildHierarchy",));
+let __inner:extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CoBuildHierarchy()` overload"]fn co_build_hierarchy(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CharacterAssetForm_unity2_raw::co_build_hierarchy(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CharacterAssetForm as::unity2::ClassIdentity> ::NAME,"CoBuildHierarchy",));
+let __inner:extern "C" fn(CharacterAssetForm, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BeginContentsChange()` overload"]fn begin_contents_change(self,)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27d3cf0usize)as*mut u8,();
@@ -126,10 +101,28 @@ __CharacterAssetForm_unity2_raw::co_build_hierarchy(__receiver, ::core::option::
 (CharacterAssetForm)__receiver)}
 }
 #[doc="`SetViaTableResult(crate::app::assettable::AssetTable_Result)` overload"]fn set_via_table_result(self,r:impl::core::convert::Into<crate::app::assettable::AssetTable_Result>)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CharacterAssetForm_unity2_raw::set_via_table_result(__receiver, ::core::convert::Into::into(r), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CharacterAssetForm as::unity2::ClassIdentity> ::NAME,"SetViaTableResult",));
+let __inner:extern "C" fn(CharacterAssetForm,crate::app::assettable::AssetTable_Result, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(r),__mi)}
+}
 }
 #[doc="`UnloadD(crate::unity_engine::transform::Transform)` overload"]fn unload_d(self,chr:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CharacterAssetForm_unity2_raw::unload_d(__receiver, ::core::convert::Into::into(chr), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CharacterAssetForm as::unity2::ClassIdentity> ::NAME,"UnloadD",));
+let __inner:extern "C" fn(CharacterAssetForm,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(chr),__mi)}
+}
 }
 #[doc="`Attach(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn attach_2(self,me:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,parent:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CharacterAssetForm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27d4020usize)as*mut u8,();
@@ -177,6 +170,20 @@ pub fn get_accessories_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 pub fn load_database_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="combat-characterassetform")]impl CharacterAssetForm{#[doc="Direct (non-virtual) call to `CharacterAssetForm`'s own `BuildHierarchy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_hierarchy(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_hierarchy_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CharacterAssetForm`'s own `CoBuildHierarchy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn co_build_hierarchy(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::ienumerator::IEnumerator{let __mi=Self::co_build_hierarchy_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CharacterAssetForm`'s own `SetViaTableResult`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_via_table_result(this:impl::core::convert::Into< ::unity2::IlInstance> ,r:crate::app::assettable::AssetTable_Result,)->(){let __mi=Self::set_via_table_result_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::assettable::AssetTable_Result, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),r, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CharacterAssetForm`'s own `UnloadD`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unload_d(this:impl::core::convert::Into< ::unity2::IlInstance> ,chr:crate::unity_engine::transform::Transform,)->(){let __mi=Self::unload_d_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),chr, ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-characterassetform")]impl CharacterAssetForm{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

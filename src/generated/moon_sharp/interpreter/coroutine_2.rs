@@ -201,16 +201,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <Coroutine_2 as::unity2::ClassIdentity> ::NAME,"GetStackTrace",e),}
 }
 }
-pub unsafe fn get_owner_script(this:Coroutine_2,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Coroutine_2 as::unity2::ClassIdentity> ::NAME,"get_OwnerScript",));
-let inner:extern "C" fn(Coroutine_2, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_owner_script{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<Coroutine_2 as::unity2::ClassIdentity> ::class(),"set_OwnerScript",1,param_types,false,)}
@@ -308,7 +298,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (Coroutine_2)__receiver,(i32)::core::convert::Into::into(skip),(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)::core::convert::Into::into(entry_source_ref))}
 }
 #[doc="`get_OwnerScript()` overload"]fn get_owner_script(self,)->crate::moon_sharp::interpreter::script::Script{unsafe{let __receiver= <Coroutine_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Coroutine_2_unity2_raw::get_owner_script(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Coroutine_2 as::unity2::ClassIdentity> ::NAME,"get_OwnerScript",));
+let __inner:extern "C" fn(Coroutine_2, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_OwnerScript(crate::moon_sharp::interpreter::script::Script)` overload"]fn set_owner_script(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script>)->(){unsafe{let __receiver= <Coroutine_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__Coroutine_2_unity2_raw::__lookup_set_owner_script::get_method_info().method_ptr,();
@@ -346,6 +345,11 @@ pub fn get_owner_script_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn set_owner_script_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 pub fn get_auto_yield_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 pub fn set_auto_yield_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-coroutine_2")]impl Coroutine_2{#[doc="Direct (non-virtual) call to `Coroutine_2`'s own `get_OwnerScript`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_owner_script(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::moon_sharp::interpreter::script::Script{let __mi=Self::get_owner_script_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-coroutine_2")]impl Coroutine_2{#[doc="`.ctor(crate::moon_sharp::interpreter::callbackfunction::CallbackFunction)` — overload selector"]pub fn new(function:crate::moon_sharp::interpreter::callbackfunction::CallbackFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

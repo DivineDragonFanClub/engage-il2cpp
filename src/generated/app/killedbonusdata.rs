@@ -28,6 +28,23 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData.md"))]#[::unity2::class(namespace="App",name="KilledBonusData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::killedbonusdata::KilledBonusData>)]pub struct KilledBonusData{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct KilledBonusData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for KilledBonusData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="KilledBonusData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for KilledBonusData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl KilledBonusData_Flags{pub fn god()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_FlagField.md"))]#[::unity2::class(namespace="App",name="KilledBonusData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::killedbonusdata::KilledBonusData_Flags>)]pub struct KilledBonusData_FlagField{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct KilledBonusData_Kinds{pub value:i32,}
 impl::unity2::ClassIdentity for KilledBonusData_Kinds{const NAMESPACE: &'static str="App";
 const NAME: &'static str="KilledBonusData.Kinds";
@@ -49,40 +66,10 @@ pub fn god_exp()->Self{Self{value:4}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct KilledBonusData_Flags{pub value:i32,}
-impl::unity2::ClassIdentity for KilledBonusData_Flags{const NAMESPACE: &'static str="App";
-const NAME: &'static str="KilledBonusData.Flags";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for KilledBonusData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl KilledBonusData_Flags{pub fn god()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_FlagField.md"))]#[::unity2::class(namespace="App",name="KilledBonusData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::killedbonusdata::KilledBonusData_Flags>)]pub struct KilledBonusData_FlagField{}
-
 }
 
 #[cfg(feature = "app-killedbonusdata-types")]
 pub use __types::*;
-
-#[cfg(feature="app-killedbonusdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __KilledBonusData_unity2_raw{use super:: * ;
-pub unsafe fn get_debug_name(this:KilledBonusData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <KilledBonusData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let inner:extern "C" fn(KilledBonusData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-killedbonusdata")]impl KilledBonusData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdaca0usize)as*mut u8,();
 )}
@@ -130,7 +117,16 @@ inner(this,__mi)}
 (KilledBonusData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__KilledBonusData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <KilledBonusData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let __inner:extern "C" fn(KilledBonusData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdae80usize)as*mut u8,();
@@ -155,24 +151,16 @@ pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 }
 
+#[cfg(feature="app-killedbonusdata")]impl KilledBonusData{#[doc="Direct (non-virtual) call to `KilledBonusData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-killedbonusdata")]impl KilledBonusData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(KilledBonusData), ::core::stringify!(new),));
  <Self as IKilledBonusDataMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="app-killedbonusdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __KilledBonusData_FlagField_unity2_raw{use super:: * ;
-pub unsafe fn to_int(this:KilledBonusData_FlagField,value:crate::app::killedbonusdata::KilledBonusData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <KilledBonusData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
-let inner:extern "C" fn(KilledBonusData_FlagField,crate::app::killedbonusdata::KilledBonusData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
 }
 
 #[cfg(feature="app-killedbonusdata")]pub trait IKilledBonusData_FlagFieldMethods:IKilledBonusData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <KilledBonusData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -184,7 +172,16 @@ inner(this,value,__mi)}
 (KilledBonusData_FlagField)__receiver,(crate::app::killedbonusdata::KilledBonusData_Flags)::core::convert::Into::into(f))}
 }
 #[doc="`ToInt(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::killedbonusdata::KilledBonusData_Flags>)->i32{unsafe{let __receiver= <KilledBonusData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__KilledBonusData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <KilledBonusData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let __inner:extern "C" fn(KilledBonusData_FlagField,crate::app::killedbonusdata::KilledBonusData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -193,6 +190,11 @@ __KilledBonusData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into
 #[cfg(feature="app-killedbonusdata")]impl KilledBonusData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-killedbonusdata")]impl KilledBonusData_FlagField{#[doc="Direct (non-virtual) call to `KilledBonusData_FlagField`'s own `ToInt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_int(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::killedbonusdata::KilledBonusData_Flags,)->i32{let __mi=Self::to_int_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::killedbonusdata::KilledBonusData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-killedbonusdata")]impl KilledBonusData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -213,11 +215,11 @@ pub mod prelude {
     pub use super::KilledBonusData;
     pub use super::IKilledBonusData;
     pub use super::IKilledBonusDataMethods;
-    pub use super::KilledBonusData_Kinds;
     pub use super::KilledBonusData_Flags;
     pub use super::KilledBonusData_FlagField;
     pub use super::IKilledBonusData_FlagField;
     pub use super::IKilledBonusData_FlagFieldMethods;
+    pub use super::KilledBonusData_Kinds;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

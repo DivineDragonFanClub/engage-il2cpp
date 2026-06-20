@@ -14,34 +14,29 @@ mod __types {
 #[cfg(feature = "unity_engine-iserializationcallbackreceiver-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-iserializationcallbackreceiver")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ISerializationCallbackReceiver_unity2_raw{use super:: * ;
-pub unsafe fn on_before_serialize(this:ISerializationCallbackReceiver,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-iserializationcallbackreceiver")]pub trait IISerializationCallbackReceiverMethods:IISerializationCallbackReceiver{#[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <ISerializationCallbackReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <ISerializationCallbackReceiver as::unity2::ClassIdentity> ::NAME,"OnBeforeSerialize",));
-let inner:extern "C" fn(ISerializationCallbackReceiver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ISerializationCallbackReceiver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_after_deserialize(this:ISerializationCallbackReceiver,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <ISerializationCallbackReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <ISerializationCallbackReceiver as::unity2::ClassIdentity> ::NAME,"OnAfterDeserialize",));
-let inner:extern "C" fn(ISerializationCallbackReceiver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ISerializationCallbackReceiver, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-iserializationcallbackreceiver")]pub trait IISerializationCallbackReceiverMethods:IISerializationCallbackReceiver{#[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <ISerializationCallbackReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ISerializationCallbackReceiver_unity2_raw::on_before_serialize(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <ISerializationCallbackReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ISerializationCallbackReceiver_unity2_raw::on_after_deserialize(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -49,6 +44,14 @@ __ISerializationCallbackReceiver_unity2_raw::on_after_deserialize(__receiver, ::
 
 #[cfg(feature="unity_engine-iserializationcallbackreceiver")]impl ISerializationCallbackReceiver{pub fn on_before_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn on_after_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-iserializationcallbackreceiver")]impl ISerializationCallbackReceiver{#[doc="Direct (non-virtual) call to `ISerializationCallbackReceiver`'s own `OnBeforeSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_before_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_before_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ISerializationCallbackReceiver`'s own `OnAfterDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_after_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_after_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-iserializationcallbackreceiver")]

@@ -17,27 +17,7 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-platforms-platformaccessorbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PlatformAccessorBase_unity2_raw{use super:: * ;
-pub unsafe fn get_platform_name_prefix(this:PlatformAccessorBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"GetPlatformNamePrefix",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_platform_name(this:PlatformAccessorBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"GetPlatformName",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_unity_runtime_name{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_unity_runtime_name{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<PlatformAccessorBase as::unity2::ClassIdentity> ::class(),"GetUnityRuntimeName",0,param_types,false,)}
 );
@@ -57,136 +37,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"GetUnityPlatformName",e),}
 }
 }
-pub unsafe fn default_print(this:PlatformAccessorBase,content: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"DefaultPrint",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,content,__mi)}
-pub unsafe fn default_input(this:PlatformAccessorBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"DefaultInput",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn default_input_2(this:PlatformAccessorBase,prompt: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"DefaultInput",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,prompt,__mi)}
-pub unsafe fn io_get_standard_stream(this:PlatformAccessorBase,r#type:crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::io::stream::Stream{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"IO_GetStandardStream",));
-let inner:extern "C" fn(PlatformAccessorBase,crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,r#type,__mi)}
-pub unsafe fn io_os_get_temp_filename(this:PlatformAccessorBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",24usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"IO_OS_GetTempFilename",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn os_exit_fast(this:PlatformAccessorBase,exit_code:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"OS_ExitFast",));
-let inner:extern "C" fn(PlatformAccessorBase,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,exit_code,__mi)}
-pub unsafe fn os_file_exists(this:PlatformAccessorBase,file: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"OS_FileExists",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,file,__mi)}
-pub unsafe fn os_file_delete(this:PlatformAccessorBase,file: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"OS_FileDelete",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,file,__mi)}
-pub unsafe fn os_file_move(this:PlatformAccessorBase,src: ::unity2::Il2CppString,dst: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"OS_FileMove",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,src,dst,__mi)}
-pub unsafe fn os_execute(this:PlatformAccessorBase,cmdline: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"OS_Execute",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,cmdline,__mi)}
-pub unsafe fn filter_supported_core_modules(this:PlatformAccessorBase,module:crate::moon_sharp::interpreter::coremodules::CoreModules,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::coremodules::CoreModules{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"FilterSupportedCoreModules",));
-let inner:extern "C" fn(PlatformAccessorBase,crate::moon_sharp::interpreter::coremodules::CoreModules, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::coremodules::CoreModules= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,module,__mi)}
-pub unsafe fn get_environment_variable(this:PlatformAccessorBase,envvarname: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"GetEnvironmentVariable",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,envvarname,__mi)}
-pub unsafe fn is_running_on_aot(this:PlatformAccessorBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"IsRunningOnAOT",));
-let inner:extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<PlatformAccessorBase as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -200,10 +50,28 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="moon_sharp-interpreter-platforms-platformaccessorbase")]pub trait IPlatformAccessorBaseMethods:IPlatformAccessorBase{#[doc="`GetPlatformNamePrefix()` overload"]fn get_platform_name_prefix(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::get_platform_name_prefix(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"GetPlatformNamePrefix",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetPlatformName()` overload"]fn get_platform_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::get_platform_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"GetPlatformName",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetUnityRuntimeName()` overload"]fn get_unity_runtime_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__PlatformAccessorBase_unity2_raw::__lookup_get_unity_runtime_name::get_method_info().method_ptr, ::unity2::Il2CppString;
@@ -214,43 +82,160 @@ __PlatformAccessorBase_unity2_raw::get_platform_name(__receiver, ::core::option:
 (PlatformAccessorBase)__receiver)}
 }
 #[doc="`DefaultPrint(::unity2::Il2CppString)` overload"]fn default_print(self,content:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::default_print(__receiver, ::core::convert::Into::into(content), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"DefaultPrint",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(content),__mi)}
+}
 }
 #[doc="`DefaultInput()` overload"]fn default_input(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::default_input(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"DefaultInput",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`DefaultInput(::unity2::Il2CppString)` overload"]fn default_input_2(self,prompt:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::default_input_2(__receiver, ::core::convert::Into::into(prompt), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"DefaultInput",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(prompt),__mi)}
+}
 }
 #[doc="`IO_GetStandardStream(crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType)` overload"]fn io_get_standard_stream(self,r#type:impl::core::convert::Into<crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType>)->crate::system::io::stream::Stream{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::io_get_standard_stream(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"IO_GetStandardStream",));
+let __inner:extern "C" fn(PlatformAccessorBase,crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(r#type),__mi)}
+}
 }
 #[doc="`IO_OS_GetTempFilename()` overload"]fn io_os_get_temp_filename(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::io_os_get_temp_filename(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"IO_OS_GetTempFilename",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OS_ExitFast(i32)` overload"]fn os_exit_fast(self,exit_code:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::os_exit_fast(__receiver, ::core::convert::Into::into(exit_code), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"OS_ExitFast",));
+let __inner:extern "C" fn(PlatformAccessorBase,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(exit_code),__mi)}
+}
 }
 #[doc="`OS_FileExists(::unity2::Il2CppString)` overload"]fn os_file_exists(self,file:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::os_file_exists(__receiver, ::core::convert::Into::into(file), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"OS_FileExists",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(file),__mi)}
+}
 }
 #[doc="`OS_FileDelete(::unity2::Il2CppString)` overload"]fn os_file_delete(self,file:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::os_file_delete(__receiver, ::core::convert::Into::into(file), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"OS_FileDelete",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(file),__mi)}
+}
 }
 #[doc="`OS_FileMove(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn os_file_move(self,src:impl::core::convert::Into< ::unity2::Il2CppString> ,dst:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::os_file_move(__receiver, ::core::convert::Into::into(src), ::core::convert::Into::into(dst), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"OS_FileMove",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(src), ::core::convert::Into::into(dst),__mi)}
+}
 }
 #[doc="`OS_Execute(::unity2::Il2CppString)` overload"]fn os_execute(self,cmdline:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::os_execute(__receiver, ::core::convert::Into::into(cmdline), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"OS_Execute",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(cmdline),__mi)}
+}
 }
 #[doc="`FilterSupportedCoreModules(crate::moon_sharp::interpreter::coremodules::CoreModules)` overload"]fn filter_supported_core_modules(self,module:impl::core::convert::Into<crate::moon_sharp::interpreter::coremodules::CoreModules>)->crate::moon_sharp::interpreter::coremodules::CoreModules{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::filter_supported_core_modules(__receiver, ::core::convert::Into::into(module), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"FilterSupportedCoreModules",));
+let __inner:extern "C" fn(PlatformAccessorBase,crate::moon_sharp::interpreter::coremodules::CoreModules, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::coremodules::CoreModules= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(module),__mi)}
+}
 }
 #[doc="`GetEnvironmentVariable(::unity2::Il2CppString)` overload"]fn get_environment_variable(self,envvarname:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::get_environment_variable(__receiver, ::core::convert::Into::into(envvarname), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"GetEnvironmentVariable",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(envvarname),__mi)}
+}
 }
 #[doc="`IsRunningOnAOT()` overload"]fn is_running_on_aot(self,)->bool{unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlatformAccessorBase_unity2_raw::is_running_on_aot(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <PlatformAccessorBase as::unity2::ClassIdentity> ::NAME,"IsRunningOnAOT",));
+let __inner:extern "C" fn(PlatformAccessorBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlatformAccessorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__PlatformAccessorBase_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
@@ -278,6 +263,53 @@ pub fn filter_supported_core_modules_method_info()-> & 'static::unity2::il2cpp::
 pub fn get_environment_variable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 pub fn is_running_on_aot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-platforms-platformaccessorbase")]impl PlatformAccessorBase{#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `GetPlatformNamePrefix`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_platform_name_prefix(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_platform_name_prefix_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `GetPlatformName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_platform_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_platform_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `DefaultPrint`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn default_print(this:impl::core::convert::Into< ::unity2::IlInstance> ,content: ::unity2::Il2CppString,)->(){let __mi=Self::default_print_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),content, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `DefaultInput`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn default_input(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::default_input_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `DefaultInput`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn default_input_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,prompt: ::unity2::Il2CppString,)-> ::unity2::Il2CppString{let __mi=Self::default_input_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),prompt, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `IO_GetStandardStream`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn io_get_standard_stream(this:impl::core::convert::Into< ::unity2::IlInstance> ,r#type:crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType,)->crate::system::io::stream::Stream{let __mi=Self::io_get_standard_stream_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),r#type, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `IO_OS_GetTempFilename`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn io_os_get_temp_filename(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::io_os_get_temp_filename_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `OS_ExitFast`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn os_exit_fast(this:impl::core::convert::Into< ::unity2::IlInstance> ,exit_code:i32,)->(){let __mi=Self::os_exit_fast_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),exit_code, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `OS_FileExists`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn os_file_exists(this:impl::core::convert::Into< ::unity2::IlInstance> ,file: ::unity2::Il2CppString,)->bool{let __mi=Self::os_file_exists_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),file, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `OS_FileDelete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn os_file_delete(this:impl::core::convert::Into< ::unity2::IlInstance> ,file: ::unity2::Il2CppString,)->(){let __mi=Self::os_file_delete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),file, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `OS_FileMove`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn os_file_move(this:impl::core::convert::Into< ::unity2::IlInstance> ,src: ::unity2::Il2CppString,dst: ::unity2::Il2CppString,)->(){let __mi=Self::os_file_move_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),src,dst, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `OS_Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn os_execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,cmdline: ::unity2::Il2CppString,)->i32{let __mi=Self::os_execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),cmdline, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `FilterSupportedCoreModules`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn filter_supported_core_modules(this:impl::core::convert::Into< ::unity2::IlInstance> ,module:crate::moon_sharp::interpreter::coremodules::CoreModules,)->crate::moon_sharp::interpreter::coremodules::CoreModules{let __mi=Self::filter_supported_core_modules_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::coremodules::CoreModules, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::coremodules::CoreModules= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),module, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `GetEnvironmentVariable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_environment_variable(this:impl::core::convert::Into< ::unity2::IlInstance> ,envvarname: ::unity2::Il2CppString,)-> ::unity2::Il2CppString{let __mi=Self::get_environment_variable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),envvarname, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlatformAccessorBase`'s own `IsRunningOnAOT`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_running_on_aot(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_running_on_aot_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-platforms-platformaccessorbase")]impl PlatformAccessorBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

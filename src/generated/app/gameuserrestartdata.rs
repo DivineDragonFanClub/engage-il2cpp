@@ -39,148 +39,49 @@ pub fn none()->Self{Self{value: -1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_GameConfigWriter.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.GameConfigWriter")]#[parent(crate::app::stream_2::Stream_2)]pub struct GameUserRestartData_GameConfigWriter{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_VariableWriter.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.VariableWriter")]#[parent(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32>)]pub struct GameUserRestartData_VariableWriter{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_GrowthWriter.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.GrowthWriter")]#[parent(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::gameuserrestartdata::GameUserRestartData_Growth>)]pub struct GameUserRestartData_GrowthWriter{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_RecordWriter.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.RecordWriter")]#[parent(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32>)]pub struct GameUserRestartData_RecordWriter{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_Growth.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.Growth")]#[parent(crate::system::object::Object)]pub struct GameUserRestartData_Growth{#[offset(16)]#[rename(name="Job")]pub job:crate::app::jobdata::JobData, #[offset(24)]#[rename(name="Level")]pub level:i32, #[offset(28)]#[rename(name="Exp")]pub exp:i32, #[offset(32)]#[rename(name="GrowCapability")]pub grow_capability:crate::app::capability::Capability, #[offset(40)]#[rename(name="LevelCapability")]pub level_capability:crate::app::unitbasecapability::UnitBaseCapability,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_CompleteWriter.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.CompleteWriter")]#[parent(crate::system::object::Object)]pub struct GameUserRestartData_CompleteWriter{#[offset(16)]#[rename(name="m_Chapter")]pub m_chapter:crate::app::chapterdata::ChapterData, #[offset(24)]#[rename(name="m_Records")]pub m_records:crate::system::collections::generic::list_1::List_1<crate::app::chapterrecord::ChapterRecord_Record> , #[offset(32)]#[rename(name="m_Encounters")]pub m_encounters: ::unity2::Array<i32> ,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_RecordWriter.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.RecordWriter")]#[parent(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32>)]pub struct GameUserRestartData_RecordWriter{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_RestartStream.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.RestartStream")]#[parent(crate::app::stream_2::Stream_2)]pub struct GameUserRestartData_RestartStream{#[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="MaxSize")]pub max_size:i32, #[static_field]#[rename(name="MagicNumber")]pub magic_number:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_GrowthWriter.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.GrowthWriter")]#[parent(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::gameuserrestartdata::GameUserRestartData_Growth>)]pub struct GameUserRestartData_GrowthWriter{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameuserrestartdata::GameUserRestartData>)]pub struct GameUserRestartData{#[offset(32)]#[rename(name="m_Streams")]pub m_streams: ::unity2::Array<crate::app::gameuserrestartdata::GameUserRestartData_RestartStream> , #[offset(40)]#[rename(name="m_Target")]pub m_target:crate::app::gameuserrestartdata::GameUserRestartData_Targtes, #[offset(44)]#[rename(name="m_KeepLevel")]pub m_keep_level:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_Growth.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.Growth")]#[parent(crate::system::object::Object)]pub struct GameUserRestartData_Growth{#[offset(16)]#[rename(name="Job")]pub job:crate::app::jobdata::JobData, #[offset(24)]#[rename(name="Level")]pub level:i32, #[offset(28)]#[rename(name="Exp")]pub exp:i32, #[offset(32)]#[rename(name="GrowCapability")]pub grow_capability:crate::app::capability::Capability, #[offset(40)]#[rename(name="LevelCapability")]pub level_capability:crate::app::unitbasecapability::UnitBaseCapability,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_VariableWriter.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.VariableWriter")]#[parent(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32>)]pub struct GameUserRestartData_VariableWriter{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserrestartdata/GameUserRestartData_GameConfigWriter.md"))]#[::unity2::class(namespace="App",name="GameUserRestartData.GameConfigWriter")]#[parent(crate::app::stream_2::Stream_2)]pub struct GameUserRestartData_GameConfigWriter{}
 
 }
 
 #[cfg(feature = "app-gameuserrestartdata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-gameuserrestartdata")]pub trait IGameUserRestartData_GameConfigWriterMethods:IGameUserRestartData_GameConfigWriter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData_GameConfigWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e820usize)as*mut u8,();
-(GameUserRestartData_GameConfigWriter)__receiver)}
-}
-#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <GameUserRestartData_GameConfigWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e830usize)as*mut u8,();
-(GameUserRestartData_GameConfigWriter)__receiver)}
-}
-#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <GameUserRestartData_GameConfigWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e8c0usize)as*mut u8,();
-(GameUserRestartData_GameConfigWriter)__receiver)}
+#[cfg(feature="app-gameuserrestartdata")]pub trait IGameUserRestartData_GrowthMethods:IGameUserRestartData_Growth{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData_Growth as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e950usize)as*mut u8,();
+(GameUserRestartData_Growth)__receiver)}
 }
 }
 
-#[cfg(feature="app-gameuserrestartdata")]impl<__T:IGameUserRestartData_GameConfigWriter>IGameUserRestartData_GameConfigWriterMethods for __T{}
+#[cfg(feature="app-gameuserrestartdata")]impl<__T:IGameUserRestartData_Growth>IGameUserRestartData_GrowthMethods for __T{}
 
-#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_GameConfigWriter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_Growth{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_GameConfigWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_Growth{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GameUserRestartData_GameConfigWriter), ::core::stringify!(new),));
- <Self as IGameUserRestartData_GameConfigWriterMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gameuserrestartdata")]pub trait IGameUserRestartData_VariableWriterMethods:IGameUserRestartData_VariableWriter{#[doc="`Read(bool)` overload"]fn read(self,is_network:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GameUserRestartData_VariableWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e705a0usize)as*mut u8,();
-(GameUserRestartData_VariableWriter)__receiver,(bool)::core::convert::Into::into(is_network))}
-}
-#[doc="`Read(::unity2::Il2CppString)` overload"]fn read_2(self,header:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameUserRestartData_VariableWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e70970usize)as*mut u8,();
-(GameUserRestartData_VariableWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(header))}
-}
-#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <GameUserRestartData_VariableWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e70680usize)as*mut u8,();
-(GameUserRestartData_VariableWriter)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData_VariableWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e70540usize)as*mut u8,();
-(GameUserRestartData_VariableWriter)__receiver)}
-}
-}
-
-#[cfg(feature="app-gameuserrestartdata")]impl<__T:IGameUserRestartData_VariableWriter>IGameUserRestartData_VariableWriterMethods for __T{}
-
-#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_VariableWriter{pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn read_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_VariableWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameUserRestartData_VariableWriter), ::core::stringify!(new),));
- <Self as IGameUserRestartData_VariableWriterMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gameuserrestartdata")]pub trait IGameUserRestartData_GrowthWriterMethods:IGameUserRestartData_GrowthWriter{#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <GameUserRestartData_GrowthWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ea10usize)as*mut u8,();
-(GameUserRestartData_GrowthWriter)__receiver)}
-}
-#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <GameUserRestartData_GrowthWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ed00usize)as*mut u8,();
-(GameUserRestartData_GrowthWriter)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData_GrowthWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6f3a0usize)as*mut u8,();
-(GameUserRestartData_GrowthWriter)__receiver)}
-}
-}
-
-#[cfg(feature="app-gameuserrestartdata")]impl<__T:IGameUserRestartData_GrowthWriter>IGameUserRestartData_GrowthWriterMethods for __T{}
-
-#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_GrowthWriter{pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_GrowthWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameUserRestartData_GrowthWriter), ::core::stringify!(new),));
- <Self as IGameUserRestartData_GrowthWriterMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gameuserrestartdata")]pub trait IGameUserRestartData_RecordWriterMethods:IGameUserRestartData_RecordWriter{#[doc="`Read(crate::app::unitrecord::UnitRecord_Kinds)` overload"]fn read(self,kind:impl::core::convert::Into<crate::app::unitrecord::UnitRecord_Kinds>)->(){unsafe{let __receiver= <GameUserRestartData_RecordWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6f400usize)as*mut u8,();
-(GameUserRestartData_RecordWriter)__receiver,(crate::app::unitrecord::UnitRecord_Kinds)::core::convert::Into::into(kind))}
-}
-#[doc="`Write(crate::app::unitrecord::UnitRecord_Kinds)` overload"]fn write(self,kind:impl::core::convert::Into<crate::app::unitrecord::UnitRecord_Kinds>)->(){unsafe{let __receiver= <GameUserRestartData_RecordWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6f660usize)as*mut u8,();
-(GameUserRestartData_RecordWriter)__receiver,(crate::app::unitrecord::UnitRecord_Kinds)::core::convert::Into::into(kind))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData_RecordWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6f8c0usize)as*mut u8,();
-(GameUserRestartData_RecordWriter)__receiver)}
-}
-}
-
-#[cfg(feature="app-gameuserrestartdata")]impl<__T:IGameUserRestartData_RecordWriter>IGameUserRestartData_RecordWriterMethods for __T{}
-
-#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_RecordWriter{pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_RecordWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameUserRestartData_RecordWriter), ::core::stringify!(new),));
- <Self as IGameUserRestartData_RecordWriterMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(GameUserRestartData_Growth), ::core::stringify!(new),));
+ <Self as IGameUserRestartData_GrowthMethods> ::ctor(this,);
 this}
 }
 
@@ -209,6 +110,34 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(GameUserRestartData_CompleteWriter), ::core::stringify!(new),));
  <Self as IGameUserRestartData_CompleteWriterMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gameuserrestartdata")]pub trait IGameUserRestartData_RecordWriterMethods:IGameUserRestartData_RecordWriter{#[doc="`Read(crate::app::unitrecord::UnitRecord_Kinds)` overload"]fn read(self,kind:impl::core::convert::Into<crate::app::unitrecord::UnitRecord_Kinds>)->(){unsafe{let __receiver= <GameUserRestartData_RecordWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6f400usize)as*mut u8,();
+(GameUserRestartData_RecordWriter)__receiver,(crate::app::unitrecord::UnitRecord_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`Write(crate::app::unitrecord::UnitRecord_Kinds)` overload"]fn write(self,kind:impl::core::convert::Into<crate::app::unitrecord::UnitRecord_Kinds>)->(){unsafe{let __receiver= <GameUserRestartData_RecordWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6f660usize)as*mut u8,();
+(GameUserRestartData_RecordWriter)__receiver,(crate::app::unitrecord::UnitRecord_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData_RecordWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6f8c0usize)as*mut u8,();
+(GameUserRestartData_RecordWriter)__receiver)}
+}
+}
+
+#[cfg(feature="app-gameuserrestartdata")]impl<__T:IGameUserRestartData_RecordWriter>IGameUserRestartData_RecordWriterMethods for __T{}
+
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_RecordWriter{pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_RecordWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameUserRestartData_RecordWriter), ::core::stringify!(new),));
+ <Self as IGameUserRestartData_RecordWriterMethods> ::ctor(this,);
 this}
 }
 
@@ -250,57 +179,32 @@ pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gameuserrestartdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameUserRestartData_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:GameUserRestartData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GameUserRestartData as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(GameUserRestartData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:GameUserRestartData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <GameUserRestartData as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(GameUserRestartData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_version(this:GameUserRestartData,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GameUserRestartData as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(GameUserRestartData, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:GameUserRestartData,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <GameUserRestartData as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(GameUserRestartData,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:GameUserRestartData,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <GameUserRestartData as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(GameUserRestartData,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
+#[cfg(feature="app-gameuserrestartdata")]pub trait IGameUserRestartData_GrowthWriterMethods:IGameUserRestartData_GrowthWriter{#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <GameUserRestartData_GrowthWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ea10usize)as*mut u8,();
+(GameUserRestartData_GrowthWriter)__receiver)}
+}
+#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <GameUserRestartData_GrowthWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ed00usize)as*mut u8,();
+(GameUserRestartData_GrowthWriter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData_GrowthWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6f3a0usize)as*mut u8,();
+(GameUserRestartData_GrowthWriter)__receiver)}
+}
+}
+
+#[cfg(feature="app-gameuserrestartdata")]impl<__T:IGameUserRestartData_GrowthWriter>IGameUserRestartData_GrowthWriterMethods for __T{}
+
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_GrowthWriter{pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_GrowthWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameUserRestartData_GrowthWriter), ::core::stringify!(new),));
+ <Self as IGameUserRestartData_GrowthWriterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData{#[doc="`Save(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"]pub fn save(target:impl::core::convert::Into<crate::app::gameuserrestartdata::GameUserRestartData_Targtes>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x251dcf0usize)as*mut u8,();
@@ -337,19 +241,64 @@ inner(this,stream,version,__mi)}
 (GameUserRestartData)__receiver,(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)::core::convert::Into::into(target))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GameUserRestartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameUserRestartData_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GameUserRestartData as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(GameUserRestartData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <GameUserRestartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameUserRestartData_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GameUserRestartData as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(GameUserRestartData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <GameUserRestartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameUserRestartData_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GameUserRestartData as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(GameUserRestartData, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GameUserRestartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameUserRestartData_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GameUserRestartData as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(GameUserRestartData,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameUserRestartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameUserRestartData_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <GameUserRestartData as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(GameUserRestartData,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x251e270usize)as*mut u8,();
@@ -377,6 +326,23 @@ pub fn set_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData{#[doc="Direct (non-virtual) call to `GameUserRestartData`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameUserRestartData`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameUserRestartData`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameUserRestartData`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameUserRestartData`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GameUserRestartData), ::core::stringify!(new),));
@@ -384,21 +350,64 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gameuserrestartdata")]pub trait IGameUserRestartData_GrowthMethods:IGameUserRestartData_Growth{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData_Growth as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e950usize)as*mut u8,();
-(GameUserRestartData_Growth)__receiver)}
+#[cfg(feature="app-gameuserrestartdata")]pub trait IGameUserRestartData_VariableWriterMethods:IGameUserRestartData_VariableWriter{#[doc="`Read(bool)` overload"]fn read(self,is_network:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GameUserRestartData_VariableWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e705a0usize)as*mut u8,();
+(GameUserRestartData_VariableWriter)__receiver,(bool)::core::convert::Into::into(is_network))}
+}
+#[doc="`Read(::unity2::Il2CppString)` overload"]fn read_2(self,header:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameUserRestartData_VariableWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e70970usize)as*mut u8,();
+(GameUserRestartData_VariableWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(header))}
+}
+#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <GameUserRestartData_VariableWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e70680usize)as*mut u8,();
+(GameUserRestartData_VariableWriter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData_VariableWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e70540usize)as*mut u8,();
+(GameUserRestartData_VariableWriter)__receiver)}
 }
 }
 
-#[cfg(feature="app-gameuserrestartdata")]impl<__T:IGameUserRestartData_Growth>IGameUserRestartData_GrowthMethods for __T{}
+#[cfg(feature="app-gameuserrestartdata")]impl<__T:IGameUserRestartData_VariableWriter>IGameUserRestartData_VariableWriterMethods for __T{}
 
-#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_Growth{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_VariableWriter{pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn read_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_Growth{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_VariableWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GameUserRestartData_Growth), ::core::stringify!(new),));
- <Self as IGameUserRestartData_GrowthMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(GameUserRestartData_VariableWriter), ::core::stringify!(new),));
+ <Self as IGameUserRestartData_VariableWriterMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gameuserrestartdata")]pub trait IGameUserRestartData_GameConfigWriterMethods:IGameUserRestartData_GameConfigWriter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserRestartData_GameConfigWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e820usize)as*mut u8,();
+(GameUserRestartData_GameConfigWriter)__receiver)}
+}
+#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <GameUserRestartData_GameConfigWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e830usize)as*mut u8,();
+(GameUserRestartData_GameConfigWriter)__receiver)}
+}
+#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <GameUserRestartData_GameConfigWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e8c0usize)as*mut u8,();
+(GameUserRestartData_GameConfigWriter)__receiver)}
+}
+}
+
+#[cfg(feature="app-gameuserrestartdata")]impl<__T:IGameUserRestartData_GameConfigWriter>IGameUserRestartData_GameConfigWriterMethods for __T{}
+
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_GameConfigWriter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gameuserrestartdata")]impl GameUserRestartData_GameConfigWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameUserRestartData_GameConfigWriter), ::core::stringify!(new),));
+ <Self as IGameUserRestartData_GameConfigWriterMethods> ::ctor(this,);
 this}
 }
 
@@ -406,30 +415,30 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GameUserRestartData_Targtes;
-    pub use super::GameUserRestartData_GameConfigWriter;
-    pub use super::IGameUserRestartData_GameConfigWriter;
-    pub use super::IGameUserRestartData_GameConfigWriterMethods;
-    pub use super::GameUserRestartData_VariableWriter;
-    pub use super::IGameUserRestartData_VariableWriter;
-    pub use super::IGameUserRestartData_VariableWriterMethods;
-    pub use super::GameUserRestartData_GrowthWriter;
-    pub use super::IGameUserRestartData_GrowthWriter;
-    pub use super::IGameUserRestartData_GrowthWriterMethods;
-    pub use super::GameUserRestartData_RecordWriter;
-    pub use super::IGameUserRestartData_RecordWriter;
-    pub use super::IGameUserRestartData_RecordWriterMethods;
-    pub use super::GameUserRestartData_CompleteWriter;
-    pub use super::IGameUserRestartData_CompleteWriter;
-    pub use super::IGameUserRestartData_CompleteWriterMethods;
-    pub use super::GameUserRestartData_RestartStream;
-    pub use super::IGameUserRestartData_RestartStream;
-    pub use super::IGameUserRestartData_RestartStreamMethods;
-    pub use super::GameUserRestartData;
-    pub use super::IGameUserRestartData;
-    pub use super::IGameUserRestartDataMethods;
     pub use super::GameUserRestartData_Growth;
     pub use super::IGameUserRestartData_Growth;
     pub use super::IGameUserRestartData_GrowthMethods;
+    pub use super::GameUserRestartData_CompleteWriter;
+    pub use super::IGameUserRestartData_CompleteWriter;
+    pub use super::IGameUserRestartData_CompleteWriterMethods;
+    pub use super::GameUserRestartData_RecordWriter;
+    pub use super::IGameUserRestartData_RecordWriter;
+    pub use super::IGameUserRestartData_RecordWriterMethods;
+    pub use super::GameUserRestartData_RestartStream;
+    pub use super::IGameUserRestartData_RestartStream;
+    pub use super::IGameUserRestartData_RestartStreamMethods;
+    pub use super::GameUserRestartData_GrowthWriter;
+    pub use super::IGameUserRestartData_GrowthWriter;
+    pub use super::IGameUserRestartData_GrowthWriterMethods;
+    pub use super::GameUserRestartData;
+    pub use super::IGameUserRestartData;
+    pub use super::IGameUserRestartDataMethods;
+    pub use super::GameUserRestartData_VariableWriter;
+    pub use super::IGameUserRestartData_VariableWriter;
+    pub use super::IGameUserRestartData_VariableWriterMethods;
+    pub use super::GameUserRestartData_GameConfigWriter;
+    pub use super::IGameUserRestartData_GameConfigWriter;
+    pub use super::IGameUserRestartData_GameConfigWriterMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::app::stream_2::IStream_2;
     pub use crate::system::collections::generic::dictionary_2::IDictionary_2;

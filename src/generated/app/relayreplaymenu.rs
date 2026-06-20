@@ -23,80 +23,106 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.RelayConfirmReplayDialog.DialogItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct RelayReplayMenu_RelayConfirmReplayDialog_DialogItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RelayReplayMenu{#[offset(200)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RelayReplayMenu_RequestCloseEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.RelayConfirmReplayDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct RelayReplayMenu_RelayConfirmReplayDialog{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.RelayConfirmReplayDialog.DialogItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct RelayReplayMenu_RelayConfirmReplayDialog_DialogItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RelayReplayMenu{#[offset(200)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RelayReplayMenu_SelectEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.RelayConfirmReplayDialog.DialogItem.DialogDecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_ReplayMenuItem.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.ReplayMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RelayReplayMenu_ReplayMenuItem{#[offset(104)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(112)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler, #[offset(128)]#[rename(name="m_IsAwarded")]pub m_is_awarded:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RelayReplayMenu_DecideEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RelayReplayMenu_SelectEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_ReplayMenuItem.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.ReplayMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RelayReplayMenu_ReplayMenuItem{#[offset(104)]#[rename(name="m_MetaData")]pub m_meta_data:crate::app::relayservermetadata::RelayServerMetaData, #[offset(112)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler, #[offset(128)]#[rename(name="m_IsAwarded")]pub m_is_awarded:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog.md"))]#[::unity2::class(namespace="App",name="RelayReplayMenu.RelayConfirmReplayDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct RelayReplayMenu_RelayConfirmReplayDialog{}
 
 }
 
 #[cfg(feature = "app-relayreplaymenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-relayreplaymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:RelayReplayMenu_RelayConfirmReplayDialog_DialogItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>, crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,search_results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> > ,select_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler>)->crate::app::relayreplaymenu::RelayReplayMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2002600usize)as*mut u8,crate::app::relayreplaymenu::RelayReplayMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object),(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)::core::convert::Into::into(search_results),(crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
+}
+}
+
+#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenuMethods:IRelayReplayMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymapmenucontent::RelayMapMenuContent, crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::relaymapmenucontent::RelayMapMenuContent> ,request_close_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler>)->(){unsafe{let __receiver= <RelayReplayMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2002840usize)as*mut u8,();
+(RelayReplayMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::relaymapmenucontent::RelayMapMenuContent)::core::convert::Into::into(menu_content),(crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayReplayMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",30usize,__vt.len(), <RelayReplayMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RelayReplayMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayReplayMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",63usize,__vt.len(), <RelayReplayMenu as::unity2::ClassIdentity> ::NAME,"GetTutorial",));
+let __inner:extern "C" fn(RelayReplayMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayReplayMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <RelayReplayMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(RelayReplayMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
 }
 
-#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods:IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,decide:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler>)->(){unsafe{let __receiver= <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c020usize)as*mut u8,();
-(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)::core::convert::Into::into(decide))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
+#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu>IRelayReplayMenuMethods for __T{}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem>IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods for __T{}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu{#[doc="Direct (non-virtual) call to `RelayReplayMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayReplayMenu`'s own `GetTutorial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_tutorial(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_tutorial_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayReplayMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,decide:crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymapmenucontent::RelayMapMenuContent, crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::relaymapmenucontent::RelayMapMenuContent,request_close_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem), ::core::stringify!(new),));
- <Self as IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods> ::ctor(this,text,decide);
+ failed to instantiate", ::core::stringify!(RelayReplayMenu), ::core::stringify!(new),));
+ <Self as IRelayReplayMenuMethods> ::ctor(this,menu_item_list,menu_content,request_close_event_handler);
 this}
-}
-
-#[cfg(feature="app-relayreplaymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayReplayMenu_RequestCloseEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RelayReplayMenu_RequestCloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <RelayReplayMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RelayReplayMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_RequestCloseEventHandlerMethods:IRelayReplayMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayReplayMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -104,7 +130,16 @@ inner(this,__mi)}
 (RelayReplayMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RelayReplayMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_RequestCloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RelayReplayMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RelayReplayMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -114,10 +149,258 @@ __RelayReplayMenu_RequestCloseEventHandler_unity2_raw::invoke(__receiver, ::core
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RequestCloseEventHandler{#[doc="Direct (non-virtual) call to `RelayReplayMenu_RequestCloseEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RelayReplayMenu_RequestCloseEventHandler), ::core::stringify!(new),));
  <Self as IRelayReplayMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods:IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,decide:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler>)->(){unsafe{let __receiver= <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c020usize)as*mut u8,();
+(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)::core::convert::Into::into(decide))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem>IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods for __T{}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem{#[doc="Direct (non-virtual) call to `RelayReplayMenu_RelayConfirmReplayDialog_DialogItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,decide:crate::app::relayreplaymenu::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem), ::core::stringify!(new),));
+ <Self as IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods> ::ctor(this,text,decide);
+this}
+}
+
+#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_SelectEventHandlerMethods:IRelayReplayMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayReplayMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b08dc0usize)as*mut u8,();
+(RelayReplayMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::relayservermetadata::RelayServerMetaData)` overload"]fn invoke(self,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{let __receiver= <RelayReplayMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RelayReplayMenu_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RelayReplayMenu_SelectEventHandler,crate::app::relayservermetadata::RelayServerMetaData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(meta_data),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu_SelectEventHandler>IRelayReplayMenu_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_SelectEventHandler{#[doc="Direct (non-virtual) call to `RelayReplayMenu_SelectEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,meta_data:crate::app::relayservermetadata::RelayServerMetaData,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::relayservermetadata::RelayServerMetaData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),meta_data, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayReplayMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IRelayReplayMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods:IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9350usize)as*mut u8,();
+(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler>IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler{#[doc="Direct (non-virtual) call to `RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler), ::core::stringify!(new),));
+ <Self as IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_DecideEventHandlerMethods:IRelayReplayMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayReplayMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b07c00usize)as*mut u8,();
+(RelayReplayMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RelayReplayMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RelayReplayMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RelayReplayMenu_DecideEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu_DecideEventHandler>IRelayReplayMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `RelayReplayMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayReplayMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRelayReplayMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_ReplayMenuItemMethods:IRelayReplayMenu_ReplayMenuItem{#[doc="`.ctor(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` overload"]fn ctor(self,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,select_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b08390usize)as*mut u8,();
+(RelayReplayMenu_ReplayMenuItem)__receiver,(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`IsEnd()` overload"]fn is_end(self,)->bool{unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b084f0usize)as*mut u8,bool;
+(RelayReplayMenu_ReplayMenuItem)__receiver)}
+}
+#[doc="`IsAwarded()` overload"]fn is_awarded(self,)->bool{unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b08510usize)as*mut u8,bool;
+(RelayReplayMenu_ReplayMenuItem)__receiver)}
+}
+#[doc="`GetUserName()` overload"]fn get_user_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b08520usize)as*mut u8, ::unity2::Il2CppString;
+(RelayReplayMenu_ReplayMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <RelayReplayMenu_ReplayMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
+let __inner:extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RelayReplayMenu_ReplayMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RelayReplayMenu_ReplayMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RelayReplayMenu_ReplayMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu_ReplayMenuItem>IRelayReplayMenu_ReplayMenuItemMethods for __T{}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_ReplayMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_awarded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_user_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_ReplayMenuItem{#[doc="Direct (non-virtual) call to `RelayReplayMenu_ReplayMenuItem`'s own `OnBuildMenuItemContent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build_menu_item_content(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_menu_item_content_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayReplayMenu_ReplayMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayReplayMenu_ReplayMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RelayReplayMenu_ReplayMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_ReplayMenuItem{#[doc="`.ctor(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` — overload selector"]pub fn new(meta_data:crate::app::relayservermetadata::RelayServerMetaData,select_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,decide_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayReplayMenu_ReplayMenuItem), ::core::stringify!(new),));
+ <Self as IRelayReplayMenu_ReplayMenuItemMethods> ::ctor(this,meta_data,select_event_handler,decide_event_handler);
 this}
 }
 
@@ -145,299 +428,33 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-relayreplaymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayReplayMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:RelayReplayMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <RelayReplayMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RelayReplayMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_tutorial(this:RelayReplayMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",63usize,__vt.len(), <RelayReplayMenu as::unity2::ClassIdentity> ::NAME,"GetTutorial",));
-let inner:extern "C" fn(RelayReplayMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:RelayReplayMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <RelayReplayMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(RelayReplayMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>, crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,search_results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> > ,select_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler>)->crate::app::relayreplaymenu::RelayReplayMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2002600usize)as*mut u8,crate::app::relayreplaymenu::RelayReplayMenu;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object),(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)::core::convert::Into::into(search_results),(crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
-}
-}
-
-#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenuMethods:IRelayReplayMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymapmenucontent::RelayMapMenuContent, crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::relaymapmenucontent::RelayMapMenuContent> ,request_close_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler>)->(){unsafe{let __receiver= <RelayReplayMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2002840usize)as*mut u8,();
-(RelayReplayMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::relaymapmenucontent::RelayMapMenuContent)::core::convert::Into::into(menu_content),(crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayReplayMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayReplayMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_unity2_raw::get_tutorial(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayReplayMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu>IRelayReplayMenuMethods for __T{}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::relaymapmenucontent::RelayMapMenuContent, crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::relaymapmenucontent::RelayMapMenuContent,request_close_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_RequestCloseEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayReplayMenu), ::core::stringify!(new),));
- <Self as IRelayReplayMenuMethods> ::ctor(this,menu_item_list,menu_content,request_close_event_handler);
-this}
-}
-
-#[cfg(feature="app-relayreplaymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods:IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed9350usize)as*mut u8,();
-(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler>IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler), ::core::stringify!(new),));
- <Self as IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-relayreplaymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayReplayMenu_ReplayMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn on_build_menu_item_content(this:RelayReplayMenu_ReplayMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <RelayReplayMenu_ReplayMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
-let inner:extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:RelayReplayMenu_ReplayMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <RelayReplayMenu_ReplayMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_select(this:RelayReplayMenu_ReplayMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <RelayReplayMenu_ReplayMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:RelayReplayMenu_ReplayMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <RelayReplayMenu_ReplayMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RelayReplayMenu_ReplayMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_ReplayMenuItemMethods:IRelayReplayMenu_ReplayMenuItem{#[doc="`.ctor(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` overload"]fn ctor(self,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,select_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b08390usize)as*mut u8,();
-(RelayReplayMenu_ReplayMenuItem)__receiver,(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`IsEnd()` overload"]fn is_end(self,)->bool{unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b084f0usize)as*mut u8,bool;
-(RelayReplayMenu_ReplayMenuItem)__receiver)}
-}
-#[doc="`IsAwarded()` overload"]fn is_awarded(self,)->bool{unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b08510usize)as*mut u8,bool;
-(RelayReplayMenu_ReplayMenuItem)__receiver)}
-}
-#[doc="`GetUserName()` overload"]fn get_user_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b08520usize)as*mut u8, ::unity2::Il2CppString;
-(RelayReplayMenu_ReplayMenuItem)__receiver)}
-}
-#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_ReplayMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_ReplayMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_ReplayMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayReplayMenu_ReplayMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_ReplayMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu_ReplayMenuItem>IRelayReplayMenu_ReplayMenuItemMethods for __T{}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_ReplayMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_awarded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_user_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_ReplayMenuItem{#[doc="`.ctor(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` — overload selector"]pub fn new(meta_data:crate::app::relayservermetadata::RelayServerMetaData,select_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_SelectEventHandler,decide_event_handler:crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayReplayMenu_ReplayMenuItem), ::core::stringify!(new),));
- <Self as IRelayReplayMenu_ReplayMenuItemMethods> ::ctor(this,meta_data,select_event_handler,decide_event_handler);
-this}
-}
-
-#[cfg(feature="app-relayreplaymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayReplayMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RelayReplayMenu_DecideEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <RelayReplayMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RelayReplayMenu_DecideEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_DecideEventHandlerMethods:IRelayReplayMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayReplayMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b07c00usize)as*mut u8,();
-(RelayReplayMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RelayReplayMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu_DecideEventHandler>IRelayReplayMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayReplayMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IRelayReplayMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-relayreplaymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayReplayMenu_SelectEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RelayReplayMenu_SelectEventHandler,meta_data:crate::app::relayservermetadata::RelayServerMetaData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <RelayReplayMenu_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RelayReplayMenu_SelectEventHandler,crate::app::relayservermetadata::RelayServerMetaData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,meta_data,__mi)}
-}
-
-#[cfg(feature="app-relayreplaymenu")]pub trait IRelayReplayMenu_SelectEventHandlerMethods:IRelayReplayMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayReplayMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b08dc0usize)as*mut u8,();
-(RelayReplayMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::relayservermetadata::RelayServerMetaData)` overload"]fn invoke(self,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{let __receiver= <RelayReplayMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayMenu_SelectEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(meta_data), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl<__T:IRelayReplayMenu_SelectEventHandler>IRelayReplayMenu_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-relayreplaymenu")]impl RelayReplayMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayReplayMenu_SelectEventHandler), ::core::stringify!(new),));
- <Self as IRelayReplayMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-relayreplaymenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods;
-    pub use super::RelayReplayMenu_RequestCloseEventHandler;
-    pub use super::IRelayReplayMenu_RequestCloseEventHandler;
-    pub use super::IRelayReplayMenu_RequestCloseEventHandlerMethods;
-    pub use super::RelayReplayMenu_RelayConfirmReplayDialog;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialogMethods;
     pub use super::RelayReplayMenu;
     pub use super::IRelayReplayMenu;
     pub use super::IRelayReplayMenuMethods;
-    pub use super::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler;
-    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods;
-    pub use super::RelayReplayMenu_ReplayMenuItem;
-    pub use super::IRelayReplayMenu_ReplayMenuItem;
-    pub use super::IRelayReplayMenu_ReplayMenuItemMethods;
-    pub use super::RelayReplayMenu_DecideEventHandler;
-    pub use super::IRelayReplayMenu_DecideEventHandler;
-    pub use super::IRelayReplayMenu_DecideEventHandlerMethods;
+    pub use super::RelayReplayMenu_RequestCloseEventHandler;
+    pub use super::IRelayReplayMenu_RequestCloseEventHandler;
+    pub use super::IRelayReplayMenu_RequestCloseEventHandlerMethods;
+    pub use super::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem;
+    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem;
+    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItemMethods;
     pub use super::RelayReplayMenu_SelectEventHandler;
     pub use super::IRelayReplayMenu_SelectEventHandler;
     pub use super::IRelayReplayMenu_SelectEventHandlerMethods;
+    pub use super::RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler;
+    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler;
+    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods;
+    pub use super::RelayReplayMenu_DecideEventHandler;
+    pub use super::IRelayReplayMenu_DecideEventHandler;
+    pub use super::IRelayReplayMenu_DecideEventHandlerMethods;
+    pub use super::RelayReplayMenu_ReplayMenuItem;
+    pub use super::IRelayReplayMenu_ReplayMenuItem;
+    pub use super::IRelayReplayMenu_ReplayMenuItemMethods;
+    pub use super::RelayReplayMenu_RelayConfirmReplayDialog;
+    pub use super::IRelayReplayMenu_RelayConfirmReplayDialog;
+    pub use super::IRelayReplayMenu_RelayConfirmReplayDialogMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicmenu::IBasicMenu;

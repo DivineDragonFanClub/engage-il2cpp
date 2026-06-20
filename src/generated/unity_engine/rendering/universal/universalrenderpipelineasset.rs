@@ -22,149 +22,6 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipelineasset-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-universal-universalrenderpipelineasset")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UniversalRenderPipelineAsset_unity2_raw{use super:: * ;
-pub unsafe fn create_pipeline(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::renderpipeline::RenderPipeline{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"CreatePipeline",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::renderpipeline::RenderPipeline= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_validate(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"OnValidate",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_disable(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",24usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"OnDisable",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default_material(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultMaterial",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default_particle_material(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultParticleMaterial",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default_line_material(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultLineMaterial",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default_terrain_material(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultTerrainMaterial",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default_ui_material(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultUIMaterial",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default_ui_overdraw_material(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultUIOverdrawMaterial",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default_uietc1_supported_material(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultUIETC1SupportedMaterial",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default2_d_material(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_default2DMaterial",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_default_shader(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::shader::Shader{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultShader",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::shader::Shader= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_before_serialize(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"OnBeforeSerialize",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_after_deserialize(this:UniversalRenderPipelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"OnAfterDeserialize",));
-let inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-universal-universalrenderpipelineasset")]pub trait IUniversalRenderPipelineAssetMethods:IUniversalRenderPipelineAsset{#[doc="`get_sharpenFilter()` overload"]fn get_sharpen_filter(self,)->bool{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2caf0c0usize)as*mut u8,bool;
 (UniversalRenderPipelineAsset)__receiver)}
@@ -206,7 +63,16 @@ inner(this,__mi)}
 (UniversalRenderPipelineAsset)__receiver,(crate::unity_engine::rendering::universal::renderertype::RendererType)::core::convert::Into::into(r#type))}
 }
 #[doc="`CreatePipeline()` overload"]fn create_pipeline(self,)->crate::unity_engine::rendering::renderpipeline::RenderPipeline{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::create_pipeline(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"CreatePipeline",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::renderpipeline::RenderPipeline= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`DestroyRenderers()` overload"]fn destroy_renderers(self,)->(){unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2caf5e0usize)as*mut u8,();
@@ -219,10 +85,28 @@ let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::uni
 __out_0.assume_init()}
 }
 #[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::on_validate(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"OnValidate",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CreateRenderers()` overload"]fn create_renderers(self,)->(){unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2caf3f0usize)as*mut u8,();
@@ -437,37 +321,136 @@ __UniversalRenderPipelineAsset_unity2_raw::on_disable(__receiver, ::core::option
 (UniversalRenderPipelineAsset)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`get_defaultMaterial()` overload"]fn get_default_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::get_default_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultMaterial",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_defaultParticleMaterial()` overload"]fn get_default_particle_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::get_default_particle_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultParticleMaterial",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_defaultLineMaterial()` overload"]fn get_default_line_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::get_default_line_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultLineMaterial",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_defaultTerrainMaterial()` overload"]fn get_default_terrain_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::get_default_terrain_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultTerrainMaterial",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_defaultUIMaterial()` overload"]fn get_default_ui_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::get_default_ui_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultUIMaterial",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_defaultUIOverdrawMaterial()` overload"]fn get_default_ui_overdraw_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::get_default_ui_overdraw_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultUIOverdrawMaterial",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_defaultUIETC1SupportedMaterial()` overload"]fn get_default_uietc1_supported_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::get_default_uietc1_supported_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultUIETC1SupportedMaterial",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_default2DMaterial()` overload"]fn get_default2_d_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::get_default2_d_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_default2DMaterial",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_defaultShader()` overload"]fn get_default_shader(self,)->crate::unity_engine::shader::Shader{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::get_default_shader(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"get_defaultShader",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::shader::Shader= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::on_before_serialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"OnBeforeSerialize",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UniversalRenderPipelineAsset_unity2_raw::on_after_deserialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <UniversalRenderPipelineAsset as::unity2::ClassIdentity> ::NAME,"OnAfterDeserialize",));
+let __inner:extern "C" fn(UniversalRenderPipelineAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ValidateShadowBias(f32)` overload"]fn validate_shadow_bias(self,value:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <UniversalRenderPipelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2caff10usize)as*mut u8,f32;
@@ -612,6 +595,50 @@ pub fn update_shadow_cascade2_split_method_info()-> & 'static::unity2::il2cpp::M
 pub fn get_shadow_cascade_option_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
 pub fn set_shadow_cascade_option_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[89]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-universalrenderpipelineasset")]impl UniversalRenderPipelineAsset{#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `CreatePipeline`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_pipeline(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::rendering::renderpipeline::RenderPipeline{let __mi=Self::create_pipeline_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::renderpipeline::RenderPipeline= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `OnValidate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_validate(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_validate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `OnDisable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_disable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_disable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `get_defaultMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_default_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `get_defaultParticleMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_particle_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_default_particle_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `get_defaultLineMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_line_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_default_line_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `get_defaultTerrainMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_terrain_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_default_terrain_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `get_defaultUIMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_ui_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_default_ui_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `get_defaultUIOverdrawMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_ui_overdraw_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_default_ui_overdraw_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `get_defaultUIETC1SupportedMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_uietc1_supported_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_default_uietc1_supported_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `get_default2DMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default2_d_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_default2_d_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `get_defaultShader`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_default_shader(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::shader::Shader{let __mi=Self::get_default_shader_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::shader::Shader= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `OnBeforeSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_before_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_before_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UniversalRenderPipelineAsset`'s own `OnAfterDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_after_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_after_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-universal-universalrenderpipelineasset")]impl UniversalRenderPipelineAsset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

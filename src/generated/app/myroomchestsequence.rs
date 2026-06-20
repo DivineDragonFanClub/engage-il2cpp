@@ -31,6 +31,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes.md"))]#[::unity2::class(namespace="App",name="MyRoomChestSequence.ChestConfirmDialog.ReturnRingDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="MyRoomChestSequence.ChestConfirmDialog.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomchestsequence/MyRoomChestSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomChestSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MyRoomChestSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MyRoomChestSequence.Label";
@@ -49,7 +55,7 @@ pub fn exit()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes.md"))]#[::unity2::class(namespace="App",name="MyRoomChestSequence.ChestConfirmDialog.ReturnRingDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomchestsequence/MyRoomChestSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomChestSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomchestsequence::MyRoomChestSequence>)]pub struct MyRoomChestSequence{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MyRoomChestSequence.ChestConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MyRoomChestSequence_ChestConfirmDialog{}
@@ -57,36 +63,26 @@ pub fn exit()->Self{Self{value:2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes.md"))]#[::unity2::class(namespace="App",name="MyRoomChestSequence.ChestConfirmDialog.PickUpRingDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomchestsequence/MyRoomChestSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomChestSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomchestsequence::MyRoomChestSequence>)]pub struct MyRoomChestSequence{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="MyRoomChestSequence.ChestConfirmDialog.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo{}
-
 }
 
 #[cfg(feature = "app-myroomchestsequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-myroomchestsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-myroomchestsequence")]pub trait IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods:IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73dc0usize)as*mut u8,();
 (MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes)__receiver)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -96,6 +92,11 @@ __MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes_unity2_raw::a_c
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes{#[doc="Direct (non-virtual) call to `MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes), ::core::stringify!(new),));
@@ -103,62 +104,21 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20931a0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+#[cfg(feature="app-myroomchestsequence")]pub trait IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods:IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73b20usize)as*mut u8,();
+(MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo)__receiver)}
 }
 }
 
-#[cfg(feature="app-myroomchestsequence")]pub trait IMyRoomChestSequence_ChestConfirmDialogMethods:IMyRoomChestSequence_ChestConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <MyRoomChestSequence_ChestConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2093120usize)as*mut u8,();
-(MyRoomChestSequence_ChestConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
-}
-}
+#[cfg(feature="app-myroomchestsequence")]impl<__T:IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo>IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods for __T{}
 
-#[cfg(feature="app-myroomchestsequence")]impl<__T:IMyRoomChestSequence_ChestConfirmDialog>IMyRoomChestSequence_ChestConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog), ::core::stringify!(new),));
- <Self as IMyRoomChestSequence_ChestConfirmDialogMethods> ::ctor(this,menu_item_list);
-this}
-}
-
-#[cfg(feature="app-myroomchestsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-myroomchestsequence")]pub trait IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods:IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73bb0usize)as*mut u8,();
-(MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-myroomchestsequence")]impl<__T:IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes>IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods for __T{}
-
-#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes), ::core::stringify!(new),));
- <Self as IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo), ::core::stringify!(new),));
+ <Self as IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods> ::ctor(this,);
 this}
 }
 
@@ -206,43 +166,85 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-myroomchestsequence")]pub trait IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods:IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73b20usize)as*mut u8,();
-(MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo)__receiver)}
+#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20931a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
 }
 
-#[cfg(feature="app-myroomchestsequence")]impl<__T:IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo>IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods for __T{}
-
-#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-myroomchestsequence")]pub trait IMyRoomChestSequence_ChestConfirmDialogMethods:IMyRoomChestSequence_ChestConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <MyRoomChestSequence_ChestConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2093120usize)as*mut u8,();
+(MyRoomChestSequence_ChestConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
 }
 
-#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-myroomchestsequence")]impl<__T:IMyRoomChestSequence_ChestConfirmDialog>IMyRoomChestSequence_ChestConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo), ::core::stringify!(new),));
- <Self as IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog), ::core::stringify!(new),));
+ <Self as IMyRoomChestSequence_ChestConfirmDialogMethods> ::ctor(this,menu_item_list);
+this}
+}
+
+#[cfg(feature="app-myroomchestsequence")]pub trait IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods:IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73bb0usize)as*mut u8,();
+(MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-myroomchestsequence")]impl<__T:IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes>IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes{#[doc="Direct (non-virtual) call to `MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-myroomchestsequence")]impl MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes), ::core::stringify!(new),));
+ <Self as IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "app-myroomchestsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomChestSequence_Label;
     pub use super::MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes;
     pub use super::IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes;
     pub use super::IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods;
+    pub use super::MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo;
+    pub use super::IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods;
+    pub use super::MyRoomChestSequence_Label;
+    pub use super::MyRoomChestSequence;
+    pub use super::IMyRoomChestSequence;
+    pub use super::IMyRoomChestSequenceMethods;
     pub use super::MyRoomChestSequence_ChestConfirmDialog;
     pub use super::IMyRoomChestSequence_ChestConfirmDialog;
     pub use super::IMyRoomChestSequence_ChestConfirmDialogMethods;
     pub use super::MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes;
     pub use super::IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes;
     pub use super::IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods;
-    pub use super::MyRoomChestSequence;
-    pub use super::IMyRoomChestSequence;
-    pub use super::IMyRoomChestSequenceMethods;
-    pub use super::MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo;
-    pub use super::IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo;
-    pub use super::IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

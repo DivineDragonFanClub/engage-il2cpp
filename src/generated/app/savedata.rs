@@ -18,6 +18,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData_Manager_Task.md"))]#[::unity2::class(namespace="App",name="SaveData.Manager.Task")]#[parent(crate::system::object::Object)]pub struct SaveData_Manager_Task{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData.md"))]#[::unity2::class(namespace="App",name="SaveData")]#[parent(crate::system::object::Object)]pub struct SaveData{#[static_field]#[rename(name="MountName")]pub mount_name: ::unity2::Il2CppString, #[static_field]#[rename(name="MountNameWithColon")]pub mount_name_with_colon: ::unity2::Il2CppString, #[static_field]#[rename(name="s_IsMounted")]pub s_is_mounted:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData_Manager.md"))]#[::unity2::class(namespace="App",name="SaveData.Manager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::savedata::SaveData_Manager>)]pub struct SaveData_Manager{#[offset(48)]#[rename(name="m_Tasks")]pub m_tasks:crate::system::collections::generic::queue_1::Queue_1<crate::app::savedata::SaveData_Manager_Task> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData_Manager_TaskKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SaveData_Manager_TaskKind{pub value:i32,}
 impl::unity2::ClassIdentity for SaveData_Manager_TaskKind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SaveData.Manager.TaskKind";
@@ -38,9 +44,6 @@ pub fn commit()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData.md"))]#[::unity2::class(namespace="App",name="SaveData")]#[parent(crate::system::object::Object)]pub struct SaveData{#[static_field]#[rename(name="MountName")]pub mount_name: ::unity2::Il2CppString, #[static_field]#[rename(name="MountNameWithColon")]pub mount_name_with_colon: ::unity2::Il2CppString, #[static_field]#[rename(name="s_IsMounted")]pub s_is_mounted:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData_Manager_EventKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SaveData_Manager_EventKind{pub value:i32,}
 impl::unity2::ClassIdentity for SaveData_Manager_EventKind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SaveData.Manager.EventKind";
@@ -55,9 +58,6 @@ impl SaveData_Manager_EventKind{pub fn cleanup()->Self{Self{value:0}
 pub fn task()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData_Manager.md"))]#[::unity2::class(namespace="App",name="SaveData.Manager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::savedata::SaveData_Manager>)]pub struct SaveData_Manager{#[offset(48)]#[rename(name="m_Tasks")]pub m_tasks:crate::system::collections::generic::queue_1::Queue_1<crate::app::savedata::SaveData_Manager_Task> ,}
 
 }
 
@@ -228,19 +228,6 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-savedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SaveData_Manager_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:SaveData_Manager,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <SaveData_Manager as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(SaveData_Manager, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-savedata")]impl SaveData_Manager{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d649d0usize)as*mut u8,();
 )}
 }
@@ -251,7 +238,16 @@ inner(this,__mi)}
 (SaveData_Manager)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SaveData_Manager_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <SaveData_Manager as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(SaveData_Manager, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63060usize)as*mut u8,();
@@ -342,6 +338,11 @@ pub fn backslash2_slash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
 }
 
+#[cfg(feature="app-savedata")]impl SaveData_Manager{#[doc="Direct (non-virtual) call to `SaveData_Manager`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-savedata")]impl SaveData_Manager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SaveData_Manager), ::core::stringify!(new),));
@@ -355,14 +356,14 @@ pub mod prelude {
     pub use super::SaveData_Manager_Task;
     pub use super::ISaveData_Manager_Task;
     pub use super::ISaveData_Manager_TaskMethods;
-    pub use super::SaveData_Manager_TaskKind;
     pub use super::SaveData;
     pub use super::ISaveData;
     pub use super::ISaveDataMethods;
-    pub use super::SaveData_Manager_EventKind;
     pub use super::SaveData_Manager;
     pub use super::ISaveData_Manager;
     pub use super::ISaveData_ManagerMethods;
+    pub use super::SaveData_Manager_TaskKind;
+    pub use super::SaveData_Manager_EventKind;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

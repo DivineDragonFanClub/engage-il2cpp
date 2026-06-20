@@ -24,9 +24,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))]#[::unity2::class(namespace="App",name="UnitInfoViewerSetting.UnitData")]#[parent(crate::system::object::Object)]pub struct UnitInfoViewerSetting_UnitData{#[offset(16)]#[rename(name="person")]pub person: ::unity2::Il2CppString, #[offset(24)]#[rename(name="job")]pub job: ::unity2::Il2CppString, #[offset(32)]#[rename(name="weapon")]pub weapon: ::unity2::Il2CppString, #[offset(40)]#[rename(name="force")]pub force: ::unity2::Il2CppString,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]#[::unity2::class(namespace="App",name="UnitInfoViewerSetting.ForceList")]#[parent(crate::system::object::Object)]pub struct UnitInfoViewerSetting_ForceList{#[static_field]#[rename(name="Types")]pub types: ::unity2::Array<crate::app::force::Force_Type> , #[static_field]#[rename(name="Names")]pub names: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))]#[::unity2::class(namespace="App",name="UnitInfoViewerSetting")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitInfoViewerSetting{#[offset(24)]#[rename(name="m_LeftUnit")]pub m_left_unit:crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData, #[offset(32)]#[rename(name="m_RightUnit")]pub m_right_unit:crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData, #[offset(40)]#[rename(name="m_IsCharaOnlyTransition")]pub m_is_chara_only_transition:bool, #[offset(44)]#[rename(name="m_Seq")]pub m_seq:crate::app::unitinfoviewersetting::UnitInfoViewerSetting_Seq,}
 
 
@@ -46,6 +43,9 @@ pub fn wait_reshowing_canvas()->Self{Self{value:1}
 pub fn normal()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]#[::unity2::class(namespace="App",name="UnitInfoViewerSetting.ForceList")]#[parent(crate::system::object::Object)]pub struct UnitInfoViewerSetting_ForceList{#[static_field]#[rename(name="Types")]pub types: ::unity2::Array<crate::app::force::Force_Type> , #[static_field]#[rename(name="Names")]pub names: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
@@ -68,26 +68,6 @@ pub use __types::*;
  failed to instantiate", ::core::stringify!(UnitInfoViewerSetting_UnitData), ::core::stringify!(new),));
  <Self as IUnitInfoViewerSetting_UnitDataMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="app-unitinfoviewersetting")]impl UnitInfoViewerSetting_ForceList{#[doc="`GetIndex(::unity2::Il2CppString)` overload"]pub fn get_index(name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51b30usize)as*mut u8,i32;
-(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-#[doc="`GetForceType(::unity2::Il2CppString)` overload"]pub fn get_force_type(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::force::Force_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51bd0usize)as*mut u8,crate::app::force::Force_Type;
-(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-#[doc="`GetName(crate::app::force::Force_Type)` overload"]pub fn get_name(force_type:impl::core::convert::Into<crate::app::force::Force_Type>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51cd0usize)as*mut u8, ::unity2::Il2CppString;
-(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51db0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-unitinfoviewersetting")]impl UnitInfoViewerSetting_ForceList{pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
 #[cfg(feature="app-unitinfoviewersetting")]pub trait IUnitInfoViewerSettingMethods:IUnitInfoViewerSetting{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <UnitInfoViewerSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -173,18 +153,38 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-unitinfoviewersetting")]impl UnitInfoViewerSetting_ForceList{#[doc="`GetIndex(::unity2::Il2CppString)` overload"]pub fn get_index(name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51b30usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetForceType(::unity2::Il2CppString)` overload"]pub fn get_force_type(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::force::Force_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51bd0usize)as*mut u8,crate::app::force::Force_Type;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetName(crate::app::force::Force_Type)` overload"]pub fn get_name(force_type:impl::core::convert::Into<crate::app::force::Force_Type>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51cd0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b51db0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-unitinfoviewersetting")]impl UnitInfoViewerSetting_ForceList{pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
 #[cfg(feature = "app-unitinfoviewersetting")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::UnitInfoViewerSetting_UnitData;
     pub use super::IUnitInfoViewerSetting_UnitData;
     pub use super::IUnitInfoViewerSetting_UnitDataMethods;
-    pub use super::UnitInfoViewerSetting_ForceList;
-    pub use super::IUnitInfoViewerSetting_ForceList;
     pub use super::UnitInfoViewerSetting;
     pub use super::IUnitInfoViewerSetting;
     pub use super::IUnitInfoViewerSettingMethods;
     pub use super::UnitInfoViewerSetting_Seq;
+    pub use super::UnitInfoViewerSetting_ForceList;
+    pub use super::IUnitInfoViewerSetting_ForceList;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

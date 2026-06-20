@@ -16,48 +16,42 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-reflection-binder-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-binder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Binder_unity2_raw{use super:: * ;
-pub unsafe fn select_method(this:Binder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,r#match: ::unity2::Array<crate::system::reflection::methodbase::MethodBase> ,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodbase::MethodBase{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-reflection-binder")]pub trait IBinderMethods:IBinder{#[doc="`SelectMethod(crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::methodbase::MethodBase>, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn select_method(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,r#match:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::methodbase::MethodBase> > ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::methodbase::MethodBase{unsafe{let __receiver= <Binder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <Binder as::unity2::ClassIdentity> ::NAME,"SelectMethod",));
-let inner:extern "C" fn(Binder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::methodbase::MethodBase> , ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::methodbase::MethodBase= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(Binder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::methodbase::MethodBase> , ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::methodbase::MethodBase= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,binding_attr,r#match,types,modifiers,__mi)}
-pub unsafe fn select_property(this:Binder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,r#match: ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> ,return_type: ::unity2::SystemType,indexes: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(r#match), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers),__mi)}
+}
+}
+#[doc="`SelectProperty(crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>, ::unity2::SystemType, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn select_property(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,r#match:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> > ,return_type:impl::core::convert::Into< ::unity2::SystemType> ,indexes:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::propertyinfo::PropertyInfo{unsafe{let __receiver= <Binder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <Binder as::unity2::ClassIdentity> ::NAME,"SelectProperty",));
-let inner:extern "C" fn(Binder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> , ::unity2::SystemType, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(Binder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> , ::unity2::SystemType, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,binding_attr,r#match,return_type,indexes,modifiers,__mi)}
-pub unsafe fn reorder_argument_array(this:Binder,args: *mut::unity2::Array<crate::system::object::Object> ,state:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(r#match), ::core::convert::Into::into(return_type), ::core::convert::Into::into(indexes), ::core::convert::Into::into(modifiers),__mi)}
+}
+}
+#[doc="`ReorderArgumentArray(*mut::unity2::Array<crate::system::object::Object>, crate::system::object::Object)` overload"]fn reorder_argument_array(self,state:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <Binder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::system::object::Object> > ::uninit();
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",9usize,__vt.len(), <Binder as::unity2::ClassIdentity> ::NAME,"ReorderArgumentArray",));
-let inner:extern "C" fn(Binder, *mut::unity2::Array<crate::system::object::Object> ,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(Binder, *mut::unity2::Array<crate::system::object::Object> ,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,args,state,__mi)}
-}
-
-#[cfg(feature="system-reflection-binder")]pub trait IBinderMethods:IBinder{#[doc="`SelectMethod(crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::methodbase::MethodBase>, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn select_method(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,r#match:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::methodbase::MethodBase> > ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::methodbase::MethodBase{unsafe{let __receiver= <Binder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Binder_unity2_raw::select_method(__receiver, ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(r#match), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers), ::core::option::Option::None)}
-}
-#[doc="`SelectProperty(crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>, ::unity2::SystemType, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn select_property(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,r#match:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> > ,return_type:impl::core::convert::Into< ::unity2::SystemType> ,indexes:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::propertyinfo::PropertyInfo{unsafe{let __receiver= <Binder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Binder_unity2_raw::select_property(__receiver, ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(r#match), ::core::convert::Into::into(return_type), ::core::convert::Into::into(indexes), ::core::convert::Into::into(modifiers), ::core::option::Option::None)}
-}
-#[doc="`ReorderArgumentArray(*mut::unity2::Array<crate::system::object::Object>, crate::system::object::Object)` overload"]fn reorder_argument_array(self,state:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <Binder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::system::object::Object> > ::uninit();
-__Binder_unity2_raw::reorder_argument_array(__receiver,__out_0.as_mut_ptr(), ::core::convert::Into::into(state), ::core::option::Option::None);
+__inner(__receiver,__out_0.as_mut_ptr(), ::core::convert::Into::into(state),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Binder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -72,6 +66,17 @@ __out_0.assume_init()}
 pub fn select_property_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn reorder_argument_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="system-reflection-binder")]impl Binder{#[doc="Direct (non-virtual) call to `Binder`'s own `SelectMethod`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn select_method(this:impl::core::convert::Into< ::unity2::IlInstance> ,binding_attr:crate::system::reflection::bindingflags::BindingFlags,r#match: ::unity2::Array<crate::system::reflection::methodbase::MethodBase> ,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,)->crate::system::reflection::methodbase::MethodBase{let __mi=Self::select_method_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::methodbase::MethodBase> , ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::methodbase::MethodBase= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),binding_attr,r#match,types,modifiers, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Binder`'s own `SelectProperty`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn select_property(this:impl::core::convert::Into< ::unity2::IlInstance> ,binding_attr:crate::system::reflection::bindingflags::BindingFlags,r#match: ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> ,return_type: ::unity2::SystemType,indexes: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,)->crate::system::reflection::propertyinfo::PropertyInfo{let __mi=Self::select_property_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> , ::unity2::SystemType, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),binding_attr,r#match,return_type,indexes,modifiers, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Binder`'s own `ReorderArgumentArray`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn reorder_argument_array(this:impl::core::convert::Into< ::unity2::IlInstance> ,args: *mut::unity2::Array<crate::system::object::Object> ,state:crate::system::object::Object,)->(){let __mi=Self::reorder_argument_array_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut::unity2::Array<crate::system::object::Object> ,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),args,state, ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-reflection-binder")]impl Binder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

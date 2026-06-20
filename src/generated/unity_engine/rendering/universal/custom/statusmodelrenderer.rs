@@ -18,69 +18,6 @@ use crate::unity_engine::rendering::universal::scriptablerenderer::{IScriptableR
 #[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrenderer-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrenderer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __StatusModelRenderer_unity2_raw{use super:: * ;
-pub unsafe fn get_sub_light_tag(this:StatusModelRenderer,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"GetSubLightTag",));
-let inner:extern "C" fn(StatusModelRenderer, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:StatusModelRenderer,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(StatusModelRenderer,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,disposing,__mi)}
-pub unsafe fn setup(this:StatusModelRenderer,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"Setup",));
-let inner:extern "C" fn(StatusModelRenderer,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,context,rendering_data,__mi)}
-pub unsafe fn setup_lights(this:StatusModelRenderer,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"SetupLights",));
-let inner:extern "C" fn(StatusModelRenderer,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,context,rendering_data,__mi)}
-pub unsafe fn setup_culling_parameters(this:StatusModelRenderer,culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"SetupCullingParameters",));
-let inner:extern "C" fn(StatusModelRenderer, *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mut crate::unity_engine::rendering::universal::cameradata::CameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,culling_parameters,camera_data,__mi)}
-pub unsafe fn finish_rendering(this:StatusModelRenderer,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"FinishRendering",));
-let inner:extern "C" fn(StatusModelRenderer,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,cmd,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrenderer")]impl StatusModelRenderer{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2edf770usize)as*mut u8,();
 )}
 }
@@ -91,29 +28,83 @@ inner(this,cmd,__mi)}
 (StatusModelRenderer)__receiver,(crate::unity_engine::rendering::universal::custom::statusmodelrendererdata::StatusModelRendererData)::core::convert::Into::into(data))}
 }
 #[doc="`GetSubLightTag()` overload"]fn get_sub_light_tag(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StatusModelRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StatusModelRenderer_unity2_raw::get_sub_light_tag(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"GetSubLightTag",));
+let __inner:extern "C" fn(StatusModelRenderer, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StatusModelRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StatusModelRenderer_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(StatusModelRenderer,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
+}
 }
 #[doc="`Setup(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn setup(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <StatusModelRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
-__StatusModelRenderer_unity2_raw::setup(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"Setup",));
+let __inner:extern "C" fn(StatusModelRenderer,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`SetupLights(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn setup_lights(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <StatusModelRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
-__StatusModelRenderer_unity2_raw::setup_lights(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"SetupLights",));
+let __inner:extern "C" fn(StatusModelRenderer,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`SetupCullingParameters(*mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]fn setup_culling_parameters(self,)->(crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,crate::unity_engine::rendering::universal::cameradata::CameraData){unsafe{let __receiver= <StatusModelRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::cameradata::CameraData> ::uninit();
-__StatusModelRenderer_unity2_raw::setup_culling_parameters(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"SetupCullingParameters",));
+let __inner:extern "C" fn(StatusModelRenderer, *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mut crate::unity_engine::rendering::universal::cameradata::CameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(),__mi)}
+;
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`FinishRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn finish_rendering(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <StatusModelRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StatusModelRenderer_unity2_raw::finish_rendering(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <StatusModelRenderer as::unity2::ClassIdentity> ::NAME,"FinishRendering",));
+let __inner:extern "C" fn(StatusModelRenderer,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(cmd),__mi)}
+}
 }
 #[doc="`CreateCameraRenderTarget(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]fn create_camera_render_target(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::cameradata::CameraData{unsafe{let __receiver= <StatusModelRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::cameradata::CameraData> ::uninit();
@@ -142,6 +133,26 @@ pub fn finish_rendering_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn create_camera_render_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn requires_intermediate_color_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrenderer")]impl StatusModelRenderer{#[doc="Direct (non-virtual) call to `StatusModelRenderer`'s own `GetSubLightTag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sub_light_tag(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_sub_light_tag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StatusModelRenderer`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),disposing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StatusModelRenderer`'s own `Setup`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup(this:impl::core::convert::Into< ::unity2::IlInstance> ,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,)->(){let __mi=Self::setup_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),context,rendering_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StatusModelRenderer`'s own `SetupLights`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup_lights(this:impl::core::convert::Into< ::unity2::IlInstance> ,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,)->(){let __mi=Self::setup_lights_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),context,rendering_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StatusModelRenderer`'s own `SetupCullingParameters`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup_culling_parameters(this:impl::core::convert::Into< ::unity2::IlInstance> ,culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,)->(){let __mi=Self::setup_culling_parameters_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mut crate::unity_engine::rendering::universal::cameradata::CameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),culling_parameters,camera_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StatusModelRenderer`'s own `FinishRendering`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finish_rendering(this:impl::core::convert::Into< ::unity2::IlInstance> ,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,)->(){let __mi=Self::finish_rendering_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),cmd, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-universal-custom-statusmodelrenderer")]impl StatusModelRenderer{#[doc="`.ctor(crate::unity_engine::rendering::universal::custom::statusmodelrendererdata::StatusModelRendererData)` — overload selector"]pub fn new(data:crate::unity_engine::rendering::universal::custom::statusmodelrendererdata::StatusModelRendererData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

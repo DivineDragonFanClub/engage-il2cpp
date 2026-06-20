@@ -16,19 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-materialpropertyblock-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-materialpropertyblock")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MaterialPropertyBlock_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:MaterialPropertyBlock,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <MaterialPropertyBlock as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(MaterialPropertyBlock, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-materialpropertyblock")]impl MaterialPropertyBlock{#[doc="`CreateImpl()` overload"]pub fn create_impl()-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32de790usize)as*mut u8, ::unity2::IntPtr;
 )}
 }
@@ -66,7 +53,16 @@ inner(this,__mi)}
 (MaterialPropertyBlock)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <MaterialPropertyBlock as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaterialPropertyBlock_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <MaterialPropertyBlock as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(MaterialPropertyBlock, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <MaterialPropertyBlock as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x32de980usize)as*mut u8,();
@@ -131,6 +127,11 @@ pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn set_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 pub fn set_vector_impl_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 pub fn set_color_impl_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="unity_engine-materialpropertyblock")]impl MaterialPropertyBlock{#[doc="Direct (non-virtual) call to `MaterialPropertyBlock`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-materialpropertyblock")]impl MaterialPropertyBlock{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

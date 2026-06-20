@@ -22,34 +22,29 @@ use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,Volum
 #[cfg(feature = "unity_engine-rendering-maxfloatparameter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-maxfloatparameter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MaxFloatParameter_unity2_raw{use super:: * ;
-pub unsafe fn get_value(this:MaxFloatParameter,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-rendering-maxfloatparameter")]pub trait IMaxFloatParameterMethods:IMaxFloatParameter{#[doc="`get_value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <MaxFloatParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",12usize,__vt.len(), <MaxFloatParameter as::unity2::ClassIdentity> ::NAME,"get_value",));
-let inner:extern "C" fn(MaxFloatParameter, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MaxFloatParameter, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_value(this:MaxFloatParameter,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_value(f32)` overload"]fn set_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MaxFloatParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",13usize,__vt.len(), <MaxFloatParameter as::unity2::ClassIdentity> ::NAME,"set_value",));
-let inner:extern "C" fn(MaxFloatParameter,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MaxFloatParameter,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="unity_engine-rendering-maxfloatparameter")]pub trait IMaxFloatParameterMethods:IMaxFloatParameter{#[doc="`get_value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <MaxFloatParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaxFloatParameter_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_value(f32)` overload"]fn set_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MaxFloatParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MaxFloatParameter_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor(f32, f32, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MaxFloatParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30ab940usize)as*mut u8,();
@@ -62,6 +57,14 @@ __MaxFloatParameter_unity2_raw::set_value(__receiver, ::core::convert::Into::int
 #[cfg(feature="unity_engine-rendering-maxfloatparameter")]impl MaxFloatParameter{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-rendering-maxfloatparameter")]impl MaxFloatParameter{#[doc="Direct (non-virtual) call to `MaxFloatParameter`'s own `get_value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MaxFloatParameter`'s own `set_value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::set_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-maxfloatparameter")]impl MaxFloatParameter{#[doc="`.ctor(f32, f32, bool)` — overload selector"]pub fn new(value:f32,max:f32,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

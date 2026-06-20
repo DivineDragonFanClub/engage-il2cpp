@@ -22,69 +22,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-playables-playabledirector-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-playables-playabledirector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PlayableDirector_unity2_raw{use super:: * ;
-pub unsafe fn clear_reference_value(this:PlayableDirector,id:crate::unity_engine::propertyname::PropertyName,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"ClearReferenceValue",));
-let inner:extern "C" fn(PlayableDirector,crate::unity_engine::propertyname::PropertyName, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,id,__mi)}
-pub unsafe fn set_reference_value(this:PlayableDirector,id:crate::unity_engine::propertyname::PropertyName,value:crate::unity_engine::object_2::Object_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"SetReferenceValue",));
-let inner:extern "C" fn(PlayableDirector,crate::unity_engine::propertyname::PropertyName,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,id,value,__mi)}
-pub unsafe fn get_reference_value(this:PlayableDirector,id:crate::unity_engine::propertyname::PropertyName,id_valid: *mut bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"GetReferenceValue",));
-let inner:extern "C" fn(PlayableDirector,crate::unity_engine::propertyname::PropertyName, *mut bool, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,id,id_valid,__mi)}
-pub unsafe fn clear_reference_value_injected(this:PlayableDirector,id: *mut crate::unity_engine::propertyname::PropertyName,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"ClearReferenceValue_Injected",));
-let inner:extern "C" fn(PlayableDirector, *mut crate::unity_engine::propertyname::PropertyName, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,id,__mi)}
-pub unsafe fn set_reference_value_injected(this:PlayableDirector,id: *mut crate::unity_engine::propertyname::PropertyName,value:crate::unity_engine::object_2::Object_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"SetReferenceValue_Injected",));
-let inner:extern "C" fn(PlayableDirector, *mut crate::unity_engine::propertyname::PropertyName,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,id,value,__mi)}
-pub unsafe fn get_reference_value_injected(this:PlayableDirector,id: *mut crate::unity_engine::propertyname::PropertyName,id_valid: *mut bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"GetReferenceValue_Injected",));
-let inner:extern "C" fn(PlayableDirector, *mut crate::unity_engine::propertyname::PropertyName, *mut bool, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,id,id_valid,__mi)}
-}
-
 #[cfg(feature="unity_engine-playables-playabledirector")]impl PlayableDirector{#[doc="`ResetFrameTiming()` overload"]pub fn reset_frame_timing()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3e370usize)as*mut u8,();
 )}
 }
@@ -191,14 +128,41 @@ inner(this,id,id_valid,__mi)}
 (PlayableDirector)__receiver)}
 }
 #[doc="`ClearReferenceValue(crate::unity_engine::propertyname::PropertyName)` overload"]fn clear_reference_value(self,id:impl::core::convert::Into<crate::unity_engine::propertyname::PropertyName>)->(){unsafe{let __receiver= <PlayableDirector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayableDirector_unity2_raw::clear_reference_value(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"ClearReferenceValue",));
+let __inner:extern "C" fn(PlayableDirector,crate::unity_engine::propertyname::PropertyName, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(id),__mi)}
+}
 }
 #[doc="`SetReferenceValue(crate::unity_engine::propertyname::PropertyName, crate::unity_engine::object_2::Object_2)` overload"]fn set_reference_value(self,id:impl::core::convert::Into<crate::unity_engine::propertyname::PropertyName> ,value:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{let __receiver= <PlayableDirector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayableDirector_unity2_raw::set_reference_value(__receiver, ::core::convert::Into::into(id), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"SetReferenceValue",));
+let __inner:extern "C" fn(PlayableDirector,crate::unity_engine::propertyname::PropertyName,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(id), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`GetReferenceValue(crate::unity_engine::propertyname::PropertyName, *mutbool)` overload"]fn get_reference_value(self,id:impl::core::convert::Into<crate::unity_engine::propertyname::PropertyName>)->(crate::unity_engine::object_2::Object_2,bool){unsafe{let __receiver= <PlayableDirector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
-let __ret={__PlayableDirector_unity2_raw::get_reference_value(__receiver, ::core::convert::Into::into(id),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+let __ret={{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"GetReferenceValue",));
+let __inner:extern "C" fn(PlayableDirector,crate::unity_engine::propertyname::PropertyName, *mut bool, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(id),__out_0.as_mut_ptr(),__mi)}
+}
 ;
 (__ret,__out_0.assume_init())}
 }
@@ -296,18 +260,45 @@ let __ret={__PlayableDirector_unity2_raw::get_reference_value(__receiver, ::core
 }
 #[doc="`ClearReferenceValue_Injected(*mutcrate::unity_engine::propertyname::PropertyName)` overload"]fn clear_reference_value_injected(self,)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <PlayableDirector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::propertyname::PropertyName> ::uninit();
-__PlayableDirector_unity2_raw::clear_reference_value_injected(__receiver,__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"ClearReferenceValue_Injected",));
+let __inner:extern "C" fn(PlayableDirector, *mut crate::unity_engine::propertyname::PropertyName, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`SetReferenceValue_Injected(*mutcrate::unity_engine::propertyname::PropertyName, crate::unity_engine::object_2::Object_2)` overload"]fn set_reference_value_injected(self,value:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <PlayableDirector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::propertyname::PropertyName> ::uninit();
-__PlayableDirector_unity2_raw::set_reference_value_injected(__receiver,__out_0.as_mut_ptr(), ::core::convert::Into::into(value), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"SetReferenceValue_Injected",));
+let __inner:extern "C" fn(PlayableDirector, *mut crate::unity_engine::propertyname::PropertyName,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__out_0.as_mut_ptr(), ::core::convert::Into::into(value),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`GetReferenceValue_Injected(*mutcrate::unity_engine::propertyname::PropertyName, *mutbool)` overload"]fn get_reference_value_injected(self,)->(crate::unity_engine::object_2::Object_2,crate::unity_engine::propertyname::PropertyName,bool){unsafe{let __receiver= <PlayableDirector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::propertyname::PropertyName> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <bool> ::uninit();
-let __ret={__PlayableDirector_unity2_raw::get_reference_value_injected(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None)}
+let __ret={{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <PlayableDirector as::unity2::ClassIdentity> ::NAME,"GetReferenceValue_Injected",));
+let __inner:extern "C" fn(PlayableDirector, *mut crate::unity_engine::propertyname::PropertyName, *mut bool, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(),__mi)}
+}
 ;
 (__ret,__out_0.assume_init(),__out_1.assume_init())}
 }
@@ -377,6 +368,26 @@ pub fn clear_reference_value_injected_method_info()-> & 'static::unity2::il2cpp:
 pub fn set_reference_value_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
 pub fn get_reference_value_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
 pub fn get_graph_handle_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+}
+
+#[cfg(feature="unity_engine-playables-playabledirector")]impl PlayableDirector{#[doc="Direct (non-virtual) call to `PlayableDirector`'s own `ClearReferenceValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clear_reference_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,id:crate::unity_engine::propertyname::PropertyName,)->(){let __mi=Self::clear_reference_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::propertyname::PropertyName, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),id, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayableDirector`'s own `SetReferenceValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_reference_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,id:crate::unity_engine::propertyname::PropertyName,value:crate::unity_engine::object_2::Object_2,)->(){let __mi=Self::set_reference_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::propertyname::PropertyName,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),id,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayableDirector`'s own `GetReferenceValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_reference_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,id:crate::unity_engine::propertyname::PropertyName,id_valid: *mut bool,)->crate::unity_engine::object_2::Object_2{let __mi=Self::get_reference_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::propertyname::PropertyName, *mut bool, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),id,id_valid, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayableDirector`'s own `ClearReferenceValue_Injected`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clear_reference_value_injected(this:impl::core::convert::Into< ::unity2::IlInstance> ,id: *mut crate::unity_engine::propertyname::PropertyName,)->(){let __mi=Self::clear_reference_value_injected_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut crate::unity_engine::propertyname::PropertyName, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),id, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayableDirector`'s own `SetReferenceValue_Injected`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_reference_value_injected(this:impl::core::convert::Into< ::unity2::IlInstance> ,id: *mut crate::unity_engine::propertyname::PropertyName,value:crate::unity_engine::object_2::Object_2,)->(){let __mi=Self::set_reference_value_injected_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut crate::unity_engine::propertyname::PropertyName,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),id,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `PlayableDirector`'s own `GetReferenceValue_Injected`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_reference_value_injected(this:impl::core::convert::Into< ::unity2::IlInstance> ,id: *mut crate::unity_engine::propertyname::PropertyName,id_valid: *mut bool,)->crate::unity_engine::object_2::Object_2{let __mi=Self::get_reference_value_injected_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut crate::unity_engine::propertyname::PropertyName, *mut bool, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),id,id_valid, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-playables-playabledirector")]impl PlayableDirector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

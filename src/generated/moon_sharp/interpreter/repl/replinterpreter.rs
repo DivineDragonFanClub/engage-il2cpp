@@ -67,46 +67,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"set_HandleClassicExprsSyntax",e),}
 }
 }
-pub unsafe fn get_has_pending_command(this:ReplInterpreter,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_HasPendingCommand",));
-let inner:extern "C" fn(ReplInterpreter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_current_pending_command(this:ReplInterpreter,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_CurrentPendingCommand",));
-let inner:extern "C" fn(ReplInterpreter, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_classic_prompt(this:ReplInterpreter,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_ClassicPrompt",));
-let inner:extern "C" fn(ReplInterpreter, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn evaluate(this:ReplInterpreter,input: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"Evaluate",));
-let inner:extern "C" fn(ReplInterpreter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,input,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-repl-replinterpreter")]pub trait IReplInterpreterMethods:IReplInterpreter{#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script)` overload"]fn ctor(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script>)->(){unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -130,16 +90,52 @@ inner(this,input,__mi)}
 (ReplInterpreter)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`get_HasPendingCommand()` overload"]fn get_has_pending_command(self,)->bool{unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ReplInterpreter_unity2_raw::get_has_pending_command(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_HasPendingCommand",));
+let __inner:extern "C" fn(ReplInterpreter, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_CurrentPendingCommand()` overload"]fn get_current_pending_command(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ReplInterpreter_unity2_raw::get_current_pending_command(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_CurrentPendingCommand",));
+let __inner:extern "C" fn(ReplInterpreter, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_ClassicPrompt()` overload"]fn get_classic_prompt(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ReplInterpreter_unity2_raw::get_classic_prompt(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"get_ClassicPrompt",));
+let __inner:extern "C" fn(ReplInterpreter, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Evaluate(::unity2::Il2CppString)` overload"]fn evaluate(self,input:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <ReplInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ReplInterpreter_unity2_raw::evaluate(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ReplInterpreter as::unity2::ClassIdentity> ::NAME,"Evaluate",));
+let __inner:extern "C" fn(ReplInterpreter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(input),__mi)}
+}
 }
 }
 
@@ -154,6 +150,20 @@ pub fn get_has_pending_command_method_info()-> & 'static::unity2::il2cpp::Method
 pub fn get_current_pending_command_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn get_classic_prompt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn evaluate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-repl-replinterpreter")]impl ReplInterpreter{#[doc="Direct (non-virtual) call to `ReplInterpreter`'s own `get_HasPendingCommand`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_has_pending_command(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_has_pending_command_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ReplInterpreter`'s own `get_CurrentPendingCommand`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_current_pending_command(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_current_pending_command_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ReplInterpreter`'s own `get_ClassicPrompt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_classic_prompt(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_classic_prompt_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ReplInterpreter`'s own `Evaluate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn evaluate(this:impl::core::convert::Into< ::unity2::IlInstance> ,input: ::unity2::Il2CppString,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::evaluate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),input, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-repl-replinterpreter")]impl ReplInterpreter{#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script)` — overload selector"]pub fn new(script:crate::moon_sharp::interpreter::script::Script)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

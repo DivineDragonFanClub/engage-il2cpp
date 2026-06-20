@@ -11,86 +11,15 @@ use crate::unity_engine::rendering::universal::scriptablerenderer::{IScriptableR
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer_Profiling.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="CustomForwardRenderer.Profiling")]#[parent(crate::system::object::Object)]pub struct CustomForwardRenderer_Profiling{#[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="createCameraRenderTarget")]pub create_camera_render_target:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="CustomForwardRenderer")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)]pub struct CustomForwardRenderer{#[static_field]#[rename(name="k_DepthStencilBufferBits")]pub k_depth_stencil_buffer_bits:i32, #[static_field]#[rename(name="k_SubLightTag")]pub k_sub_light_tag: ::unity2::Il2CppString, #[static_field]#[rename(name="k_SetupCustomRPConstants")]pub k_setup_custom_rp_constants: ::unity2::Il2CppString, #[static_field]#[rename(name="s_CustomExposurePropID")]pub s_custom_exposure_prop_id:i32, #[static_field]#[rename(name="s_CustomLodFadeBiasPropID")]pub s_custom_lod_fade_bias_prop_id:i32, #[offset(144)]#[rename(name="m_ColorGradingLutPass")]pub m_color_grading_lut_pass:crate::unity_engine::rendering::universal::internal::colorgradinglutpass::ColorGradingLutPass, #[offset(152)]#[rename(name="m_DepthPrepass")]pub m_depth_prepass:crate::unity_engine::rendering::universal::internal::depthonlypass::DepthOnlyPass, #[offset(160)]#[rename(name="m_MainLightShadowCasterPass")]pub m_main_light_shadow_caster_pass:crate::unity_engine::rendering::universal::internal::mainlightshadowcasterpass::MainLightShadowCasterPass, #[offset(168)]#[rename(name="m_CustomShadowCasterPass")]pub m_custom_shadow_caster_pass:crate::unity_engine::rendering::universal::custom::internal::customshadowcasterpass::CustomShadowCasterPass, #[offset(176)]#[rename(name="m_CustomShadowNoCasterPass")]pub m_custom_shadow_no_caster_pass:crate::unity_engine::rendering::universal::custom::internal::customshadownocasterpass::CustomShadowNoCasterPass, #[offset(184)]#[rename(name="m_CustomDecalsPass")]pub m_custom_decals_pass:crate::unity_engine::rendering::universal::custom::internal::customdecalspass::CustomDecalsPass, #[offset(192)]#[rename(name="m_CustomZPrePass")]pub m_custom_z_pre_pass:crate::unity_engine::rendering::universal::custom::internal::customzprepass::CustomZPrePass, #[offset(200)]#[rename(name="m_CustomBaseOpaquePass")]pub m_custom_base_opaque_pass:crate::unity_engine::rendering::universal::custom::internal::custombaseopaquepass::CustomBaseOpaquePass, #[offset(208)]#[rename(name="m_CustomCharaOpaquePass")]pub m_custom_chara_opaque_pass:crate::unity_engine::rendering::universal::custom::internal::customcharaopaquepass::CustomCharaOpaquePass, #[offset(216)]#[rename(name="m_DrawSkyboxPass")]pub m_draw_skybox_pass:crate::unity_engine::rendering::universal::drawskyboxpass::DrawSkyboxPass, #[offset(224)]#[rename(name="m_CopyDepthPass")]pub m_copy_depth_pass:crate::unity_engine::rendering::universal::internal::copydepthpass::CopyDepthPass, #[offset(232)]#[rename(name="m_CopyColorPass")]pub m_copy_color_pass:crate::unity_engine::rendering::universal::internal::copycolorpass::CopyColorPass, #[offset(240)]#[rename(name="m_CustomLightOcclusionPass")]pub m_custom_light_occlusion_pass:crate::unity_engine::rendering::universal::custom::internal::customlightocclusionpass::CustomLightOcclusionPass, #[offset(248)]#[rename(name="m_TransparentSettingsPass")]pub m_transparent_settings_pass:crate::unity_engine::rendering::universal::transparentsettingspass::TransparentSettingsPass, #[offset(256)]#[rename(name="m_RenderFormerTransparentForwardPass")]pub m_render_former_transparent_forward_pass:crate::unity_engine::rendering::universal::custom::internal::custombasetransparentpass::CustomBaseTransparentPass, #[offset(264)]#[rename(name="m_RenderLatterTransparentForwardPass")]pub m_render_latter_transparent_forward_pass:crate::unity_engine::rendering::universal::custom::internal::custombasetransparentpass::CustomBaseTransparentPass, #[offset(272)]#[rename(name="m_TransparentsLayerPass0")]pub m_transparents_layer_pass0:crate::unity_engine::rendering::universal::custom::internal::customtransparentslayerpass::CustomTransparentsLayerPass, #[offset(280)]#[rename(name="m_TransparentsLayerPass1")]pub m_transparents_layer_pass1:crate::unity_engine::rendering::universal::custom::internal::customtransparentslayerpass::CustomTransparentsLayerPass, #[offset(288)]#[rename(name="m_CustomMixedResolutionPass")]pub m_custom_mixed_resolution_pass:crate::unity_engine::rendering::universal::custom::internal::custommixedresolutionpass::CustomMixedResolutionPass, #[offset(296)]#[rename(name="m_CustomFullEffectPass")]pub m_custom_full_effect_pass:crate::unity_engine::rendering::universal::custom::internal::customeffectpass::CustomEffectPass, #[offset(304)]#[rename(name="m_PostProcessPass")]pub m_post_process_pass:crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass, #[offset(312)]#[rename(name="m_FinalPostProcessPass")]pub m_final_post_process_pass:crate::unity_engine::rendering::universal::internal::postprocesspass::PostProcessPass, #[offset(320)]#[rename(name="m_FinalBlitPass")]pub m_final_blit_pass:crate::unity_engine::rendering::universal::internal::finalblitpass::FinalBlitPass, #[offset(328)]#[rename(name="m_CapturePass")]pub m_capture_pass:crate::unity_engine::rendering::universal::capturepass::CapturePass, #[offset(336)]#[rename(name="m_ZPrepassFeature")]pub m_z_prepass_feature:crate::unity_engine::rendering::universal::zprepassfeatureset::ZPrepassFeatureSet, #[offset(340)]#[rename(name="zprepassSortingCriteria")]pub zprepass_sorting_criteria:crate::unity_engine::rendering::universal::zprepasssortingcriteria::ZPrepassSortingCriteria, #[offset(360)]#[rename(name="m_MixedResolutionFlag")]pub m_mixed_resolution_flag:crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag, #[offset(368)]#[rename(name="m_ActiveCameraColorAttachment")]pub m_active_camera_color_attachment:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(416)]#[rename(name="m_ActiveCameraDepthAttachment")]pub m_active_camera_depth_attachment:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(464)]#[rename(name="m_CameraColorAttachment")]pub m_camera_color_attachment:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(512)]#[rename(name="m_CameraDepthAttachment")]pub m_camera_depth_attachment:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(560)]#[rename(name="m_DepthTexture")]pub m_depth_texture:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(608)]#[rename(name="m_OpaqueColor")]pub m_opaque_color:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(656)]#[rename(name="m_AfterPostProcessColor")]pub m_after_post_process_color:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(704)]#[rename(name="m_ColorGradingLut")]pub m_color_grading_lut:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(752)]#[rename(name="m_ForwardLights")]pub m_forward_lights:crate::unity_engine::rendering::universal::internal::forwardlights::ForwardLights, #[offset(760)]#[rename(name="m_BlitMaterial")]pub m_blit_material:crate::unity_engine::material::Material, #[offset(768)]#[rename(name="m_CopyDepthMaterial")]pub m_copy_depth_material:crate::unity_engine::material::Material, #[offset(776)]#[rename(name="m_SamplingMaterial")]pub m_sampling_material:crate::unity_engine::material::Material, #[offset(784)]#[rename(name="m_ScreenspaceShadowsMaterial")]pub m_screenspace_shadows_material:crate::unity_engine::material::Material, #[offset(792)]#[rename(name="m_ZPrepassMaterial")]pub m_z_prepass_material:crate::unity_engine::material::Material, #[offset(800)]#[rename(name="m_DownsampleDepthMaterial")]pub m_downsample_depth_material:crate::unity_engine::material::Material, #[offset(808)]#[rename(name="m_HalfResoCompositeMaterial")]pub m_half_reso_composite_material:crate::unity_engine::material::Material, #[offset(816)]#[rename(name="m_LightOcclusionMaterial")]pub m_light_occlusion_material:crate::unity_engine::material::Material,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer_Profiling.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="CustomForwardRenderer.Profiling")]#[parent(crate::system::object::Object)]pub struct CustomForwardRenderer_Profiling{#[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="createCameraRenderTarget")]pub create_camera_render_target:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-rendering-universal-custom-customforwardrenderer")]impl CustomForwardRenderer_Profiling{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb5ff0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-custom-customforwardrenderer")]impl CustomForwardRenderer_Profiling{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-custom-customforwardrenderer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CustomForwardRenderer_unity2_raw{use super:: * ;
-pub unsafe fn get_sub_light_tag(this:CustomForwardRenderer,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"GetSubLightTag",));
-let inner:extern "C" fn(CustomForwardRenderer, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:CustomForwardRenderer,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(CustomForwardRenderer,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,disposing,__mi)}
-pub unsafe fn setup(this:CustomForwardRenderer,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"Setup",));
-let inner:extern "C" fn(CustomForwardRenderer,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,context,rendering_data,__mi)}
-pub unsafe fn setup_lights(this:CustomForwardRenderer,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"SetupLights",));
-let inner:extern "C" fn(CustomForwardRenderer,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,context,rendering_data,__mi)}
-pub unsafe fn setup_culling_parameters(this:CustomForwardRenderer,culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"SetupCullingParameters",));
-let inner:extern "C" fn(CustomForwardRenderer, *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mut crate::unity_engine::rendering::universal::cameradata::CameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,culling_parameters,camera_data,__mi)}
-pub unsafe fn finish_rendering(this:CustomForwardRenderer,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"FinishRendering",));
-let inner:extern "C" fn(CustomForwardRenderer,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,cmd,__mi)}
-}
 
 #[cfg(feature="unity_engine-rendering-universal-custom-customforwardrenderer")]impl CustomForwardRenderer{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a4b730usize)as*mut u8,();
 )}
@@ -130,29 +59,83 @@ inner(this,cmd,__mi)}
 (CustomForwardRenderer)__receiver,(crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData)::core::convert::Into::into(data))}
 }
 #[doc="`GetSubLightTag()` overload"]fn get_sub_light_tag(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CustomForwardRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CustomForwardRenderer_unity2_raw::get_sub_light_tag(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"GetSubLightTag",));
+let __inner:extern "C" fn(CustomForwardRenderer, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CustomForwardRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CustomForwardRenderer_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(CustomForwardRenderer,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
+}
 }
 #[doc="`Setup(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn setup(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <CustomForwardRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
-__CustomForwardRenderer_unity2_raw::setup(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"Setup",));
+let __inner:extern "C" fn(CustomForwardRenderer,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`SetupLights(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn setup_lights(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <CustomForwardRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
-__CustomForwardRenderer_unity2_raw::setup_lights(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"SetupLights",));
+let __inner:extern "C" fn(CustomForwardRenderer,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`SetupCullingParameters(*mutcrate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]fn setup_culling_parameters(self,)->(crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,crate::unity_engine::rendering::universal::cameradata::CameraData){unsafe{let __receiver= <CustomForwardRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::cameradata::CameraData> ::uninit();
-__CustomForwardRenderer_unity2_raw::setup_culling_parameters(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"SetupCullingParameters",));
+let __inner:extern "C" fn(CustomForwardRenderer, *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mut crate::unity_engine::rendering::universal::cameradata::CameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(),__mi)}
+;
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`FinishRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn finish_rendering(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <CustomForwardRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CustomForwardRenderer_unity2_raw::finish_rendering(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <CustomForwardRenderer as::unity2::ClassIdentity> ::NAME,"FinishRendering",));
+let __inner:extern "C" fn(CustomForwardRenderer,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(cmd),__mi)}
+}
 }
 #[doc="`IsEnabledSharpenFilter(*mutcrate::unity_engine::rendering::universal::cameradata::CameraData)` overload"]fn is_enabled_sharpen_filter(self,)->(bool,crate::unity_engine::rendering::universal::cameradata::CameraData){unsafe{let __receiver= <CustomForwardRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::cameradata::CameraData> ::uninit();
@@ -237,6 +220,26 @@ pub fn can_copy_depth_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
 }
 
+#[cfg(feature="unity_engine-rendering-universal-custom-customforwardrenderer")]impl CustomForwardRenderer{#[doc="Direct (non-virtual) call to `CustomForwardRenderer`'s own `GetSubLightTag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sub_light_tag(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_sub_light_tag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CustomForwardRenderer`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),disposing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CustomForwardRenderer`'s own `Setup`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup(this:impl::core::convert::Into< ::unity2::IlInstance> ,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,)->(){let __mi=Self::setup_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),context,rendering_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CustomForwardRenderer`'s own `SetupLights`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup_lights(this:impl::core::convert::Into< ::unity2::IlInstance> ,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,)->(){let __mi=Self::setup_lights_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),context,rendering_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CustomForwardRenderer`'s own `SetupCullingParameters`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup_culling_parameters(this:impl::core::convert::Into< ::unity2::IlInstance> ,culling_parameters: *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,camera_data: *mut crate::unity_engine::rendering::universal::cameradata::CameraData,)->(){let __mi=Self::setup_culling_parameters_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters, *mut crate::unity_engine::rendering::universal::cameradata::CameraData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),culling_parameters,camera_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CustomForwardRenderer`'s own `FinishRendering`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finish_rendering(this:impl::core::convert::Into< ::unity2::IlInstance> ,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,)->(){let __mi=Self::finish_rendering_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),cmd, ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-rendering-universal-custom-customforwardrenderer")]impl CustomForwardRenderer{#[doc="`.ctor(crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData)` — overload selector"]pub fn new(data:crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(CustomForwardRenderer), ::core::stringify!(new),));
@@ -244,14 +247,22 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="unity_engine-rendering-universal-custom-customforwardrenderer")]impl CustomForwardRenderer_Profiling{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb5ff0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-custom-customforwardrenderer")]impl CustomForwardRenderer_Profiling{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomForwardRenderer_Profiling;
-    pub use super::ICustomForwardRenderer_Profiling;
     pub use super::CustomForwardRenderer;
     pub use super::ICustomForwardRenderer;
     pub use super::ICustomForwardRendererMethods;
+    pub use super::CustomForwardRenderer_Profiling;
+    pub use super::ICustomForwardRenderer_Profiling;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRenderer;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

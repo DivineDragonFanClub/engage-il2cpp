@@ -15,12 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/engagesequence/EngageSequence.md"))]#[::unity2::class(namespace="Combat",name="EngageSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct EngageSequence{#[offset(112)]#[rename(name="m_Master")]pub m_master:crate::combat::engagesequence::EngageSequence_Cast, #[offset(120)]#[rename(name="m_Grandew")]pub m_grandew:crate::combat::engagesequence::EngageSequence_Cast, #[offset(144)]#[rename(name="m_CamGO")]pub m_cam_go:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_bSetupDone")]pub m_b_setup_done:bool, #[offset(153)]#[rename(name="m_bSkipped")]pub m_b_skipped:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/engagesequence/EngageSequence_Cast.md"))]#[::unity2::class(namespace="Combat",name="EngageSequence.Cast")]#[parent(crate::system::object::Object)]pub struct EngageSequence_Cast{#[offset(16)]#[rename(name="Unit")]pub unit:crate::app::unit::Unit, #[offset(24)]#[rename(name="God")]pub god:crate::app::godunit::GodUnit, #[offset(32)]#[rename(name="GameStatus")]pub game_status:crate::combat::charactergamestatus::CharacterGameStatus, #[offset(40)]#[rename(name="Character")]pub character:crate::combat::character::Character,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/engagesequence/EngageSequence_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EngageSequence_Mode{pub value:i32,}
 impl::unity2::ClassIdentity for EngageSequence_Mode{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="EngageSequence.Mode";
@@ -38,10 +32,67 @@ pub fn engage_plus()->Self{Self{value:2}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/engagesequence/EngageSequence_Cast.md"))]#[::unity2::class(namespace="Combat",name="EngageSequence.Cast")]#[parent(crate::system::object::Object)]pub struct EngageSequence_Cast{#[offset(16)]#[rename(name="Unit")]pub unit:crate::app::unit::Unit, #[offset(24)]#[rename(name="God")]pub god:crate::app::godunit::GodUnit, #[offset(32)]#[rename(name="GameStatus")]pub game_status:crate::combat::charactergamestatus::CharacterGameStatus, #[offset(40)]#[rename(name="Character")]pub character:crate::combat::character::Character,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/engagesequence/EngageSequence.md"))]#[::unity2::class(namespace="Combat",name="EngageSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct EngageSequence{#[offset(112)]#[rename(name="m_Master")]pub m_master:crate::combat::engagesequence::EngageSequence_Cast, #[offset(120)]#[rename(name="m_Grandew")]pub m_grandew:crate::combat::engagesequence::EngageSequence_Cast, #[offset(144)]#[rename(name="m_CamGO")]pub m_cam_go:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_bSetupDone")]pub m_b_setup_done:bool, #[offset(153)]#[rename(name="m_bSkipped")]pub m_b_skipped:bool,}
+
 }
 
 #[cfg(feature = "combat-engagesequence-types")]
 pub use __types::*;
+
+#[cfg(feature="combat-engagesequence")]pub trait IEngageSequence_CastMethods:IEngageSequence_Cast{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <EngageSequence_Cast as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8840usize)as*mut u8,();
+(EngageSequence_Cast)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor(crate::app::godunit::GodUnit)` overload"]fn ctor_2(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <EngageSequence_Cast as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd88d0usize)as*mut u8,();
+(EngageSequence_Cast)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`Import(::unity2::Array<::unity2::Il2CppString>)` overload"]fn import(self,conditions:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <EngageSequence_Cast as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8390usize)as*mut u8,();
+(EngageSequence_Cast)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(conditions))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <EngageSequence_Cast as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <EngageSequence_Cast as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(EngageSequence_Cast, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="combat-engagesequence")]impl<__T:IEngageSequence_Cast>IEngageSequence_CastMethods for __T{}
+
+#[cfg(feature="combat-engagesequence")]impl EngageSequence_Cast{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn import_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="combat-engagesequence")]impl EngageSequence_Cast{#[doc="Direct (non-virtual) call to `EngageSequence_Cast`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="combat-engagesequence")]impl EngageSequence_Cast{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EngageSequence_Cast), ::core::stringify!(new),));
+ <Self as IEngageSequence_CastMethods> ::ctor(this,unit);
+this}
+#[doc="`.ctor(crate::app::godunit::GodUnit)` — overload selector"]pub fn new_2(god:crate::app::godunit::GodUnit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EngageSequence_Cast), ::core::stringify!(new_2),));
+ <Self as IEngageSequence_CastMethods> ::ctor_2(this,god);
+this}
+}
 
 #[cfg(feature="combat-engagesequence")]impl EngageSequence{#[doc="`GetMode()` overload"]pub fn get_mode()->crate::combat::engagesequence::EngageSequence_Mode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22e9ae0usize)as*mut u8,crate::combat::engagesequence::EngageSequence_Mode;
 )}
@@ -110,66 +161,16 @@ pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="combat-engagesequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EngageSequence_Cast_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:EngageSequence_Cast,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <EngageSequence_Cast as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(EngageSequence_Cast, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="combat-engagesequence")]pub trait IEngageSequence_CastMethods:IEngageSequence_Cast{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <EngageSequence_Cast as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8840usize)as*mut u8,();
-(EngageSequence_Cast)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`.ctor(crate::app::godunit::GodUnit)` overload"]fn ctor_2(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <EngageSequence_Cast as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd88d0usize)as*mut u8,();
-(EngageSequence_Cast)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
-}
-#[doc="`Import(::unity2::Array<::unity2::Il2CppString>)` overload"]fn import(self,conditions:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <EngageSequence_Cast as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8390usize)as*mut u8,();
-(EngageSequence_Cast)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(conditions))}
-}
-#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <EngageSequence_Cast as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EngageSequence_Cast_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="combat-engagesequence")]impl<__T:IEngageSequence_Cast>IEngageSequence_CastMethods for __T{}
-
-#[cfg(feature="combat-engagesequence")]impl EngageSequence_Cast{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn import_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="combat-engagesequence")]impl EngageSequence_Cast{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EngageSequence_Cast), ::core::stringify!(new),));
- <Self as IEngageSequence_CastMethods> ::ctor(this,unit);
-this}
-#[doc="`.ctor(crate::app::godunit::GodUnit)` — overload selector"]pub fn new_2(god:crate::app::godunit::GodUnit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EngageSequence_Cast), ::core::stringify!(new_2),));
- <Self as IEngageSequence_CastMethods> ::ctor_2(this,god);
-this}
-}
-
 #[cfg(feature = "combat-engagesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EngageSequence;
-    pub use super::IEngageSequence;
-    pub use super::IEngageSequenceMethods;
+    pub use super::EngageSequence_Mode;
     pub use super::EngageSequence_Cast;
     pub use super::IEngageSequence_Cast;
     pub use super::IEngageSequence_CastMethods;
-    pub use super::EngageSequence_Mode;
+    pub use super::EngageSequence;
+    pub use super::IEngageSequence;
+    pub use super::IEngageSequenceMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

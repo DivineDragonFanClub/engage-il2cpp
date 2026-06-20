@@ -23,37 +23,7 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FrameworkCurrent_unity2_raw{use super:: * ;
-pub unsafe fn is_db_null(this:FrameworkCurrent,o:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",34usize,__vt.len(), <FrameworkCurrent as::unity2::ClassIdentity> ::NAME,"IsDbNull",));
-let inner:extern "C" fn(FrameworkCurrent,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,o,__mi)}
-pub unsafe fn string_contains_char(this:FrameworkCurrent,str: ::unity2::Il2CppString,chr:u16,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <FrameworkCurrent as::unity2::ClassIdentity> ::NAME,"StringContainsChar",));
-let inner:extern "C" fn(FrameworkCurrent, ::unity2::Il2CppString,u16, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,str,chr,__mi)}
-pub unsafe fn get_interface(this:FrameworkCurrent,r#type: ::unity2::SystemType,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <FrameworkCurrent as::unity2::ClassIdentity> ::NAME,"GetInterface",));
-let inner:extern "C" fn(FrameworkCurrent, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,r#type,name,__mi)}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<FrameworkCurrent as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
 );
@@ -66,13 +36,40 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]pub trait IFrameworkCurrentMethods:IFrameworkCurrent{#[doc="`IsDbNull(crate::system::object::Object)` overload"]fn is_db_null(self,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <FrameworkCurrent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkCurrent_unity2_raw::is_db_null(__receiver, ::core::convert::Into::into(o), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <FrameworkCurrent as::unity2::ClassIdentity> ::NAME,"IsDbNull",));
+let __inner:extern "C" fn(FrameworkCurrent,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(o),__mi)}
+}
 }
 #[doc="`StringContainsChar(::unity2::Il2CppString, u16)` overload"]fn string_contains_char(self,str:impl::core::convert::Into< ::unity2::Il2CppString> ,chr:impl::core::convert::Into<u16>)->bool{unsafe{let __receiver= <FrameworkCurrent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkCurrent_unity2_raw::string_contains_char(__receiver, ::core::convert::Into::into(str), ::core::convert::Into::into(chr), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <FrameworkCurrent as::unity2::ClassIdentity> ::NAME,"StringContainsChar",));
+let __inner:extern "C" fn(FrameworkCurrent, ::unity2::Il2CppString,u16, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(str), ::core::convert::Into::into(chr),__mi)}
+}
 }
 #[doc="`GetInterface(::unity2::SystemType, ::unity2::Il2CppString)` overload"]fn get_interface(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::SystemType{unsafe{let __receiver= <FrameworkCurrent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkCurrent_unity2_raw::get_interface(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(name), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <FrameworkCurrent as::unity2::ClassIdentity> ::NAME,"GetInterface",));
+let __inner:extern "C" fn(FrameworkCurrent, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(name),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FrameworkCurrent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FrameworkCurrent_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
@@ -86,6 +83,17 @@ __FrameworkCurrent_unity2_raw::get_interface(__receiver, ::core::convert::Into::
 pub fn string_contains_char_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_interface_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]impl FrameworkCurrent{#[doc="Direct (non-virtual) call to `FrameworkCurrent`'s own `IsDbNull`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_db_null(this:impl::core::convert::Into< ::unity2::IlInstance> ,o:crate::system::object::Object,)->bool{let __mi=Self::is_db_null_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),o, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkCurrent`'s own `StringContainsChar`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn string_contains_char(this:impl::core::convert::Into< ::unity2::IlInstance> ,str: ::unity2::Il2CppString,chr:u16,)->bool{let __mi=Self::string_contains_char_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,u16, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),str,chr, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkCurrent`'s own `GetInterface`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_interface(this:impl::core::convert::Into< ::unity2::IlInstance> ,r#type: ::unity2::SystemType,name: ::unity2::Il2CppString,)-> ::unity2::SystemType{let __mi=Self::get_interface_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),r#type,name, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkcurrent")]impl FrameworkCurrent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

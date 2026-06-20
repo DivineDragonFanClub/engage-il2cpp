@@ -9,15 +9,23 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/postprocessutils/PostProcessUtils.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="PostProcessUtils")]#[parent(crate::system::object::Object)]pub struct PostProcessUtils{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/postprocessutils/PostProcessUtils_ShaderConstants.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="PostProcessUtils.ShaderConstants")]#[parent(crate::system::object::Object)]pub struct PostProcessUtils_ShaderConstants{#[static_field]#[rename(name="_Grain_Texture")]pub grain_texture:i32, #[static_field]#[rename(name="_Grain_Params")]pub grain_params:i32, #[static_field]#[rename(name="_Grain_TilingParams")]pub grain_tiling_params:i32, #[static_field]#[rename(name="_BlueNoise_Texture")]pub blue_noise_texture:i32, #[static_field]#[rename(name="_Dithering_Params")]pub dithering_params:i32, #[static_field]#[rename(name="_SourceSize")]pub source_size:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/postprocessutils/PostProcessUtils.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="PostProcessUtils")]#[parent(crate::system::object::Object)]pub struct PostProcessUtils{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-postprocessutils-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-rendering-universal-postprocessutils")]impl PostProcessUtils_ShaderConstants{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb8500usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-postprocessutils")]impl PostProcessUtils_ShaderConstants{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature="unity_engine-rendering-universal-postprocessutils")]impl PostProcessUtils{#[doc="`ConfigureDithering(crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, i32, crate::unity_engine::camera::Camera, crate::unity_engine::material::Material)` overload"]pub fn configure_dithering(data:impl::core::convert::Into<crate::unity_engine::rendering::universal::postprocessdata::PostProcessData> ,index:impl::core::convert::Into<i32> ,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,material:impl::core::convert::Into<crate::unity_engine::material::Material>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31a4c70usize)as*mut u8,i32;
 (crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)::core::convert::Into::into(data),(i32)::core::convert::Into::into(index),(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(crate::unity_engine::material::Material)::core::convert::Into::into(material))}
@@ -43,21 +51,13 @@ pub fn configure_film_grain_2_method_info()-> & 'static::unity2::il2cpp::MethodI
 pub fn set_source_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="unity_engine-rendering-universal-postprocessutils")]impl PostProcessUtils_ShaderConstants{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb8500usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-postprocessutils")]impl PostProcessUtils_ShaderConstants{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
 #[cfg(feature = "unity_engine-rendering-universal-postprocessutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PostProcessUtils;
-    pub use super::IPostProcessUtils;
     pub use super::PostProcessUtils_ShaderConstants;
     pub use super::IPostProcessUtils_ShaderConstants;
+    pub use super::PostProcessUtils;
+    pub use super::IPostProcessUtils;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

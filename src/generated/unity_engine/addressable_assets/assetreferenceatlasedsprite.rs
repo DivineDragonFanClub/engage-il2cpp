@@ -20,38 +20,33 @@ use crate::unity_engine::addressable_assets::assetreferencet_1::{AssetReferenceT
 #[cfg(feature = "unity_engine-addressable_assets-assetreferenceatlasedsprite-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-addressable_assets-assetreferenceatlasedsprite")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssetReferenceAtlasedSprite_unity2_raw{use super:: * ;
-pub unsafe fn validate_asset(this:AssetReferenceAtlasedSprite,obj:crate::unity_engine::object_2::Object_2,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <AssetReferenceAtlasedSprite as::unity2::ClassIdentity> ::NAME,"ValidateAsset",));
-let inner:extern "C" fn(AssetReferenceAtlasedSprite,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
-pub unsafe fn validate_asset_2(this:AssetReferenceAtlasedSprite,path: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <AssetReferenceAtlasedSprite as::unity2::ClassIdentity> ::NAME,"ValidateAsset",));
-let inner:extern "C" fn(AssetReferenceAtlasedSprite, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,path,__mi)}
-}
-
 #[cfg(feature="unity_engine-addressable_assets-assetreferenceatlasedsprite")]pub trait IAssetReferenceAtlasedSpriteMethods:IAssetReferenceAtlasedSprite{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,guid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetReferenceAtlasedSprite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2e40usize)as*mut u8,();
 (AssetReferenceAtlasedSprite)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(guid))}
 }
 #[doc="`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"]fn validate_asset(self,obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->bool{unsafe{let __receiver= <AssetReferenceAtlasedSprite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AssetReferenceAtlasedSprite_unity2_raw::validate_asset(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <AssetReferenceAtlasedSprite as::unity2::ClassIdentity> ::NAME,"ValidateAsset",));
+let __inner:extern "C" fn(AssetReferenceAtlasedSprite,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`ValidateAsset(::unity2::Il2CppString)` overload"]fn validate_asset_2(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <AssetReferenceAtlasedSprite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AssetReferenceAtlasedSprite_unity2_raw::validate_asset_2(__receiver, ::core::convert::Into::into(path), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <AssetReferenceAtlasedSprite as::unity2::ClassIdentity> ::NAME,"ValidateAsset",));
+let __inner:extern "C" fn(AssetReferenceAtlasedSprite, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(path),__mi)}
+}
 }
 }
 
@@ -60,6 +55,14 @@ __AssetReferenceAtlasedSprite_unity2_raw::validate_asset_2(__receiver, ::core::c
 #[cfg(feature="unity_engine-addressable_assets-assetreferenceatlasedsprite")]impl AssetReferenceAtlasedSprite{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn validate_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn validate_asset_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-assetreferenceatlasedsprite")]impl AssetReferenceAtlasedSprite{#[doc="Direct (non-virtual) call to `AssetReferenceAtlasedSprite`'s own `ValidateAsset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn validate_asset(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::unity_engine::object_2::Object_2,)->bool{let __mi=Self::validate_asset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AssetReferenceAtlasedSprite`'s own `ValidateAsset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn validate_asset_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,path: ::unity2::Il2CppString,)->bool{let __mi=Self::validate_asset_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),path, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-addressable_assets-assetreferenceatlasedsprite")]impl AssetReferenceAtlasedSprite{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(guid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

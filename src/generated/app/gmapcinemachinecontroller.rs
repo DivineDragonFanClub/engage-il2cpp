@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapcinemachinecontroller/GmapCinemachineController.md"))]#[::unity2::class(namespace="App",name="GmapCinemachineController")]#[parent(crate::system::object::Object)]pub struct GmapCinemachineController{#[offset(16)]#[rename(name="m_Carrier")]pub m_carrier:crate::unity_engine::gameobject::GameObject,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapcinemachinecontroller/GmapCinemachineController_PointType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapCinemachineController_PointType{pub value:i32,}
 impl::unity2::ClassIdentity for GmapCinemachineController_PointType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GmapCinemachineController.PointType";
@@ -32,6 +29,9 @@ pub fn start()->Self{Self{value:0}
 pub fn end()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapcinemachinecontroller/GmapCinemachineController.md"))]#[::unity2::class(namespace="App",name="GmapCinemachineController")]#[parent(crate::system::object::Object)]pub struct GmapCinemachineController{#[offset(16)]#[rename(name="m_Carrier")]pub m_carrier:crate::unity_engine::gameobject::GameObject,}
 
 }
 
@@ -114,10 +114,10 @@ this}
 #[cfg(feature = "app-gmapcinemachinecontroller")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GmapCinemachineController_PointType;
     pub use super::GmapCinemachineController;
     pub use super::IGmapCinemachineController;
     pub use super::IGmapCinemachineControllerMethods;
-    pub use super::GmapCinemachineController_PointType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

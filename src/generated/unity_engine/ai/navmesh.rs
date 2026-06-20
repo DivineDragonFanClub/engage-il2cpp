@@ -13,50 +13,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmesh/NavMesh_OnNavMeshPreUpdate.md"))]#[::unity2::class(namespace="UnityEngine.AI",name="NavMesh.OnNavMeshPreUpdate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NavMesh_OnNavMeshPreUpdate{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmesh/NavMesh.md"))]#[::unity2::class(namespace="UnityEngine.AI",name="NavMesh")]#[parent(crate::system::object::Object)]pub struct NavMesh{#[static_field]#[rename(name="onPreUpdate")]pub on_pre_update:crate::unity_engine::ai::navmesh::NavMesh_OnNavMeshPreUpdate,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmesh/NavMesh_OnNavMeshPreUpdate.md"))]#[::unity2::class(namespace="UnityEngine.AI",name="NavMesh.OnNavMeshPreUpdate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NavMesh_OnNavMeshPreUpdate{}
 
 }
 
 #[cfg(feature = "unity_engine-ai-navmesh-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-ai-navmesh")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NavMesh_OnNavMeshPreUpdate_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:NavMesh_OnNavMeshPreUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <NavMesh_OnNavMeshPreUpdate as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(NavMesh_OnNavMeshPreUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="unity_engine-ai-navmesh")]pub trait INavMesh_OnNavMeshPreUpdateMethods:INavMesh_OnNavMeshPreUpdate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NavMesh_OnNavMeshPreUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44300usize)as*mut u8,();
-(NavMesh_OnNavMeshPreUpdate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <NavMesh_OnNavMeshPreUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NavMesh_OnNavMeshPreUpdate_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="unity_engine-ai-navmesh")]impl<__T:INavMesh_OnNavMeshPreUpdate>INavMesh_OnNavMeshPreUpdateMethods for __T{}
-
-#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NavMesh_OnNavMeshPreUpdate), ::core::stringify!(new),));
- <Self as INavMesh_OnNavMeshPreUpdateMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh{#[doc="`Internal_CallOnNavMeshPreUpdate()` overload"]pub fn internal_call_on_nav_mesh_pre_update()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f43180usize)as*mut u8,();
 )}
@@ -97,14 +62,50 @@ pub fn calculate_path_internal_injected_method_info()-> & 'static::unity2::il2cp
 pub fn sample_position_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
+#[cfg(feature="unity_engine-ai-navmesh")]pub trait INavMesh_OnNavMeshPreUpdateMethods:INavMesh_OnNavMeshPreUpdate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NavMesh_OnNavMeshPreUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44300usize)as*mut u8,();
+(NavMesh_OnNavMeshPreUpdate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <NavMesh_OnNavMeshPreUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <NavMesh_OnNavMeshPreUpdate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(NavMesh_OnNavMeshPreUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="unity_engine-ai-navmesh")]impl<__T:INavMesh_OnNavMeshPreUpdate>INavMesh_OnNavMeshPreUpdateMethods for __T{}
+
+#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{#[doc="Direct (non-virtual) call to `NavMesh_OnNavMeshPreUpdate`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NavMesh_OnNavMeshPreUpdate), ::core::stringify!(new),));
+ <Self as INavMesh_OnNavMeshPreUpdateMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "unity_engine-ai-navmesh")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NavMesh;
+    pub use super::INavMesh;
     pub use super::NavMesh_OnNavMeshPreUpdate;
     pub use super::INavMesh_OnNavMeshPreUpdate;
     pub use super::INavMesh_OnNavMeshPreUpdateMethods;
-    pub use super::NavMesh;
-    pub use super::INavMesh;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -16,25 +16,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-reflection-exceptionhandlingclause-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-exceptionhandlingclause")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ExceptionHandlingClause_unity2_raw{use super:: * ;
-pub unsafe fn to_string(this:ExceptionHandlingClause,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <ExceptionHandlingClause as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(ExceptionHandlingClause, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="system-reflection-exceptionhandlingclause")]pub trait IExceptionHandlingClauseMethods:IExceptionHandlingClause{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExceptionHandlingClause as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad62a0usize)as*mut u8,();
 (ExceptionHandlingClause)__receiver)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ExceptionHandlingClause as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ExceptionHandlingClause_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <ExceptionHandlingClause as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(ExceptionHandlingClause, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -42,6 +38,11 @@ __ExceptionHandlingClause_unity2_raw::to_string(__receiver, ::core::option::Opti
 
 #[cfg(feature="system-reflection-exceptionhandlingclause")]impl ExceptionHandlingClause{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-reflection-exceptionhandlingclause")]impl ExceptionHandlingClause{#[doc="Direct (non-virtual) call to `ExceptionHandlingClause`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-reflection-exceptionhandlingclause")]impl ExceptionHandlingClause{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

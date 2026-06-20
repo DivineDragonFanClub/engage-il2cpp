@@ -22,38 +22,34 @@ use crate::system::reflection::runtimepropertyinfo::{IRuntimePropertyInfo,Runtim
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoproperty/MonoProperty_GetterAdapter.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoProperty.GetterAdapter")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MonoProperty_GetterAdapter{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoproperty/MonoProperty_Getter_2.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoProperty.Getter`2")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct MonoProperty_Getter_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoproperty/MonoProperty_StaticGetter_1.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoProperty.StaticGetter`1")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct MonoProperty_StaticGetter_1<T0: ::unity2::ClassIdentity>{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoproperty/MonoProperty.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoProperty")]#[parent(crate::system::reflection::runtimepropertyinfo::RuntimePropertyInfo)]pub struct MonoProperty{#[offset(16)]#[rename(name="klass")]pub klass: ::unity2::IntPtr, #[offset(24)]#[rename(name="prop")]pub prop: ::unity2::IntPtr, #[offset(32)]#[rename(name="info")]pub info:crate::system::reflection::monopropertyinfo::MonoPropertyInfo, #[offset(80)]#[rename(name="cached")]pub cached:crate::system::reflection::pinfo::PInfo, #[offset(88)]#[rename(name="cached_getter")]pub cached_getter:crate::system::reflection::monoproperty::MonoProperty_GetterAdapter,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoproperty/MonoProperty_Getter_2.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoProperty.Getter`2")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct MonoProperty_Getter_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "system-reflection-monoproperty-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-monoproperty")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MonoProperty_GetterAdapter_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MonoProperty_GetterAdapter,target_0:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MonoProperty_GetterAdapter as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MonoProperty_GetterAdapter,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,target_0,__mi)}
-}
-
 #[cfg(feature="system-reflection-monoproperty")]pub trait IMonoProperty_GetterAdapterMethods:IMonoProperty_GetterAdapter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MonoProperty_GetterAdapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x34d9b80usize)as*mut u8,();
 (MonoProperty_GetterAdapter)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::system::object::Object)` overload"]fn invoke(self,target_0:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <MonoProperty_GetterAdapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_GetterAdapter_unity2_raw::invoke(__receiver, ::core::convert::Into::into(target_0), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MonoProperty_GetterAdapter as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MonoProperty_GetterAdapter,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(target_0),__mi)}
+}
 }
 }
 
@@ -63,10 +59,26 @@ __MonoProperty_GetterAdapter_unity2_raw::invoke(__receiver, ::core::convert::Int
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="system-reflection-monoproperty")]impl MonoProperty_GetterAdapter{#[doc="Direct (non-virtual) call to `MonoProperty_GetterAdapter`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,target_0:crate::system::object::Object,)->crate::system::object::Object{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),target_0, ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-reflection-monoproperty")]impl MonoProperty_GetterAdapter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MonoProperty_GetterAdapter), ::core::stringify!(new),));
  <Self as IMonoProperty_GetterAdapterMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="system-reflection-monoproperty")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MonoProperty_Getter_2<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(T0)` overload"]#[method(name="Invoke",args=1)]pub fn invoke(self,target_0:T0)->T1;
+}
+
+#[cfg(feature="system-reflection-monoproperty")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MonoProperty_Getter_2<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MonoProperty_Getter_2), ::core::stringify!(new),));
+ <Self as IMonoProperty_Getter_2Methods<T0,T1> > ::ctor(this,object,method);
 this}
 }
 
@@ -79,209 +91,6 @@ this}
  failed to instantiate", ::core::stringify!(MonoProperty_StaticGetter_1), ::core::stringify!(new),));
  <Self as IMonoProperty_StaticGetter_1Methods<T0> > ::ctor(this,object,method);
 this}
-}
-
-#[cfg(feature="system-reflection-monoproperty")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MonoProperty_unity2_raw{use super:: * ;
-pub unsafe fn get_attributes(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::propertyattributes::PropertyAttributes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_Attributes",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->crate::system::reflection::propertyattributes::PropertyAttributes= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_can_read(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_CanRead",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_can_write(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_CanWrite",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_property_type(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_PropertyType",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_reflected_type(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_ReflectedType",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_declaring_type(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_DeclaringType",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_accessors(this:MonoProperty,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetAccessors",));
-let inner:extern "C" fn(MonoProperty,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,non_public,__mi)}
-pub unsafe fn get_get_method(this:MonoProperty,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetGetMethod",));
-let inner:extern "C" fn(MonoProperty,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,non_public,__mi)}
-pub unsafe fn get_index_parameters(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetIndexParameters",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_set_method(this:MonoProperty,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetSetMethod",));
-let inner:extern "C" fn(MonoProperty,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,non_public,__mi)}
-pub unsafe fn get_constant_value(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetConstantValue",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_raw_constant_value(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetRawConstantValue",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_defined(this:MonoProperty,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"IsDefined",));
-let inner:extern "C" fn(MonoProperty, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,attribute_type,inherit,__mi)}
-pub unsafe fn get_custom_attributes(this:MonoProperty,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
-let inner:extern "C" fn(MonoProperty,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,inherit,__mi)}
-pub unsafe fn get_custom_attributes_2(this:MonoProperty,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
-let inner:extern "C" fn(MonoProperty, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,attribute_type,inherit,__mi)}
-pub unsafe fn get_value(this:MonoProperty,obj:crate::system::object::Object,index: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetValue",));
-let inner:extern "C" fn(MonoProperty,crate::system::object::Object, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,index,__mi)}
-pub unsafe fn get_optional_custom_modifiers(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetOptionalCustomModifiers",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_required_custom_modifiers(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetRequiredCustomModifiers",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_custom_attributes_data(this:MonoProperty,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetCustomAttributesData",));
-let inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="system-reflection-monoproperty")]impl MonoProperty{pub fn getter_adapter_frame<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity,M1: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(getter:impl::core::convert::Into<crate::system::reflection::monoproperty::MonoProperty_Getter_2<M0,M1> > ,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<MonoProperty as::unity2::ClassIdentity> ::class(),"GetterAdapterFrame",2,)}
@@ -334,64 +143,244 @@ __f(::core::convert::Into::into(getter), ::core::convert::Into::into(obj), ::cor
 (MonoProperty)__receiver,(crate::system::reflection::pinfo::PInfo)::core::convert::Into::into(flags))}
 }
 #[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::propertyattributes::PropertyAttributes{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_attributes(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_Attributes",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->crate::system::reflection::propertyattributes::PropertyAttributes= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_can_read(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_CanRead",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_can_write(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_CanWrite",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_PropertyType()` overload"]fn get_property_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_property_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_PropertyType",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_ReflectedType()` overload"]fn get_reflected_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_reflected_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_ReflectedType",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_DeclaringType()` overload"]fn get_declaring_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_declaring_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_DeclaringType",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetAccessors(bool)` overload"]fn get_accessors(self,non_public:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_accessors(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetAccessors",));
+let __inner:extern "C" fn(MonoProperty,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(non_public),__mi)}
+}
 }
 #[doc="`GetGetMethod(bool)` overload"]fn get_get_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_get_method(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetGetMethod",));
+let __inner:extern "C" fn(MonoProperty,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(non_public),__mi)}
+}
 }
 #[doc="`GetIndexParameters()` overload"]fn get_index_parameters(self,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_index_parameters(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetIndexParameters",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetSetMethod(bool)` overload"]fn get_set_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_set_method(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetSetMethod",));
+let __inner:extern "C" fn(MonoProperty,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(non_public),__mi)}
+}
 }
 #[doc="`GetConstantValue()` overload"]fn get_constant_value(self,)->crate::system::object::Object{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_constant_value(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetConstantValue",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetRawConstantValue()` overload"]fn get_raw_constant_value(self,)->crate::system::object::Object{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_raw_constant_value(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetRawConstantValue",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::is_defined(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"IsDefined",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit),__mi)}
+}
 }
 #[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(inherit), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
+let __inner:extern "C" fn(MonoProperty,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(inherit),__mi)}
+}
 }
 #[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_custom_attributes_2(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit),__mi)}
+}
 }
 #[doc="`GetValue(crate::system::object::Object, ::unity2::Array<crate::system::object::Object>)` overload"]fn get_value(self,obj:impl::core::convert::Into<crate::system::object::Object> ,index:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::system::object::Object{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_value(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let __inner:extern "C" fn(MonoProperty,crate::system::object::Object, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(index),__mi)}
+}
 }
 #[doc="`GetOptionalCustomModifiers()` overload"]fn get_optional_custom_modifiers(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_optional_custom_modifiers(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetOptionalCustomModifiers",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetRequiredCustomModifiers()` overload"]fn get_required_custom_modifiers(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_required_custom_modifiers(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetRequiredCustomModifiers",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetCustomAttributesData()` overload"]fn get_custom_attributes_data(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MonoProperty_unity2_raw::get_custom_attributes_data(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MonoProperty as::unity2::ClassIdentity> ::NAME,"GetCustomAttributesData",));
+let __inner:extern "C" fn(MonoProperty, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MonoProperty as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3384bb0usize)as*mut u8,();
@@ -426,21 +415,72 @@ pub fn get_custom_attributes_data_method_info()-> & 'static::unity2::il2cpp::Met
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
 }
 
+#[cfg(feature="system-reflection-monoproperty")]impl MonoProperty{#[doc="Direct (non-virtual) call to `MonoProperty`'s own `get_Attributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_attributes(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::propertyattributes::PropertyAttributes{let __mi=Self::get_attributes_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::propertyattributes::PropertyAttributes= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `get_CanRead`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_can_read(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_can_read_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `get_CanWrite`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_can_write(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_can_write_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `get_PropertyType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_property_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_property_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `get_ReflectedType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_reflected_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_reflected_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `get_DeclaringType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_declaring_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_declaring_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetAccessors`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_accessors(this:impl::core::convert::Into< ::unity2::IlInstance> ,non_public:bool,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{let __mi=Self::get_accessors_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),non_public, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetGetMethod`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_get_method(this:impl::core::convert::Into< ::unity2::IlInstance> ,non_public:bool,)->crate::system::reflection::methodinfo::MethodInfo{let __mi=Self::get_get_method_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),non_public, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetIndexParameters`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_index_parameters(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{let __mi=Self::get_index_parameters_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetSetMethod`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_set_method(this:impl::core::convert::Into< ::unity2::IlInstance> ,non_public:bool,)->crate::system::reflection::methodinfo::MethodInfo{let __mi=Self::get_set_method_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),non_public, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetConstantValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_constant_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_constant_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetRawConstantValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_raw_constant_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_raw_constant_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `IsDefined`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_defined(this:impl::core::convert::Into< ::unity2::IlInstance> ,attribute_type: ::unity2::SystemType,inherit:bool,)->bool{let __mi=Self::is_defined_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),attribute_type,inherit, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetCustomAttributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_custom_attributes(this:impl::core::convert::Into< ::unity2::IlInstance> ,inherit:bool,)-> ::unity2::Array<crate::system::object::Object>{let __mi=Self::get_custom_attributes_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),inherit, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetCustomAttributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_custom_attributes_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,attribute_type: ::unity2::SystemType,inherit:bool,)-> ::unity2::Array<crate::system::object::Object>{let __mi=Self::get_custom_attributes_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),attribute_type,inherit, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,index: ::unity2::Array<crate::system::object::Object> ,)->crate::system::object::Object{let __mi=Self::get_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetOptionalCustomModifiers`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_optional_custom_modifiers(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array< ::unity2::SystemType>{let __mi=Self::get_optional_custom_modifiers_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetRequiredCustomModifiers`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_required_custom_modifiers(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array< ::unity2::SystemType>{let __mi=Self::get_required_custom_modifiers_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MonoProperty`'s own `GetCustomAttributesData`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_custom_attributes_data(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{let __mi=Self::get_custom_attributes_data_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-reflection-monoproperty")]impl MonoProperty{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MonoProperty), ::core::stringify!(new),));
  <Self as IMonoPropertyMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="system-reflection-monoproperty")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MonoProperty_Getter_2<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
- #[doc="`Invoke(T0)` overload"]#[method(name="Invoke",args=1)]pub fn invoke(self,target_0:T0)->T1;
-}
-
-#[cfg(feature="system-reflection-monoproperty")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MonoProperty_Getter_2<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MonoProperty_Getter_2), ::core::stringify!(new),));
- <Self as IMonoProperty_Getter_2Methods<T0,T1> > ::ctor(this,object,method);
 this}
 }
 
@@ -450,15 +490,15 @@ pub mod prelude {
     pub use super::MonoProperty_GetterAdapter;
     pub use super::IMonoProperty_GetterAdapter;
     pub use super::IMonoProperty_GetterAdapterMethods;
+    pub use super::MonoProperty_Getter_2;
+    pub use super::IMonoProperty_Getter_2;
+    pub use super::IMonoProperty_Getter_2Methods;
     pub use super::MonoProperty_StaticGetter_1;
     pub use super::IMonoProperty_StaticGetter_1;
     pub use super::IMonoProperty_StaticGetter_1Methods;
     pub use super::MonoProperty;
     pub use super::IMonoProperty;
     pub use super::IMonoPropertyMethods;
-    pub use super::MonoProperty_Getter_2;
-    pub use super::IMonoProperty_Getter_2;
-    pub use super::IMonoProperty_Getter_2Methods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -19,18 +19,54 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/amplifier/Amplifier.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Amplifier")]#[parent(crate::root_motion::final_ik::offsetmodifier::OffsetModifier)]pub struct Amplifier{#[offset(48)]#[rename(name="bodies")]pub bodies: ::unity2::Array<crate::root_motion::final_ik::amplifier::Amplifier_Body> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/amplifier/Amplifier_Body.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Amplifier.Body")]#[parent(crate::system::object::Object)]pub struct Amplifier_Body{#[offset(16)]#[rename(name="transform")]pub transform:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="relativeTo")]pub relative_to:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="effectorLinks")]pub effector_links: ::unity2::Array<crate::root_motion::final_ik::amplifier::Amplifier_Body_EffectorLink> , #[offset(40)]#[rename(name="verticalWeight")]pub vertical_weight:f32, #[offset(44)]#[rename(name="horizontalWeight")]pub horizontal_weight:f32, #[offset(48)]#[rename(name="speed")]pub speed:f32, #[offset(52)]#[rename(name="lastRelativePos")]pub last_relative_pos:crate::unity_engine::vector3::Vector3, #[offset(64)]#[rename(name="smoothDelta")]pub smooth_delta:crate::unity_engine::vector3::Vector3, #[offset(76)]#[rename(name="firstUpdate")]pub first_update:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/amplifier/Amplifier_Body_EffectorLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Amplifier.Body.EffectorLink")]#[parent(crate::system::object::Object)]pub struct Amplifier_Body_EffectorLink{#[offset(16)]#[rename(name="effector")]pub effector:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, #[offset(20)]#[rename(name="weight")]pub weight:f32,}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/amplifier/Amplifier.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Amplifier")]#[parent(crate::root_motion::final_ik::offsetmodifier::OffsetModifier)]pub struct Amplifier{#[offset(48)]#[rename(name="bodies")]pub bodies: ::unity2::Array<crate::root_motion::final_ik::amplifier::Amplifier_Body> ,}
-
 }
 
 #[cfg(feature = "root_motion-final_ik-amplifier-types")]
 pub use __types::*;
+
+#[cfg(feature="root_motion-final_ik-amplifier")]pub trait IAmplifierMethods:IAmplifier{#[doc="`OnModifyOffset()` overload"]fn on_modify_offset(self,)->(){unsafe{let __receiver= <Amplifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Amplifier as::unity2::ClassIdentity> ::NAME,"OnModifyOffset",));
+let __inner:extern "C" fn(Amplifier, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Amplifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d780usize)as*mut u8,();
+(Amplifier)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-amplifier")]impl<__T:IAmplifier>IAmplifierMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-amplifier")]impl Amplifier{pub fn on_modify_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root_motion-final_ik-amplifier")]impl Amplifier{#[doc="Direct (non-virtual) call to `Amplifier`'s own `OnModifyOffset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_modify_offset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_modify_offset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="root_motion-final_ik-amplifier")]impl Amplifier{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Amplifier), ::core::stringify!(new),));
+ <Self as IAmplifierMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="root_motion-final_ik-amplifier")]impl Amplifier_Body{#[doc="`Multiply(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn multiply(v1:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,v2:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba4720usize)as*mut u8,crate::unity_engine::vector3::Vector3;
 (crate::unity_engine::vector3::Vector3)::core::convert::Into::into(v1),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(v2))}
@@ -79,53 +115,18 @@ this}
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-amplifier")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Amplifier_unity2_raw{use super:: * ;
-pub unsafe fn on_modify_offset(this:Amplifier,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Amplifier as::unity2::ClassIdentity> ::NAME,"OnModifyOffset",));
-let inner:extern "C" fn(Amplifier, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="root_motion-final_ik-amplifier")]pub trait IAmplifierMethods:IAmplifier{#[doc="`OnModifyOffset()` overload"]fn on_modify_offset(self,)->(){unsafe{let __receiver= <Amplifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Amplifier_unity2_raw::on_modify_offset(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Amplifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d780usize)as*mut u8,();
-(Amplifier)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-amplifier")]impl<__T:IAmplifier>IAmplifierMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-amplifier")]impl Amplifier{pub fn on_modify_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root_motion-final_ik-amplifier")]impl Amplifier{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Amplifier), ::core::stringify!(new),));
- <Self as IAmplifierMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "root_motion-final_ik-amplifier")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Amplifier;
+    pub use super::IAmplifier;
+    pub use super::IAmplifierMethods;
     pub use super::Amplifier_Body;
     pub use super::IAmplifier_Body;
     pub use super::IAmplifier_BodyMethods;
     pub use super::Amplifier_Body_EffectorLink;
     pub use super::IAmplifier_Body_EffectorLink;
     pub use super::IAmplifier_Body_EffectorLinkMethods;
-    pub use super::Amplifier;
-    pub use super::IAmplifier;
-    pub use super::IAmplifierMethods;
     pub use crate::root_motion::final_ik::offsetmodifier::IOffsetModifier;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

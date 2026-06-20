@@ -30,64 +30,57 @@ use crate::unity_engine::ui::layoutgroup::{ILayoutGroup,LayoutGroup}
 #[cfg(feature = "unity_engine-ui-verticallayoutgroup-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ui-verticallayoutgroup")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VerticalLayoutGroup_unity2_raw{use super:: * ;
-pub unsafe fn calculate_layout_input_horizontal(this:VerticalLayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <VerticalLayoutGroup as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
-let inner:extern "C" fn(VerticalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn calculate_layout_input_vertical(this:VerticalLayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <VerticalLayoutGroup as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
-let inner:extern "C" fn(VerticalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_layout_horizontal(this:VerticalLayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",37usize,__vt.len(), <VerticalLayoutGroup as::unity2::ClassIdentity> ::NAME,"SetLayoutHorizontal",));
-let inner:extern "C" fn(VerticalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_layout_vertical(this:VerticalLayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",38usize,__vt.len(), <VerticalLayoutGroup as::unity2::ClassIdentity> ::NAME,"SetLayoutVertical",));
-let inner:extern "C" fn(VerticalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-ui-verticallayoutgroup")]pub trait IVerticalLayoutGroupMethods:IVerticalLayoutGroup{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VerticalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0bc50usize)as*mut u8,();
 (VerticalLayoutGroup)__receiver)}
 }
 #[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <VerticalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VerticalLayoutGroup_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <VerticalLayoutGroup as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
+let __inner:extern "C" fn(VerticalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <VerticalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VerticalLayoutGroup_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <VerticalLayoutGroup as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
+let __inner:extern "C" fn(VerticalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetLayoutHorizontal()` overload"]fn set_layout_horizontal(self,)->(){unsafe{let __receiver= <VerticalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VerticalLayoutGroup_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <VerticalLayoutGroup as::unity2::ClassIdentity> ::NAME,"SetLayoutHorizontal",));
+let __inner:extern "C" fn(VerticalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetLayoutVertical()` overload"]fn set_layout_vertical(self,)->(){unsafe{let __receiver= <VerticalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VerticalLayoutGroup_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <VerticalLayoutGroup as::unity2::ClassIdentity> ::NAME,"SetLayoutVertical",));
+let __inner:extern "C" fn(VerticalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -98,6 +91,20 @@ pub fn calculate_layout_input_horizontal_method_info()-> & 'static::unity2::il2c
 pub fn calculate_layout_input_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn set_layout_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn set_layout_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-ui-verticallayoutgroup")]impl VerticalLayoutGroup{#[doc="Direct (non-virtual) call to `VerticalLayoutGroup`'s own `CalculateLayoutInputHorizontal`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calculate_layout_input_horizontal(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calculate_layout_input_horizontal_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `VerticalLayoutGroup`'s own `CalculateLayoutInputVertical`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calculate_layout_input_vertical(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calculate_layout_input_vertical_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `VerticalLayoutGroup`'s own `SetLayoutHorizontal`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_layout_horizontal(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_layout_horizontal_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `VerticalLayoutGroup`'s own `SetLayoutVertical`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_layout_vertical(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_layout_vertical_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-ui-verticallayoutgroup")]impl VerticalLayoutGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

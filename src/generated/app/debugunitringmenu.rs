@@ -22,25 +22,25 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_RingLabelItemBase.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.RingLabelItemBase")]#[parent(crate::app::labelitem::LabelItem)]pub struct DebugUnitRingMenu_RingLabelItemBase{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_EmblemRingLabelItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.EmblemRingLabelItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingLabelItemBase)]pub struct DebugUnitRingMenu_EmblemRingLabelItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_ClearRingItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.ClearRingItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_UnitMenuItem)]pub struct DebugUnitRingMenu_ClearRingItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_UnitMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.UnitMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugUnitRingMenu_UnitMenuItem{#[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_RingItemBase.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.RingItemBase")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_UnitMenuItem)]pub struct DebugUnitRingMenu_RingItemBase{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_CommonRingItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.CommonRingItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingItemBase)]pub struct DebugUnitRingMenu_CommonRingItem{#[offset(40)]#[rename(name="m_Ring")]pub m_ring:crate::app::unitring::UnitRing,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_UnitRingMenu.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.UnitRingMenu")]#[parent(crate::app::debugmenu::DebugMenu)]pub struct DebugUnitRingMenu_UnitRingMenu{#[offset(224)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_UnitMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.UnitMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugUnitRingMenu_UnitMenuItem{#[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_EmblemRingLabelItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.EmblemRingLabelItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingLabelItemBase)]pub struct DebugUnitRingMenu_EmblemRingLabelItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_CurrentRingLabelItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.CurrentRingLabelItem")]#[parent(crate::app::labelitem::LabelItem)]pub struct DebugUnitRingMenu_CurrentRingLabelItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_CommonRingLabelItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.CommonRingLabelItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingLabelItemBase)]pub struct DebugUnitRingMenu_CommonRingLabelItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_ClearRingItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.ClearRingItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_UnitMenuItem)]pub struct DebugUnitRingMenu_ClearRingItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_UnitRingMenu.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.UnitRingMenu")]#[parent(crate::app::debugmenu::DebugMenu)]pub struct DebugUnitRingMenu_UnitRingMenu{#[offset(224)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu")]#[parent(crate::system::object::Object)]pub struct DebugUnitRingMenu{#[static_field]#[rename(name="ColumnWidth0")]pub column_width0:f32, #[static_field]#[rename(name="ColumnWidth1")]pub column_width1:f32, #[static_field]#[rename(name="ColumnWidth2")]pub column_width2:f32,}
@@ -49,67 +49,60 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_EmblemRingItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.EmblemRingItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingItemBase)]pub struct DebugUnitRingMenu_EmblemRingItem{#[offset(40)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_RingItemBase.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.RingItemBase")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_UnitMenuItem)]pub struct DebugUnitRingMenu_RingItemBase{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugunitringmenu/DebugUnitRingMenu_CommonRingLabelItem.md"))]#[::unity2::class(namespace="App",name="DebugUnitRingMenu.CommonRingLabelItem")]#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingLabelItemBase)]pub struct DebugUnitRingMenu_CommonRingLabelItem{}
 
 }
 
 #[cfg(feature = "app-debugunitringmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-debugunitringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUnitRingMenu_RingLabelItemBase_unity2_raw{use super:: * ;
-pub unsafe fn get_column_count(this:DebugUnitRingMenu_RingLabelItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_RingLabelItemBaseMethods:IDebugUnitRingMenu_RingLabelItemBase{#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <DebugUnitRingMenu_RingLabelItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",29usize,__vt.len(), <DebugUnitRingMenu_RingLabelItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnCount",));
-let inner:extern "C" fn(DebugUnitRingMenu_RingLabelItemBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DebugUnitRingMenu_RingLabelItemBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_width0(this:DebugUnitRingMenu_RingLabelItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingLabelItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",31usize,__vt.len(), <DebugUnitRingMenu_RingLabelItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
-let inner:extern "C" fn(DebugUnitRingMenu_RingLabelItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DebugUnitRingMenu_RingLabelItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_width1(this:DebugUnitRingMenu_RingLabelItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingLabelItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",32usize,__vt.len(), <DebugUnitRingMenu_RingLabelItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnWidth1",));
-let inner:extern "C" fn(DebugUnitRingMenu_RingLabelItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DebugUnitRingMenu_RingLabelItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_width2(this:DebugUnitRingMenu_RingLabelItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnWidth2()` overload"]fn get_column_width2(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingLabelItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",33usize,__vt.len(), <DebugUnitRingMenu_RingLabelItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnWidth2",));
-let inner:extern "C" fn(DebugUnitRingMenu_RingLabelItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(DebugUnitRingMenu_RingLabelItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_RingLabelItemBaseMethods:IDebugUnitRingMenu_RingLabelItemBase{#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <DebugUnitRingMenu_RingLabelItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_RingLabelItemBase_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingLabelItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_RingLabelItemBase_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingLabelItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_RingLabelItemBase_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnWidth2()` overload"]fn get_column_width2(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingLabelItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_RingLabelItemBase_unity2_raw::get_column_width2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_RingLabelItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe4b0usize)as*mut u8,();
@@ -126,6 +119,20 @@ pub fn get_column_width2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingLabelItemBase{#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_RingLabelItemBase`'s own `GetColumnCount`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_column_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_RingLabelItemBase`'s own `GetColumnWidth0`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_width0(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_column_width0_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_RingLabelItemBase`'s own `GetColumnWidth1`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_width1(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_column_width1_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_RingLabelItemBase`'s own `GetColumnWidth2`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_width2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_column_width2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingLabelItemBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DebugUnitRingMenu_RingLabelItemBase), ::core::stringify!(new),));
@@ -133,115 +140,171 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-debugunitringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUnitRingMenu_EmblemRingLabelItem_unity2_raw{use super:: * ;
-pub unsafe fn get_column_name0(this:DebugUnitRingMenu_EmblemRingLabelItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_RingItemBaseMethods:IDebugUnitRingMenu_RingItemBase{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe220usize)as*mut u8,();
+(DebugUnitRingMenu_RingItemBase)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <DebugUnitRingMenu_RingItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnCount",));
+let __inner:extern "C" fn(DebugUnitRingMenu_RingItemBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <DebugUnitRingMenu_RingItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
+let __inner:extern "C" fn(DebugUnitRingMenu_RingItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <DebugUnitRingMenu_RingItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnWidth1",));
+let __inner:extern "C" fn(DebugUnitRingMenu_RingItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnWidth2()` overload"]fn get_column_width2(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <DebugUnitRingMenu_RingItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnWidth2",));
+let __inner:extern "C" fn(DebugUnitRingMenu_RingItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_RingItemBase>IDebugUnitRingMenu_RingItemBaseMethods for __T{}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingItemBase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_width0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_column_width1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_column_width2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingItemBase{#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_RingItemBase`'s own `GetColumnCount`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_column_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_RingItemBase`'s own `GetColumnWidth0`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_width0(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_column_width0_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_RingItemBase`'s own `GetColumnWidth1`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_width1(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_column_width1_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_RingItemBase`'s own `GetColumnWidth2`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_width2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_column_width2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingItemBase{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_RingItemBase), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_RingItemBaseMethods> ::ctor(this,unit);
+this}
+}
+
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_CommonRingItemMethods:IDebugUnitRingMenu_CommonRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unitring::UnitRing)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->(){unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe1d0usize)as*mut u8,();
+(DebugUnitRingMenu_CommonRingItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring))}
+}
+#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",42usize,__vt.len(), <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
-let inner:extern "C" fn(DebugUnitRingMenu_EmblemRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",42usize,__vt.len(), <DebugUnitRingMenu_CommonRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let __inner:extern "C" fn(DebugUnitRingMenu_CommonRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name1(this:DebugUnitRingMenu_EmblemRingLabelItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",43usize,__vt.len(), <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
-let inner:extern "C" fn(DebugUnitRingMenu_EmblemRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",43usize,__vt.len(), <DebugUnitRingMenu_CommonRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let __inner:extern "C" fn(DebugUnitRingMenu_CommonRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name2(this:DebugUnitRingMenu_EmblemRingLabelItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",44usize,__vt.len(), <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
-let inner:extern "C" fn(DebugUnitRingMenu_EmblemRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",44usize,__vt.len(), <DebugUnitRingMenu_CommonRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
+let __inner:extern "C" fn(DebugUnitRingMenu_CommonRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_EmblemRingLabelItemMethods:IDebugUnitRingMenu_EmblemRingLabelItem{#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_EmblemRingLabelItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_EmblemRingLabelItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_EmblemRingLabelItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe9a0usize)as*mut u8,();
-(DebugUnitRingMenu_EmblemRingLabelItem)__receiver)}
+__inner(__receiver,__mi)}
 }
 }
-
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_EmblemRingLabelItem>IDebugUnitRingMenu_EmblemRingLabelItemMethods for __T{}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingLabelItem{pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingLabelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_EmblemRingLabelItem), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_EmblemRingLabelItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugunitringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUnitRingMenu_ClearRingItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:DebugUnitRingMenu_ClearRingItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DebugUnitRingMenu_ClearRingItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(DebugUnitRingMenu_ClearRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:DebugUnitRingMenu_ClearRingItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",12usize,__vt.len(), <DebugUnitRingMenu_ClearRingItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(DebugUnitRingMenu_ClearRingItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",12usize,__vt.len(), <DebugUnitRingMenu_CommonRingItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(DebugUnitRingMenu_CommonRingItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_ClearRingItemMethods:IDebugUnitRingMenu_ClearRingItem{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_ClearRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe0a0usize)as*mut u8,();
-(DebugUnitRingMenu_ClearRingItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_ClearRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_ClearRingItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugUnitRingMenu_ClearRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_ClearRingItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_ClearRingItem>IDebugUnitRingMenu_ClearRingItemMethods for __T{}
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_CommonRingItem>IDebugUnitRingMenu_CommonRingItemMethods for __T{}
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_ClearRingItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_ClearRingItem{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingItem{#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_CommonRingItem`'s own `GetColumnName0`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name0(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name0_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_CommonRingItem`'s own `GetColumnName1`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name1(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name1_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_CommonRingItem`'s own `GetColumnName2`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_CommonRingItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unitring::UnitRing)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,ring:crate::app::unitring::UnitRing)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_ClearRingItem), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_ClearRingItemMethods> ::ctor(this,unit);
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_CommonRingItem), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_CommonRingItemMethods> ::ctor(this,unit,ring);
 this}
 }
 
@@ -263,120 +326,71 @@ this}
 this}
 }
 
-#[cfg(feature="app-debugunitringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUnitRingMenu_CommonRingItem_unity2_raw{use super:: * ;
-pub unsafe fn get_column_name0(this:DebugUnitRingMenu_CommonRingItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_EmblemRingLabelItemMethods:IDebugUnitRingMenu_EmblemRingLabelItem{#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",42usize,__vt.len(), <DebugUnitRingMenu_CommonRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
-let inner:extern "C" fn(DebugUnitRingMenu_CommonRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",42usize,__vt.len(), <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let __inner:extern "C" fn(DebugUnitRingMenu_EmblemRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name1(this:DebugUnitRingMenu_CommonRingItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",43usize,__vt.len(), <DebugUnitRingMenu_CommonRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
-let inner:extern "C" fn(DebugUnitRingMenu_CommonRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",43usize,__vt.len(), <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let __inner:extern "C" fn(DebugUnitRingMenu_EmblemRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name2(this:DebugUnitRingMenu_CommonRingItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",44usize,__vt.len(), <DebugUnitRingMenu_CommonRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
-let inner:extern "C" fn(DebugUnitRingMenu_CommonRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",44usize,__vt.len(), <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
+let __inner:extern "C" fn(DebugUnitRingMenu_EmblemRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:DebugUnitRingMenu_CommonRingItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <DebugUnitRingMenu_CommonRingItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(DebugUnitRingMenu_CommonRingItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_CommonRingItemMethods:IDebugUnitRingMenu_CommonRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unitring::UnitRing)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->(){unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe1d0usize)as*mut u8,();
-(DebugUnitRingMenu_CommonRingItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring))}
 }
-#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_CommonRingItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_CommonRingItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_CommonRingItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_CommonRingItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe9a0usize)as*mut u8,();
+(DebugUnitRingMenu_EmblemRingLabelItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_CommonRingItem>IDebugUnitRingMenu_CommonRingItemMethods for __T{}
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_EmblemRingLabelItem>IDebugUnitRingMenu_EmblemRingLabelItemMethods for __T{}
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingLabelItem{pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unitring::UnitRing)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,ring:crate::app::unitring::UnitRing)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingLabelItem{#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_EmblemRingLabelItem`'s own `GetColumnName0`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name0(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name0_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_EmblemRingLabelItem`'s own `GetColumnName1`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name1(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name1_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_EmblemRingLabelItem`'s own `GetColumnName2`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingLabelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_CommonRingItem), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_CommonRingItemMethods> ::ctor(this,unit,ring);
-this}
-}
-
-#[cfg(feature="app-debugunitringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUnitRingMenu_UnitRingMenu_unity2_raw{use super:: * ;
-pub unsafe fn on_rebuild(this:DebugUnitRingMenu_UnitRingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <DebugUnitRingMenu_UnitRingMenu as::unity2::ClassIdentity> ::NAME,"OnRebuild",));
-let inner:extern "C" fn(DebugUnitRingMenu_UnitRingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_UnitRingMenuMethods:IDebugUnitRingMenu_UnitRingMenu{#[doc="`Build(crate::app::unit::Unit)` overload"]fn build(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea90usize)as*mut u8,();
-(DebugUnitRingMenu_UnitRingMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`OnRebuild()` overload"]fn on_rebuild(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_UnitRingMenu_unity2_raw::on_rebuild(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbf020usize)as*mut u8,();
-(DebugUnitRingMenu_UnitRingMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_UnitRingMenu>IDebugUnitRingMenu_UnitRingMenuMethods for __T{}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_UnitRingMenu{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_UnitRingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_UnitRingMenu), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_UnitRingMenuMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_EmblemRingLabelItem), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_EmblemRingLabelItemMethods> ::ctor(this,);
 this}
 }
 
@@ -398,66 +412,96 @@ this}
 this}
 }
 
-#[cfg(feature="app-debugunitringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUnitRingMenu_CommonRingLabelItem_unity2_raw{use super:: * ;
-pub unsafe fn get_column_name0(this:DebugUnitRingMenu_CommonRingLabelItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_ClearRingItemMethods:IDebugUnitRingMenu_ClearRingItem{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_ClearRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe0a0usize)as*mut u8,();
+(DebugUnitRingMenu_ClearRingItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_ClearRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",42usize,__vt.len(), <DebugUnitRingMenu_CommonRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
-let inner:extern "C" fn(DebugUnitRingMenu_CommonRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",5usize,__vt.len(), <DebugUnitRingMenu_ClearRingItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(DebugUnitRingMenu_ClearRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name1(this:DebugUnitRingMenu_CommonRingLabelItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugUnitRingMenu_ClearRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",43usize,__vt.len(), <DebugUnitRingMenu_CommonRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
-let inner:extern "C" fn(DebugUnitRingMenu_CommonRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",12usize,__vt.len(), <DebugUnitRingMenu_ClearRingItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(DebugUnitRingMenu_ClearRingItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name2(this:DebugUnitRingMenu_CommonRingLabelItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",44usize,__vt.len(), <DebugUnitRingMenu_CommonRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
-let inner:extern "C" fn(DebugUnitRingMenu_CommonRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_CommonRingLabelItemMethods:IDebugUnitRingMenu_CommonRingLabelItem{#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_CommonRingLabelItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_CommonRingLabelItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_CommonRingLabelItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe440usize)as*mut u8,();
-(DebugUnitRingMenu_CommonRingLabelItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_CommonRingLabelItem>IDebugUnitRingMenu_CommonRingLabelItemMethods for __T{}
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_ClearRingItem>IDebugUnitRingMenu_ClearRingItemMethods for __T{}
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingLabelItem{pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_ClearRingItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingLabelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_ClearRingItem{#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_ClearRingItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_ClearRingItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_ClearRingItem{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_CommonRingLabelItem), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_CommonRingLabelItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_ClearRingItem), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_ClearRingItemMethods> ::ctor(this,unit);
+this}
+}
+
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_UnitRingMenuMethods:IDebugUnitRingMenu_UnitRingMenu{#[doc="`Build(crate::app::unit::Unit)` overload"]fn build(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbea90usize)as*mut u8,();
+(DebugUnitRingMenu_UnitRingMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`OnRebuild()` overload"]fn on_rebuild(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <DebugUnitRingMenu_UnitRingMenu as::unity2::ClassIdentity> ::NAME,"OnRebuild",));
+let __inner:extern "C" fn(DebugUnitRingMenu_UnitRingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_UnitRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbf020usize)as*mut u8,();
+(DebugUnitRingMenu_UnitRingMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_UnitRingMenu>IDebugUnitRingMenu_UnitRingMenuMethods for __T{}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_UnitRingMenu{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_UnitRingMenu{#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_UnitRingMenu`'s own `OnRebuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_rebuild(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_rebuild_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_UnitRingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_UnitRingMenu), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_UnitRingMenuMethods> ::ctor(this,);
 this}
 }
 
@@ -489,64 +533,57 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-debugunitringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUnitRingMenu_EmblemRingItem_unity2_raw{use super:: * ;
-pub unsafe fn get_column_name0(this:DebugUnitRingMenu_EmblemRingItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <DebugUnitRingMenu_EmblemRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
-let inner:extern "C" fn(DebugUnitRingMenu_EmblemRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name1(this:DebugUnitRingMenu_EmblemRingItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <DebugUnitRingMenu_EmblemRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
-let inner:extern "C" fn(DebugUnitRingMenu_EmblemRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_name2(this:DebugUnitRingMenu_EmblemRingItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",44usize,__vt.len(), <DebugUnitRingMenu_EmblemRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
-let inner:extern "C" fn(DebugUnitRingMenu_EmblemRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:DebugUnitRingMenu_EmblemRingItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <DebugUnitRingMenu_EmblemRingItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(DebugUnitRingMenu_EmblemRingItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_EmblemRingItemMethods:IDebugUnitRingMenu_EmblemRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe680usize)as*mut u8,();
 (DebugUnitRingMenu_EmblemRingItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
 }
 #[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_EmblemRingItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <DebugUnitRingMenu_EmblemRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let __inner:extern "C" fn(DebugUnitRingMenu_EmblemRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_EmblemRingItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <DebugUnitRingMenu_EmblemRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let __inner:extern "C" fn(DebugUnitRingMenu_EmblemRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_EmblemRingItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <DebugUnitRingMenu_EmblemRingItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
+let __inner:extern "C" fn(DebugUnitRingMenu_EmblemRingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugUnitRingMenu_EmblemRingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_EmblemRingItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugUnitRingMenu_EmblemRingItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(DebugUnitRingMenu_EmblemRingItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -559,6 +596,20 @@ pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingItem{#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_EmblemRingItem`'s own `GetColumnName0`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name0(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name0_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_EmblemRingItem`'s own `GetColumnName1`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name1(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name1_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_EmblemRingItem`'s own `GetColumnName2`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_EmblemRingItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_EmblemRingItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,god_unit:crate::app::godunit::GodUnit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DebugUnitRingMenu_EmblemRingItem), ::core::stringify!(new),));
@@ -566,80 +617,71 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-debugunitringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUnitRingMenu_RingItemBase_unity2_raw{use super:: * ;
-pub unsafe fn get_column_count(this:DebugUnitRingMenu_RingItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_CommonRingLabelItemMethods:IDebugUnitRingMenu_CommonRingLabelItem{#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",29usize,__vt.len(), <DebugUnitRingMenu_RingItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnCount",));
-let inner:extern "C" fn(DebugUnitRingMenu_RingItemBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",42usize,__vt.len(), <DebugUnitRingMenu_CommonRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let __inner:extern "C" fn(DebugUnitRingMenu_CommonRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_width0(this:DebugUnitRingMenu_RingItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",31usize,__vt.len(), <DebugUnitRingMenu_RingItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
-let inner:extern "C" fn(DebugUnitRingMenu_RingItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",43usize,__vt.len(), <DebugUnitRingMenu_CommonRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let __inner:extern "C" fn(DebugUnitRingMenu_CommonRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_width1(this:DebugUnitRingMenu_RingItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",32usize,__vt.len(), <DebugUnitRingMenu_RingItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnWidth1",));
-let inner:extern "C" fn(DebugUnitRingMenu_RingItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",44usize,__vt.len(), <DebugUnitRingMenu_CommonRingLabelItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
+let __inner:extern "C" fn(DebugUnitRingMenu_CommonRingLabelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_column_width2(this:DebugUnitRingMenu_RingItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <DebugUnitRingMenu_RingItemBase as::unity2::ClassIdentity> ::NAME,"GetColumnWidth2",));
-let inner:extern "C" fn(DebugUnitRingMenu_RingItemBase, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-debugunitringmenu")]pub trait IDebugUnitRingMenu_RingItemBaseMethods:IDebugUnitRingMenu_RingItemBase{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe220usize)as*mut u8,();
-(DebugUnitRingMenu_RingItemBase)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
-#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_RingItemBase_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_RingItemBase_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_RingItemBase_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetColumnWidth2()` overload"]fn get_column_width2(self,)->f32{unsafe{let __receiver= <DebugUnitRingMenu_RingItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugUnitRingMenu_RingItemBase_unity2_raw::get_column_width2(__receiver, ::core::option::Option::None)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUnitRingMenu_CommonRingLabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbe440usize)as*mut u8,();
+(DebugUnitRingMenu_CommonRingLabelItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_RingItemBase>IDebugUnitRingMenu_RingItemBaseMethods for __T{}
+#[cfg(feature="app-debugunitringmenu")]impl<__T:IDebugUnitRingMenu_CommonRingLabelItem>IDebugUnitRingMenu_CommonRingLabelItemMethods for __T{}
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingItemBase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_width0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_column_width1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_column_width2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingLabelItem{pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_RingItemBase{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingLabelItem{#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_CommonRingLabelItem`'s own `GetColumnName0`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name0(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name0_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_CommonRingLabelItem`'s own `GetColumnName1`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name1(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name1_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugUnitRingMenu_CommonRingLabelItem`'s own `GetColumnName2`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_column_name2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_column_name2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugunitringmenu")]impl DebugUnitRingMenu_CommonRingLabelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugUnitRingMenu_RingItemBase), ::core::stringify!(new),));
- <Self as IDebugUnitRingMenu_RingItemBaseMethods> ::ctor(this,unit);
+ failed to instantiate", ::core::stringify!(DebugUnitRingMenu_CommonRingLabelItem), ::core::stringify!(new),));
+ <Self as IDebugUnitRingMenu_CommonRingLabelItemMethods> ::ctor(this,);
 this}
 }
 
@@ -649,36 +691,36 @@ pub mod prelude {
     pub use super::DebugUnitRingMenu_RingLabelItemBase;
     pub use super::IDebugUnitRingMenu_RingLabelItemBase;
     pub use super::IDebugUnitRingMenu_RingLabelItemBaseMethods;
-    pub use super::DebugUnitRingMenu_EmblemRingLabelItem;
-    pub use super::IDebugUnitRingMenu_EmblemRingLabelItem;
-    pub use super::IDebugUnitRingMenu_EmblemRingLabelItemMethods;
-    pub use super::DebugUnitRingMenu_ClearRingItem;
-    pub use super::IDebugUnitRingMenu_ClearRingItem;
-    pub use super::IDebugUnitRingMenu_ClearRingItemMethods;
-    pub use super::DebugUnitRingMenu_UnitMenuItem;
-    pub use super::IDebugUnitRingMenu_UnitMenuItem;
-    pub use super::IDebugUnitRingMenu_UnitMenuItemMethods;
+    pub use super::DebugUnitRingMenu_RingItemBase;
+    pub use super::IDebugUnitRingMenu_RingItemBase;
+    pub use super::IDebugUnitRingMenu_RingItemBaseMethods;
     pub use super::DebugUnitRingMenu_CommonRingItem;
     pub use super::IDebugUnitRingMenu_CommonRingItem;
     pub use super::IDebugUnitRingMenu_CommonRingItemMethods;
-    pub use super::DebugUnitRingMenu_UnitRingMenu;
-    pub use super::IDebugUnitRingMenu_UnitRingMenu;
-    pub use super::IDebugUnitRingMenu_UnitRingMenuMethods;
+    pub use super::DebugUnitRingMenu_UnitMenuItem;
+    pub use super::IDebugUnitRingMenu_UnitMenuItem;
+    pub use super::IDebugUnitRingMenu_UnitMenuItemMethods;
+    pub use super::DebugUnitRingMenu_EmblemRingLabelItem;
+    pub use super::IDebugUnitRingMenu_EmblemRingLabelItem;
+    pub use super::IDebugUnitRingMenu_EmblemRingLabelItemMethods;
     pub use super::DebugUnitRingMenu_CurrentRingLabelItem;
     pub use super::IDebugUnitRingMenu_CurrentRingLabelItem;
     pub use super::IDebugUnitRingMenu_CurrentRingLabelItemMethods;
-    pub use super::DebugUnitRingMenu_CommonRingLabelItem;
-    pub use super::IDebugUnitRingMenu_CommonRingLabelItem;
-    pub use super::IDebugUnitRingMenu_CommonRingLabelItemMethods;
+    pub use super::DebugUnitRingMenu_ClearRingItem;
+    pub use super::IDebugUnitRingMenu_ClearRingItem;
+    pub use super::IDebugUnitRingMenu_ClearRingItemMethods;
+    pub use super::DebugUnitRingMenu_UnitRingMenu;
+    pub use super::IDebugUnitRingMenu_UnitRingMenu;
+    pub use super::IDebugUnitRingMenu_UnitRingMenuMethods;
     pub use super::DebugUnitRingMenu;
     pub use super::IDebugUnitRingMenu;
     pub use super::IDebugUnitRingMenuMethods;
     pub use super::DebugUnitRingMenu_EmblemRingItem;
     pub use super::IDebugUnitRingMenu_EmblemRingItem;
     pub use super::IDebugUnitRingMenu_EmblemRingItemMethods;
-    pub use super::DebugUnitRingMenu_RingItemBase;
-    pub use super::IDebugUnitRingMenu_RingItemBase;
-    pub use super::IDebugUnitRingMenu_RingItemBaseMethods;
+    pub use super::DebugUnitRingMenu_CommonRingLabelItem;
+    pub use super::IDebugUnitRingMenu_CommonRingLabelItem;
+    pub use super::IDebugUnitRingMenu_CommonRingLabelItemMethods;
     pub use crate::app::debugmenu::IDebugMenu;
     pub use crate::app::labelitem::ILabelItem;
     pub use crate::app::menuitem::IMenuItem;

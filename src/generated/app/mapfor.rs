@@ -17,37 +17,16 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_UnitPosFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.UnitPosFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_UnitPosFunction{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_DestroyFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.DestroyFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_DestroyFunction{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_UnitSkillFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.UnitSkillFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_UnitSkillFunction{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_PokeFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.PokeFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_PokeFunction{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_Pos2Function.md"))]#[::unity2::class(namespace="App",name="MapFor.Pos2Function")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_Pos2Function{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_TargetFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.TargetFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_TargetFunction{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_UnitFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.UnitFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_UnitFunction{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_ForceFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.ForceFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_ForceFunction{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_Range2Function.md"))]#[::unity2::class(namespace="App",name="MapFor.Range2Function")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_Range2Function{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor.md"))]#[::unity2::class(namespace="App",name="MapFor")]#[parent(crate::system::object::Object)]pub struct MapFor{#[static_field]#[rename(name="RhombusX")]pub rhombus_x: ::unity2::Array<i32> , #[static_field]#[rename(name="RhombusZ")]pub rhombus_z: ::unity2::Array<i32> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_Unit2Function.md"))]#[::unity2::class(namespace="App",name="MapFor.Unit2Function")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_Unit2Function{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_RangeFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.RangeFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_RangeFunction{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_Pos2Function.md"))]#[::unity2::class(namespace="App",name="MapFor.Pos2Function")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_Pos2Function{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_Return.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapFor_Return{pub value:i32,}
@@ -66,108 +45,55 @@ pub fn done()->Self{Self{value:1}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_PokeFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.PokeFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_PokeFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_UnitPosFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.UnitPosFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_UnitPosFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_TargetFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.TargetFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_TargetFunction{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_Force2Function.md"))]#[::unity2::class(namespace="App",name="MapFor.Force2Function")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_Force2Function{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_Unit2Function.md"))]#[::unity2::class(namespace="App",name="MapFor.Unit2Function")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_Unit2Function{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor.md"))]#[::unity2::class(namespace="App",name="MapFor")]#[parent(crate::system::object::Object)]pub struct MapFor{#[static_field]#[rename(name="RhombusX")]pub rhombus_x: ::unity2::Array<i32> , #[static_field]#[rename(name="RhombusZ")]pub rhombus_z: ::unity2::Array<i32> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_PosFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.PosFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_PosFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_Range2Function.md"))]#[::unity2::class(namespace="App",name="MapFor.Range2Function")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_Range2Function{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_UnitFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.UnitFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_UnitFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_ForceFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.ForceFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_ForceFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapfor/MapFor_DestroyFunction.md"))]#[::unity2::class(namespace="App",name="MapFor.DestroyFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapFor_DestroyFunction{}
 
 }
 
 #[cfg(feature = "app-mapfor-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_UnitPosFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_UnitPosFunction,unit:crate::app::unit::Unit,x:i32,z:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapFor_UnitPosFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_UnitPosFunction,crate::app::unit::Unit,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,x,z,__mi)}
-}
-
-#[cfg(feature="app-mapfor")]pub trait IMapFor_UnitPosFunctionMethods:IMapFor_UnitPosFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_UnitPosFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c7bc0usize)as*mut u8,();
-(MapFor_UnitPosFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unit::Unit, i32, i32)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapFor_UnitPosFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_UnitPosFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapfor")]impl<__T:IMapFor_UnitPosFunction>IMapFor_UnitPosFunctionMethods for __T{}
-
-#[cfg(feature="app-mapfor")]impl MapFor_UnitPosFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapfor")]impl MapFor_UnitPosFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapFor_UnitPosFunction), ::core::stringify!(new),));
- <Self as IMapFor_UnitPosFunctionMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_DestroyFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_DestroyFunction,x:i32,z:i32,target_x:i32,target_z:i32,item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapFor_DestroyFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_DestroyFunction,i32,i32,i32,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,z,target_x,target_z,item_index,__mi)}
-}
-
-#[cfg(feature="app-mapfor")]pub trait IMapFor_DestroyFunctionMethods:IMapFor_DestroyFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_DestroyFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5840usize)as*mut u8,();
-(MapFor_DestroyFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32, i32, i32, i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapFor_DestroyFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_DestroyFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(target_x), ::core::convert::Into::into(target_z), ::core::convert::Into::into(item_index), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapfor")]impl<__T:IMapFor_DestroyFunction>IMapFor_DestroyFunctionMethods for __T{}
-
-#[cfg(feature="app-mapfor")]impl MapFor_DestroyFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapfor")]impl MapFor_DestroyFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapFor_DestroyFunction), ::core::stringify!(new),));
- <Self as IMapFor_DestroyFunctionMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_UnitSkillFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_UnitSkillFunction,unit:crate::app::unit::Unit,skill:crate::app::skilldata::SkillData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapFor_UnitSkillFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_UnitSkillFunction,crate::app::unit::Unit,crate::app::skilldata::SkillData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,skill,__mi)}
-}
-
 #[cfg(feature="app-mapfor")]pub trait IMapFor_UnitSkillFunctionMethods:IMapFor_UnitSkillFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_UnitSkillFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8040usize)as*mut u8,();
 (MapFor_UnitSkillFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <MapFor_UnitSkillFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_UnitSkillFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(skill), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapFor_UnitSkillFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_UnitSkillFunction,crate::app::unit::Unit,crate::app::skilldata::SkillData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(skill),__mi)}
+}
 }
 }
 
@@ -177,6 +103,11 @@ __MapFor_UnitSkillFunction_unity2_raw::invoke(__receiver, ::core::convert::Into:
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-mapfor")]impl MapFor_UnitSkillFunction{#[doc="Direct (non-virtual) call to `MapFor_UnitSkillFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,skill:crate::app::skilldata::SkillData,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit,crate::app::skilldata::SkillData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit,skill, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapfor")]impl MapFor_UnitSkillFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapFor_UnitSkillFunction), ::core::stringify!(new),));
@@ -184,17 +115,112 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_PokeFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_PokeFunction,x:i32,z:i32,inspector:crate::app::pokeinspector::PokeInspector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-mapfor")]pub trait IMapFor_Pos2FunctionMethods:IMapFor_Pos2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_Pos2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c6580usize)as*mut u8,();
+(MapFor_Pos2Function)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::mapfor::MapFor_Return{unsafe{let __receiver= <MapFor_Pos2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <MapFor_PokeFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_PokeFunction,i32,i32,crate::app::pokeinspector::PokeInspector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <MapFor_Pos2Function as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_Pos2Function,i32,i32, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,z,inspector,__mi)}
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapfor")]impl<__T:IMapFor_Pos2Function>IMapFor_Pos2FunctionMethods for __T{}
+
+#[cfg(feature="app-mapfor")]impl MapFor_Pos2Function{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_Pos2Function{#[doc="Direct (non-virtual) call to `MapFor_Pos2Function`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:i32,z:i32,)->crate::app::mapfor::MapFor_Return{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,i32, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,z, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_Pos2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapFor_Pos2Function), ::core::stringify!(new),));
+ <Self as IMapFor_Pos2FunctionMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-mapfor")]pub trait IMapFor_Unit2FunctionMethods:IMapFor_Unit2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_Unit2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c7420usize)as*mut u8,();
+(MapFor_Unit2Function)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::mapfor::MapFor_Return{unsafe{let __receiver= <MapFor_Unit2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapFor_Unit2Function as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_Unit2Function,crate::app::unit::Unit, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapfor")]impl<__T:IMapFor_Unit2Function>IMapFor_Unit2FunctionMethods for __T{}
+
+#[cfg(feature="app-mapfor")]impl MapFor_Unit2Function{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_Unit2Function{#[doc="Direct (non-virtual) call to `MapFor_Unit2Function`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,)->crate::app::mapfor::MapFor_Return{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_Unit2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapFor_Unit2Function), ::core::stringify!(new),));
+ <Self as IMapFor_Unit2FunctionMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-mapfor")]pub trait IMapFor_RangeFunctionMethods:IMapFor_RangeFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_RangeFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c6cf0usize)as*mut u8,();
+(MapFor_RangeFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapFor_RangeFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapFor_RangeFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_RangeFunction,i32,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(range),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapfor")]impl<__T:IMapFor_RangeFunction>IMapFor_RangeFunctionMethods for __T{}
+
+#[cfg(feature="app-mapfor")]impl MapFor_RangeFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_RangeFunction{#[doc="Direct (non-virtual) call to `MapFor_RangeFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:i32,z:i32,range:i32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,z,range, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_RangeFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapFor_RangeFunction), ::core::stringify!(new),));
+ <Self as IMapFor_RangeFunctionMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-mapfor")]pub trait IMapFor_PokeFunctionMethods:IMapFor_PokeFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_PokeFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -202,7 +228,16 @@ inner(this,x,z,inspector,__mi)}
 (MapFor_PokeFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(i32, i32, crate::app::pokeinspector::PokeInspector)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,inspector:impl::core::convert::Into<crate::app::pokeinspector::PokeInspector>)->(){unsafe{let __receiver= <MapFor_PokeFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_PokeFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(inspector), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapFor_PokeFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_PokeFunction,i32,i32,crate::app::pokeinspector::PokeInspector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(inspector),__mi)}
+}
 }
 }
 
@@ -212,6 +247,11 @@ __MapFor_PokeFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-mapfor")]impl MapFor_PokeFunction{#[doc="Direct (non-virtual) call to `MapFor_PokeFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:i32,z:i32,inspector:crate::app::pokeinspector::PokeInspector,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,i32,crate::app::pokeinspector::PokeInspector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,z,inspector, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapfor")]impl MapFor_PokeFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapFor_PokeFunction), ::core::stringify!(new),));
@@ -219,17 +259,40 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_TargetFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_TargetFunction,attack_x:i32,attack_z:i32,target_x:i32,target_z:i32,target:crate::app::unit::Unit,item_mask:u32,specified_item:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-mapfor")]pub trait IMapFor_UnitPosFunctionMethods:IMapFor_UnitPosFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_UnitPosFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c7bc0usize)as*mut u8,();
+(MapFor_UnitPosFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit, i32, i32)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapFor_UnitPosFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <MapFor_TargetFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_TargetFunction,i32,i32,i32,i32,crate::app::unit::Unit,u32,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <MapFor_UnitPosFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_UnitPosFunction,crate::app::unit::Unit,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,attack_x,attack_z,target_x,target_z,target,item_mask,specified_item,__mi)}
+__inner(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(x), ::core::convert::Into::into(z),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapfor")]impl<__T:IMapFor_UnitPosFunction>IMapFor_UnitPosFunctionMethods for __T{}
+
+#[cfg(feature="app-mapfor")]impl MapFor_UnitPosFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_UnitPosFunction{#[doc="Direct (non-virtual) call to `MapFor_UnitPosFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,x:i32,z:i32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit,x,z, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_UnitPosFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapFor_UnitPosFunction), ::core::stringify!(new),));
+ <Self as IMapFor_UnitPosFunctionMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-mapfor")]pub trait IMapFor_TargetFunctionMethods:IMapFor_TargetFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_TargetFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -237,7 +300,16 @@ inner(this,attack_x,attack_z,target_x,target_z,target,item_mask,specified_item,_
 (MapFor_TargetFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(i32, i32, i32, i32, crate::app::unit::Unit, u32, crate::app::unititem::UnitItem)` overload"]fn invoke(self,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,item_mask:impl::core::convert::Into<u32> ,specified_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <MapFor_TargetFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_TargetFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(attack_x), ::core::convert::Into::into(attack_z), ::core::convert::Into::into(target_x), ::core::convert::Into::into(target_z), ::core::convert::Into::into(target), ::core::convert::Into::into(item_mask), ::core::convert::Into::into(specified_item), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapFor_TargetFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_TargetFunction,i32,i32,i32,i32,crate::app::unit::Unit,u32,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(attack_x), ::core::convert::Into::into(attack_z), ::core::convert::Into::into(target_x), ::core::convert::Into::into(target_z), ::core::convert::Into::into(target), ::core::convert::Into::into(item_mask), ::core::convert::Into::into(specified_item),__mi)}
+}
 }
 }
 
@@ -247,6 +319,11 @@ __MapFor_TargetFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::in
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-mapfor")]impl MapFor_TargetFunction{#[doc="Direct (non-virtual) call to `MapFor_TargetFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,attack_x:i32,attack_z:i32,target_x:i32,target_z:i32,target:crate::app::unit::Unit,item_mask:u32,specified_item:crate::app::unititem::UnitItem,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,i32,i32,i32,crate::app::unit::Unit,u32,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),attack_x,attack_z,target_x,target_z,target,item_mask,specified_item, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapfor")]impl MapFor_TargetFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapFor_TargetFunction), ::core::stringify!(new),));
@@ -254,108 +331,39 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_UnitFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_UnitFunction,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-mapfor")]pub trait IMapFor_Force2FunctionMethods:IMapFor_Force2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_Force2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5be0usize)as*mut u8,();
+(MapFor_Force2Function)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::force::Force_Type)` overload"]fn invoke(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->crate::app::mapfor::MapFor_Return{unsafe{let __receiver= <MapFor_Force2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <MapFor_UnitFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_UnitFunction,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <MapFor_Force2Function as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_Force2Function,crate::app::force::Force_Type, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,__mi)}
+__inner(__receiver, ::core::convert::Into::into(force_type),__mi)}
 }
-
-#[cfg(feature="app-mapfor")]pub trait IMapFor_UnitFunctionMethods:IMapFor_UnitFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_UnitFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c7800usize)as*mut u8,();
-(MapFor_UnitFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapFor_UnitFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_UnitFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-mapfor")]impl<__T:IMapFor_UnitFunction>IMapFor_UnitFunctionMethods for __T{}
+#[cfg(feature="app-mapfor")]impl<__T:IMapFor_Force2Function>IMapFor_Force2FunctionMethods for __T{}
 
-#[cfg(feature="app-mapfor")]impl MapFor_UnitFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-mapfor")]impl MapFor_Force2Function{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-mapfor")]impl MapFor_UnitFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mapfor")]impl MapFor_Force2Function{#[doc="Direct (non-virtual) call to `MapFor_Force2Function`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,force_type:crate::app::force::Force_Type,)->crate::app::mapfor::MapFor_Return{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::force::Force_Type, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),force_type, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_Force2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MapFor_UnitFunction), ::core::stringify!(new),));
- <Self as IMapFor_UnitFunctionMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_ForceFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_ForceFunction,force_type:crate::app::force::Force_Type,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapFor_ForceFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_ForceFunction,crate::app::force::Force_Type, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,force_type,__mi)}
-}
-
-#[cfg(feature="app-mapfor")]pub trait IMapFor_ForceFunctionMethods:IMapFor_ForceFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_ForceFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5f20usize)as*mut u8,();
-(MapFor_ForceFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::force::Force_Type)` overload"]fn invoke(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapFor_ForceFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_ForceFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(force_type), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapfor")]impl<__T:IMapFor_ForceFunction>IMapFor_ForceFunctionMethods for __T{}
-
-#[cfg(feature="app-mapfor")]impl MapFor_ForceFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapfor")]impl MapFor_ForceFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapFor_ForceFunction), ::core::stringify!(new),));
- <Self as IMapFor_ForceFunctionMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_Range2Function_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_Range2Function,x:i32,z:i32,range:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapFor_Range2Function as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_Range2Function,i32,i32,i32, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,z,range,__mi)}
-}
-
-#[cfg(feature="app-mapfor")]pub trait IMapFor_Range2FunctionMethods:IMapFor_Range2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_Range2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c6980usize)as*mut u8,();
-(MapFor_Range2Function)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32, i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<i32>)->crate::app::mapfor::MapFor_Return{unsafe{let __receiver= <MapFor_Range2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_Range2Function_unity2_raw::invoke(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(range), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapfor")]impl<__T:IMapFor_Range2Function>IMapFor_Range2FunctionMethods for __T{}
-
-#[cfg(feature="app-mapfor")]impl MapFor_Range2Function{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapfor")]impl MapFor_Range2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapFor_Range2Function), ::core::stringify!(new),));
- <Self as IMapFor_Range2FunctionMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(MapFor_Force2Function), ::core::stringify!(new),));
+ <Self as IMapFor_Force2FunctionMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -507,165 +515,21 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_RangeFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_RangeFunction,x:i32,z:i32,range:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapFor_RangeFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_RangeFunction,i32,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,z,range,__mi)}
-}
-
-#[cfg(feature="app-mapfor")]pub trait IMapFor_RangeFunctionMethods:IMapFor_RangeFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_RangeFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c6cf0usize)as*mut u8,();
-(MapFor_RangeFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32, i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapFor_RangeFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_RangeFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(range), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapfor")]impl<__T:IMapFor_RangeFunction>IMapFor_RangeFunctionMethods for __T{}
-
-#[cfg(feature="app-mapfor")]impl MapFor_RangeFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapfor")]impl MapFor_RangeFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapFor_RangeFunction), ::core::stringify!(new),));
- <Self as IMapFor_RangeFunctionMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_Pos2Function_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_Pos2Function,x:i32,z:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapFor_Pos2Function as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_Pos2Function,i32,i32, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,z,__mi)}
-}
-
-#[cfg(feature="app-mapfor")]pub trait IMapFor_Pos2FunctionMethods:IMapFor_Pos2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_Pos2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c6580usize)as*mut u8,();
-(MapFor_Pos2Function)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::mapfor::MapFor_Return{unsafe{let __receiver= <MapFor_Pos2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_Pos2Function_unity2_raw::invoke(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapfor")]impl<__T:IMapFor_Pos2Function>IMapFor_Pos2FunctionMethods for __T{}
-
-#[cfg(feature="app-mapfor")]impl MapFor_Pos2Function{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapfor")]impl MapFor_Pos2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapFor_Pos2Function), ::core::stringify!(new),));
- <Self as IMapFor_Pos2FunctionMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_Force2Function_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_Force2Function,force_type:crate::app::force::Force_Type,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapFor_Force2Function as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_Force2Function,crate::app::force::Force_Type, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,force_type,__mi)}
-}
-
-#[cfg(feature="app-mapfor")]pub trait IMapFor_Force2FunctionMethods:IMapFor_Force2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_Force2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5be0usize)as*mut u8,();
-(MapFor_Force2Function)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::force::Force_Type)` overload"]fn invoke(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->crate::app::mapfor::MapFor_Return{unsafe{let __receiver= <MapFor_Force2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_Force2Function_unity2_raw::invoke(__receiver, ::core::convert::Into::into(force_type), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapfor")]impl<__T:IMapFor_Force2Function>IMapFor_Force2FunctionMethods for __T{}
-
-#[cfg(feature="app-mapfor")]impl MapFor_Force2Function{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapfor")]impl MapFor_Force2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapFor_Force2Function), ::core::stringify!(new),));
- <Self as IMapFor_Force2FunctionMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_Unit2Function_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_Unit2Function,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapFor_Unit2Function as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_Unit2Function,crate::app::unit::Unit, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,__mi)}
-}
-
-#[cfg(feature="app-mapfor")]pub trait IMapFor_Unit2FunctionMethods:IMapFor_Unit2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_Unit2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c7420usize)as*mut u8,();
-(MapFor_Unit2Function)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::mapfor::MapFor_Return{unsafe{let __receiver= <MapFor_Unit2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_Unit2Function_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapfor")]impl<__T:IMapFor_Unit2Function>IMapFor_Unit2FunctionMethods for __T{}
-
-#[cfg(feature="app-mapfor")]impl MapFor_Unit2Function{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapfor")]impl MapFor_Unit2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapFor_Unit2Function), ::core::stringify!(new),));
- <Self as IMapFor_Unit2FunctionMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-mapfor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapFor_PosFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapFor_PosFunction,x:i32,z:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapFor_PosFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapFor_PosFunction,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,z,__mi)}
-}
-
 #[cfg(feature="app-mapfor")]pub trait IMapFor_PosFunctionMethods:IMapFor_PosFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_PosFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24c68b0usize)as*mut u8,();
 (MapFor_PosFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapFor_PosFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapFor_PosFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapFor_PosFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_PosFunction,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z),__mi)}
+}
 }
 }
 
@@ -675,6 +539,11 @@ __MapFor_PosFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-mapfor")]impl MapFor_PosFunction{#[doc="Direct (non-virtual) call to `MapFor_PosFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:i32,z:i32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,z, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapfor")]impl MapFor_PosFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapFor_PosFunction), ::core::stringify!(new),));
@@ -682,52 +551,196 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-mapfor")]pub trait IMapFor_Range2FunctionMethods:IMapFor_Range2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_Range2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c6980usize)as*mut u8,();
+(MapFor_Range2Function)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<i32>)->crate::app::mapfor::MapFor_Return{unsafe{let __receiver= <MapFor_Range2Function as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapFor_Range2Function as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_Range2Function,i32,i32,i32, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(range),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapfor")]impl<__T:IMapFor_Range2Function>IMapFor_Range2FunctionMethods for __T{}
+
+#[cfg(feature="app-mapfor")]impl MapFor_Range2Function{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_Range2Function{#[doc="Direct (non-virtual) call to `MapFor_Range2Function`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:i32,z:i32,range:i32,)->crate::app::mapfor::MapFor_Return{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,i32,i32, ::unity2::OptionalMethod,)->crate::app::mapfor::MapFor_Return= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,z,range, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_Range2Function{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapFor_Range2Function), ::core::stringify!(new),));
+ <Self as IMapFor_Range2FunctionMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-mapfor")]pub trait IMapFor_UnitFunctionMethods:IMapFor_UnitFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_UnitFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c7800usize)as*mut u8,();
+(MapFor_UnitFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapFor_UnitFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapFor_UnitFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_UnitFunction,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapfor")]impl<__T:IMapFor_UnitFunction>IMapFor_UnitFunctionMethods for __T{}
+
+#[cfg(feature="app-mapfor")]impl MapFor_UnitFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_UnitFunction{#[doc="Direct (non-virtual) call to `MapFor_UnitFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unit::Unit,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_UnitFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapFor_UnitFunction), ::core::stringify!(new),));
+ <Self as IMapFor_UnitFunctionMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-mapfor")]pub trait IMapFor_ForceFunctionMethods:IMapFor_ForceFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_ForceFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5f20usize)as*mut u8,();
+(MapFor_ForceFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::force::Force_Type)` overload"]fn invoke(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapFor_ForceFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapFor_ForceFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_ForceFunction,crate::app::force::Force_Type, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(force_type),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapfor")]impl<__T:IMapFor_ForceFunction>IMapFor_ForceFunctionMethods for __T{}
+
+#[cfg(feature="app-mapfor")]impl MapFor_ForceFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_ForceFunction{#[doc="Direct (non-virtual) call to `MapFor_ForceFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,force_type:crate::app::force::Force_Type,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::force::Force_Type, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),force_type, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_ForceFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapFor_ForceFunction), ::core::stringify!(new),));
+ <Self as IMapFor_ForceFunctionMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-mapfor")]pub trait IMapFor_DestroyFunctionMethods:IMapFor_DestroyFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapFor_DestroyFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c5840usize)as*mut u8,();
+(MapFor_DestroyFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, i32, i32, i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapFor_DestroyFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapFor_DestroyFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapFor_DestroyFunction,i32,i32,i32,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(target_x), ::core::convert::Into::into(target_z), ::core::convert::Into::into(item_index),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapfor")]impl<__T:IMapFor_DestroyFunction>IMapFor_DestroyFunctionMethods for __T{}
+
+#[cfg(feature="app-mapfor")]impl MapFor_DestroyFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_DestroyFunction{#[doc="Direct (non-virtual) call to `MapFor_DestroyFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:i32,z:i32,target_x:i32,target_z:i32,item_index:i32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,i32,i32,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,z,target_x,target_z,item_index, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapfor")]impl MapFor_DestroyFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapFor_DestroyFunction), ::core::stringify!(new),));
+ <Self as IMapFor_DestroyFunctionMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-mapfor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapFor_UnitPosFunction;
-    pub use super::IMapFor_UnitPosFunction;
-    pub use super::IMapFor_UnitPosFunctionMethods;
-    pub use super::MapFor_DestroyFunction;
-    pub use super::IMapFor_DestroyFunction;
-    pub use super::IMapFor_DestroyFunctionMethods;
     pub use super::MapFor_UnitSkillFunction;
     pub use super::IMapFor_UnitSkillFunction;
     pub use super::IMapFor_UnitSkillFunctionMethods;
+    pub use super::MapFor_Pos2Function;
+    pub use super::IMapFor_Pos2Function;
+    pub use super::IMapFor_Pos2FunctionMethods;
+    pub use super::MapFor_Unit2Function;
+    pub use super::IMapFor_Unit2Function;
+    pub use super::IMapFor_Unit2FunctionMethods;
+    pub use super::MapFor_RangeFunction;
+    pub use super::IMapFor_RangeFunction;
+    pub use super::IMapFor_RangeFunctionMethods;
+    pub use super::MapFor_Return;
     pub use super::MapFor_PokeFunction;
     pub use super::IMapFor_PokeFunction;
     pub use super::IMapFor_PokeFunctionMethods;
+    pub use super::MapFor_UnitPosFunction;
+    pub use super::IMapFor_UnitPosFunction;
+    pub use super::IMapFor_UnitPosFunctionMethods;
     pub use super::MapFor_TargetFunction;
     pub use super::IMapFor_TargetFunction;
     pub use super::IMapFor_TargetFunctionMethods;
+    pub use super::MapFor_Force2Function;
+    pub use super::IMapFor_Force2Function;
+    pub use super::IMapFor_Force2FunctionMethods;
+    pub use super::MapFor;
+    pub use super::IMapFor;
+    pub use super::IMapForMethods;
+    pub use super::MapFor_PosFunction;
+    pub use super::IMapFor_PosFunction;
+    pub use super::IMapFor_PosFunctionMethods;
+    pub use super::MapFor_Range2Function;
+    pub use super::IMapFor_Range2Function;
+    pub use super::IMapFor_Range2FunctionMethods;
     pub use super::MapFor_UnitFunction;
     pub use super::IMapFor_UnitFunction;
     pub use super::IMapFor_UnitFunctionMethods;
     pub use super::MapFor_ForceFunction;
     pub use super::IMapFor_ForceFunction;
     pub use super::IMapFor_ForceFunctionMethods;
-    pub use super::MapFor_Range2Function;
-    pub use super::IMapFor_Range2Function;
-    pub use super::IMapFor_Range2FunctionMethods;
-    pub use super::MapFor;
-    pub use super::IMapFor;
-    pub use super::IMapForMethods;
-    pub use super::MapFor_RangeFunction;
-    pub use super::IMapFor_RangeFunction;
-    pub use super::IMapFor_RangeFunctionMethods;
-    pub use super::MapFor_Pos2Function;
-    pub use super::IMapFor_Pos2Function;
-    pub use super::IMapFor_Pos2FunctionMethods;
-    pub use super::MapFor_Return;
-    pub use super::MapFor_Force2Function;
-    pub use super::IMapFor_Force2Function;
-    pub use super::IMapFor_Force2FunctionMethods;
-    pub use super::MapFor_Unit2Function;
-    pub use super::IMapFor_Unit2Function;
-    pub use super::IMapFor_Unit2FunctionMethods;
-    pub use super::MapFor_PosFunction;
-    pub use super::IMapFor_PosFunction;
-    pub use super::IMapFor_PosFunctionMethods;
+    pub use super::MapFor_DestroyFunction;
+    pub use super::IMapFor_DestroyFunction;
+    pub use super::IMapFor_DestroyFunctionMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

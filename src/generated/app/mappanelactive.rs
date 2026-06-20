@@ -35,7 +35,7 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelactive/MapPanelActive.md"))]#[::unity2::class(namespace="App",name="MapPanelActive")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappanelactive::MapPanelActive>)]pub struct MapPanelActive{#[offset(64)]#[rename(name="m_ImageList")]pub m_image_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::mappanelactive::MapPanelActive_MeshIndex> > , #[offset(72)]#[rename(name="m_MoveImage")]pub m_move_image:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_AttackImage")]pub m_attack_image:crate::unity_engine::material::Material, #[offset(88)]#[rename(name="m_HealImage")]pub m_heal_image:crate::unity_engine::material::Material, #[offset(96)]#[rename(name="m_SupportImage")]pub m_support_image:crate::unity_engine::material::Material, #[offset(104)]#[rename(name="m_InterferenceImage")]pub m_interference_image:crate::unity_engine::material::Material, #[offset(112)]#[rename(name="m_DanceImage")]pub m_dance_image:crate::unity_engine::material::Material, #[offset(120)]#[rename(name="m_ActionImage")]pub m_action_image:crate::unity_engine::material::Material, #[offset(128)]#[rename(name="m_RangeImage")]pub m_range_image:crate::unity_engine::material::Material, #[offset(136)]#[rename(name="m_OverlapImage")]pub m_overlap_image:crate::unity_engine::material::Material, #[offset(144)]#[rename(name="m_Mind")]pub m_mind:crate::app::mapmind::MapMind_Type, #[offset(148)]#[rename(name="m_Mode")]pub m_mode:crate::app::mappaneldeploy::MapPanelDeploy_Mode, #[offset(152)]#[rename(name="m_Flag")]pub m_flag:crate::app::mappanelactive::MapPanelActive_FlagField, #[offset(160)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(168)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(176)]#[rename(name="m_MoveColor")]pub m_move_color:crate::unity_engine::color::Color, #[offset(192)]#[rename(name="m_AttackColor")]pub m_attack_color:crate::unity_engine::color::Color, #[offset(208)]#[rename(name="m_HealColor")]pub m_heal_color:crate::unity_engine::color::Color, #[offset(224)]#[rename(name="m_SupportColor")]pub m_support_color:crate::unity_engine::color::Color, #[offset(240)]#[rename(name="m_InterferenceColor")]pub m_interference_color:crate::unity_engine::color::Color, #[offset(256)]#[rename(name="m_DanceColor")]pub m_dance_color:crate::unity_engine::color::Color, #[offset(272)]#[rename(name="m_ActionColor")]pub m_action_color:crate::unity_engine::color::Color, #[offset(288)]#[rename(name="m_DragonVeinColor")]pub m_dragon_vein_color:crate::unity_engine::color::Color, #[offset(304)]#[rename(name="m_OverlapColor")]pub m_overlap_color:crate::unity_engine::color::Color, #[offset(320)]#[rename(name="m_AttackRangeColor")]pub m_attack_range_color:crate::unity_engine::color::Color, #[offset(336)]#[rename(name="m_HealRangeColor")]pub m_heal_range_color:crate::unity_engine::color::Color, #[offset(352)]#[rename(name="m_SupportRangeColor")]pub m_support_range_color:crate::unity_engine::color::Color, #[offset(368)]#[rename(name="m_InterferenceRangeColor")]pub m_interference_range_color:crate::unity_engine::color::Color, #[offset(384)]#[rename(name="m_WarpRangeColor")]pub m_warp_range_color:crate::unity_engine::color::Color, #[offset(400)]#[rename(name="m_DanceRangeColor")]pub m_dance_range_color:crate::unity_engine::color::Color, #[offset(416)]#[rename(name="m_ActionRangeColor")]pub m_action_range_color:crate::unity_engine::color::Color, #[offset(432)]#[rename(name="m_RangeColor")]pub m_range_color:crate::unity_engine::color::Color, #[offset(448)]#[rename(name="m_DisplayColor")]pub m_display_color:crate::unity_engine::color::Color, #[offset(464)]#[rename(name="m_TempImage")]pub m_temp_image:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(472)]#[rename(name="m_MovingAlpha")]pub m_moving_alpha:crate::app::gamecurve::GameCurve, #[offset(480)]#[rename(name="m_StoppedAlpha")]pub m_stopped_alpha:crate::app::gamecurve::GameCurve, #[offset(488)]#[rename(name="m_Time")]pub m_time:f32, #[offset(496)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[static_field]#[rename(name="AROUND")]pub around: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int> , #[static_field]#[rename(name="ROTATION")]pub rotation: ::unity2::Array<i32> , #[static_field]#[rename(name="FLAG")]pub flag_field: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelactive/MapPanelActive_FlagField.md"))]#[::unity2::class(namespace="App",name="MapPanelActive.FlagField")]#[parent(crate::app::bitfieldtemplate64_1::BitFieldTemplate64_1<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> >)]pub struct MapPanelActive_FlagField{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelactive/MapPanelActive_MeshIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelActive_MeshIndex{pub value:i32,}
@@ -73,44 +73,83 @@ pub fn num()->Self{Self{value:9}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelactive/MapPanelActive_TargetFunc.md"))]#[::unity2::class(namespace="App",name="MapPanelActive.TargetFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapPanelActive_TargetFunc{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelactive/MapPanelActive_FlagField.md"))]#[::unity2::class(namespace="App",name="MapPanelActive.FlagField")]#[parent(crate::app::bitfieldtemplate64_1::BitFieldTemplate64_1<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> >)]pub struct MapPanelActive_FlagField{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelactive/MapPanelActive.md"))]#[::unity2::class(namespace="App",name="MapPanelActive")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappanelactive::MapPanelActive>)]pub struct MapPanelActive{#[offset(64)]#[rename(name="m_ImageList")]pub m_image_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::mappanelactive::MapPanelActive_MeshIndex> > , #[offset(72)]#[rename(name="m_MoveImage")]pub m_move_image:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_AttackImage")]pub m_attack_image:crate::unity_engine::material::Material, #[offset(88)]#[rename(name="m_HealImage")]pub m_heal_image:crate::unity_engine::material::Material, #[offset(96)]#[rename(name="m_SupportImage")]pub m_support_image:crate::unity_engine::material::Material, #[offset(104)]#[rename(name="m_InterferenceImage")]pub m_interference_image:crate::unity_engine::material::Material, #[offset(112)]#[rename(name="m_DanceImage")]pub m_dance_image:crate::unity_engine::material::Material, #[offset(120)]#[rename(name="m_ActionImage")]pub m_action_image:crate::unity_engine::material::Material, #[offset(128)]#[rename(name="m_RangeImage")]pub m_range_image:crate::unity_engine::material::Material, #[offset(136)]#[rename(name="m_OverlapImage")]pub m_overlap_image:crate::unity_engine::material::Material, #[offset(144)]#[rename(name="m_Mind")]pub m_mind:crate::app::mapmind::MapMind_Type, #[offset(148)]#[rename(name="m_Mode")]pub m_mode:crate::app::mappaneldeploy::MapPanelDeploy_Mode, #[offset(152)]#[rename(name="m_Flag")]pub m_flag:crate::app::mappanelactive::MapPanelActive_FlagField, #[offset(160)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(168)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(176)]#[rename(name="m_MoveColor")]pub m_move_color:crate::unity_engine::color::Color, #[offset(192)]#[rename(name="m_AttackColor")]pub m_attack_color:crate::unity_engine::color::Color, #[offset(208)]#[rename(name="m_HealColor")]pub m_heal_color:crate::unity_engine::color::Color, #[offset(224)]#[rename(name="m_SupportColor")]pub m_support_color:crate::unity_engine::color::Color, #[offset(240)]#[rename(name="m_InterferenceColor")]pub m_interference_color:crate::unity_engine::color::Color, #[offset(256)]#[rename(name="m_DanceColor")]pub m_dance_color:crate::unity_engine::color::Color, #[offset(272)]#[rename(name="m_ActionColor")]pub m_action_color:crate::unity_engine::color::Color, #[offset(288)]#[rename(name="m_DragonVeinColor")]pub m_dragon_vein_color:crate::unity_engine::color::Color, #[offset(304)]#[rename(name="m_OverlapColor")]pub m_overlap_color:crate::unity_engine::color::Color, #[offset(320)]#[rename(name="m_AttackRangeColor")]pub m_attack_range_color:crate::unity_engine::color::Color, #[offset(336)]#[rename(name="m_HealRangeColor")]pub m_heal_range_color:crate::unity_engine::color::Color, #[offset(352)]#[rename(name="m_SupportRangeColor")]pub m_support_range_color:crate::unity_engine::color::Color, #[offset(368)]#[rename(name="m_InterferenceRangeColor")]pub m_interference_range_color:crate::unity_engine::color::Color, #[offset(384)]#[rename(name="m_WarpRangeColor")]pub m_warp_range_color:crate::unity_engine::color::Color, #[offset(400)]#[rename(name="m_DanceRangeColor")]pub m_dance_range_color:crate::unity_engine::color::Color, #[offset(416)]#[rename(name="m_ActionRangeColor")]pub m_action_range_color:crate::unity_engine::color::Color, #[offset(432)]#[rename(name="m_RangeColor")]pub m_range_color:crate::unity_engine::color::Color, #[offset(448)]#[rename(name="m_DisplayColor")]pub m_display_color:crate::unity_engine::color::Color, #[offset(464)]#[rename(name="m_TempImage")]pub m_temp_image:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(472)]#[rename(name="m_MovingAlpha")]pub m_moving_alpha:crate::app::gamecurve::GameCurve, #[offset(480)]#[rename(name="m_StoppedAlpha")]pub m_stopped_alpha:crate::app::gamecurve::GameCurve, #[offset(488)]#[rename(name="m_Time")]pub m_time:f32, #[offset(496)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[static_field]#[rename(name="AROUND")]pub around: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int> , #[static_field]#[rename(name="ROTATION")]pub rotation: ::unity2::Array<i32> , #[static_field]#[rename(name="FLAG")]pub flag_field: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int> ,}
 
 }
 
 #[cfg(feature = "app-mappanelactive-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mappanelactive")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapPanelActive_unity2_raw{use super:: * ;
-pub unsafe fn get_sub_mesh_count(this:MapPanelActive,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <MapPanelActive as::unity2::ClassIdentity> ::NAME,"get_SubMeshCount",));
-let inner:extern "C" fn(MapPanelActive, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn awake(this:MapPanelActive,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapPanelActive as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(MapPanelActive, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_source_materials(this:MapPanelActive,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-mappanelactive")]pub trait IMapPanelActive_FlagFieldMethods:IMapPanelActive_FlagField{#[doc="`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"]fn to_long(self,value:impl::core::convert::Into<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> >)->i64{unsafe{let __receiver= <MapPanelActive_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <MapPanelActive as::unity2::ClassIdentity> ::NAME,"GetSourceMaterials",));
-let inner:extern "C" fn(MapPanelActive, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",5usize,__vt.len(), <MapPanelActive_FlagField as::unity2::ClassIdentity> ::NAME,"ToLong",));
+let __inner:extern "C" fn(MapPanelActive_FlagField,crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPanelActive_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d340usize)as*mut u8,();
+(MapPanelActive_FlagField)__receiver)}
+}
+}
+
+#[cfg(feature="app-mappanelactive")]impl<__T:IMapPanelActive_FlagField>IMapPanelActive_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive_FlagField{pub fn to_long_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive_FlagField{#[doc="Direct (non-virtual) call to `MapPanelActive_FlagField`'s own `ToLong`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_long(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> ,)->i64{let __mi=Self::to_long_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelActive_FlagField), ::core::stringify!(new),));
+ <Self as IMapPanelActive_FlagFieldMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mappanelactive")]pub trait IMapPanelActive_TargetFuncMethods:IMapPanelActive_TargetFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapPanelActive_TargetFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d3a0usize)as*mut u8,();
+(MapPanelActive_TargetFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapPanelActive_TargetFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapPanelActive_TargetFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapPanelActive_TargetFunc,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mappanelactive")]impl<__T:IMapPanelActive_TargetFunc>IMapPanelActive_TargetFuncMethods for __T{}
+
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive_TargetFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive_TargetFunc{#[doc="Direct (non-virtual) call to `MapPanelActive_TargetFunc`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:i32,z:i32,)->bool{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,z, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive_TargetFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelActive_TargetFunc), ::core::stringify!(new),));
+ <Self as IMapPanelActive_TargetFuncMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-mappanelactive")]impl MapPanelActive{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e02600usize)as*mut u8,();
@@ -119,10 +158,28 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-mappanelactive")]pub trait IMapPanelActiveMethods:IMapPanelActive{#[doc="`get_SubMeshCount()` overload"]fn get_sub_mesh_count(self,)->i32{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapPanelActive_unity2_raw::get_sub_mesh_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MapPanelActive as::unity2::ClassIdentity> ::NAME,"get_SubMeshCount",));
+let __inner:extern "C" fn(MapPanelActive, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapPanelActive_unity2_raw::awake(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapPanelActive as::unity2::ClassIdentity> ::NAME,"Awake",));
+let __inner:extern "C" fn(MapPanelActive, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff350usize)as*mut u8,();
@@ -133,7 +190,16 @@ __MapPanelActive_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 (MapPanelActive)__receiver)}
 }
 #[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapPanelActive_unity2_raw::get_source_materials(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapPanelActive as::unity2::ClassIdentity> ::NAME,"GetSourceMaterials",));
+let __inner:extern "C" fn(MapPanelActive, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdatePanelAlpha()` overload"]fn update_panel_alpha(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff7e0usize)as*mut u8,();
@@ -327,6 +393,17 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
 }
 
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive{#[doc="Direct (non-virtual) call to `MapPanelActive`'s own `get_SubMeshCount`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sub_mesh_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_sub_mesh_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapPanelActive`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapPanelActive`'s own `GetSourceMaterials`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_source_materials(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __mi=Self::get_source_materials_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mappanelactive")]impl MapPanelActive{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapPanelActive), ::core::stringify!(new),));
@@ -334,89 +411,19 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-mappanelactive")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapPanelActive_TargetFunc_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapPanelActive_TargetFunc,x:i32,z:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapPanelActive_TargetFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapPanelActive_TargetFunc,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,z,__mi)}
-}
-
-#[cfg(feature="app-mappanelactive")]pub trait IMapPanelActive_TargetFuncMethods:IMapPanelActive_TargetFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapPanelActive_TargetFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218d3a0usize)as*mut u8,();
-(MapPanelActive_TargetFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapPanelActive_TargetFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapPanelActive_TargetFunc_unity2_raw::invoke(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mappanelactive")]impl<__T:IMapPanelActive_TargetFunc>IMapPanelActive_TargetFuncMethods for __T{}
-
-#[cfg(feature="app-mappanelactive")]impl MapPanelActive_TargetFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mappanelactive")]impl MapPanelActive_TargetFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapPanelActive_TargetFunc), ::core::stringify!(new),));
- <Self as IMapPanelActive_TargetFuncMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-mappanelactive")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapPanelActive_FlagField_unity2_raw{use super:: * ;
-pub unsafe fn to_long(this:MapPanelActive_FlagField,value:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> ,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MapPanelActive_FlagField as::unity2::ClassIdentity> ::NAME,"ToLong",));
-let inner:extern "C" fn(MapPanelActive_FlagField,crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-}
-
-#[cfg(feature="app-mappanelactive")]pub trait IMapPanelActive_FlagFieldMethods:IMapPanelActive_FlagField{#[doc="`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"]fn to_long(self,value:impl::core::convert::Into<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> >)->i64{unsafe{let __receiver= <MapPanelActive_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapPanelActive_FlagField_unity2_raw::to_long(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPanelActive_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218d340usize)as*mut u8,();
-(MapPanelActive_FlagField)__receiver)}
-}
-}
-
-#[cfg(feature="app-mappanelactive")]impl<__T:IMapPanelActive_FlagField>IMapPanelActive_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-mappanelactive")]impl MapPanelActive_FlagField{pub fn to_long_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mappanelactive")]impl MapPanelActive_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapPanelActive_FlagField), ::core::stringify!(new),));
- <Self as IMapPanelActive_FlagFieldMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mappanelactive")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelActive;
-    pub use super::IMapPanelActive;
-    pub use super::IMapPanelActiveMethods;
+    pub use super::MapPanelActive_FlagField;
+    pub use super::IMapPanelActive_FlagField;
+    pub use super::IMapPanelActive_FlagFieldMethods;
     pub use super::MapPanelActive_MeshIndex;
     pub use super::MapPanelActive_TargetFunc;
     pub use super::IMapPanelActive_TargetFunc;
     pub use super::IMapPanelActive_TargetFuncMethods;
-    pub use super::MapPanelActive_FlagField;
-    pub use super::IMapPanelActive_FlagField;
-    pub use super::IMapPanelActive_FlagFieldMethods;
+    pub use super::MapPanelActive;
+    pub use super::IMapPanelActive;
+    pub use super::IMapPanelActiveMethods;
     pub use crate::app::bitfield64::IBitField64;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate64_1::IBitFieldTemplate64_1;

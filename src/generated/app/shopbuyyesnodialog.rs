@@ -21,63 +21,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopbuyyesnodialog/ShopBuyYesNoDialog_YesEventHandler.md"))]#[::unity2::class(namespace="App",name="ShopBuyYesNoDialog.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ShopBuyYesNoDialog_YesEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopbuyyesnodialog/ShopBuyYesNoDialog.md"))]#[::unity2::class(namespace="App",name="ShopBuyYesNoDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ShopBuyYesNoDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopbuyyesnodialog/ShopBuyYesNoDialog_YesEventHandler.md"))]#[::unity2::class(namespace="App",name="ShopBuyYesNoDialog.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ShopBuyYesNoDialog_YesEventHandler{}
 
 }
 
 #[cfg(feature = "app-shopbuyyesnodialog-types")]
 pub use __types::*;
-
-#[cfg(feature="app-shopbuyyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ShopBuyYesNoDialog_YesEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:ShopBuyYesNoDialog_YesEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <ShopBuyYesNoDialog_YesEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(ShopBuyYesNoDialog_YesEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-shopbuyyesnodialog")]pub trait IShopBuyYesNoDialog_YesEventHandlerMethods:IShopBuyYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ShopBuyYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a640usize)as*mut u8,();
-(ShopBuyYesNoDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ShopBuyYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ShopBuyYesNoDialog_YesEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-shopbuyyesnodialog")]impl<__T:IShopBuyYesNoDialog_YesEventHandler>IShopBuyYesNoDialog_YesEventHandlerMethods for __T{}
-
-#[cfg(feature="app-shopbuyyesnodialog")]impl ShopBuyYesNoDialog_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-shopbuyyesnodialog")]impl ShopBuyYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ShopBuyYesNoDialog_YesEventHandler), ::core::stringify!(new),));
- <Self as IShopBuyYesNoDialog_YesEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-shopbuyyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ShopBuyYesNoDialog_unity2_raw{use super:: * ;
-pub unsafe fn on_close(this:ShopBuyYesNoDialog,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <ShopBuyYesNoDialog as::unity2::ClassIdentity> ::NAME,"OnClose",));
-let inner:extern "C" fn(ShopBuyYesNoDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-shopbuyyesnodialog")]impl ShopBuyYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::itemdata::ItemData, i32, crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,item_data:impl::core::convert::Into<crate::app::itemdata::ItemData> ,num:impl::core::convert::Into<i32> ,yes_event_handler:impl::core::convert::Into<crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler>)->crate::app::exchangeyesnodialog::ExchangeYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ab9a0usize)as*mut u8,crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::itemdata::ItemData)::core::convert::Into::into(item_data),(i32)::core::convert::Into::into(num),(crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
@@ -104,7 +56,16 @@ inner(this,__mi)}
 (ShopBuyYesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <ShopBuyYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ShopBuyYesNoDialog_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <ShopBuyYesNoDialog as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let __inner:extern "C" fn(ShopBuyYesNoDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -120,6 +81,11 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="app-shopbuyyesnodialog")]impl ShopBuyYesNoDialog{#[doc="Direct (non-virtual) call to `ShopBuyYesNoDialog`'s own `OnClose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-shopbuyyesnodialog")]impl ShopBuyYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(ShopBuyYesNoDialog), ::core::stringify!(new),));
@@ -127,15 +93,51 @@ pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
+#[cfg(feature="app-shopbuyyesnodialog")]pub trait IShopBuyYesNoDialog_YesEventHandlerMethods:IShopBuyYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ShopBuyYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6a640usize)as*mut u8,();
+(ShopBuyYesNoDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ShopBuyYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ShopBuyYesNoDialog_YesEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(ShopBuyYesNoDialog_YesEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-shopbuyyesnodialog")]impl<__T:IShopBuyYesNoDialog_YesEventHandler>IShopBuyYesNoDialog_YesEventHandlerMethods for __T{}
+
+#[cfg(feature="app-shopbuyyesnodialog")]impl ShopBuyYesNoDialog_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-shopbuyyesnodialog")]impl ShopBuyYesNoDialog_YesEventHandler{#[doc="Direct (non-virtual) call to `ShopBuyYesNoDialog_YesEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-shopbuyyesnodialog")]impl ShopBuyYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopBuyYesNoDialog_YesEventHandler), ::core::stringify!(new),));
+ <Self as IShopBuyYesNoDialog_YesEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-shopbuyyesnodialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ShopBuyYesNoDialog_YesEventHandler;
-    pub use super::IShopBuyYesNoDialog_YesEventHandler;
-    pub use super::IShopBuyYesNoDialog_YesEventHandlerMethods;
     pub use super::ShopBuyYesNoDialog;
     pub use super::IShopBuyYesNoDialog;
     pub use super::IShopBuyYesNoDialogMethods;
+    pub use super::ShopBuyYesNoDialog_YesEventHandler;
+    pub use super::IShopBuyYesNoDialog_YesEventHandler;
+    pub use super::IShopBuyYesNoDialog_YesEventHandlerMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;

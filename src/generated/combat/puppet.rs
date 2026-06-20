@@ -36,19 +36,6 @@ pub fn left()->Self{Self{value:1}
 #[cfg(feature = "combat-puppet-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-puppet")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Puppet_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:Puppet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Puppet as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(Puppet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="combat-puppet")]pub trait IPuppetMethods:IPuppet{#[doc="`get_RightRoot()` overload"]fn get_right_root(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0a970usize)as*mut u8,crate::unity_engine::transform::Transform;
 (Puppet)__receiver)}
@@ -122,7 +109,16 @@ inner(this,__mi)}
 (Puppet)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(offset),(::unity2::Il2CppString)::core::convert::Into::into(name))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Puppet_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Puppet as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(Puppet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Evaluate(f32)` overload"]fn evaluate(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Puppet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c0bc20usize)as*mut u8,();
@@ -162,6 +158,11 @@ pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn evaluate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 pub fn clear_root_moved_after_evaluate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 pub fn add_destroyable_g_os_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="combat-puppet")]impl Puppet{#[doc="Direct (non-virtual) call to `Puppet`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-puppet")]impl Puppet{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip, crate::unity_engine::gameobject::GameObject, crate::unity_engine::animationclip::AnimationClip)` — overload selector"]pub fn new(body_inst:crate::unity_engine::gameobject::GameObject,body_anim:crate::unity_engine::animationclip::AnimationClip,ride_inst:crate::unity_engine::gameobject::GameObject,ride_anim:crate::unity_engine::animationclip::AnimationClip)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

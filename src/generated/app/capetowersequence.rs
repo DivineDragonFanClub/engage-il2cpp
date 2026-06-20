@@ -26,6 +26,15 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct CapeTowerSequence{#[offset(112)]#[rename(name="m_CapeTowerTopMenuResult")]pub m_cape_tower_top_menu_result:crate::app::capetowertopmenu::CapeTowerTopMenu_Result2, #[offset(120)]#[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[offset(128)]#[rename(name="m_FromDebugMenu")]pub m_from_debug_menu:bool,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence.ConfirmEnableOnlineDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence.ConfirmEnableOnlineDialog")]#[parent(crate::system::object::Object)]pub struct CapeTowerSequence_ConfirmEnableOnlineDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence.ConfirmEnableOnlineDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CapeTowerSequence_Label2{pub value:i32,}
 impl::unity2::ClassIdentity for CapeTowerSequence_Label2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="CapeTowerSequence.Label2";
@@ -50,15 +59,6 @@ pub fn versus()->Self{Self{value:5}
 pub fn end()->Self{Self{value:6}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence.ConfirmEnableOnlineDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence.ConfirmEnableOnlineDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog.md"))]#[::unity2::class(namespace="App",name="CapeTowerSequence.ConfirmEnableOnlineDialog")]#[parent(crate::system::object::Object)]pub struct CapeTowerSequence_ConfirmEnableOnlineDialog{}
 
 }
 
@@ -163,34 +163,29 @@ pub fn end_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 this}
 }
 
-#[cfg(feature="app-capetowersequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-capetowersequence")]pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods:ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",19usize,__vt.len(), <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-capetowersequence")]pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods:ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b322d0usize)as*mut u8,();
@@ -205,6 +200,14 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem{#[doc="Direct (non-virtual) call to `CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem), ::core::stringify!(new),));
@@ -212,47 +215,49 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-capetowersequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bd910usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-capetowersequence")]pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods:ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",18usize,__vt.len(), <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",19usize,__vt.len(), <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-capetowersequence")]pub trait ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods:ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b321b0usize)as*mut u8,();
@@ -268,19 +273,22 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem{#[doc="Direct (non-virtual) call to `CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem), ::core::stringify!(new),));
  <Self as ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bd910usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-capetowersequence")]impl CapeTowerSequence_ConfirmEnableOnlineDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature = "app-capetowersequence")]
@@ -289,15 +297,15 @@ pub mod prelude {
     pub use super::CapeTowerSequence;
     pub use super::ICapeTowerSequence;
     pub use super::ICapeTowerSequenceMethods;
-    pub use super::CapeTowerSequence_Label2;
     pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem;
     pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem;
     pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItemMethods;
+    pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog;
+    pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog;
     pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem;
     pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem;
     pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods;
-    pub use super::CapeTowerSequence_ConfirmEnableOnlineDialog;
-    pub use super::ICapeTowerSequence_ConfirmEnableOnlineDialog;
+    pub use super::CapeTowerSequence_Label2;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

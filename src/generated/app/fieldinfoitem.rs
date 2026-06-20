@@ -20,51 +20,45 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-fieldinfoitem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-fieldinfoitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FieldInfoItem_unity2_raw{use super:: * ;
-pub unsafe fn get_value_type(this:FieldInfoItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(74usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",74usize,__vt.len(), <FieldInfoItem as::unity2::ClassIdentity> ::NAME,"GetValueType",));
-let inner:extern "C" fn(FieldInfoItem, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_value(this:FieldInfoItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",72usize,__vt.len(), <FieldInfoItem as::unity2::ClassIdentity> ::NAME,"GetValue",));
-let inner:extern "C" fn(FieldInfoItem, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_value(this:FieldInfoItem,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(73usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",73usize,__vt.len(), <FieldInfoItem as::unity2::ClassIdentity> ::NAME,"SetValue",));
-let inner:extern "C" fn(FieldInfoItem,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-}
-
 #[cfg(feature="app-fieldinfoitem")]pub trait IFieldInfoItemMethods:IFieldInfoItem{#[doc="`.ctor(crate::system::object::Object, crate::system::reflection::fieldinfo::FieldInfo)` overload"]fn ctor(self,obj:impl::core::convert::Into<crate::system::object::Object> ,info:impl::core::convert::Into<crate::system::reflection::fieldinfo::FieldInfo>)->(){unsafe{let __receiver= <FieldInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26e78d0usize)as*mut u8,();
 (FieldInfoItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(crate::system::reflection::fieldinfo::FieldInfo)::core::convert::Into::into(info))}
 }
 #[doc="`GetValueType()` overload"]fn get_value_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <FieldInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FieldInfoItem_unity2_raw::get_value_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(74usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",74usize,__vt.len(), <FieldInfoItem as::unity2::ClassIdentity> ::NAME,"GetValueType",));
+let __inner:extern "C" fn(FieldInfoItem, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetValue()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <FieldInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FieldInfoItem_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",72usize,__vt.len(), <FieldInfoItem as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let __inner:extern "C" fn(FieldInfoItem, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetValue(crate::system::object::Object)` overload"]fn set_value(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <FieldInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FieldInfoItem_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(73usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",73usize,__vt.len(), <FieldInfoItem as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let __inner:extern "C" fn(FieldInfoItem,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -74,6 +68,17 @@ __FieldInfoItem_unity2_raw::set_value(__receiver, ::core::convert::Into::into(va
 pub fn get_value_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-fieldinfoitem")]impl FieldInfoItem{#[doc="Direct (non-virtual) call to `FieldInfoItem`'s own `GetValueType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_value_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FieldInfoItem`'s own `GetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FieldInfoItem`'s own `SetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::system::object::Object,)->(){let __mi=Self::set_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-fieldinfoitem")]impl FieldInfoItem{#[doc="`.ctor(crate::system::object::Object, crate::system::reflection::fieldinfo::FieldInfo)` — overload selector"]pub fn new(obj:crate::system::object::Object,info:crate::system::reflection::fieldinfo::FieldInfo)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

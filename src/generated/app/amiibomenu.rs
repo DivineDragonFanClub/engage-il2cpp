@@ -40,19 +40,6 @@ pub fn end()->Self{Self{value:1}
 #[cfg(feature = "app-amiibomenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-amiibomenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AmiiboMenu_unity2_raw{use super:: * ;
-pub unsafe fn tick(this:AmiiboMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <AmiiboMenu as::unity2::ClassIdentity> ::NAME,"Tick",));
-let inner:extern "C" fn(AmiiboMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-amiibomenu")]impl AmiiboMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,status:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d338b0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(status))}
 }
@@ -66,7 +53,16 @@ inner(this,__mi)}
 (AmiiboMenu)__receiver,(crate::app::amiibomenucontent::AmiiboMenuContent)::core::convert::Into::into(menu_content),(::unity2::Il2CppString)::core::convert::Into::into(mess),(i32)::core::convert::Into::into(status))}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <AmiiboMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AmiiboMenu_unity2_raw::tick(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <AmiiboMenu as::unity2::ClassIdentity> ::NAME,"Tick",));
+let __inner:extern "C" fn(AmiiboMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SearchAmiibo()` overload"]fn search_amiibo(self,)->(){unsafe{let __receiver= <AmiiboMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d33b50usize)as*mut u8,();
@@ -86,6 +82,11 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn search_amiibo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-amiibomenu")]impl AmiiboMenu{#[doc="Direct (non-virtual) call to `AmiiboMenu`'s own `Tick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-amiibomenu")]impl AmiiboMenu{#[doc="`.ctor(crate::app::amiibomenucontent::AmiiboMenuContent, ::unity2::Il2CppString, i32)` — overload selector"]pub fn new(menu_content:crate::app::amiibomenucontent::AmiiboMenuContent,mess: ::unity2::Il2CppString,status:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

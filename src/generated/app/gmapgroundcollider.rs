@@ -21,9 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapgroundcollider/GmapGroundCollider.md"))]#[::unity2::class(namespace="App",name="GmapGroundCollider")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapGroundCollider{#[offset(24)]#[rename(name="m_GroundType")]pub m_ground_type:crate::app::gmapgroundcollider::GmapGroundCollider_Type,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapgroundcollider/GmapGroundCollider_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapGroundCollider_Type{pub value:i32,}
 impl::unity2::ClassIdentity for GmapGroundCollider_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GmapGroundCollider.Type";
@@ -38,6 +35,9 @@ impl GmapGroundCollider_Type{pub fn 地面()->Self{Self{value:0}
 pub fn 海面()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapgroundcollider/GmapGroundCollider.md"))]#[::unity2::class(namespace="App",name="GmapGroundCollider")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapGroundCollider{#[offset(24)]#[rename(name="m_GroundType")]pub m_ground_type:crate::app::gmapgroundcollider::GmapGroundCollider_Type,}
 
 }
 
@@ -75,10 +75,10 @@ this}
 #[cfg(feature = "app-gmapgroundcollider")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GmapGroundCollider_Type;
     pub use super::GmapGroundCollider;
     pub use super::IGmapGroundCollider;
     pub use super::IGmapGroundColliderMethods;
-    pub use super::GmapGroundCollider_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -25,10 +25,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="ArenaExpUnitSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ArenaExpUnitSelectMenuItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler, #[offset(120)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="ArenaExpUnitSelectMenuItem.ConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ArenaExpUnitSelectMenuItem_ConfirmDialog{#[offset(216)]#[rename(name="m_DecideAction")]pub m_decide_action:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="ArenaExpUnitSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ArenaExpUnitSelectMenuItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler, #[offset(120)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="ArenaExpUnitSelectMenuItem.ConfirmDialog.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_DecideAction")]pub m_decide_action:crate::system::action::Action,}
@@ -40,98 +40,6 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "app-arenaexpunitselectmenuitem-types")]
 pub use __types::*;
-
-#[cfg(feature="app-arenaexpunitselectmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ArenaExpUnitSelectMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn build_attribute(this:ArenaExpUnitSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <ArenaExpUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(ArenaExpUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:ArenaExpUnitSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <ArenaExpUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(ArenaExpUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:ArenaExpUnitSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <ArenaExpUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(ArenaExpUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_select(this:ArenaExpUnitSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <ArenaExpUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(ArenaExpUnitSelectMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-arenaexpunitselectmenuitem")]pub trait IArenaExpUnitSelectMenuItemMethods:IArenaExpUnitSelectMenuItem{#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4580usize)as*mut u8,crate::app::unit::Unit;
-(ArenaExpUnitSelectMenuItem)__receiver)}
-}
-#[doc="`set_Unit(crate::app::unit::Unit)` overload"]fn set_unit(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4590usize)as*mut u8,();
-(ArenaExpUnitSelectMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
-}
-#[doc="`get_IsSelectable()` overload"]fn get_is_selectable(self,)->bool{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca45a0usize)as*mut u8,bool;
-(ArenaExpUnitSelectMenuItem)__receiver)}
-}
-#[doc="`.ctor(crate::app::unit::Unit, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_event_handler:impl::core::convert::Into<crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler>)->(){unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4240usize)as*mut u8,();
-(ArenaExpUnitSelectMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ArenaExpUnitSelectMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ArenaExpUnitSelectMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ArenaExpUnitSelectMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ArenaExpUnitSelectMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-arenaexpunitselectmenuitem")]impl<__T:IArenaExpUnitSelectMenuItem>IArenaExpUnitSelectMenuItemMethods for __T{}
-
-#[cfg(feature="app-arenaexpunitselectmenuitem")]impl ArenaExpUnitSelectMenuItem{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_is_selectable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-arenaexpunitselectmenuitem")]impl ArenaExpUnitSelectMenuItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,decide_event_handler:crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler,select_event_handler:crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaExpUnitSelectMenuItem), ::core::stringify!(new),));
- <Self as IArenaExpUnitSelectMenuItemMethods> ::ctor(this,unit,decide_event_handler,select_event_handler);
-this}
-}
 
 #[cfg(feature="app-arenaexpunitselectmenuitem")]impl ArenaExpUnitSelectMenuItem_ConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1badcd0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::action::Action)::core::convert::Into::into(decide_action))}
@@ -157,17 +65,103 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-arenaexpunitselectmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-arenaexpunitselectmenuitem")]pub trait IArenaExpUnitSelectMenuItemMethods:IArenaExpUnitSelectMenuItem{#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4580usize)as*mut u8,crate::app::unit::Unit;
+(ArenaExpUnitSelectMenuItem)__receiver)}
+}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]fn set_unit(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4590usize)as*mut u8,();
+(ArenaExpUnitSelectMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsSelectable()` overload"]fn get_is_selectable(self,)->bool{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca45a0usize)as*mut u8,bool;
+(ArenaExpUnitSelectMenuItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::unit::Unit, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_event_handler:impl::core::convert::Into<crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler>)->(){unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca4240usize)as*mut u8,();
+(ArenaExpUnitSelectMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ArenaExpUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(ArenaExpUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <ArenaExpUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(ArenaExpUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <ArenaExpUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(ArenaExpUnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ArenaExpUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ArenaExpUnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(ArenaExpUnitSelectMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-arenaexpunitselectmenuitem")]impl<__T:IArenaExpUnitSelectMenuItem>IArenaExpUnitSelectMenuItemMethods for __T{}
+
+#[cfg(feature="app-arenaexpunitselectmenuitem")]impl ArenaExpUnitSelectMenuItem{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_selectable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-arenaexpunitselectmenuitem")]impl ArenaExpUnitSelectMenuItem{#[doc="Direct (non-virtual) call to `ArenaExpUnitSelectMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ArenaExpUnitSelectMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ArenaExpUnitSelectMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ArenaExpUnitSelectMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-arenaexpunitselectmenuitem")]impl ArenaExpUnitSelectMenuItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler, crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,decide_event_handler:crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler,select_event_handler:crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaExpUnitSelectMenuItem), ::core::stringify!(new),));
+ <Self as IArenaExpUnitSelectMenuItemMethods> ::ctor(this,unit,decide_event_handler,select_event_handler);
+this}
 }
 
 #[cfg(feature="app-arenaexpunitselectmenuitem")]pub trait IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods:IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,decide_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -175,7 +169,16 @@ inner(this,__mi)}
 (ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(decide_action))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -183,6 +186,11 @@ __ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes_unity2_raw::a_ca
 
 #[cfg(feature="app-arenaexpunitselectmenuitem")]impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenaexpunitselectmenuitem")]impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes{#[doc="Direct (non-virtual) call to `ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-arenaexpunitselectmenuitem")]impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(decide_action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -213,12 +221,12 @@ this}
 #[cfg(feature = "app-arenaexpunitselectmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArenaExpUnitSelectMenuItem;
-    pub use super::IArenaExpUnitSelectMenuItem;
-    pub use super::IArenaExpUnitSelectMenuItemMethods;
     pub use super::ArenaExpUnitSelectMenuItem_ConfirmDialog;
     pub use super::IArenaExpUnitSelectMenuItem_ConfirmDialog;
     pub use super::IArenaExpUnitSelectMenuItem_ConfirmDialogMethods;
+    pub use super::ArenaExpUnitSelectMenuItem;
+    pub use super::IArenaExpUnitSelectMenuItem;
+    pub use super::IArenaExpUnitSelectMenuItemMethods;
     pub use super::ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes;
     pub use super::IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes;
     pub use super::IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods;

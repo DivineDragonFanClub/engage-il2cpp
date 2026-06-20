@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceskipreplay/MapSequenceSkipReplay.md"))]#[::unity2::class(namespace="App",name="MapSequenceSkipReplay")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequenceskipreplay::MapSequenceSkipReplay>)]pub struct MapSequenceSkipReplay{#[offset(120)]#[rename(name="m_SetupFieldFunc")]pub m_setup_field_func:crate::system::action::Action,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceskipreplay/MapSequenceSkipReplay_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceSkipReplay_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceSkipReplay_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceSkipReplay.Label";
@@ -31,9 +34,6 @@ impl MapSequenceSkipReplay_Label{pub fn skip_load()->Self{Self{value:0}
 pub fn end()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceskipreplay/MapSequenceSkipReplay.md"))]#[::unity2::class(namespace="App",name="MapSequenceSkipReplay")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequenceskipreplay::MapSequenceSkipReplay>)]pub struct MapSequenceSkipReplay{#[offset(120)]#[rename(name="m_SetupFieldFunc")]pub m_setup_field_func:crate::system::action::Action,}
 
 }
 
@@ -87,10 +87,10 @@ this}
 #[cfg(feature = "app-mapsequenceskipreplay")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceSkipReplay_Label;
     pub use super::MapSequenceSkipReplay;
     pub use super::IMapSequenceSkipReplay;
     pub use super::IMapSequenceSkipReplayMethods;
+    pub use super::MapSequenceSkipReplay_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

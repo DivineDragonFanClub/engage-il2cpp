@@ -105,25 +105,21 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-ringselectconfirmdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:RingSelectConfirmDialog_ConfirmYesDialogItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RingSelectConfirmDialog_ConfirmYesDialogItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-ringselectconfirmdialog")]pub trait IRingSelectConfirmDialog_ConfirmYesDialogItemMethods:IRingSelectConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5fa00usize)as*mut u8,();
 (RingSelectConfirmDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RingSelectConfirmDialog_ConfirmYesDialogItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`RemoveOld(crate::app::unit::Unit)` overload"]fn remove_old(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingSelectConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d60a10usize)as*mut u8,();
@@ -136,6 +132,11 @@ __RingSelectConfirmDialog_ConfirmYesDialogItem_unity2_raw::a_call(__receiver, ::
 #[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn remove_old_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog_ConfirmYesDialogItem{#[doc="Direct (non-virtual) call to `RingSelectConfirmDialog_ConfirmYesDialogItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-ringselectconfirmdialog")]impl RingSelectConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

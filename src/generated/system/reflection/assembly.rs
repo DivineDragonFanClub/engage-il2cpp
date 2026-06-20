@@ -13,220 +13,59 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assembly/Assembly.md"))]#[::unity2::class(namespace="System.Reflection",name="Assembly")]#[parent(crate::system::object::Object)]pub struct Assembly{#[offset(16)]#[rename(name="_mono_assembly")]pub mono_assembly: ::unity2::IntPtr, #[offset(24)]#[rename(name="resolve_event_holder")]pub resolve_event_holder:crate::system::reflection::assembly::Assembly_ResolveEventHolder, #[offset(32)]#[rename(name="_evidence")]pub evidence: ::unity2::IlInstance, #[offset(40)]#[rename(name="_minimum")]pub minimum: ::unity2::IlInstance, #[offset(48)]#[rename(name="_optional")]pub optional: ::unity2::IlInstance, #[offset(56)]#[rename(name="_refuse")]pub refuse: ::unity2::IlInstance, #[offset(64)]#[rename(name="_granted")]pub granted: ::unity2::IlInstance, #[offset(72)]#[rename(name="_denied")]pub denied: ::unity2::IlInstance, #[offset(80)]#[rename(name="fromByteArray")]pub from_byte_array:bool, #[offset(88)]#[rename(name="assemblyName")]pub assembly_name: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assembly/Assembly_UnmanagedMemoryStreamForModule.md"))]#[::unity2::class(namespace="System.Reflection",name="Assembly.UnmanagedMemoryStreamForModule")]#[parent(crate::system::io::unmanagedmemorystream::UnmanagedMemoryStream)]pub struct Assembly_UnmanagedMemoryStreamForModule{#[offset(104)]#[rename(name="module")]pub module:crate::system::reflection::module::Module,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assembly/Assembly_ResolveEventHolder.md"))]#[::unity2::class(namespace="System.Reflection",name="Assembly.ResolveEventHolder")]#[parent(crate::system::object::Object)]pub struct Assembly_ResolveEventHolder{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assembly/Assembly_UnmanagedMemoryStreamForModule.md"))]#[::unity2::class(namespace="System.Reflection",name="Assembly.UnmanagedMemoryStreamForModule")]#[parent(crate::system::io::unmanagedmemorystream::UnmanagedMemoryStream)]pub struct Assembly_UnmanagedMemoryStreamForModule{#[offset(104)]#[rename(name="module")]pub module:crate::system::reflection::module::Module,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assembly/Assembly.md"))]#[::unity2::class(namespace="System.Reflection",name="Assembly")]#[parent(crate::system::object::Object)]pub struct Assembly{#[offset(16)]#[rename(name="_mono_assembly")]pub mono_assembly: ::unity2::IntPtr, #[offset(24)]#[rename(name="resolve_event_holder")]pub resolve_event_holder:crate::system::reflection::assembly::Assembly_ResolveEventHolder, #[offset(32)]#[rename(name="_evidence")]pub evidence: ::unity2::IlInstance, #[offset(40)]#[rename(name="_minimum")]pub minimum: ::unity2::IlInstance, #[offset(48)]#[rename(name="_optional")]pub optional: ::unity2::IlInstance, #[offset(56)]#[rename(name="_refuse")]pub refuse: ::unity2::IlInstance, #[offset(64)]#[rename(name="_granted")]pub granted: ::unity2::IlInstance, #[offset(72)]#[rename(name="_denied")]pub denied: ::unity2::IlInstance, #[offset(80)]#[rename(name="fromByteArray")]pub from_byte_array:bool, #[offset(88)]#[rename(name="assemblyName")]pub assembly_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-assembly-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-assembly")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Assembly_unity2_raw{use super:: * ;
-pub unsafe fn get_code_base_2(this:Assembly,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"get_CodeBase",));
-let inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_full_name(this:Assembly,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"get_FullName",));
-let inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_defined(this:Assembly,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"IsDefined",));
-let inner:extern "C" fn(Assembly, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,attribute_type,inherit,__mi)}
-pub unsafe fn get_custom_attributes(this:Assembly,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
-let inner:extern "C" fn(Assembly, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,attribute_type,inherit,__mi)}
-pub unsafe fn get_manifest_resource_stream(this:Assembly,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::io::stream::Stream{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetManifestResourceStream",));
-let inner:extern "C" fn(Assembly, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,__mi)}
-pub unsafe fn get_types(this:Assembly,exported_only:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetTypes",));
-let inner:extern "C" fn(Assembly,bool, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,exported_only,__mi)}
-pub unsafe fn get_types_2(this:Assembly,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetTypes",));
-let inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_type(this:Assembly,name: ::unity2::Il2CppString,throw_on_error:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetType",));
-let inner:extern "C" fn(Assembly, ::unity2::Il2CppString,bool, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,throw_on_error,__mi)}
-pub unsafe fn get_type_2(this:Assembly,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetType",));
-let inner:extern "C" fn(Assembly, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,__mi)}
-pub unsafe fn get_name(this:Assembly,copied_name:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(Assembly,bool, ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,copied_name,__mi)}
-pub unsafe fn get_name_2(this:Assembly,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-reflection-assembly")]pub trait IAssembly_UnmanagedMemoryStreamForModuleMethods:IAssembly_UnmanagedMemoryStreamForModule{#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Assembly_UnmanagedMemoryStreamForModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",19usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",19usize,__vt.len(), <Assembly_UnmanagedMemoryStreamForModule as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(Assembly_UnmanagedMemoryStreamForModule,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn to_string(this:Assembly,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_modules_internal(this:Assembly,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::module::Module>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetModulesInternal",));
-let inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::module::Module> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_manifest_resource_names(this:Assembly,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::Il2CppString>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetManifestResourceNames",));
-let inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::Il2CppString> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_manifest_resource_info(this:Assembly,resource_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::manifestresourceinfo::ManifestResourceInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetManifestResourceInfo",));
-let inner:extern "C" fn(Assembly, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::reflection::manifestresourceinfo::ManifestResourceInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,resource_name,__mi)}
-pub unsafe fn get_hash_code(this:Assembly,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",2usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn equals(this:Assembly,o:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",0usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(Assembly,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,o,__mi)}
-pub unsafe fn get_type_3(this:Assembly,name: ::unity2::Il2CppString,throw_on_error:bool,ignore_case:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetType",));
-let inner:extern "C" fn(Assembly, ::unity2::Il2CppString,bool,bool, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,throw_on_error,ignore_case,__mi)}
-pub unsafe fn get_module(this:Assembly,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::module::Module{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",24usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetModule",));
-let inner:extern "C" fn(Assembly, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,name,__mi)}
-pub unsafe fn get_modules(this:Assembly,get_resource_modules:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::module::Module>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetModules",));
-let inner:extern "C" fn(Assembly,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::module::Module> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,get_resource_modules,__mi)}
+__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
+}
+}
+}
+
+#[cfg(feature="system-reflection-assembly")]impl<__T:IAssembly_UnmanagedMemoryStreamForModule>IAssembly_UnmanagedMemoryStreamForModuleMethods for __T{}
+
+#[cfg(feature="system-reflection-assembly")]impl Assembly_UnmanagedMemoryStreamForModule{pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-reflection-assembly")]impl Assembly_UnmanagedMemoryStreamForModule{#[doc="Direct (non-virtual) call to `Assembly_UnmanagedMemoryStreamForModule`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),disposing, ::core::option::Option::None)}
+}
+
+#[cfg(feature="system-reflection-assembly")]pub trait IAssembly_ResolveEventHolderMethods:IAssembly_ResolveEventHolder{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Assembly_ResolveEventHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34cdc40usize)as*mut u8,();
+(Assembly_ResolveEventHolder)__receiver)}
+}
+}
+
+#[cfg(feature="system-reflection-assembly")]impl<__T:IAssembly_ResolveEventHolder>IAssembly_ResolveEventHolderMethods for __T{}
+
+#[cfg(feature="system-reflection-assembly")]impl Assembly_ResolveEventHolder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="system-reflection-assembly")]impl Assembly_ResolveEventHolder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Assembly_ResolveEventHolder), ::core::stringify!(new),));
+ <Self as IAssembly_ResolveEventHolderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="system-reflection-assembly")]impl Assembly{#[doc="`GetAotId()` overload"]pub fn get_aot_id()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3400eb0usize)as*mut u8, ::unity2::Il2CppString;
@@ -269,16 +108,52 @@ inner(this,get_resource_modules,__mi)}
 (Assembly)__receiver)}
 }
 #[doc="`get_CodeBase()` overload"]fn get_code_base_2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_code_base_2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"get_CodeBase",));
+let __inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_FullName()` overload"]fn get_full_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_full_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"get_FullName",));
+let __inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::is_defined(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"IsDefined",));
+let __inner:extern "C" fn(Assembly, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit),__mi)}
+}
 }
 #[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
+let __inner:extern "C" fn(Assembly, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit),__mi)}
+}
 }
 #[doc="`GetManifestResourceInternal(::unity2::Il2CppString, *muti32, *mutcrate::system::reflection::module::Module)` overload"]fn get_manifest_resource_internal(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(::unity2::IntPtr,i32,crate::system::reflection::module::Module){unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
@@ -289,64 +164,208 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x34010c0usize)as*mut
 (__ret,__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`GetManifestResourceStream(::unity2::Il2CppString)` overload"]fn get_manifest_resource_stream(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::io::stream::Stream{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_manifest_resource_stream(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetManifestResourceStream",));
+let __inner:extern "C" fn(Assembly, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(name),__mi)}
+}
 }
 #[doc="`GetTypes(bool)` overload"]fn get_types(self,exported_only:impl::core::convert::Into<bool>)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_types(__receiver, ::core::convert::Into::into(exported_only), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetTypes",));
+let __inner:extern "C" fn(Assembly,bool, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(exported_only),__mi)}
+}
 }
 #[doc="`GetTypes()` overload"]fn get_types_2(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_types_2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetTypes",));
+let __inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetType(::unity2::Il2CppString, bool)` overload"]fn get_type(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,throw_on_error:impl::core::convert::Into<bool>)-> ::unity2::SystemType{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_type(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(throw_on_error), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetType",));
+let __inner:extern "C" fn(Assembly, ::unity2::Il2CppString,bool, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(throw_on_error),__mi)}
+}
 }
 #[doc="`GetType(::unity2::Il2CppString)` overload"]fn get_type_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::SystemType{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_type_2(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetType",));
+let __inner:extern "C" fn(Assembly, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(name),__mi)}
+}
 }
 #[doc="`InternalGetType(crate::system::reflection::module::Module, ::unity2::Il2CppString, bool, bool)` overload"]fn internal_get_type(self,module:impl::core::convert::Into<crate::system::reflection::module::Module> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,throw_on_error:impl::core::convert::Into<bool> ,ignore_case:impl::core::convert::Into<bool>)-> ::unity2::SystemType{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3401480usize)as*mut u8, ::unity2::SystemType;
 (Assembly)__receiver,(crate::system::reflection::module::Module)::core::convert::Into::into(module),(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(throw_on_error),(bool)::core::convert::Into::into(ignore_case))}
 }
 #[doc="`GetName(bool)` overload"]fn get_name(self,copied_name:impl::core::convert::Into<bool>)->crate::system::reflection::assemblyname::AssemblyName{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_name(__receiver, ::core::convert::Into::into(copied_name), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(Assembly,bool, ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(copied_name),__mi)}
+}
 }
 #[doc="`GetName()` overload"]fn get_name_2(self,)->crate::system::reflection::assemblyname::AssemblyName{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_name_2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetModulesInternal()` overload"]fn get_modules_internal(self,)-> ::unity2::Array<crate::system::reflection::module::Module>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_modules_internal(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetModulesInternal",));
+let __inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::module::Module> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetManifestResourceNames()` overload"]fn get_manifest_resource_names(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_manifest_resource_names(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetManifestResourceNames",));
+let __inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::Il2CppString> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetManifestResourceInfoInternal(::unity2::Il2CppString, crate::system::reflection::manifestresourceinfo::ManifestResourceInfo)` overload"]fn get_manifest_resource_info_internal(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,info:impl::core::convert::Into<crate::system::reflection::manifestresourceinfo::ManifestResourceInfo>)->bool{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3401770usize)as*mut u8,bool;
 (Assembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::reflection::manifestresourceinfo::ManifestResourceInfo)::core::convert::Into::into(info))}
 }
 #[doc="`GetManifestResourceInfo(::unity2::Il2CppString)` overload"]fn get_manifest_resource_info(self,resource_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::reflection::manifestresourceinfo::ManifestResourceInfo{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_manifest_resource_info(__receiver, ::core::convert::Into::into(resource_name), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetManifestResourceInfo",));
+let __inner:extern "C" fn(Assembly, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::reflection::manifestresourceinfo::ManifestResourceInfo= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(resource_name),__mi)}
+}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let __inner:extern "C" fn(Assembly, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::equals(__receiver, ::core::convert::Into::into(o), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"Equals",));
+let __inner:extern "C" fn(Assembly,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(o),__mi)}
+}
 }
 #[doc="`get_IsFullyTrusted()` overload"]fn get_is_fully_trusted(self,)->bool{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x34019f0usize)as*mut u8,bool;
 (Assembly)__receiver)}
 }
 #[doc="`GetType(::unity2::Il2CppString, bool, bool)` overload"]fn get_type_3(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,throw_on_error:impl::core::convert::Into<bool> ,ignore_case:impl::core::convert::Into<bool>)-> ::unity2::SystemType{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_type_3(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(throw_on_error), ::core::convert::Into::into(ignore_case), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetType",));
+let __inner:extern "C" fn(Assembly, ::unity2::Il2CppString,bool,bool, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(throw_on_error), ::core::convert::Into::into(ignore_case),__mi)}
+}
 }
 #[doc="`GetModule(::unity2::Il2CppString)` overload"]fn get_module(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::reflection::module::Module{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_module(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetModule",));
+let __inner:extern "C" fn(Assembly, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(name),__mi)}
+}
 }
 #[doc="`GetModules(bool)` overload"]fn get_modules(self,get_resource_modules:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::reflection::module::Module>{unsafe{let __receiver= <Assembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_unity2_raw::get_modules(__receiver, ::core::convert::Into::into(get_resource_modules), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <Assembly as::unity2::ClassIdentity> ::NAME,"GetModules",));
+let __inner:extern "C" fn(Assembly,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::module::Module> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(get_resource_modules),__mi)}
+}
 }
 }
 
@@ -389,6 +408,68 @@ pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
 }
 
+#[cfg(feature="system-reflection-assembly")]impl Assembly{#[doc="Direct (non-virtual) call to `Assembly`'s own `get_CodeBase`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_code_base_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_code_base_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `get_FullName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_full_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_full_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `IsDefined`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_defined(this:impl::core::convert::Into< ::unity2::IlInstance> ,attribute_type: ::unity2::SystemType,inherit:bool,)->bool{let __mi=Self::is_defined_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),attribute_type,inherit, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetCustomAttributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_custom_attributes(this:impl::core::convert::Into< ::unity2::IlInstance> ,attribute_type: ::unity2::SystemType,inherit:bool,)-> ::unity2::Array<crate::system::object::Object>{let __mi=Self::get_custom_attributes_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),attribute_type,inherit, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetManifestResourceStream`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_manifest_resource_stream(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,)->crate::system::io::stream::Stream{let __mi=Self::get_manifest_resource_stream_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetTypes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_types(this:impl::core::convert::Into< ::unity2::IlInstance> ,exported_only:bool,)-> ::unity2::Array< ::unity2::SystemType>{let __mi=Self::get_types_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),exported_only, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetTypes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_types_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array< ::unity2::SystemType>{let __mi=Self::get_types_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,throw_on_error:bool,)-> ::unity2::SystemType{let __mi=Self::get_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,bool, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name,throw_on_error, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_type_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,)-> ::unity2::SystemType{let __mi=Self::get_type_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,copied_name:bool,)->crate::system::reflection::assemblyname::AssemblyName{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),copied_name, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::assemblyname::AssemblyName{let __mi=Self::get_name_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::assemblyname::AssemblyName= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetModulesInternal`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_modules_internal(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::system::reflection::module::Module>{let __mi=Self::get_modules_internal_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::module::Module> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetManifestResourceNames`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_manifest_resource_names(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array< ::unity2::Il2CppString>{let __mi=Self::get_manifest_resource_names_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::Il2CppString> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetManifestResourceInfo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_manifest_resource_info(this:impl::core::convert::Into< ::unity2::IlInstance> ,resource_name: ::unity2::Il2CppString,)->crate::system::reflection::manifestresourceinfo::ManifestResourceInfo{let __mi=Self::get_manifest_resource_info_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::reflection::manifestresourceinfo::ManifestResourceInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),resource_name, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,o:crate::system::object::Object,)->bool{let __mi=Self::equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),o, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_type_3(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,throw_on_error:bool,ignore_case:bool,)-> ::unity2::SystemType{let __mi=Self::get_type_3_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,bool,bool, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name,throw_on_error,ignore_case, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetModule`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,name: ::unity2::Il2CppString,)->crate::system::reflection::module::Module{let __mi=Self::get_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),name, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Assembly`'s own `GetModules`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_modules(this:impl::core::convert::Into< ::unity2::IlInstance> ,get_resource_modules:bool,)-> ::unity2::Array<crate::system::reflection::module::Module>{let __mi=Self::get_modules_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::module::Module> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),get_resource_modules, ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-reflection-assembly")]impl Assembly{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(Assembly), ::core::stringify!(new),));
@@ -396,59 +477,18 @@ pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 this}
 }
 
-#[cfg(feature="system-reflection-assembly")]pub trait IAssembly_ResolveEventHolderMethods:IAssembly_ResolveEventHolder{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Assembly_ResolveEventHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cdc40usize)as*mut u8,();
-(Assembly_ResolveEventHolder)__receiver)}
-}
-}
-
-#[cfg(feature="system-reflection-assembly")]impl<__T:IAssembly_ResolveEventHolder>IAssembly_ResolveEventHolderMethods for __T{}
-
-#[cfg(feature="system-reflection-assembly")]impl Assembly_ResolveEventHolder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="system-reflection-assembly")]impl Assembly_ResolveEventHolder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Assembly_ResolveEventHolder), ::core::stringify!(new),));
- <Self as IAssembly_ResolveEventHolderMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="system-reflection-assembly")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Assembly_UnmanagedMemoryStreamForModule_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:Assembly_UnmanagedMemoryStreamForModule,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <Assembly_UnmanagedMemoryStreamForModule as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(Assembly_UnmanagedMemoryStreamForModule,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,disposing,__mi)}
-}
-
-#[cfg(feature="system-reflection-assembly")]pub trait IAssembly_UnmanagedMemoryStreamForModuleMethods:IAssembly_UnmanagedMemoryStreamForModule{#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Assembly_UnmanagedMemoryStreamForModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Assembly_UnmanagedMemoryStreamForModule_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="system-reflection-assembly")]impl<__T:IAssembly_UnmanagedMemoryStreamForModule>IAssembly_UnmanagedMemoryStreamForModuleMethods for __T{}
-
-#[cfg(feature="system-reflection-assembly")]impl Assembly_UnmanagedMemoryStreamForModule{pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
 #[cfg(feature = "system-reflection-assembly")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Assembly;
-    pub use super::IAssembly;
-    pub use super::IAssemblyMethods;
-    pub use super::Assembly_ResolveEventHolder;
-    pub use super::IAssembly_ResolveEventHolder;
-    pub use super::IAssembly_ResolveEventHolderMethods;
     pub use super::Assembly_UnmanagedMemoryStreamForModule;
     pub use super::IAssembly_UnmanagedMemoryStreamForModule;
     pub use super::IAssembly_UnmanagedMemoryStreamForModuleMethods;
+    pub use super::Assembly_ResolveEventHolder;
+    pub use super::IAssembly_ResolveEventHolder;
+    pub use super::IAssembly_ResolveEventHolderMethods;
+    pub use super::Assembly;
+    pub use super::IAssembly;
+    pub use super::IAssemblyMethods;
     pub use crate::system::io::stream::IStream;
     pub use crate::system::io::unmanagedmemorystream::IUnmanagedMemoryStream;
     pub use crate::system::object::IObject;

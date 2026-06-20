@@ -20,51 +20,45 @@ use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,Volum
 #[cfg(feature = "unity_engine-rendering-floatrangeparameter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-floatrangeparameter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FloatRangeParameter_unity2_raw{use super:: * ;
-pub unsafe fn get_value(this:FloatRangeParameter,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-rendering-floatrangeparameter")]pub trait IFloatRangeParameterMethods:IFloatRangeParameter{#[doc="`get_value()` overload"]fn get_value(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <FloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",12usize,__vt.len(), <FloatRangeParameter as::unity2::ClassIdentity> ::NAME,"get_value",));
-let inner:extern "C" fn(FloatRangeParameter, ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(FloatRangeParameter, ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_value(this:FloatRangeParameter,value:crate::unity_engine::vector2::Vector2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_value(crate::unity_engine::vector2::Vector2)` overload"]fn set_value(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <FloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",13usize,__vt.len(), <FloatRangeParameter as::unity2::ClassIdentity> ::NAME,"set_value",));
-let inner:extern "C" fn(FloatRangeParameter,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(FloatRangeParameter,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn interp(this:FloatRangeParameter,from:crate::unity_engine::vector2::Vector2,to:crate::unity_engine::vector2::Vector2,t:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <FloatRangeParameter as::unity2::ClassIdentity> ::NAME,"Interp",));
-let inner:extern "C" fn(FloatRangeParameter,crate::unity_engine::vector2::Vector2,crate::unity_engine::vector2::Vector2,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,from,to,t,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="unity_engine-rendering-floatrangeparameter")]pub trait IFloatRangeParameterMethods:IFloatRangeParameter{#[doc="`get_value()` overload"]fn get_value(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <FloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FloatRangeParameter_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_value(crate::unity_engine::vector2::Vector2)` overload"]fn set_value(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <FloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FloatRangeParameter_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::unity_engine::vector2::Vector2, f32, f32, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30a9d30usize)as*mut u8,();
 (FloatRangeParameter)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value),(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max),(bool)::core::convert::Into::into(override_state))}
 }
 #[doc="`Interp(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]fn interp(self,from:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,to:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,t:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FloatRangeParameter_unity2_raw::interp(__receiver, ::core::convert::Into::into(from), ::core::convert::Into::into(to), ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <FloatRangeParameter as::unity2::ClassIdentity> ::NAME,"Interp",));
+let __inner:extern "C" fn(FloatRangeParameter,crate::unity_engine::vector2::Vector2,crate::unity_engine::vector2::Vector2,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(from), ::core::convert::Into::into(to), ::core::convert::Into::into(t),__mi)}
+}
 }
 }
 
@@ -74,6 +68,17 @@ __FloatRangeParameter_unity2_raw::interp(__receiver, ::core::convert::Into::into
 pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn interp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="unity_engine-rendering-floatrangeparameter")]impl FloatRangeParameter{#[doc="Direct (non-virtual) call to `FloatRangeParameter`'s own `get_value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::vector2::Vector2{let __mi=Self::get_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FloatRangeParameter`'s own `set_value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::unity_engine::vector2::Vector2,)->(){let __mi=Self::set_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FloatRangeParameter`'s own `Interp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn interp(this:impl::core::convert::Into< ::unity2::IlInstance> ,from:crate::unity_engine::vector2::Vector2,to:crate::unity_engine::vector2::Vector2,t:f32,)->(){let __mi=Self::interp_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::vector2::Vector2,crate::unity_engine::vector2::Vector2,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),from,to,t, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-floatrangeparameter")]impl FloatRangeParameter{#[doc="`.ctor(crate::unity_engine::vector2::Vector2, f32, f32, bool)` — overload selector"]pub fn new(value:crate::unity_engine::vector2::Vector2,min:f32,max:f32,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

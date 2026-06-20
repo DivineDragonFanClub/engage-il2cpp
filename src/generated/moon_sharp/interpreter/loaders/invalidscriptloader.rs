@@ -27,36 +27,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn load_file(this:InvalidScriptLoader,file: ::unity2::Il2CppString,global_context:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,"LoadFile",));
-let inner:extern "C" fn(InvalidScriptLoader, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,file,global_context,__mi)}
-pub unsafe fn resolve_file_name(this:InvalidScriptLoader,filename: ::unity2::Il2CppString,global_context:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,"ResolveFileName",));
-let inner:extern "C" fn(InvalidScriptLoader, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,filename,global_context,__mi)}
-pub unsafe fn resolve_module_name(this:InvalidScriptLoader,modname: ::unity2::Il2CppString,global_context:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,"ResolveModuleName",));
-let inner:extern "C" fn(InvalidScriptLoader, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,modname,global_context,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-loaders-invalidscriptloader")]pub trait IInvalidScriptLoaderMethods:IInvalidScriptLoader{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,frameworkname:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvalidScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -64,13 +34,40 @@ inner(this,modname,global_context,__mi)}
 (InvalidScriptLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(frameworkname))}
 }
 #[doc="`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]fn load_file(self,file:impl::core::convert::Into< ::unity2::Il2CppString> ,global_context:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->crate::system::object::Object{unsafe{let __receiver= <InvalidScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvalidScriptLoader_unity2_raw::load_file(__receiver, ::core::convert::Into::into(file), ::core::convert::Into::into(global_context), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,"LoadFile",));
+let __inner:extern "C" fn(InvalidScriptLoader, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(file), ::core::convert::Into::into(global_context),__mi)}
+}
 }
 #[doc="`ResolveFileName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]fn resolve_file_name(self,filename:impl::core::convert::Into< ::unity2::Il2CppString> ,global_context:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)-> ::unity2::Il2CppString{unsafe{let __receiver= <InvalidScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvalidScriptLoader_unity2_raw::resolve_file_name(__receiver, ::core::convert::Into::into(filename), ::core::convert::Into::into(global_context), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,"ResolveFileName",));
+let __inner:extern "C" fn(InvalidScriptLoader, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(filename), ::core::convert::Into::into(global_context),__mi)}
+}
 }
 #[doc="`ResolveModuleName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]fn resolve_module_name(self,modname:impl::core::convert::Into< ::unity2::Il2CppString> ,global_context:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)-> ::unity2::Il2CppString{unsafe{let __receiver= <InvalidScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvalidScriptLoader_unity2_raw::resolve_module_name(__receiver, ::core::convert::Into::into(modname), ::core::convert::Into::into(global_context), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,"ResolveModuleName",));
+let __inner:extern "C" fn(InvalidScriptLoader, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(modname), ::core::convert::Into::into(global_context),__mi)}
+}
 }
 }
 
@@ -80,6 +77,17 @@ __InvalidScriptLoader_unity2_raw::resolve_module_name(__receiver, ::core::conver
 pub fn load_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn resolve_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn resolve_module_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-loaders-invalidscriptloader")]impl InvalidScriptLoader{#[doc="Direct (non-virtual) call to `InvalidScriptLoader`'s own `LoadFile`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn load_file(this:impl::core::convert::Into< ::unity2::IlInstance> ,file: ::unity2::Il2CppString,global_context:crate::moon_sharp::interpreter::table::Table,)->crate::system::object::Object{let __mi=Self::load_file_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),file,global_context, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InvalidScriptLoader`'s own `ResolveFileName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn resolve_file_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,filename: ::unity2::Il2CppString,global_context:crate::moon_sharp::interpreter::table::Table,)-> ::unity2::Il2CppString{let __mi=Self::resolve_file_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),filename,global_context, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InvalidScriptLoader`'s own `ResolveModuleName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn resolve_module_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,modname: ::unity2::Il2CppString,global_context:crate::moon_sharp::interpreter::table::Table,)-> ::unity2::Il2CppString{let __mi=Self::resolve_module_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),modname,global_context, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-loaders-invalidscriptloader")]impl InvalidScriptLoader{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(frameworkname: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

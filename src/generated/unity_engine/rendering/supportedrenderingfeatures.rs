@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="SupportedRenderingFeatures")]#[parent(crate::system::object::Object)]pub struct SupportedRenderingFeatures{#[static_field]#[rename(name="s_Active")]pub s_active:crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_ReflectionProbeModes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SupportedRenderingFeatures_ReflectionProbeModes{pub value:i32,}
 impl::unity2::ClassIdentity for SupportedRenderingFeatures_ReflectionProbeModes{const NAMESPACE: &'static str="UnityEngine.Rendering";
 const NAME: &'static str="SupportedRenderingFeatures.ReflectionProbeModes";
@@ -30,6 +27,9 @@ impl SupportedRenderingFeatures_ReflectionProbeModes{pub fn none()->Self{Self{va
 pub fn rotation()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="SupportedRenderingFeatures")]#[parent(crate::system::object::Object)]pub struct SupportedRenderingFeatures{#[static_field]#[rename(name="s_Active")]pub s_active:crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_LightmapMixedBakeModes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SupportedRenderingFeatures_LightmapMixedBakeModes{pub value:i32,}
@@ -175,10 +175,10 @@ this}
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SupportedRenderingFeatures_ReflectionProbeModes;
     pub use super::SupportedRenderingFeatures;
     pub use super::ISupportedRenderingFeatures;
     pub use super::ISupportedRenderingFeaturesMethods;
-    pub use super::SupportedRenderingFeatures_ReflectionProbeModes;
     pub use super::SupportedRenderingFeatures_LightmapMixedBakeModes;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

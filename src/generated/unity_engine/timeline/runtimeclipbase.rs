@@ -18,60 +18,53 @@ use crate::unity_engine::timeline::runtimeelement::{IRuntimeElement,RuntimeEleme
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-runtimeclipbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeClipBase_unity2_raw{use super:: * ;
-pub unsafe fn get_start(this:RuntimeClipBase,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-timeline-runtimeclipbase")]pub trait IRuntimeClipBaseMethods:IRuntimeClipBase{#[doc="`get_start()` overload"]fn get_start(self,)->f64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",11usize,__vt.len(), <RuntimeClipBase as::unity2::ClassIdentity> ::NAME,"get_start",));
-let inner:extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_duration(this:RuntimeClipBase,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",12usize,__vt.len(), <RuntimeClipBase as::unity2::ClassIdentity> ::NAME,"get_duration",));
-let inner:extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_interval_start(this:RuntimeClipBase,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_intervalStart()` overload"]fn get_interval_start(self,)->i64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <RuntimeClipBase as::unity2::ClassIdentity> ::NAME,"get_intervalStart",));
-let inner:extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_interval_end(this:RuntimeClipBase,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_intervalEnd()` overload"]fn get_interval_end(self,)->i64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <RuntimeClipBase as::unity2::ClassIdentity> ::NAME,"get_intervalEnd",));
-let inner:extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-timeline-runtimeclipbase")]pub trait IRuntimeClipBaseMethods:IRuntimeClipBase{#[doc="`get_start()` overload"]fn get_start(self,)->f64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeClipBase_unity2_raw::get_start(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeClipBase_unity2_raw::get_duration(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_intervalStart()` overload"]fn get_interval_start(self,)->i64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeClipBase_unity2_raw::get_interval_start(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_intervalEnd()` overload"]fn get_interval_end(self,)->i64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeClipBase_unity2_raw::get_interval_end(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9600usize)as*mut u8,();
@@ -86,6 +79,20 @@ pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn get_interval_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_interval_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-timeline-runtimeclipbase")]impl RuntimeClipBase{#[doc="Direct (non-virtual) call to `RuntimeClipBase`'s own `get_start`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f64{let __mi=Self::get_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeClipBase`'s own `get_duration`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_duration(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f64{let __mi=Self::get_duration_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeClipBase`'s own `get_intervalStart`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_interval_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i64{let __mi=Self::get_interval_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeClipBase`'s own `get_intervalEnd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_interval_end(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i64{let __mi=Self::get_interval_end_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-timeline-runtimeclipbase")]impl RuntimeClipBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

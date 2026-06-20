@@ -14,47 +14,41 @@ mod __types {
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-interop-iproxyfactory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IProxyFactory_unity2_raw{use super:: * ;
-pub unsafe fn create_proxy_object(this:IProxyFactory,o:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="moon_sharp-interpreter-interop-iproxyfactory")]pub trait IIProxyFactoryMethods:IIProxyFactory{#[doc="`CreateProxyObject(crate::system::object::Object)` overload"]fn create_proxy_object(self,o:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <IProxyFactory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IProxyFactory as::unity2::ClassIdentity> ::NAME,"CreateProxyObject",));
-let inner:extern "C" fn(IProxyFactory,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IProxyFactory,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,o,__mi)}
-pub unsafe fn get_target_type(this:IProxyFactory,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(o),__mi)}
+}
+}
+#[doc="`get_TargetType()` overload"]fn get_target_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <IProxyFactory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IProxyFactory as::unity2::ClassIdentity> ::NAME,"get_TargetType",));
-let inner:extern "C" fn(IProxyFactory, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IProxyFactory, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_proxy_type(this:IProxyFactory,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_ProxyType()` overload"]fn get_proxy_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <IProxyFactory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <IProxyFactory as::unity2::ClassIdentity> ::NAME,"get_ProxyType",));
-let inner:extern "C" fn(IProxyFactory, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IProxyFactory, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="moon_sharp-interpreter-interop-iproxyfactory")]pub trait IIProxyFactoryMethods:IIProxyFactory{#[doc="`CreateProxyObject(crate::system::object::Object)` overload"]fn create_proxy_object(self,o:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <IProxyFactory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IProxyFactory_unity2_raw::create_proxy_object(__receiver, ::core::convert::Into::into(o), ::core::option::Option::None)}
-}
-#[doc="`get_TargetType()` overload"]fn get_target_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <IProxyFactory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IProxyFactory_unity2_raw::get_target_type(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_ProxyType()` overload"]fn get_proxy_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <IProxyFactory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IProxyFactory_unity2_raw::get_proxy_type(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -63,6 +57,17 @@ __IProxyFactory_unity2_raw::get_proxy_type(__receiver, ::core::option::Option::N
 #[cfg(feature="moon_sharp-interpreter-interop-iproxyfactory")]impl IProxyFactory{pub fn create_proxy_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_target_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_proxy_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-iproxyfactory")]impl IProxyFactory{#[doc="Direct (non-virtual) call to `IProxyFactory`'s own `CreateProxyObject`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_proxy_object(this:impl::core::convert::Into< ::unity2::IlInstance> ,o:crate::system::object::Object,)->crate::system::object::Object{let __mi=Self::create_proxy_object_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),o, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IProxyFactory`'s own `get_TargetType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_target_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_target_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IProxyFactory`'s own `get_ProxyType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_proxy_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_proxy_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory")]

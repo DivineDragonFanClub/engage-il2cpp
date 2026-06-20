@@ -30,25 +30,21 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-event_systems-physics2draycaster-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-event_systems-physics2draycaster")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Physics2DRaycaster_unity2_raw{use super:: * ;
-pub unsafe fn raycast(this:Physics2DRaycaster,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,result_append_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <Physics2DRaycaster as::unity2::ClassIdentity> ::NAME,"Raycast",));
-let inner:extern "C" fn(Physics2DRaycaster,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,result_append_list,__mi)}
-}
-
 #[cfg(feature="unity_engine-event_systems-physics2draycaster")]pub trait IPhysics2DRaycasterMethods:IPhysics2DRaycaster{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Physics2DRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371df30usize)as*mut u8,();
 (Physics2DRaycaster)__receiver)}
 }
 #[doc="`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]fn raycast(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,result_append_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> >)->(){unsafe{let __receiver= <Physics2DRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Physics2DRaycaster_unity2_raw::raycast(__receiver, ::core::convert::Into::into(event_data), ::core::convert::Into::into(result_append_list), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <Physics2DRaycaster as::unity2::ClassIdentity> ::NAME,"Raycast",));
+let __inner:extern "C" fn(Physics2DRaycaster,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data), ::core::convert::Into::into(result_append_list),__mi)}
+}
 }
 }
 
@@ -56,6 +52,11 @@ __Physics2DRaycaster_unity2_raw::raycast(__receiver, ::core::convert::Into::into
 
 #[cfg(feature="unity_engine-event_systems-physics2draycaster")]impl Physics2DRaycaster{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-event_systems-physics2draycaster")]impl Physics2DRaycaster{#[doc="Direct (non-virtual) call to `Physics2DRaycaster`'s own `Raycast`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn raycast(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,result_append_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> ,)->(){let __mi=Self::raycast_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data,result_append_list, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-event_systems-physics2draycaster")]impl Physics2DRaycaster{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc.md"))]#[::unity2::class(namespace="App",name="Proc")]#[parent(crate::system::object::Object)]pub struct Proc{#[static_field]#[rename(name="s_Roots")]pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc_RootType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Proc_RootType{pub value:i32,}
 impl::unity2::ClassIdentity for Proc_RootType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Proc.RootType";
@@ -39,24 +42,10 @@ pub fn num()->Self{Self{value:3}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc_ProcCallback_1.md"))]#[::unity2::class(namespace="App",name="Proc.ProcCallback`1")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct Proc_ProcCallback_1<T0: ::unity2::ClassIdentity>{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc.md"))]#[::unity2::class(namespace="App",name="Proc")]#[parent(crate::system::object::Object)]pub struct Proc{#[static_field]#[rename(name="s_Roots")]pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst> ,}
-
 }
 
 #[cfg(feature = "app-proc-types")]
 pub use __types::*;
-
-#[cfg(feature="app-proc")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>Proc_ProcCallback_1<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
- #[doc="`Invoke(T0)` overload"]#[method(name="Invoke",args=1)]pub fn invoke(self,inst:T0)->();
-}
-
-#[cfg(feature="app-proc")]impl<T0: ::unity2::ClassIdentity>Proc_ProcCallback_1<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Proc_ProcCallback_1), ::core::stringify!(new),));
- <Self as IProc_ProcCallback_1Methods<T0> > ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-proc")]impl Proc{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2819980usize)as*mut u8,();
 )}
@@ -418,16 +407,27 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-proc")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>Proc_ProcCallback_1<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(T0)` overload"]#[method(name="Invoke",args=1)]pub fn invoke(self,inst:T0)->();
+}
+
+#[cfg(feature="app-proc")]impl<T0: ::unity2::ClassIdentity>Proc_ProcCallback_1<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Proc_ProcCallback_1), ::core::stringify!(new),));
+ <Self as IProc_ProcCallback_1Methods<T0> > ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-proc")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Proc;
+    pub use super::IProc;
+    pub use super::IProcMethods;
     pub use super::Proc_RootType;
     pub use super::Proc_ProcCallback_1;
     pub use super::IProc_ProcCallback_1;
     pub use super::IProc_ProcCallback_1Methods;
-    pub use super::Proc;
-    pub use super::IProc;
-    pub use super::IProcMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

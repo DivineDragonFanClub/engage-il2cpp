@@ -15,39 +15,21 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatormanager/CalculatorManager_StackPool.md"))]#[::unity2::class(namespace="App",name="CalculatorManager.StackPool")]#[parent(crate::system::collections::generic::stack_1::Stack_1<crate::app::calculatormanager::CalculatorManager_CommandStack>)]pub struct CalculatorManager_StackPool{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatormanager/CalculatorManager_CommandList.md"))]#[::unity2::class(namespace="App",name="CalculatorManager.CommandList")]#[parent(crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::calculatorcommand::CalculatorCommand>)]pub struct CalculatorManager_CommandList{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatormanager/CalculatorManager_CommandStack.md"))]#[::unity2::class(namespace="App",name="CalculatorManager.CommandStack")]#[parent(crate::system::object::Object)]pub struct CalculatorManager_CommandStack{#[offset(16)]#[rename(name="ValueStack")]pub value_stack:crate::system::collections::generic::stack_1::Stack_1<f32> , #[offset(24)]#[rename(name="IndexStack")]pub index_stack:crate::system::collections::generic::stack_1::Stack_1<i32> , #[offset(32)]#[rename(name="StackArgs")]pub stack_args:crate::system::collections::generic::list_1::List_1<f32> , #[offset(40)]#[rename(name="LocalArgs")]pub local_args:crate::system::collections::generic::list_1::List_1<f32> , #[offset(48)]#[rename(name="TempArgs")]pub temp_args:crate::system::collections::generic::list_1::List_1<f32> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatormanager/CalculatorManager.md"))]#[::unity2::class(namespace="App",name="CalculatorManager")]#[parent(crate::app::calculatorutil::CalculatorUtil)]pub struct CalculatorManager{#[static_field]#[rename(name="s_lockObject")]pub s_lock_object: ::unity2::IlInstance, #[offset(16)]#[rename(name="m_CommandList")]pub m_command_list:crate::app::calculatormanager::CalculatorManager_CommandList, #[static_field]#[rename(name="STACK_MAX")]pub stack_max:i32, #[static_field]#[rename(name="ARGS_MAX")]pub args_max:i32, #[offset(24)]#[rename(name="m_Pool")]pub m_pool:crate::app::calculatormanager::CalculatorManager_StackPool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatormanager/CalculatorManager_CommandStack.md"))]#[::unity2::class(namespace="App",name="CalculatorManager.CommandStack")]#[parent(crate::system::object::Object)]pub struct CalculatorManager_CommandStack{#[offset(16)]#[rename(name="ValueStack")]pub value_stack:crate::system::collections::generic::stack_1::Stack_1<f32> , #[offset(24)]#[rename(name="IndexStack")]pub index_stack:crate::system::collections::generic::stack_1::Stack_1<i32> , #[offset(32)]#[rename(name="StackArgs")]pub stack_args:crate::system::collections::generic::list_1::List_1<f32> , #[offset(40)]#[rename(name="LocalArgs")]pub local_args:crate::system::collections::generic::list_1::List_1<f32> , #[offset(48)]#[rename(name="TempArgs")]pub temp_args:crate::system::collections::generic::list_1::List_1<f32> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatormanager/CalculatorManager_StackPool.md"))]#[::unity2::class(namespace="App",name="CalculatorManager.StackPool")]#[parent(crate::system::collections::generic::stack_1::Stack_1<crate::app::calculatormanager::CalculatorManager_CommandStack>)]pub struct CalculatorManager_StackPool{}
 
 }
 
 #[cfg(feature = "app-calculatormanager-types")]
 pub use __types::*;
-
-#[cfg(feature="app-calculatormanager")]pub trait ICalculatorManager_StackPoolMethods:ICalculatorManager_StackPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CalculatorManager_StackPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd100usize)as*mut u8,();
-(CalculatorManager_StackPool)__receiver)}
-}
-}
-
-#[cfg(feature="app-calculatormanager")]impl<__T:ICalculatorManager_StackPool>ICalculatorManager_StackPoolMethods for __T{}
-
-#[cfg(feature="app-calculatormanager")]impl CalculatorManager_StackPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-calculatormanager")]impl CalculatorManager_StackPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(CalculatorManager_StackPool), ::core::stringify!(new),));
- <Self as ICalculatorManager_StackPoolMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-calculatormanager")]pub trait ICalculatorManager_CommandListMethods:ICalculatorManager_CommandList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CalculatorManager_CommandList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19bce50usize)as*mut u8,();
@@ -64,6 +46,29 @@ this}
 ::{}
  failed to instantiate", ::core::stringify!(CalculatorManager_CommandList), ::core::stringify!(new),));
  <Self as ICalculatorManager_CommandListMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-calculatormanager")]pub trait ICalculatorManager_CommandStackMethods:ICalculatorManager_CommandStack{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <CalculatorManager_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bceb0usize)as*mut u8,();
+(CalculatorManager_CommandStack)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CalculatorManager_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bcf70usize)as*mut u8,();
+(CalculatorManager_CommandStack)__receiver)}
+}
+}
+
+#[cfg(feature="app-calculatormanager")]impl<__T:ICalculatorManager_CommandStack>ICalculatorManager_CommandStackMethods for __T{}
+
+#[cfg(feature="app-calculatormanager")]impl CalculatorManager_CommandStack{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-calculatormanager")]impl CalculatorManager_CommandStack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CalculatorManager_CommandStack), ::core::stringify!(new),));
+ <Self as ICalculatorManager_CommandStackMethods> ::ctor(this,);
 this}
 }
 
@@ -242,44 +247,39 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-calculatormanager")]pub trait ICalculatorManager_CommandStackMethods:ICalculatorManager_CommandStack{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <CalculatorManager_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bceb0usize)as*mut u8,();
-(CalculatorManager_CommandStack)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CalculatorManager_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bcf70usize)as*mut u8,();
-(CalculatorManager_CommandStack)__receiver)}
+#[cfg(feature="app-calculatormanager")]pub trait ICalculatorManager_StackPoolMethods:ICalculatorManager_StackPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CalculatorManager_StackPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd100usize)as*mut u8,();
+(CalculatorManager_StackPool)__receiver)}
 }
 }
 
-#[cfg(feature="app-calculatormanager")]impl<__T:ICalculatorManager_CommandStack>ICalculatorManager_CommandStackMethods for __T{}
+#[cfg(feature="app-calculatormanager")]impl<__T:ICalculatorManager_StackPool>ICalculatorManager_StackPoolMethods for __T{}
 
-#[cfg(feature="app-calculatormanager")]impl CalculatorManager_CommandStack{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-calculatormanager")]impl CalculatorManager_StackPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="app-calculatormanager")]impl CalculatorManager_CommandStack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-calculatormanager")]impl CalculatorManager_StackPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(CalculatorManager_CommandStack), ::core::stringify!(new),));
- <Self as ICalculatorManager_CommandStackMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(CalculatorManager_StackPool), ::core::stringify!(new),));
+ <Self as ICalculatorManager_StackPoolMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "app-calculatormanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CalculatorManager_StackPool;
-    pub use super::ICalculatorManager_StackPool;
-    pub use super::ICalculatorManager_StackPoolMethods;
     pub use super::CalculatorManager_CommandList;
     pub use super::ICalculatorManager_CommandList;
     pub use super::ICalculatorManager_CommandListMethods;
-    pub use super::CalculatorManager;
-    pub use super::ICalculatorManager;
-    pub use super::ICalculatorManagerMethods;
     pub use super::CalculatorManager_CommandStack;
     pub use super::ICalculatorManager_CommandStack;
     pub use super::ICalculatorManager_CommandStackMethods;
+    pub use super::CalculatorManager;
+    pub use super::ICalculatorManager;
+    pub use super::ICalculatorManagerMethods;
+    pub use super::CalculatorManager_StackPool;
+    pub use super::ICalculatorManager_StackPool;
+    pub use super::ICalculatorManager_StackPoolMethods;
     pub use crate::app::calculatorutil::ICalculatorUtil;
     pub use crate::system::collections::generic::dictionary_2::IDictionary_2;
     pub use crate::system::collections::generic::stack_1::IStack_1;

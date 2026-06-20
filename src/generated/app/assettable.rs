@@ -21,33 +21,32 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_ConditionIndexes.md"))]#[::unity2::class(namespace="App",name="AssetTable.ConditionIndexes")]#[parent(crate::system::object::Object)]pub struct AssetTable_ConditionIndexes{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<i32> > ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AssetTable_Modes{pub value:i32,}
+impl::unity2::ClassIdentity for AssetTable_Modes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AssetTable.Modes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AssetTable_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AssetTable_Modes{pub fn common()->Self{Self{value:0}
+}
+pub fn onmap()->Self{Self{value:1}
+}
+pub fn combat()->Self{Self{value:2}
+}
+pub fn gmap()->Self{Self{value:3}
+}
+pub fn num()->Self{Self{value:4}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable.md"))]#[::unity2::class(namespace="App",name="AssetTable")]#[parent(crate::app::structdata_1::StructData_1<crate::app::assettable::AssetTable>)]pub struct AssetTable{#[static_field]#[rename(name="s_PresetNames")]pub s_preset_names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(208)]#[rename(name="HairColor")]pub hair_color:crate::unity_engine::color::Color, #[offset(224)]#[rename(name="GradColor")]pub grad_color:crate::unity_engine::color::Color, #[offset(240)]#[rename(name="SkinColor")]pub skin_color:crate::unity_engine::color::Color, #[offset(256)]#[rename(name="ToonShadowColor")]pub toon_shadow_color:crate::unity_engine::color::Color, #[offset(272)]#[rename(name="MaskColor100")]pub mask_color100:crate::unity_engine::color::Color, #[offset(288)]#[rename(name="MaskColor075")]pub mask_color075:crate::unity_engine::color::Color, #[offset(304)]#[rename(name="MaskColor050")]pub mask_color050:crate::unity_engine::color::Color, #[offset(320)]#[rename(name="MaskColor025")]pub mask_color025:crate::unity_engine::color::Color, #[offset(520)]#[rename(name="m_ConditionIndexes")]pub m_condition_indexes:crate::app::assettable::AssetTable_ConditionIndexes, #[static_field]#[rename(name="BitCount")]pub bit_count:i32, #[static_field]#[rename(name="s_SearchLists")]pub s_search_lists: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::assettable::AssetTable> > , #[static_field]#[rename(name="s_ConditionIndexes")]pub s_condition_indexes:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> , #[static_field]#[rename(name="s_ConditionFlags")]pub s_condition_flags:crate::app::assettable::AssetTable_ConditionFlags, #[static_field]#[rename(name="NullSound")]pub null_sound:crate::app::assettable::AssetTable_Sound, #[static_field]#[rename(name="NullColor")]pub null_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="Shared")]pub shared:crate::app::assettable::AssetTable_Result,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_AccessoryList.md"))]#[::unity2::class(namespace="App",name="AssetTable.AccessoryList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::assettable::AssetTable_Accessory>)]pub struct AssetTable_AccessoryList{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Sound.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AssetTable_Sound{pub voice_id: ::unity2::Il2CppString,pub footstep_id: ::unity2::Il2CppString,pub material_id: ::unity2::Il2CppString,}
-impl::unity2::ClassIdentity for AssetTable_Sound{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AssetTable.Sound";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AssetTable_Sound{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Result.md"))]#[::unity2::class(namespace="App",name="AssetTable.Result")]#[parent(crate::system::object::Object)]pub struct AssetTable_Result{#[offset(360)]#[rename(name="m_InfoAnim")]pub m_info_anim: ::unity2::Il2CppString, #[offset(368)]#[rename(name="m_TalkAnim")]pub m_talk_anim: ::unity2::Il2CppString, #[offset(376)]#[rename(name="m_DemoAnim")]pub m_demo_anim: ::unity2::Il2CppString, #[offset(384)]#[rename(name="m_HubAnim")]pub m_hub_anim: ::unity2::Il2CppString, #[offset(392)]#[rename(name="m_ForceID")]pub m_force_id: ::unity2::Il2CppString, #[offset(400)]#[rename(name="m_WeaponID")]pub m_weapon_id: ::unity2::Il2CppString, #[offset(408)]#[rename(name="m_BodyAnims")]pub m_body_anims:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(416)]#[rename(name="m_Accessories")]pub m_accessories:crate::app::assettable::AssetTable_AccessoryList, #[offset(424)]#[rename(name="m_AccessoryDictionary")]pub m_accessory_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::assettable::AssetTable_Accessory> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Accessory.md"))]#[::unity2::class(namespace="App",name="AssetTable.Accessory")]#[parent(crate::system::object::Object)]pub struct AssetTable_Accessory{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_ConditionFlags.md"))]#[::unity2::class(namespace="App",name="AssetTable.ConditionFlags")]#[parent(crate::system::object::Object)]pub struct AssetTable_ConditionFlags{#[offset(16)]#[rename(name="m_Bits")]pub m_bits:crate::app::bitstruct::BitStruct, #[offset(24)]#[rename(name="m_Keys")]pub m_keys:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_Hits")]pub m_hits:crate::system::collections::generic::list_1::List_1<i32> , #[offset(40)]#[rename(name="m_Dics")]pub m_dics:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_ConditionIndexes.md"))]#[::unity2::class(namespace="App",name="AssetTable.ConditionIndexes")]#[parent(crate::system::object::Object)]pub struct AssetTable_ConditionIndexes{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::system::collections::generic::list_1::List_1<i32> > ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_States.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AssetTable_States{pub value:i32,}
@@ -72,112 +71,32 @@ pub fn engage_link_attack_sub()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AssetTable_Modes{pub value:i32,}
-impl::unity2::ClassIdentity for AssetTable_Modes{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AssetTable.Modes";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Sound.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AssetTable_Sound{pub voice_id: ::unity2::Il2CppString,pub footstep_id: ::unity2::Il2CppString,pub material_id: ::unity2::Il2CppString,}
+impl::unity2::ClassIdentity for AssetTable_Sound{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AssetTable.Sound";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for AssetTable_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for AssetTable_Sound{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl AssetTable_Modes{pub fn common()->Self{Self{value:0}
-}
-pub fn onmap()->Self{Self{value:1}
-}
-pub fn combat()->Self{Self{value:2}
-}
-pub fn gmap()->Self{Self{value:3}
-}
-pub fn num()->Self{Self{value:4}
-}
-}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Result.md"))]#[::unity2::class(namespace="App",name="AssetTable.Result")]#[parent(crate::system::object::Object)]pub struct AssetTable_Result{#[offset(360)]#[rename(name="m_InfoAnim")]pub m_info_anim: ::unity2::Il2CppString, #[offset(368)]#[rename(name="m_TalkAnim")]pub m_talk_anim: ::unity2::Il2CppString, #[offset(376)]#[rename(name="m_DemoAnim")]pub m_demo_anim: ::unity2::Il2CppString, #[offset(384)]#[rename(name="m_HubAnim")]pub m_hub_anim: ::unity2::Il2CppString, #[offset(392)]#[rename(name="m_ForceID")]pub m_force_id: ::unity2::Il2CppString, #[offset(400)]#[rename(name="m_WeaponID")]pub m_weapon_id: ::unity2::Il2CppString, #[offset(408)]#[rename(name="m_BodyAnims")]pub m_body_anims:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(416)]#[rename(name="m_Accessories")]pub m_accessories:crate::app::assettable::AssetTable_AccessoryList, #[offset(424)]#[rename(name="m_AccessoryDictionary")]pub m_accessory_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::assettable::AssetTable_Accessory> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_AccessoryList.md"))]#[::unity2::class(namespace="App",name="AssetTable.AccessoryList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::assettable::AssetTable_Accessory>)]pub struct AssetTable_AccessoryList{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_ConditionFlags.md"))]#[::unity2::class(namespace="App",name="AssetTable.ConditionFlags")]#[parent(crate::system::object::Object)]pub struct AssetTable_ConditionFlags{#[offset(16)]#[rename(name="m_Bits")]pub m_bits:crate::app::bitstruct::BitStruct, #[offset(24)]#[rename(name="m_Keys")]pub m_keys:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_Hits")]pub m_hits:crate::system::collections::generic::list_1::List_1<i32> , #[offset(40)]#[rename(name="m_Dics")]pub m_dics:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/assettable/AssetTable_Accessory.md"))]#[::unity2::class(namespace="App",name="AssetTable.Accessory")]#[parent(crate::system::object::Object)]pub struct AssetTable_Accessory{}
 
 }
 
 #[cfg(feature = "app-assettable-types")]
 pub use __types::*;
-
-#[cfg(feature="app-assettable")]pub trait IAssetTable_ConditionIndexesMethods:IAssetTable_ConditionIndexes{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb1a00usize)as*mut u8,();
-(AssetTable_ConditionIndexes)__receiver)}
-}
-#[doc="`Add(crate::system::collections::generic::list_1::List_1<i32>)` overload"]fn add(self,indexes:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32> >)->(){unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb1a60usize)as*mut u8,();
-(AssetTable_ConditionIndexes)__receiver,(crate::system::collections::generic::list_1::List_1<i32>)::core::convert::Into::into(indexes))}
-}
-#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb1ac0usize)as*mut u8,();
-(AssetTable_ConditionIndexes)__receiver)}
-}
-#[doc="`Test(crate::app::assettable::AssetTable_ConditionFlags)` overload"]fn test(self,flags:impl::core::convert::Into<crate::app::assettable::AssetTable_ConditionFlags>)->bool{unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb1ad0usize)as*mut u8,bool;
-(AssetTable_ConditionIndexes)__receiver,(crate::app::assettable::AssetTable_ConditionFlags)::core::convert::Into::into(flags))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb1c10usize)as*mut u8,();
-(AssetTable_ConditionIndexes)__receiver)}
-}
-}
-
-#[cfg(feature="app-assettable")]impl<__T:IAssetTable_ConditionIndexes>IAssetTable_ConditionIndexesMethods for __T{}
-
-#[cfg(feature="app-assettable")]impl AssetTable_ConditionIndexes{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-assettable")]impl AssetTable_ConditionIndexes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AssetTable_ConditionIndexes), ::core::stringify!(new),));
- <Self as IAssetTable_ConditionIndexesMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-assettable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssetTable_unity2_raw{use super:: * ;
-pub unsafe fn on_build(this:AssetTable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AssetTable as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let inner:extern "C" fn(AssetTable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_release(this:AssetTable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <AssetTable as::unity2::ClassIdentity> ::NAME,"OnRelease",));
-let inner:extern "C" fn(AssetTable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_completed_end(this:AssetTable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <AssetTable as::unity2::ClassIdentity> ::NAME,"OnCompletedEnd",));
-let inner:extern "C" fn(AssetTable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_debug_name(this:AssetTable,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <AssetTable as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let inner:extern "C" fn(AssetTable, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-assettable")]impl AssetTable{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211b5c0usize)as*mut u8,();
 )}
@@ -808,16 +727,52 @@ inner(this,__mi)}
 (AssetTable)__receiver)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AssetTable_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AssetTable as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let __inner:extern "C" fn(AssetTable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AssetTable_unity2_raw::on_release(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AssetTable as::unity2::ClassIdentity> ::NAME,"OnRelease",));
+let __inner:extern "C" fn(AssetTable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnCompletedEnd()` overload"]fn on_completed_end(self,)->(){unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AssetTable_unity2_raw::on_completed_end(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AssetTable as::unity2::ClassIdentity> ::NAME,"OnCompletedEnd",));
+let __inner:extern "C" fn(AssetTable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AssetTable_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AssetTable as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let __inner:extern "C" fn(AssetTable, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -987,6 +942,20 @@ pub fn has_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[161]}
 }
 
+#[cfg(feature="app-assettable")]impl AssetTable{#[doc="Direct (non-virtual) call to `AssetTable`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AssetTable`'s own `OnRelease`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_release(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_release_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AssetTable`'s own `OnCompletedEnd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_completed_end(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_completed_end_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AssetTable`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-assettable")]impl AssetTable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(AssetTable), ::core::stringify!(new),));
@@ -994,43 +963,41 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-assettable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssetTable_AccessoryList_unity2_raw{use super:: * ;
-pub unsafe fn to_string(this:AssetTable_AccessoryList,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <AssetTable_AccessoryList as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(AssetTable_AccessoryList, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="app-assettable")]pub trait IAssetTable_ConditionIndexesMethods:IAssetTable_ConditionIndexes{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb1a00usize)as*mut u8,();
+(AssetTable_ConditionIndexes)__receiver)}
 }
-
-#[cfg(feature="app-assettable")]pub trait IAssetTable_AccessoryListMethods:IAssetTable_AccessoryList{#[doc="`TryAdd(crate::app::assettable::AssetTable_Accessory)` overload"]fn try_add(self,accessory:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf640usize)as*mut u8,();
-(AssetTable_AccessoryList)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(accessory))}
+#[doc="`Add(crate::system::collections::generic::list_1::List_1<i32>)` overload"]fn add(self,indexes:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32> >)->(){unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb1a60usize)as*mut u8,();
+(AssetTable_ConditionIndexes)__receiver,(crate::system::collections::generic::list_1::List_1<i32>)::core::convert::Into::into(indexes))}
 }
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AssetTable_AccessoryList_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb1ac0usize)as*mut u8,();
+(AssetTable_ConditionIndexes)__receiver)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf830usize)as*mut u8,();
-(AssetTable_AccessoryList)__receiver)}
+#[doc="`Test(crate::app::assettable::AssetTable_ConditionFlags)` overload"]fn test(self,flags:impl::core::convert::Into<crate::app::assettable::AssetTable_ConditionFlags>)->bool{unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb1ad0usize)as*mut u8,bool;
+(AssetTable_ConditionIndexes)__receiver,(crate::app::assettable::AssetTable_ConditionFlags)::core::convert::Into::into(flags))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable_ConditionIndexes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb1c10usize)as*mut u8,();
+(AssetTable_ConditionIndexes)__receiver)}
 }
 }
 
-#[cfg(feature="app-assettable")]impl<__T:IAssetTable_AccessoryList>IAssetTable_AccessoryListMethods for __T{}
+#[cfg(feature="app-assettable")]impl<__T:IAssetTable_ConditionIndexes>IAssetTable_ConditionIndexesMethods for __T{}
 
-#[cfg(feature="app-assettable")]impl AssetTable_AccessoryList{pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-assettable")]impl AssetTable_ConditionIndexes{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-assettable")]impl AssetTable_AccessoryList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-assettable")]impl AssetTable_ConditionIndexes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AssetTable_AccessoryList), ::core::stringify!(new),));
- <Self as IAssetTable_AccessoryListMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(AssetTable_ConditionIndexes), ::core::stringify!(new),));
+ <Self as IAssetTable_ConditionIndexesMethods> ::ctor(this,);
 this}
 }
 
@@ -1040,29 +1007,6 @@ this}
 }
 
 #[cfg(feature="app-assettable")]impl AssetTable_Sound{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-assettable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssetTable_Result_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:AssetTable_Result,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AssetTable_Result as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(AssetTable_Result, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_hash_code(this:AssetTable_Result,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",2usize,__vt.len(), <AssetTable_Result as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(AssetTable_Result, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-assettable")]impl AssetTable_Result{#[doc="`GetForTalk(::unity2::Il2CppString)` overload"]pub fn get_for_talk(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::assettable::AssetTable_Result{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bb5a90usize)as*mut u8,crate::app::assettable::AssetTable_Result;
@@ -1583,7 +1527,16 @@ inner(this,__mi)}
 (AssetTable_Result)__receiver)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AssetTable_Result as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AssetTable_Result_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AssetTable_Result as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(AssetTable_Result, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dump()` overload"]fn dump(self,)->(){unsafe{let __receiver= <AssetTable_Result as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb4be0usize)as*mut u8,();
@@ -1610,7 +1563,16 @@ __AssetTable_Result_unity2_raw::dispose(__receiver, ::core::option::Option::None
 (AssetTable_Result)__receiver)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <AssetTable_Result as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AssetTable_Result_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <AssetTable_Result as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let __inner:extern "C" fn(AssetTable_Result, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`TryDump()` overload"]fn try_dump(self,)->crate::app::assettable::AssetTable_Result{unsafe{let __receiver= <AssetTable_Result as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb5a80usize)as*mut u8,crate::app::assettable::AssetTable_Result;
@@ -1767,6 +1729,14 @@ pub fn get_for_editor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn get_from_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[144]}
 }
 
+#[cfg(feature="app-assettable")]impl AssetTable_Result{#[doc="Direct (non-virtual) call to `AssetTable_Result`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AssetTable_Result`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-assettable")]impl AssetTable_Result{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(AssetTable_Result), ::core::stringify!(new),));
@@ -1774,63 +1744,44 @@ pub fn get_from_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 this}
 }
 
-#[cfg(feature="app-assettable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssetTable_Accessory_unity2_raw{use super:: * ;
-pub unsafe fn to_string(this:AssetTable_Accessory,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-assettable")]pub trait IAssetTable_AccessoryListMethods:IAssetTable_AccessoryList{#[doc="`TryAdd(crate::app::assettable::AssetTable_Accessory)` overload"]fn try_add(self,accessory:impl::core::convert::Into<crate::app::assettable::AssetTable_Accessory>)->(){unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf640usize)as*mut u8,();
+(AssetTable_AccessoryList)__receiver,(crate::app::assettable::AssetTable_Accessory)::core::convert::Into::into(accessory))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",3usize,__vt.len(), <AssetTable_Accessory as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",3usize,__vt.len(), <AssetTable_AccessoryList as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(AssetTable_AccessoryList, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-assettable")]pub trait IAssetTable_AccessoryMethods:IAssetTable_Accessory{#[doc="`get_Locator()` overload"]fn get_locator(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf560usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable_Accessory)__receiver)}
 }
-#[doc="`set_Locator(::unity2::Il2CppString)` overload"]fn set_locator(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf570usize)as*mut u8,();
-(AssetTable_Accessory)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Model()` overload"]fn get_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf580usize)as*mut u8, ::unity2::Il2CppString;
-(AssetTable_Accessory)__receiver)}
-}
-#[doc="`set_Model(::unity2::Il2CppString)` overload"]fn set_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf590usize)as*mut u8,();
-(AssetTable_Accessory)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AssetTable_Accessory_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Exist()` overload"]fn get_exist(self,)->bool{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf600usize)as*mut u8,bool;
-(AssetTable_Accessory)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf630usize)as*mut u8,();
-(AssetTable_Accessory)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable_AccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf830usize)as*mut u8,();
+(AssetTable_AccessoryList)__receiver)}
 }
 }
 
-#[cfg(feature="app-assettable")]impl<__T:IAssetTable_Accessory>IAssetTable_AccessoryMethods for __T{}
+#[cfg(feature="app-assettable")]impl<__T:IAssetTable_AccessoryList>IAssetTable_AccessoryListMethods for __T{}
 
-#[cfg(feature="app-assettable")]impl AssetTable_Accessory{pub fn get_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature="app-assettable")]impl AssetTable_AccessoryList{pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-assettable")]impl AssetTable_Accessory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-assettable")]impl AssetTable_AccessoryList{#[doc="Direct (non-virtual) call to `AssetTable_AccessoryList`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-assettable")]impl AssetTable_AccessoryList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AssetTable_Accessory), ::core::stringify!(new),));
- <Self as IAssetTable_AccessoryMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(AssetTable_AccessoryList), ::core::stringify!(new),));
+ <Self as IAssetTable_AccessoryListMethods> ::ctor(this,);
 this}
 }
 
@@ -1958,30 +1909,91 @@ pub fn replace_gid2_eid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 this}
 }
 
+#[cfg(feature="app-assettable")]pub trait IAssetTable_AccessoryMethods:IAssetTable_Accessory{#[doc="`get_Locator()` overload"]fn get_locator(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf560usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable_Accessory)__receiver)}
+}
+#[doc="`set_Locator(::unity2::Il2CppString)` overload"]fn set_locator(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf570usize)as*mut u8,();
+(AssetTable_Accessory)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Model()` overload"]fn get_model(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf580usize)as*mut u8, ::unity2::Il2CppString;
+(AssetTable_Accessory)__receiver)}
+}
+#[doc="`set_Model(::unity2::Il2CppString)` overload"]fn set_model(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf590usize)as*mut u8,();
+(AssetTable_Accessory)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <AssetTable_Accessory as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(AssetTable_Accessory, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Exist()` overload"]fn get_exist(self,)->bool{unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf600usize)as*mut u8,bool;
+(AssetTable_Accessory)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTable_Accessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf630usize)as*mut u8,();
+(AssetTable_Accessory)__receiver)}
+}
+}
+
+#[cfg(feature="app-assettable")]impl<__T:IAssetTable_Accessory>IAssetTable_AccessoryMethods for __T{}
+
+#[cfg(feature="app-assettable")]impl AssetTable_Accessory{pub fn get_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-assettable")]impl AssetTable_Accessory{#[doc="Direct (non-virtual) call to `AssetTable_Accessory`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-assettable")]impl AssetTable_Accessory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetTable_Accessory), ::core::stringify!(new),));
+ <Self as IAssetTable_AccessoryMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-assettable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssetTable_ConditionIndexes;
-    pub use super::IAssetTable_ConditionIndexes;
-    pub use super::IAssetTable_ConditionIndexesMethods;
+    pub use super::AssetTable_Modes;
     pub use super::AssetTable;
     pub use super::IAssetTable;
     pub use super::IAssetTableMethods;
-    pub use super::AssetTable_AccessoryList;
-    pub use super::IAssetTable_AccessoryList;
-    pub use super::IAssetTable_AccessoryListMethods;
+    pub use super::AssetTable_ConditionIndexes;
+    pub use super::IAssetTable_ConditionIndexes;
+    pub use super::IAssetTable_ConditionIndexesMethods;
+    pub use super::AssetTable_States;
     pub use super::AssetTable_Sound;
     pub use super::AssetTable_Result;
     pub use super::IAssetTable_Result;
     pub use super::IAssetTable_ResultMethods;
-    pub use super::AssetTable_Accessory;
-    pub use super::IAssetTable_Accessory;
-    pub use super::IAssetTable_AccessoryMethods;
+    pub use super::AssetTable_AccessoryList;
+    pub use super::IAssetTable_AccessoryList;
+    pub use super::IAssetTable_AccessoryListMethods;
     pub use super::AssetTable_ConditionFlags;
     pub use super::IAssetTable_ConditionFlags;
     pub use super::IAssetTable_ConditionFlagsMethods;
-    pub use super::AssetTable_States;
-    pub use super::AssetTable_Modes;
+    pub use super::AssetTable_Accessory;
+    pub use super::IAssetTable_Accessory;
+    pub use super::IAssetTable_AccessoryMethods;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

@@ -15,33 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maptarget/MapTarget.md"))]#[::unity2::class(namespace="App",name="MapTarget")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::maptarget::MapTarget>)]pub struct MapTarget{#[static_field]#[rename(name="WeaponMask")]pub weapon_mask:u32, #[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(40)]#[rename(name="m_X")]pub m_x:i8, #[offset(41)]#[rename(name="m_Z")]pub m_z:i8, #[offset(44)]#[rename(name="m_Mind")]pub m_mind:crate::app::mapmind::MapMind_Type, #[offset(48)]#[rename(name="m_ActionMask")]pub m_action_mask:crate::app::maptarget::MapTarget_ActionMask, #[offset(52)]#[rename(name="m_ActionTemp")]pub m_action_temp:crate::app::maptarget::MapTarget_ActionMask, #[offset(56)]#[rename(name="m_DataSet")]pub m_data_set:crate::app::maptarget::MapTarget_DataSet, #[offset(64)]#[rename(name="m_BufferA")]pub m_buffer_a:crate::app::maptarget::MapTarget_DataSet, #[offset(72)]#[rename(name="m_BufferB")]pub m_buffer_b:crate::app::maptarget::MapTarget_DataSet, #[offset(80)]#[rename(name="m_SelectUnit")]pub m_select_unit:crate::app::unit::Unit, #[offset(88)]#[rename(name="m_SelectX")]pub m_select_x:i8, #[offset(89)]#[rename(name="m_SelectZ")]pub m_select_z:i8, #[offset(92)]#[rename(name="m_SelectItemIndex")]pub m_select_item_index:i32, #[offset(96)]#[rename(name="m_CommandSkill")]pub m_command_skill:crate::app::skilldata::SkillData, #[offset(104)]#[rename(name="m_EnumerateAttackUnitItems")]pub m_enumerate_attack_unit_items:crate::app::mapfor::MapFor_TargetFunction, #[offset(112)]#[rename(name="m_EnumerateAttackSpecifiedItem")]pub m_enumerate_attack_specified_item:crate::app::mapfor::MapFor_TargetFunction, #[offset(120)]#[rename(name="m_EnumerateRodUnitItems")]pub m_enumerate_rod_unit_items:crate::app::mapfor::MapFor_TargetFunction, #[offset(128)]#[rename(name="m_EnumerateRodSpecifiedItem")]pub m_enumerate_rod_specified_item:crate::app::mapfor::MapFor_TargetFunction, #[static_field]#[rename(name="s_DummyData")]pub s_dummy_data:crate::app::maptarget::MapTarget_Data,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maptarget/MapTarget_DataSet.md"))]#[::unity2::class(namespace="App",name="MapTarget.DataSet")]#[parent(crate::system::object::Object)]pub struct MapTarget_DataSet{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::maptarget::MapTarget_Data> , #[offset(24)]#[rename(name="m_Stack")]pub m_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::maptarget::MapTarget_Data> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maptarget/MapTarget_RangeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapTarget_RangeType{pub value:i32,}
-impl::unity2::ClassIdentity for MapTarget_RangeType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapTarget.RangeType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapTarget_RangeType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapTarget_RangeType{pub fn none()->Self{Self{value:0}
-}
-pub fn unit_items()->Self{Self{value:1}
-}
-pub fn specified_item()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maptarget/MapTarget_Data.md"))]#[::unity2::class(namespace="App",name="MapTarget.Data")]#[parent(crate::system::object::Object)]pub struct MapTarget_Data{#[offset(16)]#[rename(name="m_Index")]pub m_index:u8, #[offset(24)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(32)]#[rename(name="m_X")]pub m_x:i8, #[offset(33)]#[rename(name="m_Z")]pub m_z:i8, #[offset(34)]#[rename(name="m_X1")]pub m_x1:i8, #[offset(35)]#[rename(name="m_Z1")]pub m_z1:i8, #[offset(36)]#[rename(name="m_X2")]pub m_x2:i8, #[offset(37)]#[rename(name="m_Z2")]pub m_z2:i8, #[offset(40)]#[rename(name="m_ItemMask")]pub m_item_mask:u32, #[offset(44)]#[rename(name="m_SelectItemIndex")]pub m_select_item_index:i8,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maptarget/MapTarget_ActionMask.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapTarget_ActionMask{pub value:i32,}
 impl::unity2::ClassIdentity for MapTarget_ActionMask{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapTarget.ActionMask";
@@ -65,10 +38,253 @@ pub fn direct_only()->Self{Self{value:5}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maptarget/MapTarget_Data.md"))]#[::unity2::class(namespace="App",name="MapTarget.Data")]#[parent(crate::system::object::Object)]pub struct MapTarget_Data{#[offset(16)]#[rename(name="m_Index")]pub m_index:u8, #[offset(24)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(32)]#[rename(name="m_X")]pub m_x:i8, #[offset(33)]#[rename(name="m_Z")]pub m_z:i8, #[offset(34)]#[rename(name="m_X1")]pub m_x1:i8, #[offset(35)]#[rename(name="m_Z1")]pub m_z1:i8, #[offset(36)]#[rename(name="m_X2")]pub m_x2:i8, #[offset(37)]#[rename(name="m_Z2")]pub m_z2:i8, #[offset(40)]#[rename(name="m_ItemMask")]pub m_item_mask:u32, #[offset(44)]#[rename(name="m_SelectItemIndex")]pub m_select_item_index:i8,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maptarget/MapTarget_DataSet.md"))]#[::unity2::class(namespace="App",name="MapTarget.DataSet")]#[parent(crate::system::object::Object)]pub struct MapTarget_DataSet{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::maptarget::MapTarget_Data> , #[offset(24)]#[rename(name="m_Stack")]pub m_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::maptarget::MapTarget_Data> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maptarget/MapTarget_RangeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapTarget_RangeType{pub value:i32,}
+impl::unity2::ClassIdentity for MapTarget_RangeType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapTarget.RangeType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapTarget_RangeType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapTarget_RangeType{pub fn none()->Self{Self{value:0}
+}
+pub fn unit_items()->Self{Self{value:1}
+}
+pub fn specified_item()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maptarget/MapTarget.md"))]#[::unity2::class(namespace="App",name="MapTarget")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::maptarget::MapTarget>)]pub struct MapTarget{#[static_field]#[rename(name="WeaponMask")]pub weapon_mask:u32, #[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(40)]#[rename(name="m_X")]pub m_x:i8, #[offset(41)]#[rename(name="m_Z")]pub m_z:i8, #[offset(44)]#[rename(name="m_Mind")]pub m_mind:crate::app::mapmind::MapMind_Type, #[offset(48)]#[rename(name="m_ActionMask")]pub m_action_mask:crate::app::maptarget::MapTarget_ActionMask, #[offset(52)]#[rename(name="m_ActionTemp")]pub m_action_temp:crate::app::maptarget::MapTarget_ActionMask, #[offset(56)]#[rename(name="m_DataSet")]pub m_data_set:crate::app::maptarget::MapTarget_DataSet, #[offset(64)]#[rename(name="m_BufferA")]pub m_buffer_a:crate::app::maptarget::MapTarget_DataSet, #[offset(72)]#[rename(name="m_BufferB")]pub m_buffer_b:crate::app::maptarget::MapTarget_DataSet, #[offset(80)]#[rename(name="m_SelectUnit")]pub m_select_unit:crate::app::unit::Unit, #[offset(88)]#[rename(name="m_SelectX")]pub m_select_x:i8, #[offset(89)]#[rename(name="m_SelectZ")]pub m_select_z:i8, #[offset(92)]#[rename(name="m_SelectItemIndex")]pub m_select_item_index:i32, #[offset(96)]#[rename(name="m_CommandSkill")]pub m_command_skill:crate::app::skilldata::SkillData, #[offset(104)]#[rename(name="m_EnumerateAttackUnitItems")]pub m_enumerate_attack_unit_items:crate::app::mapfor::MapFor_TargetFunction, #[offset(112)]#[rename(name="m_EnumerateAttackSpecifiedItem")]pub m_enumerate_attack_specified_item:crate::app::mapfor::MapFor_TargetFunction, #[offset(120)]#[rename(name="m_EnumerateRodUnitItems")]pub m_enumerate_rod_unit_items:crate::app::mapfor::MapFor_TargetFunction, #[offset(128)]#[rename(name="m_EnumerateRodSpecifiedItem")]pub m_enumerate_rod_specified_item:crate::app::mapfor::MapFor_TargetFunction, #[static_field]#[rename(name="s_DummyData")]pub s_dummy_data:crate::app::maptarget::MapTarget_Data,}
+
 }
 
 #[cfg(feature = "app-maptarget-types")]
 pub use __types::*;
+
+#[cfg(feature="app-maptarget")]pub trait IMapTarget_DataMethods:IMapTarget_Data{#[doc="`Set(crate::app::unit::Unit, u32, i32)` overload"]fn set(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,item_mask:impl::core::convert::Into<u32> ,select_item_index:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41ac0usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
+(MapTarget_Data)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(u32)::core::convert::Into::into(item_mask),(i32)::core::convert::Into::into(select_item_index))}
+}
+#[doc="`Set(crate::app::unit::Unit, i32, i32, u32, i32)` overload"]fn set_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,item_mask:impl::core::convert::Into<u32> ,select_item_index:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41ba0usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
+(MapTarget_Data)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(u32)::core::convert::Into::into(item_mask),(i32)::core::convert::Into::into(select_item_index))}
+}
+#[doc="`Set(i32, i32, u32, i32)` overload"]fn set_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,item_mask:impl::core::convert::Into<u32> ,select_item_index:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41c80usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
+(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(u32)::core::convert::Into::into(item_mask),(i32)::core::convert::Into::into(select_item_index))}
+}
+#[doc="`SetRect(i32, i32, i32, i32)` overload"]fn set_rect(self,x1:impl::core::convert::Into<i32> ,z1:impl::core::convert::Into<i32> ,x2:impl::core::convert::Into<i32> ,z2:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41d60usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
+(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(x1),(i32)::core::convert::Into::into(z1),(i32)::core::convert::Into::into(x2),(i32)::core::convert::Into::into(z2))}
+}
+#[doc="`get_Index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41d80usize)as*mut u8,i32;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`set_Index(i32)` overload"]fn set_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41d90usize)as*mut u8,();
+(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41da0usize)as*mut u8,crate::app::unit::Unit;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41db0usize)as*mut u8,i32;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41dc0usize)as*mut u8,i32;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`get_X1()` overload"]fn get_x1(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41dd0usize)as*mut u8,i32;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`get_Z1()` overload"]fn get_z1(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41de0usize)as*mut u8,i32;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`get_X2()` overload"]fn get_x2(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41df0usize)as*mut u8,i32;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`get_Z2()` overload"]fn get_z2(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e00usize)as*mut u8,i32;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`get_ItemMask()` overload"]fn get_item_mask(self,)->u32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e10usize)as*mut u8,u32;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`get_SelectItemIndex()` overload"]fn get_select_item_index(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e20usize)as*mut u8,i32;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`set_SelectItemIndex(i32)` overload"]fn set_select_item_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e30usize)as*mut u8,();
+(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`CheckItemMask(i32)` overload"]fn check_item_mask(self,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e40usize)as*mut u8,bool;
+(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsOutSide(i32, i32)` overload"]fn is_out_side(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e50usize)as*mut u8,bool;
+(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`CopyFrom(crate::app::maptarget::MapTarget_Data)` overload"]fn copy_from(self,from:impl::core::convert::Into<crate::app::maptarget::MapTarget_Data>)->(){unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41ea0usize)as*mut u8,();
+(MapTarget_Data)__receiver,(crate::app::maptarget::MapTarget_Data)::core::convert::Into::into(from))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41f20usize)as*mut u8, ::unity2::Il2CppString;
+(MapTarget_Data)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41f80usize)as*mut u8,();
+(MapTarget_Data)__receiver)}
+}
+}
+
+#[cfg(feature="app-maptarget")]impl<__T:IMapTarget_Data>IMapTarget_DataMethods for __T{}
+
+#[cfg(feature="app-maptarget")]impl MapTarget_Data{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_x1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_z1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_x2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_z2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_item_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_select_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_select_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn check_item_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_out_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
+
+#[cfg(feature="app-maptarget")]impl MapTarget_Data{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapTarget_Data), ::core::stringify!(new),));
+ <Self as IMapTarget_DataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maptarget")]pub trait IMapTarget_DataSetMethods:IMapTarget_DataSet{#[doc="`.ctor(i32)` overload"]fn ctor(self,capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41f90usize)as*mut u8,();
+(MapTarget_DataSet)__receiver,(i32)::core::convert::Into::into(capacity))}
+}
+#[doc="`get_List()` overload"]fn get_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::maptarget::MapTarget_Data>{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e420f0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::maptarget::MapTarget_Data> ;
+(MapTarget_DataSet)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42100usize)as*mut u8,i32;
+(MapTarget_DataSet)__receiver)}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,i:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42150usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
+(MapTarget_DataSet)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`get_ItemMask()` overload"]fn get_item_mask(self,)->u32{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e421c0usize)as*mut u8,u32;
+(MapTarget_DataSet)__receiver)}
+}
+#[doc="`set_ItemMask(u32)` overload"]fn set_item_mask(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e421d0usize)as*mut u8,();
+(MapTarget_DataSet)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`IndexOf(crate::app::unit::Unit)` overload"]fn index_of(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e421e0usize)as*mut u8,i32;
+(MapTarget_DataSet)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IndexOf(i32, i32)` overload"]fn index_of_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e422e0usize)as*mut u8,i32;
+(MapTarget_DataSet)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsExist(crate::app::unit::Unit)` overload"]fn is_exist(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42430usize)as*mut u8,bool;
+(MapTarget_DataSet)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsExist(i32, i32)` overload"]fn is_exist_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42530usize)as*mut u8,bool;
+(MapTarget_DataSet)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`NewData()` overload"]fn new_data(self,)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42690usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
+(MapTarget_DataSet)__receiver)}
+}
+#[doc="`NewData(crate::app::unit::Unit, i32, i32, u32, i32)` overload"]fn new_data_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,item_mask:impl::core::convert::Into<u32> ,select_item_index:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42740usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
+(MapTarget_DataSet)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(u32)::core::convert::Into::into(item_mask),(i32)::core::convert::Into::into(select_item_index))}
+}
+#[doc="`NewData(i32, i32, u32, i32)` overload"]fn new_data_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,item_mask:impl::core::convert::Into<u32> ,select_item_index:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e428d0usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
+(MapTarget_DataSet)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(u32)::core::convert::Into::into(item_mask),(i32)::core::convert::Into::into(select_item_index))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42a60usize)as*mut u8,();
+(MapTarget_DataSet)__receiver)}
+}
+#[doc="`CopyFrom(crate::app::maptarget::MapTarget_DataSet)` overload"]fn copy_from(self,from:impl::core::convert::Into<crate::app::maptarget::MapTarget_DataSet>)->(){unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42b50usize)as*mut u8,();
+(MapTarget_DataSet)__receiver,(crate::app::maptarget::MapTarget_DataSet)::core::convert::Into::into(from))}
+}
+#[doc="`Sort()` overload"]fn sort(self,)->(){unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42d10usize)as*mut u8,();
+(MapTarget_DataSet)__receiver)}
+}
+#[doc="`GetDataItemCount()` overload"]fn get_data_item_count(self,)->i32{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42eb0usize)as*mut u8,i32;
+(MapTarget_DataSet)__receiver)}
+}
+}
+
+#[cfg(feature="app-maptarget")]impl<__T:IMapTarget_DataSet>IMapTarget_DataSetMethods for __T{}
+
+#[cfg(feature="app-maptarget")]impl MapTarget_DataSet{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_item_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_item_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn index_of_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_exist_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn new_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn new_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn new_data_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_data_item_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-maptarget")]impl MapTarget_DataSet{#[doc="`.ctor(i32)` — overload selector"]pub fn new(capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapTarget_DataSet), ::core::stringify!(new),));
+ <Self as IMapTarget_DataSetMethods> ::ctor(this,capacity);
+this}
+}
 
 #[cfg(feature="app-maptarget")]impl MapTarget{#[doc="`CanAttack(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]pub fn can_attack(unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f59c10usize)as*mut u8,bool;
 (crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
@@ -487,236 +703,20 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-maptarget")]pub trait IMapTarget_DataSetMethods:IMapTarget_DataSet{#[doc="`.ctor(i32)` overload"]fn ctor(self,capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41f90usize)as*mut u8,();
-(MapTarget_DataSet)__receiver,(i32)::core::convert::Into::into(capacity))}
-}
-#[doc="`get_List()` overload"]fn get_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::maptarget::MapTarget_Data>{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e420f0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::maptarget::MapTarget_Data> ;
-(MapTarget_DataSet)__receiver)}
-}
-#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42100usize)as*mut u8,i32;
-(MapTarget_DataSet)__receiver)}
-}
-#[doc="`get_Item(i32)` overload"]fn get_item(self,i:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42150usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
-(MapTarget_DataSet)__receiver,(i32)::core::convert::Into::into(i))}
-}
-#[doc="`get_ItemMask()` overload"]fn get_item_mask(self,)->u32{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e421c0usize)as*mut u8,u32;
-(MapTarget_DataSet)__receiver)}
-}
-#[doc="`set_ItemMask(u32)` overload"]fn set_item_mask(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e421d0usize)as*mut u8,();
-(MapTarget_DataSet)__receiver,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`IndexOf(crate::app::unit::Unit)` overload"]fn index_of(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e421e0usize)as*mut u8,i32;
-(MapTarget_DataSet)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`IndexOf(i32, i32)` overload"]fn index_of_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e422e0usize)as*mut u8,i32;
-(MapTarget_DataSet)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`IsExist(crate::app::unit::Unit)` overload"]fn is_exist(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42430usize)as*mut u8,bool;
-(MapTarget_DataSet)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`IsExist(i32, i32)` overload"]fn is_exist_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42530usize)as*mut u8,bool;
-(MapTarget_DataSet)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`NewData()` overload"]fn new_data(self,)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42690usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
-(MapTarget_DataSet)__receiver)}
-}
-#[doc="`NewData(crate::app::unit::Unit, i32, i32, u32, i32)` overload"]fn new_data_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,item_mask:impl::core::convert::Into<u32> ,select_item_index:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42740usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
-(MapTarget_DataSet)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(u32)::core::convert::Into::into(item_mask),(i32)::core::convert::Into::into(select_item_index))}
-}
-#[doc="`NewData(i32, i32, u32, i32)` overload"]fn new_data_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,item_mask:impl::core::convert::Into<u32> ,select_item_index:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e428d0usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
-(MapTarget_DataSet)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(u32)::core::convert::Into::into(item_mask),(i32)::core::convert::Into::into(select_item_index))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42a60usize)as*mut u8,();
-(MapTarget_DataSet)__receiver)}
-}
-#[doc="`CopyFrom(crate::app::maptarget::MapTarget_DataSet)` overload"]fn copy_from(self,from:impl::core::convert::Into<crate::app::maptarget::MapTarget_DataSet>)->(){unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42b50usize)as*mut u8,();
-(MapTarget_DataSet)__receiver,(crate::app::maptarget::MapTarget_DataSet)::core::convert::Into::into(from))}
-}
-#[doc="`Sort()` overload"]fn sort(self,)->(){unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42d10usize)as*mut u8,();
-(MapTarget_DataSet)__receiver)}
-}
-#[doc="`GetDataItemCount()` overload"]fn get_data_item_count(self,)->i32{unsafe{let __receiver= <MapTarget_DataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42eb0usize)as*mut u8,i32;
-(MapTarget_DataSet)__receiver)}
-}
-}
-
-#[cfg(feature="app-maptarget")]impl<__T:IMapTarget_DataSet>IMapTarget_DataSetMethods for __T{}
-
-#[cfg(feature="app-maptarget")]impl MapTarget_DataSet{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_item_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_item_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn index_of_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn is_exist_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn new_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn new_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn new_data_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn get_data_item_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-}
-
-#[cfg(feature="app-maptarget")]impl MapTarget_DataSet{#[doc="`.ctor(i32)` — overload selector"]pub fn new(capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapTarget_DataSet), ::core::stringify!(new),));
- <Self as IMapTarget_DataSetMethods> ::ctor(this,capacity);
-this}
-}
-
-#[cfg(feature="app-maptarget")]pub trait IMapTarget_DataMethods:IMapTarget_Data{#[doc="`Set(crate::app::unit::Unit, u32, i32)` overload"]fn set(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,item_mask:impl::core::convert::Into<u32> ,select_item_index:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41ac0usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
-(MapTarget_Data)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(u32)::core::convert::Into::into(item_mask),(i32)::core::convert::Into::into(select_item_index))}
-}
-#[doc="`Set(crate::app::unit::Unit, i32, i32, u32, i32)` overload"]fn set_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,item_mask:impl::core::convert::Into<u32> ,select_item_index:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41ba0usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
-(MapTarget_Data)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(u32)::core::convert::Into::into(item_mask),(i32)::core::convert::Into::into(select_item_index))}
-}
-#[doc="`Set(i32, i32, u32, i32)` overload"]fn set_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,item_mask:impl::core::convert::Into<u32> ,select_item_index:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41c80usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
-(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(u32)::core::convert::Into::into(item_mask),(i32)::core::convert::Into::into(select_item_index))}
-}
-#[doc="`SetRect(i32, i32, i32, i32)` overload"]fn set_rect(self,x1:impl::core::convert::Into<i32> ,z1:impl::core::convert::Into<i32> ,x2:impl::core::convert::Into<i32> ,z2:impl::core::convert::Into<i32>)->crate::app::maptarget::MapTarget_Data{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41d60usize)as*mut u8,crate::app::maptarget::MapTarget_Data;
-(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(x1),(i32)::core::convert::Into::into(z1),(i32)::core::convert::Into::into(x2),(i32)::core::convert::Into::into(z2))}
-}
-#[doc="`get_Index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41d80usize)as*mut u8,i32;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`set_Index(i32)` overload"]fn set_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41d90usize)as*mut u8,();
-(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41da0usize)as*mut u8,crate::app::unit::Unit;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41db0usize)as*mut u8,i32;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41dc0usize)as*mut u8,i32;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`get_X1()` overload"]fn get_x1(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41dd0usize)as*mut u8,i32;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`get_Z1()` overload"]fn get_z1(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41de0usize)as*mut u8,i32;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`get_X2()` overload"]fn get_x2(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41df0usize)as*mut u8,i32;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`get_Z2()` overload"]fn get_z2(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e00usize)as*mut u8,i32;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`get_ItemMask()` overload"]fn get_item_mask(self,)->u32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e10usize)as*mut u8,u32;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`get_SelectItemIndex()` overload"]fn get_select_item_index(self,)->i32{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e20usize)as*mut u8,i32;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`set_SelectItemIndex(i32)` overload"]fn set_select_item_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e30usize)as*mut u8,();
-(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`CheckItemMask(i32)` overload"]fn check_item_mask(self,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e40usize)as*mut u8,bool;
-(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`IsOutSide(i32, i32)` overload"]fn is_out_side(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41e50usize)as*mut u8,bool;
-(MapTarget_Data)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`CopyFrom(crate::app::maptarget::MapTarget_Data)` overload"]fn copy_from(self,from:impl::core::convert::Into<crate::app::maptarget::MapTarget_Data>)->(){unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41ea0usize)as*mut u8,();
-(MapTarget_Data)__receiver,(crate::app::maptarget::MapTarget_Data)::core::convert::Into::into(from))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41f20usize)as*mut u8, ::unity2::Il2CppString;
-(MapTarget_Data)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapTarget_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41f80usize)as*mut u8,();
-(MapTarget_Data)__receiver)}
-}
-}
-
-#[cfg(feature="app-maptarget")]impl<__T:IMapTarget_Data>IMapTarget_DataMethods for __T{}
-
-#[cfg(feature="app-maptarget")]impl MapTarget_Data{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_x1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_z1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_x2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_z2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_item_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_select_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn set_select_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn check_item_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn is_out_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-}
-
-#[cfg(feature="app-maptarget")]impl MapTarget_Data{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapTarget_Data), ::core::stringify!(new),));
- <Self as IMapTarget_DataMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-maptarget")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapTarget;
-    pub use super::IMapTarget;
-    pub use super::IMapTargetMethods;
+    pub use super::MapTarget_ActionMask;
+    pub use super::MapTarget_Data;
+    pub use super::IMapTarget_Data;
+    pub use super::IMapTarget_DataMethods;
     pub use super::MapTarget_DataSet;
     pub use super::IMapTarget_DataSet;
     pub use super::IMapTarget_DataSetMethods;
     pub use super::MapTarget_RangeType;
-    pub use super::MapTarget_Data;
-    pub use super::IMapTarget_Data;
-    pub use super::IMapTarget_DataMethods;
-    pub use super::MapTarget_ActionMask;
+    pub use super::MapTarget;
+    pub use super::IMapTarget;
+    pub use super::IMapTargetMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

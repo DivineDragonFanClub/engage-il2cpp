@@ -31,10 +31,28 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.ClearObjectsSequence.ClearObjectsConfirmDialog.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem{#[offset(112)]#[rename(name="m_ACallback")]pub m_a_callback:crate::system::action::Action,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceEditor_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceEditor_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceEditor.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSequenceEditor_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSequenceEditor_Label{pub fn main_menu()->Self{Self{value:0}
+}
+pub fn free_cursor()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
+}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.ClearObjectsSequence.ClearObjectsConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence.UploadOverwriteConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{#[offset(216)]#[rename(name="m_BCallback")]pub m_b_callback:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceEditor_SaveSequence{#[static_field]#[rename(name="s_IsEndEdit")]pub s_is_end_edit:bool, #[offset(112)]#[rename(name="m_ParentMenu")]pub m_parent_menu:crate::app::basicmenu::BasicMenu,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceEditor_SaveSequence_Label{pub value:i32,}
@@ -55,87 +73,178 @@ pub fn end()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence.UploadOverwriteConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{#[offset(216)]#[rename(name="m_BCallback")]pub m_b_callback:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence.UploadConfirmDialog.DialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo{#[offset(112)]#[rename(name="ACallback")]pub a_callback:crate::system::action::Action,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.ClearObjectsSequence.ClearObjectsConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence.UploadOverwriteConfirmDialog.DialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo{#[offset(112)]#[rename(name="ACallback")]pub a_callback:crate::system::action::Action,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence.EndConfirmDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem{#[offset(112)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequenceeditor::MapSequenceEditor>)]pub struct MapSequenceEditor{#[offset(120)]#[rename(name="m_ObjectList")]pub m_object_list:crate::system::collections::generic::list_1::List_1<crate::app::mapeditorobjectdata::MapEditorObjectData> , #[offset(128)]#[rename(name="m_Index")]pub m_index:i32, #[offset(136)]#[rename(name="m_MapEditSelect")]pub m_map_edit_select:crate::app::versusmapeditcontent::VersusMapEditContent, #[static_field]#[rename(name="PutEffectPath")]pub put_effect_path: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_OldX")]pub m_old_x:i32, #[offset(148)]#[rename(name="m_OldZ")]pub m_old_z:i32, #[offset(153)]#[rename(name="m_IsSettable")]pub m_is_settable:bool, #[offset(156)]#[rename(name="m_PrevRotate")]pub m_prev_rotate:i32, #[offset(160)]#[rename(name="m_IsPlayableFailure")]pub m_is_playable_failure:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence.UploadConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MapSequenceEditor_SaveSequence_UploadConfirmDialog{#[offset(216)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_ClearObjectsSequence.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.ClearObjectsSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceEditor_ClearObjectsSequence{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence.EndConfirmDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem{#[offset(112)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.ClearObjectsSequence.ClearObjectsConfirmDialog.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem{#[offset(112)]#[rename(name="m_ACallback")]pub m_a_callback:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence.UploadConfirmDialog.DialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo{#[offset(112)]#[rename(name="ACallback")]pub a_callback:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequenceeditor::MapSequenceEditor>)]pub struct MapSequenceEditor{#[offset(120)]#[rename(name="m_ObjectList")]pub m_object_list:crate::system::collections::generic::list_1::List_1<crate::app::mapeditorobjectdata::MapEditorObjectData> , #[offset(128)]#[rename(name="m_Index")]pub m_index:i32, #[offset(136)]#[rename(name="m_MapEditSelect")]pub m_map_edit_select:crate::app::versusmapeditcontent::VersusMapEditContent, #[static_field]#[rename(name="PutEffectPath")]pub put_effect_path: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_OldX")]pub m_old_x:i32, #[offset(148)]#[rename(name="m_OldZ")]pub m_old_z:i32, #[offset(153)]#[rename(name="m_IsSettable")]pub m_is_settable:bool, #[offset(156)]#[rename(name="m_PrevRotate")]pub m_prev_rotate:i32, #[offset(160)]#[rename(name="m_IsPlayableFailure")]pub m_is_playable_failure:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_EndConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence.EndConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MapSequenceEditor_SaveSequence_EndConfirmDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceEditor_SaveSequence{#[static_field]#[rename(name="s_IsEndEdit")]pub s_is_end_edit:bool, #[offset(112)]#[rename(name="m_ParentMenu")]pub m_parent_menu:crate::app::basicmenu::BasicMenu,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_SaveSequence_UploadConfirmDialog.md"))]#[::unity2::class(namespace="App",name="MapSequenceEditor.SaveSequence.UploadConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct MapSequenceEditor_SaveSequence_UploadConfirmDialog{#[offset(216)]#[rename(name="m_CancelCallback")]pub m_cancel_callback:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceeditor/MapSequenceEditor_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceEditor_Label{pub value:i32,}
-impl::unity2::ClassIdentity for MapSequenceEditor_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapSequenceEditor.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapSequenceEditor_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapSequenceEditor_Label{pub fn main_menu()->Self{Self{value:0}
-}
-pub fn free_cursor()->Self{Self{value:1}
-}
-pub fn end()->Self{Self{value:2}
-}
-}
 
 }
 
 #[cfg(feature = "app-mapsequenceeditor-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapsequenceeditor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6d960usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
+}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialogMethods:IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6d8c0usize)as*mut u8,();
+(MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::system::action::Action)::core::convert::Into::into(action))}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",51usize,__vt.len(), <MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods:IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,a_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23073f0usize)as*mut u8,();
-(MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(a_callback))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem>IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods for __T{}
+#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog>IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialogMethods for __T{}
 
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(a_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{#[doc="Direct (non-virtual) call to `MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem), ::core::stringify!(new),));
- <Self as IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods> ::ctor(this,a_callback);
+ failed to instantiate", ::core::stringify!(MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog), ::core::stringify!(new),));
+ <Self as IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialogMethods> ::ctor(this,menu_item_list,action);
+this}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e34890usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e34f00usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_SaveSequenceMethods:IMapSequenceEditor_SaveSequence{#[doc="`OpenThemeMenu()` overload"]fn open_theme_menu(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34240usize)as*mut u8,();
+(MapSequenceEditor_SaveSequence)__receiver)}
+}
+#[doc="`SaveMap()` overload"]fn save_map(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34330usize)as*mut u8,();
+(MapSequenceEditor_SaveSequence)__receiver)}
+}
+#[doc="`IsValidSortie()` overload"]fn is_valid_sortie(self,)->bool{unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34600usize)as*mut u8,bool;
+(MapSequenceEditor_SaveSequence)__receiver)}
+}
+#[doc="`IsValidAbsent()` overload"]fn is_valid_absent(self,)->bool{unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34630usize)as*mut u8,bool;
+(MapSequenceEditor_SaveSequence)__receiver)}
+}
+#[doc="`IsEditRuleCheck()` overload"]fn is_edit_rule_check(self,)->bool{unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34660usize)as*mut u8,bool;
+(MapSequenceEditor_SaveSequence)__receiver)}
+}
+#[doc="`OpenUploadDialog()` overload"]fn open_upload_dialog(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34670usize)as*mut u8,();
+(MapSequenceEditor_SaveSequence)__receiver)}
+}
+#[doc="`UploadMap()` overload"]fn upload_map(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34700usize)as*mut u8,();
+(MapSequenceEditor_SaveSequence)__receiver)}
+}
+#[doc="`EndConfirm()` overload"]fn end_confirm(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34800usize)as*mut u8,();
+(MapSequenceEditor_SaveSequence)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapSequenceEditor_SaveSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequenceEditor_SaveSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34da0usize)as*mut u8,();
+(MapSequenceEditor_SaveSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_SaveSequence>IMapSequenceEditor_SaveSequenceMethods for __T{}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence{pub fn open_theme_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn save_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_valid_sortie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_valid_absent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_edit_rule_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn open_upload_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn upload_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn end_confirm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence{#[doc="Direct (non-virtual) call to `MapSequenceEditor_SaveSequence`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSequenceEditor_SaveSequence`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceEditor_SaveSequence), ::core::stringify!(new),));
+ <Self as IMapSequenceEditor_SaveSequenceMethods> ::ctor(this,);
 this}
 }
 
@@ -163,101 +272,21 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-mapsequenceeditor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_unity2_raw{use super:: * ;
-pub unsafe fn b_call(this:MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6d960usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
-}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialogMethods:IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6d8c0usize)as*mut u8,();
-(MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::system::action::Action)::core::convert::Into::into(action))}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog>IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog), ::core::stringify!(new),));
- <Self as IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialogMethods> ::ctor(this,menu_item_list,action);
-this}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods:IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]fn ctor(self,action:impl::core::convert::Into<crate::system::action::Action> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23074e0usize)as*mut u8,();
-(MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo)__receiver,(crate::system::action::Action)::core::convert::Into::into(action),(::unity2::Il2CppString)::core::convert::Into::into(text))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo>IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods for __T{}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]pub fn new(action:crate::system::action::Action,text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo), ::core::stringify!(new),));
- <Self as IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods> ::ctor(this,action,text);
-this}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods:IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2307560usize)as*mut u8,();
 (MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo)__receiver,(crate::system::action::Action)::core::convert::Into::into(action))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -267,6 +296,11 @@ __MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo_unity
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo{#[doc="Direct (non-virtual) call to `MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(action:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo), ::core::stringify!(new),));
@@ -274,17 +308,93 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-mapsequenceeditor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6d600usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
+}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_SaveSequence_UploadConfirmDialogMethods:IMapSequenceEditor_SaveSequence_UploadConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6d560usize)as*mut u8,();
+(MapSequenceEditor_SaveSequence_UploadConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",51usize,__vt.len(), <MapSequenceEditor_SaveSequence_UploadConfirmDialog as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(MapSequenceEditor_SaveSequence_UploadConfirmDialog, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_SaveSequence_UploadConfirmDialog>IMapSequenceEditor_SaveSequence_UploadConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog{#[doc="Direct (non-virtual) call to `MapSequenceEditor_SaveSequence_UploadConfirmDialog`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,cancel_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceEditor_SaveSequence_UploadConfirmDialog), ::core::stringify!(new),));
+ <Self as IMapSequenceEditor_SaveSequence_UploadConfirmDialogMethods> ::ctor(this,menu_item_list,cancel_callback);
+this}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e33fe0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_ClearObjectsSequenceMethods:IMapSequenceEditor_ClearObjectsSequence{#[doc="`ClearObjects()` overload"]fn clear_objects(self,)->(){unsafe{let __receiver= <MapSequenceEditor_ClearObjectsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e33ed0usize)as*mut u8,();
+(MapSequenceEditor_ClearObjectsSequence)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceEditor_ClearObjectsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequenceEditor_ClearObjectsSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(MapSequenceEditor_ClearObjectsSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceEditor_ClearObjectsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34190usize)as*mut u8,();
+(MapSequenceEditor_ClearObjectsSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_ClearObjectsSequence>IMapSequenceEditor_ClearObjectsSequenceMethods for __T{}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence{pub fn clear_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence{#[doc="Direct (non-virtual) call to `MapSequenceEditor_ClearObjectsSequence`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceEditor_ClearObjectsSequence), ::core::stringify!(new),));
+ <Self as IMapSequenceEditor_ClearObjectsSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods:IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -292,7 +402,16 @@ inner(this,__mi)}
 (MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(crate::system::action::Action)::core::convert::Into::into(decide_callback))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -302,6 +421,11 @@ __MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem_unity2_ra
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem{#[doc="Direct (non-virtual) call to `MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,decide_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
@@ -309,27 +433,76 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-mapsequenceeditor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceEditor_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:MapSequenceEditor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods:IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,a_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23073f0usize)as*mut u8,();
+(MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(a_callback))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <MapSequenceEditor as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(MapSequenceEditor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:MapSequenceEditor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem>IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods for __T{}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem{#[doc="Direct (non-virtual) call to `MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(a_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem), ::core::stringify!(new),));
+ <Self as IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods> ::ctor(this,a_callback);
+this}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods:IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]fn ctor(self,action:impl::core::convert::Into<crate::system::action::Action> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23074e0usize)as*mut u8,();
+(MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo)__receiver,(crate::system::action::Action)::core::convert::Into::into(action),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",10usize,__vt.len(), <MapSequenceEditor as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(MapSequenceEditor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo>IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods for __T{}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo{#[doc="Direct (non-virtual) call to `MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]pub fn new(action:crate::system::action::Action,text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo), ::core::stringify!(new),));
+ <Self as IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods> ::ctor(this,action,text);
+this}
 }
 
 #[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23cd120usize)as*mut u8,();
@@ -368,10 +541,28 @@ inner(this,__mi)}
 (MapSequenceEditor)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceEditor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapSequenceEditor as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(MapSequenceEditor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceEditor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequenceEditor as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(MapSequenceEditor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <MapSequenceEditor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23c8a10usize)as*mut u8,();
@@ -571,56 +762,18 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
 }
 
+#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor{#[doc="Direct (non-virtual) call to `MapSequenceEditor`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSequenceEditor`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapSequenceEditor), ::core::stringify!(new),));
  <Self as IMapSequenceEditorMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceEditor_ClearObjectsSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_dispose(this:MapSequenceEditor_ClearObjectsSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MapSequenceEditor_ClearObjectsSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(MapSequenceEditor_ClearObjectsSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e33fe0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_ClearObjectsSequenceMethods:IMapSequenceEditor_ClearObjectsSequence{#[doc="`ClearObjects()` overload"]fn clear_objects(self,)->(){unsafe{let __receiver= <MapSequenceEditor_ClearObjectsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e33ed0usize)as*mut u8,();
-(MapSequenceEditor_ClearObjectsSequence)__receiver)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceEditor_ClearObjectsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_ClearObjectsSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceEditor_ClearObjectsSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34190usize)as*mut u8,();
-(MapSequenceEditor_ClearObjectsSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_ClearObjectsSequence>IMapSequenceEditor_ClearObjectsSequenceMethods for __T{}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence{pub fn clear_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_ClearObjectsSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceEditor_ClearObjectsSequence), ::core::stringify!(new),));
- <Self as IMapSequenceEditor_ClearObjectsSequenceMethods> ::ctor(this,);
 this}
 }
 
@@ -648,184 +801,44 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-mapsequenceeditor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceEditor_SaveSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:MapSequenceEditor_SaveSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <MapSequenceEditor_SaveSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:MapSequenceEditor_SaveSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MapSequenceEditor_SaveSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(MapSequenceEditor_SaveSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e34890usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e34f00usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_SaveSequenceMethods:IMapSequenceEditor_SaveSequence{#[doc="`OpenThemeMenu()` overload"]fn open_theme_menu(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34240usize)as*mut u8,();
-(MapSequenceEditor_SaveSequence)__receiver)}
-}
-#[doc="`SaveMap()` overload"]fn save_map(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34330usize)as*mut u8,();
-(MapSequenceEditor_SaveSequence)__receiver)}
-}
-#[doc="`IsValidSortie()` overload"]fn is_valid_sortie(self,)->bool{unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34600usize)as*mut u8,bool;
-(MapSequenceEditor_SaveSequence)__receiver)}
-}
-#[doc="`IsValidAbsent()` overload"]fn is_valid_absent(self,)->bool{unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34630usize)as*mut u8,bool;
-(MapSequenceEditor_SaveSequence)__receiver)}
-}
-#[doc="`IsEditRuleCheck()` overload"]fn is_edit_rule_check(self,)->bool{unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34660usize)as*mut u8,bool;
-(MapSequenceEditor_SaveSequence)__receiver)}
-}
-#[doc="`OpenUploadDialog()` overload"]fn open_upload_dialog(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34670usize)as*mut u8,();
-(MapSequenceEditor_SaveSequence)__receiver)}
-}
-#[doc="`UploadMap()` overload"]fn upload_map(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34700usize)as*mut u8,();
-(MapSequenceEditor_SaveSequence)__receiver)}
-}
-#[doc="`EndConfirm()` overload"]fn end_confirm(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34800usize)as*mut u8,();
-(MapSequenceEditor_SaveSequence)__receiver)}
-}
-#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_SaveSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_SaveSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e34da0usize)as*mut u8,();
-(MapSequenceEditor_SaveSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_SaveSequence>IMapSequenceEditor_SaveSequenceMethods for __T{}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence{pub fn open_theme_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn save_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_valid_sortie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_valid_absent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn is_edit_rule_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn open_upload_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn upload_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn end_confirm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceEditor_SaveSequence), ::core::stringify!(new),));
- <Self as IMapSequenceEditor_SaveSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceEditor_SaveSequence_UploadConfirmDialog_unity2_raw{use super:: * ;
-pub unsafe fn b_call(this:MapSequenceEditor_SaveSequence_UploadConfirmDialog,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <MapSequenceEditor_SaveSequence_UploadConfirmDialog as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(MapSequenceEditor_SaveSequence_UploadConfirmDialog, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6d600usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
-}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]pub trait IMapSequenceEditor_SaveSequence_UploadConfirmDialogMethods:IMapSequenceEditor_SaveSequence_UploadConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,cancel_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6d560usize)as*mut u8,();
-(MapSequenceEditor_SaveSequence_UploadConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::system::action::Action)::core::convert::Into::into(cancel_callback))}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSequenceEditor_SaveSequence_UploadConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceEditor_SaveSequence_UploadConfirmDialog_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl<__T:IMapSequenceEditor_SaveSequence_UploadConfirmDialog>IMapSequenceEditor_SaveSequence_UploadConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mapsequenceeditor")]impl MapSequenceEditor_SaveSequence_UploadConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::system::action::Action)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,cancel_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceEditor_SaveSequence_UploadConfirmDialog), ::core::stringify!(new),));
- <Self as IMapSequenceEditor_SaveSequence_UploadConfirmDialogMethods> ::ctor(this,menu_item_list,cancel_callback);
-this}
-}
-
 #[cfg(feature = "app-mapsequenceeditor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem;
-    pub use super::IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem;
-    pub use super::IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods;
-    pub use super::MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog;
-    pub use super::IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog;
-    pub use super::IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialogMethods;
-    pub use super::MapSequenceEditor_SaveSequence_Label;
+    pub use super::MapSequenceEditor_Label;
     pub use super::MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog;
     pub use super::IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog;
     pub use super::IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialogMethods;
-    pub use super::MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo;
-    pub use super::IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo;
-    pub use super::IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods;
-    pub use super::MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo;
-    pub use super::IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo;
-    pub use super::IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods;
-    pub use super::MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem;
-    pub use super::IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem;
-    pub use super::IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods;
-    pub use super::MapSequenceEditor;
-    pub use super::IMapSequenceEditor;
-    pub use super::IMapSequenceEditorMethods;
-    pub use super::MapSequenceEditor_ClearObjectsSequence;
-    pub use super::IMapSequenceEditor_ClearObjectsSequence;
-    pub use super::IMapSequenceEditor_ClearObjectsSequenceMethods;
-    pub use super::MapSequenceEditor_SaveSequence_EndConfirmDialog;
-    pub use super::IMapSequenceEditor_SaveSequence_EndConfirmDialog;
-    pub use super::IMapSequenceEditor_SaveSequence_EndConfirmDialogMethods;
     pub use super::MapSequenceEditor_SaveSequence;
     pub use super::IMapSequenceEditor_SaveSequence;
     pub use super::IMapSequenceEditor_SaveSequenceMethods;
+    pub use super::MapSequenceEditor_SaveSequence_Label;
+    pub use super::MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog;
+    pub use super::IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog;
+    pub use super::IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialogMethods;
+    pub use super::MapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo;
+    pub use super::IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNo;
+    pub use super::IMapSequenceEditor_SaveSequence_UploadOverwriteConfirmDialog_DialogItemNoMethods;
     pub use super::MapSequenceEditor_SaveSequence_UploadConfirmDialog;
     pub use super::IMapSequenceEditor_SaveSequence_UploadConfirmDialog;
     pub use super::IMapSequenceEditor_SaveSequence_UploadConfirmDialogMethods;
-    pub use super::MapSequenceEditor_Label;
+    pub use super::MapSequenceEditor_ClearObjectsSequence;
+    pub use super::IMapSequenceEditor_ClearObjectsSequence;
+    pub use super::IMapSequenceEditor_ClearObjectsSequenceMethods;
+    pub use super::MapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem;
+    pub use super::IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItem;
+    pub use super::IMapSequenceEditor_SaveSequence_EndConfirmDialog_ConfirmYesDialogItemMethods;
+    pub use super::MapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem;
+    pub use super::IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItem;
+    pub use super::IMapSequenceEditor_ClearObjectsSequence_ClearObjectsConfirmDialog_YesItemMethods;
+    pub use super::MapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo;
+    pub use super::IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNo;
+    pub use super::IMapSequenceEditor_SaveSequence_UploadConfirmDialog_DialogItemNoMethods;
+    pub use super::MapSequenceEditor;
+    pub use super::IMapSequenceEditor;
+    pub use super::IMapSequenceEditorMethods;
+    pub use super::MapSequenceEditor_SaveSequence_EndConfirmDialog;
+    pub use super::IMapSequenceEditor_SaveSequence_EndConfirmDialog;
+    pub use super::IMapSequenceEditor_SaveSequence_EndConfirmDialogMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

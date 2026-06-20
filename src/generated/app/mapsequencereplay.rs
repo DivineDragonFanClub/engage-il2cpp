@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencereplay/MapSequenceReplay.md"))]#[::unity2::class(namespace="App",name="MapSequenceReplay")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencereplay::MapSequenceReplay>)]pub struct MapSequenceReplay{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencereplay/MapSequenceReplay_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceReplay_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceReplay_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceReplay.Label";
@@ -46,46 +49,10 @@ pub fn end()->Self{Self{value:8}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencereplay/MapSequenceReplay.md"))]#[::unity2::class(namespace="App",name="MapSequenceReplay")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencereplay::MapSequenceReplay>)]pub struct MapSequenceReplay{}
-
 }
 
 #[cfg(feature = "app-mapsequencereplay-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapsequencereplay")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceReplay_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:MapSequenceReplay,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <MapSequenceReplay as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:MapSequenceReplay,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MapSequenceReplay as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_persistent(this:MapSequenceReplay,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <MapSequenceReplay as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
-let inner:extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-mapsequencereplay")]impl MapSequenceReplay{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f30940usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -93,13 +60,40 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-mapsequencereplay")]pub trait IMapSequenceReplayMethods:IMapSequenceReplay{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceReplay_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapSequenceReplay as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceReplay_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequenceReplay as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceReplay_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapSequenceReplay as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
+let __inner:extern "C" fn(MapSequenceReplay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2fb30usize)as*mut u8,();
@@ -171,6 +165,17 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
+#[cfg(feature="app-mapsequencereplay")]impl MapSequenceReplay{#[doc="Direct (non-virtual) call to `MapSequenceReplay`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSequenceReplay`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSequenceReplay`'s own `OnPersistent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_persistent(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_persistent_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapsequencereplay")]impl MapSequenceReplay{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapSequenceReplay), ::core::stringify!(new),));
@@ -181,10 +186,10 @@ this}
 #[cfg(feature = "app-mapsequencereplay")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceReplay_Label;
     pub use super::MapSequenceReplay;
     pub use super::IMapSequenceReplay;
     pub use super::IMapSequenceReplayMethods;
+    pub use super::MapSequenceReplay_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

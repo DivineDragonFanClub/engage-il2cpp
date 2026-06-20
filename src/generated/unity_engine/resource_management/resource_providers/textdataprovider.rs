@@ -11,104 +11,15 @@ use crate::unity_engine::resource_management::resource_providers::resourceprovid
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/textdataprovider/TextDataProvider.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="TextDataProvider")]#[parent(crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase)]pub struct TextDataProvider{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/textdataprovider/TextDataProvider_InternalOp.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="TextDataProvider.InternalOp")]#[parent(crate::system::object::Object)]pub struct TextDataProvider_InternalOp{#[offset(16)]#[rename(name="m_Provider")]pub m_provider:crate::unity_engine::resource_management::resource_providers::textdataprovider::TextDataProvider, #[offset(24)]#[rename(name="m_RequestOperation")]pub m_request_operation:crate::unity_engine::networking::unitywebrequestasyncoperation::UnityWebRequestAsyncOperation, #[offset(32)]#[rename(name="m_RequestQueueOperation")]pub m_request_queue_operation:crate::unity_engine::resource_management::webrequestqueueoperation::WebRequestQueueOperation, #[offset(40)]#[rename(name="m_PI")]pub m_pi:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, #[offset(64)]#[rename(name="m_IgnoreFailures")]pub m_ignore_failures:bool, #[offset(65)]#[rename(name="m_Complete")]pub m_complete:bool, #[offset(68)]#[rename(name="m_Timeout")]pub m_timeout:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/textdataprovider/TextDataProvider.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="TextDataProvider")]#[parent(crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase)]pub struct TextDataProvider{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextDataProvider_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_ignore_failures{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider as::unity2::ClassIdentity> ::class(),"get_IgnoreFailures",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <TextDataProvider as::unity2::ClassIdentity> ::NAME,"get_IgnoreFailures",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_ignore_failures{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider as::unity2::ClassIdentity> ::class(),"set_IgnoreFailures",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <TextDataProvider as::unity2::ClassIdentity> ::NAME,"set_IgnoreFailures",e),}
-}
-}
-pub unsafe fn convert(this:TextDataProvider,r#type: ::unity2::SystemType,text: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <TextDataProvider as::unity2::ClassIdentity> ::NAME,"Convert",));
-let inner:extern "C" fn(TextDataProvider, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,r#type,text,__mi)}
-pub unsafe fn provide(this:TextDataProvider,provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <TextDataProvider as::unity2::ClassIdentity> ::NAME,"Provide",));
-let inner:extern "C" fn(TextDataProvider,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,provide_handle,__mi)}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <TextDataProvider as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]pub trait ITextDataProviderMethods:ITextDataProvider{#[doc="`get_IgnoreFailures()` overload"]fn get_ignore_failures(self,)->bool{unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__TextDataProvider_unity2_raw::__lookup_get_ignore_failures::get_method_info().method_ptr,bool;
-(TextDataProvider)__receiver)}
-}
-#[doc="`set_IgnoreFailures(bool)` overload"]fn set_ignore_failures(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__TextDataProvider_unity2_raw::__lookup_set_ignore_failures::get_method_info().method_ptr,();
-(TextDataProvider)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`Convert(::unity2::SystemType, ::unity2::Il2CppString)` overload"]fn convert(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::object::Object{unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextDataProvider_unity2_raw::convert(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(text), ::core::option::Option::None)}
-}
-#[doc="`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn provide(self,provide_handle:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextDataProvider_unity2_raw::provide(__receiver, ::core::convert::Into::into(provide_handle), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__TextDataProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(TextDataProvider)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]impl<__T:ITextDataProvider>ITextDataProviderMethods for __T{}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]impl TextDataProvider{pub fn get_ignore_failures_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_ignore_failures_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn provide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]impl TextDataProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TextDataProvider), ::core::stringify!(new),));
- <Self as ITextDataProviderMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextDataProvider_InternalOp_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_percent_complete{use super:: * ;
@@ -161,16 +72,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <TextDataProvider_InternalOp as::unity2::ClassIdentity> ::NAME,"ConvertText",e),}
 }
 }
-pub unsafe fn send_web_request(this:TextDataProvider_InternalOp,path: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TextDataProvider_InternalOp as::unity2::ClassIdentity> ::NAME,"SendWebRequest",));
-let inner:extern "C" fn(TextDataProvider_InternalOp, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,path,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider_InternalOp as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -204,7 +105,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (TextDataProvider_InternalOp)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
 }
 #[doc="`SendWebRequest(::unity2::Il2CppString)` overload"]fn send_web_request(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextDataProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextDataProvider_InternalOp_unity2_raw::send_web_request(__receiver, ::core::convert::Into::into(path), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TextDataProvider_InternalOp as::unity2::ClassIdentity> ::NAME,"SendWebRequest",));
+let __inner:extern "C" fn(TextDataProvider_InternalOp, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(path),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextDataProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__TextDataProvider_InternalOp_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
@@ -223,6 +133,11 @@ pub fn send_web_request_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]impl TextDataProvider_InternalOp{#[doc="Direct (non-virtual) call to `TextDataProvider_InternalOp`'s own `SendWebRequest`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn send_web_request(this:impl::core::convert::Into< ::unity2::IlInstance> ,path: ::unity2::Il2CppString,)->(){let __mi=Self::send_web_request_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),path, ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]impl TextDataProvider_InternalOp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TextDataProvider_InternalOp), ::core::stringify!(new),));
@@ -230,15 +145,110 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextDataProvider_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_ignore_failures{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider as::unity2::ClassIdentity> ::class(),"get_IgnoreFailures",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <TextDataProvider as::unity2::ClassIdentity> ::NAME,"get_IgnoreFailures",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_ignore_failures{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider as::unity2::ClassIdentity> ::class(),"set_IgnoreFailures",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <TextDataProvider as::unity2::ClassIdentity> ::NAME,"set_IgnoreFailures",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <TextDataProvider as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]pub trait ITextDataProviderMethods:ITextDataProvider{#[doc="`get_IgnoreFailures()` overload"]fn get_ignore_failures(self,)->bool{unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__TextDataProvider_unity2_raw::__lookup_get_ignore_failures::get_method_info().method_ptr,bool;
+(TextDataProvider)__receiver)}
+}
+#[doc="`set_IgnoreFailures(bool)` overload"]fn set_ignore_failures(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__TextDataProvider_unity2_raw::__lookup_set_ignore_failures::get_method_info().method_ptr,();
+(TextDataProvider)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Convert(::unity2::SystemType, ::unity2::Il2CppString)` overload"]fn convert(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::object::Object{unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <TextDataProvider as::unity2::ClassIdentity> ::NAME,"Convert",));
+let __inner:extern "C" fn(TextDataProvider, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(text),__mi)}
+}
+}
+#[doc="`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn provide(self,provide_handle:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <TextDataProvider as::unity2::ClassIdentity> ::NAME,"Provide",));
+let __inner:extern "C" fn(TextDataProvider,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(provide_handle),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__TextDataProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(TextDataProvider)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]impl<__T:ITextDataProvider>ITextDataProviderMethods for __T{}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]impl TextDataProvider{pub fn get_ignore_failures_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_ignore_failures_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn provide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]impl TextDataProvider{#[doc="Direct (non-virtual) call to `TextDataProvider`'s own `Convert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn convert(this:impl::core::convert::Into< ::unity2::IlInstance> ,r#type: ::unity2::SystemType,text: ::unity2::Il2CppString,)->crate::system::object::Object{let __mi=Self::convert_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),r#type,text, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextDataProvider`'s own `Provide`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn provide(this:impl::core::convert::Into< ::unity2::IlInstance> ,provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,)->(){let __mi=Self::provide_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),provide_handle, ::core::option::Option::None)}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]impl TextDataProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextDataProvider), ::core::stringify!(new),));
+ <Self as ITextDataProviderMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TextDataProvider;
-    pub use super::ITextDataProvider;
-    pub use super::ITextDataProviderMethods;
     pub use super::TextDataProvider_InternalOp;
     pub use super::ITextDataProvider_InternalOp;
     pub use super::ITextDataProvider_InternalOpMethods;
+    pub use super::TextDataProvider;
+    pub use super::ITextDataProvider;
+    pub use super::ITextDataProviderMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBase;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

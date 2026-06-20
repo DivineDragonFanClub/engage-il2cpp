@@ -24,21 +24,17 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-meshgroundpaintgetter-types")]
 pub use __types::*;
 
-#[cfg(feature="app-meshgroundpaintgetter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MeshGroundPaintGetter_unity2_raw{use super:: * ;
-pub unsafe fn get(this:MeshGroundPaintGetter,x:f32,y:f32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-meshgroundpaintgetter")]pub trait IMeshGroundPaintGetterMethods:IMeshGroundPaintGetter{#[doc="`Get(f32, f32)` overload"]fn get(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <MeshGroundPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <MeshGroundPaintGetter as::unity2::ClassIdentity> ::NAME,"Get",));
-let inner:extern "C" fn(MeshGroundPaintGetter,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MeshGroundPaintGetter,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,y,__mi)}
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y),__mi)}
 }
-
-#[cfg(feature="app-meshgroundpaintgetter")]pub trait IMeshGroundPaintGetterMethods:IMeshGroundPaintGetter{#[doc="`Get(f32, f32)` overload"]fn get(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <MeshGroundPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MeshGroundPaintGetter_unity2_raw::get(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MeshGroundPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2730usize)as*mut u8,();
@@ -50,6 +46,11 @@ __MeshGroundPaintGetter_unity2_raw::get(__receiver, ::core::convert::Into::into(
 
 #[cfg(feature="app-meshgroundpaintgetter")]impl MeshGroundPaintGetter{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-meshgroundpaintgetter")]impl MeshGroundPaintGetter{#[doc="Direct (non-virtual) call to `MeshGroundPaintGetter`'s own `Get`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:f32,y:f32,)-> ::unity2::Il2CppString{let __mi=Self::get_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,y, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-meshgroundpaintgetter")]impl MeshGroundPaintGetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

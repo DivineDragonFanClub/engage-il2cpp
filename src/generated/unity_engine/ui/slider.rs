@@ -45,12 +45,6 @@ pub fn vertical()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/slider/Slider_SliderEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Slider.SliderEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<f32>)]pub struct Slider_SliderEvent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/slider/Slider.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Slider")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct Slider{#[offset(248)]#[rename(name="m_FillRect")]pub m_fill_rect:crate::unity_engine::recttransform::RectTransform, #[offset(256)]#[rename(name="m_HandleRect")]pub m_handle_rect:crate::unity_engine::recttransform::RectTransform, #[offset(264)]#[rename(name="m_Direction")]pub m_direction:crate::unity_engine::ui::slider::Slider_Direction, #[offset(268)]#[rename(name="m_MinValue")]pub m_min_value:f32, #[offset(272)]#[rename(name="m_MaxValue")]pub m_max_value:f32, #[offset(276)]#[rename(name="m_WholeNumbers")]pub m_whole_numbers:bool, #[offset(280)]#[rename(name="m_Value")]pub m_value:f32, #[offset(288)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::unity_engine::ui::slider::Slider_SliderEvent, #[offset(296)]#[rename(name="m_FillImage")]pub m_fill_image:crate::unity_engine::ui::image::Image, #[offset(304)]#[rename(name="m_FillTransform")]pub m_fill_transform:crate::unity_engine::transform::Transform, #[offset(312)]#[rename(name="m_FillContainerRect")]pub m_fill_container_rect:crate::unity_engine::recttransform::RectTransform, #[offset(320)]#[rename(name="m_HandleTransform")]pub m_handle_transform:crate::unity_engine::transform::Transform, #[offset(328)]#[rename(name="m_HandleContainerRect")]pub m_handle_container_rect:crate::unity_engine::recttransform::RectTransform, #[offset(336)]#[rename(name="m_Offset")]pub m_offset:crate::unity_engine::vector2::Vector2, #[offset(344)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker, #[offset(345)]#[rename(name="m_DelayedUpdateVisuals")]pub m_delayed_update_visuals:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/slider/Slider_Direction.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Slider_Direction{pub value:i32,}
 impl::unity2::ClassIdentity for Slider_Direction{const NAMESPACE: &'static str="UnityEngine.UI";
 const NAME: &'static str="Slider.Direction";
@@ -69,6 +63,12 @@ pub fn bottom_to_top()->Self{Self{value:2}
 pub fn top_to_bottom()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/slider/Slider_SliderEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Slider.SliderEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<f32>)]pub struct Slider_SliderEvent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/slider/Slider.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Slider")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct Slider{#[offset(248)]#[rename(name="m_FillRect")]pub m_fill_rect:crate::unity_engine::recttransform::RectTransform, #[offset(256)]#[rename(name="m_HandleRect")]pub m_handle_rect:crate::unity_engine::recttransform::RectTransform, #[offset(264)]#[rename(name="m_Direction")]pub m_direction:crate::unity_engine::ui::slider::Slider_Direction, #[offset(268)]#[rename(name="m_MinValue")]pub m_min_value:f32, #[offset(272)]#[rename(name="m_MaxValue")]pub m_max_value:f32, #[offset(276)]#[rename(name="m_WholeNumbers")]pub m_whole_numbers:bool, #[offset(280)]#[rename(name="m_Value")]pub m_value:f32, #[offset(288)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::unity_engine::ui::slider::Slider_SliderEvent, #[offset(296)]#[rename(name="m_FillImage")]pub m_fill_image:crate::unity_engine::ui::image::Image, #[offset(304)]#[rename(name="m_FillTransform")]pub m_fill_transform:crate::unity_engine::transform::Transform, #[offset(312)]#[rename(name="m_FillContainerRect")]pub m_fill_container_rect:crate::unity_engine::recttransform::RectTransform, #[offset(320)]#[rename(name="m_HandleTransform")]pub m_handle_transform:crate::unity_engine::transform::Transform, #[offset(328)]#[rename(name="m_HandleContainerRect")]pub m_handle_container_rect:crate::unity_engine::recttransform::RectTransform, #[offset(336)]#[rename(name="m_Offset")]pub m_offset:crate::unity_engine::vector2::Vector2, #[offset(344)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker, #[offset(345)]#[rename(name="m_DelayedUpdateVisuals")]pub m_delayed_update_visuals:bool,}
 
 }
 
@@ -91,219 +91,6 @@ pub use __types::*;
  failed to instantiate", ::core::stringify!(Slider_SliderEvent), ::core::stringify!(new),));
  <Self as ISlider_SliderEventMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="unity_engine-ui-slider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Slider_unity2_raw{use super:: * ;
-pub unsafe fn get_value(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",46usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"get_value",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_value(this:Slider,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",47usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"set_value",));
-let inner:extern "C" fn(Slider,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn set_value_without_notify(this:Slider,input:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",48usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"SetValueWithoutNotify",));
-let inner:extern "C" fn(Slider,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,input,__mi)}
-pub unsafe fn rebuild(this:Slider,executing:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",49usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"Rebuild",));
-let inner:extern "C" fn(Slider,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,executing,__mi)}
-pub unsafe fn layout_complete(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",50usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn graphic_update_complete(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_enable(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnEnable",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_disable(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnDisable",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",52usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"Update",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_did_apply_animation_properties(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set(this:Slider,input:f32,send_callback:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(53usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",53usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"Set",));
-let inner:extern "C" fn(Slider,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,input,send_callback,__mi)}
-pub unsafe fn on_rect_transform_dimensions_change(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_pointer_down(this:Slider,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",32usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnPointerDown",));
-let inner:extern "C" fn(Slider,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn on_drag(this:Slider,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(54usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",54usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnDrag",));
-let inner:extern "C" fn(Slider,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn on_move(this:Slider,event_data:crate::unity_engine::event_systems::axiseventdata::AxisEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnMove",));
-let inner:extern "C" fn(Slider,crate::unity_engine::event_systems::axiseventdata::AxisEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn find_selectable_on_left(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"FindSelectableOnLeft",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn find_selectable_on_right(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"FindSelectableOnRight",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn find_selectable_on_up(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"FindSelectableOnUp",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn find_selectable_on_down(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"FindSelectableOnDown",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_initialize_potential_drag(this:Slider,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(55usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",55usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnInitializePotentialDrag",));
-let inner:extern "C" fn(Slider,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_data,__mi)}
-pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(this:Slider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.ICanvasElement.get_transform",));
-let inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-ui-slider")]pub trait ISliderMethods:ISlider{#[doc="`get_fillRect()` overload"]fn get_fill_rect(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -355,13 +142,40 @@ inner(this,__mi)}
 (Slider)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`get_value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",46usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"get_value",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_value(f32)` overload"]fn set_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"set_value",));
+let __inner:extern "C" fn(Slider,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`SetValueWithoutNotify(f32)` overload"]fn set_value_without_notify(self,input:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::set_value_without_notify(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",48usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"SetValueWithoutNotify",));
+let __inner:extern "C" fn(Slider,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(input),__mi)}
+}
 }
 #[doc="`get_normalizedValue()` overload"]fn get_normalized_value(self,)->f32{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x372f100usize)as*mut u8,f32;
@@ -388,25 +202,88 @@ __Slider_unity2_raw::set_value_without_notify(__receiver, ::core::convert::Into:
 (Slider)__receiver)}
 }
 #[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,executing:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(executing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",49usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"Rebuild",));
+let __inner:extern "C" fn(Slider,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(executing),__mi)}
+}
 }
 #[doc="`LayoutComplete()` overload"]fn layout_complete(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GraphicUpdateComplete()` overload"]fn graphic_update_complete(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::graphic_update_complete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",52usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"Update",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateCachedReferences()` overload"]fn update_cached_references(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x372e650usize)as*mut u8,();
@@ -417,10 +294,28 @@ __Slider_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::optio
 (Slider)__receiver,(f32)::core::convert::Into::into(input))}
 }
 #[doc="`Set(f32, bool)` overload"]fn set(self,input:impl::core::convert::Into<f32> ,send_callback:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::set(__receiver, ::core::convert::Into::into(input), ::core::convert::Into::into(send_callback), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(53usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",53usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"Set",));
+let __inner:extern "C" fn(Slider,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(input), ::core::convert::Into::into(send_callback),__mi)}
+}
 }
 #[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_axis()` overload"]fn get_axis(self,)->crate::unity_engine::ui::slider::Slider_Axis{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x372f820usize)as*mut u8,crate::unity_engine::ui::slider::Slider_Axis;
@@ -443,35 +338,116 @@ __Slider_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::opt
 (Slider)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
 }
 #[doc="`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_down(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::on_pointer_down(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnPointerDown",));
+let __inner:extern "C" fn(Slider,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::on_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(54usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",54usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnDrag",));
+let __inner:extern "C" fn(Slider,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]fn on_move(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::on_move(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnMove",));
+let __inner:extern "C" fn(Slider,crate::unity_engine::event_systems::axiseventdata::AxisEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`FindSelectableOnLeft()` overload"]fn find_selectable_on_left(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::find_selectable_on_left(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"FindSelectableOnLeft",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`FindSelectableOnRight()` overload"]fn find_selectable_on_right(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::find_selectable_on_right(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"FindSelectableOnRight",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`FindSelectableOnUp()` overload"]fn find_selectable_on_up(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::find_selectable_on_up(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"FindSelectableOnUp",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`FindSelectableOnDown()` overload"]fn find_selectable_on_down(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::find_selectable_on_down(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"FindSelectableOnDown",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_initialize_potential_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::on_initialize_potential_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(55usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",55usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"OnInitializePotentialDrag",));
+let __inner:extern "C" fn(Slider,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
+}
 }
 #[doc="`SetDirection(crate::unity_engine::ui::slider::Slider_Direction, bool)` overload"]fn set_direction_2(self,direction:impl::core::convert::Into<crate::unity_engine::ui::slider::Slider_Direction> ,include_rect_layouts:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3730450usize)as*mut u8,();
 (Slider)__receiver,(crate::unity_engine::ui::slider::Slider_Direction)::core::convert::Into::into(direction),(bool)::core::convert::Into::into(include_rect_layouts))}
 }
 #[doc="`UnityEngine.UI.ICanvasElement.get_transform()` overload"]fn unity_engine_ui_i_canvas_element_get_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Slider_unity2_raw::unity_engine_ui_i_canvas_element_get_transform(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <Slider as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.ICanvasElement.get_transform",));
+let __inner:extern "C" fn(Slider, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -526,6 +502,71 @@ pub fn set_direction_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn unity_engine_ui_i_canvas_element_get_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
 }
 
+#[cfg(feature="unity_engine-ui-slider")]impl Slider{#[doc="Direct (non-virtual) call to `Slider`'s own `get_value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `set_value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::set_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `SetValueWithoutNotify`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_value_without_notify(this:impl::core::convert::Into< ::unity2::IlInstance> ,input:f32,)->(){let __mi=Self::set_value_without_notify_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),input, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `Rebuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn rebuild(this:impl::core::convert::Into< ::unity2::IlInstance> ,executing:crate::unity_engine::ui::canvasupdate::CanvasUpdate,)->(){let __mi=Self::rebuild_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),executing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `LayoutComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn layout_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::layout_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `GraphicUpdateComplete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn graphic_update_complete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::graphic_update_complete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `OnEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `OnDisable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_disable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_disable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `Update`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `OnDidApplyAnimationProperties`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_did_apply_animation_properties(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_did_apply_animation_properties_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set(this:impl::core::convert::Into< ::unity2::IlInstance> ,input:f32,send_callback:bool,)->(){let __mi=Self::set_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),input,send_callback, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `OnRectTransformDimensionsChange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_rect_transform_dimensions_change(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_rect_transform_dimensions_change_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `OnPointerDown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_pointer_down(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_pointer_down_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `OnDrag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_drag(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_drag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `OnMove`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_move(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::axiseventdata::AxisEventData,)->(){let __mi=Self::on_move_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::axiseventdata::AxisEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `FindSelectableOnLeft`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn find_selectable_on_left(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::ui::selectable::Selectable{let __mi=Self::find_selectable_on_left_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `FindSelectableOnRight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn find_selectable_on_right(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::ui::selectable::Selectable{let __mi=Self::find_selectable_on_right_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `FindSelectableOnUp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn find_selectable_on_up(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::ui::selectable::Selectable{let __mi=Self::find_selectable_on_up_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `FindSelectableOnDown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn find_selectable_on_down(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::ui::selectable::Selectable{let __mi=Self::find_selectable_on_down_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `OnInitializePotentialDrag`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_initialize_potential_drag(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_initialize_potential_drag_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Slider`'s own `UnityEngine.UI.ICanvasElement.get_transform`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::transform::Transform{let __mi=Self::unity_engine_ui_i_canvas_element_get_transform_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-ui-slider")]impl Slider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(Slider), ::core::stringify!(new),));
@@ -537,13 +578,13 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Slider_Axis;
+    pub use super::Slider_Direction;
     pub use super::Slider_SliderEvent;
     pub use super::ISlider_SliderEvent;
     pub use super::ISlider_SliderEventMethods;
     pub use super::Slider;
     pub use super::ISlider;
     pub use super::ISliderMethods;
-    pub use super::Slider_Direction;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

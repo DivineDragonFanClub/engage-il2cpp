@@ -19,18 +19,36 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/rotationlimitpolygonal/RotationLimitPolygonal_LimitPoint.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="RotationLimitPolygonal.LimitPoint")]#[parent(crate::system::object::Object)]pub struct RotationLimitPolygonal_LimitPoint{#[offset(16)]#[rename(name="point")]pub point:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="tangentWeight")]pub tangent_weight:f32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/rotationlimitpolygonal/RotationLimitPolygonal_ReachCone.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="RotationLimitPolygonal.ReachCone")]#[parent(crate::system::object::Object)]pub struct RotationLimitPolygonal_ReachCone{#[offset(16)]#[rename(name="tetrahedron")]pub tetrahedron: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(24)]#[rename(name="volume")]pub volume:f32, #[offset(28)]#[rename(name="S")]pub s:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="B")]pub b:crate::unity_engine::vector3::Vector3,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/rotationlimitpolygonal/RotationLimitPolygonal.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="RotationLimitPolygonal")]#[parent(crate::root_motion::final_ik::rotationlimit::RotationLimit)]pub struct RotationLimitPolygonal{#[offset(56)]#[rename(name="twistLimit")]pub twist_limit:f32, #[offset(60)]#[rename(name="smoothIterations")]pub smooth_iterations:i32, #[offset(64)]#[rename(name="points")]pub points: ::unity2::Array<crate::root_motion::final_ik::rotationlimitpolygonal::RotationLimitPolygonal_LimitPoint> , #[offset(72)]#[rename(name="P")]pub p: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(80)]#[rename(name="reachCones")]pub reach_cones: ::unity2::Array<crate::root_motion::final_ik::rotationlimitpolygonal::RotationLimitPolygonal_ReachCone> ,}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/rotationlimitpolygonal/RotationLimitPolygonal_LimitPoint.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="RotationLimitPolygonal.LimitPoint")]#[parent(crate::system::object::Object)]pub struct RotationLimitPolygonal_LimitPoint{#[offset(16)]#[rename(name="point")]pub point:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="tangentWeight")]pub tangent_weight:f32,}
-
 }
 
 #[cfg(feature = "root_motion-final_ik-rotationlimitpolygonal-types")]
 pub use __types::*;
+
+#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]pub trait IRotationLimitPolygonal_LimitPointMethods:IRotationLimitPolygonal_LimitPoint{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RotationLimitPolygonal_LimitPoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62980usize)as*mut u8,();
+(RotationLimitPolygonal_LimitPoint)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]impl<__T:IRotationLimitPolygonal_LimitPoint>IRotationLimitPolygonal_LimitPointMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]impl RotationLimitPolygonal_LimitPoint{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]impl RotationLimitPolygonal_LimitPoint{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RotationLimitPolygonal_LimitPoint), ::core::stringify!(new),));
+ <Self as IRotationLimitPolygonal_LimitPointMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]pub trait IRotationLimitPolygonal_ReachConeMethods:IRotationLimitPolygonal_ReachCone{#[doc="`get_o()` overload"]fn get_o(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <RotationLimitPolygonal_ReachCone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d629c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
@@ -80,19 +98,6 @@ pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RotationLimitPolygonal_unity2_raw{use super:: * ;
-pub unsafe fn limit_rotation(this:RotationLimitPolygonal,rotation:crate::unity_engine::quaternion::Quaternion,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <RotationLimitPolygonal as::unity2::ClassIdentity> ::NAME,"LimitRotation",));
-let inner:extern "C" fn(RotationLimitPolygonal,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,rotation,__mi)}
-}
-
 #[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]pub trait IRotationLimitPolygonalMethods:IRotationLimitPolygonal{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <RotationLimitPolygonal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec14d0usize)as*mut u8,();
 (RotationLimitPolygonal)__receiver)}
@@ -114,7 +119,16 @@ inner(this,rotation,__mi)}
 (RotationLimitPolygonal)__receiver,(::unity2::Array<crate::root_motion::final_ik::rotationlimitpolygonal::RotationLimitPolygonal_LimitPoint>)::core::convert::Into::into(points))}
 }
 #[doc="`LimitRotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn limit_rotation(self,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <RotationLimitPolygonal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RotationLimitPolygonal_unity2_raw::limit_rotation(__receiver, ::core::convert::Into::into(rotation), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RotationLimitPolygonal as::unity2::ClassIdentity> ::NAME,"LimitRotation",));
+let __inner:extern "C" fn(RotationLimitPolygonal,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(rotation),__mi)}
+}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RotationLimitPolygonal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec1b60usize)as*mut u8,();
@@ -178,6 +192,11 @@ pub fn get_reach_cone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
+#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]impl RotationLimitPolygonal{#[doc="Direct (non-virtual) call to `RotationLimitPolygonal`'s own `LimitRotation`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn limit_rotation(this:impl::core::convert::Into< ::unity2::IlInstance> ,rotation:crate::unity_engine::quaternion::Quaternion,)->crate::unity_engine::quaternion::Quaternion{let __mi=Self::limit_rotation_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),rotation, ::core::option::Option::None)}
+}
+
 #[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]impl RotationLimitPolygonal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RotationLimitPolygonal), ::core::stringify!(new),));
@@ -185,36 +204,18 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]pub trait IRotationLimitPolygonal_LimitPointMethods:IRotationLimitPolygonal_LimitPoint{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RotationLimitPolygonal_LimitPoint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62980usize)as*mut u8,();
-(RotationLimitPolygonal_LimitPoint)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]impl<__T:IRotationLimitPolygonal_LimitPoint>IRotationLimitPolygonal_LimitPointMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]impl RotationLimitPolygonal_LimitPoint{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]impl RotationLimitPolygonal_LimitPoint{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RotationLimitPolygonal_LimitPoint), ::core::stringify!(new),));
- <Self as IRotationLimitPolygonal_LimitPointMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "root_motion-final_ik-rotationlimitpolygonal")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RotationLimitPolygonal_LimitPoint;
+    pub use super::IRotationLimitPolygonal_LimitPoint;
+    pub use super::IRotationLimitPolygonal_LimitPointMethods;
     pub use super::RotationLimitPolygonal_ReachCone;
     pub use super::IRotationLimitPolygonal_ReachCone;
     pub use super::IRotationLimitPolygonal_ReachConeMethods;
     pub use super::RotationLimitPolygonal;
     pub use super::IRotationLimitPolygonal;
     pub use super::IRotationLimitPolygonalMethods;
-    pub use super::RotationLimitPolygonal_LimitPoint;
-    pub use super::IRotationLimitPolygonal_LimitPoint;
-    pub use super::IRotationLimitPolygonal_LimitPointMethods;
     pub use crate::root_motion::final_ik::rotationlimit::IRotationLimit;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

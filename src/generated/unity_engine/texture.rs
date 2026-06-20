@@ -18,79 +18,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-texture-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-texture")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Texture_unity2_raw{use super:: * ;
-pub unsafe fn get_graphics_format(this:Texture,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"get_graphicsFormat",));
-let inner:extern "C" fn(Texture, ::unity2::OptionalMethod,)->crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_width(this:Texture,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"get_width",));
-let inner:extern "C" fn(Texture, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_width(this:Texture,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"set_width",));
-let inner:extern "C" fn(Texture,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_height(this:Texture,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"get_height",));
-let inner:extern "C" fn(Texture, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_height(this:Texture,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"set_height",));
-let inner:extern "C" fn(Texture,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn set_dimension(this:Texture,value:crate::unity_engine::rendering::texturedimension::TextureDimension,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"set_dimension",));
-let inner:extern "C" fn(Texture,crate::unity_engine::rendering::texturedimension::TextureDimension, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_is_readable(this:Texture,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"get_isReadable",));
-let inner:extern "C" fn(Texture, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-texture")]impl Texture{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3789f50usize)as*mut u8,();
 )}
 }
@@ -105,7 +32,16 @@ inner(this,__mi)}
 (Texture)__receiver)}
 }
 #[doc="`get_graphicsFormat()` overload"]fn get_graphics_format(self,)->crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat{unsafe{let __receiver= <Texture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Texture_unity2_raw::get_graphics_format(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"get_graphicsFormat",));
+let __inner:extern "C" fn(Texture, ::unity2::OptionalMethod,)->crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetDataWidth()` overload"]fn get_data_width(self,)->i32{unsafe{let __receiver= <Texture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3789400usize)as*mut u8,i32;
@@ -120,22 +56,76 @@ __Texture_unity2_raw::get_graphics_format(__receiver, ::core::option::Option::No
 (Texture)__receiver)}
 }
 #[doc="`get_width()` overload"]fn get_width(self,)->i32{unsafe{let __receiver= <Texture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Texture_unity2_raw::get_width(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"get_width",));
+let __inner:extern "C" fn(Texture, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_width(i32)` overload"]fn set_width(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Texture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Texture_unity2_raw::set_width(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"set_width",));
+let __inner:extern "C" fn(Texture,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_height()` overload"]fn get_height(self,)->i32{unsafe{let __receiver= <Texture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Texture_unity2_raw::get_height(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"get_height",));
+let __inner:extern "C" fn(Texture, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_height(i32)` overload"]fn set_height(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Texture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Texture_unity2_raw::set_height(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"set_height",));
+let __inner:extern "C" fn(Texture,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`set_dimension(crate::unity_engine::rendering::texturedimension::TextureDimension)` overload"]fn set_dimension(self,value:impl::core::convert::Into<crate::unity_engine::rendering::texturedimension::TextureDimension>)->(){unsafe{let __receiver= <Texture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Texture_unity2_raw::set_dimension(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"set_dimension",));
+let __inner:extern "C" fn(Texture,crate::unity_engine::rendering::texturedimension::TextureDimension, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_isReadable()` overload"]fn get_is_readable(self,)->bool{unsafe{let __receiver= <Texture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Texture_unity2_raw::get_is_readable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Texture as::unity2::ClassIdentity> ::NAME,"get_isReadable",));
+let __inner:extern "C" fn(Texture, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_wrapMode()` overload"]fn get_wrap_mode(self,)->crate::unity_engine::texturewrapmode::TextureWrapMode{unsafe{let __receiver= <Texture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x37896f0usize)as*mut u8,crate::unity_engine::texturewrapmode::TextureWrapMode;
@@ -226,6 +216,29 @@ pub fn validate_format_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn create_non_readable_exception_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
 pub fn get_texel_size_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+}
+
+#[cfg(feature="unity_engine-texture")]impl Texture{#[doc="Direct (non-virtual) call to `Texture`'s own `get_graphicsFormat`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_graphics_format(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat{let __mi=Self::get_graphics_format_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Texture`'s own `get_width`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_width(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_width_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Texture`'s own `set_width`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_width(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:i32,)->(){let __mi=Self::set_width_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Texture`'s own `get_height`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_height(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_height_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Texture`'s own `set_height`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_height(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:i32,)->(){let __mi=Self::set_height_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Texture`'s own `set_dimension`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_dimension(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::unity_engine::rendering::texturedimension::TextureDimension,)->(){let __mi=Self::set_dimension_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::texturedimension::TextureDimension, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Texture`'s own `get_isReadable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_readable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_readable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-texture")]impl Texture{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

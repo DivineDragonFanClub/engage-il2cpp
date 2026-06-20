@@ -22,81 +22,73 @@ use crate::system::reflection::methodinfo::{IMethodInfo,MethodInfo}
 #[cfg(feature = "system-reflection-runtimemethodinfo-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-runtimemethodinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeMethodInfo_unity2_raw{use super:: * ;
-pub unsafe fn get_module(this:RuntimeMethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::module::Module{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <RuntimeMethodInfo as::unity2::ClassIdentity> ::NAME,"get_Module",));
-let inner:extern "C" fn(RuntimeMethodInfo, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn format_name_and_sig(this:RuntimeMethodInfo,serialization:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",40usize,__vt.len(), <RuntimeMethodInfo as::unity2::ClassIdentity> ::NAME,"FormatNameAndSig",));
-let inner:extern "C" fn(RuntimeMethodInfo,bool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,serialization,__mi)}
-pub unsafe fn create_delegate(this:RuntimeMethodInfo,delegate_type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::delegate::Delegate{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",47usize,__vt.len(), <RuntimeMethodInfo as::unity2::ClassIdentity> ::NAME,"CreateDelegate",));
-let inner:extern "C" fn(RuntimeMethodInfo, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,delegate_type,__mi)}
-pub unsafe fn create_delegate_2(this:RuntimeMethodInfo,delegate_type: ::unity2::SystemType,target:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::delegate::Delegate{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",48usize,__vt.len(), <RuntimeMethodInfo as::unity2::ClassIdentity> ::NAME,"CreateDelegate",));
-let inner:extern "C" fn(RuntimeMethodInfo, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,delegate_type,target,__mi)}
-pub unsafe fn to_string(this:RuntimeMethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <RuntimeMethodInfo as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(RuntimeMethodInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="system-reflection-runtimemethodinfo")]pub trait IRuntimeMethodInfoMethods:IRuntimeMethodInfo{#[doc="`get_BindingFlags()` overload"]fn get_binding_flags(self,)->crate::system::reflection::bindingflags::BindingFlags{unsafe{let __receiver= <RuntimeMethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd5aa0usize)as*mut u8,crate::system::reflection::bindingflags::BindingFlags;
 (RuntimeMethodInfo)__receiver)}
 }
 #[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <RuntimeMethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeMethodInfo_unity2_raw::get_module(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <RuntimeMethodInfo as::unity2::ClassIdentity> ::NAME,"get_Module",));
+let __inner:extern "C" fn(RuntimeMethodInfo, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_ReflectedTypeInternal()` overload"]fn get_reflected_type_internal(self,)->crate::system::runtimetype::RuntimeType{unsafe{let __receiver= <RuntimeMethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd5bd0usize)as*mut u8,crate::system::runtimetype::RuntimeType;
 (RuntimeMethodInfo)__receiver)}
 }
 #[doc="`FormatNameAndSig(bool)` overload"]fn format_name_and_sig(self,serialization:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeMethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeMethodInfo_unity2_raw::format_name_and_sig(__receiver, ::core::convert::Into::into(serialization), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <RuntimeMethodInfo as::unity2::ClassIdentity> ::NAME,"FormatNameAndSig",));
+let __inner:extern "C" fn(RuntimeMethodInfo,bool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(serialization),__mi)}
+}
 }
 #[doc="`CreateDelegate(::unity2::SystemType)` overload"]fn create_delegate(self,delegate_type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::delegate::Delegate{unsafe{let __receiver= <RuntimeMethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeMethodInfo_unity2_raw::create_delegate(__receiver, ::core::convert::Into::into(delegate_type), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <RuntimeMethodInfo as::unity2::ClassIdentity> ::NAME,"CreateDelegate",));
+let __inner:extern "C" fn(RuntimeMethodInfo, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(delegate_type),__mi)}
+}
 }
 #[doc="`CreateDelegate(::unity2::SystemType, crate::system::object::Object)` overload"]fn create_delegate_2(self,delegate_type:impl::core::convert::Into< ::unity2::SystemType> ,target:impl::core::convert::Into<crate::system::object::Object>)->crate::system::delegate::Delegate{unsafe{let __receiver= <RuntimeMethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeMethodInfo_unity2_raw::create_delegate_2(__receiver, ::core::convert::Into::into(delegate_type), ::core::convert::Into::into(target), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",48usize,__vt.len(), <RuntimeMethodInfo as::unity2::ClassIdentity> ::NAME,"CreateDelegate",));
+let __inner:extern "C" fn(RuntimeMethodInfo, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(delegate_type), ::core::convert::Into::into(target),__mi)}
+}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeMethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeMethodInfo_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <RuntimeMethodInfo as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(RuntimeMethodInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetRuntimeModule()` overload"]fn get_runtime_module(self,)->crate::system::reflection::runtimemodule::RuntimeModule{unsafe{let __receiver= <RuntimeMethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd5b40usize)as*mut u8,crate::system::reflection::runtimemodule::RuntimeModule;
@@ -124,6 +116,23 @@ pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn get_runtime_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn serialization_to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="system-reflection-runtimemethodinfo")]impl RuntimeMethodInfo{#[doc="Direct (non-virtual) call to `RuntimeMethodInfo`'s own `get_Module`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::module::Module{let __mi=Self::get_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeMethodInfo`'s own `FormatNameAndSig`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn format_name_and_sig(this:impl::core::convert::Into< ::unity2::IlInstance> ,serialization:bool,)-> ::unity2::Il2CppString{let __mi=Self::format_name_and_sig_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),serialization, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeMethodInfo`'s own `CreateDelegate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_delegate(this:impl::core::convert::Into< ::unity2::IlInstance> ,delegate_type: ::unity2::SystemType,)->crate::system::delegate::Delegate{let __mi=Self::create_delegate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),delegate_type, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeMethodInfo`'s own `CreateDelegate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_delegate_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,delegate_type: ::unity2::SystemType,target:crate::system::object::Object,)->crate::system::delegate::Delegate{let __mi=Self::create_delegate_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),delegate_type,target, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeMethodInfo`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-reflection-runtimemethodinfo")]impl RuntimeMethodInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

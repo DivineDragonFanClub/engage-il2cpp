@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransform-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-jobs-ijobparallelfortransform")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IJobParallelForTransform_unity2_raw{use super:: * ;
-pub unsafe fn execute(this:IJobParallelForTransform,index:i32,transform:crate::unity_engine::jobs::transformaccess::TransformAccess,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-jobs-ijobparallelfortransform")]pub trait IIJobParallelForTransformMethods:IIJobParallelForTransform{#[doc="`Execute(i32, crate::unity_engine::jobs::transformaccess::TransformAccess)` overload"]fn execute(self,index:impl::core::convert::Into<i32> ,transform:impl::core::convert::Into<crate::unity_engine::jobs::transformaccess::TransformAccess>)->(){unsafe{let __receiver= <IJobParallelForTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IJobParallelForTransform as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(IJobParallelForTransform,i32,crate::unity_engine::jobs::transformaccess::TransformAccess, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IJobParallelForTransform,i32,crate::unity_engine::jobs::transformaccess::TransformAccess, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,transform,__mi)}
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(transform),__mi)}
 }
-
-#[cfg(feature="unity_engine-jobs-ijobparallelfortransform")]pub trait IIJobParallelForTransformMethods:IIJobParallelForTransform{#[doc="`Execute(i32, crate::unity_engine::jobs::transformaccess::TransformAccess)` overload"]fn execute(self,index:impl::core::convert::Into<i32> ,transform:impl::core::convert::Into<crate::unity_engine::jobs::transformaccess::TransformAccess>)->(){unsafe{let __receiver= <IJobParallelForTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IJobParallelForTransform_unity2_raw::execute(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(transform), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="unity_engine-jobs-ijobparallelfortransform")]impl<__T:IIJobParallelForTransform>IIJobParallelForTransformMethods for __T{}
 
 #[cfg(feature="unity_engine-jobs-ijobparallelfortransform")]impl IJobParallelForTransform{pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-jobs-ijobparallelfortransform")]impl IJobParallelForTransform{#[doc="Direct (non-virtual) call to `IJobParallelForTransform`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,transform:crate::unity_engine::jobs::transformaccess::TransformAccess,)->(){let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::unity_engine::jobs::transformaccess::TransformAccess, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,transform, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-jobs-ijobparallelfortransform")]

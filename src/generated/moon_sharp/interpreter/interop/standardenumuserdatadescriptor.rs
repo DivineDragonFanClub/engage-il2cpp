@@ -289,26 +289,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <StandardEnumUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"Callback_HasAny",e),}
 }
 }
-pub unsafe fn is_type_compatible(this:StandardEnumUserDataDescriptor,r#type: ::unity2::SystemType,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <StandardEnumUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"IsTypeCompatible",));
-let inner:extern "C" fn(StandardEnumUserDataDescriptor, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,r#type,obj,__mi)}
-pub unsafe fn meta_index(this:StandardEnumUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,metaname: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <StandardEnumUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"MetaIndex",));
-let inner:extern "C" fn(StandardEnumUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,metaname,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-standardenumuserdatadescriptor")]pub trait IStandardEnumUserDataDescriptorMethods:IStandardEnumUserDataDescriptor{#[doc="`get_UnderlyingType()` overload"]fn get_underlying_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <StandardEnumUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -420,10 +400,28 @@ inner(this,script,obj,metaname,__mi)}
 (StandardEnumUserDataDescriptor)__receiver,(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(ctx),(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args))}
 }
 #[doc="`IsTypeCompatible(::unity2::SystemType, crate::system::object::Object)` overload"]fn is_type_compatible(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <StandardEnumUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StandardEnumUserDataDescriptor_unity2_raw::is_type_compatible(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <StandardEnumUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"IsTypeCompatible",));
+let __inner:extern "C" fn(StandardEnumUserDataDescriptor, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`MetaIndex(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, ::unity2::Il2CppString)` overload"]fn meta_index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,metaname:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <StandardEnumUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StandardEnumUserDataDescriptor_unity2_raw::meta_index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(metaname), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <StandardEnumUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"MetaIndex",));
+let __inner:extern "C" fn(StandardEnumUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(metaname),__mi)}
+}
 }
 }
 
@@ -458,6 +456,14 @@ pub fn callback_has_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn callback_has_any_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
 pub fn is_type_compatible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
 pub fn meta_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-standardenumuserdatadescriptor")]impl StandardEnumUserDataDescriptor{#[doc="Direct (non-virtual) call to `StandardEnumUserDataDescriptor`'s own `IsTypeCompatible`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_type_compatible(this:impl::core::convert::Into< ::unity2::IlInstance> ,r#type: ::unity2::SystemType,obj:crate::system::object::Object,)->bool{let __mi=Self::is_type_compatible_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),r#type,obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `StandardEnumUserDataDescriptor`'s own `MetaIndex`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn meta_index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,metaname: ::unity2::Il2CppString,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::meta_index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj,metaname, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-standardenumuserdatadescriptor")]impl StandardEnumUserDataDescriptor{#[doc="`.ctor(::unity2::SystemType, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>, ::unity2::Array<crate::system::object::Object>, ::unity2::SystemType)` — overload selector"]pub fn new(enum_type: ::unity2::SystemType,friendly_name: ::unity2::Il2CppString,names: ::unity2::Array< ::unity2::Il2CppString> ,values: ::unity2::Array<crate::system::object::Object> ,underlying_type: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

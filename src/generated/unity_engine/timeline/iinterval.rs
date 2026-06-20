@@ -14,34 +14,29 @@ mod __types {
 #[cfg(feature = "unity_engine-timeline-iinterval-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-iinterval")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IInterval_unity2_raw{use super:: * ;
-pub unsafe fn get_interval_start(this:IInterval,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-timeline-iinterval")]pub trait IIIntervalMethods:IIInterval{#[doc="`get_intervalStart()` overload"]fn get_interval_start(self,)->i64{unsafe{let __receiver= <IInterval as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IInterval as::unity2::ClassIdentity> ::NAME,"get_intervalStart",));
-let inner:extern "C" fn(IInterval, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IInterval, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_interval_end(this:IInterval,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_intervalEnd()` overload"]fn get_interval_end(self,)->i64{unsafe{let __receiver= <IInterval as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IInterval as::unity2::ClassIdentity> ::NAME,"get_intervalEnd",));
-let inner:extern "C" fn(IInterval, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IInterval, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-timeline-iinterval")]pub trait IIIntervalMethods:IIInterval{#[doc="`get_intervalStart()` overload"]fn get_interval_start(self,)->i64{unsafe{let __receiver= <IInterval as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IInterval_unity2_raw::get_interval_start(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_intervalEnd()` overload"]fn get_interval_end(self,)->i64{unsafe{let __receiver= <IInterval as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IInterval_unity2_raw::get_interval_end(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -49,6 +44,14 @@ __IInterval_unity2_raw::get_interval_end(__receiver, ::core::option::Option::Non
 
 #[cfg(feature="unity_engine-timeline-iinterval")]impl IInterval{pub fn get_interval_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_interval_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-timeline-iinterval")]impl IInterval{#[doc="Direct (non-virtual) call to `IInterval`'s own `get_intervalStart`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_interval_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i64{let __mi=Self::get_interval_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IInterval`'s own `get_intervalEnd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_interval_end(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i64{let __mi=Self::get_interval_end_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-timeline-iinterval")]

@@ -16,21 +16,17 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapbackup-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapbackup")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapBackup_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:MapBackup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-mapbackup")]pub trait IMapBackupMethods:IMapBackup{#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <MapBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <MapBackup as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(MapBackup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MapBackup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-mapbackup")]pub trait IMapBackupMethods:IMapBackup{#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <MapBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapBackup_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f01da0usize)as*mut u8,();
@@ -62,6 +58,11 @@ pub fn desrialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mapbackup")]impl MapBackup{#[doc="Direct (non-virtual) call to `MapBackup`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-mapbackup")]impl MapBackup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

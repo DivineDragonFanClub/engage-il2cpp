@@ -14,34 +14,29 @@ mod __types {
 #[cfg(feature = "app-imapdeploy_interface-types")]
 pub use __types::*;
 
-#[cfg(feature="app-imapdeploy_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMapDeploy_Interface_unity2_raw{use super:: * ;
-pub unsafe fn set_buffer_a(this:IMapDeploy_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-imapdeploy_interface")]pub trait IIMapDeploy_InterfaceMethods:IIMapDeploy_Interface{#[doc="`SetBufferA()` overload"]fn set_buffer_a(self,)->(){unsafe{let __receiver= <IMapDeploy_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IMapDeploy_Interface as::unity2::ClassIdentity> ::NAME,"SetBufferA",));
-let inner:extern "C" fn(IMapDeploy_Interface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IMapDeploy_Interface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_buffer_b(this:IMapDeploy_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`SetBufferB()` overload"]fn set_buffer_b(self,)->(){unsafe{let __receiver= <IMapDeploy_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IMapDeploy_Interface as::unity2::ClassIdentity> ::NAME,"SetBufferB",));
-let inner:extern "C" fn(IMapDeploy_Interface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IMapDeploy_Interface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-imapdeploy_interface")]pub trait IIMapDeploy_InterfaceMethods:IIMapDeploy_Interface{#[doc="`SetBufferA()` overload"]fn set_buffer_a(self,)->(){unsafe{let __receiver= <IMapDeploy_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IMapDeploy_Interface_unity2_raw::set_buffer_a(__receiver, ::core::option::Option::None)}
-}
-#[doc="`SetBufferB()` overload"]fn set_buffer_b(self,)->(){unsafe{let __receiver= <IMapDeploy_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IMapDeploy_Interface_unity2_raw::set_buffer_b(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -49,6 +44,14 @@ __IMapDeploy_Interface_unity2_raw::set_buffer_b(__receiver, ::core::option::Opti
 
 #[cfg(feature="app-imapdeploy_interface")]impl IMapDeploy_Interface{pub fn set_buffer_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn set_buffer_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-imapdeploy_interface")]impl IMapDeploy_Interface{#[doc="Direct (non-virtual) call to `IMapDeploy_Interface`'s own `SetBufferA`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_buffer_a(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_buffer_a_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IMapDeploy_Interface`'s own `SetBufferB`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_buffer_b(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_buffer_b_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "app-imapdeploy_interface")]

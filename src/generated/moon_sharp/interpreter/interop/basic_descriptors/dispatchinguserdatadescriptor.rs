@@ -17,17 +17,7 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DispatchingUserDataDescriptor_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:DispatchingUserDataDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_name{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_name{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::class(),"set_Name",1,param_types,false,)}
 );
@@ -37,16 +27,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"set_Name",e),}
 }
 }
-pub unsafe fn get_type(this:DispatchingUserDataDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"get_Type",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_type{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::class(),"set_Type",1,param_types,false,)}
@@ -207,16 +187,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"AddMemberTo",e),}
 }
 }
-pub unsafe fn index(this:DispatchingUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"Index",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,index,is_direct_indexing,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_try_index_on_ext_method{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::class(),"TryIndexOnExtMethod",3,param_types,false,)}
@@ -247,46 +217,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"HasMetaMember",e),}
 }
 }
-pub unsafe fn try_index(this:DispatchingUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"TryIndex",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,index_name,__mi)}
-pub unsafe fn set_index(this:DispatchingUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index:crate::moon_sharp::interpreter::dynvalue::DynValue,value:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"SetIndex",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,index,value,is_direct_indexing,__mi)}
-pub unsafe fn try_set_index(this:DispatchingUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index_name: ::unity2::Il2CppString,value:crate::moon_sharp::interpreter::dynvalue::DynValue,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"TrySetIndex",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,index_name,value,__mi)}
-pub unsafe fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(this:DispatchingUserDataDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_camelify{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::class(),"Camelify",1,param_types,true,)}
@@ -307,36 +237,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"UpperFirstLetter",e),}
 }
 }
-pub unsafe fn as_string(this:DispatchingUserDataDescriptor,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"AsString",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor,crate::system::object::Object, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
-pub unsafe fn execute_indexer(this:DispatchingUserDataDescriptor,mdesc:crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index:crate::moon_sharp::interpreter::dynvalue::DynValue,value:crate::moon_sharp::interpreter::dynvalue::DynValue,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"ExecuteIndexer",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,mdesc,script,obj,index,value,__mi)}
-pub unsafe fn meta_index(this:DispatchingUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,metaname: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"MetaIndex",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,obj,metaname,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_perform_comparison{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::class(),"PerformComparison",3,param_types,false,)}
@@ -427,16 +327,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"TryDispatchToBool",e),}
 }
 }
-pub unsafe fn is_type_compatible(this:DispatchingUserDataDescriptor,r#type: ::unity2::SystemType,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"IsTypeCompatible",));
-let inner:extern "C" fn(DispatchingUserDataDescriptor, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,r#type,obj,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")]impl DispatchingUserDataDescriptor{#[doc="`Camelify(::unity2::Il2CppString)` overload"]pub fn camelify(name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(__DispatchingUserDataDescriptor_unity2_raw::__lookup_camelify::get_method_info().method_ptr, ::unity2::Il2CppString;
@@ -448,14 +338,32 @@ inner(this,r#type,obj,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")]pub trait IDispatchingUserDataDescriptorMethods:IDispatchingUserDataDescriptor{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__DispatchingUserDataDescriptor_unity2_raw::__lookup_set_name::get_method_info().method_ptr,();
 (DispatchingUserDataDescriptor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`get_Type()` overload"]fn get_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::get_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"get_Type",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_Type(::unity2::SystemType)` overload"]fn set_type(self,value:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__DispatchingUserDataDescriptor_unity2_raw::__lookup_set_type::get_method_info().method_ptr,();
@@ -522,7 +430,16 @@ __DispatchingUserDataDescriptor_unity2_raw::get_type(__receiver, ::core::option:
 (DispatchingUserDataDescriptor)__receiver,(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface>)::core::convert::Into::into(members),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface)::core::convert::Into::into(desc))}
 }
 #[doc="`Index(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]fn index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,index:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,is_direct_indexing:impl::core::convert::Into<bool>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(index), ::core::convert::Into::into(is_direct_indexing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"Index",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(index), ::core::convert::Into::into(is_direct_indexing),__mi)}
+}
 }
 #[doc="`TryIndexOnExtMethod(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, ::unity2::Il2CppString)` overload"]fn try_index_on_ext_method(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,index_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__DispatchingUserDataDescriptor_unity2_raw::__lookup_try_index_on_ext_method::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
@@ -537,25 +454,88 @@ __DispatchingUserDataDescriptor_unity2_raw::index(__receiver, ::core::convert::I
 (DispatchingUserDataDescriptor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(exact_name))}
 }
 #[doc="`TryIndex(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, ::unity2::Il2CppString)` overload"]fn try_index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,index_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::try_index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(index_name), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"TryIndex",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(index_name),__mi)}
+}
 }
 #[doc="`SetIndex(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]fn set_index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,index:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,is_direct_indexing:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::set_index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::convert::Into::into(is_direct_indexing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"SetIndex",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::convert::Into::into(is_direct_indexing),__mi)}
+}
 }
 #[doc="`TrySetIndex(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, ::unity2::Il2CppString, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn try_set_index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,index_name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->bool{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::try_set_index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(index_name), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"TrySetIndex",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(index_name), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize()` overload"]fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(self,)->(){unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`AsString(crate::system::object::Object)` overload"]fn as_string(self,obj:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Il2CppString{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::as_string(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"AsString",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor,crate::system::object::Object, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`ExecuteIndexer(crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface, crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn execute_indexer(self,mdesc:impl::core::convert::Into<crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface> ,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,index:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::execute_indexer(__receiver, ::core::convert::Into::into(mdesc), ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"ExecuteIndexer",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(mdesc), ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(index), ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`MetaIndex(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, ::unity2::Il2CppString)` overload"]fn meta_index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,metaname:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::meta_index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(metaname), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"MetaIndex",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(metaname),__mi)}
+}
 }
 #[doc="`PerformComparison(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn perform_comparison(self,obj:impl::core::convert::Into<crate::system::object::Object> ,p1:impl::core::convert::Into<crate::system::object::Object> ,p2:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__DispatchingUserDataDescriptor_unity2_raw::__lookup_perform_comparison::get_method_info().method_ptr,i32;
@@ -594,7 +574,16 @@ __DispatchingUserDataDescriptor_unity2_raw::meta_index(__receiver, ::core::conve
 (DispatchingUserDataDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj))}
 }
 #[doc="`IsTypeCompatible(::unity2::SystemType, crate::system::object::Object)` overload"]fn is_type_compatible(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <DispatchingUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DispatchingUserDataDescriptor_unity2_raw::is_type_compatible(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <DispatchingUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"IsTypeCompatible",));
+let __inner:extern "C" fn(DispatchingUserDataDescriptor, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(obj),__mi)}
+}
 }
 }
 
@@ -642,6 +631,41 @@ pub fn dispatch_meta_on_method_method_info()-> & 'static::unity2::il2cpp::Method
 pub fn try_dispatch_to_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
 pub fn try_dispatch_to_bool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
 pub fn is_type_compatible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")]impl DispatchingUserDataDescriptor{#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `get_Type`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `Index`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj,index,is_direct_indexing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `TryIndex`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn try_index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index_name: ::unity2::Il2CppString,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::try_index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj,index_name, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `SetIndex`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index:crate::moon_sharp::interpreter::dynvalue::DynValue,value:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,)->bool{let __mi=Self::set_index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj,index,value,is_direct_indexing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `TrySetIndex`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn try_set_index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index_name: ::unity2::Il2CppString,value:crate::moon_sharp::interpreter::dynvalue::DynValue,)->bool{let __mi=Self::try_set_index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj,index_name,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `AsString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn as_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)-> ::unity2::Il2CppString{let __mi=Self::as_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `ExecuteIndexer`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute_indexer(this:impl::core::convert::Into< ::unity2::IlInstance> ,mdesc:crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index:crate::moon_sharp::interpreter::dynvalue::DynValue,value:crate::moon_sharp::interpreter::dynvalue::DynValue,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::execute_indexer_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),mdesc,script,obj,index,value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `MetaIndex`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn meta_index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,metaname: ::unity2::Il2CppString,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::meta_index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,obj,metaname, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DispatchingUserDataDescriptor`'s own `IsTypeCompatible`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_type_compatible(this:impl::core::convert::Into< ::unity2::IlInstance> ,r#type: ::unity2::SystemType,obj:crate::system::object::Object,)->bool{let __mi=Self::is_type_compatible_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),r#type,obj, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")]impl DispatchingUserDataDescriptor{#[doc="`.ctor(::unity2::SystemType, ::unity2::Il2CppString)` — overload selector"]pub fn new(r#type: ::unity2::SystemType,friendly_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

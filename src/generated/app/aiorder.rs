@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiorder/AIOrder_Func.md"))]#[::unity2::class(namespace="App",name="AIOrder.Func")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIOrder_Func{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiorder/AIOrder_UnitPriority.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIOrder_UnitPriority{pub number:i32,pub priority:u32,}
 impl::unity2::ClassIdentity for AIOrder_UnitPriority{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AIOrder.UnitPriority";
@@ -29,47 +26,15 @@ impl::unity2::IlType for AIOrder_UnitPriority{fn il_type()-> &'static::unity2::i
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiorder/AIOrder_Func.md"))]#[::unity2::class(namespace="App",name="AIOrder.Func")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIOrder_Func{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiorder/AIOrder.md"))]#[::unity2::class(namespace="App",name="AIOrder")]#[parent(crate::system::object::Object)]pub struct AIOrder{#[static_field]#[rename(name="aFunc")]pub a_func:crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::app::aiorder::AIOrder_Func> , #[static_field]#[rename(name="aFuncEntrust")]pub a_func_entrust:crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::app::aiorder::AIOrder_Func> , #[static_field]#[rename(name="aFuncUncontroll")]pub a_func_uncontroll:crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::app::aiorder::AIOrder_Func> , #[static_field]#[rename(name="UnitMax")]pub unit_max:i32, #[offset(16)]#[rename(name="m_aUnitPriority")]pub m_a_unit_priority: ::unity2::Array<crate::app::aiorder::AIOrder_UnitPriority> , #[offset(24)]#[rename(name="m_Num")]pub m_num:i32, #[offset(28)]#[rename(name="m_Seq")]pub m_seq:i32, #[offset(32)]#[rename(name="m_Current")]pub m_current:i32, #[offset(36)]#[rename(name="m_EngageOrGodChange")]pub m_engage_or_god_change:i32, #[offset(40)]#[rename(name="m_Remove")]pub m_remove:i32, #[offset(44)]#[rename(name="m_Remagic")]pub m_remagic:i32, #[offset(48)]#[rename(name="m_Rerewarp")]pub m_rerewarp:i32, #[offset(52)]#[rename(name="m_MoveOver")]pub m_move_over:i32, #[offset(56)]#[rename(name="m_IsAllowIdle")]pub m_is_allow_idle:bool,}
 
 }
 
 #[cfg(feature = "app-aiorder-types")]
 pub use __types::*;
-
-#[cfg(feature="app-aiorder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AIOrder_Func_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:AIOrder_Func,order:crate::app::aiorder::AIOrder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <AIOrder_Func as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(AIOrder_Func,crate::app::aiorder::AIOrder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,order,__mi)}
-}
-
-#[cfg(feature="app-aiorder")]pub trait IAIOrder_FuncMethods:IAIOrder_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIOrder_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29455f0usize)as*mut u8,();
-(AIOrder_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::aiorder::AIOrder)` overload"]fn invoke(self,order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{let __receiver= <AIOrder_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AIOrder_Func_unity2_raw::invoke(__receiver, ::core::convert::Into::into(order), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-aiorder")]impl<__T:IAIOrder_Func>IAIOrder_FuncMethods for __T{}
-
-#[cfg(feature="app-aiorder")]impl AIOrder_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-aiorder")]impl AIOrder_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIOrder_Func), ::core::stringify!(new),));
- <Self as IAIOrder_FuncMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-aiorder")]impl AIOrder_UnitPriority{#[doc="`op_LessThanOrEqual(crate::app::aiorder::AIOrder_UnitPriority, crate::app::aiorder::AIOrder_UnitPriority)` overload"]pub fn op_less_than_or_equal(a:impl::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority> ,b:impl::core::convert::Into<crate::app::aiorder::AIOrder_UnitPriority>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29459b0usize)as*mut u8,bool;
 (crate::app::aiorder::AIOrder_UnitPriority)::core::convert::Into::into(a),(crate::app::aiorder::AIOrder_UnitPriority)::core::convert::Into::into(b))}
@@ -81,6 +46,42 @@ this}
 
 #[cfg(feature="app-aiorder")]impl AIOrder_UnitPriority{pub fn op_less_than_or_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn op_greater_than_or_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-aiorder")]pub trait IAIOrder_FuncMethods:IAIOrder_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIOrder_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29455f0usize)as*mut u8,();
+(AIOrder_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::aiorder::AIOrder)` overload"]fn invoke(self,order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{let __receiver= <AIOrder_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AIOrder_Func as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(AIOrder_Func,crate::app::aiorder::AIOrder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(order),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-aiorder")]impl<__T:IAIOrder_Func>IAIOrder_FuncMethods for __T{}
+
+#[cfg(feature="app-aiorder")]impl AIOrder_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-aiorder")]impl AIOrder_Func{#[doc="Direct (non-virtual) call to `AIOrder_Func`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,order:crate::app::aiorder::AIOrder,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::aiorder::AIOrder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),order, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-aiorder")]impl AIOrder_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIOrder_Func), ::core::stringify!(new),));
+ <Self as IAIOrder_FuncMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-aiorder")]impl AIOrder{#[doc="`StaticUpdateTarget(crate::app::aiorder::AIOrder)` overload"]pub fn static_update_target(order:impl::core::convert::Into<crate::app::aiorder::AIOrder>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19340b0usize)as*mut u8,();
@@ -461,10 +462,10 @@ this}
 #[cfg(feature = "app-aiorder")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AIOrder_UnitPriority;
     pub use super::AIOrder_Func;
     pub use super::IAIOrder_Func;
     pub use super::IAIOrder_FuncMethods;
-    pub use super::AIOrder_UnitPriority;
     pub use super::AIOrder;
     pub use super::IAIOrder;
     pub use super::IAIOrderMethods;

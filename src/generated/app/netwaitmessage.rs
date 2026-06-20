@@ -11,18 +11,50 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netwaitmessage/NetWaitMessage.md"))]#[::unity2::class(namespace="App",name="NetWaitMessage")]#[parent(crate::system::object::Object)]pub struct NetWaitMessage{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netwaitmessage/NetWaitMessage_ProcCloseWait.md"))]#[::unity2::class(namespace="App",name="NetWaitMessage.ProcCloseWait")]#[parent(crate::app::procinst::ProcInst)]pub struct NetWaitMessage_ProcCloseWait{#[offset(112)]#[rename(name="m_IsSuccess")]pub m_is_success:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netwaitmessage/NetWaitMessage_ProcOpen.md"))]#[::unity2::class(namespace="App",name="NetWaitMessage.ProcOpen")]#[parent(crate::app::procinst::ProcInst)]pub struct NetWaitMessage_ProcOpen{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/netwaitmessage/NetWaitMessage.md"))]#[::unity2::class(namespace="App",name="NetWaitMessage")]#[parent(crate::system::object::Object)]pub struct NetWaitMessage{}
-
 }
 
 #[cfg(feature = "app-netwaitmessage-types")]
 pub use __types::*;
+
+#[cfg(feature="app-netwaitmessage")]impl NetWaitMessage{#[doc="`Open(crate::app::procinst::ProcInst)` overload"]pub fn open(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f12150usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Close(bool)` overload"]pub fn close(is_success:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f138e0usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_success))}
+}
+#[doc="`CloseSuccess()` overload"]pub fn close_success()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f121a0usize)as*mut u8,();
+)}
+}
+#[doc="`CloseFailure()` overload"]pub fn close_failure()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f138f0usize)as*mut u8,();
+)}
+}
+#[doc="`CloseWait(crate::app::procinst::ProcInst, bool)` overload"]pub fn close_wait(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_success:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f13900usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_success))}
+}
+#[doc="`CloseWaitSuccess(crate::app::procinst::ProcInst)` overload"]pub fn close_wait_success(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f13910usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CloseWaitFailure(crate::app::procinst::ProcInst)` overload"]pub fn close_wait_failure(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f13920usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-netwaitmessage")]impl NetWaitMessage{pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn close_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn close_failure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn close_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn close_wait_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn close_wait_failure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature="app-netwaitmessage")]impl NetWaitMessage_ProcCloseWait{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_success:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x209e300usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_success))}
@@ -82,49 +114,17 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-netwaitmessage")]impl NetWaitMessage{#[doc="`Open(crate::app::procinst::ProcInst)` overload"]pub fn open(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f12150usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`Close(bool)` overload"]pub fn close(is_success:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f138e0usize)as*mut u8,();
-(bool)::core::convert::Into::into(is_success))}
-}
-#[doc="`CloseSuccess()` overload"]pub fn close_success()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f121a0usize)as*mut u8,();
-)}
-}
-#[doc="`CloseFailure()` overload"]pub fn close_failure()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f138f0usize)as*mut u8,();
-)}
-}
-#[doc="`CloseWait(crate::app::procinst::ProcInst, bool)` overload"]pub fn close_wait(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_success:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f13900usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_success))}
-}
-#[doc="`CloseWaitSuccess(crate::app::procinst::ProcInst)` overload"]pub fn close_wait_success(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f13910usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`CloseWaitFailure(crate::app::procinst::ProcInst)` overload"]pub fn close_wait_failure(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f13920usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-netwaitmessage")]impl NetWaitMessage{pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn close_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn close_failure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn close_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn close_wait_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn close_wait_failure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
 #[cfg(feature = "app-netwaitmessage")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NetWaitMessage;
+    pub use super::INetWaitMessage;
     pub use super::NetWaitMessage_ProcCloseWait;
     pub use super::INetWaitMessage_ProcCloseWait;
     pub use super::INetWaitMessage_ProcCloseWaitMethods;
     pub use super::NetWaitMessage_ProcOpen;
     pub use super::INetWaitMessage_ProcOpen;
     pub use super::INetWaitMessage_ProcOpenMethods;
-    pub use super::NetWaitMessage;
-    pub use super::INetWaitMessage;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;

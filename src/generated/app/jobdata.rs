@@ -25,29 +25,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_Flags{pub value:i32,}
-impl::unity2::ClassIdentity for JobData_Flags{const NAMESPACE: &'static str="App";
-const NAME: &'static str="JobData.Flags";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for JobData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl JobData_Flags{pub fn can_cc()->Self{Self{value:1}
-}
-pub fn anyone_cc()->Self{Self{value:2}
-}
-pub fn female_only()->Self{Self{value:4}
-}
-pub fn encount_map()->Self{Self{value:8}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData.md"))]#[::unity2::class(namespace="App",name="JobData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::jobdata::JobData>)]pub struct JobData{#[static_field]#[rename(name="MaxHighJob")]pub max_high_job:i32, #[static_field]#[rename(name="JidMaleSuffix")]pub jid_male_suffix: ::unity2::Il2CppString, #[static_field]#[rename(name="JidFemaleSuffix")]pub jid_female_suffix: ::unity2::Il2CppString, #[offset(152)]#[rename(name="Weapons")]pub weapons: ::unity2::Array<i8> , #[offset(160)]#[rename(name="MaxWeaponLevels")]pub max_weapon_levels: ::unity2::Array< ::unity2::Il2CppString> , #[offset(168)]#[rename(name="WeaponLevels")]pub weapon_levels: ::unity2::Array<crate::app::weaponlevel::WeaponLevel_Kind> , #[offset(176)]#[rename(name="WeaponLevelPlusMask")]pub weapon_level_plus_mask:crate::app::weaponmask::WeaponMask, #[offset(184)]#[rename(name="HighJobs")]pub high_jobs: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_MoveTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_MoveTypes{pub value:i32,}
 impl::unity2::ClassIdentity for JobData_MoveTypes{const NAMESPACE: &'static str="App";
 const NAME: &'static str="JobData.MoveTypes";
@@ -74,22 +51,6 @@ pub fn num()->Self{Self{value:6}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_Ranks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_Ranks{pub value:i32,}
-impl::unity2::ClassIdentity for JobData_Ranks{const NAMESPACE: &'static str="App";
-const NAME: &'static str="JobData.Ranks";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for JobData_Ranks{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl JobData_Ranks{pub fn low()->Self{Self{value:0}
-}
-pub fn high()->Self{Self{value:1}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_WeaponValues.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_WeaponValues{pub value:i32,}
 impl::unity2::ClassIdentity for JobData_WeaponValues{const NAMESPACE: &'static str="App";
 const NAME: &'static str="JobData.WeaponValues";
@@ -110,45 +71,51 @@ pub fn selectable2()->Self{Self{value:3}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData.md"))]#[::unity2::class(namespace="App",name="JobData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::jobdata::JobData>)]pub struct JobData{#[static_field]#[rename(name="MaxHighJob")]pub max_high_job:i32, #[static_field]#[rename(name="JidMaleSuffix")]pub jid_male_suffix: ::unity2::Il2CppString, #[static_field]#[rename(name="JidFemaleSuffix")]pub jid_female_suffix: ::unity2::Il2CppString, #[offset(152)]#[rename(name="Weapons")]pub weapons: ::unity2::Array<i8> , #[offset(160)]#[rename(name="MaxWeaponLevels")]pub max_weapon_levels: ::unity2::Array< ::unity2::Il2CppString> , #[offset(168)]#[rename(name="WeaponLevels")]pub weapon_levels: ::unity2::Array<crate::app::weaponlevel::WeaponLevel_Kind> , #[offset(176)]#[rename(name="WeaponLevelPlusMask")]pub weapon_level_plus_mask:crate::app::weaponmask::WeaponMask, #[offset(184)]#[rename(name="HighJobs")]pub high_jobs: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_FlagField.md"))]#[::unity2::class(namespace="App",name="JobData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::jobdata::JobData_Flags>)]pub struct JobData_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for JobData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="JobData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for JobData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl JobData_Flags{pub fn can_cc()->Self{Self{value:1}
+}
+pub fn anyone_cc()->Self{Self{value:2}
+}
+pub fn female_only()->Self{Self{value:4}
+}
+pub fn encount_map()->Self{Self{value:8}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobdata/JobData_Ranks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobData_Ranks{pub value:i32,}
+impl::unity2::ClassIdentity for JobData_Ranks{const NAMESPACE: &'static str="App";
+const NAME: &'static str="JobData.Ranks";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for JobData_Ranks{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl JobData_Ranks{pub fn low()->Self{Self{value:0}
+}
+pub fn high()->Self{Self{value:1}
+}
+}
 
 }
 
 #[cfg(feature = "app-jobdata-types")]
 pub use __types::*;
-
-#[cfg(feature="app-jobdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __JobData_unity2_raw{use super:: * ;
-pub unsafe fn on_build(this:JobData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <JobData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let inner:extern "C" fn(JobData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_completed(this:JobData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <JobData as::unity2::ClassIdentity> ::NAME,"OnCompleted",));
-let inner:extern "C" fn(JobData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_debug_name(this:JobData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <JobData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let inner:extern "C" fn(JobData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-jobdata")]impl JobData{#[doc="`GetMoveTypeName(crate::app::jobdata::JobData_MoveTypes)` overload"]pub fn get_move_type_name(r#type:impl::core::convert::Into<crate::app::jobdata::JobData_MoveTypes>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20538d0usize)as*mut u8, ::unity2::Il2CppString;
 (crate::app::jobdata::JobData_MoveTypes)::core::convert::Into::into(r#type))}
@@ -610,10 +577,28 @@ inner(this,__mi)}
 (JobData)__receiver,(crate::app::skilldata::SkillData_Attrs)::core::convert::Into::into(value))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <JobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__JobData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <JobData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let __inner:extern "C" fn(JobData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <JobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__JobData_unity2_raw::on_completed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <JobData as::unity2::ClassIdentity> ::NAME,"OnCompleted",));
+let __inner:extern "C" fn(JobData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetPrefixlessJid()` overload"]fn get_prefixless_jid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <JobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2055b60usize)as*mut u8, ::unity2::Il2CppString;
@@ -711,7 +696,16 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x20564f0usize)as*mut
 (JobData)__receiver)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <JobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__JobData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <JobData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let __inner:extern "C" fn(JobData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_MaskSkill()` overload"]fn get_mask_skill(self,)->crate::app::skillarray::SkillArray{unsafe{let __receiver= <JobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2057070usize)as*mut u8,crate::app::skillarray::SkillArray;
@@ -876,24 +870,22 @@ pub fn dbg_verify_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[145]}
 }
 
+#[cfg(feature="app-jobdata")]impl JobData{#[doc="Direct (non-virtual) call to `JobData`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `JobData`'s own `OnCompleted`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_completed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_completed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `JobData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-jobdata")]impl JobData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(JobData), ::core::stringify!(new),));
  <Self as IJobDataMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="app-jobdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __JobData_FlagField_unity2_raw{use super:: * ;
-pub unsafe fn to_int(this:JobData_FlagField,value:crate::app::jobdata::JobData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <JobData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
-let inner:extern "C" fn(JobData_FlagField,crate::app::jobdata::JobData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
 }
 
 #[cfg(feature="app-jobdata")]pub trait IJobData_FlagFieldMethods:IJobData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <JobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -905,7 +897,16 @@ inner(this,value,__mi)}
 (JobData_FlagField)__receiver,(crate::app::jobdata::JobData_Flags)::core::convert::Into::into(f))}
 }
 #[doc="`ToInt(crate::app::jobdata::JobData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::jobdata::JobData_Flags>)->i32{unsafe{let __receiver= <JobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__JobData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <JobData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let __inner:extern "C" fn(JobData_FlagField,crate::app::jobdata::JobData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -914,6 +915,11 @@ __JobData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(v
 #[cfg(feature="app-jobdata")]impl JobData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-jobdata")]impl JobData_FlagField{#[doc="Direct (non-virtual) call to `JobData_FlagField`'s own `ToInt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_int(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::jobdata::JobData_Flags,)->i32{let __mi=Self::to_int_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::jobdata::JobData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-jobdata")]impl JobData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -931,16 +937,16 @@ this}
 #[cfg(feature = "app-jobdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::JobData_Flags;
+    pub use super::JobData_MoveTypes;
+    pub use super::JobData_WeaponValues;
     pub use super::JobData;
     pub use super::IJobData;
     pub use super::IJobDataMethods;
-    pub use super::JobData_MoveTypes;
-    pub use super::JobData_Ranks;
-    pub use super::JobData_WeaponValues;
     pub use super::JobData_FlagField;
     pub use super::IJobData_FlagField;
     pub use super::IJobData_FlagFieldMethods;
+    pub use super::JobData_Flags;
+    pub use super::JobData_Ranks;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

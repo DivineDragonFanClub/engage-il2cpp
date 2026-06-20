@@ -22,21 +22,17 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "root-ppradialblurplayableasset-types")]
 pub use __types::*;
 
-#[cfg(feature="root-ppradialblurplayableasset")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PPRadialBlurPlayableAsset_unity2_raw{use super:: * ;
-pub unsafe fn create_playable(this:PPRadialBlurPlayableAsset,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,owner:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-ppradialblurplayableasset")]pub trait IPPRadialBlurPlayableAssetMethods:IPPRadialBlurPlayableAsset{#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <PPRadialBlurPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <PPRadialBlurPlayableAsset as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
-let inner:extern "C" fn(PPRadialBlurPlayableAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PPRadialBlurPlayableAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,graph,owner,__mi)}
+__inner(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(owner),__mi)}
 }
-
-#[cfg(feature="root-ppradialblurplayableasset")]pub trait IPPRadialBlurPlayableAssetMethods:IPPRadialBlurPlayableAsset{#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <PPRadialBlurPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PPRadialBlurPlayableAsset_unity2_raw::create_playable(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(owner), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PPRadialBlurPlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f21ef0usize)as*mut u8,();
@@ -48,6 +44,11 @@ __PPRadialBlurPlayableAsset_unity2_raw::create_playable(__receiver, ::core::conv
 
 #[cfg(feature="root-ppradialblurplayableasset")]impl PPRadialBlurPlayableAsset{pub fn create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-ppradialblurplayableasset")]impl PPRadialBlurPlayableAsset{#[doc="Direct (non-virtual) call to `PPRadialBlurPlayableAsset`'s own `CreatePlayable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_playable(this:impl::core::convert::Into< ::unity2::IlInstance> ,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,owner:crate::unity_engine::gameobject::GameObject,)->crate::unity_engine::playables::playable::Playable{let __mi=Self::create_playable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),graph,owner, ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-ppradialblurplayableasset")]impl PPRadialBlurPlayableAsset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

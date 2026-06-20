@@ -16,27 +16,28 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-reflection-strongnamekeypair-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-strongnamekeypair")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __StrongNameKeyPair_unity2_raw{use super:: * ;
-pub unsafe fn system_runtime_serialization_i_deserialization_callback_on_deserialization(this:StrongNameKeyPair,sender:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-reflection-strongnamekeypair")]pub trait IStrongNameKeyPairMethods:IStrongNameKeyPair{#[doc="`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]fn system_runtime_serialization_i_deserialization_callback_on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <StrongNameKeyPair as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <StrongNameKeyPair as::unity2::ClassIdentity> ::NAME,"System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",));
-let inner:extern "C" fn(StrongNameKeyPair,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(StrongNameKeyPair,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sender,__mi)}
+__inner(__receiver, ::core::convert::Into::into(sender),__mi)}
 }
-
-#[cfg(feature="system-reflection-strongnamekeypair")]pub trait IStrongNameKeyPairMethods:IStrongNameKeyPair{#[doc="`System.Runtime.Serialization.IDeserializationCallback.OnDeserialization(crate::system::object::Object)` overload"]fn system_runtime_serialization_i_deserialization_callback_on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <StrongNameKeyPair as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StrongNameKeyPair_unity2_raw::system_runtime_serialization_i_deserialization_callback_on_deserialization(__receiver, ::core::convert::Into::into(sender), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="system-reflection-strongnamekeypair")]impl<__T:IStrongNameKeyPair>IStrongNameKeyPairMethods for __T{}
 
 #[cfg(feature="system-reflection-strongnamekeypair")]impl StrongNameKeyPair{pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="system-reflection-strongnamekeypair")]impl StrongNameKeyPair{#[doc="Direct (non-virtual) call to `StrongNameKeyPair`'s own `System.Runtime.Serialization.IDeserializationCallback.OnDeserialization`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_runtime_serialization_i_deserialization_callback_on_deserialization(this:impl::core::convert::Into< ::unity2::IlInstance> ,sender:crate::system::object::Object,)->(){let __mi=Self::system_runtime_serialization_i_deserialization_callback_on_deserialization_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sender, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "system-reflection-strongnamekeypair")]

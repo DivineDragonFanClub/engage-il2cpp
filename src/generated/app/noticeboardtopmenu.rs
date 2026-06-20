@@ -23,19 +23,16 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardtopmenu/NoticeBoardTopMenu_SolanelInfoItem.md"))]#[::unity2::class(namespace="App",name="NoticeBoardTopMenu.SolanelInfoItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct NoticeBoardTopMenu_SolanelInfoItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardtopmenu/NoticeBoardTopMenu_AchievementItem.md"))]#[::unity2::class(namespace="App",name="NoticeBoardTopMenu.AchievementItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct NoticeBoardTopMenu_AchievementItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardtopmenu/NoticeBoardTopMenu.md"))]#[::unity2::class(namespace="App",name="NoticeBoardTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct NoticeBoardTopMenu{#[static_field]#[rename(name="m_ShowRowNumValue")]pub m_show_row_num_value:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardtopmenu/NoticeBoardTopMenu_InvestmentItem.md"))]#[::unity2::class(namespace="App",name="NoticeBoardTopMenu.InvestmentItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct NoticeBoardTopMenu_InvestmentItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardtopmenu/NoticeBoardTopMenu.md"))]#[::unity2::class(namespace="App",name="NoticeBoardTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct NoticeBoardTopMenu{#[static_field]#[rename(name="m_ShowRowNumValue")]pub m_show_row_num_value:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardtopmenu/NoticeBoardTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="NoticeBoardTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NoticeBoardTopMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardtopmenu/NoticeBoardTopMenu_SolanelInfoItem.md"))]#[::unity2::class(namespace="App",name="NoticeBoardTopMenu.SolanelInfoItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct NoticeBoardTopMenu_SolanelInfoItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardtopmenu/NoticeBoardTopMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NoticeBoardTopMenu_Result2{pub value:i32,}
@@ -57,222 +54,13 @@ pub fn end()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticeboardtopmenu/NoticeBoardTopMenu_AchievementItem.md"))]#[::unity2::class(namespace="App",name="NoticeBoardTopMenu.AchievementItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct NoticeBoardTopMenu_AchievementItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler,}
+
 }
 
 #[cfg(feature = "app-noticeboardtopmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-noticeboardtopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NoticeBoardTopMenu_SolanelInfoItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:NoticeBoardTopMenu_SolanelInfoItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <NoticeBoardTopMenu_SolanelInfoItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(NoticeBoardTopMenu_SolanelInfoItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:NoticeBoardTopMenu_SolanelInfoItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <NoticeBoardTopMenu_SolanelInfoItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(NoticeBoardTopMenu_SolanelInfoItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:NoticeBoardTopMenu_SolanelInfoItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <NoticeBoardTopMenu_SolanelInfoItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(NoticeBoardTopMenu_SolanelInfoItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]pub trait INoticeBoardTopMenu_SolanelInfoItemMethods:INoticeBoardTopMenu_SolanelInfoItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <NoticeBoardTopMenu_SolanelInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225ff60usize)as*mut u8,();
-(NoticeBoardTopMenu_SolanelInfoItem)__receiver,(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NoticeBoardTopMenu_SolanelInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <NoticeBoardTopMenu_SolanelInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NoticeBoardTopMenu_SolanelInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_SolanelInfoItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]impl<__T:INoticeBoardTopMenu_SolanelInfoItem>INoticeBoardTopMenu_SolanelInfoItemMethods for __T{}
-
-#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_SolanelInfoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_SolanelInfoItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NoticeBoardTopMenu_SolanelInfoItem), ::core::stringify!(new),));
- <Self as INoticeBoardTopMenu_SolanelInfoItemMethods> ::ctor(this,event_handler);
-this}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NoticeBoardTopMenu_AchievementItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:NoticeBoardTopMenu_AchievementItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <NoticeBoardTopMenu_AchievementItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(NoticeBoardTopMenu_AchievementItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:NoticeBoardTopMenu_AchievementItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <NoticeBoardTopMenu_AchievementItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(NoticeBoardTopMenu_AchievementItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:NoticeBoardTopMenu_AchievementItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <NoticeBoardTopMenu_AchievementItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(NoticeBoardTopMenu_AchievementItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]pub trait INoticeBoardTopMenu_AchievementItemMethods:INoticeBoardTopMenu_AchievementItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <NoticeBoardTopMenu_AchievementItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225fa40usize)as*mut u8,();
-(NoticeBoardTopMenu_AchievementItem)__receiver,(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NoticeBoardTopMenu_AchievementItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_AchievementItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <NoticeBoardTopMenu_AchievementItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_AchievementItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NoticeBoardTopMenu_AchievementItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_AchievementItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]impl<__T:INoticeBoardTopMenu_AchievementItem>INoticeBoardTopMenu_AchievementItemMethods for __T{}
-
-#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_AchievementItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_AchievementItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NoticeBoardTopMenu_AchievementItem), ::core::stringify!(new),));
- <Self as INoticeBoardTopMenu_AchievementItemMethods> ::ctor(this,event_handler);
-this}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NoticeBoardTopMenu_InvestmentItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:NoticeBoardTopMenu_InvestmentItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <NoticeBoardTopMenu_InvestmentItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(NoticeBoardTopMenu_InvestmentItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:NoticeBoardTopMenu_InvestmentItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <NoticeBoardTopMenu_InvestmentItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(NoticeBoardTopMenu_InvestmentItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:NoticeBoardTopMenu_InvestmentItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <NoticeBoardTopMenu_InvestmentItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(NoticeBoardTopMenu_InvestmentItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]pub trait INoticeBoardTopMenu_InvestmentItemMethods:INoticeBoardTopMenu_InvestmentItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <NoticeBoardTopMenu_InvestmentItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x225fe60usize)as*mut u8,();
-(NoticeBoardTopMenu_InvestmentItem)__receiver,(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NoticeBoardTopMenu_InvestmentItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_InvestmentItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <NoticeBoardTopMenu_InvestmentItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_InvestmentItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NoticeBoardTopMenu_InvestmentItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_InvestmentItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]impl<__T:INoticeBoardTopMenu_InvestmentItem>INoticeBoardTopMenu_InvestmentItemMethods for __T{}
-
-#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_InvestmentItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_InvestmentItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(NoticeBoardTopMenu_InvestmentItem), ::core::stringify!(new),));
- <Self as INoticeBoardTopMenu_InvestmentItemMethods> ::ctor(this,event_handler);
-this}
-}
-
-#[cfg(feature="app-noticeboardtopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NoticeBoardTopMenu_unity2_raw{use super:: * ;
-pub unsafe fn b_call(this:NoticeBoardTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <NoticeBoardTopMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(NoticeBoardTopMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:NoticeBoardTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <NoticeBoardTopMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(NoticeBoardTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2, crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2> ,event_handler:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1ac80usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
@@ -291,14 +79,32 @@ inner(this,__mi)}
 (NoticeBoardTopMenu)__receiver,(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)::core::convert::Into::into(value))}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NoticeBoardTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <NoticeBoardTopMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(NoticeBoardTopMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2, crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,initial_selected:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2> ,event_handler:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <NoticeBoardTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1b400usize)as*mut u8,();
 (NoticeBoardTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NoticeBoardTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <NoticeBoardTopMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(NoticeBoardTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -313,6 +119,14 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 }
 
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu{#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2, crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,initial_selected:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2,event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(NoticeBoardTopMenu), ::core::stringify!(new),));
@@ -320,17 +134,72 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-noticeboardtopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NoticeBoardTopMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:NoticeBoardTopMenu_DecideEventHandler,result:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-noticeboardtopmenu")]pub trait INoticeBoardTopMenu_InvestmentItemMethods:INoticeBoardTopMenu_InvestmentItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <NoticeBoardTopMenu_InvestmentItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225fe60usize)as*mut u8,();
+(NoticeBoardTopMenu_InvestmentItem)__receiver,(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NoticeBoardTopMenu_InvestmentItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <NoticeBoardTopMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(NoticeBoardTopMenu_DecideEventHandler,crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <NoticeBoardTopMenu_InvestmentItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(NoticeBoardTopMenu_InvestmentItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,result,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <NoticeBoardTopMenu_InvestmentItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <NoticeBoardTopMenu_InvestmentItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(NoticeBoardTopMenu_InvestmentItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NoticeBoardTopMenu_InvestmentItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <NoticeBoardTopMenu_InvestmentItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(NoticeBoardTopMenu_InvestmentItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl<__T:INoticeBoardTopMenu_InvestmentItem>INoticeBoardTopMenu_InvestmentItemMethods for __T{}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_InvestmentItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_InvestmentItem{#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu_InvestmentItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu_InvestmentItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu_InvestmentItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_InvestmentItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NoticeBoardTopMenu_InvestmentItem), ::core::stringify!(new),));
+ <Self as INoticeBoardTopMenu_InvestmentItemMethods> ::ctor(this,event_handler);
+this}
 }
 
 #[cfg(feature="app-noticeboardtopmenu")]pub trait INoticeBoardTopMenu_DecideEventHandlerMethods:INoticeBoardTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NoticeBoardTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -338,7 +207,16 @@ inner(this,result,__mi)}
 (NoticeBoardTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2>)->(){unsafe{let __receiver= <NoticeBoardTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NoticeBoardTopMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <NoticeBoardTopMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(NoticeBoardTopMenu_DecideEventHandler,crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(result),__mi)}
+}
 }
 }
 
@@ -348,6 +226,11 @@ __NoticeBoardTopMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::c
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,result:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::noticeboardtopmenu::NoticeBoardTopMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),result, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(NoticeBoardTopMenu_DecideEventHandler), ::core::stringify!(new),));
@@ -355,25 +238,161 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-noticeboardtopmenu")]pub trait INoticeBoardTopMenu_SolanelInfoItemMethods:INoticeBoardTopMenu_SolanelInfoItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <NoticeBoardTopMenu_SolanelInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225ff60usize)as*mut u8,();
+(NoticeBoardTopMenu_SolanelInfoItem)__receiver,(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NoticeBoardTopMenu_SolanelInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <NoticeBoardTopMenu_SolanelInfoItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(NoticeBoardTopMenu_SolanelInfoItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <NoticeBoardTopMenu_SolanelInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <NoticeBoardTopMenu_SolanelInfoItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(NoticeBoardTopMenu_SolanelInfoItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NoticeBoardTopMenu_SolanelInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <NoticeBoardTopMenu_SolanelInfoItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(NoticeBoardTopMenu_SolanelInfoItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl<__T:INoticeBoardTopMenu_SolanelInfoItem>INoticeBoardTopMenu_SolanelInfoItemMethods for __T{}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_SolanelInfoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_SolanelInfoItem{#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu_SolanelInfoItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu_SolanelInfoItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu_SolanelInfoItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_SolanelInfoItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NoticeBoardTopMenu_SolanelInfoItem), ::core::stringify!(new),));
+ <Self as INoticeBoardTopMenu_SolanelInfoItemMethods> ::ctor(this,event_handler);
+this}
+}
+
+#[cfg(feature="app-noticeboardtopmenu")]pub trait INoticeBoardTopMenu_AchievementItemMethods:INoticeBoardTopMenu_AchievementItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <NoticeBoardTopMenu_AchievementItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x225fa40usize)as*mut u8,();
+(NoticeBoardTopMenu_AchievementItem)__receiver,(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NoticeBoardTopMenu_AchievementItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <NoticeBoardTopMenu_AchievementItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(NoticeBoardTopMenu_AchievementItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <NoticeBoardTopMenu_AchievementItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <NoticeBoardTopMenu_AchievementItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(NoticeBoardTopMenu_AchievementItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <NoticeBoardTopMenu_AchievementItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <NoticeBoardTopMenu_AchievementItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(NoticeBoardTopMenu_AchievementItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl<__T:INoticeBoardTopMenu_AchievementItem>INoticeBoardTopMenu_AchievementItemMethods for __T{}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_AchievementItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_AchievementItem{#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu_AchievementItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu_AchievementItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `NoticeBoardTopMenu_AchievementItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-noticeboardtopmenu")]impl NoticeBoardTopMenu_AchievementItem{#[doc="`.ctor(crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::noticeboardtopmenu::NoticeBoardTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NoticeBoardTopMenu_AchievementItem), ::core::stringify!(new),));
+ <Self as INoticeBoardTopMenu_AchievementItemMethods> ::ctor(this,event_handler);
+this}
+}
+
 #[cfg(feature = "app-noticeboardtopmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NoticeBoardTopMenu_SolanelInfoItem;
-    pub use super::INoticeBoardTopMenu_SolanelInfoItem;
-    pub use super::INoticeBoardTopMenu_SolanelInfoItemMethods;
-    pub use super::NoticeBoardTopMenu_AchievementItem;
-    pub use super::INoticeBoardTopMenu_AchievementItem;
-    pub use super::INoticeBoardTopMenu_AchievementItemMethods;
-    pub use super::NoticeBoardTopMenu_InvestmentItem;
-    pub use super::INoticeBoardTopMenu_InvestmentItem;
-    pub use super::INoticeBoardTopMenu_InvestmentItemMethods;
     pub use super::NoticeBoardTopMenu;
     pub use super::INoticeBoardTopMenu;
     pub use super::INoticeBoardTopMenuMethods;
+    pub use super::NoticeBoardTopMenu_InvestmentItem;
+    pub use super::INoticeBoardTopMenu_InvestmentItem;
+    pub use super::INoticeBoardTopMenu_InvestmentItemMethods;
     pub use super::NoticeBoardTopMenu_DecideEventHandler;
     pub use super::INoticeBoardTopMenu_DecideEventHandler;
     pub use super::INoticeBoardTopMenu_DecideEventHandlerMethods;
+    pub use super::NoticeBoardTopMenu_SolanelInfoItem;
+    pub use super::INoticeBoardTopMenu_SolanelInfoItem;
+    pub use super::INoticeBoardTopMenu_SolanelInfoItemMethods;
     pub use super::NoticeBoardTopMenu_Result2;
+    pub use super::NoticeBoardTopMenu_AchievementItem;
+    pub use super::INoticeBoardTopMenu_AchievementItem;
+    pub use super::INoticeBoardTopMenu_AchievementItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

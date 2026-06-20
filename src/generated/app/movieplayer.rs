@@ -18,169 +18,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-movieplayer-types")]
 pub use __types::*;
 
-#[cfg(feature="app-movieplayer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MoviePlayer_unity2_raw{use super:: * ;
-pub unsafe fn setup_after_load_scene(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"SetupAfterLoadScene",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn setup_by_movie_canvas_prefab(this:MoviePlayer,canvas_prefab:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"SetupByMovieCanvasPrefab",));
-let inner:extern "C" fn(MoviePlayer,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,canvas_prefab,__mi)}
-pub unsafe fn set_movie_file_path_to_video_player(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"SetMovieFilePathToVideoPlayer",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_screen_object_name(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"GetScreenObjectName",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_paused(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"IsPaused",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_playing(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"IsPlaying",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_play_end(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"IsPlayEnd",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_movie_length(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"GetMovieLength",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_playing_position(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"GetPlayingPosition",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn tick(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"Tick",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn prepare(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"Prepare",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_prepared(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"IsPrepared",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn play(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"Play",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn stop(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"Stop",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn suspend_on(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"SuspendOn",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn suspend_off(this:MoviePlayer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"SuspendOff",));
-let inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-movieplayer")]pub trait IMoviePlayerMethods:IMoviePlayer{#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor(self,movie_file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_movie_file_name_direct:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x277d820usize)as*mut u8,();
 (MoviePlayer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(movie_file_name),(bool)::core::convert::Into::into(is_movie_file_name_direct))}
@@ -198,13 +35,40 @@ inner(this,__mi)}
 (MoviePlayer)__receiver,(crate::unity_engine::video::videoplayer::VideoPlayer)::core::convert::Into::into(player),(i64)::core::convert::Into::into(frame_idx))}
 }
 #[doc="`SetupAfterLoadScene()` overload"]fn setup_after_load_scene(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::setup_after_load_scene(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"SetupAfterLoadScene",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetupByMovieCanvasPrefab(crate::unity_engine::gameobject::GameObject)` overload"]fn setup_by_movie_canvas_prefab(self,canvas_prefab:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::setup_by_movie_canvas_prefab(__receiver, ::core::convert::Into::into(canvas_prefab), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"SetupByMovieCanvasPrefab",));
+let __inner:extern "C" fn(MoviePlayer,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(canvas_prefab),__mi)}
+}
 }
 #[doc="`SetMovieFilePathToVideoPlayer()` overload"]fn set_movie_file_path_to_video_player(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::set_movie_file_path_to_video_player(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"SetMovieFilePathToVideoPlayer",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`EnableSoundEvent()` overload"]fn enable_sound_event(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x277dee0usize)as*mut u8,();
@@ -219,43 +83,160 @@ __MoviePlayer_unity2_raw::set_movie_file_path_to_video_player(__receiver, ::core
 (MoviePlayer)__receiver)}
 }
 #[doc="`GetScreenObjectName()` overload"]fn get_screen_object_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::get_screen_object_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"GetScreenObjectName",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsPaused()` overload"]fn is_paused(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::is_paused(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"IsPaused",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsPlaying()` overload"]fn is_playing(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::is_playing(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"IsPlaying",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsPlayEnd()` overload"]fn is_play_end(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::is_play_end(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"IsPlayEnd",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetMovieLength()` overload"]fn get_movie_length(self,)->f32{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::get_movie_length(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"GetMovieLength",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetPlayingPosition()` overload"]fn get_playing_position(self,)->f32{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::get_playing_position(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"GetPlayingPosition",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::tick(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"Tick",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::prepare(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"Prepare",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsPrepared()` overload"]fn is_prepared(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::is_prepared(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"IsPrepared",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Play()` overload"]fn play(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::play(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"Play",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::stop(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"Stop",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SuspendOn()` overload"]fn suspend_on(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::suspend_on(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"SuspendOn",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SuspendOff()` overload"]fn suspend_off(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MoviePlayer_unity2_raw::suspend_off(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <MoviePlayer as::unity2::ClassIdentity> ::NAME,"SuspendOff",));
+let __inner:extern "C" fn(MoviePlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -284,6 +265,56 @@ pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 pub fn suspend_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
 pub fn suspend_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
+
+#[cfg(feature="app-movieplayer")]impl MoviePlayer{#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `SetupAfterLoadScene`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup_after_load_scene(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::setup_after_load_scene_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `SetupByMovieCanvasPrefab`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn setup_by_movie_canvas_prefab(this:impl::core::convert::Into< ::unity2::IlInstance> ,canvas_prefab:crate::unity_engine::gameobject::GameObject,)->bool{let __mi=Self::setup_by_movie_canvas_prefab_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),canvas_prefab, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `SetMovieFilePathToVideoPlayer`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_movie_file_path_to_video_player(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::set_movie_file_path_to_video_player_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `GetScreenObjectName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_screen_object_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_screen_object_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `IsPaused`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_paused(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_paused_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `IsPlaying`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_playing(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_playing_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `IsPlayEnd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_play_end(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_play_end_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `GetMovieLength`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_movie_length(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_movie_length_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `GetPlayingPosition`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_playing_position(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_playing_position_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `Tick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `Prepare`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn prepare(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::prepare_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `IsPrepared`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_prepared(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_prepared_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `Play`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn play(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::play_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `Stop`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn stop(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::stop_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `SuspendOn`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn suspend_on(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::suspend_on_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MoviePlayer`'s own `SuspendOff`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn suspend_off(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::suspend_off_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-movieplayer")]impl MoviePlayer{#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new(movie_file_name: ::unity2::Il2CppString,is_movie_file_name_direct:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -125,16 +125,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <InterpreterException as::unity2::ClassIdentity> ::NAME,"DecorateMessage",e),}
 }
 }
-pub unsafe fn rethrow(this:InterpreterException,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <InterpreterException as::unity2::ClassIdentity> ::NAME,"Rethrow",));
-let inner:extern "C" fn(InterpreterException, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interpreterexception")]pub trait IInterpreterExceptionMethods:IInterpreterException{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -182,7 +172,16 @@ inner(this,__mi)}
 (InterpreterException)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)::core::convert::Into::into(sref),(i32)::core::convert::Into::into(ip))}
 }
 #[doc="`Rethrow()` overload"]fn rethrow(self,)->(){unsafe{let __receiver= <InterpreterException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InterpreterException_unity2_raw::rethrow(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <InterpreterException as::unity2::ClassIdentity> ::NAME,"Rethrow",));
+let __inner:extern "C" fn(InterpreterException, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -200,6 +199,11 @@ pub fn get_do_not_decorate_message_method_info()-> & 'static::unity2::il2cpp::Me
 pub fn set_do_not_decorate_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 pub fn decorate_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 pub fn rethrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interpreterexception")]impl InterpreterException{#[doc="Direct (non-virtual) call to `InterpreterException`'s own `Rethrow`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn rethrow(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::rethrow_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interpreterexception")]impl InterpreterException{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

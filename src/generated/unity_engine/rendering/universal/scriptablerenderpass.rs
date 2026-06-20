@@ -16,69 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderpass-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-universal-scriptablerenderpass")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptableRenderPass_unity2_raw{use super:: * ;
-pub unsafe fn frame_cleanup(this:ScriptableRenderPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"FrameCleanup",));
-let inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,cmd,__mi)}
-pub unsafe fn on_camera_setup(this:ScriptableRenderPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"OnCameraSetup",));
-let inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,cmd,rendering_data,__mi)}
-pub unsafe fn configure(this:ScriptableRenderPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,camera_texture_descriptor:crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"Configure",));
-let inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer,crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,cmd,camera_texture_descriptor,__mi)}
-pub unsafe fn on_camera_cleanup(this:ScriptableRenderPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"OnCameraCleanup",));
-let inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,cmd,__mi)}
-pub unsafe fn on_finish_camera_stack_rendering(this:ScriptableRenderPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"OnFinishCameraStackRendering",));
-let inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,cmd,__mi)}
-pub unsafe fn execute(this:ScriptableRenderPass,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,context,rendering_data,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-universal-scriptablerenderpass")]impl ScriptableRenderPass{#[doc="`op_LessThan(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass, crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)` overload"]pub fn op_less_than(lhs:impl::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass> ,rhs:impl::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed01d0usize)as*mut u8,bool;
 (crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)::core::convert::Into::into(lhs),(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)::core::convert::Into::into(rhs))}
 }
@@ -88,7 +25,16 @@ inner(this,context,rendering_data,__mi)}
 }
 
 #[cfg(feature="unity_engine-rendering-universal-scriptablerenderpass")]pub trait IScriptableRenderPassMethods:IScriptableRenderPass{#[doc="`FrameCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn frame_cleanup(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <ScriptableRenderPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptableRenderPass_unity2_raw::frame_cleanup(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"FrameCleanup",));
+let __inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(cmd),__mi)}
+}
 }
 #[doc="`get_renderPassEvent()` overload"]fn get_render_pass_event(self,)->crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent{unsafe{let __receiver= <ScriptableRenderPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ecf700usize)as*mut u8,crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent;
@@ -176,21 +122,66 @@ __ScriptableRenderPass_unity2_raw::frame_cleanup(__receiver, ::core::convert::In
 }
 #[doc="`OnCameraSetup(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn on_camera_setup(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <ScriptableRenderPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
-__ScriptableRenderPass_unity2_raw::on_camera_setup(__receiver, ::core::convert::Into::into(cmd),__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"OnCameraSetup",));
+let __inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(cmd),__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`Configure(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]fn configure(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,camera_texture_descriptor:impl::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>)->(){unsafe{let __receiver= <ScriptableRenderPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptableRenderPass_unity2_raw::configure(__receiver, ::core::convert::Into::into(cmd), ::core::convert::Into::into(camera_texture_descriptor), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"Configure",));
+let __inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer,crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(cmd), ::core::convert::Into::into(camera_texture_descriptor),__mi)}
+}
 }
 #[doc="`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn on_camera_cleanup(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <ScriptableRenderPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptableRenderPass_unity2_raw::on_camera_cleanup(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"OnCameraCleanup",));
+let __inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(cmd),__mi)}
+}
 }
 #[doc="`OnFinishCameraStackRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn on_finish_camera_stack_rendering(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <ScriptableRenderPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptableRenderPass_unity2_raw::on_finish_camera_stack_rendering(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"OnFinishCameraStackRendering",));
+let __inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(cmd),__mi)}
+}
 }
 #[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <ScriptableRenderPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
-__ScriptableRenderPass_unity2_raw::execute(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ScriptableRenderPass as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(ScriptableRenderPass,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`Blit(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::material::Material, i32)` overload"]fn blit(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,source:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> ,destination:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> ,material:impl::core::convert::Into<crate::unity_engine::material::Material> ,pass_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ScriptableRenderPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -247,6 +238,26 @@ pub fn create_drawing_settings_method_info()-> & 'static::unity2::il2cpp::Method
 pub fn create_drawing_settings_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
 pub fn op_less_than_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
 pub fn op_greater_than_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerenderpass")]impl ScriptableRenderPass{#[doc="Direct (non-virtual) call to `ScriptableRenderPass`'s own `FrameCleanup`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn frame_cleanup(this:impl::core::convert::Into< ::unity2::IlInstance> ,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,)->(){let __mi=Self::frame_cleanup_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),cmd, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScriptableRenderPass`'s own `OnCameraSetup`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_camera_setup(this:impl::core::convert::Into< ::unity2::IlInstance> ,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,)->(){let __mi=Self::on_camera_setup_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),cmd,rendering_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScriptableRenderPass`'s own `Configure`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn configure(this:impl::core::convert::Into< ::unity2::IlInstance> ,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,camera_texture_descriptor:crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,)->(){let __mi=Self::configure_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::commandbuffer::CommandBuffer,crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),cmd,camera_texture_descriptor, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScriptableRenderPass`'s own `OnCameraCleanup`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_camera_cleanup(this:impl::core::convert::Into< ::unity2::IlInstance> ,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,)->(){let __mi=Self::on_camera_cleanup_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),cmd, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScriptableRenderPass`'s own `OnFinishCameraStackRendering`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_finish_camera_stack_rendering(this:impl::core::convert::Into< ::unity2::IlInstance> ,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,)->(){let __mi=Self::on_finish_camera_stack_rendering_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),cmd, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScriptableRenderPass`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,)->(){let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),context,rendering_data, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-universal-scriptablerenderpass")]impl ScriptableRenderPass{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

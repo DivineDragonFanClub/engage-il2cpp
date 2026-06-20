@@ -9,48 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagehistory/MapImageHistory_HeatMap.md"))]#[::unity2::class(namespace="App",name="MapImageHistory.HeatMap")]#[parent(crate::system::object::Object)]pub struct MapImageHistory_HeatMap{#[offset(16)]#[rename(name="m_Maps")]pub m_maps: ::unity2::Array<crate::app::mapimagecorebyte::MapImageCoreByte> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagehistory/MapImageHistory.md"))]#[::unity2::class(namespace="App",name="MapImageHistory")]#[parent(crate::system::object::Object)]pub struct MapImageHistory{#[offset(16)]#[rename(name="UnitMap")]pub unit_map:crate::app::mapimagehistory::MapImageHistory_HeatMap, #[offset(24)]#[rename(name="BattleMap")]pub battle_map:crate::app::mapimagehistory::MapImageHistory_HeatMap, #[offset(32)]#[rename(name="DeadMap")]pub dead_map:crate::app::mapimagehistory::MapImageHistory_HeatMap, #[offset(40)]#[rename(name="m_Cells")]pub m_cells: ::unity2::Array<crate::app::mappos::MapPos> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagehistory/MapImageHistory_HeatMap.md"))]#[::unity2::class(namespace="App",name="MapImageHistory.HeatMap")]#[parent(crate::system::object::Object)]pub struct MapImageHistory_HeatMap{#[offset(16)]#[rename(name="m_Maps")]pub m_maps: ::unity2::Array<crate::app::mapimagecorebyte::MapImageCoreByte> ,}
 
 }
 
 #[cfg(feature = "app-mapimagehistory-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapimagehistory")]pub trait IMapImageHistory_HeatMapMethods:IMapImageHistory_HeatMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageHistory_HeatMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217c660usize)as*mut u8,();
-(MapImageHistory_HeatMap)__receiver)}
-}
-#[doc="`Get(i32)` overload"]fn get(self,index:impl::core::convert::Into<i32>)->crate::app::mapimagecorebyte::MapImageCoreByte{unsafe{let __receiver= <MapImageHistory_HeatMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217c7e0usize)as*mut u8,crate::app::mapimagecorebyte::MapImageCoreByte;
-(MapImageHistory_HeatMap)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`Get(crate::app::force::Force_Type)` overload"]fn get_2(self,r#type:impl::core::convert::Into<crate::app::force::Force_Type>)->crate::app::mapimagecorebyte::MapImageCoreByte{unsafe{let __receiver= <MapImageHistory_HeatMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217c820usize)as*mut u8,crate::app::mapimagecorebyte::MapImageCoreByte;
-(MapImageHistory_HeatMap)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapImageHistory_HeatMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217c860usize)as*mut u8,();
-(MapImageHistory_HeatMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapimagehistory")]impl<__T:IMapImageHistory_HeatMap>IMapImageHistory_HeatMapMethods for __T{}
-
-#[cfg(feature="app-mapimagehistory")]impl MapImageHistory_HeatMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mapimagehistory")]impl MapImageHistory_HeatMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapImageHistory_HeatMap), ::core::stringify!(new),));
- <Self as IMapImageHistory_HeatMapMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-mapimagehistory")]pub trait IMapImageHistoryMethods:IMapImageHistory{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapImageHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2060a40usize)as*mut u8,();
@@ -90,15 +57,48 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-mapimagehistory")]pub trait IMapImageHistory_HeatMapMethods:IMapImageHistory_HeatMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageHistory_HeatMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217c660usize)as*mut u8,();
+(MapImageHistory_HeatMap)__receiver)}
+}
+#[doc="`Get(i32)` overload"]fn get(self,index:impl::core::convert::Into<i32>)->crate::app::mapimagecorebyte::MapImageCoreByte{unsafe{let __receiver= <MapImageHistory_HeatMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217c7e0usize)as*mut u8,crate::app::mapimagecorebyte::MapImageCoreByte;
+(MapImageHistory_HeatMap)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Get(crate::app::force::Force_Type)` overload"]fn get_2(self,r#type:impl::core::convert::Into<crate::app::force::Force_Type>)->crate::app::mapimagecorebyte::MapImageCoreByte{unsafe{let __receiver= <MapImageHistory_HeatMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217c820usize)as*mut u8,crate::app::mapimagecorebyte::MapImageCoreByte;
+(MapImageHistory_HeatMap)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapImageHistory_HeatMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217c860usize)as*mut u8,();
+(MapImageHistory_HeatMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapimagehistory")]impl<__T:IMapImageHistory_HeatMap>IMapImageHistory_HeatMapMethods for __T{}
+
+#[cfg(feature="app-mapimagehistory")]impl MapImageHistory_HeatMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapimagehistory")]impl MapImageHistory_HeatMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapImageHistory_HeatMap), ::core::stringify!(new),));
+ <Self as IMapImageHistory_HeatMapMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-mapimagehistory")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapImageHistory_HeatMap;
-    pub use super::IMapImageHistory_HeatMap;
-    pub use super::IMapImageHistory_HeatMapMethods;
     pub use super::MapImageHistory;
     pub use super::IMapImageHistory;
     pub use super::IMapImageHistoryMethods;
+    pub use super::MapImageHistory_HeatMap;
+    pub use super::IMapImageHistory_HeatMap;
+    pub use super::IMapImageHistory_HeatMapMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

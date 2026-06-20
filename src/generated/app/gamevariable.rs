@@ -11,9 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamevariable/GameVariable.md"))]#[::unity2::class(namespace="App",name="GameVariable")]#[parent(crate::system::object::Object)]pub struct GameVariable{#[static_field]#[rename(name="Type_Number")]pub type_number:u8, #[static_field]#[rename(name="Type_String")]pub type_string:u8, #[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="VersionForOnline")]pub version_for_online:i32, #[offset(16)]#[rename(name="m_Capacity")]pub m_capacity:i32, #[offset(24)]#[rename(name="m_Dictionary")]pub m_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::gamevariable::GameVariable_Value> , #[offset(32)]#[rename(name="m_Rewindable")]pub m_rewindable:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> , #[offset(40)]#[rename(name="m_Monitors")]pub m_monitors:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamevariable/GameVariable_Value.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GameVariable_Value{pub number:i32,pub string: ::unity2::Il2CppString,}
 impl::unity2::ClassIdentity for GameVariable_Value{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GameVariable.Value";
@@ -24,10 +21,37 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for GameVariable_Value{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamevariable/GameVariable.md"))]#[::unity2::class(namespace="App",name="GameVariable")]#[parent(crate::system::object::Object)]pub struct GameVariable{#[static_field]#[rename(name="Type_Number")]pub type_number:u8, #[static_field]#[rename(name="Type_String")]pub type_string:u8, #[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="VersionForOnline")]pub version_for_online:i32, #[offset(16)]#[rename(name="m_Capacity")]pub m_capacity:i32, #[offset(24)]#[rename(name="m_Dictionary")]pub m_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::gamevariable::GameVariable_Value> , #[offset(32)]#[rename(name="m_Rewindable")]pub m_rewindable:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> , #[offset(40)]#[rename(name="m_Monitors")]pub m_monitors:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
+
 }
 
 #[cfg(feature = "app-gamevariable-types")]
 pub use __types::*;
+
+#[cfg(feature="app-gamevariable")]impl GameVariable_Value{#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,num:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70b80usize)as*mut u8,();
+(*mut GameVariable_Value)self as*mut GameVariable_Value,(i32)::core::convert::Into::into(num))}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor_2(&mut self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70b90usize)as*mut u8,();
+(*mut GameVariable_Value)self as*mut GameVariable_Value,(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`IsNumber()` overload"]pub fn is_number(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70ba0usize)as*mut u8,bool;
+(*mut GameVariable_Value)self as*mut GameVariable_Value)}
+}
+#[doc="`IsString()` overload"]pub fn is_string(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70bb0usize)as*mut u8,bool;
+(*mut GameVariable_Value)self as*mut GameVariable_Value)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70bc0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut GameVariable_Value)self as*mut GameVariable_Value)}
+}
+}
+
+#[cfg(feature="app-gamevariable")]impl GameVariable_Value{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature="app-gamevariable")]impl GameVariable{#[doc="`IsLocal(::unity2::Il2CppString)` overload"]pub fn is_local(key:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x251feb0usize)as*mut u8,bool;
 (::unity2::Il2CppString)::core::convert::Into::into(key))}
@@ -268,37 +292,13 @@ pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
-#[cfg(feature="app-gamevariable")]impl GameVariable_Value{#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,num:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70b80usize)as*mut u8,();
-(*mut GameVariable_Value)self as*mut GameVariable_Value,(i32)::core::convert::Into::into(num))}
-}
-#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor_2(&mut self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70b90usize)as*mut u8,();
-(*mut GameVariable_Value)self as*mut GameVariable_Value,(::unity2::Il2CppString)::core::convert::Into::into(str))}
-}
-#[doc="`IsNumber()` overload"]pub fn is_number(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70ba0usize)as*mut u8,bool;
-(*mut GameVariable_Value)self as*mut GameVariable_Value)}
-}
-#[doc="`IsString()` overload"]pub fn is_string(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70bb0usize)as*mut u8,bool;
-(*mut GameVariable_Value)self as*mut GameVariable_Value)}
-}
-#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e70bc0usize)as*mut u8, ::unity2::Il2CppString;
-(*mut GameVariable_Value)self as*mut GameVariable_Value)}
-}
-}
-
-#[cfg(feature="app-gamevariable")]impl GameVariable_Value{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
 #[cfg(feature = "app-gamevariable")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GameVariable_Value;
     pub use super::GameVariable;
     pub use super::IGameVariable;
     pub use super::IGameVariableMethods;
-    pub use super::GameVariable_Value;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

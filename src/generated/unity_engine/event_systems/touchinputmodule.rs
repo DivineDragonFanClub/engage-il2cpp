@@ -30,69 +30,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-event_systems-touchinputmodule-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-event_systems-touchinputmodule")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TouchInputModule_unity2_raw{use super:: * ;
-pub unsafe fn update_module(this:TouchInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",24usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"UpdateModule",));
-let inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_module_supported(this:TouchInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"IsModuleSupported",));
-let inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn should_activate_module(this:TouchInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"ShouldActivateModule",));
-let inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn process(this:TouchInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"Process",));
-let inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn deactivate_module(this:TouchInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"DeactivateModule",));
-let inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn to_string(this:TouchInputModule,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-event_systems-touchinputmodule")]pub trait ITouchInputModuleMethods:ITouchInputModule{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09620usize)as*mut u8,();
 (TouchInputModule)__receiver)}
@@ -114,20 +51,56 @@ inner(this,__mi)}
 (TouchInputModule)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`UpdateModule()` overload"]fn update_module(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TouchInputModule_unity2_raw::update_module(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"UpdateModule",));
+let __inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsModuleSupported()` overload"]fn is_module_supported(self,)->bool{unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TouchInputModule_unity2_raw::is_module_supported(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"IsModuleSupported",));
+let __inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ShouldActivateModule()` overload"]fn should_activate_module(self,)->bool{unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TouchInputModule_unity2_raw::should_activate_module(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"ShouldActivateModule",));
+let __inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UseFakeInput()` overload"]fn use_fake_input(self,)->bool{unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09910usize)as*mut u8,bool;
 (TouchInputModule)__receiver)}
 }
 #[doc="`Process()` overload"]fn process(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TouchInputModule_unity2_raw::process(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"Process",));
+let __inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`FakeTouches()` overload"]fn fake_touches(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09990usize)as*mut u8,();
@@ -142,10 +115,28 @@ __TouchInputModule_unity2_raw::process(__receiver, ::core::option::Option::None)
 (TouchInputModule)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(pointer_event),(bool)::core::convert::Into::into(pressed),(bool)::core::convert::Into::into(released))}
 }
 #[doc="`DeactivateModule()` overload"]fn deactivate_module(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TouchInputModule_unity2_raw::deactivate_module(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"DeactivateModule",));
+let __inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TouchInputModule_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <TouchInputModule as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(TouchInputModule, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -166,6 +157,26 @@ pub fn process_touch_events_method_info()-> & 'static::unity2::il2cpp::MethodInf
 pub fn process_touch_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 pub fn deactivate_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="unity_engine-event_systems-touchinputmodule")]impl TouchInputModule{#[doc="Direct (non-virtual) call to `TouchInputModule`'s own `UpdateModule`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TouchInputModule`'s own `IsModuleSupported`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_module_supported(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_module_supported_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TouchInputModule`'s own `ShouldActivateModule`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn should_activate_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::should_activate_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TouchInputModule`'s own `Process`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::process_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TouchInputModule`'s own `DeactivateModule`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn deactivate_module(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::deactivate_module_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TouchInputModule`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-event_systems-touchinputmodule")]impl TouchInputModule{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

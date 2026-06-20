@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "unity_engine-isubsystemdescriptor_interface-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-isubsystemdescriptor_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ISubsystemDescriptor_Interface_unity2_raw{use super:: * ;
-pub unsafe fn get_id(this:ISubsystemDescriptor_Interface,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-isubsystemdescriptor_interface")]pub trait IISubsystemDescriptor_InterfaceMethods:IISubsystemDescriptor_Interface{#[doc="`get_id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ISubsystemDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <ISubsystemDescriptor_Interface as::unity2::ClassIdentity> ::NAME,"get_id",));
-let inner:extern "C" fn(ISubsystemDescriptor_Interface, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ISubsystemDescriptor_Interface, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-isubsystemdescriptor_interface")]pub trait IISubsystemDescriptor_InterfaceMethods:IISubsystemDescriptor_Interface{#[doc="`get_id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ISubsystemDescriptor_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ISubsystemDescriptor_Interface_unity2_raw::get_id(__receiver, ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="unity_engine-isubsystemdescriptor_interface")]impl<__T:IISubsystemDescriptor_Interface>IISubsystemDescriptor_InterfaceMethods for __T{}
 
 #[cfg(feature="unity_engine-isubsystemdescriptor_interface")]impl ISubsystemDescriptor_Interface{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-isubsystemdescriptor_interface")]impl ISubsystemDescriptor_Interface{#[doc="Direct (non-virtual) call to `ISubsystemDescriptor_Interface`'s own `get_id`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-isubsystemdescriptor_interface")]

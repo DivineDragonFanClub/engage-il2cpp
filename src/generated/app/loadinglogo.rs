@@ -23,6 +23,12 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))]#[::unity2::class(namespace="App",name="LoadingLogo.UnitDotObject")]#[parent(crate::system::object::Object)]pub struct LoadingLogo_UnitDotObject{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::rawimage::RawImage, #[offset(32)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/loadinglogo/LoadingLogo.md"))]#[::unity2::class(namespace="App",name="LoadingLogo")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::loadinglogo::LoadingLogo>)]pub struct LoadingLogo{#[static_field]#[rename(name="GroundImageMax")]pub ground_image_max:i32, #[static_field]#[rename(name="UnitDotMax")]pub unit_dot_max:i32, #[offset(32)]#[rename(name="m_Tips")]pub m_tips:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_IconCanvasGroup")]pub m_icon_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(56)]#[rename(name="m_TipsCanvasGroup")]pub m_tips_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(64)]#[rename(name="m_TipsUnitIcon")]pub m_tips_unit_icon:crate::app::uniticon::UnitIcon, #[offset(72)]#[rename(name="m_ItemIconRootObject")]pub m_item_icon_root_object:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_ItemIconFrameImage")]pub m_item_icon_frame_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_ItemIconImage")]pub m_item_icon_image:crate::unity_engine::ui::image::Image, #[offset(96)]#[rename(name="m_SkillIconImage")]pub m_skill_icon_image:crate::unity_engine::ui::image::Image, #[offset(104)]#[rename(name="m_TitleFrameImage")]pub m_title_frame_image:crate::unity_engine::ui::image::Image, #[offset(112)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_TipsText")]pub m_tips_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_UnitIconAndGroundRootObject")]pub m_unit_icon_and_ground_root_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_GroundImageObjects")]pub m_ground_image_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(144)]#[rename(name="m_UnitDotObjects")]pub m_unit_dot_objects: ::unity2::Array<crate::app::loadinglogo::LoadingLogo_UnitDotObject> , #[offset(152)]#[rename(name="m_TipsData")]pub m_tips_data:crate::app::tipsdata::TipsData, #[offset(160)]#[rename(name="m_TipsAlpha")]pub m_tips_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(168)]#[rename(name="m_IconAlpha")]pub m_icon_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(176)]#[rename(name="m_LoadingMode")]pub m_loading_mode:crate::app::loadingmanager::LoadingManager_Modes, #[offset(180)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::loadinglogo::LoadingLogo_Sequences,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/loadinglogo/LoadingLogo_Sequences.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct LoadingLogo_Sequences{pub value:i32,}
 impl::unity2::ClassIdentity for LoadingLogo_Sequences{const NAMESPACE: &'static str="App";
 const NAME: &'static str="LoadingLogo.Sequences";
@@ -44,28 +50,47 @@ pub fn hide()->Self{Self{value:4}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/loadinglogo/LoadingLogo.md"))]#[::unity2::class(namespace="App",name="LoadingLogo")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::loadinglogo::LoadingLogo>)]pub struct LoadingLogo{#[static_field]#[rename(name="GroundImageMax")]pub ground_image_max:i32, #[static_field]#[rename(name="UnitDotMax")]pub unit_dot_max:i32, #[offset(32)]#[rename(name="m_Tips")]pub m_tips:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_IconCanvasGroup")]pub m_icon_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(56)]#[rename(name="m_TipsCanvasGroup")]pub m_tips_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(64)]#[rename(name="m_TipsUnitIcon")]pub m_tips_unit_icon:crate::app::uniticon::UnitIcon, #[offset(72)]#[rename(name="m_ItemIconRootObject")]pub m_item_icon_root_object:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_ItemIconFrameImage")]pub m_item_icon_frame_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_ItemIconImage")]pub m_item_icon_image:crate::unity_engine::ui::image::Image, #[offset(96)]#[rename(name="m_SkillIconImage")]pub m_skill_icon_image:crate::unity_engine::ui::image::Image, #[offset(104)]#[rename(name="m_TitleFrameImage")]pub m_title_frame_image:crate::unity_engine::ui::image::Image, #[offset(112)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_TipsText")]pub m_tips_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_UnitIconAndGroundRootObject")]pub m_unit_icon_and_ground_root_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_GroundImageObjects")]pub m_ground_image_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(144)]#[rename(name="m_UnitDotObjects")]pub m_unit_dot_objects: ::unity2::Array<crate::app::loadinglogo::LoadingLogo_UnitDotObject> , #[offset(152)]#[rename(name="m_TipsData")]pub m_tips_data:crate::app::tipsdata::TipsData, #[offset(160)]#[rename(name="m_TipsAlpha")]pub m_tips_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(168)]#[rename(name="m_IconAlpha")]pub m_icon_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(176)]#[rename(name="m_LoadingMode")]pub m_loading_mode:crate::app::loadingmanager::LoadingManager_Modes, #[offset(180)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::loadinglogo::LoadingLogo_Sequences,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))]#[::unity2::class(namespace="App",name="LoadingLogo.UnitDotObject")]#[parent(crate::system::object::Object)]pub struct LoadingLogo_UnitDotObject{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::rawimage::RawImage, #[offset(32)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material,}
-
 }
 
 #[cfg(feature = "app-loadinglogo-types")]
 pub use __types::*;
 
-#[cfg(feature="app-loadinglogo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LoadingLogo_unity2_raw{use super:: * ;
-pub unsafe fn awake(this:LoadingLogo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <LoadingLogo as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(LoadingLogo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="app-loadinglogo")]impl LoadingLogo_UnitDotObject{#[doc="`GetUnitDotTexturePath(crate::app::persondata::PersonData, bool)` overload"]pub fn get_unit_dot_texture_path(person:impl::core::convert::Into<crate::app::persondata::PersonData> ,is_female:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7eb0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::persondata::PersonData)::core::convert::Into::into(person),(bool)::core::convert::Into::into(is_female))}
+}
+#[doc="`LoadUnitDotTextureAll()` overload"]pub fn load_unit_dot_texture_all()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd80c0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-loadinglogo")]pub trait ILoadingLogo_UnitDotObjectMethods:ILoadingLogo_UnitDotObject{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <LoadingLogo_UnitDotObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7b70usize)as*mut u8,();
+(LoadingLogo_UnitDotObject)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`Setup(crate::app::persondata::PersonData, bool)` overload"]fn setup(self,person:impl::core::convert::Into<crate::app::persondata::PersonData> ,is_female:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <LoadingLogo_UnitDotObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7c60usize)as*mut u8,bool;
+(LoadingLogo_UnitDotObject)__receiver,(crate::app::persondata::PersonData)::core::convert::Into::into(person),(bool)::core::convert::Into::into(is_female))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <LoadingLogo_UnitDotObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7fd0usize)as*mut u8,();
+(LoadingLogo_UnitDotObject)__receiver)}
+}
+}
+
+#[cfg(feature="app-loadinglogo")]impl<__T:ILoadingLogo_UnitDotObject>ILoadingLogo_UnitDotObjectMethods for __T{}
+
+#[cfg(feature="app-loadinglogo")]impl LoadingLogo_UnitDotObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_unit_dot_texture_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_unit_dot_texture_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-loadinglogo")]impl LoadingLogo_UnitDotObject{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LoadingLogo_UnitDotObject), ::core::stringify!(new),));
+ <Self as ILoadingLogo_UnitDotObjectMethods> ::ctor(this,root_object);
+this}
 }
 
 #[cfg(feature="app-loadinglogo")]impl LoadingLogo{#[doc="`GetNextTipsData(crate::app::tipsdata::TipsData, crate::app::loadingmanager::LoadingManager_Modes)` overload"]pub fn get_next_tips_data(now:impl::core::convert::Into<crate::app::tipsdata::TipsData> ,mode:impl::core::convert::Into<crate::app::loadingmanager::LoadingManager_Modes>)->crate::app::tipsdata::TipsData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1becb60usize)as*mut u8,crate::app::tipsdata::TipsData;
@@ -86,7 +111,16 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-loadinglogo")]pub trait ILoadingLogoMethods:ILoadingLogo{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <LoadingLogo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__LoadingLogo_unity2_raw::awake(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <LoadingLogo as::unity2::ClassIdentity> ::NAME,"Awake",));
+let __inner:extern "C" fn(LoadingLogo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <LoadingLogo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bec430usize)as*mut u8,();
@@ -165,6 +199,11 @@ pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 }
 
+#[cfg(feature="app-loadinglogo")]impl LoadingLogo{#[doc="Direct (non-virtual) call to `LoadingLogo`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-loadinglogo")]impl LoadingLogo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(LoadingLogo), ::core::stringify!(new),));
@@ -172,54 +211,16 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-loadinglogo")]impl LoadingLogo_UnitDotObject{#[doc="`GetUnitDotTexturePath(crate::app::persondata::PersonData, bool)` overload"]pub fn get_unit_dot_texture_path(person:impl::core::convert::Into<crate::app::persondata::PersonData> ,is_female:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7eb0usize)as*mut u8, ::unity2::Il2CppString;
-(crate::app::persondata::PersonData)::core::convert::Into::into(person),(bool)::core::convert::Into::into(is_female))}
-}
-#[doc="`LoadUnitDotTextureAll()` overload"]pub fn load_unit_dot_texture_all()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd80c0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-loadinglogo")]pub trait ILoadingLogo_UnitDotObjectMethods:ILoadingLogo_UnitDotObject{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <LoadingLogo_UnitDotObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7b70usize)as*mut u8,();
-(LoadingLogo_UnitDotObject)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Setup(crate::app::persondata::PersonData, bool)` overload"]fn setup(self,person:impl::core::convert::Into<crate::app::persondata::PersonData> ,is_female:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <LoadingLogo_UnitDotObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7c60usize)as*mut u8,bool;
-(LoadingLogo_UnitDotObject)__receiver,(crate::app::persondata::PersonData)::core::convert::Into::into(person),(bool)::core::convert::Into::into(is_female))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <LoadingLogo_UnitDotObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7fd0usize)as*mut u8,();
-(LoadingLogo_UnitDotObject)__receiver)}
-}
-}
-
-#[cfg(feature="app-loadinglogo")]impl<__T:ILoadingLogo_UnitDotObject>ILoadingLogo_UnitDotObjectMethods for __T{}
-
-#[cfg(feature="app-loadinglogo")]impl LoadingLogo_UnitDotObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_unit_dot_texture_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn load_unit_dot_texture_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-loadinglogo")]impl LoadingLogo_UnitDotObject{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(LoadingLogo_UnitDotObject), ::core::stringify!(new),));
- <Self as ILoadingLogo_UnitDotObjectMethods> ::ctor(this,root_object);
-this}
-}
-
 #[cfg(feature = "app-loadinglogo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LoadingLogo_Sequences;
-    pub use super::LoadingLogo;
-    pub use super::ILoadingLogo;
-    pub use super::ILoadingLogoMethods;
     pub use super::LoadingLogo_UnitDotObject;
     pub use super::ILoadingLogo_UnitDotObject;
     pub use super::ILoadingLogo_UnitDotObjectMethods;
+    pub use super::LoadingLogo;
+    pub use super::ILoadingLogo;
+    pub use super::ILoadingLogoMethods;
+    pub use super::LoadingLogo_Sequences;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

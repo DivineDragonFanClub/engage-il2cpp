@@ -17,27 +17,7 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-util-defaultallocationstrategy")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DefaultAllocationStrategy_unity2_raw{use super:: * ;
-pub unsafe fn new(this:DefaultAllocationStrategy,r#type: ::unity2::SystemType,type_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DefaultAllocationStrategy as::unity2::ClassIdentity> ::NAME,"New",));
-let inner:extern "C" fn(DefaultAllocationStrategy, ::unity2::SystemType,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,r#type,type_hash,__mi)}
-pub unsafe fn release(this:DefaultAllocationStrategy,type_hash:i32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DefaultAllocationStrategy as::unity2::ClassIdentity> ::NAME,"Release",));
-let inner:extern "C" fn(DefaultAllocationStrategy,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,type_hash,obj,__mi)}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<DefaultAllocationStrategy as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
 );
@@ -50,10 +30,28 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="unity_engine-resource_management-util-defaultallocationstrategy")]pub trait IDefaultAllocationStrategyMethods:IDefaultAllocationStrategy{#[doc="`New(::unity2::SystemType, i32)` overload"]fn new(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,type_hash:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <DefaultAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DefaultAllocationStrategy_unity2_raw::new(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(type_hash), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DefaultAllocationStrategy as::unity2::ClassIdentity> ::NAME,"New",));
+let __inner:extern "C" fn(DefaultAllocationStrategy, ::unity2::SystemType,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(type_hash),__mi)}
+}
 }
 #[doc="`Release(i32, crate::system::object::Object)` overload"]fn release(self,type_hash:impl::core::convert::Into<i32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <DefaultAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DefaultAllocationStrategy_unity2_raw::release(__receiver, ::core::convert::Into::into(type_hash), ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DefaultAllocationStrategy as::unity2::ClassIdentity> ::NAME,"Release",));
+let __inner:extern "C" fn(DefaultAllocationStrategy,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(type_hash), ::core::convert::Into::into(obj),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DefaultAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__DefaultAllocationStrategy_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
@@ -66,6 +64,14 @@ __DefaultAllocationStrategy_unity2_raw::release(__receiver, ::core::convert::Int
 #[cfg(feature="unity_engine-resource_management-util-defaultallocationstrategy")]impl DefaultAllocationStrategy{pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-resource_management-util-defaultallocationstrategy")]impl DefaultAllocationStrategy{#[doc="Direct (non-virtual) call to `DefaultAllocationStrategy`'s own `New`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn new(this:impl::core::convert::Into< ::unity2::IlInstance> ,r#type: ::unity2::SystemType,type_hash:i32,)->crate::system::object::Object{let __mi=Self::new_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),r#type,type_hash, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DefaultAllocationStrategy`'s own `Release`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn release(this:impl::core::convert::Into< ::unity2::IlInstance> ,type_hash:i32,obj:crate::system::object::Object,)->(){let __mi=Self::release_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),type_hash,obj, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-defaultallocationstrategy")]

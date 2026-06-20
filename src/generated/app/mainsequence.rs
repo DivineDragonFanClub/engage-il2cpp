@@ -98,19 +98,6 @@ pub fn end()->Self{Self{value:29}
 #[cfg(feature = "app-mainsequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mainsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MainSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_persistent(this:MainSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <MainSequence as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
-let inner:extern "C" fn(MainSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-mainsequence")]impl MainSequence{#[doc="`GetCurrent(crate::app::procinst::ProcInst)` overload"]pub fn get_current(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1edd2e0usize)as*mut u8,crate::app::procinst::ProcInst;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -172,7 +159,16 @@ inner(this,__mi)}
 (MainSequence)__receiver)}
 }
 #[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MainSequence_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MainSequence as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
+let __inner:extern "C" fn(MainSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BranchStart()` overload"]fn branch_start(self,)->(){unsafe{let __receiver= <MainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1eddd80usize)as*mut u8,();
@@ -340,6 +336,11 @@ pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn is_initialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+}
+
+#[cfg(feature="app-mainsequence")]impl MainSequence{#[doc="Direct (non-virtual) call to `MainSequence`'s own `OnPersistent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_persistent(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_persistent_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-mainsequence")]impl MainSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -20,68 +20,61 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-capabilityfloat-types")]
 pub use __types::*;
 
-#[cfg(feature="app-capabilityfloat")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CapabilityFloat_unity2_raw{use super:: * ;
-pub unsafe fn add(this:CapabilityFloat,i:i32,v:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <CapabilityFloat as::unity2::ClassIdentity> ::NAME,"Add",));
-let inner:extern "C" fn(CapabilityFloat,i32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,i,v,__mi)}
-pub unsafe fn is_zero(this:CapabilityFloat,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <CapabilityFloat as::unity2::ClassIdentity> ::NAME,"IsZero",));
-let inner:extern "C" fn(CapabilityFloat, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn write_to_stream(this:CapabilityFloat,stream:crate::app::stream_2::Stream_2,v:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <CapabilityFloat as::unity2::ClassIdentity> ::NAME,"WriteToStream",));
-let inner:extern "C" fn(CapabilityFloat,crate::app::stream_2::Stream_2,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,v,__mi)}
-pub unsafe fn read_from_stream(this:CapabilityFloat,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <CapabilityFloat as::unity2::ClassIdentity> ::NAME,"ReadFromStream",));
-let inner:extern "C" fn(CapabilityFloat,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-}
-
 #[cfg(feature="app-capabilityfloat")]pub trait ICapabilityFloatMethods:ICapabilityFloat{#[doc="`.ctor(f32)` overload"]fn ctor(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25bd910usize)as*mut u8,();
 (CapabilityFloat)__receiver,(f32)::core::convert::Into::into(value))}
 }
 #[doc="`Add(i32, f32)` overload"]fn add(self,i:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CapabilityFloat_unity2_raw::add(__receiver, ::core::convert::Into::into(i), ::core::convert::Into::into(v), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CapabilityFloat as::unity2::ClassIdentity> ::NAME,"Add",));
+let __inner:extern "C" fn(CapabilityFloat,i32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(i), ::core::convert::Into::into(v),__mi)}
+}
 }
 #[doc="`IsZero()` overload"]fn is_zero(self,)->bool{unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CapabilityFloat_unity2_raw::is_zero(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CapabilityFloat as::unity2::ClassIdentity> ::NAME,"IsZero",));
+let __inner:extern "C" fn(CapabilityFloat, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsOne()` overload"]fn is_one(self,)->bool{unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25bdad0usize)as*mut u8,bool;
 (CapabilityFloat)__receiver)}
 }
 #[doc="`WriteToStream(crate::app::stream_2::Stream_2, f32)` overload"]fn write_to_stream(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,v:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CapabilityFloat_unity2_raw::write_to_stream(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(v), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CapabilityFloat as::unity2::ClassIdentity> ::NAME,"WriteToStream",));
+let __inner:extern "C" fn(CapabilityFloat,crate::app::stream_2::Stream_2,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(v),__mi)}
+}
 }
 #[doc="`ReadFromStream(crate::app::stream_2::Stream_2)` overload"]fn read_from_stream(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->f32{unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CapabilityFloat_unity2_raw::read_from_stream(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CapabilityFloat as::unity2::ClassIdentity> ::NAME,"ReadFromStream",));
+let __inner:extern "C" fn(CapabilityFloat,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
 }
 }
 
@@ -93,6 +86,20 @@ pub fn is_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn is_one_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn write_to_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn read_from_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-capabilityfloat")]impl CapabilityFloat{#[doc="Direct (non-virtual) call to `CapabilityFloat`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add(this:impl::core::convert::Into< ::unity2::IlInstance> ,i:i32,v:f32,)->(){let __mi=Self::add_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),i,v, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CapabilityFloat`'s own `IsZero`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_zero(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_zero_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CapabilityFloat`'s own `WriteToStream`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_to_stream(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,v:f32,)->(){let __mi=Self::write_to_stream_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,v, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CapabilityFloat`'s own `ReadFromStream`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_from_stream(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->f32{let __mi=Self::read_from_stream_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-capabilityfloat")]impl CapabilityFloat{#[doc="`.ctor(f32)` — overload selector"]pub fn new(value:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

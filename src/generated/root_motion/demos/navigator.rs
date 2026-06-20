@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/demos/navigator/Navigator.md"))]#[::unity2::class(namespace="RootMotion.Demos",name="Navigator")]#[parent(crate::system::object::Object)]pub struct Navigator{#[offset(16)]#[rename(name="activeTargetSeeking")]pub active_target_seeking:bool, #[offset(20)]#[rename(name="cornerRadius")]pub corner_radius:f32, #[offset(24)]#[rename(name="recalculateOnPathDistance")]pub recalculate_on_path_distance:f32, #[offset(28)]#[rename(name="maxSampleDistance")]pub max_sample_distance:f32, #[offset(32)]#[rename(name="nextPathInterval")]pub next_path_interval:f32, #[offset(56)]#[rename(name="transform")]pub transform:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="cornerIndex")]pub corner_index:i32, #[offset(72)]#[rename(name="corners")]pub corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(80)]#[rename(name="path")]pub path:crate::unity_engine::ai::navmeshpath::NavMeshPath, #[offset(88)]#[rename(name="lastTargetPosition")]pub last_target_position:crate::unity_engine::vector3::Vector3, #[offset(100)]#[rename(name="initiated")]pub initiated:bool, #[offset(104)]#[rename(name="nextPathTime")]pub next_path_time:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/demos/navigator/Navigator_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Navigator_State{pub value:i32,}
 impl::unity2::ClassIdentity for Navigator_State{const NAMESPACE: &'static str="RootMotion.Demos";
 const NAME: &'static str="Navigator.State";
@@ -32,6 +29,9 @@ pub fn seeking()->Self{Self{value:1}
 pub fn on_path()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/demos/navigator/Navigator.md"))]#[::unity2::class(namespace="RootMotion.Demos",name="Navigator")]#[parent(crate::system::object::Object)]pub struct Navigator{#[offset(16)]#[rename(name="activeTargetSeeking")]pub active_target_seeking:bool, #[offset(20)]#[rename(name="cornerRadius")]pub corner_radius:f32, #[offset(24)]#[rename(name="recalculateOnPathDistance")]pub recalculate_on_path_distance:f32, #[offset(28)]#[rename(name="maxSampleDistance")]pub max_sample_distance:f32, #[offset(32)]#[rename(name="nextPathInterval")]pub next_path_interval:f32, #[offset(56)]#[rename(name="transform")]pub transform:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="cornerIndex")]pub corner_index:i32, #[offset(72)]#[rename(name="corners")]pub corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(80)]#[rename(name="path")]pub path:crate::unity_engine::ai::navmeshpath::NavMeshPath, #[offset(88)]#[rename(name="lastTargetPosition")]pub last_target_position:crate::unity_engine::vector3::Vector3, #[offset(100)]#[rename(name="initiated")]pub initiated:bool, #[offset(104)]#[rename(name="nextPathTime")]pub next_path_time:f32,}
 
 }
 
@@ -114,10 +114,10 @@ this}
 #[cfg(feature = "root_motion-demos-navigator")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Navigator_State;
     pub use super::Navigator;
     pub use super::INavigator;
     pub use super::INavigatorMethods;
-    pub use super::Navigator_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -17,29 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfo/UnitInfo_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfo_Mode{pub value:i32,}
-impl::unity2::ClassIdentity for UnitInfo_Mode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="UnitInfo.Mode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for UnitInfo_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl UnitInfo_Mode{pub fn simple()->Self{Self{value:0}
-}
-pub fn hide()->Self{Self{value:1}
-}
-pub fn model_only()->Self{Self{value:2}
-}
-pub fn num()->Self{Self{value:3}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfo/UnitInfo.md"))]#[::unity2::class(namespace="App",name="UnitInfo")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::unitinfo::UnitInfo>)]pub struct UnitInfo{#[static_field]#[rename(name="InvalidUnitXZ")]pub invalid_unit_xz:i32, #[static_field]#[rename(name="c_TransitionDuration")]pub c_transition_duration:f32, #[offset(120)]#[rename(name="m_ModeStack")]pub m_mode_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode> , #[offset(128)]#[rename(name="m_Windows")]pub m_windows: ::unity2::Array<crate::app::unitinfo::UnitInfo_Window> , #[static_field]#[rename(name="m_bUpdateSight")]pub m_b_update_sight:bool, #[static_field]#[rename(name="m_LookAtObj")]pub m_look_at_obj:crate::unity_engine::gameobject::GameObject,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfo/UnitInfo_Side.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfo_Side{pub value:i32,}
 impl::unity2::ClassIdentity for UnitInfo_Side{const NAMESPACE: &'static str="App";
 const NAME: &'static str="UnitInfo.Side";
@@ -60,386 +37,33 @@ pub fn num()->Self{Self{value:2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfo/UnitInfo_Window.md"))]#[::unity2::class(namespace="App",name="UnitInfo.Window")]#[parent(crate::system::object::Object)]pub struct UnitInfo_Window{#[offset(16)]#[rename(name="m_ModeStack")]pub m_mode_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode> , #[offset(24)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(32)]#[rename(name="m_God")]pub m_god:crate::app::godunit::GodUnit, #[offset(40)]#[rename(name="m_UnitX")]pub m_unit_x:i32, #[offset(44)]#[rename(name="m_UnitZ")]pub m_unit_z:i32, #[offset(48)]#[rename(name="m_UnitInfoWindowSimple")]pub m_unit_info_window_simple:crate::app::unitinfowindow::UnitInfoWindow, #[offset(56)]#[rename(name="m_UnitInfoWindowCharaModel")]pub m_unit_info_window_chara_model:crate::app::unitinfowindowcharamodel::UnitInfoWindowCharaModel, #[offset(64)]#[rename(name="m_IsVisible")]pub m_is_visible:bool, #[offset(65)]#[rename(name="m_IsDuplicateRenderTexture")]pub m_is_duplicate_render_texture:bool, #[offset(66)]#[rename(name="m_IsReverse")]pub m_is_reverse:bool, #[offset(67)]#[rename(name="m_IsHideStatus")]pub m_is_hide_status:bool,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfo/UnitInfo.md"))]#[::unity2::class(namespace="App",name="UnitInfo")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::unitinfo::UnitInfo>)]pub struct UnitInfo{#[static_field]#[rename(name="InvalidUnitXZ")]pub invalid_unit_xz:i32, #[static_field]#[rename(name="c_TransitionDuration")]pub c_transition_duration:f32, #[offset(120)]#[rename(name="m_ModeStack")]pub m_mode_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode> , #[offset(128)]#[rename(name="m_Windows")]pub m_windows: ::unity2::Array<crate::app::unitinfo::UnitInfo_Window> , #[static_field]#[rename(name="m_bUpdateSight")]pub m_b_update_sight:bool, #[static_field]#[rename(name="m_LookAtObj")]pub m_look_at_obj:crate::unity_engine::gameobject::GameObject,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfo/UnitInfo_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitInfo_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for UnitInfo_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitInfo.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitInfo_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnitInfo_Mode{pub fn simple()->Self{Self{value:0}
+}
+pub fn hide()->Self{Self{value:1}
+}
+pub fn model_only()->Self{Self{value:2}
+}
+pub fn num()->Self{Self{value:3}
+}
+}
+
 }
 
 #[cfg(feature = "app-unitinfo-types")]
 pub use __types::*;
-
-#[cfg(feature="app-unitinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitInfo_unity2_raw{use super:: * ;
-pub unsafe fn on_dispose(this:UnitInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <UnitInfo as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(UnitInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-unitinfo")]impl UnitInfo{#[doc="`CreateAsync(crate::app::procinst::ProcInst)` overload"]pub fn create_async(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f861f0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`CreateBindAsync(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_async(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f863d0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`CreateImpl(crate::app::procinst::ProcInst, crate::app::unitinfo::UnitInfo)` overload"]pub fn create_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,p:impl::core::convert::Into<crate::app::unitinfo::UnitInfo>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86340usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitinfo::UnitInfo)::core::convert::Into::into(p))}
-}
-#[doc="`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::unitinfo::UnitInfo)` overload"]pub fn create_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,p:impl::core::convert::Into<crate::app::unitinfo::UnitInfo>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86520usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitinfo::UnitInfo)::core::convert::Into::into(p))}
-}
-#[doc="`CreateDescs(crate::app::unitinfo::UnitInfo)` overload"]pub fn create_descs(p:impl::core::convert::Into<crate::app::unitinfo::UnitInfo>)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f865b0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
-(crate::app::unitinfo::UnitInfo)::core::convert::Into::into(p))}
-}
-#[doc="`GetCurrentWindowObject()` overload"]pub fn get_current_window_object()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86980usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-)}
-}
-#[doc="`SetUnit(crate::app::unitinfo::UnitInfo_Side, crate::app::unit::Unit, bool, bool, bool, crate::system::action::Action)` overload"]pub fn set_unit(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,b_relax:impl::core::convert::Into<bool> ,b_reverse_rotation:impl::core::convert::Into<bool> ,is_delay_load:impl::core::convert::Into<bool> ,on_setup_done_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86a50usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(b_relax),(bool)::core::convert::Into::into(b_reverse_rotation),(bool)::core::convert::Into::into(is_delay_load),(crate::system::action::Action)::core::convert::Into::into(on_setup_done_callback))}
-}
-#[doc="`SetUnitBattleInfo(crate::app::unitinfo::UnitInfo_Side, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]pub fn set_unit_battle_info(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86b80usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
-}
-#[doc="`SetOverrideCreateReserveUnitItem(crate::app::unitinfo::UnitInfo_Side, crate::app::unititem::UnitItem)` overload"]pub fn set_override_create_reserve_unit_item(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86cd0usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
-}
-#[doc="`SetUnitHub(crate::app::unitinfo::UnitInfo_Side, crate::app::unit::Unit, bool, bool, bool)` overload"]pub fn set_unit_hub(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,b_relax:impl::core::convert::Into<bool> ,b_reverse_rotation:impl::core::convert::Into<bool> ,is_delay_load:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86dd0usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(b_relax),(bool)::core::convert::Into::into(b_reverse_rotation),(bool)::core::convert::Into::into(is_delay_load))}
-}
-#[doc="`SetUnitRelay(crate::app::unitinfo::UnitInfo_Side, crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::unitedit::UnitEdit)` overload"]pub fn set_unit_relay(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,person:impl::core::convert::Into<crate::app::persondata::PersonData> ,job:impl::core::convert::Into<crate::app::jobdata::JobData> ,edit:impl::core::convert::Into<crate::app::unitedit::UnitEdit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86ef0usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::persondata::PersonData)::core::convert::Into::into(person),(crate::app::jobdata::JobData)::core::convert::Into::into(job),(crate::app::unitedit::UnitEdit)::core::convert::Into::into(edit))}
-}
-#[doc="`ResetUnit(crate::app::unitinfo::UnitInfo_Side, crate::app::unititem::UnitItem, bool, bool, bool)` overload"]pub fn reset_unit(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,b_relax:impl::core::convert::Into<bool> ,b_reverse_rotation:impl::core::convert::Into<bool> ,is_delay_load:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87000usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(bool)::core::convert::Into::into(b_relax),(bool)::core::convert::Into::into(b_reverse_rotation),(bool)::core::convert::Into::into(is_delay_load))}
-}
-#[doc="`ResetUnit()` overload"]pub fn reset_unit_2()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87150usize)as*mut u8,();
-)}
-}
-#[doc="`AddCharaRot(crate::app::unitinfo::UnitInfo_Side, crate::unity_engine::quaternion::Quaternion)` overload"]pub fn add_chara_rot(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,quaternion:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87270usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(quaternion))}
-}
-#[doc="`SetLeftCameraAdjustY()` overload"]pub fn set_left_camera_adjust_y()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87390usize)as*mut u8,();
-)}
-}
-#[doc="`PlayCharaVoice(crate::app::unitinfo::UnitInfo_Side, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn play_chara_voice(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,person_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,engage_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87460usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(::unity2::Il2CppString)::core::convert::Into::into(person_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(engage_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
-}
-#[doc="`ReserveCharaVoice(crate::app::unitinfo::UnitInfo_Side, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn reserve_chara_voice(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,person_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,engage_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87570usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(::unity2::Il2CppString)::core::convert::Into::into(person_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(engage_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
-}
-#[doc="`PlayReservedCharaVoice(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn play_reserved_chara_voice(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87680usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`SetWeaponShopChara(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn set_weapon_shop_chara(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87770usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`SetSummonChara()` overload"]pub fn set_summon_chara()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87860usize)as*mut u8,();
-)}
-}
-#[doc="`SetGod(crate::app::unitinfo::UnitInfo_Side, crate::app::godunit::GodUnit, bool, bool, crate::system::action::Action)` overload"]pub fn set_god(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,b_relax:impl::core::convert::Into<bool> ,b_reverse_rotation:impl::core::convert::Into<bool> ,on_setup_done_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87940usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(bool)::core::convert::Into::into(b_relax),(bool)::core::convert::Into::into(b_reverse_rotation),(crate::system::action::Action)::core::convert::Into::into(on_setup_done_callback))}
-}
-#[doc="`SetRightForRingCleaning(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, bool)` overload"]pub fn set_right_for_ring_cleaning(god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,b_relax:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87a60usize)as*mut u8,();
-(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type),(bool)::core::convert::Into::into(b_relax))}
-}
-#[doc="`SetEfficacyAttack(crate::app::unitinfo::UnitInfo_Side, bool)` overload"]pub fn set_efficacy_attack(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,is_efficacy:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87d70usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(bool)::core::convert::Into::into(is_efficacy))}
-}
-#[doc="`SetRelaxAnime(crate::app::unitinfo::UnitInfo_Side, f32)` overload"]pub fn set_relax_anime(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,transition_duration:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87e60usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(f32)::core::convert::Into::into(transition_duration))}
-}
-#[doc="`SetStatusAnime(crate::app::unitinfo::UnitInfo_Side, f32)` overload"]pub fn set_status_anime(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,transition_duration:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87f60usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(f32)::core::convert::Into::into(transition_duration))}
-}
-#[doc="`SetFortuneTellingGoodAnime(crate::app::unitinfo::UnitInfo_Side, bool)` overload"]pub fn set_fortune_telling_good_anime(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,is_allow_unit_null:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88060usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(bool)::core::convert::Into::into(is_allow_unit_null))}
-}
-#[doc="`SetFortuneTellingBadAnime(crate::app::unitinfo::UnitInfo_Side, bool)` overload"]pub fn set_fortune_telling_bad_anime(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,is_allow_unit_null:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88150usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(bool)::core::convert::Into::into(is_allow_unit_null))}
-}
-#[doc="`SetSelectGodNormalFace(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn set_select_god_normal_face(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88240usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`UpdateCurrentUnit(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn update_current_unit(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88330usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`GetUnit(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn get_unit(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88420usize)as*mut u8,crate::app::unit::Unit;
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`GetGod(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn get_god(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88500usize)as*mut u8,crate::app::godunit::GodUnit;
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`GetRenderTexture(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn get_render_texture(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->crate::unity_engine::rendertexture::RenderTexture{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f885e0usize)as*mut u8,crate::unity_engine::rendertexture::RenderTexture;
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`GetFaceCameraComponent(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn get_face_camera_component(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->crate::unity_engine::camera::Camera{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f886d0usize)as*mut u8,crate::unity_engine::camera::Camera;
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`IsHide()` overload"]pub fn is_hide()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f887c0usize)as*mut u8,bool;
-)}
-}
-#[doc="`PushMode(crate::app::unitinfo::UnitInfo_Mode)` overload"]pub fn push_mode(mode:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f888b0usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Mode)::core::convert::Into::into(mode))}
-}
-#[doc="`PushModeSimple()` overload"]pub fn push_mode_simple()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f889f0usize)as*mut u8,();
-)}
-}
-#[doc="`PushModeHide()` overload"]pub fn push_mode_hide()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88a60usize)as*mut u8,();
-)}
-}
-#[doc="`PushModeModelOnly()` overload"]pub fn push_mode_model_only()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88ad0usize)as*mut u8,();
-)}
-}
-#[doc="`PopMode()` overload"]pub fn pop_mode()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88b40usize)as*mut u8,();
-)}
-}
-#[doc="`SetMode(crate::app::unitinfo::UnitInfo_Mode)` overload"]pub fn set_mode(mode:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88c80usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Mode)::core::convert::Into::into(mode))}
-}
-#[doc="`SetModeIfHide(crate::app::unitinfo::UnitInfo_Mode)` overload"]pub fn set_mode_if_hide(mode:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88e70usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Mode)::core::convert::Into::into(mode))}
-}
-#[doc="`SetCurrentModeToGameUserData()` overload"]pub fn set_current_mode_to_game_user_data()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89020usize)as*mut u8,();
-)}
-}
-#[doc="`PushModeFromGameUserData()` overload"]pub fn push_mode_from_game_user_data()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89130usize)as*mut u8,();
-)}
-}
-#[doc="`SetModeFromGameUserDataIfHide()` overload"]pub fn set_mode_from_game_user_data_if_hide()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f891e0usize)as*mut u8,();
-)}
-}
-#[doc="`SetVisible(bool)` overload"]pub fn set_visible(is_visible:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89290usize)as*mut u8,();
-(bool)::core::convert::Into::into(is_visible))}
-}
-#[doc="`SetVisible(crate::app::unitinfo::UnitInfo_Side, bool)` overload"]pub fn set_visible_2(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,is_visible:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89400usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(bool)::core::convert::Into::into(is_visible))}
-}
-#[doc="`ResetAlpha()` overload"]pub fn reset_alpha()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89540usize)as*mut u8,();
-)}
-}
-#[doc="`ToggleVisible()` overload"]pub fn toggle_visible()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89730usize)as*mut u8,();
-)}
-}
-#[doc="`ToggleVisible(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn toggle_visible_2(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89830usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`ToVisible()` overload"]pub fn to_visible()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89920usize)as*mut u8,();
-)}
-}
-#[doc="`ToVisible(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn to_visible_2(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89990usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`ToInvisible()` overload"]pub fn to_invisible()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89a00usize)as*mut u8,();
-)}
-}
-#[doc="`ToInvisible(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn to_invisible_2(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89a70usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`IsVisible(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn is_visible(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89ae0usize)as*mut u8,bool;
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`CharaOnlyOn(bool)` overload"]pub fn chara_only_on(is_change_chara_model_anim:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89bd0usize)as*mut u8,();
-(bool)::core::convert::Into::into(is_change_chara_model_anim))}
-}
-#[doc="`CharaOnlyOff()` overload"]pub fn chara_only_off()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89ce0usize)as*mut u8,();
-)}
-}
-#[doc="`IsCharaOnlyTransition()` overload"]pub fn is_chara_only_transition()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89de0usize)as*mut u8,bool;
-)}
-}
-#[doc="`InitStandByAnime()` overload"]pub fn init_stand_by_anime()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89f10usize)as*mut u8,();
-)}
-}
-#[doc="`UpdateOffenseStandByAnime(crate::app::unititem::UnitItem, bool)` overload"]pub fn update_offense_stand_by_anime(unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,is_weapon_shop:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a020usize)as*mut u8,();
-(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(bool)::core::convert::Into::into(is_weapon_shop))}
-}
-#[doc="`UpdateDefenseStandByAnime(crate::app::unititem::UnitItem, bool)` overload"]pub fn update_defense_stand_by_anime(unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,is_weapon_shop:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a110usize)as*mut u8,();
-(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(bool)::core::convert::Into::into(is_weapon_shop))}
-}
-#[doc="`HideWeapon()` overload"]pub fn hide_weapon()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a200usize)as*mut u8,();
-)}
-}
-#[doc="`TransparentOn(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn transparent_on(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a300usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`TransparentOff(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn transparent_off(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a3f0usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`GetHeadLocator(crate::app::unitinfo::UnitInfo_Window)` overload"]pub fn get_head_locator(window:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Window>)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a4e0usize)as*mut u8,crate::unity_engine::transform::Transform;
-(crate::app::unitinfo::UnitInfo_Window)::core::convert::Into::into(window))}
-}
-#[doc="`SetSight()` overload"]pub fn set_sight()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f85d90usize)as*mut u8,();
-)}
-}
-#[doc="`SetHeadLocator(crate::app::unitinfo::UnitInfo_Side, crate::unity_engine::transform::Transform, f32, bool)` overload"]pub fn set_head_locator(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,weight:impl::core::convert::Into<f32> ,is_weight_interpolated:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a500usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform),(f32)::core::convert::Into::into(weight),(bool)::core::convert::Into::into(is_weight_interpolated))}
-}
-#[doc="`SetLookAt(crate::app::unitinfo::UnitInfo_Side, crate::unity_engine::transform::Transform)` overload"]pub fn set_look_at(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a600usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform))}
-}
-#[doc="`SetLookAtCamera(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn set_look_at_camera(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a6d0usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`SetEyesWeight(crate::app::unitinfo::UnitInfo_Side, f32)` overload"]pub fn set_eyes_weight(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,eyes_weight:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a7a0usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(f32)::core::convert::Into::into(eyes_weight))}
-}
-#[doc="`IsCharaVisible(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn is_chara_visible(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a880usize)as*mut u8,bool;
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`SetVisibleOfStatus(crate::app::unitinfo::UnitInfo_Side, crate::app::unitinfo::UnitInfo_Mode, bool)` overload"]pub fn set_visible_of_status(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,mode:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Mode> ,is_visible:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a970usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unitinfo::UnitInfo_Mode)::core::convert::Into::into(mode),(bool)::core::convert::Into::into(is_visible))}
-}
-#[doc="`IsVisibleStatus(crate::app::unitinfo::UnitInfo_Side, crate::app::unitinfo::UnitInfo_Mode)` overload"]pub fn is_visible_status(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,mode:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Mode>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8aa80usize)as*mut u8,bool;
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unitinfo::UnitInfo_Mode)::core::convert::Into::into(mode))}
-}
-#[doc="`HideCharaImage(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn hide_chara_image(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8ab80usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`ShowCharaImage(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn show_chara_image(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8ac70usize)as*mut u8,();
-(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
-}
-#[doc="`DumpMode()` overload"]pub fn dump_mode()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8ad60usize)as*mut u8,();
-)}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8b020usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-unitinfo")]pub trait IUnitInfoMethods:IUnitInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85680usize)as*mut u8,();
-(UnitInfo)__receiver)}
-}
-#[doc="`Construct(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn construct(self,left_unit:impl::core::convert::Into<crate::app::unit::Unit> ,right_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85710usize)as*mut u8,();
-(UnitInfo)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(left_unit),(crate::app::unit::Unit)::core::convert::Into::into(right_unit))}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitInfo_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
-}
-#[doc="`PrepareCharaModel()` overload"]fn prepare_chara_model(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85a60usize)as*mut u8,();
-(UnitInfo)__receiver)}
-}
-#[doc="`IsPreparingCharaModel()` overload"]fn is_preparing_chara_model(self,)->bool{unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85ad0usize)as*mut u8,bool;
-(UnitInfo)__receiver)}
-}
-#[doc="`PrepareWindow()` overload"]fn prepare_window(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85b60usize)as*mut u8,();
-(UnitInfo)__receiver)}
-}
-#[doc="`IsPreparingWindow()` overload"]fn is_preparing_window(self,)->bool{unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85bd0usize)as*mut u8,bool;
-(UnitInfo)__receiver)}
-}
-#[doc="`Postprepare()` overload"]fn postprepare(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85c60usize)as*mut u8,();
-(UnitInfo)__receiver)}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85cd0usize)as*mut u8,();
-(UnitInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-unitinfo")]impl<__T:IUnitInfo>IUnitInfoMethods for __T{}
-
-#[cfg(feature="app-unitinfo")]impl UnitInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn construct_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn prepare_chara_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn is_preparing_chara_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn prepare_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn is_preparing_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn postprepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn create_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn create_bind_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn create_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn create_descs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_current_window_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn set_unit_battle_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn set_override_create_reserve_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn set_unit_hub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn set_unit_relay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn reset_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn reset_unit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn add_chara_rot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn set_left_camera_adjust_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn play_chara_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn reserve_chara_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn play_reserved_chara_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn set_weapon_shop_chara_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn set_summon_chara_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn set_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-pub fn set_right_for_ring_cleaning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
-pub fn set_efficacy_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
-pub fn set_relax_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
-pub fn set_status_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
-pub fn set_fortune_telling_good_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
-pub fn set_fortune_telling_bad_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
-pub fn set_select_god_normal_face_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
-pub fn update_current_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
-pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
-pub fn get_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
-pub fn get_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
-pub fn get_face_camera_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
-pub fn is_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
-pub fn push_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
-pub fn push_mode_simple_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
-pub fn push_mode_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
-pub fn push_mode_model_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
-pub fn pop_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
-pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
-pub fn set_mode_if_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
-pub fn set_current_mode_to_game_user_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
-pub fn push_mode_from_game_user_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
-pub fn set_mode_from_game_user_data_if_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
-pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
-pub fn set_visible_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
-pub fn reset_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
-pub fn toggle_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
-pub fn toggle_visible_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
-pub fn to_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
-pub fn to_visible_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
-pub fn to_invisible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
-pub fn to_invisible_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
-pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
-pub fn chara_only_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
-pub fn chara_only_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
-pub fn is_chara_only_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
-pub fn init_stand_by_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
-pub fn update_offense_stand_by_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
-pub fn update_defense_stand_by_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
-pub fn hide_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
-pub fn transparent_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
-pub fn transparent_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
-pub fn get_head_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
-pub fn set_sight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
-pub fn set_head_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
-pub fn set_look_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
-pub fn set_look_at_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
-pub fn set_eyes_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
-pub fn is_chara_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
-pub fn set_visible_of_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
-pub fn is_visible_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
-pub fn hide_chara_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
-pub fn show_chara_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
-pub fn dump_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
-}
-
-#[cfg(feature="app-unitinfo")]impl UnitInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitInfo), ::core::stringify!(new),));
- <Self as IUnitInfoMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-unitinfo")]pub trait IUnitInfo_WindowMethods:IUnitInfo_Window{#[doc="`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode>, crate::app::unit::Unit, bool, bool, bool)` overload"]fn ctor(self,mode_stack:impl::core::convert::Into<crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode> > ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,is_duplicate_render_texture:impl::core::convert::Into<bool> ,is_reverse:impl::core::convert::Into<bool> ,is_hide_status:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitInfo_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b4fc30usize)as*mut u8,();
@@ -734,17 +358,394 @@ pub fn set_unit_status_window_method_info()-> & 'static::unity2::il2cpp::MethodI
 this}
 }
 
+#[cfg(feature="app-unitinfo")]impl UnitInfo{#[doc="`CreateAsync(crate::app::procinst::ProcInst)` overload"]pub fn create_async(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f861f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindAsync(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_async(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f863d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateImpl(crate::app::procinst::ProcInst, crate::app::unitinfo::UnitInfo)` overload"]pub fn create_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,p:impl::core::convert::Into<crate::app::unitinfo::UnitInfo>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86340usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitinfo::UnitInfo)::core::convert::Into::into(p))}
+}
+#[doc="`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::unitinfo::UnitInfo)` overload"]pub fn create_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,p:impl::core::convert::Into<crate::app::unitinfo::UnitInfo>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86520usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitinfo::UnitInfo)::core::convert::Into::into(p))}
+}
+#[doc="`CreateDescs(crate::app::unitinfo::UnitInfo)` overload"]pub fn create_descs(p:impl::core::convert::Into<crate::app::unitinfo::UnitInfo>)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f865b0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(crate::app::unitinfo::UnitInfo)::core::convert::Into::into(p))}
+}
+#[doc="`GetCurrentWindowObject()` overload"]pub fn get_current_window_object()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86980usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+#[doc="`SetUnit(crate::app::unitinfo::UnitInfo_Side, crate::app::unit::Unit, bool, bool, bool, crate::system::action::Action)` overload"]pub fn set_unit(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,b_relax:impl::core::convert::Into<bool> ,b_reverse_rotation:impl::core::convert::Into<bool> ,is_delay_load:impl::core::convert::Into<bool> ,on_setup_done_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86a50usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(b_relax),(bool)::core::convert::Into::into(b_reverse_rotation),(bool)::core::convert::Into::into(is_delay_load),(crate::system::action::Action)::core::convert::Into::into(on_setup_done_callback))}
+}
+#[doc="`SetUnitBattleInfo(crate::app::unitinfo::UnitInfo_Side, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]pub fn set_unit_battle_info(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86b80usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`SetOverrideCreateReserveUnitItem(crate::app::unitinfo::UnitInfo_Side, crate::app::unititem::UnitItem)` overload"]pub fn set_override_create_reserve_unit_item(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86cd0usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`SetUnitHub(crate::app::unitinfo::UnitInfo_Side, crate::app::unit::Unit, bool, bool, bool)` overload"]pub fn set_unit_hub(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,b_relax:impl::core::convert::Into<bool> ,b_reverse_rotation:impl::core::convert::Into<bool> ,is_delay_load:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86dd0usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(b_relax),(bool)::core::convert::Into::into(b_reverse_rotation),(bool)::core::convert::Into::into(is_delay_load))}
+}
+#[doc="`SetUnitRelay(crate::app::unitinfo::UnitInfo_Side, crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::unitedit::UnitEdit)` overload"]pub fn set_unit_relay(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,person:impl::core::convert::Into<crate::app::persondata::PersonData> ,job:impl::core::convert::Into<crate::app::jobdata::JobData> ,edit:impl::core::convert::Into<crate::app::unitedit::UnitEdit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f86ef0usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::persondata::PersonData)::core::convert::Into::into(person),(crate::app::jobdata::JobData)::core::convert::Into::into(job),(crate::app::unitedit::UnitEdit)::core::convert::Into::into(edit))}
+}
+#[doc="`ResetUnit(crate::app::unitinfo::UnitInfo_Side, crate::app::unititem::UnitItem, bool, bool, bool)` overload"]pub fn reset_unit(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,b_relax:impl::core::convert::Into<bool> ,b_reverse_rotation:impl::core::convert::Into<bool> ,is_delay_load:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87000usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(bool)::core::convert::Into::into(b_relax),(bool)::core::convert::Into::into(b_reverse_rotation),(bool)::core::convert::Into::into(is_delay_load))}
+}
+#[doc="`ResetUnit()` overload"]pub fn reset_unit_2()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87150usize)as*mut u8,();
+)}
+}
+#[doc="`AddCharaRot(crate::app::unitinfo::UnitInfo_Side, crate::unity_engine::quaternion::Quaternion)` overload"]pub fn add_chara_rot(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,quaternion:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87270usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(quaternion))}
+}
+#[doc="`SetLeftCameraAdjustY()` overload"]pub fn set_left_camera_adjust_y()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87390usize)as*mut u8,();
+)}
+}
+#[doc="`PlayCharaVoice(crate::app::unitinfo::UnitInfo_Side, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn play_chara_voice(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,person_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,engage_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87460usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(::unity2::Il2CppString)::core::convert::Into::into(person_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(engage_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`ReserveCharaVoice(crate::app::unitinfo::UnitInfo_Side, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn reserve_chara_voice(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,person_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,engage_switch_name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87570usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(::unity2::Il2CppString)::core::convert::Into::into(person_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(engage_switch_name),(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`PlayReservedCharaVoice(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn play_reserved_chara_voice(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87680usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`SetWeaponShopChara(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn set_weapon_shop_chara(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87770usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`SetSummonChara()` overload"]pub fn set_summon_chara()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87860usize)as*mut u8,();
+)}
+}
+#[doc="`SetGod(crate::app::unitinfo::UnitInfo_Side, crate::app::godunit::GodUnit, bool, bool, crate::system::action::Action)` overload"]pub fn set_god(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,b_relax:impl::core::convert::Into<bool> ,b_reverse_rotation:impl::core::convert::Into<bool> ,on_setup_done_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87940usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(bool)::core::convert::Into::into(b_relax),(bool)::core::convert::Into::into(b_reverse_rotation),(crate::system::action::Action)::core::convert::Into::into(on_setup_done_callback))}
+}
+#[doc="`SetRightForRingCleaning(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, bool)` overload"]pub fn set_right_for_ring_cleaning(god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,b_relax:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87a60usize)as*mut u8,();
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type),(bool)::core::convert::Into::into(b_relax))}
+}
+#[doc="`SetEfficacyAttack(crate::app::unitinfo::UnitInfo_Side, bool)` overload"]pub fn set_efficacy_attack(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,is_efficacy:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87d70usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(bool)::core::convert::Into::into(is_efficacy))}
+}
+#[doc="`SetRelaxAnime(crate::app::unitinfo::UnitInfo_Side, f32)` overload"]pub fn set_relax_anime(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,transition_duration:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87e60usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(f32)::core::convert::Into::into(transition_duration))}
+}
+#[doc="`SetStatusAnime(crate::app::unitinfo::UnitInfo_Side, f32)` overload"]pub fn set_status_anime(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,transition_duration:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f87f60usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(f32)::core::convert::Into::into(transition_duration))}
+}
+#[doc="`SetFortuneTellingGoodAnime(crate::app::unitinfo::UnitInfo_Side, bool)` overload"]pub fn set_fortune_telling_good_anime(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,is_allow_unit_null:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88060usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(bool)::core::convert::Into::into(is_allow_unit_null))}
+}
+#[doc="`SetFortuneTellingBadAnime(crate::app::unitinfo::UnitInfo_Side, bool)` overload"]pub fn set_fortune_telling_bad_anime(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,is_allow_unit_null:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88150usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(bool)::core::convert::Into::into(is_allow_unit_null))}
+}
+#[doc="`SetSelectGodNormalFace(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn set_select_god_normal_face(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88240usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`UpdateCurrentUnit(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn update_current_unit(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88330usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`GetUnit(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn get_unit(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88420usize)as*mut u8,crate::app::unit::Unit;
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`GetGod(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn get_god(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88500usize)as*mut u8,crate::app::godunit::GodUnit;
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`GetRenderTexture(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn get_render_texture(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->crate::unity_engine::rendertexture::RenderTexture{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f885e0usize)as*mut u8,crate::unity_engine::rendertexture::RenderTexture;
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`GetFaceCameraComponent(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn get_face_camera_component(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->crate::unity_engine::camera::Camera{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f886d0usize)as*mut u8,crate::unity_engine::camera::Camera;
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`IsHide()` overload"]pub fn is_hide()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f887c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`PushMode(crate::app::unitinfo::UnitInfo_Mode)` overload"]pub fn push_mode(mode:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f888b0usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`PushModeSimple()` overload"]pub fn push_mode_simple()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f889f0usize)as*mut u8,();
+)}
+}
+#[doc="`PushModeHide()` overload"]pub fn push_mode_hide()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88a60usize)as*mut u8,();
+)}
+}
+#[doc="`PushModeModelOnly()` overload"]pub fn push_mode_model_only()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88ad0usize)as*mut u8,();
+)}
+}
+#[doc="`PopMode()` overload"]pub fn pop_mode()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88b40usize)as*mut u8,();
+)}
+}
+#[doc="`SetMode(crate::app::unitinfo::UnitInfo_Mode)` overload"]pub fn set_mode(mode:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88c80usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`SetModeIfHide(crate::app::unitinfo::UnitInfo_Mode)` overload"]pub fn set_mode_if_hide(mode:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f88e70usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`SetCurrentModeToGameUserData()` overload"]pub fn set_current_mode_to_game_user_data()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89020usize)as*mut u8,();
+)}
+}
+#[doc="`PushModeFromGameUserData()` overload"]pub fn push_mode_from_game_user_data()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89130usize)as*mut u8,();
+)}
+}
+#[doc="`SetModeFromGameUserDataIfHide()` overload"]pub fn set_mode_from_game_user_data_if_hide()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f891e0usize)as*mut u8,();
+)}
+}
+#[doc="`SetVisible(bool)` overload"]pub fn set_visible(is_visible:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89290usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`SetVisible(crate::app::unitinfo::UnitInfo_Side, bool)` overload"]pub fn set_visible_2(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,is_visible:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89400usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`ResetAlpha()` overload"]pub fn reset_alpha()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89540usize)as*mut u8,();
+)}
+}
+#[doc="`ToggleVisible()` overload"]pub fn toggle_visible()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89730usize)as*mut u8,();
+)}
+}
+#[doc="`ToggleVisible(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn toggle_visible_2(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89830usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`ToVisible()` overload"]pub fn to_visible()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89920usize)as*mut u8,();
+)}
+}
+#[doc="`ToVisible(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn to_visible_2(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89990usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`ToInvisible()` overload"]pub fn to_invisible()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89a00usize)as*mut u8,();
+)}
+}
+#[doc="`ToInvisible(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn to_invisible_2(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89a70usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`IsVisible(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn is_visible(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89ae0usize)as*mut u8,bool;
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`CharaOnlyOn(bool)` overload"]pub fn chara_only_on(is_change_chara_model_anim:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89bd0usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_change_chara_model_anim))}
+}
+#[doc="`CharaOnlyOff()` overload"]pub fn chara_only_off()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89ce0usize)as*mut u8,();
+)}
+}
+#[doc="`IsCharaOnlyTransition()` overload"]pub fn is_chara_only_transition()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89de0usize)as*mut u8,bool;
+)}
+}
+#[doc="`InitStandByAnime()` overload"]pub fn init_stand_by_anime()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f89f10usize)as*mut u8,();
+)}
+}
+#[doc="`UpdateOffenseStandByAnime(crate::app::unititem::UnitItem, bool)` overload"]pub fn update_offense_stand_by_anime(unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,is_weapon_shop:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a020usize)as*mut u8,();
+(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(bool)::core::convert::Into::into(is_weapon_shop))}
+}
+#[doc="`UpdateDefenseStandByAnime(crate::app::unititem::UnitItem, bool)` overload"]pub fn update_defense_stand_by_anime(unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,is_weapon_shop:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a110usize)as*mut u8,();
+(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(bool)::core::convert::Into::into(is_weapon_shop))}
+}
+#[doc="`HideWeapon()` overload"]pub fn hide_weapon()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a200usize)as*mut u8,();
+)}
+}
+#[doc="`TransparentOn(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn transparent_on(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a300usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`TransparentOff(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn transparent_off(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a3f0usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`GetHeadLocator(crate::app::unitinfo::UnitInfo_Window)` overload"]pub fn get_head_locator(window:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Window>)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a4e0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(crate::app::unitinfo::UnitInfo_Window)::core::convert::Into::into(window))}
+}
+#[doc="`SetSight()` overload"]pub fn set_sight()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f85d90usize)as*mut u8,();
+)}
+}
+#[doc="`SetHeadLocator(crate::app::unitinfo::UnitInfo_Side, crate::unity_engine::transform::Transform, f32, bool)` overload"]pub fn set_head_locator(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,weight:impl::core::convert::Into<f32> ,is_weight_interpolated:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a500usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform),(f32)::core::convert::Into::into(weight),(bool)::core::convert::Into::into(is_weight_interpolated))}
+}
+#[doc="`SetLookAt(crate::app::unitinfo::UnitInfo_Side, crate::unity_engine::transform::Transform)` overload"]pub fn set_look_at(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a600usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform))}
+}
+#[doc="`SetLookAtCamera(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn set_look_at_camera(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a6d0usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`SetEyesWeight(crate::app::unitinfo::UnitInfo_Side, f32)` overload"]pub fn set_eyes_weight(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,eyes_weight:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a7a0usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(f32)::core::convert::Into::into(eyes_weight))}
+}
+#[doc="`IsCharaVisible(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn is_chara_visible(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a880usize)as*mut u8,bool;
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`SetVisibleOfStatus(crate::app::unitinfo::UnitInfo_Side, crate::app::unitinfo::UnitInfo_Mode, bool)` overload"]pub fn set_visible_of_status(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,mode:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Mode> ,is_visible:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8a970usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unitinfo::UnitInfo_Mode)::core::convert::Into::into(mode),(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`IsVisibleStatus(crate::app::unitinfo::UnitInfo_Side, crate::app::unitinfo::UnitInfo_Mode)` overload"]pub fn is_visible_status(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side> ,mode:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Mode>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8aa80usize)as*mut u8,bool;
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side),(crate::app::unitinfo::UnitInfo_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`HideCharaImage(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn hide_chara_image(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8ab80usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`ShowCharaImage(crate::app::unitinfo::UnitInfo_Side)` overload"]pub fn show_chara_image(side:impl::core::convert::Into<crate::app::unitinfo::UnitInfo_Side>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8ac70usize)as*mut u8,();
+(crate::app::unitinfo::UnitInfo_Side)::core::convert::Into::into(side))}
+}
+#[doc="`DumpMode()` overload"]pub fn dump_mode()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8ad60usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f8b020usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-unitinfo")]pub trait IUnitInfoMethods:IUnitInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85680usize)as*mut u8,();
+(UnitInfo)__receiver)}
+}
+#[doc="`Construct(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn construct(self,left_unit:impl::core::convert::Into<crate::app::unit::Unit> ,right_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85710usize)as*mut u8,();
+(UnitInfo)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(left_unit),(crate::app::unit::Unit)::core::convert::Into::into(right_unit))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <UnitInfo as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(UnitInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`PrepareCharaModel()` overload"]fn prepare_chara_model(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85a60usize)as*mut u8,();
+(UnitInfo)__receiver)}
+}
+#[doc="`IsPreparingCharaModel()` overload"]fn is_preparing_chara_model(self,)->bool{unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85ad0usize)as*mut u8,bool;
+(UnitInfo)__receiver)}
+}
+#[doc="`PrepareWindow()` overload"]fn prepare_window(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85b60usize)as*mut u8,();
+(UnitInfo)__receiver)}
+}
+#[doc="`IsPreparingWindow()` overload"]fn is_preparing_window(self,)->bool{unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85bd0usize)as*mut u8,bool;
+(UnitInfo)__receiver)}
+}
+#[doc="`Postprepare()` overload"]fn postprepare(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85c60usize)as*mut u8,();
+(UnitInfo)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f85cd0usize)as*mut u8,();
+(UnitInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-unitinfo")]impl<__T:IUnitInfo>IUnitInfoMethods for __T{}
+
+#[cfg(feature="app-unitinfo")]impl UnitInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn construct_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn prepare_chara_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_preparing_chara_model_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn prepare_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_preparing_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn postprepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_descs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_current_window_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_unit_battle_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_override_create_reserve_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_unit_hub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_unit_relay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn reset_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn reset_unit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn add_chara_rot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_left_camera_adjust_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn play_chara_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn reserve_chara_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn play_reserved_chara_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_weapon_shop_chara_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_summon_chara_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_right_for_ring_cleaning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_efficacy_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn set_relax_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn set_status_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn set_fortune_telling_good_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn set_fortune_telling_bad_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn set_select_god_normal_face_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn update_current_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_render_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_face_camera_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn is_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn push_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn push_mode_simple_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn push_mode_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn push_mode_model_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn pop_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn set_mode_if_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn set_current_mode_to_game_user_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn push_mode_from_game_user_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn set_mode_from_game_user_data_if_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn set_visible_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn reset_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn toggle_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn toggle_visible_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn to_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn to_visible_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn to_invisible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn to_invisible_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn chara_only_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn chara_only_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn is_chara_only_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn init_stand_by_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn update_offense_stand_by_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn update_defense_stand_by_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn hide_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn transparent_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn transparent_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn get_head_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn set_sight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn set_head_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn set_look_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn set_look_at_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn set_eyes_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn is_chara_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn set_visible_of_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn is_visible_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn hide_chara_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+pub fn show_chara_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
+pub fn dump_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
+}
+
+#[cfg(feature="app-unitinfo")]impl UnitInfo{#[doc="Direct (non-virtual) call to `UnitInfo`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unitinfo")]impl UnitInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitInfo), ::core::stringify!(new),));
+ <Self as IUnitInfoMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-unitinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitInfo_Mode;
-    pub use super::UnitInfo;
-    pub use super::IUnitInfo;
-    pub use super::IUnitInfoMethods;
     pub use super::UnitInfo_Side;
     pub use super::UnitInfo_Window;
     pub use super::IUnitInfo_Window;
     pub use super::IUnitInfo_WindowMethods;
+    pub use super::UnitInfo;
+    pub use super::IUnitInfo;
+    pub use super::IUnitInfoMethods;
+    pub use super::UnitInfo_Mode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -13,40 +13,42 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Arg.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Arg{pub value:i32,}
-impl::unity2::ClassIdentity for Mess_TagID_Arg{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Mess.TagID_Arg";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Name.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Name{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagID_Name{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagID_Name";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for Mess_TagID_Arg{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for Mess_TagID_Name{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl Mess_TagID_Arg{pub fn arg0()->Self{Self{value:0}
+impl Mess_TagID_Name{pub fn replace()->Self{Self{value:0}
 }
-pub fn arg1()->Self{Self{value:1}
+pub fn publish()->Self{Self{value:1}
 }
-pub fn arg2()->Self{Self{value:2}
+pub fn private()->Self{Self{value:2}
 }
-pub fn arg3()->Self{Self{value:3}
+pub fn user()->Self{Self{value:3}
 }
-pub fn arg4()->Self{Self{value:4}
+pub fn partner()->Self{Self{value:4}
 }
-pub fn arg5()->Self{Self{value:5}
+pub fn mascot()->Self{Self{value:5}
 }
-pub fn arg6()->Self{Self{value:6}
 }
-pub fn arg7()->Self{Self{value:7}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Picture.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Picture{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagID_Picture{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagID_Picture";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-pub fn arg_b()->Self{Self{value:8}
+impl::unity2::IlType for Mess_TagID_Picture{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-pub fn arg_bs()->Self{Self{value:9}
+impl Mess_TagID_Picture{pub fn show()->Self{Self{value:0}
 }
-pub fn arg_b_uncap()->Self{Self{value:10}
-}
-pub fn arg_bs_uncap()->Self{Self{value:11}
-}
-pub fn arg_max()->Self{Self{value:8}
+pub fn hide()->Self{Self{value:1}
 }
 }
 
@@ -79,101 +81,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 )}
 }
 impl::unity2::IlType for Mess_ArgScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Localize.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Localize{pub value:i32,}
-impl::unity2::ClassIdentity for Mess_TagID_Localize{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Mess.TagID_Localize";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Mess_TagID_Localize{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Mess_TagID_Localize{pub fn mf_tag()->Self{Self{value:0}
-}
-pub fn uncap()->Self{Self{value:1}
-}
-pub fn c_nthird()->Self{Self{value:2}
-}
-pub fn t_wthird()->Self{Self{value:3}
-}
-pub fn k_rppn01()->Self{Self{value:4}
-}
-pub fn k_rppn02()->Self{Self{value:5}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Name.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Name{pub value:i32,}
-impl::unity2::ClassIdentity for Mess_TagID_Name{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Mess.TagID_Name";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Mess_TagID_Name{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Mess_TagID_Name{pub fn replace()->Self{Self{value:0}
-}
-pub fn publish()->Self{Self{value:1}
-}
-pub fn private()->Self{Self{value:2}
-}
-pub fn user()->Self{Self{value:3}
-}
-pub fn partner()->Self{Self{value:4}
-}
-pub fn mascot()->Self{Self{value:5}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_ReloadFileInfo.md"))]#[::unity2::class(namespace="App",name="Mess.ReloadFileInfo")]#[parent(crate::system::object::Object)]pub struct Mess_ReloadFileInfo{#[offset(16)]#[rename(name="m_fileName")]pub m_file_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_refCount")]pub m_ref_count:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Picture.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Picture{pub value:i32,}
-impl::unity2::ClassIdentity for Mess_TagID_Picture{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Mess.TagID_Picture";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Mess_TagID_Picture{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Mess_TagID_Picture{pub fn show()->Self{Self{value:0}
-}
-pub fn hide()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess.md"))]#[::unity2::class(namespace="App",name="Mess")]#[parent(crate::system::object::Object)]pub struct Mess{#[static_field]#[rename(name="CharSize")]pub char_size:i32, #[static_field]#[rename(name="ShiftIn")]pub shift_in:u16, #[static_field]#[rename(name="ShiftOut")]pub shift_out:u16, #[static_field]#[rename(name="NotFoundText")]pub not_found_text: ::unity2::Il2CppString, #[static_field]#[rename(name="FileName_HubCommon")]pub file_name_hub_common: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_Reliance")]pub file_name_header_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_GodReliance")]pub file_name_header_god_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_MainScenario")]pub file_name_header_main_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_SideScenario")]pub file_name_header_side_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_GodScenario")]pub file_name_header_god_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_EvilScenario")]pub file_name_header_evil_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_Reliance")]pub label_header_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_GodReliance")]pub label_header_god_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_Die")]pub label_header_die: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_Hub")]pub label_header_hub: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_DefaultHeroName")]pub replace_str_default_hero_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_DefaultMorphName")]pub replace_str_default_morph_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_DefaultMascotName")]pub replace_str_default_mascot_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_CNThirdTagMale")]pub replace_str_cn_third_tag_male: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_CNThirdTagFemale")]pub replace_str_cn_third_tag_female: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_TWThirdTagMale")]pub replace_str_tw_third_tag_male: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_TWThirdTagFemale")]pub replace_str_tw_third_tag_female: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelet")]pub replace_str_bracelet: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelets")]pub replace_str_bracelets: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelet_UNCAP")]pub replace_str_bracelet_uncap: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelets_UNCAP")]pub replace_str_bracelets_uncap: ::unity2::Il2CppString, #[static_field]#[rename(name="s_messFileDictionary")]pub s_mess_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> , #[static_field]#[rename(name="s_soundCmdFileDictionary")]pub s_sound_cmd_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> , #[static_field]#[rename(name="s_eventCmdFileDictionary")]pub s_event_cmd_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> , #[static_field]#[rename(name="s_messDataDictionary")]pub s_mess_data_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> , #[static_field]#[rename(name="s_soundCmdDataDictionary")]pub s_sound_cmd_data_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> , #[static_field]#[rename(name="s_eventCmdDataDictionary")]pub s_event_cmd_data_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> , #[static_field]#[rename(name="s_pathDictionary")]pub s_path_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[static_field]#[rename(name="s_checkStack")]pub s_check_stack:crate::system::collections::generic::stack_1::Stack_1<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> > , #[static_field]#[rename(name="s_mess")]pub s_mess: ::unity2::Il2CppString, #[static_field]#[rename(name="s_isBody")]pub s_is_body:bool, #[static_field]#[rename(name="s_isStrToLower")]pub s_is_str_to_lower:bool, #[static_field]#[rename(name="s_isNesting")]pub s_is_nesting:bool, #[static_field]#[rename(name="ArgMax")]pub arg_max:i32, #[static_field]#[rename(name="ArgStack")]pub arg_stack:i32, #[static_field]#[rename(name="s_argArray")]pub s_arg_array: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_argStack")]pub s_arg_stack:crate::system::collections::generic::stack_1::Stack_1< ::unity2::Array< ::unity2::Il2CppString> > , #[static_field]#[rename(name="s_partnerPid")]pub s_partner_pid: ::unity2::Il2CppString, #[static_field]#[rename(name="s_spriteAssetHandleDictionary")]pub s_sprite_asset_handle_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::resourcehandle_2::ResourceHandle_2> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Text.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Text{pub value:i32,}
-impl::unity2::ClassIdentity for Mess_TagID_Text{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Mess.TagID_Text";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Mess_TagID_Text{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Mess_TagID_Text{pub fn space()->Self{Self{value:0}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_LanguageScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Mess_LanguageScope{pub m_count:i32,pub m_name: ::unity2::Il2CppString,pub m_lang:crate::app::language::Language_Langs,}
-impl::unity2::ClassIdentity for Mess_LanguageScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Mess.LanguageScope";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Mess_LanguageScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -212,6 +119,99 @@ pub fn picture()->Self{Self{value:11}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess.md"))]#[::unity2::class(namespace="App",name="Mess")]#[parent(crate::system::object::Object)]pub struct Mess{#[static_field]#[rename(name="CharSize")]pub char_size:i32, #[static_field]#[rename(name="ShiftIn")]pub shift_in:u16, #[static_field]#[rename(name="ShiftOut")]pub shift_out:u16, #[static_field]#[rename(name="NotFoundText")]pub not_found_text: ::unity2::Il2CppString, #[static_field]#[rename(name="FileName_HubCommon")]pub file_name_hub_common: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_Reliance")]pub file_name_header_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_GodReliance")]pub file_name_header_god_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_MainScenario")]pub file_name_header_main_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_SideScenario")]pub file_name_header_side_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_GodScenario")]pub file_name_header_god_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_EvilScenario")]pub file_name_header_evil_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_Reliance")]pub label_header_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_GodReliance")]pub label_header_god_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_Die")]pub label_header_die: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_Hub")]pub label_header_hub: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_DefaultHeroName")]pub replace_str_default_hero_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_DefaultMorphName")]pub replace_str_default_morph_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_DefaultMascotName")]pub replace_str_default_mascot_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_CNThirdTagMale")]pub replace_str_cn_third_tag_male: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_CNThirdTagFemale")]pub replace_str_cn_third_tag_female: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_TWThirdTagMale")]pub replace_str_tw_third_tag_male: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_TWThirdTagFemale")]pub replace_str_tw_third_tag_female: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelet")]pub replace_str_bracelet: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelets")]pub replace_str_bracelets: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelet_UNCAP")]pub replace_str_bracelet_uncap: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelets_UNCAP")]pub replace_str_bracelets_uncap: ::unity2::Il2CppString, #[static_field]#[rename(name="s_messFileDictionary")]pub s_mess_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> , #[static_field]#[rename(name="s_soundCmdFileDictionary")]pub s_sound_cmd_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> , #[static_field]#[rename(name="s_eventCmdFileDictionary")]pub s_event_cmd_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> , #[static_field]#[rename(name="s_messDataDictionary")]pub s_mess_data_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> , #[static_field]#[rename(name="s_soundCmdDataDictionary")]pub s_sound_cmd_data_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> , #[static_field]#[rename(name="s_eventCmdDataDictionary")]pub s_event_cmd_data_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> , #[static_field]#[rename(name="s_pathDictionary")]pub s_path_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[static_field]#[rename(name="s_checkStack")]pub s_check_stack:crate::system::collections::generic::stack_1::Stack_1<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> > , #[static_field]#[rename(name="s_mess")]pub s_mess: ::unity2::Il2CppString, #[static_field]#[rename(name="s_isBody")]pub s_is_body:bool, #[static_field]#[rename(name="s_isStrToLower")]pub s_is_str_to_lower:bool, #[static_field]#[rename(name="s_isNesting")]pub s_is_nesting:bool, #[static_field]#[rename(name="ArgMax")]pub arg_max:i32, #[static_field]#[rename(name="ArgStack")]pub arg_stack:i32, #[static_field]#[rename(name="s_argArray")]pub s_arg_array: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_argStack")]pub s_arg_stack:crate::system::collections::generic::stack_1::Stack_1< ::unity2::Array< ::unity2::Il2CppString> > , #[static_field]#[rename(name="s_partnerPid")]pub s_partner_pid: ::unity2::Il2CppString, #[static_field]#[rename(name="s_spriteAssetHandleDictionary")]pub s_sprite_asset_handle_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::resourcehandle_2::ResourceHandle_2> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_ReloadFileInfo.md"))]#[::unity2::class(namespace="App",name="Mess.ReloadFileInfo")]#[parent(crate::system::object::Object)]pub struct Mess_ReloadFileInfo{#[offset(16)]#[rename(name="m_fileName")]pub m_file_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_refCount")]pub m_ref_count:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Text.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Text{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagID_Text{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagID_Text";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_TagID_Text{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Mess_TagID_Text{pub fn space()->Self{Self{value:0}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_LanguageScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Mess_LanguageScope{pub m_count:i32,pub m_name: ::unity2::Il2CppString,pub m_lang:crate::app::language::Language_Langs,}
+impl::unity2::ClassIdentity for Mess_LanguageScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.LanguageScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_LanguageScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Arg.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Arg{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagID_Arg{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagID_Arg";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_TagID_Arg{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Mess_TagID_Arg{pub fn arg0()->Self{Self{value:0}
+}
+pub fn arg1()->Self{Self{value:1}
+}
+pub fn arg2()->Self{Self{value:2}
+}
+pub fn arg3()->Self{Self{value:3}
+}
+pub fn arg4()->Self{Self{value:4}
+}
+pub fn arg5()->Self{Self{value:5}
+}
+pub fn arg6()->Self{Self{value:6}
+}
+pub fn arg7()->Self{Self{value:7}
+}
+pub fn arg_b()->Self{Self{value:8}
+}
+pub fn arg_bs()->Self{Self{value:9}
+}
+pub fn arg_b_uncap()->Self{Self{value:10}
+}
+pub fn arg_bs_uncap()->Self{Self{value:11}
+}
+pub fn arg_max()->Self{Self{value:8}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Localize.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Localize{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagID_Localize{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagID_Localize";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_TagID_Localize{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Mess_TagID_Localize{pub fn mf_tag()->Self{Self{value:0}
+}
+pub fn uncap()->Self{Self{value:1}
+}
+pub fn c_nthird()->Self{Self{value:2}
+}
+pub fn t_wthird()->Self{Self{value:3}
+}
+pub fn k_rppn01()->Self{Self{value:4}
+}
+pub fn k_rppn02()->Self{Self{value:5}
+}
+}
+
 }
 
 #[cfg(feature = "app-mess-types")]
@@ -227,24 +227,6 @@ pub use __types::*;
 
 #[cfg(feature="app-mess")]impl Mess_ArgScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mess")]pub trait IMess_ReloadFileInfoMethods:IMess_ReloadFileInfo{#[doc="`.ctor(::unity2::Il2CppString, i32)` overload"]fn ctor(self,file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,ref_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Mess_ReloadFileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208e470usize)as*mut u8,();
-(Mess_ReloadFileInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file_name),(i32)::core::convert::Into::into(ref_count))}
-}
-}
-
-#[cfg(feature="app-mess")]impl<__T:IMess_ReloadFileInfo>IMess_ReloadFileInfoMethods for __T{}
-
-#[cfg(feature="app-mess")]impl Mess_ReloadFileInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-mess")]impl Mess_ReloadFileInfo{#[doc="`.ctor(::unity2::Il2CppString, i32)` — overload selector"]pub fn new(file_name: ::unity2::Il2CppString,ref_count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Mess_ReloadFileInfo), ::core::stringify!(new),));
- <Self as IMess_ReloadFileInfoMethods> ::ctor(this,file_name,ref_count);
-this}
 }
 
 #[cfg(feature="app-mess")]impl Mess{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d2750usize)as*mut u8,();
@@ -619,6 +601,24 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-mess")]pub trait IMess_ReloadFileInfoMethods:IMess_ReloadFileInfo{#[doc="`.ctor(::unity2::Il2CppString, i32)` overload"]fn ctor(self,file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,ref_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Mess_ReloadFileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208e470usize)as*mut u8,();
+(Mess_ReloadFileInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file_name),(i32)::core::convert::Into::into(ref_count))}
+}
+}
+
+#[cfg(feature="app-mess")]impl<__T:IMess_ReloadFileInfo>IMess_ReloadFileInfoMethods for __T{}
+
+#[cfg(feature="app-mess")]impl Mess_ReloadFileInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mess")]impl Mess_ReloadFileInfo{#[doc="`.ctor(::unity2::Il2CppString, i32)` — overload selector"]pub fn new(file_name: ::unity2::Il2CppString,ref_count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Mess_ReloadFileInfo), ::core::stringify!(new),));
+ <Self as IMess_ReloadFileInfoMethods> ::ctor(this,file_name,ref_count);
+this}
+}
+
 #[cfg(feature="app-mess")]impl Mess_LanguageScope{#[doc="`.ctor(::unity2::Il2CppString, crate::app::language::Language_Langs)` overload"]pub fn ctor(&mut self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,lang:impl::core::convert::Into<crate::app::language::Language_Langs>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x208e060usize)as*mut u8,();
 (*mut Mess_LanguageScope)self as*mut Mess_LanguageScope,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::language::Language_Langs)::core::convert::Into::into(lang))}
 }
@@ -634,21 +634,21 @@ pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 #[cfg(feature = "app-mess")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Mess_TagID_Arg;
+    pub use super::Mess_TagID_Name;
+    pub use super::Mess_TagID_Picture;
     pub use super::Mess_IconCategory;
     pub use super::Mess_ArgScope;
-    pub use super::Mess_TagID_Localize;
-    pub use super::Mess_TagID_Name;
-    pub use super::Mess_ReloadFileInfo;
-    pub use super::IMess_ReloadFileInfo;
-    pub use super::IMess_ReloadFileInfoMethods;
-    pub use super::Mess_TagID_Picture;
+    pub use super::Mess_TagGroup;
     pub use super::Mess;
     pub use super::IMess;
     pub use super::IMessMethods;
+    pub use super::Mess_ReloadFileInfo;
+    pub use super::IMess_ReloadFileInfo;
+    pub use super::IMess_ReloadFileInfoMethods;
     pub use super::Mess_TagID_Text;
     pub use super::Mess_LanguageScope;
-    pub use super::Mess_TagGroup;
+    pub use super::Mess_TagID_Arg;
+    pub use super::Mess_TagID_Localize;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -22,29 +22,6 @@ use crate::unity_engine::timeline::marker::{IMarker,Marker}
 #[cfg(feature = "unity_engine-timeline-signalemitter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-signalemitter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SignalEmitter_unity2_raw{use super:: * ;
-pub unsafe fn unity_engine_playables_i_notification_get_id(this:SignalEmitter,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::propertyname::PropertyName{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <SignalEmitter as::unity2::ClassIdentity> ::NAME,"UnityEngine.Playables.INotification.get_id",));
-let inner:extern "C" fn(SignalEmitter, ::unity2::OptionalMethod,)->crate::unity_engine::propertyname::PropertyName= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn unity_engine_timeline_i_notification_option_provider_get_flags(this:SignalEmitter,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::notificationflags::NotificationFlags{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <SignalEmitter as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.INotificationOptionProvider.get_flags",));
-let inner:extern "C" fn(SignalEmitter, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::notificationflags::NotificationFlags= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-timeline-signalemitter")]pub trait ISignalEmitterMethods:ISignalEmitter{#[doc="`get_retroactive()` overload"]fn get_retroactive(self,)->bool{unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35da3a0usize)as*mut u8,bool;
 (SignalEmitter)__receiver)}
@@ -70,10 +47,28 @@ inner(this,__mi)}
 (SignalEmitter)__receiver,(crate::unity_engine::timeline::signalasset::SignalAsset)::core::convert::Into::into(value))}
 }
 #[doc="`UnityEngine.Playables.INotification.get_id()` overload"]fn unity_engine_playables_i_notification_get_id(self,)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SignalEmitter_unity2_raw::unity_engine_playables_i_notification_get_id(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <SignalEmitter as::unity2::ClassIdentity> ::NAME,"UnityEngine.Playables.INotification.get_id",));
+let __inner:extern "C" fn(SignalEmitter, ::unity2::OptionalMethod,)->crate::unity_engine::propertyname::PropertyName= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UnityEngine.Timeline.INotificationOptionProvider.get_flags()` overload"]fn unity_engine_timeline_i_notification_option_provider_get_flags(self,)->crate::unity_engine::timeline::notificationflags::NotificationFlags{unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SignalEmitter_unity2_raw::unity_engine_timeline_i_notification_option_provider_get_flags(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SignalEmitter as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.INotificationOptionProvider.get_flags",));
+let __inner:extern "C" fn(SignalEmitter, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::notificationflags::NotificationFlags= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SignalEmitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35da4f0usize)as*mut u8,();
@@ -92,6 +87,14 @@ pub fn set_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn unity_engine_playables_i_notification_get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn unity_engine_timeline_i_notification_option_provider_get_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="unity_engine-timeline-signalemitter")]impl SignalEmitter{#[doc="Direct (non-virtual) call to `SignalEmitter`'s own `UnityEngine.Playables.INotification.get_id`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_playables_i_notification_get_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::propertyname::PropertyName{let __mi=Self::unity_engine_playables_i_notification_get_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::propertyname::PropertyName= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SignalEmitter`'s own `UnityEngine.Timeline.INotificationOptionProvider.get_flags`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_timeline_i_notification_option_provider_get_flags(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::timeline::notificationflags::NotificationFlags{let __mi=Self::unity_engine_timeline_i_notification_option_provider_get_flags_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::notificationflags::NotificationFlags= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-timeline-signalemitter")]impl SignalEmitter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

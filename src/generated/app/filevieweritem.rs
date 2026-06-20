@@ -29,29 +29,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-filevieweritem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-filevieweritem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FileViewerItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:FileViewerItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <FileViewerItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(FileViewerItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:FileViewerItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <FileViewerItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(FileViewerItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-filevieweritem")]impl FileViewerItem{#[doc="`DefaultFunc(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString)` overload"]pub fn default_func(menu:impl::core::convert::Into<crate::app::debugmenu::DebugMenu> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::menuitem::MenuItem_Result{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ea730usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
 (crate::app::debugmenu::DebugMenu)::core::convert::Into::into(menu),(::unity2::Il2CppString)::core::convert::Into::into(name))}
 }
@@ -65,10 +42,28 @@ inner(this,__mi)}
 (FileViewerItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)::core::convert::Into::into(func))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileViewerItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FileViewerItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FileViewerItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(FileViewerItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FileViewerItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FileViewerItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <FileViewerItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(FileViewerItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -81,6 +76,14 @@ pub fn default_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn create_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem{#[doc="Direct (non-virtual) call to `FileViewerItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FileViewerItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-filevieweritem")]impl FileViewerItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]pub fn new(path: ::unity2::Il2CppString,func:crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(FileViewerItem), ::core::stringify!(new),));
@@ -88,51 +91,45 @@ pub fn create_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-filevieweritem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FileViewerItem_DirectoryItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:FileViewerItem_DirectoryItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <FileViewerItem_DirectoryItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(FileViewerItem_DirectoryItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:FileViewerItem_DirectoryItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <FileViewerItem_DirectoryItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(FileViewerItem_DirectoryItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_font_color(this:FileViewerItem_DirectoryItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <FileViewerItem_DirectoryItem as::unity2::ClassIdentity> ::NAME,"GetFontColor",));
-let inner:extern "C" fn(FileViewerItem_DirectoryItem, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-filevieweritem")]pub trait IFileViewerItem_DirectoryItemMethods:IFileViewerItem_DirectoryItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]fn ctor(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result> >)->(){unsafe{let __receiver= <FileViewerItem_DirectoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f5a0usize)as*mut u8,();
 (FileViewerItem_DirectoryItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)::core::convert::Into::into(func))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileViewerItem_DirectoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FileViewerItem_DirectoryItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FileViewerItem_DirectoryItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(FileViewerItem_DirectoryItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FileViewerItem_DirectoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FileViewerItem_DirectoryItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <FileViewerItem_DirectoryItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(FileViewerItem_DirectoryItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetFontColor()` overload"]fn get_font_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <FileViewerItem_DirectoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FileViewerItem_DirectoryItem_unity2_raw::get_font_color(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <FileViewerItem_DirectoryItem as::unity2::ClassIdentity> ::NAME,"GetFontColor",));
+let __inner:extern "C" fn(FileViewerItem_DirectoryItem, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -144,6 +141,17 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn get_font_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem_DirectoryItem{#[doc="Direct (non-virtual) call to `FileViewerItem_DirectoryItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FileViewerItem_DirectoryItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FileViewerItem_DirectoryItem`'s own `GetFontColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_font_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::color::Color{let __mi=Self::get_font_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-filevieweritem")]impl FileViewerItem_DirectoryItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]pub fn new(path: ::unity2::Il2CppString,name: ::unity2::Il2CppString,func:crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(FileViewerItem_DirectoryItem), ::core::stringify!(new),));
@@ -151,38 +159,33 @@ pub fn get_font_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 this}
 }
 
-#[cfg(feature="app-filevieweritem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FileViewerItem_FileItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:FileViewerItem_FileItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <FileViewerItem_FileItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(FileViewerItem_FileItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn x_call(this:FileViewerItem_FileItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <FileViewerItem_FileItem as::unity2::ClassIdentity> ::NAME,"XCall",));
-let inner:extern "C" fn(FileViewerItem_FileItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-filevieweritem")]pub trait IFileViewerItem_FileItemMethods:IFileViewerItem_FileItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]fn ctor(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result> >)->(){unsafe{let __receiver= <FileViewerItem_FileItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f840usize)as*mut u8,();
 (FileViewerItem_FileItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)::core::convert::Into::into(func))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FileViewerItem_FileItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FileViewerItem_FileItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <FileViewerItem_FileItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(FileViewerItem_FileItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FileViewerItem_FileItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FileViewerItem_FileItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <FileViewerItem_FileItem as::unity2::ClassIdentity> ::NAME,"XCall",));
+let __inner:extern "C" fn(FileViewerItem_FileItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -191,6 +194,14 @@ __FileViewerItem_FileItem_unity2_raw::x_call(__receiver, ::core::option::Option:
 #[cfg(feature="app-filevieweritem")]impl FileViewerItem_FileItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem_FileItem{#[doc="Direct (non-virtual) call to `FileViewerItem_FileItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FileViewerItem_FileItem`'s own `XCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn x_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::x_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-filevieweritem")]impl FileViewerItem_FileItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]pub fn new(path: ::unity2::Il2CppString,name: ::unity2::Il2CppString,func:crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

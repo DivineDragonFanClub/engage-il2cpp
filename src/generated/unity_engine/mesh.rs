@@ -13,17 +13,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/mesh/Mesh_MeshData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Mesh_MeshData{pub m_ptr: ::unity2::IntPtr,}
-impl::unity2::ClassIdentity for Mesh_MeshData{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="Mesh.MeshData";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Mesh_MeshData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/mesh/Mesh_MeshDataArray.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Mesh_MeshDataArray{}
 impl::unity2::ClassIdentity for Mesh_MeshDataArray{const NAMESPACE: &'static str="UnityEngine";
 const NAME: &'static str="Mesh.MeshDataArray";
@@ -32,6 +21,17 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 )}
 }
 impl::unity2::IlType for Mesh_MeshDataArray{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/mesh/Mesh_MeshData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Mesh_MeshData{pub m_ptr: ::unity2::IntPtr,}
+impl::unity2::ClassIdentity for Mesh_MeshData{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="Mesh.MeshData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mesh_MeshData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -1681,8 +1681,8 @@ this}
 #[cfg(feature = "unity_engine-mesh")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Mesh_MeshData;
     pub use super::Mesh_MeshDataArray;
+    pub use super::Mesh_MeshData;
     pub use super::Mesh;
     pub use super::IMesh;
     pub use super::IMeshMethods;

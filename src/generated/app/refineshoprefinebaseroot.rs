@@ -31,25 +31,21 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-refineshoprefinebaseroot-types")]
 pub use __types::*;
 
-#[cfg(feature="app-refineshoprefinebaseroot")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopRefineBaseRoot_ReturnEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RefineShopRefineBaseRoot_ReturnEventHandler,result:crate::app::basicmenu::BasicMenu_Result,unit:crate::app::unit::Unit,owner_item_index:i32,kind:crate::app::itemdata::ItemData_Kinds,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <RefineShopRefineBaseRoot_ReturnEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RefineShopRefineBaseRoot_ReturnEventHandler,crate::app::basicmenu::BasicMenu_Result,crate::app::unit::Unit,i32,crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,result,unit,owner_item_index,kind,__mi)}
-}
-
 #[cfg(feature="app-refineshoprefinebaseroot")]pub trait IRefineShopRefineBaseRoot_ReturnEventHandlerMethods:IRefineShopRefineBaseRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1afc720usize)as*mut u8,();
 (RefineShopRefineBaseRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::basicmenu::BasicMenu_Result> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,owner_item_index:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineShopRefineBaseRoot_ReturnEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::convert::Into::into(unit), ::core::convert::Into::into(owner_item_index), ::core::convert::Into::into(kind), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefineShopRefineBaseRoot_ReturnEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RefineShopRefineBaseRoot_ReturnEventHandler,crate::app::basicmenu::BasicMenu_Result,crate::app::unit::Unit,i32,crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(result), ::core::convert::Into::into(unit), ::core::convert::Into::into(owner_item_index), ::core::convert::Into::into(kind),__mi)}
+}
 }
 }
 
@@ -59,44 +55,16 @@ __RefineShopRefineBaseRoot_ReturnEventHandler_unity2_raw::invoke(__receiver, ::c
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-refineshoprefinebaseroot")]impl RefineShopRefineBaseRoot_ReturnEventHandler{#[doc="Direct (non-virtual) call to `RefineShopRefineBaseRoot_ReturnEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,result:crate::app::basicmenu::BasicMenu_Result,unit:crate::app::unit::Unit,owner_item_index:i32,kind:crate::app::itemdata::ItemData_Kinds,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::basicmenu::BasicMenu_Result,crate::app::unit::Unit,i32,crate::app::itemdata::ItemData_Kinds, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),result,unit,owner_item_index,kind, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-refineshoprefinebaseroot")]impl RefineShopRefineBaseRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RefineShopRefineBaseRoot_ReturnEventHandler), ::core::stringify!(new),));
  <Self as IRefineShopRefineBaseRoot_ReturnEventHandlerMethods> ::ctor(this,object,method);
 this}
-}
-
-#[cfg(feature="app-refineshoprefinebaseroot")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopRefineBaseRoot_unity2_raw{use super:: * ;
-pub unsafe fn create(this:RefineShopRefineBaseRoot,super_:crate::app::procinst::ProcInst,shop_weapon_model_renderer:crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,default_unit:crate::app::unit::Unit,default_item_index:i32,default_item_kind:crate::app::itemdata::ItemData_Kinds,return_event_handler:crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <RefineShopRefineBaseRoot as::unity2::ClassIdentity> ::NAME,"Create",));
-let inner:extern "C" fn(RefineShopRefineBaseRoot,crate::app::procinst::ProcInst,crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,crate::app::unit::Unit,i32,crate::app::itemdata::ItemData_Kinds,crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,super_,shop_weapon_model_renderer,default_unit,default_item_index,default_item_kind,return_event_handler,__mi)}
-pub unsafe fn destroy(this:RefineShopRefineBaseRoot,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <RefineShopRefineBaseRoot as::unity2::ClassIdentity> ::NAME,"Destroy",));
-let inner:extern "C" fn(RefineShopRefineBaseRoot, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn close(this:RefineShopRefineBaseRoot,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <RefineShopRefineBaseRoot as::unity2::ClassIdentity> ::NAME,"Close",));
-let inner:extern "C" fn(RefineShopRefineBaseRoot, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-refineshoprefinebaseroot")]impl RefineShopRefineBaseRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2968ea0usize)as*mut u8,();
@@ -114,10 +82,28 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-refineshoprefinebaseroot")]pub trait IRefineShopRefineBaseRootMethods:IRefineShopRefineBaseRoot{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_item_index:impl::core::convert::Into<i32> ,default_item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,return_event_handler:impl::core::convert::Into<crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler>)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineShopRefineBaseRoot_unity2_raw::create(__receiver, ::core::convert::Into::into(super_), ::core::convert::Into::into(shop_weapon_model_renderer), ::core::convert::Into::into(default_unit), ::core::convert::Into::into(default_item_index), ::core::convert::Into::into(default_item_kind), ::core::convert::Into::into(return_event_handler), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RefineShopRefineBaseRoot as::unity2::ClassIdentity> ::NAME,"Create",));
+let __inner:extern "C" fn(RefineShopRefineBaseRoot,crate::app::procinst::ProcInst,crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,crate::app::unit::Unit,i32,crate::app::itemdata::ItemData_Kinds,crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(super_), ::core::convert::Into::into(shop_weapon_model_renderer), ::core::convert::Into::into(default_unit), ::core::convert::Into::into(default_item_index), ::core::convert::Into::into(default_item_kind), ::core::convert::Into::into(return_event_handler),__mi)}
+}
 }
 #[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineShopRefineBaseRoot_unity2_raw::destroy(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RefineShopRefineBaseRoot as::unity2::ClassIdentity> ::NAME,"Destroy",));
+let __inner:extern "C" fn(RefineShopRefineBaseRoot, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x295f3c0usize)as*mut u8,();
@@ -140,7 +126,16 @@ __RefineShopRefineBaseRoot_unity2_raw::destroy(__receiver, ::core::option::Optio
 (RefineShopRefineBaseRoot)__receiver)}
 }
 #[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineShopRefineBaseRoot_unity2_raw::close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <RefineShopRefineBaseRoot as::unity2::ClassIdentity> ::NAME,"Close",));
+let __inner:extern "C" fn(RefineShopRefineBaseRoot, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -158,6 +153,17 @@ pub fn on_select_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo
 pub fn on_decide_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn on_request_close_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-refineshoprefinebaseroot")]impl RefineShopRefineBaseRoot{#[doc="Direct (non-virtual) call to `RefineShopRefineBaseRoot`'s own `Create`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create(this:impl::core::convert::Into< ::unity2::IlInstance> ,super_:crate::app::procinst::ProcInst,shop_weapon_model_renderer:crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,default_unit:crate::app::unit::Unit,default_item_index:i32,default_item_kind:crate::app::itemdata::ItemData_Kinds,return_event_handler:crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,)->(){let __mi=Self::create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::procinst::ProcInst,crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,crate::app::unit::Unit,i32,crate::app::itemdata::ItemData_Kinds,crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),super_,shop_weapon_model_renderer,default_unit,default_item_index,default_item_kind,return_event_handler, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RefineShopRefineBaseRoot`'s own `Destroy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn destroy(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::destroy_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RefineShopRefineBaseRoot`'s own `Close`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-refineshoprefinebaseroot")]impl RefineShopRefineBaseRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

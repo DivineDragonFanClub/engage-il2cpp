@@ -18,103 +18,93 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-multicastdelegate-types")]
 pub use __types::*;
 
-#[cfg(feature="system-multicastdelegate")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MulticastDelegate_unity2_raw{use super:: * ;
-pub unsafe fn dynamic_invoke_impl(this:MulticastDelegate,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-multicastdelegate")]pub trait IMulticastDelegateMethods:IMulticastDelegate{#[doc="`DynamicInvokeImpl(::unity2::Array<crate::system::object::Object>)` overload"]fn dynamic_invoke_impl(self,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::system::object::Object{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <MulticastDelegate as::unity2::ClassIdentity> ::NAME,"DynamicInvokeImpl",));
-let inner:extern "C" fn(MulticastDelegate, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MulticastDelegate, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,args,__mi)}
-pub unsafe fn equals(this:MulticastDelegate,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(args),__mi)}
+}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <MulticastDelegate as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(MulticastDelegate,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MulticastDelegate,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
-pub unsafe fn get_hash_code(this:MulticastDelegate,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <MulticastDelegate as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(MulticastDelegate, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MulticastDelegate, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_method_impl(this:MulticastDelegate,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMethodImpl()` overload"]fn get_method_impl(self,)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <MulticastDelegate as::unity2::ClassIdentity> ::NAME,"GetMethodImpl",));
-let inner:extern "C" fn(MulticastDelegate, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MulticastDelegate, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_invocation_list(this:MulticastDelegate,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::delegate::Delegate>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetInvocationList()` overload"]fn get_invocation_list(self,)-> ::unity2::Array<crate::system::delegate::Delegate>{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <MulticastDelegate as::unity2::ClassIdentity> ::NAME,"GetInvocationList",));
-let inner:extern "C" fn(MulticastDelegate, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::delegate::Delegate> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MulticastDelegate, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::delegate::Delegate> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn combine_impl(this:MulticastDelegate,follow:crate::system::delegate::Delegate,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::delegate::Delegate{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`CombineImpl(crate::system::delegate::Delegate)` overload"]fn combine_impl(self,follow:impl::core::convert::Into<crate::system::delegate::Delegate>)->crate::system::delegate::Delegate{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",11usize,__vt.len(), <MulticastDelegate as::unity2::ClassIdentity> ::NAME,"CombineImpl",));
-let inner:extern "C" fn(MulticastDelegate,crate::system::delegate::Delegate, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MulticastDelegate,crate::system::delegate::Delegate, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,follow,__mi)}
-pub unsafe fn remove_impl(this:MulticastDelegate,value:crate::system::delegate::Delegate,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::delegate::Delegate{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MulticastDelegate as::unity2::ClassIdentity> ::NAME,"RemoveImpl",));
-let inner:extern "C" fn(MulticastDelegate,crate::system::delegate::Delegate, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(follow),__mi)}
 }
-
-#[cfg(feature="system-multicastdelegate")]pub trait IMulticastDelegateMethods:IMulticastDelegate{#[doc="`DynamicInvokeImpl(::unity2::Array<crate::system::object::Object>)` overload"]fn dynamic_invoke_impl(self,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::system::object::Object{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MulticastDelegate_unity2_raw::dynamic_invoke_impl(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)}
-}
-#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MulticastDelegate_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
-}
-#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MulticastDelegate_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMethodImpl()` overload"]fn get_method_impl(self,)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MulticastDelegate_unity2_raw::get_method_impl(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetInvocationList()` overload"]fn get_invocation_list(self,)-> ::unity2::Array<crate::system::delegate::Delegate>{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MulticastDelegate_unity2_raw::get_invocation_list(__receiver, ::core::option::Option::None)}
-}
-#[doc="`CombineImpl(crate::system::delegate::Delegate)` overload"]fn combine_impl(self,follow:impl::core::convert::Into<crate::system::delegate::Delegate>)->crate::system::delegate::Delegate{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MulticastDelegate_unity2_raw::combine_impl(__receiver, ::core::convert::Into::into(follow), ::core::option::Option::None)}
 }
 #[doc="`LastIndexOf(::unity2::Array<crate::system::delegate::Delegate>, ::unity2::Array<crate::system::delegate::Delegate>)` overload"]fn last_index_of(self,haystack:impl::core::convert::Into< ::unity2::Array<crate::system::delegate::Delegate> > ,needle:impl::core::convert::Into< ::unity2::Array<crate::system::delegate::Delegate> >)->i32{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3385200usize)as*mut u8,i32;
 (MulticastDelegate)__receiver,(::unity2::Array<crate::system::delegate::Delegate>)::core::convert::Into::into(haystack),(::unity2::Array<crate::system::delegate::Delegate>)::core::convert::Into::into(needle))}
 }
 #[doc="`RemoveImpl(crate::system::delegate::Delegate)` overload"]fn remove_impl(self,value:impl::core::convert::Into<crate::system::delegate::Delegate>)->crate::system::delegate::Delegate{unsafe{let __receiver= <MulticastDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MulticastDelegate_unity2_raw::remove_impl(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MulticastDelegate as::unity2::ClassIdentity> ::NAME,"RemoveImpl",));
+let __inner:extern "C" fn(MulticastDelegate,crate::system::delegate::Delegate, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -128,6 +118,29 @@ pub fn get_invocation_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo
 pub fn combine_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn last_index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn remove_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="system-multicastdelegate")]impl MulticastDelegate{#[doc="Direct (non-virtual) call to `MulticastDelegate`'s own `DynamicInvokeImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dynamic_invoke_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,args: ::unity2::Array<crate::system::object::Object> ,)->crate::system::object::Object{let __mi=Self::dynamic_invoke_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),args, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MulticastDelegate`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)->bool{let __mi=Self::equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MulticastDelegate`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MulticastDelegate`'s own `GetMethodImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_method_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::methodinfo::MethodInfo{let __mi=Self::get_method_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MulticastDelegate`'s own `GetInvocationList`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_invocation_list(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::system::delegate::Delegate>{let __mi=Self::get_invocation_list_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::delegate::Delegate> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MulticastDelegate`'s own `CombineImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn combine_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,follow:crate::system::delegate::Delegate,)->crate::system::delegate::Delegate{let __mi=Self::combine_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::delegate::Delegate, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),follow, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MulticastDelegate`'s own `RemoveImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn remove_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::system::delegate::Delegate,)->crate::system::delegate::Delegate{let __mi=Self::remove_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::delegate::Delegate, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "system-multicastdelegate")]

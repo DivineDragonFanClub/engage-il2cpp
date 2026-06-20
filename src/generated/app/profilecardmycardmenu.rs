@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardmycardmenu/ProfileCardMyCardMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardMyCardMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardMyCardMenu{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler, #[offset(120)]#[rename(name="m_Root")]pub m_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(128)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(136)]#[rename(name="m_result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(140)]#[rename(name="m_NeededUpdateCardOnBuild")]pub m_needed_update_card_on_build:bool, #[offset(141)]#[rename(name="m_CloseCalled")]pub m_close_called:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardMyCardMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for ProfileCardMyCardMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCardMyCardMenu.Result2";
@@ -40,45 +37,15 @@ pub fn cancel()->Self{Self{value:2}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardmycardmenu/ProfileCardMyCardMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardMyCardMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardMyCardMenu{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler, #[offset(120)]#[rename(name="m_Root")]pub m_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(128)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(136)]#[rename(name="m_result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(140)]#[rename(name="m_NeededUpdateCardOnBuild")]pub m_needed_update_card_on_build:bool, #[offset(141)]#[rename(name="m_CloseCalled")]pub m_close_called:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardmycardmenu/ProfileCardMyCardMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardMyCardMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardMyCardMenu_DecideEventHandler{}
 
 }
 
 #[cfg(feature = "app-profilecardmycardmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-profilecardmycardmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardMyCardMenu_unity2_raw{use super:: * ;
-pub unsafe fn open_anime(this:ProfileCardMyCardMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <ProfileCardMyCardMenu as::unity2::ClassIdentity> ::NAME,"OpenAnime",));
-let inner:extern "C" fn(ProfileCardMyCardMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn tick_input(this:ProfileCardMyCardMenu,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <ProfileCardMyCardMenu as::unity2::ClassIdentity> ::NAME,"TickInput",));
-let inner:extern "C" fn(ProfileCardMyCardMenu, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:ProfileCardMyCardMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <ProfileCardMyCardMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(ProfileCardMyCardMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, bool, crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,profiled_card_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,needed_update_card_on_build:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler>)->crate::app::profilecardmycardmenu::ProfileCardMyCardMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x231b680usize)as*mut u8,crate::app::profilecardmycardmenu::ProfileCardMyCardMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardroot::ProfileCardRoot)::core::convert::Into::into(profiled_card_root),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(bool)::core::convert::Into::into(needed_update_card_on_build),(crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
@@ -102,14 +69,32 @@ inner(this,__mi)}
 (ProfileCardMyCardMenu)__receiver)}
 }
 #[doc="`OpenAnime()` overload"]fn open_anime(self,)->(){unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardMyCardMenu_unity2_raw::open_anime(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ProfileCardMyCardMenu as::unity2::ClassIdentity> ::NAME,"OpenAnime",));
+let __inner:extern "C" fn(ProfileCardMyCardMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x231bb00usize)as*mut u8,();
 (ProfileCardMyCardMenu)__receiver)}
 }
 #[doc="`TickInput()` overload"]fn tick_input(self,)->bool{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardMyCardMenu_unity2_raw::tick_input(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <ProfileCardMyCardMenu as::unity2::ClassIdentity> ::NAME,"TickInput",));
+let __inner:extern "C" fn(ProfileCardMyCardMenu, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsSwitchingPages()` overload"]fn is_switching_pages(self,)->bool{unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x231bbf0usize)as*mut u8,bool;
@@ -152,7 +137,16 @@ __ProfileCardMyCardMenu_unity2_raw::tick_input(__receiver, ::core::option::Optio
 (ProfileCardMyCardMenu)__receiver)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProfileCardMyCardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardMyCardMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ProfileCardMyCardMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(ProfileCardMyCardMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -179,6 +173,17 @@ pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 }
 
+#[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu{#[doc="Direct (non-virtual) call to `ProfileCardMyCardMenu`'s own `OpenAnime`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn open_anime(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::open_anime_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ProfileCardMyCardMenu`'s own `TickInput`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn tick_input(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::tick_input_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ProfileCardMyCardMenu`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu{#[doc="`.ctor(crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, bool, crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_root:crate::app::profilecardroot::ProfileCardRoot,my_profile_card_temp:crate::app::profilecard::ProfileCard,needed_update_card_on_build:bool,decide_event_handler:crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(ProfileCardMyCardMenu), ::core::stringify!(new),));
@@ -186,25 +191,21 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-profilecardmycardmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardMyCardMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:ProfileCardMyCardMenu_DecideEventHandler,result2:crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <ProfileCardMyCardMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(ProfileCardMyCardMenu_DecideEventHandler,crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,result2,__mi)}
-}
-
 #[cfg(feature="app-profilecardmycardmenu")]pub trait IProfileCardMyCardMenu_DecideEventHandlerMethods:IProfileCardMyCardMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardMyCardMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2269950usize)as*mut u8,();
 (ProfileCardMyCardMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2)` overload"]fn invoke(self,result2:impl::core::convert::Into<crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2>)->(){unsafe{let __receiver= <ProfileCardMyCardMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardMyCardMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result2), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ProfileCardMyCardMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(ProfileCardMyCardMenu_DecideEventHandler,crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(result2),__mi)}
+}
 }
 }
 
@@ -212,6 +213,11 @@ __ProfileCardMyCardMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core
 
 #[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `ProfileCardMyCardMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,result2:crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::profilecardmycardmenu::ProfileCardMyCardMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),result2, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-profilecardmycardmenu")]impl ProfileCardMyCardMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -224,10 +230,10 @@ this}
 #[cfg(feature = "app-profilecardmycardmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProfileCardMyCardMenu_Result2;
     pub use super::ProfileCardMyCardMenu;
     pub use super::IProfileCardMyCardMenu;
     pub use super::IProfileCardMyCardMenuMethods;
-    pub use super::ProfileCardMyCardMenu_Result2;
     pub use super::ProfileCardMyCardMenu_DecideEventHandler;
     pub use super::IProfileCardMyCardMenu_DecideEventHandler;
     pub use super::IProfileCardMyCardMenu_DecideEventHandlerMethods;

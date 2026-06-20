@@ -9,15 +9,48 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transporter/Transporter.md"))]#[::unity2::class(namespace="App",name="Transporter")]#[parent(crate::system::object::Object)]pub struct Transporter{#[static_field]#[rename(name="MaxOld")]pub max_old:i32, #[static_field]#[rename(name="MaxData")]pub max_data:i32, #[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="s_Data")]pub s_data: ::unity2::Array<crate::app::transporter::Transporter_Data> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transporter/Transporter_Data.md"))]#[::unity2::class(namespace="App",name="Transporter.Data")]#[parent(crate::system::object::Object)]pub struct Transporter_Data{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transporter/Transporter.md"))]#[::unity2::class(namespace="App",name="Transporter")]#[parent(crate::system::object::Object)]pub struct Transporter{#[static_field]#[rename(name="MaxOld")]pub max_old:i32, #[static_field]#[rename(name="MaxData")]pub max_data:i32, #[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="s_Data")]pub s_data: ::unity2::Array<crate::app::transporter::Transporter_Data> ,}
 
 }
 
 #[cfg(feature = "app-transporter-types")]
 pub use __types::*;
+
+#[cfg(feature="app-transporter")]pub trait ITransporter_DataMethods:ITransporter_Data{#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f5a0usize)as*mut u8,();
+(Transporter_Data)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f5e0usize)as*mut u8,();
+(Transporter_Data)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`get_UnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f6f0usize)as*mut u8,crate::app::unititem::UnitItem;
+(Transporter_Data)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f700usize)as*mut u8,();
+(Transporter_Data)__receiver)}
+}
+}
+
+#[cfg(feature="app-transporter")]impl<__T:ITransporter_Data>ITransporter_DataMethods for __T{}
+
+#[cfg(feature="app-transporter")]impl Transporter_Data{pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-transporter")]impl Transporter_Data{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Transporter_Data), ::core::stringify!(new),));
+ <Self as ITransporter_DataMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-transporter")]impl Transporter{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a1060usize)as*mut u8,();
 )}
@@ -131,48 +164,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-transporter")]pub trait ITransporter_DataMethods:ITransporter_Data{#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f5a0usize)as*mut u8,();
-(Transporter_Data)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
-}
-#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f5e0usize)as*mut u8,();
-(Transporter_Data)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
-}
-#[doc="`get_UnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f6f0usize)as*mut u8,crate::app::unititem::UnitItem;
-(Transporter_Data)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Transporter_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f700usize)as*mut u8,();
-(Transporter_Data)__receiver)}
-}
-}
-
-#[cfg(feature="app-transporter")]impl<__T:ITransporter_Data>ITransporter_DataMethods for __T{}
-
-#[cfg(feature="app-transporter")]impl Transporter_Data{pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-transporter")]impl Transporter_Data{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Transporter_Data), ::core::stringify!(new),));
- <Self as ITransporter_DataMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-transporter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Transporter;
-    pub use super::ITransporter;
-    pub use super::ITransporterMethods;
     pub use super::Transporter_Data;
     pub use super::ITransporter_Data;
     pub use super::ITransporter_DataMethods;
+    pub use super::Transporter;
+    pub use super::ITransporter;
+    pub use super::ITransporterMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

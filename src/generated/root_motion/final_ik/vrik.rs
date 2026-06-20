@@ -21,15 +21,130 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/vrik/VRIK_References.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="VRIK.References")]#[parent(crate::system::object::Object)]pub struct VRIK_References{#[offset(16)]#[rename(name="root")]pub root:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="pelvis")]pub pelvis:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="spine")]pub spine:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="chest")]pub chest:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="neck")]pub neck:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="head")]pub head:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="leftShoulder")]pub left_shoulder:crate::unity_engine::transform::Transform, #[offset(72)]#[rename(name="leftUpperArm")]pub left_upper_arm:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="leftForearm")]pub left_forearm:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="leftHand")]pub left_hand:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="rightShoulder")]pub right_shoulder:crate::unity_engine::transform::Transform, #[offset(104)]#[rename(name="rightUpperArm")]pub right_upper_arm:crate::unity_engine::transform::Transform, #[offset(112)]#[rename(name="rightForearm")]pub right_forearm:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="rightHand")]pub right_hand:crate::unity_engine::transform::Transform, #[offset(128)]#[rename(name="leftThigh")]pub left_thigh:crate::unity_engine::transform::Transform, #[offset(136)]#[rename(name="leftCalf")]pub left_calf:crate::unity_engine::transform::Transform, #[offset(144)]#[rename(name="leftFoot")]pub left_foot:crate::unity_engine::transform::Transform, #[offset(152)]#[rename(name="leftToes")]pub left_toes:crate::unity_engine::transform::Transform, #[offset(160)]#[rename(name="rightThigh")]pub right_thigh:crate::unity_engine::transform::Transform, #[offset(168)]#[rename(name="rightCalf")]pub right_calf:crate::unity_engine::transform::Transform, #[offset(176)]#[rename(name="rightFoot")]pub right_foot:crate::unity_engine::transform::Transform, #[offset(184)]#[rename(name="rightToes")]pub right_toes:crate::unity_engine::transform::Transform,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/vrik/VRIK.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="VRIK")]#[parent(crate::root_motion::final_ik::ik::IK)]pub struct VRIK{#[offset(56)]#[rename(name="references")]pub references:crate::root_motion::final_ik::vrik::VRIK_References, #[offset(64)]#[rename(name="solver")]pub solver:crate::root_motion::final_ik::iksolvervr::IKSolverVR,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/vrik/VRIK_References.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="VRIK.References")]#[parent(crate::system::object::Object)]pub struct VRIK_References{#[offset(16)]#[rename(name="root")]pub root:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="pelvis")]pub pelvis:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="spine")]pub spine:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="chest")]pub chest:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="neck")]pub neck:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="head")]pub head:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="leftShoulder")]pub left_shoulder:crate::unity_engine::transform::Transform, #[offset(72)]#[rename(name="leftUpperArm")]pub left_upper_arm:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="leftForearm")]pub left_forearm:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="leftHand")]pub left_hand:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="rightShoulder")]pub right_shoulder:crate::unity_engine::transform::Transform, #[offset(104)]#[rename(name="rightUpperArm")]pub right_upper_arm:crate::unity_engine::transform::Transform, #[offset(112)]#[rename(name="rightForearm")]pub right_forearm:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="rightHand")]pub right_hand:crate::unity_engine::transform::Transform, #[offset(128)]#[rename(name="leftThigh")]pub left_thigh:crate::unity_engine::transform::Transform, #[offset(136)]#[rename(name="leftCalf")]pub left_calf:crate::unity_engine::transform::Transform, #[offset(144)]#[rename(name="leftFoot")]pub left_foot:crate::unity_engine::transform::Transform, #[offset(152)]#[rename(name="leftToes")]pub left_toes:crate::unity_engine::transform::Transform, #[offset(160)]#[rename(name="rightThigh")]pub right_thigh:crate::unity_engine::transform::Transform, #[offset(168)]#[rename(name="rightCalf")]pub right_calf:crate::unity_engine::transform::Transform, #[offset(176)]#[rename(name="rightFoot")]pub right_foot:crate::unity_engine::transform::Transform, #[offset(184)]#[rename(name="rightToes")]pub right_toes:crate::unity_engine::transform::Transform,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-vrik-types")]
 pub use __types::*;
+
+#[cfg(feature="root_motion-final_ik-vrik")]pub trait IVRIKMethods:IVRIK{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <VRIK as::unity2::ClassIdentity> ::NAME,"OpenUserManual",));
+let __inner:extern "C" fn(VRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <VRIK as::unity2::ClassIdentity> ::NAME,"OpenScriptReference",));
+let __inner:extern "C" fn(VRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OpenSetupTutorial()` overload"]fn open_setup_tutorial(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a17f0usize)as*mut u8,();
+(VRIK)__receiver)}
+}
+#[doc="`AutoDetectReferences()` overload"]fn auto_detect_references(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a1840usize)as*mut u8,();
+(VRIK)__receiver)}
+}
+#[doc="`GuessHandOrientations()` overload"]fn guess_hand_orientations(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a1870usize)as*mut u8,();
+(VRIK)__receiver)}
+}
+#[doc="`GetIKSolver()` overload"]fn get_ik_solver(self,)->crate::root_motion::final_ik::iksolver::IKSolver{unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <VRIK as::unity2::ClassIdentity> ::NAME,"GetIKSolver",));
+let __inner:extern "C" fn(VRIK, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`InitiateSolver()` overload"]fn initiate_solver(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VRIK as::unity2::ClassIdentity> ::NAME,"InitiateSolver",));
+let __inner:extern "C" fn(VRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`UpdateSolver()` overload"]fn update_solver(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <VRIK as::unity2::ClassIdentity> ::NAME,"UpdateSolver",));
+let __inner:extern "C" fn(VRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a1a20usize)as*mut u8,();
+(VRIK)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-vrik")]impl<__T:IVRIK>IVRIKMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-vrik")]impl VRIK{pub fn open_user_manual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn open_script_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn open_setup_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn auto_detect_references_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn guess_hand_orientations_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_ik_solver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn initiate_solver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_solver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="root_motion-final_ik-vrik")]impl VRIK{#[doc="Direct (non-virtual) call to `VRIK`'s own `OpenUserManual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn open_user_manual(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::open_user_manual_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `VRIK`'s own `OpenScriptReference`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn open_script_reference(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::open_script_reference_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `VRIK`'s own `GetIKSolver`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_ik_solver(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root_motion::final_ik::iksolver::IKSolver{let __mi=Self::get_ik_solver_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `VRIK`'s own `InitiateSolver`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn initiate_solver(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::initiate_solver_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `VRIK`'s own `UpdateSolver`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_solver(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_solver_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="root_motion-final_ik-vrik")]impl VRIK{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VRIK), ::core::stringify!(new),));
+ <Self as IVRIKMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="root_motion-final_ik-vrik")]impl VRIK_References{#[doc="`AutoDetectReferences(crate::unity_engine::transform::Transform, *mutcrate::root_motion::final_ik::vrik::VRIK_References)` overload"]pub fn auto_detect_references(root:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(bool,crate::root_motion::final_ik::vrik::VRIK_References){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::root_motion::final_ik::vrik::VRIK_References> ::uninit();
 let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1b5ee00usize)as*mut u8,bool;
@@ -73,121 +188,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-vrik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VRIK_unity2_raw{use super:: * ;
-pub unsafe fn open_user_manual(this:VRIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <VRIK as::unity2::ClassIdentity> ::NAME,"OpenUserManual",));
-let inner:extern "C" fn(VRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn open_script_reference(this:VRIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <VRIK as::unity2::ClassIdentity> ::NAME,"OpenScriptReference",));
-let inner:extern "C" fn(VRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_ik_solver(this:VRIK,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <VRIK as::unity2::ClassIdentity> ::NAME,"GetIKSolver",));
-let inner:extern "C" fn(VRIK, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn initiate_solver(this:VRIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <VRIK as::unity2::ClassIdentity> ::NAME,"InitiateSolver",));
-let inner:extern "C" fn(VRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update_solver(this:VRIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <VRIK as::unity2::ClassIdentity> ::NAME,"UpdateSolver",));
-let inner:extern "C" fn(VRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="root_motion-final_ik-vrik")]pub trait IVRIKMethods:IVRIK{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VRIK_unity2_raw::open_user_manual(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VRIK_unity2_raw::open_script_reference(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OpenSetupTutorial()` overload"]fn open_setup_tutorial(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26a17f0usize)as*mut u8,();
-(VRIK)__receiver)}
-}
-#[doc="`AutoDetectReferences()` overload"]fn auto_detect_references(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26a1840usize)as*mut u8,();
-(VRIK)__receiver)}
-}
-#[doc="`GuessHandOrientations()` overload"]fn guess_hand_orientations(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26a1870usize)as*mut u8,();
-(VRIK)__receiver)}
-}
-#[doc="`GetIKSolver()` overload"]fn get_ik_solver(self,)->crate::root_motion::final_ik::iksolver::IKSolver{unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VRIK_unity2_raw::get_ik_solver(__receiver, ::core::option::Option::None)}
-}
-#[doc="`InitiateSolver()` overload"]fn initiate_solver(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VRIK_unity2_raw::initiate_solver(__receiver, ::core::option::Option::None)}
-}
-#[doc="`UpdateSolver()` overload"]fn update_solver(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VRIK_unity2_raw::update_solver(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26a1a20usize)as*mut u8,();
-(VRIK)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-vrik")]impl<__T:IVRIK>IVRIKMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-vrik")]impl VRIK{pub fn open_user_manual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn open_script_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn open_setup_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn auto_detect_references_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn guess_hand_orientations_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_ik_solver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn initiate_solver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn update_solver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="root_motion-final_ik-vrik")]impl VRIK{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VRIK), ::core::stringify!(new),));
- <Self as IVRIKMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "root_motion-final_ik-vrik")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VRIK_References;
-    pub use super::IVRIK_References;
-    pub use super::IVRIK_ReferencesMethods;
     pub use super::VRIK;
     pub use super::IVRIK;
     pub use super::IVRIKMethods;
+    pub use super::VRIK_References;
+    pub use super::IVRIK_References;
+    pub use super::IVRIK_ReferencesMethods;
     pub use crate::root_motion::final_ik::ik::IIK;
     pub use crate::root_motion::final_ik::ik::IK;
     pub use crate::root_motion::solvermanager::ISolverManager;

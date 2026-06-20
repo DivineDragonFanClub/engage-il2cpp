@@ -25,25 +25,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_MinigameType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MinigameAssistDialog_MinigameType{pub value:i32,}
-impl::unity2::ClassIdentity for MinigameAssistDialog_MinigameType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MinigameAssistDialog.MinigameType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MinigameAssistDialog_MinigameType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MinigameAssistDialog_MinigameType{pub fn dragon_ride()->Self{Self{value:0}
-}
-pub fn fishing()->Self{Self{value:1}
-}
-pub fn muscle_exercise()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MinigameAssistDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MinigameAssistDialog_DecideEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]#[::unity2::class(namespace="App",name="MinigameAssistDialog.AssistItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MinigameAssistDialog_AssistItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_AssistResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MinigameAssistDialog_AssistResult{pub value:i32,}
@@ -64,7 +46,25 @@ pub fn cancel()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_AssistItem.md"))]#[::unity2::class(namespace="App",name="MinigameAssistDialog.AssistItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MinigameAssistDialog_AssistItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MinigameAssistDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MinigameAssistDialog_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog_MinigameType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MinigameAssistDialog_MinigameType{pub value:i32,}
+impl::unity2::ClassIdentity for MinigameAssistDialog_MinigameType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MinigameAssistDialog.MinigameType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MinigameAssistDialog_MinigameType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MinigameAssistDialog_MinigameType{pub fn dragon_ride()->Self{Self{value:0}
+}
+pub fn fishing()->Self{Self{value:1}
+}
+pub fn muscle_exercise()->Self{Self{value:2}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minigameassistdialog/MinigameAssistDialog.md"))]#[::unity2::class(namespace="App",name="MinigameAssistDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct MinigameAssistDialog{#[static_field]#[rename(name="ConfirmLabels")]pub confirm_labels: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="YesLabels")]pub yes_labels: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="NoLabels")]pub no_labels: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="CancelLabels")]pub cancel_labels: ::unity2::Array< ::unity2::Il2CppString> ,}
@@ -74,56 +74,17 @@ pub fn cancel()->Self{Self{value:2}
 #[cfg(feature = "app-minigameassistdialog-types")]
 pub use __types::*;
 
-#[cfg(feature="app-minigameassistdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MinigameAssistDialog_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MinigameAssistDialog_DecideEventHandler,set:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MinigameAssistDialog_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MinigameAssistDialog_DecideEventHandler,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,set,__mi)}
-}
-
-#[cfg(feature="app-minigameassistdialog")]pub trait IMinigameAssistDialog_DecideEventHandlerMethods:IMinigameAssistDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MinigameAssistDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208e600usize)as*mut u8,();
-(MinigameAssistDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32)` overload"]fn invoke(self,set:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MinigameAssistDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MinigameAssistDialog_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(set), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-minigameassistdialog")]impl<__T:IMinigameAssistDialog_DecideEventHandler>IMinigameAssistDialog_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MinigameAssistDialog_DecideEventHandler), ::core::stringify!(new),));
- <Self as IMinigameAssistDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-minigameassistdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MinigameAssistDialog_AssistItem_unity2_raw{use super:: * ;
-pub unsafe fn on_build(this:MinigameAssistDialog_AssistItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-minigameassistdialog")]pub trait IMinigameAssistDialog_AssistItemMethods:IMinigameAssistDialog_AssistItem{#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MinigameAssistDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <MinigameAssistDialog_AssistItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let inner:extern "C" fn(MinigameAssistDialog_AssistItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MinigameAssistDialog_AssistItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-minigameassistdialog")]pub trait IMinigameAssistDialog_AssistItemMethods:IMinigameAssistDialog_AssistItem{#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MinigameAssistDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MinigameAssistDialog_AssistItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MinigameAssistDialog_AssistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x208e5c0usize)as*mut u8,();
@@ -137,6 +98,11 @@ __MinigameAssistDialog_AssistItem_unity2_raw::on_build(__receiver, ::core::optio
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_AssistItem{#[doc="Direct (non-virtual) call to `MinigameAssistDialog_AssistItem`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_AssistItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MinigameAssistDialog_AssistItem), ::core::stringify!(new),));
@@ -144,47 +110,40 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-minigameassistdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MinigameAssistDialog_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:MinigameAssistDialog,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-minigameassistdialog")]pub trait IMinigameAssistDialog_DecideEventHandlerMethods:IMinigameAssistDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MinigameAssistDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208e600usize)as*mut u8,();
+(MinigameAssistDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,set:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MinigameAssistDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",30usize,__vt.len(), <MinigameAssistDialog as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(MinigameAssistDialog, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <MinigameAssistDialog_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MinigameAssistDialog_DecideEventHandler,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_close(this:MinigameAssistDialog,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <MinigameAssistDialog as::unity2::ClassIdentity> ::NAME,"OnClose",));
-let inner:extern "C" fn(MinigameAssistDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:MinigameAssistDialog,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",50usize,__vt.len(), <MinigameAssistDialog as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(MinigameAssistDialog, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:MinigameAssistDialog,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <MinigameAssistDialog as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(MinigameAssistDialog, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver, ::core::convert::Into::into(set),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-minigameassistdialog")]impl<__T:IMinigameAssistDialog_DecideEventHandler>IMinigameAssistDialog_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_DecideEventHandler{#[doc="Direct (non-virtual) call to `MinigameAssistDialog_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,set:i32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),set, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MinigameAssistDialog_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IMinigameAssistDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::minigameassistdialog::MinigameAssistDialog_MinigameType, crate::app::minigameassistdialog::MinigameAssistDialog_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,r#type:impl::core::convert::Into<crate::app::minigameassistdialog::MinigameAssistDialog_MinigameType> ,event_handler:impl::core::convert::Into<crate::app::minigameassistdialog::MinigameAssistDialog_DecideEventHandler>)->crate::app::minigameassistdialog::MinigameAssistDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x277bee0usize)as*mut u8,crate::app::minigameassistdialog::MinigameAssistDialog;
@@ -208,16 +167,52 @@ inner(this,__mi)}
 (MinigameAssistDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content),(crate::app::minigameassistdialog::MinigameAssistDialog_DecideEventHandler)::core::convert::Into::into(event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MinigameAssistDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MinigameAssistDialog_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MinigameAssistDialog as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(MinigameAssistDialog, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MinigameAssistDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MinigameAssistDialog_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <MinigameAssistDialog as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let __inner:extern "C" fn(MinigameAssistDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MinigameAssistDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MinigameAssistDialog_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <MinigameAssistDialog as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(MinigameAssistDialog, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MinigameAssistDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MinigameAssistDialog_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <MinigameAssistDialog as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(MinigameAssistDialog, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -234,6 +229,20 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 }
 
+#[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog{#[doc="Direct (non-virtual) call to `MinigameAssistDialog`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MinigameAssistDialog`'s own `OnClose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MinigameAssistDialog`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MinigameAssistDialog`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-minigameassistdialog")]impl MinigameAssistDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent, crate::app::minigameassistdialog::MinigameAssistDialog_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent,event_handler:crate::app::minigameassistdialog::MinigameAssistDialog_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MinigameAssistDialog), ::core::stringify!(new),));
@@ -244,14 +253,14 @@ this}
 #[cfg(feature = "app-minigameassistdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MinigameAssistDialog_MinigameType;
-    pub use super::MinigameAssistDialog_DecideEventHandler;
-    pub use super::IMinigameAssistDialog_DecideEventHandler;
-    pub use super::IMinigameAssistDialog_DecideEventHandlerMethods;
-    pub use super::MinigameAssistDialog_AssistResult;
     pub use super::MinigameAssistDialog_AssistItem;
     pub use super::IMinigameAssistDialog_AssistItem;
     pub use super::IMinigameAssistDialog_AssistItemMethods;
+    pub use super::MinigameAssistDialog_AssistResult;
+    pub use super::MinigameAssistDialog_DecideEventHandler;
+    pub use super::IMinigameAssistDialog_DecideEventHandler;
+    pub use super::IMinigameAssistDialog_DecideEventHandlerMethods;
+    pub use super::MinigameAssistDialog_MinigameType;
     pub use super::MinigameAssistDialog;
     pub use super::IMinigameAssistDialog;
     pub use super::IMinigameAssistDialogMethods;

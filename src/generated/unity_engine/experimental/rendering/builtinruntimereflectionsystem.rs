@@ -16,29 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-builtinruntimereflectionsystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BuiltinRuntimeReflectionSystem_unity2_raw{use super:: * ;
-pub unsafe fn tick_realtime_probes(this:BuiltinRuntimeReflectionSystem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <BuiltinRuntimeReflectionSystem as::unity2::ClassIdentity> ::NAME,"TickRealtimeProbes",));
-let inner:extern "C" fn(BuiltinRuntimeReflectionSystem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:BuiltinRuntimeReflectionSystem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <BuiltinRuntimeReflectionSystem as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(BuiltinRuntimeReflectionSystem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-experimental-rendering-builtinruntimereflectionsystem")]impl BuiltinRuntimeReflectionSystem{#[doc="`BuiltinUpdate()` overload"]pub fn builtin_update()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38fc0usize)as*mut u8,bool;
 )}
 }
@@ -48,10 +25,28 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-experimental-rendering-builtinruntimereflectionsystem")]pub trait IBuiltinRuntimeReflectionSystemMethods:IBuiltinRuntimeReflectionSystem{#[doc="`TickRealtimeProbes()` overload"]fn tick_realtime_probes(self,)->bool{unsafe{let __receiver= <BuiltinRuntimeReflectionSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BuiltinRuntimeReflectionSystem_unity2_raw::tick_realtime_probes(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BuiltinRuntimeReflectionSystem as::unity2::ClassIdentity> ::NAME,"TickRealtimeProbes",));
+let __inner:extern "C" fn(BuiltinRuntimeReflectionSystem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <BuiltinRuntimeReflectionSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BuiltinRuntimeReflectionSystem_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BuiltinRuntimeReflectionSystem as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(BuiltinRuntimeReflectionSystem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose_2(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BuiltinRuntimeReflectionSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c39010usize)as*mut u8,();
@@ -71,6 +66,14 @@ pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn builtin_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn internal_builtin_runtime_reflection_system_new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-builtinruntimereflectionsystem")]impl BuiltinRuntimeReflectionSystem{#[doc="Direct (non-virtual) call to `BuiltinRuntimeReflectionSystem`'s own `TickRealtimeProbes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn tick_realtime_probes(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::tick_realtime_probes_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BuiltinRuntimeReflectionSystem`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-experimental-rendering-builtinruntimereflectionsystem")]impl BuiltinRuntimeReflectionSystem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

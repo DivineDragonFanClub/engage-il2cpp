@@ -14,34 +14,29 @@ mod __types {
 #[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resource_management-util-iobjectinitializationdataprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IObjectInitializationDataProvider_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:IObjectInitializationDataProvider,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-resource_management-util-iobjectinitializationdataprovider")]pub trait IIObjectInitializationDataProviderMethods:IIObjectInitializationDataProvider{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IObjectInitializationDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IObjectInitializationDataProvider as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(IObjectInitializationDataProvider, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IObjectInitializationDataProvider, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn create_object_initialization_data(this:IObjectInitializationDataProvider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`CreateObjectInitializationData()` overload"]fn create_object_initialization_data(self,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData{unsafe{let __receiver= <IObjectInitializationDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IObjectInitializationDataProvider as::unity2::ClassIdentity> ::NAME,"CreateObjectInitializationData",));
-let inner:extern "C" fn(IObjectInitializationDataProvider, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IObjectInitializationDataProvider, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-resource_management-util-iobjectinitializationdataprovider")]pub trait IIObjectInitializationDataProviderMethods:IIObjectInitializationDataProvider{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IObjectInitializationDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IObjectInitializationDataProvider_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`CreateObjectInitializationData()` overload"]fn create_object_initialization_data(self,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData{unsafe{let __receiver= <IObjectInitializationDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IObjectInitializationDataProvider_unity2_raw::create_object_initialization_data(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -49,6 +44,14 @@ __IObjectInitializationDataProvider_unity2_raw::create_object_initialization_dat
 
 #[cfg(feature="unity_engine-resource_management-util-iobjectinitializationdataprovider")]impl IObjectInitializationDataProvider{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn create_object_initialization_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-resource_management-util-iobjectinitializationdataprovider")]impl IObjectInitializationDataProvider{#[doc="Direct (non-virtual) call to `IObjectInitializationDataProvider`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IObjectInitializationDataProvider`'s own `CreateObjectInitializationData`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_object_initialization_data(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData{let __mi=Self::create_object_initialization_data_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider")]

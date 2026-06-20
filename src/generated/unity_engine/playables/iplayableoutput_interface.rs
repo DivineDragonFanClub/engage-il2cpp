@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "unity_engine-playables-iplayableoutput_interface-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-playables-iplayableoutput_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPlayableOutput_Interface_unity2_raw{use super:: * ;
-pub unsafe fn get_handle(this:IPlayableOutput_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-playables-iplayableoutput_interface")]pub trait IIPlayableOutput_InterfaceMethods:IIPlayableOutput_Interface{#[doc="`GetHandle()` overload"]fn get_handle(self,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{unsafe{let __receiver= <IPlayableOutput_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IPlayableOutput_Interface as::unity2::ClassIdentity> ::NAME,"GetHandle",));
-let inner:extern "C" fn(IPlayableOutput_Interface, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPlayableOutput_Interface, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-playables-iplayableoutput_interface")]pub trait IIPlayableOutput_InterfaceMethods:IIPlayableOutput_Interface{#[doc="`GetHandle()` overload"]fn get_handle(self,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{unsafe{let __receiver= <IPlayableOutput_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPlayableOutput_Interface_unity2_raw::get_handle(__receiver, ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="unity_engine-playables-iplayableoutput_interface")]impl<__T:IIPlayableOutput_Interface>IIPlayableOutput_InterfaceMethods for __T{}
 
 #[cfg(feature="unity_engine-playables-iplayableoutput_interface")]impl IPlayableOutput_Interface{pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-playables-iplayableoutput_interface")]impl IPlayableOutput_Interface{#[doc="Direct (non-virtual) call to `IPlayableOutput_Interface`'s own `GetHandle`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_handle(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{let __mi=Self::get_handle_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-playables-iplayableoutput_interface")]

@@ -17,27 +17,7 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-instanceprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InstanceProvider_unity2_raw{use super:: * ;
-pub unsafe fn provide_instance(this:InstanceProvider,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,prefab_handle:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> ,instantiate_parameters:crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <InstanceProvider as::unity2::ClassIdentity> ::NAME,"ProvideInstance",));
-let inner:extern "C" fn(InstanceProvider,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> ,crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,resource_manager,prefab_handle,instantiate_parameters,__mi)}
-pub unsafe fn release_instance(this:InstanceProvider,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,instance:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <InstanceProvider as::unity2::ClassIdentity> ::NAME,"ReleaseInstance",));
-let inner:extern "C" fn(InstanceProvider,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,resource_manager,instance,__mi)}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<InstanceProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
 );
@@ -50,10 +30,28 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-instanceprovider")]pub trait IInstanceProviderMethods:IInstanceProvider{#[doc="`ProvideInstance(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters)` overload"]fn provide_instance(self,resource_manager:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,prefab_handle:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> > ,instantiate_parameters:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <InstanceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InstanceProvider_unity2_raw::provide_instance(__receiver, ::core::convert::Into::into(resource_manager), ::core::convert::Into::into(prefab_handle), ::core::convert::Into::into(instantiate_parameters), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <InstanceProvider as::unity2::ClassIdentity> ::NAME,"ProvideInstance",));
+let __inner:extern "C" fn(InstanceProvider,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> ,crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(resource_manager), ::core::convert::Into::into(prefab_handle), ::core::convert::Into::into(instantiate_parameters),__mi)}
+}
 }
 #[doc="`ReleaseInstance(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::gameobject::GameObject)` overload"]fn release_instance(self,resource_manager:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,instance:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <InstanceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InstanceProvider_unity2_raw::release_instance(__receiver, ::core::convert::Into::into(resource_manager), ::core::convert::Into::into(instance), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <InstanceProvider as::unity2::ClassIdentity> ::NAME,"ReleaseInstance",));
+let __inner:extern "C" fn(InstanceProvider,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(resource_manager), ::core::convert::Into::into(instance),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InstanceProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__InstanceProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
@@ -66,6 +64,14 @@ __InstanceProvider_unity2_raw::release_instance(__receiver, ::core::convert::Int
 #[cfg(feature="unity_engine-resource_management-resource_providers-instanceprovider")]impl InstanceProvider{pub fn provide_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn release_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-instanceprovider")]impl InstanceProvider{#[doc="Direct (non-virtual) call to `InstanceProvider`'s own `ProvideInstance`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn provide_instance(this:impl::core::convert::Into< ::unity2::IlInstance> ,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,prefab_handle:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> ,instantiate_parameters:crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters,)->crate::unity_engine::gameobject::GameObject{let __mi=Self::provide_instance_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> ,crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),resource_manager,prefab_handle,instantiate_parameters, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InstanceProvider`'s own `ReleaseInstance`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn release_instance(this:impl::core::convert::Into< ::unity2::IlInstance> ,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,instance:crate::unity_engine::gameobject::GameObject,)->(){let __mi=Self::release_instance_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),resource_manager,instance, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-instanceprovider")]impl InstanceProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

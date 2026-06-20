@@ -22,21 +22,17 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "root-wwisetriggerreference-types")]
 pub use __types::*;
 
-#[cfg(feature="root-wwisetriggerreference")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WwiseTriggerReference_unity2_raw{use super:: * ;
-pub unsafe fn get_wwise_object_type(this:WwiseTriggerReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-wwisetriggerreference")]pub trait IWwiseTriggerReferenceMethods:IWwiseTriggerReference{#[doc="`get_WwiseObjectType()` overload"]fn get_wwise_object_type(self,)->crate::root::wwiseobjecttype::WwiseObjectType{unsafe{let __receiver= <WwiseTriggerReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <WwiseTriggerReference as::unity2::ClassIdentity> ::NAME,"get_WwiseObjectType",));
-let inner:extern "C" fn(WwiseTriggerReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(WwiseTriggerReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="root-wwisetriggerreference")]pub trait IWwiseTriggerReferenceMethods:IWwiseTriggerReference{#[doc="`get_WwiseObjectType()` overload"]fn get_wwise_object_type(self,)->crate::root::wwiseobjecttype::WwiseObjectType{unsafe{let __receiver= <WwiseTriggerReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WwiseTriggerReference_unity2_raw::get_wwise_object_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WwiseTriggerReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2940300usize)as*mut u8,();
@@ -48,6 +44,11 @@ __WwiseTriggerReference_unity2_raw::get_wwise_object_type(__receiver, ::core::op
 
 #[cfg(feature="root-wwisetriggerreference")]impl WwiseTriggerReference{pub fn get_wwise_object_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-wwisetriggerreference")]impl WwiseTriggerReference{#[doc="Direct (non-virtual) call to `WwiseTriggerReference`'s own `get_WwiseObjectType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_wwise_object_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::wwiseobjecttype::WwiseObjectType{let __mi=Self::get_wwise_object_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-wwisetriggerreference")]impl WwiseTriggerReference{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

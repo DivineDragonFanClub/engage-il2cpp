@@ -20,21 +20,17 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapimagecoreuint-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapimagecoreuint")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapImageCoreUint_unity2_raw{use super:: * ;
-pub unsafe fn add(this:MapImageCoreUint,index:i32,v:u32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-mapimagecoreuint")]pub trait IMapImageCoreUintMethods:IMapImageCoreUint{#[doc="`Add(i32, u32)` overload"]fn add(self,index:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <MapImageCoreUint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <MapImageCoreUint as::unity2::ClassIdentity> ::NAME,"Add",));
-let inner:extern "C" fn(MapImageCoreUint,i32,u32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(MapImageCoreUint,i32,u32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,v,__mi)}
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(v),__mi)}
 }
-
-#[cfg(feature="app-mapimagecoreuint")]pub trait IMapImageCoreUintMethods:IMapImageCoreUint{#[doc="`Add(i32, u32)` overload"]fn add(self,index:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <MapImageCoreUint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapImageCoreUint_unity2_raw::add(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(v), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageCoreUint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x205faf0usize)as*mut u8,();
@@ -46,6 +42,11 @@ __MapImageCoreUint_unity2_raw::add(__receiver, ::core::convert::Into::into(index
 
 #[cfg(feature="app-mapimagecoreuint")]impl MapImageCoreUint{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapimagecoreuint")]impl MapImageCoreUint{#[doc="Direct (non-virtual) call to `MapImageCoreUint`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,v:u32,)->(){let __mi=Self::add_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,u32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,v, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-mapimagecoreuint")]impl MapImageCoreUint{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridegamesequence/DragonRideGameSequence.md"))]#[::unity2::class(namespace="App",name="DragonRideGameSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct DragonRideGameSequence{#[static_field]#[rename(name="cIntervalSec")]pub c_interval_sec:f32, #[static_field]#[rename(name="cShotPrefabPath")]pub c_shot_prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SolaRenderPath")]pub sola_render_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cGroupPrefabPath")]pub c_group_prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cEffectRootPath")]pub c_effect_root_path: ::unity2::Il2CppString, #[offset(136)]#[rename(name="cLoadEffectList")]pub c_load_effect_list: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="cUIRootPath")]pub c_ui_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cUITotalScorePath")]pub c_ui_total_score_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cUITargetScorePath")]pub c_ui_target_score_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cUIResultPath")]pub c_ui_result_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cUIInstructionPath")]pub c_ui_instruction_path: ::unity2::Il2CppString, #[offset(144)]#[rename(name="cLoadUIList")]pub c_load_ui_list: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="cTelopRootPath")]pub c_telop_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cStartTelopPath")]pub c_start_telop_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cFinishTelopPath")]pub c_finish_telop_path: ::unity2::Il2CppString, #[offset(168)]#[rename(name="m_CameraComponent")]pub m_camera_component:crate::app::dragonridecamera::DragonRideCamera, #[offset(176)]#[rename(name="m_TargetGroupList")]pub m_target_group_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(184)]#[rename(name="m_Level")]pub m_level:i32, #[offset(188)]#[rename(name="m_ResultCloseTimer")]pub m_result_close_timer:f32, #[offset(192)]#[rename(name="m_ResultUI")]pub m_result_ui:crate::app::dragonrideresultui::DragonRideResultUI, #[offset(200)]#[rename(name="m_ScoreUI")]pub m_score_ui:crate::unity_engine::gameobject::GameObject, #[offset(208)]#[rename(name="m_ScoreText")]pub m_score_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(216)]#[rename(name="m_PrevScore")]pub m_prev_score:i32, #[offset(224)]#[rename(name="m_Config")]pub m_config:crate::app::dragonrideconfig::DragonRideConfig, #[offset(232)]#[rename(name="m_TargetGroupResource")]pub m_target_group_resource:crate::app::resourcegameobject::ResourceGameObject, #[offset(240)]#[rename(name="m_AssistTargetPosList")]pub m_assist_target_pos_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> , #[offset(248)]#[rename(name="m_HubSolaLct")]pub m_hub_sola_lct:crate::unity_engine::gameobject::GameObject, #[offset(256)]#[rename(name="m_IsSetSolaInvisible")]pub m_is_set_sola_invisible:bool, #[offset(264)]#[rename(name="m_PlayerCtrl")]pub m_player_ctrl:crate::app::hubplayercontroller::HubPlayerController, #[offset(272)]#[rename(name="m_WalkThroughCount")]pub m_walk_through_count:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridegamesequence/DragonRideGameSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DragonRideGameSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for DragonRideGameSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DragonRideGameSequence.Label";
@@ -51,23 +48,13 @@ pub fn exit()->Self{Self{value:8}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridegamesequence/DragonRideGameSequence.md"))]#[::unity2::class(namespace="App",name="DragonRideGameSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct DragonRideGameSequence{#[static_field]#[rename(name="cIntervalSec")]pub c_interval_sec:f32, #[static_field]#[rename(name="cShotPrefabPath")]pub c_shot_prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SolaRenderPath")]pub sola_render_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cGroupPrefabPath")]pub c_group_prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cEffectRootPath")]pub c_effect_root_path: ::unity2::Il2CppString, #[offset(136)]#[rename(name="cLoadEffectList")]pub c_load_effect_list: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="cUIRootPath")]pub c_ui_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cUITotalScorePath")]pub c_ui_total_score_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cUITargetScorePath")]pub c_ui_target_score_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cUIResultPath")]pub c_ui_result_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cUIInstructionPath")]pub c_ui_instruction_path: ::unity2::Il2CppString, #[offset(144)]#[rename(name="cLoadUIList")]pub c_load_ui_list: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="cTelopRootPath")]pub c_telop_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cStartTelopPath")]pub c_start_telop_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cFinishTelopPath")]pub c_finish_telop_path: ::unity2::Il2CppString, #[offset(168)]#[rename(name="m_CameraComponent")]pub m_camera_component:crate::app::dragonridecamera::DragonRideCamera, #[offset(176)]#[rename(name="m_TargetGroupList")]pub m_target_group_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(184)]#[rename(name="m_Level")]pub m_level:i32, #[offset(188)]#[rename(name="m_ResultCloseTimer")]pub m_result_close_timer:f32, #[offset(192)]#[rename(name="m_ResultUI")]pub m_result_ui:crate::app::dragonrideresultui::DragonRideResultUI, #[offset(200)]#[rename(name="m_ScoreUI")]pub m_score_ui:crate::unity_engine::gameobject::GameObject, #[offset(208)]#[rename(name="m_ScoreText")]pub m_score_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(216)]#[rename(name="m_PrevScore")]pub m_prev_score:i32, #[offset(224)]#[rename(name="m_Config")]pub m_config:crate::app::dragonrideconfig::DragonRideConfig, #[offset(232)]#[rename(name="m_TargetGroupResource")]pub m_target_group_resource:crate::app::resourcegameobject::ResourceGameObject, #[offset(240)]#[rename(name="m_AssistTargetPosList")]pub m_assist_target_pos_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> , #[offset(248)]#[rename(name="m_HubSolaLct")]pub m_hub_sola_lct:crate::unity_engine::gameobject::GameObject, #[offset(256)]#[rename(name="m_IsSetSolaInvisible")]pub m_is_set_sola_invisible:bool, #[offset(264)]#[rename(name="m_PlayerCtrl")]pub m_player_ctrl:crate::app::hubplayercontroller::HubPlayerController, #[offset(272)]#[rename(name="m_WalkThroughCount")]pub m_walk_through_count:i32,}
+
 }
 
 #[cfg(feature = "app-dragonridegamesequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-dragonridegamesequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DragonRideGameSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_shutdown(this:DragonRideGameSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <DragonRideGameSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
-let inner:extern "C" fn(DragonRideGameSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-dragonridegamesequence")]impl DragonRideGameSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad0200usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -231,7 +218,16 @@ inner(this,__mi)}
 (DragonRideGameSequence)__receiver)}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <DragonRideGameSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DragonRideGameSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <DragonRideGameSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let __inner:extern "C" fn(DragonRideGameSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideGameSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad16b0usize)as*mut u8,();
@@ -285,6 +281,11 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
 }
 
+#[cfg(feature="app-dragonridegamesequence")]impl DragonRideGameSequence{#[doc="Direct (non-virtual) call to `DragonRideGameSequence`'s own `OnShutdown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_shutdown(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_shutdown_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-dragonridegamesequence")]impl DragonRideGameSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DragonRideGameSequence), ::core::stringify!(new),));
@@ -295,10 +296,10 @@ this}
 #[cfg(feature = "app-dragonridegamesequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DragonRideGameSequence_Label;
     pub use super::DragonRideGameSequence;
     pub use super::IDragonRideGameSequence;
     pub use super::IDragonRideGameSequenceMethods;
-    pub use super::DragonRideGameSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

@@ -17,83 +17,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrelianceselectroot/MyRoomRelianceSelectRoot_CursorTop.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSelectRoot.CursorTop")]#[parent(crate::system::object::Object)]pub struct MyRoomRelianceSelectRoot_CursorTop{#[offset(24)]#[rename(name="ResetRect")]pub reset_rect:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="RankC_PosX")]pub rank_c_pos_x:f32, #[offset(36)]#[rename(name="RankB_PosX")]pub rank_b_pos_x:f32, #[offset(40)]#[rename(name="RankA_PosX")]pub rank_a_pos_x:f32, #[offset(44)]#[rename(name="RankS_PosX")]pub rank_s_pos_x:f32, #[offset(48)]#[rename(name="MoveFrame")]pub move_frame:f32, #[offset(56)]#[rename(name="m_cursorTop")]pub m_cursor_top:crate::unity_engine::recttransform::RectTransform, #[offset(64)]#[rename(name="m_selectIndex")]pub m_select_index:i32, #[offset(68)]#[rename(name="m_prevIndex")]pub m_prev_index:i32, #[offset(72)]#[rename(name="m_moveTick")]pub m_move_tick:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrelianceselectroot/MyRoomRelianceSelectRoot.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MyRoomRelianceSelectRoot{#[offset(24)]#[rename(name="m_UnitList")]pub m_unit_list:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_RelianceSelect")]pub m_reliance_select:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_BackCursor")]pub m_back_cursor:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_CursorTop")]pub m_cursor_top:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_ListLabel")]pub m_list_label:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_ArrowL")]pub m_arrow_l:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_ArrowR")]pub m_arrow_r:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_CharaImageRight")]pub m_chara_image_right:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomrelianceselectroot/MyRoomRelianceSelectRoot_CursorTop.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSelectRoot.CursorTop")]#[parent(crate::system::object::Object)]pub struct MyRoomRelianceSelectRoot_CursorTop{#[offset(24)]#[rename(name="ResetRect")]pub reset_rect:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="RankC_PosX")]pub rank_c_pos_x:f32, #[offset(36)]#[rename(name="RankB_PosX")]pub rank_b_pos_x:f32, #[offset(40)]#[rename(name="RankA_PosX")]pub rank_a_pos_x:f32, #[offset(44)]#[rename(name="RankS_PosX")]pub rank_s_pos_x:f32, #[offset(48)]#[rename(name="MoveFrame")]pub move_frame:f32, #[offset(56)]#[rename(name="m_cursorTop")]pub m_cursor_top:crate::unity_engine::recttransform::RectTransform, #[offset(64)]#[rename(name="m_selectIndex")]pub m_select_index:i32, #[offset(68)]#[rename(name="m_prevIndex")]pub m_prev_index:i32, #[offset(72)]#[rename(name="m_moveTick")]pub m_move_tick:f32,}
 
 }
 
 #[cfg(feature = "app-myroomrelianceselectroot-types")]
 pub use __types::*;
-
-#[cfg(feature="app-myroomrelianceselectroot")]pub trait IMyRoomRelianceSelectRoot_CursorTopMethods:IMyRoomRelianceSelectRoot_CursorTop{#[doc="`get_OpenCount()` overload"]fn get_open_count(self,)->i32{unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20955e0usize)as*mut u8,i32;
-(MyRoomRelianceSelectRoot_CursorTop)__receiver)}
-}
-#[doc="`set_OpenCount(i32)` overload"]fn set_open_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20955f0usize)as*mut u8,();
-(MyRoomRelianceSelectRoot_CursorTop)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(crate::unity_engine::recttransform::RectTransform)` overload"]fn ctor(self,transform:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2095600usize)as*mut u8,();
-(MyRoomRelianceSelectRoot_CursorTop)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(transform))}
-}
-#[doc="`Reset(crate::unity_engine::recttransform::RectTransform)` overload"]fn reset(self,transform:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2095650usize)as*mut u8,();
-(MyRoomRelianceSelectRoot_CursorTop)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(transform))}
-}
-#[doc="`SetSelectIndex(i32)` overload"]fn set_select_index(self,select_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2095740usize)as*mut u8,();
-(MyRoomRelianceSelectRoot_CursorTop)__receiver,(i32)::core::convert::Into::into(select_index))}
-}
-#[doc="`GetSelectIndex()` overload"]fn get_select_index(self,)->i32{unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2095760usize)as*mut u8,i32;
-(MyRoomRelianceSelectRoot_CursorTop)__receiver)}
-}
-#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2095770usize)as*mut u8,();
-(MyRoomRelianceSelectRoot_CursorTop)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2095840usize)as*mut u8,();
-(MyRoomRelianceSelectRoot_CursorTop)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2095910usize)as*mut u8,();
-(MyRoomRelianceSelectRoot_CursorTop)__receiver)}
-}
-#[doc="`GetCorrectedYCoord()` overload"]fn get_corrected_y_coord(self,)->f32{unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2095720usize)as*mut u8,f32;
-(MyRoomRelianceSelectRoot_CursorTop)__receiver)}
-}
-#[doc="`GetPositionX(i32)` overload"]fn get_position_x(self,select_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2095ad0usize)as*mut u8,f32;
-(MyRoomRelianceSelectRoot_CursorTop)__receiver,(i32)::core::convert::Into::into(select_index))}
-}
-}
-
-#[cfg(feature="app-myroomrelianceselectroot")]impl<__T:IMyRoomRelianceSelectRoot_CursorTop>IMyRoomRelianceSelectRoot_CursorTopMethods for __T{}
-
-#[cfg(feature="app-myroomrelianceselectroot")]impl MyRoomRelianceSelectRoot_CursorTop{pub fn get_open_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_open_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_select_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_select_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_corrected_y_coord_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_position_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="app-myroomrelianceselectroot")]impl MyRoomRelianceSelectRoot_CursorTop{#[doc="`.ctor(crate::unity_engine::recttransform::RectTransform)` — overload selector"]pub fn new(transform:crate::unity_engine::recttransform::RectTransform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomRelianceSelectRoot_CursorTop), ::core::stringify!(new),));
- <Self as IMyRoomRelianceSelectRoot_CursorTopMethods> ::ctor(this,transform);
-this}
-}
 
 #[cfg(feature="app-myroomrelianceselectroot")]impl MyRoomRelianceSelectRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2395300usize)as*mut u8,();
 )}
@@ -195,15 +127,83 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-myroomrelianceselectroot")]pub trait IMyRoomRelianceSelectRoot_CursorTopMethods:IMyRoomRelianceSelectRoot_CursorTop{#[doc="`get_OpenCount()` overload"]fn get_open_count(self,)->i32{unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20955e0usize)as*mut u8,i32;
+(MyRoomRelianceSelectRoot_CursorTop)__receiver)}
+}
+#[doc="`set_OpenCount(i32)` overload"]fn set_open_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20955f0usize)as*mut u8,();
+(MyRoomRelianceSelectRoot_CursorTop)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::recttransform::RectTransform)` overload"]fn ctor(self,transform:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2095600usize)as*mut u8,();
+(MyRoomRelianceSelectRoot_CursorTop)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(transform))}
+}
+#[doc="`Reset(crate::unity_engine::recttransform::RectTransform)` overload"]fn reset(self,transform:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2095650usize)as*mut u8,();
+(MyRoomRelianceSelectRoot_CursorTop)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(transform))}
+}
+#[doc="`SetSelectIndex(i32)` overload"]fn set_select_index(self,select_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2095740usize)as*mut u8,();
+(MyRoomRelianceSelectRoot_CursorTop)__receiver,(i32)::core::convert::Into::into(select_index))}
+}
+#[doc="`GetSelectIndex()` overload"]fn get_select_index(self,)->i32{unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2095760usize)as*mut u8,i32;
+(MyRoomRelianceSelectRoot_CursorTop)__receiver)}
+}
+#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2095770usize)as*mut u8,();
+(MyRoomRelianceSelectRoot_CursorTop)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2095840usize)as*mut u8,();
+(MyRoomRelianceSelectRoot_CursorTop)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2095910usize)as*mut u8,();
+(MyRoomRelianceSelectRoot_CursorTop)__receiver)}
+}
+#[doc="`GetCorrectedYCoord()` overload"]fn get_corrected_y_coord(self,)->f32{unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2095720usize)as*mut u8,f32;
+(MyRoomRelianceSelectRoot_CursorTop)__receiver)}
+}
+#[doc="`GetPositionX(i32)` overload"]fn get_position_x(self,select_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MyRoomRelianceSelectRoot_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2095ad0usize)as*mut u8,f32;
+(MyRoomRelianceSelectRoot_CursorTop)__receiver,(i32)::core::convert::Into::into(select_index))}
+}
+}
+
+#[cfg(feature="app-myroomrelianceselectroot")]impl<__T:IMyRoomRelianceSelectRoot_CursorTop>IMyRoomRelianceSelectRoot_CursorTopMethods for __T{}
+
+#[cfg(feature="app-myroomrelianceselectroot")]impl MyRoomRelianceSelectRoot_CursorTop{pub fn get_open_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_open_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_select_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_select_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_corrected_y_coord_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_position_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-myroomrelianceselectroot")]impl MyRoomRelianceSelectRoot_CursorTop{#[doc="`.ctor(crate::unity_engine::recttransform::RectTransform)` — overload selector"]pub fn new(transform:crate::unity_engine::recttransform::RectTransform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomRelianceSelectRoot_CursorTop), ::core::stringify!(new),));
+ <Self as IMyRoomRelianceSelectRoot_CursorTopMethods> ::ctor(this,transform);
+this}
+}
+
 #[cfg(feature = "app-myroomrelianceselectroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomRelianceSelectRoot_CursorTop;
-    pub use super::IMyRoomRelianceSelectRoot_CursorTop;
-    pub use super::IMyRoomRelianceSelectRoot_CursorTopMethods;
     pub use super::MyRoomRelianceSelectRoot;
     pub use super::IMyRoomRelianceSelectRoot;
     pub use super::IMyRoomRelianceSelectRootMethods;
+    pub use super::MyRoomRelianceSelectRoot_CursorTop;
+    pub use super::IMyRoomRelianceSelectRoot_CursorTop;
+    pub use super::IMyRoomRelianceSelectRoot_CursorTopMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

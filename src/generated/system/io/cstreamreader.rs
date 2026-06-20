@@ -20,73 +20,65 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-cstreamreader-types")]
 pub use __types::*;
 
-#[cfg(feature="system-io-cstreamreader")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CStreamReader_unity2_raw{use super:: * ;
-pub unsafe fn peek(this:CStreamReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-io-cstreamreader")]pub trait ICStreamReaderMethods:ICStreamReader{#[doc="`Peek()` overload"]fn peek(self,)->i32{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",9usize,__vt.len(), <CStreamReader as::unity2::ClassIdentity> ::NAME,"Peek",));
-let inner:extern "C" fn(CStreamReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CStreamReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read(this:CStreamReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <CStreamReader as::unity2::ClassIdentity> ::NAME,"Read",));
-let inner:extern "C" fn(CStreamReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CStreamReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_2(this:CStreamReader,dest: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Read(::unity2::Array<u16>, i32, i32)` overload"]fn read_2(self,dest:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",11usize,__vt.len(), <CStreamReader as::unity2::ClassIdentity> ::NAME,"Read",));
-let inner:extern "C" fn(CStreamReader, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CStreamReader, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,dest,index,count,__mi)}
-pub unsafe fn read_line(this:CStreamReader,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(dest), ::core::convert::Into::into(index), ::core::convert::Into::into(count),__mi)}
+}
+}
+#[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",14usize,__vt.len(), <CStreamReader as::unity2::ClassIdentity> ::NAME,"ReadLine",));
-let inner:extern "C" fn(CStreamReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CStreamReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn read_to_end(this:CStreamReader,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ReadToEnd()` overload"]fn read_to_end(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",12usize,__vt.len(), <CStreamReader as::unity2::ClassIdentity> ::NAME,"ReadToEnd",));
-let inner:extern "C" fn(CStreamReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CStreamReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="system-io-cstreamreader")]pub trait ICStreamReaderMethods:ICStreamReader{#[doc="`Peek()` overload"]fn peek(self,)->i32{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CStreamReader_unity2_raw::peek(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CStreamReader_unity2_raw::read(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Read(::unity2::Array<u16>, i32, i32)` overload"]fn read_2(self,dest:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CStreamReader_unity2_raw::read_2(__receiver, ::core::convert::Into::into(dest), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
-}
-#[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CStreamReader_unity2_raw::read_line(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ReadToEnd()` overload"]fn read_to_end(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CStreamReader_unity2_raw::read_to_end(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -97,6 +89,23 @@ pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn read_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn read_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn read_to_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-io-cstreamreader")]impl CStreamReader{#[doc="Direct (non-virtual) call to `CStreamReader`'s own `Peek`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn peek(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::peek_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CStreamReader`'s own `Read`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::read_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CStreamReader`'s own `Read`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,dest: ::unity2::Array<u16> ,index:i32,count:i32,)->i32{let __mi=Self::read_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),dest,index,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CStreamReader`'s own `ReadLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_line(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::read_line_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CStreamReader`'s own `ReadToEnd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read_to_end(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::read_to_end_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "system-io-cstreamreader")]

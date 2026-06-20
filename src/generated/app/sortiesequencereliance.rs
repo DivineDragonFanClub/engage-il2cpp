@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequencereliance/SortieSequenceReliance.md"))]#[::unity2::class(namespace="App",name="SortieSequenceReliance")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequencereliance::SortieSequenceReliance>)]pub struct SortieSequenceReliance{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequencereliance/SortieSequenceReliance_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSequenceReliance_Label{pub value:i32,}
 impl::unity2::ClassIdentity for SortieSequenceReliance_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SortieSequenceReliance.Label";
@@ -38,26 +41,10 @@ pub fn end()->Self{Self{value:4}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequencereliance/SortieSequenceReliance.md"))]#[::unity2::class(namespace="App",name="SortieSequenceReliance")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequencereliance::SortieSequenceReliance>)]pub struct SortieSequenceReliance{}
-
 }
 
 #[cfg(feature = "app-sortiesequencereliance-types")]
 pub use __types::*;
-
-#[cfg(feature="app-sortiesequencereliance")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieSequenceReliance_unity2_raw{use super:: * ;
-pub unsafe fn on_shutdown(this:SortieSequenceReliance,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <SortieSequenceReliance as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
-let inner:extern "C" fn(SortieSequenceReliance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-sortiesequencereliance")]impl SortieSequenceReliance{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fefbc0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -69,7 +56,16 @@ inner(this,__mi)}
 (SortieSequenceReliance)__receiver)}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <SortieSequenceReliance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SortieSequenceReliance_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <SortieSequenceReliance as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let __inner:extern "C" fn(SortieSequenceReliance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Talk()` overload"]fn talk(self,)->(){unsafe{let __receiver= <SortieSequenceReliance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff04b0usize)as*mut u8,();
@@ -95,6 +91,11 @@ pub fn buddy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
+#[cfg(feature="app-sortiesequencereliance")]impl SortieSequenceReliance{#[doc="Direct (non-virtual) call to `SortieSequenceReliance`'s own `OnShutdown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_shutdown(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_shutdown_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-sortiesequencereliance")]impl SortieSequenceReliance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SortieSequenceReliance), ::core::stringify!(new),));
@@ -105,10 +106,10 @@ this}
 #[cfg(feature = "app-sortiesequencereliance")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieSequenceReliance_Label;
     pub use super::SortieSequenceReliance;
     pub use super::ISortieSequenceReliance;
     pub use super::ISortieSequenceRelianceMethods;
+    pub use super::SortieSequenceReliance_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

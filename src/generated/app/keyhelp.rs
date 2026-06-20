@@ -15,6 +15,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp_UI.md"))]#[::unity2::class(namespace="App",name="KeyHelp.UI")]#[parent(crate::system::object::Object)]pub struct KeyHelp_UI{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="ElementNames")]pub element_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(16)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(24)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Elements")]pub m_elements:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::keyhelp::KeyHelp_Type,crate::app::keyhelp::KeyHelp_UI_Element> , #[offset(40)]#[rename(name="m_Index")]pub m_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp.md"))]#[::unity2::class(namespace="App",name="KeyHelp")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::keyhelp::KeyHelp>)]pub struct KeyHelp{#[offset(32)]#[rename(name="m_UI")]pub m_ui:crate::app::keyhelp::KeyHelp_UI,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct KeyHelp_Type{pub value:i32,}
 impl::unity2::ClassIdentity for KeyHelp_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="KeyHelp.Type";
@@ -51,89 +57,12 @@ pub fn num()->Self{Self{value:11}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp.md"))]#[::unity2::class(namespace="App",name="KeyHelp")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::keyhelp::KeyHelp>)]pub struct KeyHelp{#[offset(32)]#[rename(name="m_UI")]pub m_ui:crate::app::keyhelp::KeyHelp_UI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp_UI.md"))]#[::unity2::class(namespace="App",name="KeyHelp.UI")]#[parent(crate::system::object::Object)]pub struct KeyHelp_UI{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="ElementNames")]pub element_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(16)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(24)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Elements")]pub m_elements:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::keyhelp::KeyHelp_Type,crate::app::keyhelp::KeyHelp_UI_Element> , #[offset(40)]#[rename(name="m_Index")]pub m_index:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelp/KeyHelp_UI_Element.md"))]#[::unity2::class(namespace="App",name="KeyHelp.UI.Element")]#[parent(crate::system::object::Object)]pub struct KeyHelp_UI_Element{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-keyhelp-types")]
 pub use __types::*;
-
-#[cfg(feature="app-keyhelp")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __KeyHelp_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:KeyHelp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <KeyHelp as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(KeyHelp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:KeyHelp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <KeyHelp as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(KeyHelp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-keyhelp")]impl KeyHelp{#[doc="`IsCreating()` overload"]pub fn is_creating()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8fe0usize)as*mut u8,bool;
-)}
-}
-#[doc="`SetVisible(bool)` overload"]pub fn set_visible(is_visible:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd90a0usize)as*mut u8,();
-(bool)::core::convert::Into::into(is_visible))}
-}
-#[doc="`Add(crate::app::keyhelp::KeyHelp_Type, ::unity2::Il2CppString)` overload"]pub fn add(r#type:impl::core::convert::Into<crate::app::keyhelp::KeyHelp_Type> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9170usize)as*mut u8,();
-(crate::app::keyhelp::KeyHelp_Type)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(text))}
-}
-#[doc="`Add(::unity2::Il2CppString)` overload"]pub fn add_2(key_help_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9250usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(key_help_id))}
-}
-#[doc="`Clear()` overload"]pub fn clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9320usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-keyhelp")]pub trait IKeyHelpMethods:IKeyHelp{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__KeyHelp_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__KeyHelp_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd94c0usize)as*mut u8,();
-(KeyHelp)__receiver)}
-}
-}
-
-#[cfg(feature="app-keyhelp")]impl<__T:IKeyHelp>IKeyHelpMethods for __T{}
-
-#[cfg(feature="app-keyhelp")]impl KeyHelp{pub fn is_creating_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-keyhelp")]impl KeyHelp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(KeyHelp), ::core::stringify!(new),));
- <Self as IKeyHelpMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-keyhelp")]impl KeyHelp_UI{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd3d10usize)as*mut u8,();
 )}
@@ -199,6 +128,80 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-keyhelp")]impl KeyHelp{#[doc="`IsCreating()` overload"]pub fn is_creating()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8fe0usize)as*mut u8,bool;
+)}
+}
+#[doc="`SetVisible(bool)` overload"]pub fn set_visible(is_visible:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd90a0usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`Add(crate::app::keyhelp::KeyHelp_Type, ::unity2::Il2CppString)` overload"]pub fn add(r#type:impl::core::convert::Into<crate::app::keyhelp::KeyHelp_Type> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9170usize)as*mut u8,();
+(crate::app::keyhelp::KeyHelp_Type)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`Add(::unity2::Il2CppString)` overload"]pub fn add_2(key_help_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9250usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key_help_id))}
+}
+#[doc="`Clear()` overload"]pub fn clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bd9320usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-keyhelp")]pub trait IKeyHelpMethods:IKeyHelp{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <KeyHelp as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(KeyHelp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <KeyHelp as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(KeyHelp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <KeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd94c0usize)as*mut u8,();
+(KeyHelp)__receiver)}
+}
+}
+
+#[cfg(feature="app-keyhelp")]impl<__T:IKeyHelp>IKeyHelpMethods for __T{}
+
+#[cfg(feature="app-keyhelp")]impl KeyHelp{pub fn is_creating_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-keyhelp")]impl KeyHelp{#[doc="Direct (non-virtual) call to `KeyHelp`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `KeyHelp`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-keyhelp")]impl KeyHelp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KeyHelp), ::core::stringify!(new),));
+ <Self as IKeyHelpMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-keyhelp")]pub trait IKeyHelp_UI_ElementMethods:IKeyHelp_UI_Element{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <KeyHelp_UI_Element as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b67590usize)as*mut u8,();
 (KeyHelp_UI_Element)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
@@ -235,13 +238,13 @@ this}
 #[cfg(feature = "app-keyhelp")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::KeyHelp_Type;
-    pub use super::KeyHelp;
-    pub use super::IKeyHelp;
-    pub use super::IKeyHelpMethods;
     pub use super::KeyHelp_UI;
     pub use super::IKeyHelp_UI;
     pub use super::IKeyHelp_UIMethods;
+    pub use super::KeyHelp;
+    pub use super::IKeyHelp;
+    pub use super::IKeyHelpMethods;
+    pub use super::KeyHelp_Type;
     pub use super::KeyHelp_UI_Element;
     pub use super::IKeyHelp_UI_Element;
     pub use super::IKeyHelp_UI_ElementMethods;

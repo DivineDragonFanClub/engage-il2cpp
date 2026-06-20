@@ -20,25 +20,21 @@ use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,Volum
 #[cfg(feature = "unity_engine-rendering-vector3parameter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-vector3parameter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Vector3Parameter_unity2_raw{use super:: * ;
-pub unsafe fn interp(this:Vector3Parameter,from:crate::unity_engine::vector3::Vector3,to:crate::unity_engine::vector3::Vector3,t:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <Vector3Parameter as::unity2::ClassIdentity> ::NAME,"Interp",));
-let inner:extern "C" fn(Vector3Parameter,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,from,to,t,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-vector3parameter")]pub trait IVector3ParameterMethods:IVector3Parameter{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Vector3Parameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4830usize)as*mut u8,();
 (Vector3Parameter)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
 }
 #[doc="`Interp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]fn interp(self,from:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,to:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,t:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Vector3Parameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Vector3Parameter_unity2_raw::interp(__receiver, ::core::convert::Into::into(from), ::core::convert::Into::into(to), ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <Vector3Parameter as::unity2::ClassIdentity> ::NAME,"Interp",));
+let __inner:extern "C" fn(Vector3Parameter,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(from), ::core::convert::Into::into(to), ::core::convert::Into::into(t),__mi)}
+}
 }
 }
 
@@ -46,6 +42,11 @@ __Vector3Parameter_unity2_raw::interp(__receiver, ::core::convert::Into::into(fr
 
 #[cfg(feature="unity_engine-rendering-vector3parameter")]impl Vector3Parameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn interp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-rendering-vector3parameter")]impl Vector3Parameter{#[doc="Direct (non-virtual) call to `Vector3Parameter`'s own `Interp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn interp(this:impl::core::convert::Into< ::unity2::IlInstance> ,from:crate::unity_engine::vector3::Vector3,to:crate::unity_engine::vector3::Vector3,t:f32,)->(){let __mi=Self::interp_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),from,to,t, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-vector3parameter")]impl Vector3Parameter{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, bool)` — overload selector"]pub fn new(value:crate::unity_engine::vector3::Vector3,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

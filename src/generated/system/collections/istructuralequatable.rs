@@ -14,34 +14,29 @@ mod __types {
 #[cfg(feature = "system-collections-istructuralequatable-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-istructuralequatable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IStructuralEquatable_unity2_raw{use super:: * ;
-pub unsafe fn equals(this:IStructuralEquatable,other:crate::system::object::Object,comparer:crate::system::collections::iequalitycomparer::IEqualityComparer,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-collections-istructuralequatable")]pub trait IIStructuralEquatableMethods:IIStructuralEquatable{#[doc="`Equals(crate::system::object::Object, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]fn equals(self,other:impl::core::convert::Into<crate::system::object::Object> ,comparer:impl::core::convert::Into<crate::system::collections::iequalitycomparer::IEqualityComparer>)->bool{unsafe{let __receiver= <IStructuralEquatable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IStructuralEquatable as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(IStructuralEquatable,crate::system::object::Object,crate::system::collections::iequalitycomparer::IEqualityComparer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IStructuralEquatable,crate::system::object::Object,crate::system::collections::iequalitycomparer::IEqualityComparer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,other,comparer,__mi)}
-pub unsafe fn get_hash_code(this:IStructuralEquatable,comparer:crate::system::collections::iequalitycomparer::IEqualityComparer,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(other), ::core::convert::Into::into(comparer),__mi)}
+}
+}
+#[doc="`GetHashCode(crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]fn get_hash_code(self,comparer:impl::core::convert::Into<crate::system::collections::iequalitycomparer::IEqualityComparer>)->i32{unsafe{let __receiver= <IStructuralEquatable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IStructuralEquatable as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(IStructuralEquatable,crate::system::collections::iequalitycomparer::IEqualityComparer, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IStructuralEquatable,crate::system::collections::iequalitycomparer::IEqualityComparer, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,comparer,__mi)}
+__inner(__receiver, ::core::convert::Into::into(comparer),__mi)}
 }
-
-#[cfg(feature="system-collections-istructuralequatable")]pub trait IIStructuralEquatableMethods:IIStructuralEquatable{#[doc="`Equals(crate::system::object::Object, crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]fn equals(self,other:impl::core::convert::Into<crate::system::object::Object> ,comparer:impl::core::convert::Into<crate::system::collections::iequalitycomparer::IEqualityComparer>)->bool{unsafe{let __receiver= <IStructuralEquatable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IStructuralEquatable_unity2_raw::equals(__receiver, ::core::convert::Into::into(other), ::core::convert::Into::into(comparer), ::core::option::Option::None)}
-}
-#[doc="`GetHashCode(crate::system::collections::iequalitycomparer::IEqualityComparer)` overload"]fn get_hash_code(self,comparer:impl::core::convert::Into<crate::system::collections::iequalitycomparer::IEqualityComparer>)->i32{unsafe{let __receiver= <IStructuralEquatable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IStructuralEquatable_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(comparer), ::core::option::Option::None)}
 }
 }
 
@@ -49,6 +44,14 @@ __IStructuralEquatable_unity2_raw::get_hash_code(__receiver, ::core::convert::In
 
 #[cfg(feature="system-collections-istructuralequatable")]impl IStructuralEquatable{pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-collections-istructuralequatable")]impl IStructuralEquatable{#[doc="Direct (non-virtual) call to `IStructuralEquatable`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,other:crate::system::object::Object,comparer:crate::system::collections::iequalitycomparer::IEqualityComparer,)->bool{let __mi=Self::equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::collections::iequalitycomparer::IEqualityComparer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),other,comparer, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IStructuralEquatable`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,comparer:crate::system::collections::iequalitycomparer::IEqualityComparer,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::iequalitycomparer::IEqualityComparer, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),comparer, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "system-collections-istructuralequatable")]

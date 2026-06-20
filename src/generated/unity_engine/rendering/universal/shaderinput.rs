@@ -22,6 +22,9 @@ impl::unity2::IlType for ShaderInput_LightData{fn il_type()-> &'static::unity2::
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/shaderinput/ShaderInput.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ShaderInput")]#[parent(crate::system::object::Object)]pub struct ShaderInput{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/shaderinput/ShaderInput_ShadowData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ShaderInput_ShadowData{pub world_to_shadow_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub shadow_params:crate::unity_engine::vector4::Vector4,}
 impl::unity2::ClassIdentity for ShaderInput_ShadowData{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
 const NAME: &'static str="ShaderInput.ShadowData";
@@ -32,9 +35,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for ShaderInput_ShadowData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/shaderinput/ShaderInput.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ShaderInput")]#[parent(crate::system::object::Object)]pub struct ShaderInput{}
-
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderinput-types")]
@@ -44,9 +44,9 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ShaderInput_LightData;
-    pub use super::ShaderInput_ShadowData;
     pub use super::ShaderInput;
     pub use super::IShaderInput;
+    pub use super::ShaderInput_ShadowData;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

@@ -16,19 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-bithash-types")]
 pub use __types::*;
 
-#[cfg(feature="app-bithash")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BitHash_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:BitHash,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <BitHash as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(BitHash, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-bithash")]impl BitHash{#[doc="`CalcKey(::unity2::Il2CppString, i32)` overload"]pub fn calc_key(name:impl::core::convert::Into< ::unity2::Il2CppString> ,shift:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2988cc0usize)as*mut u8,i32;
 (::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(shift))}
 }
@@ -39,7 +26,16 @@ inner(this,__mi)}
 (BitHash)__receiver,(i32)::core::convert::Into::into(shift))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BitHash_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BitHash as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(BitHash, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Add(::unity2::Il2CppString)` overload"]fn add(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2988370usize)as*mut u8,();
@@ -118,6 +114,11 @@ pub fn not_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn calc_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
 pub fn test_7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 pub fn get_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-bithash")]impl BitHash{#[doc="Direct (non-virtual) call to `BitHash`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-bithash")]impl BitHash{#[doc="`.ctor(i32)` — overload selector"]pub fn new(shift:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

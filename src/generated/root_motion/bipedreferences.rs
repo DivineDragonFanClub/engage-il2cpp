@@ -11,6 +11,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/bipedreferences/BipedReferences.md"))]#[::unity2::class(namespace="RootMotion",name="BipedReferences")]#[parent(crate::system::object::Object)]pub struct BipedReferences{#[offset(16)]#[rename(name="root")]pub root:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="pelvis")]pub pelvis:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="leftThigh")]pub left_thigh:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="leftCalf")]pub left_calf:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="leftFoot")]pub left_foot:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="rightThigh")]pub right_thigh:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="rightCalf")]pub right_calf:crate::unity_engine::transform::Transform, #[offset(72)]#[rename(name="rightFoot")]pub right_foot:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="leftUpperArm")]pub left_upper_arm:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="leftForearm")]pub left_forearm:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="leftHand")]pub left_hand:crate::unity_engine::transform::Transform, #[offset(104)]#[rename(name="rightUpperArm")]pub right_upper_arm:crate::unity_engine::transform::Transform, #[offset(112)]#[rename(name="rightForearm")]pub right_forearm:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="rightHand")]pub right_hand:crate::unity_engine::transform::Transform, #[offset(128)]#[rename(name="head")]pub head:crate::unity_engine::transform::Transform, #[offset(136)]#[rename(name="spine")]pub spine: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(144)]#[rename(name="eyes")]pub eyes: ::unity2::Array<crate::unity_engine::transform::Transform> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/bipedreferences/BipedReferences_AutoDetectParams.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BipedReferences_AutoDetectParams{pub legs_parent_in_spine:bool,pub include_eyes:bool,}
 impl::unity2::ClassIdentity for BipedReferences_AutoDetectParams{const NAMESPACE: &'static str="RootMotion";
 const NAME: &'static str="BipedReferences.AutoDetectParams";
@@ -21,60 +24,10 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for BipedReferences_AutoDetectParams{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/bipedreferences/BipedReferences.md"))]#[::unity2::class(namespace="RootMotion",name="BipedReferences")]#[parent(crate::system::object::Object)]pub struct BipedReferences{#[offset(16)]#[rename(name="root")]pub root:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="pelvis")]pub pelvis:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="leftThigh")]pub left_thigh:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="leftCalf")]pub left_calf:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="leftFoot")]pub left_foot:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="rightThigh")]pub right_thigh:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="rightCalf")]pub right_calf:crate::unity_engine::transform::Transform, #[offset(72)]#[rename(name="rightFoot")]pub right_foot:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="leftUpperArm")]pub left_upper_arm:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="leftForearm")]pub left_forearm:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="leftHand")]pub left_hand:crate::unity_engine::transform::Transform, #[offset(104)]#[rename(name="rightUpperArm")]pub right_upper_arm:crate::unity_engine::transform::Transform, #[offset(112)]#[rename(name="rightForearm")]pub right_forearm:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="rightHand")]pub right_hand:crate::unity_engine::transform::Transform, #[offset(128)]#[rename(name="head")]pub head:crate::unity_engine::transform::Transform, #[offset(136)]#[rename(name="spine")]pub spine: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(144)]#[rename(name="eyes")]pub eyes: ::unity2::Array<crate::unity_engine::transform::Transform> ,}
-
 }
 
 #[cfg(feature = "root_motion-bipedreferences-types")]
 pub use __types::*;
-
-#[cfg(feature="root_motion-bipedreferences")]impl BipedReferences_AutoDetectParams{#[doc="`get_Default()` overload"]pub fn get_default()->crate::root_motion::bipedreferences::BipedReferences_AutoDetectParams{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bc150usize)as*mut u8,crate::root_motion::bipedreferences::BipedReferences_AutoDetectParams;
-)}
-}
-}
-
-#[cfg(feature="root_motion-bipedreferences")]impl BipedReferences_AutoDetectParams{#[doc="`.ctor(bool, bool)` overload"]pub fn ctor(&mut self,legs_parent_in_spine:impl::core::convert::Into<bool> ,include_eyes:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bc130usize)as*mut u8,();
-(*mut BipedReferences_AutoDetectParams)self as*mut BipedReferences_AutoDetectParams,(bool)::core::convert::Into::into(legs_parent_in_spine),(bool)::core::convert::Into::into(include_eyes))}
-}
-}
-
-#[cfg(feature="root_motion-bipedreferences")]impl BipedReferences_AutoDetectParams{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root_motion-bipedreferences")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BipedReferences_unity2_raw{use super:: * ;
-pub unsafe fn get_is_filled(this:BipedReferences,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <BipedReferences as::unity2::ClassIdentity> ::NAME,"get_isFilled",));
-let inner:extern "C" fn(BipedReferences, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_empty(this:BipedReferences,include_root:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <BipedReferences as::unity2::ClassIdentity> ::NAME,"IsEmpty",));
-let inner:extern "C" fn(BipedReferences,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,include_root,__mi)}
-pub unsafe fn contains(this:BipedReferences,t:crate::unity_engine::transform::Transform,ignore_root:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <BipedReferences as::unity2::ClassIdentity> ::NAME,"Contains",));
-let inner:extern "C" fn(BipedReferences,crate::unity_engine::transform::Transform,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,ignore_root,__mi)}
-}
 
 #[cfg(feature="root_motion-bipedreferences")]impl BipedReferences{#[doc="`AutoDetectReferences(*mutcrate::root_motion::bipedreferences::BipedReferences, crate::unity_engine::transform::Transform, crate::root_motion::bipedreferences::BipedReferences_AutoDetectParams)` overload"]pub fn auto_detect_references(root:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,auto_detect_params:impl::core::convert::Into<crate::root_motion::bipedreferences::BipedReferences_AutoDetectParams>)->(bool,crate::root_motion::bipedreferences::BipedReferences){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::root_motion::bipedreferences::BipedReferences> ::uninit();
 let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2984450usize)as*mut u8,bool;
@@ -185,17 +138,44 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2986cd0usize)as*mut
 }
 
 #[cfg(feature="root_motion-bipedreferences")]pub trait IBipedReferencesMethods:IBipedReferences{#[doc="`get_isFilled()` overload"]fn get_is_filled(self,)->bool{unsafe{let __receiver= <BipedReferences as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BipedReferences_unity2_raw::get_is_filled(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BipedReferences as::unity2::ClassIdentity> ::NAME,"get_isFilled",));
+let __inner:extern "C" fn(BipedReferences, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_isEmpty()` overload"]fn get_is_empty(self,)->bool{unsafe{let __receiver= <BipedReferences as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2983c00usize)as*mut u8,bool;
 (BipedReferences)__receiver)}
 }
 #[doc="`IsEmpty(bool)` overload"]fn is_empty(self,include_root:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <BipedReferences as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BipedReferences_unity2_raw::is_empty(__receiver, ::core::convert::Into::into(include_root), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BipedReferences as::unity2::ClassIdentity> ::NAME,"IsEmpty",));
+let __inner:extern "C" fn(BipedReferences,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(include_root),__mi)}
+}
 }
 #[doc="`Contains(crate::unity_engine::transform::Transform, bool)` overload"]fn contains(self,t:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,ignore_root:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <BipedReferences as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BipedReferences_unity2_raw::contains(__receiver, ::core::convert::Into::into(t), ::core::convert::Into::into(ignore_root), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BipedReferences as::unity2::ClassIdentity> ::NAME,"Contains",));
+let __inner:extern "C" fn(BipedReferences,crate::unity_engine::transform::Transform,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t), ::core::convert::Into::into(ignore_root),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BipedReferences as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x29846e0usize)as*mut u8,();
@@ -231,6 +211,17 @@ pub fn get_vertical_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
 }
 
+#[cfg(feature="root_motion-bipedreferences")]impl BipedReferences{#[doc="Direct (non-virtual) call to `BipedReferences`'s own `get_isFilled`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_filled(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_filled_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BipedReferences`'s own `IsEmpty`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_empty(this:impl::core::convert::Into< ::unity2::IlInstance> ,include_root:bool,)->bool{let __mi=Self::is_empty_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),include_root, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BipedReferences`'s own `Contains`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn contains(this:impl::core::convert::Into< ::unity2::IlInstance> ,t:crate::unity_engine::transform::Transform,ignore_root:bool,)->bool{let __mi=Self::contains_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::transform::Transform,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t,ignore_root, ::core::option::Option::None)}
+}
+
 #[cfg(feature="root_motion-bipedreferences")]impl BipedReferences{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(BipedReferences), ::core::stringify!(new),));
@@ -238,13 +229,27 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root_motion-bipedreferences")]impl BipedReferences_AutoDetectParams{#[doc="`get_Default()` overload"]pub fn get_default()->crate::root_motion::bipedreferences::BipedReferences_AutoDetectParams{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bc150usize)as*mut u8,crate::root_motion::bipedreferences::BipedReferences_AutoDetectParams;
+)}
+}
+}
+
+#[cfg(feature="root_motion-bipedreferences")]impl BipedReferences_AutoDetectParams{#[doc="`.ctor(bool, bool)` overload"]pub fn ctor(&mut self,legs_parent_in_spine:impl::core::convert::Into<bool> ,include_eyes:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bc130usize)as*mut u8,();
+(*mut BipedReferences_AutoDetectParams)self as*mut BipedReferences_AutoDetectParams,(bool)::core::convert::Into::into(legs_parent_in_spine),(bool)::core::convert::Into::into(include_eyes))}
+}
+}
+
+#[cfg(feature="root_motion-bipedreferences")]impl BipedReferences_AutoDetectParams{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
 #[cfg(feature = "root_motion-bipedreferences")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BipedReferences_AutoDetectParams;
     pub use super::BipedReferences;
     pub use super::IBipedReferences;
     pub use super::IBipedReferencesMethods;
+    pub use super::BipedReferences_AutoDetectParams;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

@@ -19,6 +19,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hublookatcontroller/HubLookAtController.md"))]#[::unity2::class(namespace="App",name="HubLookAtController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubLookAtController{#[offset(32)]#[rename(name="m_curve")]pub m_curve:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(40)]#[rename(name="m_lookAtIK")]pub m_look_at_ik: ::unity2::Array<crate::root_motion::final_ik::lookatik::LookAtIK> , #[offset(48)]#[rename(name="m_lookAtIKParam")]pub m_look_at_ik_param: ::unity2::Array<crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam> , #[offset(56)]#[rename(name="m_lookAtTarget")]pub m_look_at_target:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_target")]pub m_target:crate::unity_engine::transform::Transform, #[offset(72)]#[rename(name="m_targetPosition")]pub m_target_position:crate::unity_engine::vector3::Vector3, #[offset(88)]#[rename(name="m_headTransform")]pub m_head_transform:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="m_disableFollow")]pub m_disable_follow:bool, #[offset(97)]#[rename(name="m_verticalLimit")]pub m_vertical_limit:bool, #[offset(100)]#[rename(name="m_verticalLimitValue")]pub m_vertical_limit_value:f32, #[static_field]#[rename(name="DefaultParam")]pub default_param:crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hublookatcontroller/HubLookAtController_LookAtIKParam.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HubLookAtController_LookAtIKParam{pub body_weight:f32,pub head_weight:f32,pub eyes_weight:f32,}
 impl::unity2::ClassIdentity for HubLookAtController_LookAtIKParam{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubLookAtController.LookAtIKParam";
@@ -29,21 +32,10 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for HubLookAtController_LookAtIKParam{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hublookatcontroller/HubLookAtController.md"))]#[::unity2::class(namespace="App",name="HubLookAtController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubLookAtController{#[offset(32)]#[rename(name="m_curve")]pub m_curve:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(40)]#[rename(name="m_lookAtIK")]pub m_look_at_ik: ::unity2::Array<crate::root_motion::final_ik::lookatik::LookAtIK> , #[offset(48)]#[rename(name="m_lookAtIKParam")]pub m_look_at_ik_param: ::unity2::Array<crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam> , #[offset(56)]#[rename(name="m_lookAtTarget")]pub m_look_at_target:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_target")]pub m_target:crate::unity_engine::transform::Transform, #[offset(72)]#[rename(name="m_targetPosition")]pub m_target_position:crate::unity_engine::vector3::Vector3, #[offset(88)]#[rename(name="m_headTransform")]pub m_head_transform:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="m_disableFollow")]pub m_disable_follow:bool, #[offset(97)]#[rename(name="m_verticalLimit")]pub m_vertical_limit:bool, #[offset(100)]#[rename(name="m_verticalLimitValue")]pub m_vertical_limit_value:f32, #[static_field]#[rename(name="DefaultParam")]pub default_param:crate::app::hublookatcontroller::HubLookAtController_LookAtIKParam,}
-
 }
 
 #[cfg(feature = "app-hublookatcontroller-types")]
 pub use __types::*;
-
-#[cfg(feature="app-hublookatcontroller")]impl HubLookAtController_LookAtIKParam{#[doc="`.ctor(f32, f32, f32)` overload"]pub fn ctor(&mut self,body:impl::core::convert::Into<f32> ,head:impl::core::convert::Into<f32> ,eyes:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7040usize)as*mut u8,();
-(*mut HubLookAtController_LookAtIKParam)self as*mut HubLookAtController_LookAtIKParam,(f32)::core::convert::Into::into(body),(f32)::core::convert::Into::into(head),(f32)::core::convert::Into::into(eyes))}
-}
-}
-
-#[cfg(feature="app-hublookatcontroller")]impl HubLookAtController_LookAtIKParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
 
 #[cfg(feature="app-hublookatcontroller")]impl HubLookAtController{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b0cf0usize)as*mut u8,();
 )}
@@ -149,13 +141,21 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-hublookatcontroller")]impl HubLookAtController_LookAtIKParam{#[doc="`.ctor(f32, f32, f32)` overload"]pub fn ctor(&mut self,body:impl::core::convert::Into<f32> ,head:impl::core::convert::Into<f32> ,eyes:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7040usize)as*mut u8,();
+(*mut HubLookAtController_LookAtIKParam)self as*mut HubLookAtController_LookAtIKParam,(f32)::core::convert::Into::into(body),(f32)::core::convert::Into::into(head),(f32)::core::convert::Into::into(eyes))}
+}
+}
+
+#[cfg(feature="app-hublookatcontroller")]impl HubLookAtController_LookAtIKParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "app-hublookatcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubLookAtController_LookAtIKParam;
     pub use super::HubLookAtController;
     pub use super::IHubLookAtController;
     pub use super::IHubLookAtControllerMethods;
+    pub use super::HubLookAtController_LookAtIKParam;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

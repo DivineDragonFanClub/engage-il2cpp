@@ -31,36 +31,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <DynamicExprExpression as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn eval(this:DynamicExprExpression,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <DynamicExprExpression as::unity2::ClassIdentity> ::NAME,"Eval",));
-let inner:extern "C" fn(DynamicExprExpression,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,context,__mi)}
-pub unsafe fn compile(this:DynamicExprExpression,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DynamicExprExpression as::unity2::ClassIdentity> ::NAME,"Compile",));
-let inner:extern "C" fn(DynamicExprExpression,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,bc,__mi)}
-pub unsafe fn find_dynamic(this:DynamicExprExpression,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <DynamicExprExpression as::unity2::ClassIdentity> ::NAME,"FindDynamic",));
-let inner:extern "C" fn(DynamicExprExpression,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,context,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-expressions-dynamicexprexpression")]pub trait IDynamicExprExpressionMethods:IDynamicExprExpression{#[doc="`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]fn ctor(self,exp:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression> ,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>)->(){unsafe{let __receiver= <DynamicExprExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -68,13 +38,40 @@ inner(this,context,__mi)}
 (DynamicExprExpression)__receiver,(crate::moon_sharp::interpreter::tree::expression::Expression)::core::convert::Into::into(exp),(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext))}
 }
 #[doc="`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]fn eval(self,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DynamicExprExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DynamicExprExpression_unity2_raw::eval(__receiver, ::core::convert::Into::into(context), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <DynamicExprExpression as::unity2::ClassIdentity> ::NAME,"Eval",));
+let __inner:extern "C" fn(DynamicExprExpression,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(context),__mi)}
+}
 }
 #[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <DynamicExprExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DynamicExprExpression_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DynamicExprExpression as::unity2::ClassIdentity> ::NAME,"Compile",));
+let __inner:extern "C" fn(DynamicExprExpression,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(bc),__mi)}
+}
 }
 #[doc="`FindDynamic(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]fn find_dynamic(self,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{let __receiver= <DynamicExprExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DynamicExprExpression_unity2_raw::find_dynamic(__receiver, ::core::convert::Into::into(context), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DynamicExprExpression as::unity2::ClassIdentity> ::NAME,"FindDynamic",));
+let __inner:extern "C" fn(DynamicExprExpression,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(context),__mi)}
+}
 }
 }
 
@@ -84,6 +81,17 @@ __DynamicExprExpression_unity2_raw::find_dynamic(__receiver, ::core::convert::In
 pub fn eval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn compile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn find_dynamic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-tree-expressions-dynamicexprexpression")]impl DynamicExprExpression{#[doc="Direct (non-virtual) call to `DynamicExprExpression`'s own `Eval`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn eval(this:impl::core::convert::Into< ::unity2::IlInstance> ,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::eval_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),context, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DynamicExprExpression`'s own `Compile`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compile(this:impl::core::convert::Into< ::unity2::IlInstance> ,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,)->(){let __mi=Self::compile_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),bc, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DynamicExprExpression`'s own `FindDynamic`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn find_dynamic(this:impl::core::convert::Into< ::unity2::IlInstance> ,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{let __mi=Self::find_dynamic_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),context, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-expressions-dynamicexprexpression")]impl DynamicExprExpression{#[doc="`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]pub fn new(exp:crate::moon_sharp::interpreter::tree::expression::Expression,lcontext:crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

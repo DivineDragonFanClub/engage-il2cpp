@@ -45,25 +45,21 @@ pub fn accepted()->Self{Self{value:1}
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-switch-networkinterfacewrapper")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:NetworkInterfaceWrapper_NetworkConnectedHandler,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <NetworkInterfaceWrapper_NetworkConnectedHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(NetworkInterfaceWrapper_NetworkConnectedHandler, ::unity2::OptionalMethod,)->crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-switch-networkinterfacewrapper")]pub trait INetworkInterfaceWrapper_NetworkConnectedHandlerMethods:INetworkInterfaceWrapper_NetworkConnectedHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NetworkInterfaceWrapper_NetworkConnectedHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f41d90usize)as*mut u8,();
 (NetworkInterfaceWrapper_NetworkConnectedHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult{unsafe{let __receiver= <NetworkInterfaceWrapper_NetworkConnectedHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <NetworkInterfaceWrapper_NetworkConnectedHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(NetworkInterfaceWrapper_NetworkConnectedHandler, ::unity2::OptionalMethod,)->crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -71,6 +67,11 @@ __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw::invoke(__receiver,
 
 #[cfg(feature="unity_engine-switch-networkinterfacewrapper")]impl NetworkInterfaceWrapper_NetworkConnectedHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-switch-networkinterfacewrapper")]impl NetworkInterfaceWrapper_NetworkConnectedHandler{#[doc="Direct (non-virtual) call to `NetworkInterfaceWrapper_NetworkConnectedHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-switch-networkinterfacewrapper")]impl NetworkInterfaceWrapper_NetworkConnectedHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

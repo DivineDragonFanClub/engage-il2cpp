@@ -11,6 +11,17 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitenum/UnitEnum_TargetEnumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct UnitEnum_TargetEnumerator{pub m_unit_enum:crate::app::unitenum::UnitEnum_Enumerator,pub m_current:crate::app::unit::Unit,pub m_unit:crate::app::unit::Unit,pub m_x:i32,pub m_z:i32,pub m_near:i32,pub m_far:i32,}
+impl::unity2::ClassIdentity for UnitEnum_TargetEnumerator{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitEnum.TargetEnumerator";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitEnum_TargetEnumerator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitenum/UnitEnum_Enumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct UnitEnum_Enumerator{pub m_types: ::unity2::Array<crate::app::force::Force_Type>,pub m_index:i32,pub m_next:crate::app::unit::Unit,pub m_current:crate::app::unit::Unit,}
 impl::unity2::ClassIdentity for UnitEnum_Enumerator{const NAMESPACE: &'static str="App";
 const NAME: &'static str="UnitEnum.Enumerator";
@@ -152,21 +163,46 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_ForceMask"
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitenum/UnitEnum_TargetEnumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct UnitEnum_TargetEnumerator{pub m_unit_enum:crate::app::unitenum::UnitEnum_Enumerator,pub m_current:crate::app::unit::Unit,pub m_unit:crate::app::unit::Unit,pub m_x:i32,pub m_z:i32,pub m_near:i32,pub m_far:i32,}
-impl::unity2::ClassIdentity for UnitEnum_TargetEnumerator{const NAMESPACE: &'static str="App";
-const NAME: &'static str="UnitEnum.TargetEnumerator";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for UnitEnum_TargetEnumerator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
 }
 
 #[cfg(feature = "app-unitenum-types")]
 pub use __types::*;
+
+#[cfg(feature="app-unitenum")]impl UnitEnum_TargetEnumerator{#[doc="`Setup(crate::app::unit::Unit, i32, i32, i32, i32)` overload"]pub fn setup(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,near:impl::core::convert::Into<i32> ,far:impl::core::convert::Into<i32>)->crate::app::unitenum::UnitEnum_TargetEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f120usize)as*mut u8,crate::app::unitenum::UnitEnum_TargetEnumerator;
+(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(near),(i32)::core::convert::Into::into(far))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f2b0usize)as*mut u8,();
+(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
+}
+#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f2c0usize)as*mut u8,crate::app::unit::Unit;
+(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
+}
+#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f2d0usize)as*mut u8,crate::system::object::Object;
+(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
+}
+#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f2e0usize)as*mut u8,bool;
+(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
+}
+#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f9e0usize)as*mut u8,();
+(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
+}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]pub fn system_collections_i_enumerable_get_enumerator(&mut self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4fb80usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
+}
+#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::app::unitenum::UnitEnum_TargetEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4fc00usize)as*mut u8,crate::app::unitenum::UnitEnum_TargetEnumerator;
+(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
+}
+}
+
+#[cfg(feature="app-unitenum")]impl UnitEnum_TargetEnumerator{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature="app-unitenum")]impl UnitEnum_Enumerator{#[doc="`.ctor(::unity2::Array<crate::app::force::Force_Type>)` overload"]pub fn ctor(&mut self,types:impl::core::convert::Into< ::unity2::Array<crate::app::force::Force_Type> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4efa0usize)as*mut u8,();
 (*mut UnitEnum_Enumerator)self as*mut UnitEnum_Enumerator,(::unity2::Array<crate::app::force::Force_Type>)::core::convert::Into::into(types))}
@@ -266,48 +302,12 @@ pub fn get_enumerator_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
-#[cfg(feature="app-unitenum")]impl UnitEnum_TargetEnumerator{#[doc="`Setup(crate::app::unit::Unit, i32, i32, i32, i32)` overload"]pub fn setup(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,near:impl::core::convert::Into<i32> ,far:impl::core::convert::Into<i32>)->crate::app::unitenum::UnitEnum_TargetEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f120usize)as*mut u8,crate::app::unitenum::UnitEnum_TargetEnumerator;
-(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(near),(i32)::core::convert::Into::into(far))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f2b0usize)as*mut u8,();
-(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
-}
-#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f2c0usize)as*mut u8,crate::app::unit::Unit;
-(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
-}
-#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f2d0usize)as*mut u8,crate::system::object::Object;
-(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
-}
-#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f2e0usize)as*mut u8,bool;
-(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
-}
-#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4f9e0usize)as*mut u8,();
-(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
-}
-#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]pub fn system_collections_i_enumerable_get_enumerator(&mut self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4fb80usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
-}
-#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::app::unitenum::UnitEnum_TargetEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b4fc00usize)as*mut u8,crate::app::unitenum::UnitEnum_TargetEnumerator;
-(*mut UnitEnum_TargetEnumerator)self as*mut UnitEnum_TargetEnumerator)}
-}
-}
-
-#[cfg(feature="app-unitenum")]impl UnitEnum_TargetEnumerator{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
 #[cfg(feature = "app-unitenum")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitEnum_TargetEnumerator;
     pub use super::UnitEnum_Enumerator;
     pub use super::UnitEnum;
-    pub use super::UnitEnum_TargetEnumerator;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

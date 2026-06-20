@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPerformanceStopwatch_Interface_unity2_raw{use super:: * ;
-pub unsafe fn get_result(this:IPerformanceStopwatch_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]pub trait IIPerformanceStopwatch_InterfaceMethods:IIPerformanceStopwatch_Interface{#[doc="`GetResult()` overload"]fn get_result(self,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult{unsafe{let __receiver= <IPerformanceStopwatch_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IPerformanceStopwatch_Interface as::unity2::ClassIdentity> ::NAME,"GetResult",));
-let inner:extern "C" fn(IPerformanceStopwatch_Interface, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPerformanceStopwatch_Interface, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]pub trait IIPerformanceStopwatch_InterfaceMethods:IIPerformanceStopwatch_Interface{#[doc="`GetResult()` overload"]fn get_result(self,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult{unsafe{let __receiver= <IPerformanceStopwatch_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPerformanceStopwatch_Interface_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]impl<__T:IIPerformanceStopwatch_Interface>IIPerformanceStopwatch_InterfaceMethods for __T{}
 
 #[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]impl IPerformanceStopwatch_Interface{pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]impl IPerformanceStopwatch_Interface{#[doc="Direct (non-virtual) call to `IPerformanceStopwatch_Interface`'s own `GetResult`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_result(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult{let __mi=Self::get_result_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-iperformancestopwatch_interface")]

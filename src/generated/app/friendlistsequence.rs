@@ -47,91 +47,15 @@ pub fn end()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistsequence/FriendListSequence_ProcZoom.md"))]#[::unity2::class(namespace="App",name="FriendListSequence.ProcZoom")]#[parent(crate::app::procinst::ProcInst)]pub struct FriendListSequence_ProcZoom{#[offset(112)]#[rename(name="m_ZoomObject")]pub m_zoom_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_FriendListContent")]pub m_friend_list_content:crate::app::friendlistcontent::FriendListContent, #[offset(128)]#[rename(name="m_Picture")]pub m_picture:crate::unity_engine::sprite::Sprite, #[offset(136)]#[rename(name="m_IsPictureS")]pub m_is_picture_s:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistsequence/FriendListSequence.md"))]#[::unity2::class(namespace="App",name="FriendListSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::friendlistsequence::FriendListSequence>)]pub struct FriendListSequence{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="StampAtlasPath")]pub stamp_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="CharaImageFolder")]pub chara_image_folder: ::unity2::Il2CppString, #[static_field]#[rename(name="CharaImageFolderS")]pub chara_image_folder_s: ::unity2::Il2CppString, #[static_field]#[rename(name="m_OpenTime")]pub m_open_time:f32, #[static_field]#[rename(name="m_PageChangeTime")]pub m_page_change_time:f32, #[offset(120)]#[rename(name="m_FriendListObject")]pub m_friend_list_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_FriendListContent")]pub m_friend_list_content:crate::app::friendlistcontent::FriendListContent, #[offset(136)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(144)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(152)]#[rename(name="m_CharaSpritePathArray")]pub m_chara_sprite_path_array: ::unity2::Array< ::unity2::Il2CppString> , #[offset(160)]#[rename(name="m_CharaSpriteArray")]pub m_chara_sprite_array: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(168)]#[rename(name="m_ActiveCharaSpriteIndex")]pub m_active_chara_sprite_index:i32, #[offset(176)]#[rename(name="m_CharaSpritePathS")]pub m_chara_sprite_path_s: ::unity2::Il2CppString, #[offset(184)]#[rename(name="m_CharaTextureS")]pub m_chara_texture_s:crate::unity_engine::texture2d::Texture2D, #[static_field]#[rename(name="FirstPage")]pub first_page:i32, #[offset(192)]#[rename(name="m_Page")]pub m_page:i32, #[offset(196)]#[rename(name="m_NextPage")]pub m_next_page:i32, #[offset(200)]#[rename(name="m_FriendListDataArray")]pub m_friend_list_data_array:crate::system::collections::generic::list_1::List_1<crate::app::friendlistdata::FriendListData> , #[offset(208)]#[rename(name="m_StampAtlasManager")]pub m_stamp_atlas_manager:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistsequence/FriendListSequence_ProcZoom.md"))]#[::unity2::class(namespace="App",name="FriendListSequence.ProcZoom")]#[parent(crate::app::procinst::ProcInst)]pub struct FriendListSequence_ProcZoom{#[offset(112)]#[rename(name="m_ZoomObject")]pub m_zoom_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_FriendListContent")]pub m_friend_list_content:crate::app::friendlistcontent::FriendListContent, #[offset(128)]#[rename(name="m_Picture")]pub m_picture:crate::unity_engine::sprite::Sprite, #[offset(136)]#[rename(name="m_IsPictureS")]pub m_is_picture_s:bool,}
 
 }
 
 #[cfg(feature = "app-friendlistsequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-friendlistsequence")]impl FriendListSequence_ProcZoom{#[doc="`CreateBindS(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::texture2d::Texture2D, crate::app::friendlistcontent::FriendListContent)` overload"]pub fn create_bind_s(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,zoom_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,texture:impl::core::convert::Into<crate::unity_engine::texture2d::Texture2D> ,friend_list_content:impl::core::convert::Into<crate::app::friendlistcontent::FriendListContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e65c30usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(zoom_object),(crate::unity_engine::texture2d::Texture2D)::core::convert::Into::into(texture),(crate::app::friendlistcontent::FriendListContent)::core::convert::Into::into(friend_list_content))}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::sprite::Sprite, bool, crate::app::friendlistcontent::FriendListContent)` overload"]pub fn create_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,zoom_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,picture:impl::core::convert::Into<crate::unity_engine::sprite::Sprite> ,is_picture_s:impl::core::convert::Into<bool> ,friend_list_content:impl::core::convert::Into<crate::app::friendlistcontent::FriendListContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e65cf0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(zoom_object),(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(picture),(bool)::core::convert::Into::into(is_picture_s),(crate::app::friendlistcontent::FriendListContent)::core::convert::Into::into(friend_list_content))}
-}
-}
-
-#[cfg(feature="app-friendlistsequence")]pub trait IFriendListSequence_ProcZoomMethods:IFriendListSequence_ProcZoom{#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65560usize)as*mut u8,();
-(FriendListSequence_ProcZoom)__receiver)}
-}
-#[doc="`WaitOpen()` overload"]fn wait_open(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65840usize)as*mut u8,();
-(FriendListSequence_ProcZoom)__receiver)}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e658d0usize)as*mut u8,();
-(FriendListSequence_ProcZoom)__receiver)}
-}
-#[doc="`WaitClose()` overload"]fn wait_close(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65af0usize)as*mut u8,();
-(FriendListSequence_ProcZoom)__receiver)}
-}
-#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65bc0usize)as*mut u8,();
-(FriendListSequence_ProcZoom)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66180usize)as*mut u8,();
-(FriendListSequence_ProcZoom)__receiver)}
-}
-}
-
-#[cfg(feature="app-friendlistsequence")]impl<__T:IFriendListSequence_ProcZoom>IFriendListSequence_ProcZoomMethods for __T{}
-
-#[cfg(feature="app-friendlistsequence")]impl FriendListSequence_ProcZoom{pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn wait_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn wait_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_bind_s_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-friendlistsequence")]impl FriendListSequence_ProcZoom{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FriendListSequence_ProcZoom), ::core::stringify!(new),));
- <Self as IFriendListSequence_ProcZoomMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-friendlistsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FriendListSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:FriendListSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <FriendListSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(FriendListSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:FriendListSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <FriendListSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(FriendListSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-friendlistsequence")]impl FriendListSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22737d0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
@@ -139,10 +63,28 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-friendlistsequence")]pub trait IFriendListSequenceMethods:IFriendListSequence{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <FriendListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FriendListSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <FriendListSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(FriendListSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <FriendListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FriendListSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <FriendListSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(FriendListSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsLoadingPrefab()` overload"]fn is_loading_prefab(self,)->bool{unsafe{let __receiver= <FriendListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2270fb0usize)as*mut u8,bool;
@@ -223,6 +165,14 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 }
 
+#[cfg(feature="app-friendlistsequence")]impl FriendListSequence{#[doc="Direct (non-virtual) call to `FriendListSequence`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FriendListSequence`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-friendlistsequence")]impl FriendListSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(FriendListSequence), ::core::stringify!(new),));
@@ -230,16 +180,69 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-friendlistsequence")]impl FriendListSequence_ProcZoom{#[doc="`CreateBindS(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::texture2d::Texture2D, crate::app::friendlistcontent::FriendListContent)` overload"]pub fn create_bind_s(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,zoom_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,texture:impl::core::convert::Into<crate::unity_engine::texture2d::Texture2D> ,friend_list_content:impl::core::convert::Into<crate::app::friendlistcontent::FriendListContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e65c30usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(zoom_object),(crate::unity_engine::texture2d::Texture2D)::core::convert::Into::into(texture),(crate::app::friendlistcontent::FriendListContent)::core::convert::Into::into(friend_list_content))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::sprite::Sprite, bool, crate::app::friendlistcontent::FriendListContent)` overload"]pub fn create_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,zoom_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,picture:impl::core::convert::Into<crate::unity_engine::sprite::Sprite> ,is_picture_s:impl::core::convert::Into<bool> ,friend_list_content:impl::core::convert::Into<crate::app::friendlistcontent::FriendListContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e65cf0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(zoom_object),(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(picture),(bool)::core::convert::Into::into(is_picture_s),(crate::app::friendlistcontent::FriendListContent)::core::convert::Into::into(friend_list_content))}
+}
+}
+
+#[cfg(feature="app-friendlistsequence")]pub trait IFriendListSequence_ProcZoomMethods:IFriendListSequence_ProcZoom{#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65560usize)as*mut u8,();
+(FriendListSequence_ProcZoom)__receiver)}
+}
+#[doc="`WaitOpen()` overload"]fn wait_open(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65840usize)as*mut u8,();
+(FriendListSequence_ProcZoom)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e658d0usize)as*mut u8,();
+(FriendListSequence_ProcZoom)__receiver)}
+}
+#[doc="`WaitClose()` overload"]fn wait_close(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65af0usize)as*mut u8,();
+(FriendListSequence_ProcZoom)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65bc0usize)as*mut u8,();
+(FriendListSequence_ProcZoom)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FriendListSequence_ProcZoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66180usize)as*mut u8,();
+(FriendListSequence_ProcZoom)__receiver)}
+}
+}
+
+#[cfg(feature="app-friendlistsequence")]impl<__T:IFriendListSequence_ProcZoom>IFriendListSequence_ProcZoomMethods for __T{}
+
+#[cfg(feature="app-friendlistsequence")]impl FriendListSequence_ProcZoom{pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn wait_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn wait_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_s_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-friendlistsequence")]impl FriendListSequence_ProcZoom{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FriendListSequence_ProcZoom), ::core::stringify!(new),));
+ <Self as IFriendListSequence_ProcZoomMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-friendlistsequence")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::FriendListSequence_Label;
-    pub use super::FriendListSequence_ProcZoom;
-    pub use super::IFriendListSequence_ProcZoom;
-    pub use super::IFriendListSequence_ProcZoomMethods;
     pub use super::FriendListSequence;
     pub use super::IFriendListSequence;
     pub use super::IFriendListSequenceMethods;
+    pub use super::FriendListSequence_ProcZoom;
+    pub use super::IFriendListSequence_ProcZoom;
+    pub use super::IFriendListSequence_ProcZoomMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

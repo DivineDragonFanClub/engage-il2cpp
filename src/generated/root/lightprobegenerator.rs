@@ -21,9 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/lightprobegenerator/LightProbeGenerator_LightProbeArea.md"))]#[::unity2::class(namespace="",name="LightProbeGenerator.LightProbeArea")]#[parent(crate::system::object::Object)]pub struct LightProbeGenerator_LightProbeArea{#[offset(16)]#[rename(name="ProbeVolume")]pub probe_volume:crate::unity_engine::bounds::Bounds, #[offset(40)]#[rename(name="Subdivisions")]pub subdivisions:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="RandomCount")]pub random_count:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/lightprobegenerator/LightProbeGenerator_LightProbePlacementType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct LightProbeGenerator_LightProbePlacementType{pub value:i32,}
 impl::unity2::ClassIdentity for LightProbeGenerator_LightProbePlacementType{const NAMESPACE: &'static str="";
 const NAME: &'static str="LightProbeGenerator.LightProbePlacementType";
@@ -42,28 +39,13 @@ pub fn random()->Self{Self{value:1}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/lightprobegenerator/LightProbeGenerator.md"))]#[::unity2::class(namespace="",name="LightProbeGenerator")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct LightProbeGenerator{#[offset(24)]#[rename(name="LightProbeVolumes")]pub light_probe_volumes: ::unity2::Array<crate::root::lightprobegenerator::LightProbeGenerator_LightProbeArea> , #[offset(32)]#[rename(name="PlacementAlgorithm")]pub placement_algorithm:crate::root::lightprobegenerator::LightProbeGenerator_LightProbePlacementType,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/lightprobegenerator/LightProbeGenerator_LightProbeArea.md"))]#[::unity2::class(namespace="",name="LightProbeGenerator.LightProbeArea")]#[parent(crate::system::object::Object)]pub struct LightProbeGenerator_LightProbeArea{#[offset(16)]#[rename(name="ProbeVolume")]pub probe_volume:crate::unity_engine::bounds::Bounds, #[offset(40)]#[rename(name="Subdivisions")]pub subdivisions:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="RandomCount")]pub random_count:i32,}
+
 }
 
 #[cfg(feature = "root-lightprobegenerator-types")]
 pub use __types::*;
-
-#[cfg(feature="root-lightprobegenerator")]pub trait ILightProbeGenerator_LightProbeAreaMethods:ILightProbeGenerator_LightProbeArea{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LightProbeGenerator_LightProbeArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7b20usize)as*mut u8,();
-(LightProbeGenerator_LightProbeArea)__receiver)}
-}
-}
-
-#[cfg(feature="root-lightprobegenerator")]impl<__T:ILightProbeGenerator_LightProbeArea>ILightProbeGenerator_LightProbeAreaMethods for __T{}
-
-#[cfg(feature="root-lightprobegenerator")]impl LightProbeGenerator_LightProbeArea{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="root-lightprobegenerator")]impl LightProbeGenerator_LightProbeArea{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(LightProbeGenerator_LightProbeArea), ::core::stringify!(new),));
- <Self as ILightProbeGenerator_LightProbeAreaMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="root-lightprobegenerator")]pub trait ILightProbeGeneratorMethods:ILightProbeGenerator{#[doc="`GenProbes()` overload"]fn gen_probes(self,)->(){unsafe{let __receiver= <LightProbeGenerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1beb5f0usize)as*mut u8,();
@@ -98,16 +80,34 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root-lightprobegenerator")]pub trait ILightProbeGenerator_LightProbeAreaMethods:ILightProbeGenerator_LightProbeArea{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LightProbeGenerator_LightProbeArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7b20usize)as*mut u8,();
+(LightProbeGenerator_LightProbeArea)__receiver)}
+}
+}
+
+#[cfg(feature="root-lightprobegenerator")]impl<__T:ILightProbeGenerator_LightProbeArea>ILightProbeGenerator_LightProbeAreaMethods for __T{}
+
+#[cfg(feature="root-lightprobegenerator")]impl LightProbeGenerator_LightProbeArea{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root-lightprobegenerator")]impl LightProbeGenerator_LightProbeArea{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LightProbeGenerator_LightProbeArea), ::core::stringify!(new),));
+ <Self as ILightProbeGenerator_LightProbeAreaMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root-lightprobegenerator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LightProbeGenerator_LightProbeArea;
-    pub use super::ILightProbeGenerator_LightProbeArea;
-    pub use super::ILightProbeGenerator_LightProbeAreaMethods;
     pub use super::LightProbeGenerator_LightProbePlacementType;
     pub use super::LightProbeGenerator;
     pub use super::ILightProbeGenerator;
     pub use super::ILightProbeGeneratorMethods;
+    pub use super::LightProbeGenerator_LightProbeArea;
+    pub use super::ILightProbeGenerator_LightProbeArea;
+    pub use super::ILightProbeGenerator_LightProbeAreaMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

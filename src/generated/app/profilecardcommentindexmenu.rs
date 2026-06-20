@@ -21,12 +21,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentIndexMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ProfileCardCommentIndexMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler, #[offset(208)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DisposeEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentIndexMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardCommentIndexMenu_DisposeEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardCommentIndexMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for ProfileCardCommentIndexMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCardCommentIndexMenu.Result2";
@@ -45,42 +39,87 @@ pub fn cancel()->Self{Self{value:1}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentIndexMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardCommentIndexMenu_DecideEventHandler{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentIndexMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardCommentIndexMenu_DisposeEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentIndexMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ProfileCardCommentIndexMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler, #[offset(208)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DisposeEventHandler,}
+
 }
 
 #[cfg(feature = "app-profilecardcommentindexmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-profilecardcommentindexmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardCommentIndexMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:ProfileCardCommentIndexMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-profilecardcommentindexmenu")]pub trait IProfileCardCommentIndexMenu_DecideEventHandlerMethods:IProfileCardCommentIndexMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22671b0usize)as*mut u8,();
+(ProfileCardCommentIndexMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2, i32)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",30usize,__vt.len(), <ProfileCardCommentIndexMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(ProfileCardCommentIndexMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <ProfileCardCommentIndexMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(ProfileCardCommentIndexMenu_DecideEventHandler,crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:ProfileCardCommentIndexMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver, ::core::convert::Into::into(result), ::core::convert::Into::into(index),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-profilecardcommentindexmenu")]impl<__T:IProfileCardCommentIndexMenu_DecideEventHandler>IProfileCardCommentIndexMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `ProfileCardCommentIndexMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,result:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2,index:i32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),result,index, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardCommentIndexMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardCommentIndexMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-profilecardcommentindexmenu")]pub trait IProfileCardCommentIndexMenu_DisposeEventHandlerMethods:IProfileCardCommentIndexMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2267510usize)as*mut u8,();
+(ProfileCardCommentIndexMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",51usize,__vt.len(), <ProfileCardCommentIndexMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(ProfileCardCommentIndexMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <ProfileCardCommentIndexMenu_DisposeEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(ProfileCardCommentIndexMenu_DisposeEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:ProfileCardCommentIndexMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <ProfileCardCommentIndexMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(ProfileCardCommentIndexMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-profilecardcommentindexmenu")]impl<__T:IProfileCardCommentIndexMenu_DisposeEventHandler>IProfileCardCommentIndexMenu_DisposeEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu_DisposeEventHandler{#[doc="Direct (non-virtual) call to `ProfileCardCommentIndexMenu_DisposeEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardCommentIndexMenu_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardCommentIndexMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DisposeEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,initial_index:impl::core::convert::Into<i32> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DisposeEventHandler>)->crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x230e410usize)as*mut u8,crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu;
@@ -96,7 +135,16 @@ inner(this,__mi)}
 (ProfileCardCommentIndexMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(i32)::core::convert::Into::into(initial_index),(crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardCommentIndexMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardCommentIndexMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <ProfileCardCommentIndexMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(ProfileCardCommentIndexMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetMenuItemMid(i32, ::unity2::Il2CppString)` overload"]fn set_menu_item_mid(self,menu_item_index:impl::core::convert::Into<i32> ,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x230ea60usize)as*mut u8,();
@@ -107,10 +155,28 @@ __ProfileCardCommentIndexMenu_unity2_raw::get_name(__receiver, ::core::option::O
 (ProfileCardCommentIndexMenu)__receiver)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardCommentIndexMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardCommentIndexMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <ProfileCardCommentIndexMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(ProfileCardCommentIndexMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardCommentIndexMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ProfileCardCommentIndexMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(ProfileCardCommentIndexMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -126,6 +192,17 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu{#[doc="Direct (non-virtual) call to `ProfileCardCommentIndexMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ProfileCardCommentIndexMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ProfileCardCommentIndexMenu`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, i32, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler, crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DisposeEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,initial_index:i32,decide_event_handler:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler,dispose_event_handler:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DisposeEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(ProfileCardCommentIndexMenu), ::core::stringify!(new),));
@@ -133,89 +210,19 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-profilecardcommentindexmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardCommentIndexMenu_DisposeEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:ProfileCardCommentIndexMenu_DisposeEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <ProfileCardCommentIndexMenu_DisposeEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(ProfileCardCommentIndexMenu_DisposeEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-profilecardcommentindexmenu")]pub trait IProfileCardCommentIndexMenu_DisposeEventHandlerMethods:IProfileCardCommentIndexMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2267510usize)as*mut u8,();
-(ProfileCardCommentIndexMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardCommentIndexMenu_DisposeEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-profilecardcommentindexmenu")]impl<__T:IProfileCardCommentIndexMenu_DisposeEventHandler>IProfileCardCommentIndexMenu_DisposeEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardCommentIndexMenu_DisposeEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardCommentIndexMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-profilecardcommentindexmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardCommentIndexMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:ProfileCardCommentIndexMenu_DecideEventHandler,result:crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <ProfileCardCommentIndexMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(ProfileCardCommentIndexMenu_DecideEventHandler,crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,result,index,__mi)}
-}
-
-#[cfg(feature="app-profilecardcommentindexmenu")]pub trait IProfileCardCommentIndexMenu_DecideEventHandlerMethods:IProfileCardCommentIndexMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22671b0usize)as*mut u8,();
-(ProfileCardCommentIndexMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2, i32)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardCommentIndexMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardCommentIndexMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::convert::Into::into(index), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-profilecardcommentindexmenu")]impl<__T:IProfileCardCommentIndexMenu_DecideEventHandler>IProfileCardCommentIndexMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardcommentindexmenu")]impl ProfileCardCommentIndexMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardCommentIndexMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardCommentIndexMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-profilecardcommentindexmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardCommentIndexMenu;
-    pub use super::IProfileCardCommentIndexMenu;
-    pub use super::IProfileCardCommentIndexMenuMethods;
-    pub use super::ProfileCardCommentIndexMenu_DisposeEventHandler;
-    pub use super::IProfileCardCommentIndexMenu_DisposeEventHandler;
-    pub use super::IProfileCardCommentIndexMenu_DisposeEventHandlerMethods;
     pub use super::ProfileCardCommentIndexMenu_Result2;
     pub use super::ProfileCardCommentIndexMenu_DecideEventHandler;
     pub use super::IProfileCardCommentIndexMenu_DecideEventHandler;
     pub use super::IProfileCardCommentIndexMenu_DecideEventHandlerMethods;
+    pub use super::ProfileCardCommentIndexMenu_DisposeEventHandler;
+    pub use super::IProfileCardCommentIndexMenu_DisposeEventHandler;
+    pub use super::IProfileCardCommentIndexMenu_DisposeEventHandlerMethods;
+    pub use super::ProfileCardCommentIndexMenu;
+    pub use super::IProfileCardCommentIndexMenu;
+    pub use super::IProfileCardCommentIndexMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

@@ -16,19 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-comparer-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-comparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Comparer_unity2_raw{use super:: * ;
-pub unsafe fn compare(this:Comparer,a:crate::system::object::Object,b:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Comparer as::unity2::ClassIdentity> ::NAME,"Compare",));
-let inner:extern "C" fn(Comparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,a,b,__mi)}
-}
-
 #[cfg(feature="system-collections-comparer")]impl Comparer{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31ddab0usize)as*mut u8,();
 )}
 }
@@ -39,7 +26,16 @@ inner(this,a,b,__mi)}
 (Comparer)__receiver)}
 }
 #[doc="`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]fn compare(self,a:impl::core::convert::Into<crate::system::object::Object> ,b:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <Comparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Comparer_unity2_raw::compare(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Comparer as::unity2::ClassIdentity> ::NAME,"Compare",));
+let __inner:extern "C" fn(Comparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b),__mi)}
+}
 }
 }
 
@@ -48,6 +44,11 @@ __Comparer_unity2_raw::compare(__receiver, ::core::convert::Into::into(a), ::cor
 #[cfg(feature="system-collections-comparer")]impl Comparer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-collections-comparer")]impl Comparer{#[doc="Direct (non-virtual) call to `Comparer`'s own `Compare`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compare(this:impl::core::convert::Into< ::unity2::IlInstance> ,a:crate::system::object::Object,b:crate::system::object::Object,)->i32{let __mi=Self::compare_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),a,b, ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-collections-comparer")]impl Comparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

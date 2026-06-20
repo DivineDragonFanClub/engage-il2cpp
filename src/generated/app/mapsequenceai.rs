@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceai/MapSequenceAI.md"))]#[::unity2::class(namespace="App",name="MapSequenceAI")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequenceai::MapSequenceAI>)]pub struct MapSequenceAI{#[static_field]#[rename(name="s_AiThread")]pub s_ai_thread:crate::app::mapaithread::MapAiThread, #[offset(116)]#[rename(name="m_LastMindX")]pub m_last_mind_x:i32, #[offset(120)]#[rename(name="m_LastMindZ")]pub m_last_mind_z:i32, #[offset(124)]#[rename(name="m_IsOrderUnitEngageOrGodChange")]pub m_is_order_unit_engage_or_god_change:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceai/MapSequenceAI_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceAI_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceAI_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceAI.Label";
@@ -47,23 +44,13 @@ pub fn end()->Self{Self{value:7}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceai/MapSequenceAI.md"))]#[::unity2::class(namespace="App",name="MapSequenceAI")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequenceai::MapSequenceAI>)]pub struct MapSequenceAI{#[static_field]#[rename(name="s_AiThread")]pub s_ai_thread:crate::app::mapaithread::MapAiThread, #[offset(116)]#[rename(name="m_LastMindX")]pub m_last_mind_x:i32, #[offset(120)]#[rename(name="m_LastMindZ")]pub m_last_mind_z:i32, #[offset(124)]#[rename(name="m_IsOrderUnitEngageOrGodChange")]pub m_is_order_unit_engage_or_god_change:bool,}
+
 }
 
 #[cfg(feature = "app-mapsequenceai-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapsequenceai")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceAI_unity2_raw{use super:: * ;
-pub unsafe fn on_persistent(this:MapSequenceAI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <MapSequenceAI as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
-let inner:extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-mapsequenceai")]impl MapSequenceAI{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23b18f0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -101,7 +88,16 @@ inner(this,__mi)}
 (MapSequenceAI)__receiver)}
 }
 #[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <MapSequenceAI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceAI_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapSequenceAI as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
+let __inner:extern "C" fn(MapSequenceAI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Think()` overload"]fn think(self,)->(){unsafe{let __receiver= <MapSequenceAI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23af880usize)as*mut u8,();
@@ -209,6 +205,11 @@ pub fn initialize_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn finalize_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
 }
 
+#[cfg(feature="app-mapsequenceai")]impl MapSequenceAI{#[doc="Direct (non-virtual) call to `MapSequenceAI`'s own `OnPersistent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_persistent(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_persistent_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapsequenceai")]impl MapSequenceAI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapSequenceAI), ::core::stringify!(new),));
@@ -219,10 +220,10 @@ this}
 #[cfg(feature = "app-mapsequenceai")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSequenceAI_Label;
     pub use super::MapSequenceAI;
     pub use super::IMapSequenceAI;
     pub use super::IMapSequenceAIMethods;
-    pub use super::MapSequenceAI_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

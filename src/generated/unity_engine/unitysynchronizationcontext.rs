@@ -11,9 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext.md"))]#[::unity2::class(namespace="UnityEngine",name="UnitySynchronizationContext")]pub struct UnitySynchronizationContext{#[offset(24)]#[rename(name="m_AsyncWorkQueue")]pub m_async_work_queue:crate::system::collections::generic::list_1::List_1<crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest> , #[offset(32)]#[rename(name="m_CurrentFrameWork")]pub m_current_frame_work:crate::system::collections::generic::list_1::List_1<crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest> , #[offset(40)]#[rename(name="m_MainThreadID")]pub m_main_thread_id:i32, #[offset(44)]#[rename(name="m_TrackedCount")]pub m_tracked_count:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext_WorkRequest.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct UnitySynchronizationContext_WorkRequest{}
 impl::unity2::ClassIdentity for UnitySynchronizationContext_WorkRequest{const NAMESPACE: &'static str="UnityEngine";
 const NAME: &'static str="UnitySynchronizationContext.WorkRequest";
@@ -24,32 +21,20 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for UnitySynchronizationContext_WorkRequest{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext.md"))]#[::unity2::class(namespace="UnityEngine",name="UnitySynchronizationContext")]pub struct UnitySynchronizationContext{#[offset(24)]#[rename(name="m_AsyncWorkQueue")]pub m_async_work_queue:crate::system::collections::generic::list_1::List_1<crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest> , #[offset(32)]#[rename(name="m_CurrentFrameWork")]pub m_current_frame_work:crate::system::collections::generic::list_1::List_1<crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest> , #[offset(40)]#[rename(name="m_MainThreadID")]pub m_main_thread_id:i32, #[offset(44)]#[rename(name="m_TrackedCount")]pub m_tracked_count:i32,}
+
 }
 
 #[cfg(feature = "unity_engine-unitysynchronizationcontext-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-unitysynchronizationcontext")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitySynchronizationContext_unity2_raw{use super:: * ;
-pub unsafe fn operation_started(this:UnitySynchronizationContext,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <UnitySynchronizationContext as::unity2::ClassIdentity> ::NAME,"OperationStarted",));
-let inner:extern "C" fn(UnitySynchronizationContext, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn operation_completed(this:UnitySynchronizationContext,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <UnitySynchronizationContext as::unity2::ClassIdentity> ::NAME,"OperationCompleted",));
-let inner:extern "C" fn(UnitySynchronizationContext, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="unity_engine-unitysynchronizationcontext")]impl UnitySynchronizationContext_WorkRequest{#[doc="`Invoke()` overload"]pub fn invoke(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3795670usize)as*mut u8,();
+(*mut UnitySynchronizationContext_WorkRequest)self as*mut UnitySynchronizationContext_WorkRequest)}
+}
+}
+
+#[cfg(feature="unity_engine-unitysynchronizationcontext")]impl UnitySynchronizationContext_WorkRequest{pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
 #[cfg(feature="unity_engine-unitysynchronizationcontext")]impl UnitySynchronizationContext{#[doc="`InitializeSynchronizationContext()` overload"]pub fn initialize_synchronization_context()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37957e0usize)as*mut u8,();
@@ -72,10 +57,28 @@ inner(this,__mi)}
 (UnitySynchronizationContext)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest>)::core::convert::Into::into(queue),(i32)::core::convert::Into::into(main_thread_id))}
 }
 #[doc="`OperationStarted()` overload"]fn operation_started(self,)->(){unsafe{let __receiver= <UnitySynchronizationContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitySynchronizationContext_unity2_raw::operation_started(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <UnitySynchronizationContext as::unity2::ClassIdentity> ::NAME,"OperationStarted",));
+let __inner:extern "C" fn(UnitySynchronizationContext, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OperationCompleted()` overload"]fn operation_completed(self,)->(){unsafe{let __receiver= <UnitySynchronizationContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitySynchronizationContext_unity2_raw::operation_completed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <UnitySynchronizationContext as::unity2::ClassIdentity> ::NAME,"OperationCompleted",));
+let __inner:extern "C" fn(UnitySynchronizationContext, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Exec()` overload"]fn exec(self,)->(){unsafe{let __receiver= <UnitySynchronizationContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3795500usize)as*mut u8,();
@@ -100,6 +103,14 @@ pub fn execute_tasks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn execute_pending_tasks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 }
 
+#[cfg(feature="unity_engine-unitysynchronizationcontext")]impl UnitySynchronizationContext{#[doc="Direct (non-virtual) call to `UnitySynchronizationContext`'s own `OperationStarted`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn operation_started(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::operation_started_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnitySynchronizationContext`'s own `OperationCompleted`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn operation_completed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::operation_completed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-unitysynchronizationcontext")]impl UnitySynchronizationContext{#[doc="`.ctor(i32)` — overload selector"]pub fn new(main_thread_id:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(UnitySynchronizationContext), ::core::stringify!(new),));
@@ -112,21 +123,13 @@ this}
 this}
 }
 
-#[cfg(feature="unity_engine-unitysynchronizationcontext")]impl UnitySynchronizationContext_WorkRequest{#[doc="`Invoke()` overload"]pub fn invoke(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3795670usize)as*mut u8,();
-(*mut UnitySynchronizationContext_WorkRequest)self as*mut UnitySynchronizationContext_WorkRequest)}
-}
-}
-
-#[cfg(feature="unity_engine-unitysynchronizationcontext")]impl UnitySynchronizationContext_WorkRequest{pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
 #[cfg(feature = "unity_engine-unitysynchronizationcontext")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitySynchronizationContext_WorkRequest;
     pub use super::UnitySynchronizationContext;
     pub use super::IUnitySynchronizationContext;
     pub use super::IUnitySynchronizationContextMethods;
-    pub use super::UnitySynchronizationContext_WorkRequest;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

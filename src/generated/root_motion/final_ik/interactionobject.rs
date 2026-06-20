@@ -21,18 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionobject/InteractionObject_Multiplier.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionObject.Multiplier")]#[parent(crate::system::object::Object)]pub struct InteractionObject_Multiplier{#[offset(16)]#[rename(name="curve")]pub curve:crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve_Type, #[offset(20)]#[rename(name="multiplier")]pub multiplier:f32, #[offset(24)]#[rename(name="result")]pub result:crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve_Type,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionobject/InteractionObject_AnimatorEvent.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionObject.AnimatorEvent")]#[parent(crate::system::object::Object)]pub struct InteractionObject_AnimatorEvent{#[offset(16)]#[rename(name="animator")]pub animator:crate::unity_engine::animator::Animator, #[offset(24)]#[rename(name="animation")]pub animation:crate::unity_engine::animation::Animation, #[offset(32)]#[rename(name="animationState")]pub animation_state: ::unity2::Il2CppString, #[offset(40)]#[rename(name="crossfadeTime")]pub crossfade_time:f32, #[offset(44)]#[rename(name="layer")]pub layer:i32, #[offset(48)]#[rename(name="resetNormalizedTime")]pub reset_normalized_time:bool, #[static_field]#[rename(name="empty")]pub empty: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionobject/InteractionObject.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionObject")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InteractionObject{#[offset(24)]#[rename(name="otherLookAtTarget")]pub other_look_at_target:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="otherTargetsRoot")]pub other_targets_root:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="positionOffsetSpace")]pub position_offset_space:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="weightCurves")]pub weight_curves: ::unity2::Array<crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve> , #[offset(56)]#[rename(name="multipliers")]pub multipliers: ::unity2::Array<crate::root_motion::final_ik::interactionobject::InteractionObject_Multiplier> , #[offset(64)]#[rename(name="events")]pub events: ::unity2::Array<crate::root_motion::final_ik::interactionobject::InteractionObject_InteractionEvent> , #[offset(88)]#[rename(name="targets")]pub targets: ::unity2::Array<crate::root_motion::final_ik::interactiontarget::InteractionTarget> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionobject/InteractionObject_InteractionEvent.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionObject.InteractionEvent")]#[parent(crate::system::object::Object)]pub struct InteractionObject_InteractionEvent{#[offset(16)]#[rename(name="time")]pub time:f32, #[offset(20)]#[rename(name="pause")]pub pause:bool, #[offset(21)]#[rename(name="pickUp")]pub pick_up:bool, #[offset(24)]#[rename(name="animations")]pub animations: ::unity2::Array<crate::root_motion::final_ik::interactionobject::InteractionObject_AnimatorEvent> , #[offset(32)]#[rename(name="messages")]pub messages: ::unity2::Array<crate::root_motion::final_ik::interactionobject::InteractionObject_Message> , #[offset(40)]#[rename(name="unityEvent")]pub unity_event:crate::unity_engine::events::unityevent::UnityEvent,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionobject/InteractionObject_WeightCurve_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InteractionObject_WeightCurve_Type{pub value:i32,}
 impl::unity2::ClassIdentity for InteractionObject_WeightCurve_Type{const NAMESPACE: &'static str="RootMotion.FinalIK";
 const NAME: &'static str="InteractionObject.WeightCurve.Type";
@@ -74,64 +62,66 @@ pub fn bend_goal_weight()->Self{Self{value:11}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionobject/InteractionObject_WeightCurve.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionObject.WeightCurve")]#[parent(crate::system::object::Object)]pub struct InteractionObject_WeightCurve{#[offset(16)]#[rename(name="type")]pub r#type:crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve_Type, #[offset(24)]#[rename(name="curve")]pub curve:crate::unity_engine::animationcurve::AnimationCurve,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionobject/InteractionObject.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionObject")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InteractionObject{#[offset(24)]#[rename(name="otherLookAtTarget")]pub other_look_at_target:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="otherTargetsRoot")]pub other_targets_root:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="positionOffsetSpace")]pub position_offset_space:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="weightCurves")]pub weight_curves: ::unity2::Array<crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve> , #[offset(56)]#[rename(name="multipliers")]pub multipliers: ::unity2::Array<crate::root_motion::final_ik::interactionobject::InteractionObject_Multiplier> , #[offset(64)]#[rename(name="events")]pub events: ::unity2::Array<crate::root_motion::final_ik::interactionobject::InteractionObject_InteractionEvent> , #[offset(88)]#[rename(name="targets")]pub targets: ::unity2::Array<crate::root_motion::final_ik::interactiontarget::InteractionTarget> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionobject/InteractionObject_InteractionEvent.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionObject.InteractionEvent")]#[parent(crate::system::object::Object)]pub struct InteractionObject_InteractionEvent{#[offset(16)]#[rename(name="time")]pub time:f32, #[offset(20)]#[rename(name="pause")]pub pause:bool, #[offset(21)]#[rename(name="pickUp")]pub pick_up:bool, #[offset(24)]#[rename(name="animations")]pub animations: ::unity2::Array<crate::root_motion::final_ik::interactionobject::InteractionObject_AnimatorEvent> , #[offset(32)]#[rename(name="messages")]pub messages: ::unity2::Array<crate::root_motion::final_ik::interactionobject::InteractionObject_Message> , #[offset(40)]#[rename(name="unityEvent")]pub unity_event:crate::unity_engine::events::unityevent::UnityEvent,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionobject/InteractionObject_Multiplier.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionObject.Multiplier")]#[parent(crate::system::object::Object)]pub struct InteractionObject_Multiplier{#[offset(16)]#[rename(name="curve")]pub curve:crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve_Type, #[offset(20)]#[rename(name="multiplier")]pub multiplier:f32, #[offset(24)]#[rename(name="result")]pub result:crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve_Type,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionobject/InteractionObject_AnimatorEvent.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionObject.AnimatorEvent")]#[parent(crate::system::object::Object)]pub struct InteractionObject_AnimatorEvent{#[offset(16)]#[rename(name="animator")]pub animator:crate::unity_engine::animator::Animator, #[offset(24)]#[rename(name="animation")]pub animation:crate::unity_engine::animation::Animation, #[offset(32)]#[rename(name="animationState")]pub animation_state: ::unity2::Il2CppString, #[offset(40)]#[rename(name="crossfadeTime")]pub crossfade_time:f32, #[offset(44)]#[rename(name="layer")]pub layer:i32, #[offset(48)]#[rename(name="resetNormalizedTime")]pub reset_normalized_time:bool, #[static_field]#[rename(name="empty")]pub empty: ::unity2::Il2CppString,}
+
 }
 
 #[cfg(feature = "root_motion-final_ik-interactionobject-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]pub trait IInteractionObject_MultiplierMethods:IInteractionObject_Multiplier{#[doc="`GetValue(crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve, f32)` overload"]fn get_value(self,weight_curve:impl::core::convert::Into<crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve> ,timer:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <InteractionObject_Multiplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7850usize)as*mut u8,f32;
-(InteractionObject_Multiplier)__receiver,(crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve)::core::convert::Into::into(weight_curve),(f32)::core::convert::Into::into(timer))}
+#[cfg(feature="root_motion-final_ik-interactionobject")]pub trait IInteractionObject_MessageMethods:IInteractionObject_Message{#[doc="`Send(crate::unity_engine::transform::Transform)` overload"]fn send(self,t:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <InteractionObject_Message as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7730usize)as*mut u8,();
+(InteractionObject_Message)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(t))}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractionObject_Multiplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7890usize)as*mut u8,();
-(InteractionObject_Multiplier)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractionObject_Message as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7840usize)as*mut u8,();
+(InteractionObject_Message)__receiver)}
 }
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl<__T:IInteractionObject_Multiplier>IInteractionObject_MultiplierMethods for __T{}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl<__T:IInteractionObject_Message>IInteractionObject_MessageMethods for __T{}
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_Multiplier{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_Message{pub fn send_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_Multiplier{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_Message{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(InteractionObject_Multiplier), ::core::stringify!(new),));
- <Self as IInteractionObject_MultiplierMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(InteractionObject_Message), ::core::stringify!(new),));
+ <Self as IInteractionObject_MessageMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]pub trait IInteractionObject_AnimatorEventMethods:IInteractionObject_AnimatorEvent{#[doc="`Activate(bool)` overload"]fn activate(self,pick_up:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InteractionObject_AnimatorEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7350usize)as*mut u8,();
-(InteractionObject_AnimatorEvent)__receiver,(bool)::core::convert::Into::into(pick_up))}
+#[cfg(feature="root_motion-final_ik-interactionobject")]pub trait IInteractionObject_WeightCurveMethods:IInteractionObject_WeightCurve{#[doc="`GetValue(f32)` overload"]fn get_value(self,timer:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <InteractionObject_WeightCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7880usize)as*mut u8,f32;
+(InteractionObject_WeightCurve)__receiver,(f32)::core::convert::Into::into(timer))}
 }
-#[doc="`Activate(crate::unity_engine::animator::Animator)` overload"]fn activate_2(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{let __receiver= <InteractionObject_AnimatorEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc74c0usize)as*mut u8,();
-(InteractionObject_AnimatorEvent)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
-}
-#[doc="`Activate(crate::unity_engine::animation::Animation)` overload"]fn activate_3(self,animation:impl::core::convert::Into<crate::unity_engine::animation::Animation>)->(){unsafe{let __receiver= <InteractionObject_AnimatorEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7570usize)as*mut u8,();
-(InteractionObject_AnimatorEvent)__receiver,(crate::unity_engine::animation::Animation)::core::convert::Into::into(animation))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractionObject_AnimatorEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7640usize)as*mut u8,();
-(InteractionObject_AnimatorEvent)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractionObject_WeightCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc78a0usize)as*mut u8,();
+(InteractionObject_WeightCurve)__receiver)}
 }
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl<__T:IInteractionObject_AnimatorEvent>IInteractionObject_AnimatorEventMethods for __T{}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl<__T:IInteractionObject_WeightCurve>IInteractionObject_WeightCurveMethods for __T{}
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_AnimatorEvent{pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn activate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn activate_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_WeightCurve{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_AnimatorEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_WeightCurve{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(InteractionObject_AnimatorEvent), ::core::stringify!(new),));
- <Self as IInteractionObject_AnimatorEventMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(InteractionObject_WeightCurve), ::core::stringify!(new),));
+ <Self as IInteractionObject_WeightCurveMethods> ::ctor(this,);
 this}
 }
 
@@ -311,67 +301,65 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]pub trait IInteractionObject_MessageMethods:IInteractionObject_Message{#[doc="`Send(crate::unity_engine::transform::Transform)` overload"]fn send(self,t:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <InteractionObject_Message as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7730usize)as*mut u8,();
-(InteractionObject_Message)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(t))}
+#[cfg(feature="root_motion-final_ik-interactionobject")]pub trait IInteractionObject_MultiplierMethods:IInteractionObject_Multiplier{#[doc="`GetValue(crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve, f32)` overload"]fn get_value(self,weight_curve:impl::core::convert::Into<crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve> ,timer:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <InteractionObject_Multiplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7850usize)as*mut u8,f32;
+(InteractionObject_Multiplier)__receiver,(crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve)::core::convert::Into::into(weight_curve),(f32)::core::convert::Into::into(timer))}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractionObject_Message as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7840usize)as*mut u8,();
-(InteractionObject_Message)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractionObject_Multiplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7890usize)as*mut u8,();
+(InteractionObject_Multiplier)__receiver)}
 }
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl<__T:IInteractionObject_Message>IInteractionObject_MessageMethods for __T{}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl<__T:IInteractionObject_Multiplier>IInteractionObject_MultiplierMethods for __T{}
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_Message{pub fn send_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_Multiplier{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_Message{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_Multiplier{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(InteractionObject_Message), ::core::stringify!(new),));
- <Self as IInteractionObject_MessageMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(InteractionObject_Multiplier), ::core::stringify!(new),));
+ <Self as IInteractionObject_MultiplierMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]pub trait IInteractionObject_WeightCurveMethods:IInteractionObject_WeightCurve{#[doc="`GetValue(f32)` overload"]fn get_value(self,timer:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <InteractionObject_WeightCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7880usize)as*mut u8,f32;
-(InteractionObject_WeightCurve)__receiver,(f32)::core::convert::Into::into(timer))}
+#[cfg(feature="root_motion-final_ik-interactionobject")]pub trait IInteractionObject_AnimatorEventMethods:IInteractionObject_AnimatorEvent{#[doc="`Activate(bool)` overload"]fn activate(self,pick_up:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InteractionObject_AnimatorEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7350usize)as*mut u8,();
+(InteractionObject_AnimatorEvent)__receiver,(bool)::core::convert::Into::into(pick_up))}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractionObject_WeightCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc78a0usize)as*mut u8,();
-(InteractionObject_WeightCurve)__receiver)}
+#[doc="`Activate(crate::unity_engine::animator::Animator)` overload"]fn activate_2(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{let __receiver= <InteractionObject_AnimatorEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc74c0usize)as*mut u8,();
+(InteractionObject_AnimatorEvent)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
+}
+#[doc="`Activate(crate::unity_engine::animation::Animation)` overload"]fn activate_3(self,animation:impl::core::convert::Into<crate::unity_engine::animation::Animation>)->(){unsafe{let __receiver= <InteractionObject_AnimatorEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7570usize)as*mut u8,();
+(InteractionObject_AnimatorEvent)__receiver,(crate::unity_engine::animation::Animation)::core::convert::Into::into(animation))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractionObject_AnimatorEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7640usize)as*mut u8,();
+(InteractionObject_AnimatorEvent)__receiver)}
 }
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl<__T:IInteractionObject_WeightCurve>IInteractionObject_WeightCurveMethods for __T{}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl<__T:IInteractionObject_AnimatorEvent>IInteractionObject_AnimatorEventMethods for __T{}
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_WeightCurve{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_AnimatorEvent{pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn activate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn activate_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_WeightCurve{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="root_motion-final_ik-interactionobject")]impl InteractionObject_AnimatorEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(InteractionObject_WeightCurve), ::core::stringify!(new),));
- <Self as IInteractionObject_WeightCurveMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(InteractionObject_AnimatorEvent), ::core::stringify!(new),));
+ <Self as IInteractionObject_AnimatorEventMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "root_motion-final_ik-interactionobject")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InteractionObject_Multiplier;
-    pub use super::IInteractionObject_Multiplier;
-    pub use super::IInteractionObject_MultiplierMethods;
-    pub use super::InteractionObject_AnimatorEvent;
-    pub use super::IInteractionObject_AnimatorEvent;
-    pub use super::IInteractionObject_AnimatorEventMethods;
-    pub use super::InteractionObject;
-    pub use super::IInteractionObject;
-    pub use super::IInteractionObjectMethods;
-    pub use super::InteractionObject_InteractionEvent;
-    pub use super::IInteractionObject_InteractionEvent;
-    pub use super::IInteractionObject_InteractionEventMethods;
     pub use super::InteractionObject_WeightCurve_Type;
     pub use super::InteractionObject_Message;
     pub use super::IInteractionObject_Message;
@@ -379,6 +367,18 @@ pub mod prelude {
     pub use super::InteractionObject_WeightCurve;
     pub use super::IInteractionObject_WeightCurve;
     pub use super::IInteractionObject_WeightCurveMethods;
+    pub use super::InteractionObject;
+    pub use super::IInteractionObject;
+    pub use super::IInteractionObjectMethods;
+    pub use super::InteractionObject_InteractionEvent;
+    pub use super::IInteractionObject_InteractionEvent;
+    pub use super::IInteractionObject_InteractionEventMethods;
+    pub use super::InteractionObject_Multiplier;
+    pub use super::IInteractionObject_Multiplier;
+    pub use super::IInteractionObject_MultiplierMethods;
+    pub use super::InteractionObject_AnimatorEvent;
+    pub use super::IInteractionObject_AnimatorEvent;
+    pub use super::IInteractionObject_AnimatorEventMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

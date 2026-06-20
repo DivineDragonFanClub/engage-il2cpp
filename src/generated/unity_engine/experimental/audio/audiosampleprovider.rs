@@ -13,15 +13,51 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/audio/audiosampleprovider/AudioSampleProvider.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Audio",name="AudioSampleProvider")]#[parent(crate::system::object::Object)]pub struct AudioSampleProvider{#[offset(16)]#[rename(name="sampleFramesAvailable")]pub sample_frames_available:crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider_SampleFramesHandler, #[offset(24)]#[rename(name="sampleFramesOverflow")]pub sample_frames_overflow:crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider_SampleFramesHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/audio/audiosampleprovider/AudioSampleProvider_SampleFramesHandler.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Audio",name="AudioSampleProvider.SampleFramesHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AudioSampleProvider_SampleFramesHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/audio/audiosampleprovider/AudioSampleProvider.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Audio",name="AudioSampleProvider")]#[parent(crate::system::object::Object)]pub struct AudioSampleProvider{#[offset(16)]#[rename(name="sampleFramesAvailable")]pub sample_frames_available:crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider_SampleFramesHandler, #[offset(24)]#[rename(name="sampleFramesOverflow")]pub sample_frames_overflow:crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider_SampleFramesHandler,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]pub trait IAudioSampleProvider_SampleFramesHandlerMethods:IAudioSampleProvider_SampleFramesHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AudioSampleProvider_SampleFramesHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f520usize)as*mut u8,();
+(AudioSampleProvider_SampleFramesHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider, u32)` overload"]fn invoke(self,provider:impl::core::convert::Into<crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider> ,sample_frame_count:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AudioSampleProvider_SampleFramesHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AudioSampleProvider_SampleFramesHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(AudioSampleProvider_SampleFramesHandler,crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider,u32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(provider), ::core::convert::Into::into(sample_frame_count),__mi)}
+}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]impl<__T:IAudioSampleProvider_SampleFramesHandler>IAudioSampleProvider_SampleFramesHandlerMethods for __T{}
+
+#[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]impl AudioSampleProvider_SampleFramesHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]impl AudioSampleProvider_SampleFramesHandler{#[doc="Direct (non-virtual) call to `AudioSampleProvider_SampleFramesHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,provider:crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider,sample_frame_count:u32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider,u32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),provider,sample_frame_count, ::core::option::Option::None)}
+}
+
+#[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]impl AudioSampleProvider_SampleFramesHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AudioSampleProvider_SampleFramesHandler), ::core::stringify!(new),));
+ <Self as IAudioSampleProvider_SampleFramesHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]pub trait IAudioSampleProviderMethods:IAudioSampleProvider{#[doc="`InvokeSampleFramesAvailable(i32)` overload"]fn invoke_sample_frames_available(self,sample_frame_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AudioSampleProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3eda0usize)as*mut u8,();
@@ -39,50 +75,15 @@ pub use __types::*;
 pub fn invoke_sample_frames_overflow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AudioSampleProvider_SampleFramesHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:AudioSampleProvider_SampleFramesHandler,provider:crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider,sample_frame_count:u32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <AudioSampleProvider_SampleFramesHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(AudioSampleProvider_SampleFramesHandler,crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider,u32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,provider,sample_frame_count,__mi)}
-}
-
-#[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]pub trait IAudioSampleProvider_SampleFramesHandlerMethods:IAudioSampleProvider_SampleFramesHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AudioSampleProvider_SampleFramesHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f520usize)as*mut u8,();
-(AudioSampleProvider_SampleFramesHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider, u32)` overload"]fn invoke(self,provider:impl::core::convert::Into<crate::unity_engine::experimental::audio::audiosampleprovider::AudioSampleProvider> ,sample_frame_count:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AudioSampleProvider_SampleFramesHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AudioSampleProvider_SampleFramesHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(provider), ::core::convert::Into::into(sample_frame_count), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]impl<__T:IAudioSampleProvider_SampleFramesHandler>IAudioSampleProvider_SampleFramesHandlerMethods for __T{}
-
-#[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]impl AudioSampleProvider_SampleFramesHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-experimental-audio-audiosampleprovider")]impl AudioSampleProvider_SampleFramesHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AudioSampleProvider_SampleFramesHandler), ::core::stringify!(new),));
- <Self as IAudioSampleProvider_SampleFramesHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AudioSampleProvider;
-    pub use super::IAudioSampleProvider;
-    pub use super::IAudioSampleProviderMethods;
     pub use super::AudioSampleProvider_SampleFramesHandler;
     pub use super::IAudioSampleProvider_SampleFramesHandler;
     pub use super::IAudioSampleProvider_SampleFramesHandlerMethods;
+    pub use super::AudioSampleProvider;
+    pub use super::IAudioSampleProvider;
+    pub use super::IAudioSampleProviderMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

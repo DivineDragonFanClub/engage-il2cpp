@@ -28,120 +28,109 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "combat-cameracontrollerconfrontation-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-cameracontrollerconfrontation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CameraControllerConfrontation_unity2_raw{use super:: * ;
-pub unsafe fn get_transition_time_start(this:CameraControllerConfrontation,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"get_TransitionTimeStart",));
-let inner:extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_transition_time_return(this:CameraControllerConfrontation,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"get_TransitionTimeReturn",));
-let inner:extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_is_active_v_cam(this:CameraControllerConfrontation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"get_IsActiveVCam",));
-let inner:extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn check_usable(this:CameraControllerConfrontation,is_routine:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"CheckUsable",));
-let inner:extern "C" fn(CameraControllerConfrontation,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_routine,__mi)}
-pub unsafe fn start_transition(this:CameraControllerConfrontation,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"StartTransition",));
-let inner:extern "C" fn(CameraControllerConfrontation,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,next_cam,__mi)}
-pub unsafe fn change_taget(this:CameraControllerConfrontation,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"ChangeTaget",));
-let inner:extern "C" fn(CameraControllerConfrontation,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,next_cam,__mi)}
-pub unsafe fn return_transition(this:CameraControllerConfrontation,current_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"ReturnTransition",));
-let inner:extern "C" fn(CameraControllerConfrontation,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,current_cam,__mi)}
-pub unsafe fn get_camera_targets(this:CameraControllerConfrontation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<i32>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"GetCameraTargets",));
-let inner:extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod,)-> ::unity2::Array<i32> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="combat-cameracontrollerconfrontation")]pub trait ICameraControllerConfrontationMethods:ICameraControllerConfrontation{#[doc="`get_CurveLength()` overload"]fn get_curve_length(self,)->f32{unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25afb90usize)as*mut u8,f32;
 (CameraControllerConfrontation)__receiver)}
 }
 #[doc="`get_TransitionTimeStart()` overload"]fn get_transition_time_start(self,)->f32{unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CameraControllerConfrontation_unity2_raw::get_transition_time_start(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"get_TransitionTimeStart",));
+let __inner:extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_TransitionTimeReturn()` overload"]fn get_transition_time_return(self,)->f32{unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CameraControllerConfrontation_unity2_raw::get_transition_time_return(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"get_TransitionTimeReturn",));
+let __inner:extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_IsActiveVCam()` overload"]fn get_is_active_v_cam(self,)->bool{unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CameraControllerConfrontation_unity2_raw::get_is_active_v_cam(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"get_IsActiveVCam",));
+let __inner:extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CheckUsable(bool)` overload"]fn check_usable(self,is_routine:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CameraControllerConfrontation_unity2_raw::check_usable(__receiver, ::core::convert::Into::into(is_routine), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"CheckUsable",));
+let __inner:extern "C" fn(CameraControllerConfrontation,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_routine),__mi)}
+}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25afeb0usize)as*mut u8,();
 (CameraControllerConfrontation)__receiver)}
 }
 #[doc="`StartTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"]fn start_transition(self,next_cam:impl::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CameraControllerConfrontation_unity2_raw::start_transition(__receiver, ::core::convert::Into::into(next_cam), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"StartTransition",));
+let __inner:extern "C" fn(CameraControllerConfrontation,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(next_cam),__mi)}
+}
 }
 #[doc="`ChangeTaget(crate::combat::basecameracontroller::BaseCameraController)` overload"]fn change_taget(self,next_cam:impl::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CameraControllerConfrontation_unity2_raw::change_taget(__receiver, ::core::convert::Into::into(next_cam), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"ChangeTaget",));
+let __inner:extern "C" fn(CameraControllerConfrontation,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(next_cam),__mi)}
+}
 }
 #[doc="`ReturnTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"]fn return_transition(self,current_cam:impl::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CameraControllerConfrontation_unity2_raw::return_transition(__receiver, ::core::convert::Into::into(current_cam), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"ReturnTransition",));
+let __inner:extern "C" fn(CameraControllerConfrontation,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(current_cam),__mi)}
+}
 }
 #[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CameraControllerConfrontation_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <CameraControllerConfrontation as::unity2::ClassIdentity> ::NAME,"GetCameraTargets",));
+let __inner:extern "C" fn(CameraControllerConfrontation, ::unity2::OptionalMethod,)-> ::unity2::Array<i32> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerConfrontation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25b0770usize)as*mut u8,();
@@ -162,6 +151,32 @@ pub fn change_taget_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn return_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="combat-cameracontrollerconfrontation")]impl CameraControllerConfrontation{#[doc="Direct (non-virtual) call to `CameraControllerConfrontation`'s own `get_TransitionTimeStart`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_transition_time_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_transition_time_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CameraControllerConfrontation`'s own `get_TransitionTimeReturn`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_transition_time_return(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_transition_time_return_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CameraControllerConfrontation`'s own `get_IsActiveVCam`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_is_active_v_cam(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_is_active_v_cam_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CameraControllerConfrontation`'s own `CheckUsable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn check_usable(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_routine:bool,)->(){let __mi=Self::check_usable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_routine, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CameraControllerConfrontation`'s own `StartTransition`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn start_transition(this:impl::core::convert::Into< ::unity2::IlInstance> ,next_cam:crate::combat::basecameracontroller::BaseCameraController,)->(){let __mi=Self::start_transition_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),next_cam, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CameraControllerConfrontation`'s own `ChangeTaget`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn change_taget(this:impl::core::convert::Into< ::unity2::IlInstance> ,next_cam:crate::combat::basecameracontroller::BaseCameraController,)->(){let __mi=Self::change_taget_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),next_cam, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CameraControllerConfrontation`'s own `ReturnTransition`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn return_transition(this:impl::core::convert::Into< ::unity2::IlInstance> ,current_cam:crate::combat::basecameracontroller::BaseCameraController,)->(){let __mi=Self::return_transition_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),current_cam, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CameraControllerConfrontation`'s own `GetCameraTargets`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_camera_targets(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<i32>{let __mi=Self::get_camera_targets_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<i32> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-cameracontrollerconfrontation")]impl CameraControllerConfrontation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

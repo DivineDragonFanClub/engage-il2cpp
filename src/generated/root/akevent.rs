@@ -31,38 +31,33 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root-akevent-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akevent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkEvent_unity2_raw{use super:: * ;
-pub unsafe fn start(this:AkEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-akevent")]pub trait IAkEventMethods:IAkEvent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <AkEvent as::unity2::ClassIdentity> ::NAME,"Start",));
-let inner:extern "C" fn(AkEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn handle_event(this:AkEvent,in_game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <AkEvent as::unity2::ClassIdentity> ::NAME,"HandleEvent",));
-let inner:extern "C" fn(AkEvent,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,in_game_object,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="root-akevent")]pub trait IAkEventMethods:IAkEvent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkEvent_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Callback(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]fn callback(self,in_cookie:impl::core::convert::Into<crate::system::object::Object> ,in_type:impl::core::convert::Into<crate::root::akcallbacktype::AkCallbackType> ,in_info:impl::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1a720usize)as*mut u8,();
 (AkEvent)__receiver,(crate::system::object::Object)::core::convert::Into::into(in_cookie),(crate::root::akcallbacktype::AkCallbackType)::core::convert::Into::into(in_type),(crate::root::akcallbackinfo::AkCallbackInfo)::core::convert::Into::into(in_info))}
 }
 #[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkEvent_unity2_raw::handle_event(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkEvent as::unity2::ClassIdentity> ::NAME,"HandleEvent",));
+let __inner:extern "C" fn(AkEvent,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(in_game_object),__mi)}
+}
 }
 #[doc="`Stop(i32)` overload"]fn stop(self,transition_duration:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1aa90usize)as*mut u8,();
@@ -101,6 +96,14 @@ pub fn get_event_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn get_value_guid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn get_m_callback_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="root-akevent")]impl AkEvent{#[doc="Direct (non-virtual) call to `AkEvent`'s own `Start`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `AkEvent`'s own `HandleEvent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn handle_event(this:impl::core::convert::Into< ::unity2::IlInstance> ,in_game_object:crate::unity_engine::gameobject::GameObject,)->(){let __mi=Self::handle_event_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),in_game_object, ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-akevent")]impl AkEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

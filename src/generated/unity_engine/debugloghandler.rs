@@ -16,26 +16,22 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-debugloghandler-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-debugloghandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugLogHandler_unity2_raw{use super:: * ;
-pub unsafe fn log_format(this:DebugLogHandler,log_type:crate::unity_engine::logtype::LogType,context:crate::unity_engine::object_2::Object_2,format: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DebugLogHandler as::unity2::ClassIdentity> ::NAME,"LogFormat",));
-let inner:extern "C" fn(DebugLogHandler,crate::unity_engine::logtype::LogType,crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,log_type,context,format,args,__mi)}
-}
-
 #[cfg(feature="unity_engine-debugloghandler")]impl DebugLogHandler{#[doc="`Internal_Log(crate::unity_engine::logtype::LogType, crate::unity_engine::logoption::LogOption, ::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]pub fn internal_log(level:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,options:impl::core::convert::Into<crate::unity_engine::logoption::LogOption> ,msg:impl::core::convert::Into< ::unity2::Il2CppString> ,obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4bc80usize)as*mut u8,();
 (crate::unity_engine::logtype::LogType)::core::convert::Into::into(level),(crate::unity_engine::logoption::LogOption)::core::convert::Into::into(options),(::unity2::Il2CppString)::core::convert::Into::into(msg),(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(obj))}
 }
 }
 
 #[cfg(feature="unity_engine-debugloghandler")]pub trait IDebugLogHandlerMethods:IDebugLogHandler{#[doc="`LogFormat(crate::unity_engine::logtype::LogType, crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn log_format(self,log_type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,context:impl::core::convert::Into<crate::unity_engine::object_2::Object_2> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <DebugLogHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugLogHandler_unity2_raw::log_format(__receiver, ::core::convert::Into::into(log_type), ::core::convert::Into::into(context), ::core::convert::Into::into(format), ::core::convert::Into::into(args), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DebugLogHandler as::unity2::ClassIdentity> ::NAME,"LogFormat",));
+let __inner:extern "C" fn(DebugLogHandler,crate::unity_engine::logtype::LogType,crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(log_type), ::core::convert::Into::into(context), ::core::convert::Into::into(format), ::core::convert::Into::into(args),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugLogHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4bc70usize)as*mut u8,();
@@ -48,6 +44,11 @@ __DebugLogHandler_unity2_raw::log_format(__receiver, ::core::convert::Into::into
 #[cfg(feature="unity_engine-debugloghandler")]impl DebugLogHandler{pub fn internal_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn log_format_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-debugloghandler")]impl DebugLogHandler{#[doc="Direct (non-virtual) call to `DebugLogHandler`'s own `LogFormat`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn log_format(this:impl::core::convert::Into< ::unity2::IlInstance> ,log_type:crate::unity_engine::logtype::LogType,context:crate::unity_engine::object_2::Object_2,format: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object> ,)->(){let __mi=Self::log_format_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::logtype::LogType,crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),log_type,context,format,args, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-debugloghandler")]impl DebugLogHandler{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

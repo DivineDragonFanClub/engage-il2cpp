@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "unity_engine-icanvasraycastfilter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-icanvasraycastfilter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ICanvasRaycastFilter_unity2_raw{use super:: * ;
-pub unsafe fn is_raycast_location_valid(this:ICanvasRaycastFilter,sp:crate::unity_engine::vector2::Vector2,event_camera:crate::unity_engine::camera::Camera,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-icanvasraycastfilter")]pub trait IICanvasRaycastFilterMethods:IICanvasRaycastFilter{#[doc="`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]fn is_raycast_location_valid(self,sp:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <ICanvasRaycastFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <ICanvasRaycastFilter as::unity2::ClassIdentity> ::NAME,"IsRaycastLocationValid",));
-let inner:extern "C" fn(ICanvasRaycastFilter,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ICanvasRaycastFilter,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sp,event_camera,__mi)}
+__inner(__receiver, ::core::convert::Into::into(sp), ::core::convert::Into::into(event_camera),__mi)}
 }
-
-#[cfg(feature="unity_engine-icanvasraycastfilter")]pub trait IICanvasRaycastFilterMethods:IICanvasRaycastFilter{#[doc="`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]fn is_raycast_location_valid(self,sp:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <ICanvasRaycastFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ICanvasRaycastFilter_unity2_raw::is_raycast_location_valid(__receiver, ::core::convert::Into::into(sp), ::core::convert::Into::into(event_camera), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="unity_engine-icanvasraycastfilter")]impl<__T:IICanvasRaycastFilter>IICanvasRaycastFilterMethods for __T{}
 
 #[cfg(feature="unity_engine-icanvasraycastfilter")]impl ICanvasRaycastFilter{pub fn is_raycast_location_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-icanvasraycastfilter")]impl ICanvasRaycastFilter{#[doc="Direct (non-virtual) call to `ICanvasRaycastFilter`'s own `IsRaycastLocationValid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_raycast_location_valid(this:impl::core::convert::Into< ::unity2::IlInstance> ,sp:crate::unity_engine::vector2::Vector2,event_camera:crate::unity_engine::camera::Camera,)->bool{let __mi=Self::is_raycast_location_valid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sp,event_camera, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-icanvasraycastfilter")]

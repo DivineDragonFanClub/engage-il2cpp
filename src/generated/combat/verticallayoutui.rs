@@ -16,19 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-verticallayoutui-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-verticallayoutui")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VerticalLayoutUI_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:VerticalLayoutUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <VerticalLayoutUI as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(VerticalLayoutUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="combat-verticallayoutui")]impl VerticalLayoutUI{#[doc="`MinimizeLeft(crate::unity_engine::ui::button::Button)` overload"]pub fn minimize_left(button:impl::core::convert::Into<crate::unity_engine::ui::button::Button>)->crate::unity_engine::ui::button::Button{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21be890usize)as*mut u8,crate::unity_engine::ui::button::Button;
 (crate::unity_engine::ui::button::Button)::core::convert::Into::into(button))}
 }
@@ -57,7 +44,16 @@ inner(this,__mi)}
 (VerticalLayoutUI)__receiver,(crate::unity_engine::canvas::Canvas)::core::convert::Into::into(canvas),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(anchor))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <VerticalLayoutUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__VerticalLayoutUI_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VerticalLayoutUI as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(VerticalLayoutUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Text(::unity2::Il2CppString)` overload"]fn text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::ui::text::Text{unsafe{let __receiver= <VerticalLayoutUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21be110usize)as*mut u8,crate::unity_engine::ui::text::Text;
@@ -107,6 +103,11 @@ pub fn set_text_color_and_outline_method_info()-> & 'static::unity2::il2cpp::Met
 pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 pub fn set_font_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
+
+#[cfg(feature="combat-verticallayoutui")]impl VerticalLayoutUI{#[doc="Direct (non-virtual) call to `VerticalLayoutUI`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-verticallayoutui")]impl VerticalLayoutUI{#[doc="`.ctor(crate::unity_engine::canvas::Canvas, crate::unity_engine::vector3::Vector3)` — overload selector"]pub fn new(canvas:crate::unity_engine::canvas::Canvas,anchor:crate::unity_engine::vector3::Vector3)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

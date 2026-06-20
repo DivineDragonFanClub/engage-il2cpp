@@ -19,9 +19,6 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenu/InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem.md"))]#[::unity2::class(namespace="App",name="InvestmentMenu.InvestmentMenuItem.InvestmentSubMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{#[offset(100)]#[rename(name="m_useCost")]pub m_use_cost:i32, #[offset(104)]#[rename(name="m_parent")]pub m_parent:crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenu/InvestmentMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="InvestmentMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct InvestmentMenu_DecideEventHandler{}
 
 
@@ -30,107 +27,29 @@ use crate::system::object::{IObject,Object}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenu/InvestmentMenu_InvestmentMenuItem.md"))]#[::unity2::class(namespace="App",name="InvestmentMenu.InvestmentMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct InvestmentMenu_InvestmentMenuItem{#[offset(100)]#[rename(name="m_Index")]pub m_index:i32,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenu/InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem.md"))]#[::unity2::class(namespace="App",name="InvestmentMenu.InvestmentMenuItem.InvestmentSubMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{#[offset(100)]#[rename(name="m_useCost")]pub m_use_cost:i32, #[offset(104)]#[rename(name="m_parent")]pub m_parent:crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem,}
+
 }
 
 #[cfg(feature = "app-investmentmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-investmentmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn set_text_color(this:InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem,color:crate::unity_engine::color::Color,b_inactive:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::ClassIdentity> ::NAME,"SetTextColor",));
-let inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem,crate::unity_engine::color::Color,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,color,b_inactive,__mi)}
-pub unsafe fn on_select(this:InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-investmentmenu")]pub trait IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods:IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{#[doc="`.ctor(i32, crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)` overload"]fn ctor(self,cost:impl::core::convert::Into<i32> ,parent:impl::core::convert::Into<crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem>)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66b10usize)as*mut u8,();
-(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem)__receiver,(i32)::core::convert::Into::into(cost),(crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)::core::convert::Into::into(parent))}
-}
-#[doc="`SetTextColor(crate::unity_engine::color::Color, bool)` overload"]fn set_text_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,b_inactive:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem_unity2_raw::set_text_color(__receiver, ::core::convert::Into::into(color), ::core::convert::Into::into(b_inactive), ::core::option::Option::None)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-investmentmenu")]impl<__T:IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem>IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods for __T{}
-
-#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{#[doc="`.ctor(i32, crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)` — overload selector"]pub fn new(cost:i32,parent:crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem), ::core::stringify!(new),));
- <Self as IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods> ::ctor(this,cost,parent);
-this}
-}
-
-#[cfg(feature="app-investmentmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InvestmentMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:InvestmentMenu_DecideEventHandler,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <InvestmentMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(InvestmentMenu_DecideEventHandler,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,__mi)}
-}
 
 #[cfg(feature="app-investmentmenu")]pub trait IInvestmentMenu_DecideEventHandlerMethods:IInvestmentMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InvestmentMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcbe40usize)as*mut u8,();
 (InvestmentMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(i32)` overload"]fn invoke(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <InvestmentMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(InvestmentMenu_DecideEventHandler,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index),__mi)}
+}
 }
 }
 
@@ -140,34 +59,16 @@ __InvestmentMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::conve
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `InvestmentMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-investmentmenu")]impl InvestmentMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(InvestmentMenu_DecideEventHandler), ::core::stringify!(new),));
  <Self as IInvestmentMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
 this}
-}
-
-#[cfg(feature="app-investmentmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InvestmentMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:InvestmentMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <InvestmentMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(InvestmentMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:InvestmentMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <InvestmentMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(InvestmentMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-investmentmenu")]impl InvestmentMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27a0af0usize)as*mut u8,();
@@ -180,10 +81,28 @@ inner(this,__mi)}
 (InvestmentMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::investmentmenucontent::InvestmentMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InvestmentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <InvestmentMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(InvestmentMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InvestmentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <InvestmentMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(InvestmentMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SelectNation(i32)` overload"]fn select_nation(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27a13f0usize)as*mut u8,();
@@ -205,6 +124,14 @@ pub fn select_nation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn update_nation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu{#[doc="Direct (non-virtual) call to `InvestmentMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InvestmentMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-investmentmenu")]impl InvestmentMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::investmentmenucontent::InvestmentMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::investmentmenucontent::InvestmentMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(InvestmentMenu), ::core::stringify!(new),));
@@ -212,77 +139,69 @@ pub fn update_nation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 this}
 }
 
-#[cfg(feature="app-investmentmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InvestmentMenu_InvestmentMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn build_attribute(this:InvestmentMenu_InvestmentMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:InvestmentMenu_InvestmentMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_select(this:InvestmentMenu_InvestmentMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:InvestmentMenu_InvestmentMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn x_call(this:InvestmentMenu_InvestmentMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem as::unity2::ClassIdentity> ::NAME,"XCall",));
-let inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-investmentmenu")]pub trait IInvestmentMenu_InvestmentMenuItemMethods:IInvestmentMenu_InvestmentMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc130usize)as*mut u8,();
 (InvestmentMenu_InvestmentMenuItem)__receiver,(i32)::core::convert::Into::into(index))}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_InvestmentMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_InvestmentMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_InvestmentMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_InvestmentMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InvestmentMenu_InvestmentMenuItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem as::unity2::ClassIdentity> ::NAME,"XCall",));
+let __inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetNationData()` overload"]fn get_nation_data(self,)->crate::app::hubnationdata::HubNationData{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcc1b0usize)as*mut u8,crate::app::hubnationdata::HubNationData;
@@ -311,6 +230,23 @@ pub fn get_next_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 }
 
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem{#[doc="Direct (non-virtual) call to `InvestmentMenu_InvestmentMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InvestmentMenu_InvestmentMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InvestmentMenu_InvestmentMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InvestmentMenu_InvestmentMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InvestmentMenu_InvestmentMenuItem`'s own `XCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn x_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::x_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem{#[doc="`.ctor(i32)` — overload selector"]pub fn new(index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(InvestmentMenu_InvestmentMenuItem), ::core::stringify!(new),));
@@ -318,12 +254,93 @@ pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity
 this}
 }
 
+#[cfg(feature="app-investmentmenu")]pub trait IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods:IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{#[doc="`.ctor(i32, crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)` overload"]fn ctor(self,cost:impl::core::convert::Into<i32> ,parent:impl::core::convert::Into<crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem>)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66b10usize)as*mut u8,();
+(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem)__receiver,(i32)::core::convert::Into::into(cost),(crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)::core::convert::Into::into(parent))}
+}
+#[doc="`SetTextColor(crate::unity_engine::color::Color, bool)` overload"]fn set_text_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,b_inactive:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::ClassIdentity> ::NAME,"SetTextColor",));
+let __inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem,crate::unity_engine::color::Color,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(color), ::core::convert::Into::into(b_inactive),__mi)}
+}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-investmentmenu")]impl<__T:IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem>IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods for __T{}
+
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{#[doc="Direct (non-virtual) call to `InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem`'s own `SetTextColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_text_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,color:crate::unity_engine::color::Color,b_inactive:bool,)->(){let __mi=Self::set_text_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::color::Color,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),color,b_inactive, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-investmentmenu")]impl InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem{#[doc="`.ctor(i32, crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)` — overload selector"]pub fn new(cost:i32,parent:crate::app::investmentmenu::InvestmentMenu_InvestmentMenuItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem), ::core::stringify!(new),));
+ <Self as IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods> ::ctor(this,cost,parent);
+this}
+}
+
 #[cfg(feature = "app-investmentmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem;
-    pub use super::IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem;
-    pub use super::IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods;
     pub use super::InvestmentMenu_DecideEventHandler;
     pub use super::IInvestmentMenu_DecideEventHandler;
     pub use super::IInvestmentMenu_DecideEventHandlerMethods;
@@ -333,6 +350,9 @@ pub mod prelude {
     pub use super::InvestmentMenu_InvestmentMenuItem;
     pub use super::IInvestmentMenu_InvestmentMenuItem;
     pub use super::IInvestmentMenu_InvestmentMenuItemMethods;
+    pub use super::InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem;
+    pub use super::IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem;
+    pub use super::IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

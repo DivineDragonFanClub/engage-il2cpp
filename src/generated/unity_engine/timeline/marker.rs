@@ -20,77 +20,69 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-timeline-marker-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-marker")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Marker_unity2_raw{use super:: * ;
-pub unsafe fn get_parent(this:Marker,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-timeline-marker")]pub trait IMarkerMethods:IMarker{#[doc="`get_parent()` overload"]fn get_parent(self,)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <Marker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <Marker as::unity2::ClassIdentity> ::NAME,"get_parent",));
-let inner:extern "C" fn(Marker, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(Marker, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_time(this:Marker,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Marker as::unity2::ClassIdentity> ::NAME,"get_time",));
-let inner:extern "C" fn(Marker, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_time(this:Marker,value:f64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <Marker as::unity2::ClassIdentity> ::NAME,"set_time",));
-let inner:extern "C" fn(Marker,f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn unity_engine_timeline_i_marker_initialize(this:Marker,parent_track:crate::unity_engine::timeline::trackasset::TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <Marker as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.IMarker.Initialize",));
-let inner:extern "C" fn(Marker,crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,parent_track,__mi)}
-pub unsafe fn on_initialize(this:Marker,a_pent:crate::unity_engine::timeline::trackasset::TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <Marker as::unity2::ClassIdentity> ::NAME,"OnInitialize",));
-let inner:extern "C" fn(Marker,crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,a_pent,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-timeline-marker")]pub trait IMarkerMethods:IMarker{#[doc="`get_parent()` overload"]fn get_parent(self,)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <Marker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Marker_unity2_raw::get_parent(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_parent(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]fn set_parent(self,value:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->(){unsafe{let __receiver= <Marker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d7110usize)as*mut u8,();
 (Marker)__receiver,(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(value))}
 }
 #[doc="`get_time()` overload"]fn get_time(self,)->f64{unsafe{let __receiver= <Marker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Marker_unity2_raw::get_time(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Marker as::unity2::ClassIdentity> ::NAME,"get_time",));
+let __inner:extern "C" fn(Marker, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_time(f64)` overload"]fn set_time(self,value:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <Marker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Marker_unity2_raw::set_time(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Marker as::unity2::ClassIdentity> ::NAME,"set_time",));
+let __inner:extern "C" fn(Marker,f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`UnityEngine.Timeline.IMarker.Initialize(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]fn unity_engine_timeline_i_marker_initialize(self,parent_track:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->(){unsafe{let __receiver= <Marker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Marker_unity2_raw::unity_engine_timeline_i_marker_initialize(__receiver, ::core::convert::Into::into(parent_track), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Marker as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.IMarker.Initialize",));
+let __inner:extern "C" fn(Marker,crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(parent_track),__mi)}
+}
 }
 #[doc="`OnInitialize(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]fn on_initialize(self,a_pent:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->(){unsafe{let __receiver= <Marker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Marker_unity2_raw::on_initialize(__receiver, ::core::convert::Into::into(a_pent), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Marker as::unity2::ClassIdentity> ::NAME,"OnInitialize",));
+let __inner:extern "C" fn(Marker,crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(a_pent),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Marker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d7360usize)as*mut u8,();
@@ -107,6 +99,23 @@ pub fn set_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn unity_engine_timeline_i_marker_initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn on_initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="unity_engine-timeline-marker")]impl Marker{#[doc="Direct (non-virtual) call to `Marker`'s own `get_parent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_parent(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::timeline::trackasset::TrackAsset{let __mi=Self::get_parent_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Marker`'s own `get_time`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_time(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f64{let __mi=Self::get_time_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Marker`'s own `set_time`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_time(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f64,)->(){let __mi=Self::set_time_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Marker`'s own `UnityEngine.Timeline.IMarker.Initialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn unity_engine_timeline_i_marker_initialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,parent_track:crate::unity_engine::timeline::trackasset::TrackAsset,)->(){let __mi=Self::unity_engine_timeline_i_marker_initialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),parent_track, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Marker`'s own `OnInitialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_initialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,a_pent:crate::unity_engine::timeline::trackasset::TrackAsset,)->(){let __mi=Self::on_initialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),a_pent, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-timeline-marker")]impl Marker{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

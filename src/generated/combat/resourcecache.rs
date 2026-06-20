@@ -26,26 +26,22 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "combat-resourcecache-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-resourcecache")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ResourceCache_unity2_raw{use super:: * ;
-pub unsafe fn awake(this:ResourceCache,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ResourceCache as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(ResourceCache, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="combat-resourcecache")]impl ResourceCache{#[doc="`LoadAsync(::unity2::Il2CppString, crate::system::action_1::Action_1<crate::unity_engine::object_2::Object_2>)` overload"]pub fn load_async(asset_path:impl::core::convert::Into< ::unity2::Il2CppString> ,done_callback:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::object_2::Object_2> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013890usize)as*mut u8,();
 (::unity2::Il2CppString)::core::convert::Into::into(asset_path),(crate::system::action_1::Action_1<crate::unity_engine::object_2::Object_2>)::core::convert::Into::into(done_callback))}
 }
 }
 
 #[cfg(feature="combat-resourcecache")]pub trait IResourceCacheMethods:IResourceCache{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <ResourceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ResourceCache_unity2_raw::awake(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ResourceCache as::unity2::ClassIdentity> ::NAME,"Awake",));
+let __inner:extern "C" fn(ResourceCache, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <ResourceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2013570usize)as*mut u8,();
@@ -68,6 +64,11 @@ pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="combat-resourcecache")]impl ResourceCache{#[doc="Direct (non-virtual) call to `ResourceCache`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-resourcecache")]impl ResourceCache{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

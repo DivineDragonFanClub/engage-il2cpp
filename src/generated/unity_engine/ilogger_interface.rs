@@ -14,99 +14,89 @@ mod __types {
 #[cfg(feature = "unity_engine-ilogger_interface-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ilogger_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ILogger_Interface_unity2_raw{use super:: * ;
-pub unsafe fn get_log_handler(this:ILogger_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::iloghandler::ILogHandler{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-ilogger_interface")]pub trait IILogger_InterfaceMethods:IILogger_Interface{#[doc="`get_logHandler()` overload"]fn get_log_handler(self,)->crate::unity_engine::iloghandler::ILogHandler{unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <ILogger_Interface as::unity2::ClassIdentity> ::NAME,"get_logHandler",));
-let inner:extern "C" fn(ILogger_Interface, ::unity2::OptionalMethod,)->crate::unity_engine::iloghandler::ILogHandler= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ILogger_Interface, ::unity2::OptionalMethod,)->crate::unity_engine::iloghandler::ILogHandler= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_log_enabled(this:ILogger_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_logEnabled()` overload"]fn get_log_enabled(self,)->bool{unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <ILogger_Interface as::unity2::ClassIdentity> ::NAME,"get_logEnabled",));
-let inner:extern "C" fn(ILogger_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ILogger_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_log_enabled(this:ILogger_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_logEnabled(bool)` overload"]fn set_log_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <ILogger_Interface as::unity2::ClassIdentity> ::NAME,"set_logEnabled",));
-let inner:extern "C" fn(ILogger_Interface,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ILogger_Interface,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn log(this:ILogger_Interface,log_type:crate::unity_engine::logtype::LogType,message:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`Log(crate::unity_engine::logtype::LogType, crate::system::object::Object)` overload"]fn log(self,log_type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,message:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",3usize,__vt.len(), <ILogger_Interface as::unity2::ClassIdentity> ::NAME,"Log",));
-let inner:extern "C" fn(ILogger_Interface,crate::unity_engine::logtype::LogType,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ILogger_Interface,crate::unity_engine::logtype::LogType,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,log_type,message,__mi)}
-pub unsafe fn log_2(this:ILogger_Interface,log_type:crate::unity_engine::logtype::LogType,message:crate::system::object::Object,context:crate::unity_engine::object_2::Object_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(log_type), ::core::convert::Into::into(message),__mi)}
+}
+}
+#[doc="`Log(crate::unity_engine::logtype::LogType, crate::system::object::Object, crate::unity_engine::object_2::Object_2)` overload"]fn log_2(self,log_type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,message:impl::core::convert::Into<crate::system::object::Object> ,context:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <ILogger_Interface as::unity2::ClassIdentity> ::NAME,"Log",));
-let inner:extern "C" fn(ILogger_Interface,crate::unity_engine::logtype::LogType,crate::system::object::Object,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ILogger_Interface,crate::unity_engine::logtype::LogType,crate::system::object::Object,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,log_type,message,context,__mi)}
-pub unsafe fn log_error(this:ILogger_Interface,tag: ::unity2::Il2CppString,message:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(log_type), ::core::convert::Into::into(message), ::core::convert::Into::into(context),__mi)}
+}
+}
+#[doc="`LogError(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn log_error(self,tag:impl::core::convert::Into< ::unity2::Il2CppString> ,message:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <ILogger_Interface as::unity2::ClassIdentity> ::NAME,"LogError",));
-let inner:extern "C" fn(ILogger_Interface, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ILogger_Interface, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,tag,message,__mi)}
-pub unsafe fn log_format(this:ILogger_Interface,log_type:crate::unity_engine::logtype::LogType,format: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(tag), ::core::convert::Into::into(message),__mi)}
+}
+}
+#[doc="`LogFormat(crate::unity_engine::logtype::LogType, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn log_format(self,log_type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <ILogger_Interface as::unity2::ClassIdentity> ::NAME,"LogFormat",));
-let inner:extern "C" fn(ILogger_Interface,crate::unity_engine::logtype::LogType, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ILogger_Interface,crate::unity_engine::logtype::LogType, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,log_type,format,args,__mi)}
+__inner(__receiver, ::core::convert::Into::into(log_type), ::core::convert::Into::into(format), ::core::convert::Into::into(args),__mi)}
 }
-
-#[cfg(feature="unity_engine-ilogger_interface")]pub trait IILogger_InterfaceMethods:IILogger_Interface{#[doc="`get_logHandler()` overload"]fn get_log_handler(self,)->crate::unity_engine::iloghandler::ILogHandler{unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ILogger_Interface_unity2_raw::get_log_handler(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_logEnabled()` overload"]fn get_log_enabled(self,)->bool{unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ILogger_Interface_unity2_raw::get_log_enabled(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_logEnabled(bool)` overload"]fn set_log_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ILogger_Interface_unity2_raw::set_log_enabled(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`Log(crate::unity_engine::logtype::LogType, crate::system::object::Object)` overload"]fn log(self,log_type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,message:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ILogger_Interface_unity2_raw::log(__receiver, ::core::convert::Into::into(log_type), ::core::convert::Into::into(message), ::core::option::Option::None)}
-}
-#[doc="`Log(crate::unity_engine::logtype::LogType, crate::system::object::Object, crate::unity_engine::object_2::Object_2)` overload"]fn log_2(self,log_type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,message:impl::core::convert::Into<crate::system::object::Object> ,context:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ILogger_Interface_unity2_raw::log_2(__receiver, ::core::convert::Into::into(log_type), ::core::convert::Into::into(message), ::core::convert::Into::into(context), ::core::option::Option::None)}
-}
-#[doc="`LogError(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn log_error(self,tag:impl::core::convert::Into< ::unity2::Il2CppString> ,message:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ILogger_Interface_unity2_raw::log_error(__receiver, ::core::convert::Into::into(tag), ::core::convert::Into::into(message), ::core::option::Option::None)}
-}
-#[doc="`LogFormat(crate::unity_engine::logtype::LogType, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn log_format(self,log_type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <ILogger_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ILogger_Interface_unity2_raw::log_format(__receiver, ::core::convert::Into::into(log_type), ::core::convert::Into::into(format), ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 }
 
@@ -119,6 +109,29 @@ pub fn log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity
 pub fn log_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn log_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn log_format_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="unity_engine-ilogger_interface")]impl ILogger_Interface{#[doc="Direct (non-virtual) call to `ILogger_Interface`'s own `get_logHandler`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_log_handler(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::iloghandler::ILogHandler{let __mi=Self::get_log_handler_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::iloghandler::ILogHandler= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ILogger_Interface`'s own `get_logEnabled`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_log_enabled(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_log_enabled_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ILogger_Interface`'s own `set_logEnabled`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_log_enabled(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_log_enabled_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ILogger_Interface`'s own `Log`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn log(this:impl::core::convert::Into< ::unity2::IlInstance> ,log_type:crate::unity_engine::logtype::LogType,message:crate::system::object::Object,)->(){let __mi=Self::log_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::logtype::LogType,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),log_type,message, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ILogger_Interface`'s own `Log`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn log_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,log_type:crate::unity_engine::logtype::LogType,message:crate::system::object::Object,context:crate::unity_engine::object_2::Object_2,)->(){let __mi=Self::log_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::logtype::LogType,crate::system::object::Object,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),log_type,message,context, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ILogger_Interface`'s own `LogError`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn log_error(this:impl::core::convert::Into< ::unity2::IlInstance> ,tag: ::unity2::Il2CppString,message:crate::system::object::Object,)->(){let __mi=Self::log_error_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),tag,message, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ILogger_Interface`'s own `LogFormat`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn log_format(this:impl::core::convert::Into< ::unity2::IlInstance> ,log_type:crate::unity_engine::logtype::LogType,format: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object> ,)->(){let __mi=Self::log_format_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::logtype::LogType, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),log_type,format,args, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-ilogger_interface")]

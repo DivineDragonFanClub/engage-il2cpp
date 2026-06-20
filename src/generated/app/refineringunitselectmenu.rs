@@ -20,29 +20,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-refineringunitselectmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-refineringunitselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineRingUnitSelectMenu_unity2_raw{use super:: * ;
-pub unsafe fn x_call(this:RefineRingUnitSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",52usize,__vt.len(), <RefineRingUnitSelectMenu as::unity2::ClassIdentity> ::NAME,"XCall",));
-let inner:extern "C" fn(RefineRingUnitSelectMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_close(this:RefineRingUnitSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <RefineRingUnitSelectMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
-let inner:extern "C" fn(RefineRingUnitSelectMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-refineringunitselectmenu")]impl RefineRingUnitSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler, crate::app::godunit::GodUnit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_event_handler:impl::core::convert::Into<crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler> ,default_god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->crate::app::refineringunitselectmenu::RefineRingUnitSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2958160usize)as*mut u8,crate::app::refineringunitselectmenu::RefineRingUnitSelectMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::godunit::GodUnit)::core::convert::Into::into(default_god_unit))}
 }
@@ -57,10 +34,28 @@ inner(this,__mi)}
 (RefineRingUnitSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::godunitselectmenucontent::GodUnitSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::godselectroot::GodSelectRoot)::core::convert::Into::into(god_select_root),(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineRingUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineRingUnitSelectMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",52usize,__vt.len(), <RefineRingUnitSelectMenu as::unity2::ClassIdentity> ::NAME,"XCall",));
+let __inner:extern "C" fn(RefineRingUnitSelectMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <RefineRingUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineRingUnitSelectMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <RefineRingUnitSelectMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let __inner:extern "C" fn(RefineRingUnitSelectMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -71,6 +66,14 @@ pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-refineringunitselectmenu")]impl RefineRingUnitSelectMenu{#[doc="Direct (non-virtual) call to `RefineRingUnitSelectMenu`'s own `XCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn x_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::x_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RefineRingUnitSelectMenu`'s own `OnClose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-refineringunitselectmenu")]impl RefineRingUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::godunitselectmenucontent::GodUnitSelectMenuContent, crate::app::godselectroot::GodSelectRoot, crate::app::godunit::GodUnit)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,god_select_root:crate::app::godselectroot::GodSelectRoot,god_unit:crate::app::godunit::GodUnit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

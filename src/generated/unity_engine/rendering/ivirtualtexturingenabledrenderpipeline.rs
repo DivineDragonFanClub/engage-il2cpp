@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "unity_engine-rendering-ivirtualtexturingenabledrenderpipeline-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IVirtualTexturingEnabledRenderPipeline_unity2_raw{use super:: * ;
-pub unsafe fn get_virtual_texturing_enabled(this:IVirtualTexturingEnabledRenderPipeline,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]pub trait IIVirtualTexturingEnabledRenderPipelineMethods:IIVirtualTexturingEnabledRenderPipeline{#[doc="`get_virtualTexturingEnabled()` overload"]fn get_virtual_texturing_enabled(self,)->bool{unsafe{let __receiver= <IVirtualTexturingEnabledRenderPipeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IVirtualTexturingEnabledRenderPipeline as::unity2::ClassIdentity> ::NAME,"get_virtualTexturingEnabled",));
-let inner:extern "C" fn(IVirtualTexturingEnabledRenderPipeline, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IVirtualTexturingEnabledRenderPipeline, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]pub trait IIVirtualTexturingEnabledRenderPipelineMethods:IIVirtualTexturingEnabledRenderPipeline{#[doc="`get_virtualTexturingEnabled()` overload"]fn get_virtual_texturing_enabled(self,)->bool{unsafe{let __receiver= <IVirtualTexturingEnabledRenderPipeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IVirtualTexturingEnabledRenderPipeline_unity2_raw::get_virtual_texturing_enabled(__receiver, ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]impl<__T:IIVirtualTexturingEnabledRenderPipeline>IIVirtualTexturingEnabledRenderPipelineMethods for __T{}
 
 #[cfg(feature="unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]impl IVirtualTexturingEnabledRenderPipeline{pub fn get_virtual_texturing_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]impl IVirtualTexturingEnabledRenderPipeline{#[doc="Direct (non-virtual) call to `IVirtualTexturingEnabledRenderPipeline`'s own `get_virtualTexturingEnabled`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_virtual_texturing_enabled(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_virtual_texturing_enabled_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-rendering-ivirtualtexturingenabledrenderpipeline")]

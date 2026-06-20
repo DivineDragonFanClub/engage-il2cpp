@@ -18,19 +18,6 @@ use crate::unity_engine::networking::downloadhandler::{DownloadHandler,IDownload
 #[cfg(feature = "unity_engine-networking-downloadhandlerbuffer-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-networking-downloadhandlerbuffer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DownloadHandlerBuffer_unity2_raw{use super:: * ;
-pub unsafe fn get_data(this:DownloadHandlerBuffer,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<u8>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DownloadHandlerBuffer as::unity2::ClassIdentity> ::NAME,"GetData",));
-let inner:extern "C" fn(DownloadHandlerBuffer, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-networking-downloadhandlerbuffer")]impl DownloadHandlerBuffer{#[doc="`Create(crate::unity_engine::networking::downloadhandlerbuffer::DownloadHandlerBuffer)` overload"]pub fn create(obj:impl::core::convert::Into<crate::unity_engine::networking::downloadhandlerbuffer::DownloadHandlerBuffer>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f18990usize)as*mut u8, ::unity2::IntPtr;
 (crate::unity_engine::networking::downloadhandlerbuffer::DownloadHandlerBuffer)::core::convert::Into::into(obj))}
 }
@@ -45,7 +32,16 @@ inner(this,__mi)}
 (DownloadHandlerBuffer)__receiver)}
 }
 #[doc="`GetData()` overload"]fn get_data(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <DownloadHandlerBuffer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DownloadHandlerBuffer_unity2_raw::get_data(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DownloadHandlerBuffer as::unity2::ClassIdentity> ::NAME,"GetData",));
+let __inner:extern "C" fn(DownloadHandlerBuffer, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`InternalGetData()` overload"]fn internal_get_data(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <DownloadHandlerBuffer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18ad0usize)as*mut u8, ::unity2::Array<u8> ;
@@ -60,6 +56,11 @@ pub fn internal_create_buffer_method_info()-> & 'static::unity2::il2cpp::MethodI
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn internal_get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-networking-downloadhandlerbuffer")]impl DownloadHandlerBuffer{#[doc="Direct (non-virtual) call to `DownloadHandlerBuffer`'s own `GetData`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_data(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<u8>{let __mi=Self::get_data_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-networking-downloadhandlerbuffer")]impl DownloadHandlerBuffer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

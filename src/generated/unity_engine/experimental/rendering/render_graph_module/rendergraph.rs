@@ -15,17 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_CompiledPassInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderGraph_CompiledPassInfo{pub pass:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass,pub resource_create_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32> >,pub resource_release_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32> >,pub ref_count:i32,pub culled:bool,pub has_side_effect:bool,pub sync_to_pass_index:i32,pub sync_from_pass_index:i32,pub need_graphics_fence:bool,pub fence:crate::unity_engine::rendering::graphicsfence::GraphicsFence,pub enable_async_compute:bool,}
-impl::unity2::ClassIdentity for RenderGraph_CompiledPassInfo{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
-const NAME: &'static str="RenderGraph.CompiledPassInfo";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for RenderGraph_CompiledPassInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="RenderGraph")]#[parent(crate::system::object::Object)]pub struct RenderGraph{#[static_field]#[rename(name="kMaxMRTCount")]pub k_max_mrt_count:i32, #[offset(16)]#[rename(name="m_Resources")]pub m_resources:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourceregistry::RenderGraphResourceRegistry, #[offset(24)]#[rename(name="m_RenderGraphPool")]pub m_render_graph_pool:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool, #[offset(32)]#[rename(name="m_RenderPasses")]pub m_render_passes:crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass> , #[offset(40)]#[rename(name="m_RendererLists")]pub m_renderer_lists:crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::render_graph_module::rendererlisthandle::RendererListHandle> , #[offset(48)]#[rename(name="m_DebugParameters")]pub m_debug_parameters:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugparams::RenderGraphDebugParams, #[offset(56)]#[rename(name="m_Logger")]pub m_logger:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphlogger::RenderGraphLogger, #[offset(64)]#[rename(name="m_DefaultResources")]pub m_default_resources:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdefaultresources::RenderGraphDefaultResources, #[offset(72)]#[rename(name="m_DefaultProfilingSamplers")]pub m_default_profiling_samplers:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::unity_engine::rendering::profilingsampler::ProfilingSampler> , #[offset(80)]#[rename(name="m_ExecutionExceptionWasRaised")]pub m_execution_exception_was_raised:bool, #[offset(88)]#[rename(name="m_RenderGraphContext")]pub m_render_graph_context:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext, #[offset(96)]#[rename(name="m_PreviousCommandBuffer")]pub m_previous_command_buffer:crate::unity_engine::rendering::commandbuffer::CommandBuffer, #[offset(104)]#[rename(name="m_CurrentImmediatePassIndex")]pub m_current_immediate_pass_index:i32, #[offset(112)]#[rename(name="m_ImmediateModeResourceList")]pub m_immediate_mode_resource_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32> > , #[offset(120)]#[rename(name="m_CompiledResourcesInfos")]pub m_compiled_resources_infos: ::unity2::Array<crate::unity_engine::rendering::dynamicarray_1::DynamicArray_1<crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledResourceInfo> > , #[offset(128)]#[rename(name="m_CompiledPassInfos")]pub m_compiled_pass_infos:crate::unity_engine::rendering::dynamicarray_1::DynamicArray_1<crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_CompiledPassInfo> , #[offset(136)]#[rename(name="m_CullingStack")]pub m_culling_stack:crate::system::collections::generic::stack_1::Stack_1<i32> , #[offset(144)]#[rename(name="m_ExecutionCount")]pub m_execution_count:i32, #[offset(152)]#[rename(name="m_RenderGraphDebugData")]pub m_render_graph_debug_data:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdebugdata::RenderGraphDebugData, #[static_field]#[rename(name="s_RegisteredGraphs")]pub s_registered_graphs:crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph> , #[static_field]#[rename(name="onGraphRegistered")]pub on_graph_registered:crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate, #[static_field]#[rename(name="onGraphUnregistered")]pub on_graph_unregistered:crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph_OnGraphRegisteredDelegate,}
 
 
@@ -45,22 +34,21 @@ impl::unity2::IlType for RenderGraph_CompiledResourceInfo{fn il_type()-> &'stati
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_OnGraphRegisteredDelegate.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="RenderGraph.OnGraphRegisteredDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RenderGraph_OnGraphRegisteredDelegate{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraph/RenderGraph_CompiledPassInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderGraph_CompiledPassInfo{pub pass:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass,pub resource_create_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32> >,pub resource_release_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32> >,pub ref_count:i32,pub culled:bool,pub has_side_effect:bool,pub sync_to_pass_index:i32,pub sync_from_pass_index:i32,pub need_graphics_fence:bool,pub fence:crate::unity_engine::rendering::graphicsfence::GraphicsFence,pub enable_async_compute:bool,}
+impl::unity2::ClassIdentity for RenderGraph_CompiledPassInfo{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
+const NAME: &'static str="RenderGraph.CompiledPassInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RenderGraph_CompiledPassInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph")]impl RenderGraph_CompiledPassInfo{#[doc="`get_allowPassCulling()` overload"]pub fn get_allow_pass_culling(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33ed8e0usize)as*mut u8,bool;
-(*mut RenderGraph_CompiledPassInfo)self as*mut RenderGraph_CompiledPassInfo)}
-}
-#[doc="`Reset(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)` overload"]pub fn reset(&mut self,pass:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33ed8f0usize)as*mut u8,();
-(*mut RenderGraph_CompiledPassInfo)self as*mut RenderGraph_CompiledPassInfo,(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)::core::convert::Into::into(pass))}
-}
-}
-
-#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph")]impl RenderGraph_CompiledPassInfo{pub fn get_allow_pass_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
 
 #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph")]impl RenderGraph{#[doc="`get_requireDebugData()` overload"]pub fn get_require_debug_data()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30b0f60usize)as*mut u8,bool;
 )}
@@ -504,25 +492,21 @@ this}
 this}
 }
 
-#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RenderGraph_OnGraphRegisteredDelegate_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RenderGraph_OnGraphRegisteredDelegate,graph:crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <RenderGraph_OnGraphRegisteredDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RenderGraph_OnGraphRegisteredDelegate,crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,graph,__mi)}
-}
-
 #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph")]pub trait IRenderGraph_OnGraphRegisteredDelegateMethods:IRenderGraph_OnGraphRegisteredDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RenderGraph_OnGraphRegisteredDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33edcb0usize)as*mut u8,();
 (RenderGraph_OnGraphRegisteredDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph)` overload"]fn invoke(self,graph:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph>)->(){unsafe{let __receiver= <RenderGraph_OnGraphRegisteredDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RenderGraph_OnGraphRegisteredDelegate_unity2_raw::invoke(__receiver, ::core::convert::Into::into(graph), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RenderGraph_OnGraphRegisteredDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RenderGraph_OnGraphRegisteredDelegate,crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(graph),__mi)}
+}
 }
 }
 
@@ -532,6 +516,11 @@ __RenderGraph_OnGraphRegisteredDelegate_unity2_raw::invoke(__receiver, ::core::c
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph")]impl RenderGraph_OnGraphRegisteredDelegate{#[doc="Direct (non-virtual) call to `RenderGraph_OnGraphRegisteredDelegate`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,graph:crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),graph, ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph")]impl RenderGraph_OnGraphRegisteredDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RenderGraph_OnGraphRegisteredDelegate), ::core::stringify!(new),));
@@ -539,10 +528,21 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph")]impl RenderGraph_CompiledPassInfo{#[doc="`get_allowPassCulling()` overload"]pub fn get_allow_pass_culling(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33ed8e0usize)as*mut u8,bool;
+(*mut RenderGraph_CompiledPassInfo)self as*mut RenderGraph_CompiledPassInfo)}
+}
+#[doc="`Reset(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)` overload"]pub fn reset(&mut self,pass:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33ed8f0usize)as*mut u8,();
+(*mut RenderGraph_CompiledPassInfo)self as*mut RenderGraph_CompiledPassInfo,(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass)::core::convert::Into::into(pass))}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph")]impl RenderGraph_CompiledPassInfo{pub fn get_allow_pass_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraph")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RenderGraph_CompiledPassInfo;
     pub use super::RenderGraph;
     pub use super::IRenderGraph;
     pub use super::IRenderGraphMethods;
@@ -553,6 +553,7 @@ pub mod prelude {
     pub use super::RenderGraph_OnGraphRegisteredDelegate;
     pub use super::IRenderGraph_OnGraphRegisteredDelegate;
     pub use super::IRenderGraph_OnGraphRegisteredDelegateMethods;
+    pub use super::RenderGraph_CompiledPassInfo;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

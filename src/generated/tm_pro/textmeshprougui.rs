@@ -32,578 +32,70 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 #[cfg(feature = "tm_pro-textmeshprougui-types")]
 pub use __types::*;
 
-#[cfg(feature="tm_pro-textmeshprougui")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextMeshProUGUI_unity2_raw{use super:: * ;
-pub unsafe fn awake(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_enable(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnEnable",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_disable(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnDisable",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_destroy(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn load_font_asset(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(89usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",89usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"LoadFontAsset",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_material(this:TextMeshProUGUI,mat:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(91usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",91usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetMaterial",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,mat,__mi)}
-pub unsafe fn get_materials(this:TextMeshProUGUI,mats: ::unity2::Array<crate::unity_engine::material::Material> ,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(95usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",95usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetMaterials",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::Array<crate::unity_engine::material::Material> , ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,mats,__mi)}
-pub unsafe fn set_shared_material(this:TextMeshProUGUI,mat:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(90usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",90usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetSharedMaterial",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,mat,__mi)}
-pub unsafe fn get_shared_materials(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(93usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",93usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetSharedMaterials",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_shared_materials(this:TextMeshProUGUI,materials: ::unity2::Array<crate::unity_engine::material::Material> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(94usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",94usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetSharedMaterials",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::Array<crate::unity_engine::material::Material> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,materials,__mi)}
-pub unsafe fn set_outline_thickness(this:TextMeshProUGUI,thickness:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(99usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",99usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetOutlineThickness",));
-let inner:extern "C" fn(TextMeshProUGUI,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,thickness,__mi)}
-pub unsafe fn set_face_color(this:TextMeshProUGUI,color:crate::unity_engine::color32::Color32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(97usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",97usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetFaceColor",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::color32::Color32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,color,__mi)}
-pub unsafe fn set_outline_color(this:TextMeshProUGUI,color:crate::unity_engine::color32::Color32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(98usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",98usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetOutlineColor",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::color32::Color32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,color,__mi)}
-pub unsafe fn set_shader_depth(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(100usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",100usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetShaderDepth",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_culling(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(101usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",101usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetCulling",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_array_sizes(this:TextMeshProUGUI,unicode_chars: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> ,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(114usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",114usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetArraySizes",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> , ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unicode_chars,__mi)}
-pub unsafe fn compute_margin_size(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(119usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",119usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"ComputeMarginSize",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_did_apply_animation_properties(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_canvas_hierarchy_changed(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnCanvasHierarchyChanged",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_transform_parent_changed(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_rect_transform_dimensions_change(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn internal_update(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(132usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",132usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"InternalUpdate",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn generate_text_mesh(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(142usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",142usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GenerateTextMesh",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_text_container_local_corners(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(105usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",105usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetTextContainerLocalCorners",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_active_sub_meshes(this:TextMeshProUGUI,state:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(127usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",127usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetActiveSubMeshes",));
-let inner:extern "C" fn(TextMeshProUGUI,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,state,__mi)}
-pub unsafe fn destroy_sub_mesh_objects(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(128usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",128usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"DestroySubMeshObjects",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_compound_bounds(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::bounds::Bounds{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(116usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",116usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetCompoundBounds",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->crate::unity_engine::bounds::Bounds= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_canvas_space_clipping_rect(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rect::Rect{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(117usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",117usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetCanvasSpaceClippingRect",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->crate::unity_engine::rect::Rect= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_material_for_rendering(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",34usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"get_materialForRendering",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_auto_size_text_container(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(75usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",75usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"get_autoSizeTextContainer",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_auto_size_text_container(this:TextMeshProUGUI,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(76usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",76usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"set_autoSizeTextContainer",));
-let inner:extern "C" fn(TextMeshProUGUI,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_mesh(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::mesh::Mesh{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(77usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",77usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"get_mesh",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->crate::unity_engine::mesh::Mesh= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn calculate_layout_input_horizontal(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(133usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",133usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn calculate_layout_input_vertical(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(134usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",134usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_vertices_dirty(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetVerticesDirty",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_layout_dirty(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetLayoutDirty",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_material_dirty(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetMaterialDirty",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_all_dirty(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetAllDirty",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn rebuild(this:TextMeshProUGUI,update:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",37usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"Rebuild",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,update,__mi)}
-pub unsafe fn get_modified_material(this:TextMeshProUGUI,base_material:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",58usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetModifiedMaterial",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,base_material,__mi)}
-pub unsafe fn update_material(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",40usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateMaterial",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn recalculate_clipping(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",63usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"RecalculateClipping",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn cull(this:TextMeshProUGUI,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",59usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"Cull",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,clip_rect,valid_rect,__mi)}
-pub unsafe fn update_culling(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(102usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",102usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateCulling",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update_mesh_padding(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(111usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",111usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateMeshPadding",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn internal_cross_fade_color(this:TextMeshProUGUI,target_color:crate::unity_engine::color::Color,duration:f32,ignore_time_scale:bool,use_alpha:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(112usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",112usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"InternalCrossFadeColor",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::color::Color,f32,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,target_color,duration,ignore_time_scale,use_alpha,__mi)}
-pub unsafe fn internal_cross_fade_alpha(this:TextMeshProUGUI,alpha:f32,duration:f32,ignore_time_scale:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(113usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",113usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"InternalCrossFadeAlpha",));
-let inner:extern "C" fn(TextMeshProUGUI,f32,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,alpha,duration,ignore_time_scale,__mi)}
-pub unsafe fn force_mesh_update(this:TextMeshProUGUI,ignore_active_state:bool,force_text_reparsing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(106usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",106usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"ForceMeshUpdate",));
-let inner:extern "C" fn(TextMeshProUGUI,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,ignore_active_state,force_text_reparsing,__mi)}
-pub unsafe fn get_text_info(this:TextMeshProUGUI,text: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::tm_pro::tmp_textinfo::TMP_TextInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(118usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",118usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetTextInfo",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::tm_pro::tmp_textinfo::TMP_TextInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,text,__mi)}
-pub unsafe fn clear_mesh(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(129usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",129usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"ClearMesh",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn add_on_pre_render_text(this:TextMeshProUGUI,value:crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(78usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",78usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"add_OnPreRenderText",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn remove_on_pre_render_text(this:TextMeshProUGUI,value:crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(79usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",79usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"remove_OnPreRenderText",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn update_geometry(this:TextMeshProUGUI,mesh:crate::unity_engine::mesh::Mesh,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(107usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",107usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::mesh::Mesh,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,mesh,index,__mi)}
-pub unsafe fn update_vertex_data(this:TextMeshProUGUI,flags:crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(108usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",108usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateVertexData",));
-let inner:extern "C" fn(TextMeshProUGUI,crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,flags,__mi)}
-pub unsafe fn update_vertex_data_2(this:TextMeshProUGUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(109usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",109usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateVertexData",));
-let inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="tm_pro-textmeshprougui")]impl TextMeshProUGUI{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3586ab0usize)as*mut u8,();
 )}
 }
 }
 
 #[cfg(feature="tm_pro-textmeshprougui")]pub trait ITextMeshProUGUIMethods:ITextMeshProUGUI{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::awake(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"Awake",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`LoadFontAsset()` overload"]fn load_font_asset(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::load_font_asset(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(89usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",89usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"LoadFontAsset",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetCanvas()` overload"]fn get_canvas(self,)->crate::unity_engine::canvas::Canvas{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3577240usize)as*mut u8,crate::unity_engine::canvas::Canvas;
@@ -626,34 +118,124 @@ __TextMeshProUGUI_unity2_raw::load_font_asset(__receiver, ::core::option::Option
 (TextMeshProUGUI)__receiver)}
 }
 #[doc="`GetMaterial(crate::unity_engine::material::Material)` overload"]fn get_material(self,mat:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_material(__receiver, ::core::convert::Into::into(mat), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(91usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",91usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetMaterial",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(mat),__mi)}
+}
 }
 #[doc="`GetMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]fn get_materials(self,mats:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::material::Material> >)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_materials(__receiver, ::core::convert::Into::into(mats), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(95usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",95usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetMaterials",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::Array<crate::unity_engine::material::Material> , ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(mats),__mi)}
+}
 }
 #[doc="`SetSharedMaterial(crate::unity_engine::material::Material)` overload"]fn set_shared_material(self,mat:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_shared_material(__receiver, ::core::convert::Into::into(mat), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(90usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",90usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetSharedMaterial",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(mat),__mi)}
+}
 }
 #[doc="`GetSharedMaterials()` overload"]fn get_shared_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_shared_materials(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(93usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",93usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetSharedMaterials",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetSharedMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]fn set_shared_materials(self,materials:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::material::Material> >)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_shared_materials(__receiver, ::core::convert::Into::into(materials), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(94usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",94usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetSharedMaterials",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::Array<crate::unity_engine::material::Material> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(materials),__mi)}
+}
 }
 #[doc="`SetOutlineThickness(f32)` overload"]fn set_outline_thickness(self,thickness:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_outline_thickness(__receiver, ::core::convert::Into::into(thickness), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(99usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",99usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetOutlineThickness",));
+let __inner:extern "C" fn(TextMeshProUGUI,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(thickness),__mi)}
+}
 }
 #[doc="`SetFaceColor(crate::unity_engine::color32::Color32)` overload"]fn set_face_color(self,color:impl::core::convert::Into<crate::unity_engine::color32::Color32>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_face_color(__receiver, ::core::convert::Into::into(color), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(97usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",97usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetFaceColor",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::color32::Color32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(color),__mi)}
+}
 }
 #[doc="`SetOutlineColor(crate::unity_engine::color32::Color32)` overload"]fn set_outline_color(self,color:impl::core::convert::Into<crate::unity_engine::color32::Color32>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_outline_color(__receiver, ::core::convert::Into::into(color), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(98usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",98usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetOutlineColor",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::color32::Color32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(color),__mi)}
+}
 }
 #[doc="`SetShaderDepth()` overload"]fn set_shader_depth(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_shader_depth(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(100usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",100usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetShaderDepth",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetCulling()` overload"]fn set_culling(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_culling(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(101usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",101usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetCulling",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetPerspectiveCorrection()` overload"]fn set_perspective_correction(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35798e0usize)as*mut u8,();
@@ -664,85 +246,292 @@ __TextMeshProUGUI_unity2_raw::set_culling(__receiver, ::core::option::Option::No
 (TextMeshProUGUI)__receiver,(i32)::core::convert::Into::into(size))}
 }
 #[doc="`SetArraySizes(::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>)` overload"]fn set_array_sizes(self,unicode_chars:impl::core::convert::Into< ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> >)->i32{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_array_sizes(__receiver, ::core::convert::Into::into(unicode_chars), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(114usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",114usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetArraySizes",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> , ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unicode_chars),__mi)}
+}
 }
 #[doc="`ComputeMarginSize()` overload"]fn compute_margin_size(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::compute_margin_size(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(119usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",119usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"ComputeMarginSize",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::on_canvas_hierarchy_changed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnCanvasHierarchyChanged",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`InternalUpdate()` overload"]fn internal_update(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::internal_update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(132usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",132usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"InternalUpdate",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnPreRenderCanvas()` overload"]fn on_pre_render_canvas(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x357c4b0usize)as*mut u8,();
 (TextMeshProUGUI)__receiver)}
 }
 #[doc="`GenerateTextMesh()` overload"]fn generate_text_mesh(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::generate_text_mesh(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(142usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",142usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GenerateTextMesh",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetTextContainerLocalCorners()` overload"]fn get_text_container_local_corners(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_text_container_local_corners(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(105usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",105usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetTextContainerLocalCorners",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetActiveSubMeshes(bool)` overload"]fn set_active_sub_meshes(self,state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_active_sub_meshes(__receiver, ::core::convert::Into::into(state), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(127usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",127usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetActiveSubMeshes",));
+let __inner:extern "C" fn(TextMeshProUGUI,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(state),__mi)}
+}
 }
 #[doc="`DestroySubMeshObjects()` overload"]fn destroy_sub_mesh_objects(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::destroy_sub_mesh_objects(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(128usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",128usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"DestroySubMeshObjects",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetCompoundBounds()` overload"]fn get_compound_bounds(self,)->crate::unity_engine::bounds::Bounds{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_compound_bounds(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(116usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",116usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetCompoundBounds",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->crate::unity_engine::bounds::Bounds= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetCanvasSpaceClippingRect()` overload"]fn get_canvas_space_clipping_rect(self,)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_canvas_space_clipping_rect(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(117usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",117usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetCanvasSpaceClippingRect",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->crate::unity_engine::rect::Rect= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateSDFScale(f32)` overload"]fn update_sdf_scale(self,scale_delta:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x357c2b0usize)as*mut u8,();
 (TextMeshProUGUI)__receiver,(f32)::core::convert::Into::into(scale_delta))}
 }
 #[doc="`get_materialForRendering()` overload"]fn get_material_for_rendering(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_material_for_rendering(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"get_materialForRendering",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_autoSizeTextContainer()` overload"]fn get_auto_size_text_container(self,)->bool{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_auto_size_text_container(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(75usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",75usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"get_autoSizeTextContainer",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_autoSizeTextContainer(bool)` overload"]fn set_auto_size_text_container(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_auto_size_text_container(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(76usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",76usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"set_autoSizeTextContainer",));
+let __inner:extern "C" fn(TextMeshProUGUI,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_mesh()` overload"]fn get_mesh(self,)->crate::unity_engine::mesh::Mesh{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_mesh(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(77usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",77usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"get_mesh",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->crate::unity_engine::mesh::Mesh= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_canvasRenderer()` overload"]fn get_canvas_renderer(self,)->crate::unity_engine::canvasrenderer::CanvasRenderer{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3585090usize)as*mut u8,crate::unity_engine::canvasrenderer::CanvasRenderer;
 (TextMeshProUGUI)__receiver)}
 }
 #[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(133usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",133usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(134usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",134usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetVerticesDirty()` overload"]fn set_vertices_dirty(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_vertices_dirty(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetVerticesDirty",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetLayoutDirty()` overload"]fn set_layout_dirty(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_layout_dirty(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetLayoutDirty",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetMaterialDirty()` overload"]fn set_material_dirty(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_material_dirty(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetMaterialDirty",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetAllDirty()` overload"]fn set_all_dirty(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::set_all_dirty(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"SetAllDirty",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`DelayedGraphicRebuild()` overload"]fn delayed_graphic_rebuild(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3585500usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
@@ -753,17 +542,44 @@ __TextMeshProUGUI_unity2_raw::set_all_dirty(__receiver, ::core::option::Option::
 (TextMeshProUGUI)__receiver)}
 }
 #[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,update:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(update), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"Rebuild",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(update),__mi)}
+}
 }
 #[doc="`UpdateSubObjectPivot()` overload"]fn update_sub_object_pivot(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x357c110usize)as*mut u8,();
 (TextMeshProUGUI)__receiver)}
 }
 #[doc="`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]fn get_modified_material(self,base_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_modified_material(__receiver, ::core::convert::Into::into(base_material), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetModifiedMaterial",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(base_material),__mi)}
+}
 }
 #[doc="`UpdateMaterial()` overload"]fn update_material(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::update_material(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateMaterial",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_maskOffset()` overload"]fn get_mask_offset(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3585920usize)as*mut u8,crate::unity_engine::vector4::Vector4;
@@ -774,46 +590,172 @@ __TextMeshProUGUI_unity2_raw::update_material(__receiver, ::core::option::Option
 (TextMeshProUGUI)__receiver,(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(value))}
 }
 #[doc="`RecalculateClipping()` overload"]fn recalculate_clipping(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::recalculate_clipping(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",63usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"RecalculateClipping",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Cull(crate::unity_engine::rect::Rect, bool)` overload"]fn cull(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::cull(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",59usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"Cull",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect),__mi)}
+}
 }
 #[doc="`UpdateCulling()` overload"]fn update_culling(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::update_culling(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(102usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",102usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateCulling",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateMeshPadding()` overload"]fn update_mesh_padding(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::update_mesh_padding(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(111usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",111usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateMeshPadding",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`InternalCrossFadeColor(crate::unity_engine::color::Color, f32, bool, bool)` overload"]fn internal_cross_fade_color(self,target_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32> ,ignore_time_scale:impl::core::convert::Into<bool> ,use_alpha:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::internal_cross_fade_color(__receiver, ::core::convert::Into::into(target_color), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::convert::Into::into(use_alpha), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(112usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",112usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"InternalCrossFadeColor",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::color::Color,f32,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(target_color), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::convert::Into::into(use_alpha),__mi)}
+}
 }
 #[doc="`InternalCrossFadeAlpha(f32, f32, bool)` overload"]fn internal_cross_fade_alpha(self,alpha:impl::core::convert::Into<f32> ,duration:impl::core::convert::Into<f32> ,ignore_time_scale:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::internal_cross_fade_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(113usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",113usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"InternalCrossFadeAlpha",));
+let __inner:extern "C" fn(TextMeshProUGUI,f32,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(alpha), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale),__mi)}
+}
 }
 #[doc="`ForceMeshUpdate(bool, bool)` overload"]fn force_mesh_update(self,ignore_active_state:impl::core::convert::Into<bool> ,force_text_reparsing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::force_mesh_update(__receiver, ::core::convert::Into::into(ignore_active_state), ::core::convert::Into::into(force_text_reparsing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(106usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",106usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"ForceMeshUpdate",));
+let __inner:extern "C" fn(TextMeshProUGUI,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(ignore_active_state), ::core::convert::Into::into(force_text_reparsing),__mi)}
+}
 }
 #[doc="`GetTextInfo(::unity2::Il2CppString)` overload"]fn get_text_info(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::tm_pro::tmp_textinfo::TMP_TextInfo{unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::get_text_info(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(118usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",118usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"GetTextInfo",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::tm_pro::tmp_textinfo::TMP_TextInfo= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(text),__mi)}
+}
 }
 #[doc="`ClearMesh()` overload"]fn clear_mesh(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::clear_mesh(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(129usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",129usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"ClearMesh",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`add_OnPreRenderText(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)` overload"]fn add_on_pre_render_text(self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> >)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::add_on_pre_render_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(78usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",78usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"add_OnPreRenderText",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`remove_OnPreRenderText(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)` overload"]fn remove_on_pre_render_text(self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> >)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::remove_on_pre_render_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(79usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",79usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"remove_OnPreRenderText",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`UpdateGeometry(crate::unity_engine::mesh::Mesh, i32)` overload"]fn update_geometry(self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::update_geometry(__receiver, ::core::convert::Into::into(mesh), ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(107usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",107usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::unity_engine::mesh::Mesh,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(mesh), ::core::convert::Into::into(index),__mi)}
+}
 }
 #[doc="`UpdateVertexData(crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags)` overload"]fn update_vertex_data(self,flags:impl::core::convert::Into<crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags>)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::update_vertex_data(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(108usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",108usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateVertexData",));
+let __inner:extern "C" fn(TextMeshProUGUI,crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(flags),__mi)}
+}
 }
 #[doc="`UpdateVertexData()` overload"]fn update_vertex_data_2(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextMeshProUGUI_unity2_raw::update_vertex_data_2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(109usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",109usize,__vt.len(), <TextMeshProUGUI as::unity2::ClassIdentity> ::NAME,"UpdateVertexData",));
+let __inner:extern "C" fn(TextMeshProUGUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateFontAsset()` overload"]fn update_font_asset(self,)->(){unsafe{let __receiver= <TextMeshProUGUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35869b0usize)as*mut u8,();
@@ -900,6 +842,173 @@ pub fn update_vertex_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInf
 pub fn update_font_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+}
+
+#[cfg(feature="tm_pro-textmeshprougui")]impl TextMeshProUGUI{#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `OnEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `OnDisable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_disable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_disable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `OnDestroy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_destroy(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_destroy_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `LoadFontAsset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn load_font_asset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::load_font_asset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `GetMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,mat:crate::unity_engine::material::Material,)->crate::unity_engine::material::Material{let __mi=Self::get_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),mat, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `GetMaterials`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_materials(this:impl::core::convert::Into< ::unity2::IlInstance> ,mats: ::unity2::Array<crate::unity_engine::material::Material> ,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __mi=Self::get_materials_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<crate::unity_engine::material::Material> , ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),mats, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetSharedMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_shared_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,mat:crate::unity_engine::material::Material,)->(){let __mi=Self::set_shared_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),mat, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `GetSharedMaterials`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_shared_materials(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __mi=Self::get_shared_materials_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetSharedMaterials`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_shared_materials(this:impl::core::convert::Into< ::unity2::IlInstance> ,materials: ::unity2::Array<crate::unity_engine::material::Material> ,)->(){let __mi=Self::set_shared_materials_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<crate::unity_engine::material::Material> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),materials, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetOutlineThickness`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_outline_thickness(this:impl::core::convert::Into< ::unity2::IlInstance> ,thickness:f32,)->(){let __mi=Self::set_outline_thickness_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),thickness, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetFaceColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_face_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,color:crate::unity_engine::color32::Color32,)->(){let __mi=Self::set_face_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::color32::Color32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),color, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetOutlineColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_outline_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,color:crate::unity_engine::color32::Color32,)->(){let __mi=Self::set_outline_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::color32::Color32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),color, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetShaderDepth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_shader_depth(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_shader_depth_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetCulling`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_culling(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_culling_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetArraySizes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_array_sizes(this:impl::core::convert::Into< ::unity2::IlInstance> ,unicode_chars: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> ,)->i32{let __mi=Self::set_array_sizes_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> , ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unicode_chars, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `ComputeMarginSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compute_margin_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::compute_margin_size_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `OnDidApplyAnimationProperties`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_did_apply_animation_properties(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_did_apply_animation_properties_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `OnCanvasHierarchyChanged`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_canvas_hierarchy_changed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_canvas_hierarchy_changed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `OnTransformParentChanged`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_transform_parent_changed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_transform_parent_changed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `OnRectTransformDimensionsChange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_rect_transform_dimensions_change(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_rect_transform_dimensions_change_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `InternalUpdate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn internal_update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::internal_update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `GenerateTextMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn generate_text_mesh(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::generate_text_mesh_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `GetTextContainerLocalCorners`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_text_container_local_corners(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{let __mi=Self::get_text_container_local_corners_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetActiveSubMeshes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_active_sub_meshes(this:impl::core::convert::Into< ::unity2::IlInstance> ,state:bool,)->(){let __mi=Self::set_active_sub_meshes_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),state, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `DestroySubMeshObjects`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn destroy_sub_mesh_objects(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::destroy_sub_mesh_objects_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `GetCompoundBounds`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_compound_bounds(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::bounds::Bounds{let __mi=Self::get_compound_bounds_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::bounds::Bounds= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `GetCanvasSpaceClippingRect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_canvas_space_clipping_rect(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::rect::Rect{let __mi=Self::get_canvas_space_clipping_rect_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::rect::Rect= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `get_materialForRendering`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_material_for_rendering(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_material_for_rendering_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `get_autoSizeTextContainer`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_auto_size_text_container(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_auto_size_text_container_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `set_autoSizeTextContainer`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_auto_size_text_container(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_auto_size_text_container_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `get_mesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_mesh(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::mesh::Mesh{let __mi=Self::get_mesh_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::mesh::Mesh= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `CalculateLayoutInputHorizontal`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calculate_layout_input_horizontal(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calculate_layout_input_horizontal_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `CalculateLayoutInputVertical`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calculate_layout_input_vertical(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calculate_layout_input_vertical_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetVerticesDirty`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_vertices_dirty(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_vertices_dirty_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetLayoutDirty`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_layout_dirty(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_layout_dirty_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetMaterialDirty`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_material_dirty(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_material_dirty_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `SetAllDirty`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_all_dirty(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::set_all_dirty_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `Rebuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn rebuild(this:impl::core::convert::Into< ::unity2::IlInstance> ,update:crate::unity_engine::ui::canvasupdate::CanvasUpdate,)->(){let __mi=Self::rebuild_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),update, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `GetModifiedMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_modified_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,base_material:crate::unity_engine::material::Material,)->crate::unity_engine::material::Material{let __mi=Self::get_modified_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),base_material, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `UpdateMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_material_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `RecalculateClipping`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn recalculate_clipping(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::recalculate_clipping_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `Cull`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn cull(this:impl::core::convert::Into< ::unity2::IlInstance> ,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,)->(){let __mi=Self::cull_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),clip_rect,valid_rect, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `UpdateCulling`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_culling(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_culling_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `UpdateMeshPadding`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_mesh_padding(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_mesh_padding_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `InternalCrossFadeColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn internal_cross_fade_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,target_color:crate::unity_engine::color::Color,duration:f32,ignore_time_scale:bool,use_alpha:bool,)->(){let __mi=Self::internal_cross_fade_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::color::Color,f32,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),target_color,duration,ignore_time_scale,use_alpha, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `InternalCrossFadeAlpha`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn internal_cross_fade_alpha(this:impl::core::convert::Into< ::unity2::IlInstance> ,alpha:f32,duration:f32,ignore_time_scale:bool,)->(){let __mi=Self::internal_cross_fade_alpha_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),alpha,duration,ignore_time_scale, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `ForceMeshUpdate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn force_mesh_update(this:impl::core::convert::Into< ::unity2::IlInstance> ,ignore_active_state:bool,force_text_reparsing:bool,)->(){let __mi=Self::force_mesh_update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),ignore_active_state,force_text_reparsing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `GetTextInfo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_text_info(this:impl::core::convert::Into< ::unity2::IlInstance> ,text: ::unity2::Il2CppString,)->crate::tm_pro::tmp_textinfo::TMP_TextInfo{let __mi=Self::get_text_info_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::tm_pro::tmp_textinfo::TMP_TextInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),text, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `ClearMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clear_mesh(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::clear_mesh_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `add_OnPreRenderText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add_on_pre_render_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> ,)->(){let __mi=Self::add_on_pre_render_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `remove_OnPreRenderText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn remove_on_pre_render_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> ,)->(){let __mi=Self::remove_on_pre_render_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `UpdateGeometry`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_geometry(this:impl::core::convert::Into< ::unity2::IlInstance> ,mesh:crate::unity_engine::mesh::Mesh,index:i32,)->(){let __mi=Self::update_geometry_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::mesh::Mesh,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),mesh,index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `UpdateVertexData`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_vertex_data(this:impl::core::convert::Into< ::unity2::IlInstance> ,flags:crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags,)->(){let __mi=Self::update_vertex_data_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),flags, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextMeshProUGUI`'s own `UpdateVertexData`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_vertex_data_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_vertex_data_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="tm_pro-textmeshprougui")]impl TextMeshProUGUI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

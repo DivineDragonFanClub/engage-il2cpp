@@ -19,53 +19,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundmanager/SoundManager_ParamFader.md"))]#[::unity2::class(namespace="App",name="SoundManager.ParamFader")]#[parent(crate::system::object::Object)]pub struct SoundManager_ParamFader{#[offset(16)]#[rename(name="m_now")]pub m_now:f32, #[offset(20)]#[rename(name="m_from")]pub m_from:f32, #[offset(24)]#[rename(name="m_to")]pub m_to:f32, #[offset(28)]#[rename(name="m_time")]pub m_time:f32, #[offset(32)]#[rename(name="m_duration")]pub m_duration:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundmanager/SoundManager.md"))]#[::unity2::class(namespace="App",name="SoundManager")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::soundmanager::SoundManager>)]pub struct SoundManager{#[static_field]#[rename(name="VoiceVolumeMin")]pub voice_volume_min:f32, #[static_field]#[rename(name="VoiceVolumeMax")]pub voice_volume_max:f32, #[static_field]#[rename(name="SeVolumeMin")]pub se_volume_min:f32, #[static_field]#[rename(name="SeVolumeMax")]pub se_volume_max:f32, #[static_field]#[rename(name="EventSeGameParamName")]pub event_se_game_param_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_isInitialized")]pub m_is_initialized:bool, #[offset(40)]#[rename(name="m_masterBaseBgmVolume")]pub m_master_base_bgm_volume:crate::app::soundmanager::SoundManager_ParamFader, #[offset(48)]#[rename(name="m_masterBaseSeVolume")]pub m_master_base_se_volume:crate::app::soundmanager::SoundManager_ParamFader, #[offset(56)]#[rename(name="m_masterBaseEnvVolume")]pub m_master_base_env_volume:crate::app::soundmanager::SoundManager_ParamFader, #[offset(64)]#[rename(name="m_masterBaseVoiceVolume")]pub m_master_base_voice_volume:crate::app::soundmanager::SoundManager_ParamFader, #[offset(72)]#[rename(name="m_masterBgmVolumeOld")]pub m_master_bgm_volume_old:f32, #[offset(76)]#[rename(name="m_masterSeVolumeOld")]pub m_master_se_volume_old:f32, #[offset(80)]#[rename(name="m_masterEnvVolumeOld")]pub m_master_env_volume_old:f32, #[offset(84)]#[rename(name="m_masterVoiceVolumeOld")]pub m_master_voice_volume_old:f32, #[offset(88)]#[rename(name="m_configBgmVolumeOld")]pub m_config_bgm_volume_old:f32, #[offset(92)]#[rename(name="m_configSeVolumeOld")]pub m_config_se_volume_old:f32, #[offset(96)]#[rename(name="m_configEnvVolumeOld")]pub m_config_env_volume_old:f32, #[offset(100)]#[rename(name="m_configVoiceVolumeOld")]pub m_config_voice_volume_old:f32, #[offset(104)]#[rename(name="m_mapCameraHeightRateOld")]pub m_map_camera_height_rate_old:f32, #[offset(108)]#[rename(name="m_eventSeVolume")]pub m_event_se_volume:f32, #[offset(152)]#[rename(name="m_soundHandleList")]pub m_sound_handle_list:crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> , #[offset(160)]#[rename(name="m_deleteSoundHandleList")]pub m_delete_sound_handle_list:crate::system::collections::generic::list_1::List_1<crate::app::soundsystem::SoundSystem_SoundHandle> , #[offset(168)]#[rename(name="m_GlobalEnumParamStack_MapOrCombat")]pub m_global_enum_param_stack_map_or_combat:crate::system::collections::generic::stack_1::Stack_1<u32> , #[offset(176)]#[rename(name="m_TimeCounterForUpdateOutput")]pub m_time_counter_for_update_output:f32, #[offset(180)]#[rename(name="m_isMuteByGameSkip")]pub m_is_mute_by_game_skip:bool, #[offset(184)]#[rename(name="m_lipSyncDataFileDictionary")]pub m_lip_sync_data_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::soundsystem::SoundSystem_LipSyncDataFile> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundmanager/SoundManager_ParamFader.md"))]#[::unity2::class(namespace="App",name="SoundManager.ParamFader")]#[parent(crate::system::object::Object)]pub struct SoundManager_ParamFader{#[offset(16)]#[rename(name="m_now")]pub m_now:f32, #[offset(20)]#[rename(name="m_from")]pub m_from:f32, #[offset(24)]#[rename(name="m_to")]pub m_to:f32, #[offset(28)]#[rename(name="m_time")]pub m_time:f32, #[offset(32)]#[rename(name="m_duration")]pub m_duration:f32,}
 
 }
 
 #[cfg(feature = "app-soundmanager-types")]
 pub use __types::*;
-
-#[cfg(feature="app-soundmanager")]pub trait ISoundManager_ParamFaderMethods:ISoundManager_ParamFader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundManager_ParamFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cc30usize)as*mut u8,();
-(SoundManager_ParamFader)__receiver)}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SoundManager_ParamFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cc70usize)as*mut u8,();
-(SoundManager_ParamFader)__receiver)}
-}
-#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <SoundManager_ParamFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cc90usize)as*mut u8,f32;
-(SoundManager_ParamFader)__receiver)}
-}
-#[doc="`Set(f32, i32)` overload"]fn set(self,param:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundManager_ParamFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cca0usize)as*mut u8,();
-(SoundManager_ParamFader)__receiver,(f32)::core::convert::Into::into(param),(i32)::core::convert::Into::into(msec))}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <SoundManager_ParamFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cd50usize)as*mut u8,();
-(SoundManager_ParamFader)__receiver)}
-}
-}
-
-#[cfg(feature="app-soundmanager")]impl<__T:ISoundManager_ParamFader>ISoundManager_ParamFaderMethods for __T{}
-
-#[cfg(feature="app-soundmanager")]impl SoundManager_ParamFader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-soundmanager")]impl SoundManager_ParamFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SoundManager_ParamFader), ::core::stringify!(new),));
- <Self as ISoundManager_ParamFaderMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-soundmanager")]impl SoundManager{#[doc="`TryDebugLog(::unity2::Il2CppString)` overload"]pub fn try_debug_log(event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24f70a0usize)as*mut u8,();
 (::unity2::Il2CppString)::core::convert::Into::into(event_name))}
@@ -750,15 +712,53 @@ pub fn get_lip_sync_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 this}
 }
 
+#[cfg(feature="app-soundmanager")]pub trait ISoundManager_ParamFaderMethods:ISoundManager_ParamFader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundManager_ParamFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cc30usize)as*mut u8,();
+(SoundManager_ParamFader)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SoundManager_ParamFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cc70usize)as*mut u8,();
+(SoundManager_ParamFader)__receiver)}
+}
+#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <SoundManager_ParamFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cc90usize)as*mut u8,f32;
+(SoundManager_ParamFader)__receiver)}
+}
+#[doc="`Set(f32, i32)` overload"]fn set(self,param:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundManager_ParamFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cca0usize)as*mut u8,();
+(SoundManager_ParamFader)__receiver,(f32)::core::convert::Into::into(param),(i32)::core::convert::Into::into(msec))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <SoundManager_ParamFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7cd50usize)as*mut u8,();
+(SoundManager_ParamFader)__receiver)}
+}
+}
+
+#[cfg(feature="app-soundmanager")]impl<__T:ISoundManager_ParamFader>ISoundManager_ParamFaderMethods for __T{}
+
+#[cfg(feature="app-soundmanager")]impl SoundManager_ParamFader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-soundmanager")]impl SoundManager_ParamFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundManager_ParamFader), ::core::stringify!(new),));
+ <Self as ISoundManager_ParamFaderMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-soundmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SoundManager_ParamFader;
-    pub use super::ISoundManager_ParamFader;
-    pub use super::ISoundManager_ParamFaderMethods;
     pub use super::SoundManager;
     pub use super::ISoundManager;
     pub use super::ISoundManagerMethods;
+    pub use super::SoundManager_ParamFader;
+    pub use super::ISoundManager_ParamFader;
+    pub use super::ISoundManager_ParamFaderMethods;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

@@ -18,29 +18,6 @@ use crate::unity_engine::customyieldinstruction::{CustomYieldInstruction,ICustom
 #[cfg(feature = "unity_engine-www-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-www")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WWW_unity2_raw{use super:: * ;
-pub unsafe fn get_keep_waiting(this:WWW,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <WWW as::unity2::ClassIdentity> ::NAME,"get_keepWaiting",));
-let inner:extern "C" fn(WWW, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:WWW,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <WWW as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(WWW, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-www")]impl WWW{#[doc="`LoadFromCacheOrDownload(::unity2::Il2CppString, i32)` overload"]pub fn load_from_cache_or_download(url:impl::core::convert::Into< ::unity2::Il2CppString> ,version:impl::core::convert::Into<i32>)->crate::unity_engine::www::WWW{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3b660usize)as*mut u8,crate::unity_engine::www::WWW;
 (::unity2::Il2CppString)::core::convert::Into::into(url),(i32)::core::convert::Into::into(version))}
 }
@@ -104,10 +81,28 @@ inner(this,__mi)}
 (WWW)__receiver)}
 }
 #[doc="`get_keepWaiting()` overload"]fn get_keep_waiting(self,)->bool{unsafe{let __receiver= <WWW as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WWW_unity2_raw::get_keep_waiting(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <WWW as::unity2::ClassIdentity> ::NAME,"get_keepWaiting",));
+let __inner:extern "C" fn(WWW, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <WWW as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WWW_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <WWW as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(WWW, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`WaitUntilDoneIfPossible()` overload"]fn wait_until_done_if_possible(self,)->bool{unsafe{let __receiver= <WWW as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3be90usize)as*mut u8,bool;
@@ -136,6 +131,14 @@ pub fn get_url_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn get_keep_waiting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 pub fn wait_until_done_if_possible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="unity_engine-www")]impl WWW{#[doc="Direct (non-virtual) call to `WWW`'s own `get_keepWaiting`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_keep_waiting(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_keep_waiting_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WWW`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-www")]impl WWW{#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::wwwform::WWWForm)` — overload selector"]pub fn new(url: ::unity2::Il2CppString,form:crate::unity_engine::wwwform::WWWForm)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

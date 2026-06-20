@@ -9,92 +9,21 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogui/TalkLogUI_ScrollBar.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkLogUI.ScrollBar")]#[parent(crate::system::object::Object)]pub struct TalkLogUI_ScrollBar{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_ScrollBar")]pub m_scroll_bar:crate::unity_engine::ui::scrollbar::Scrollbar, #[offset(32)]#[rename(name="m_ScrollAreaImage")]pub m_scroll_area_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_SlideHandleImage")]pub m_slide_handle_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_ItemMax")]pub m_item_max:i32, #[offset(52)]#[rename(name="m_SlideHandlePosFrom")]pub m_slide_handle_pos_from:f32, #[offset(56)]#[rename(name="m_SlideHandlePosTo")]pub m_slide_handle_pos_to:f32, #[offset(60)]#[rename(name="m_Time")]pub m_time:f32, #[offset(64)]#[rename(name="m_Duration")]pub m_duration:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogui/TalkLogUI_Cursor.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkLogUI.Cursor")]#[parent(crate::system::object::Object)]pub struct TalkLogUI_Cursor{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_PosFrom")]pub m_pos_from:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="m_PosTo")]pub m_pos_to:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="m_Time")]pub m_time:f32, #[offset(60)]#[rename(name="m_Duration")]pub m_duration:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogui/TalkLogUI_Window.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkLogUI.Window")]#[parent(crate::system::object::Object)]pub struct TalkLogUI_Window{#[offset(16)]#[rename(name="m_Index")]pub m_index:i32, #[offset(24)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_RootImage")]pub m_root_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_NameWindowImage")]pub m_name_window_image:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_TalkerName")]pub m_talker_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_BodyMess")]pub m_body_mess:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_KeyHelpMess")]pub m_key_help_mess:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_KeyHelpAnimator")]pub m_key_help_animator:crate::unity_engine::animator::Animator, #[offset(88)]#[rename(name="m_KeyHelpIconImage")]pub m_key_help_icon_image:crate::unity_engine::ui::image::Image, #[offset(96)]#[rename(name="m_isMoveAnimStarted")]pub m_is_move_anim_started:bool, #[static_field]#[rename(name="WinUpDownAnimSpeed")]pub win_up_down_anim_speed:f32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogui/TalkLogUI.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkLogUI")]#[parent(crate::system::object::Object)]pub struct TalkLogUI{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogui/TalkLogUI_Cursor.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkLogUI.Cursor")]#[parent(crate::system::object::Object)]pub struct TalkLogUI_Cursor{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_PosFrom")]pub m_pos_from:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="m_PosTo")]pub m_pos_to:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="m_Time")]pub m_time:f32, #[offset(60)]#[rename(name="m_Duration")]pub m_duration:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talklogui/TalkLogUI_ScrollBar.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkLogUI.ScrollBar")]#[parent(crate::system::object::Object)]pub struct TalkLogUI_ScrollBar{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_ScrollBar")]pub m_scroll_bar:crate::unity_engine::ui::scrollbar::Scrollbar, #[offset(32)]#[rename(name="m_ScrollAreaImage")]pub m_scroll_area_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_SlideHandleImage")]pub m_slide_handle_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_ItemMax")]pub m_item_max:i32, #[offset(52)]#[rename(name="m_SlideHandlePosFrom")]pub m_slide_handle_pos_from:f32, #[offset(56)]#[rename(name="m_SlideHandlePosTo")]pub m_slide_handle_pos_to:f32, #[offset(60)]#[rename(name="m_Time")]pub m_time:f32, #[offset(64)]#[rename(name="m_Duration")]pub m_duration:f32,}
+
 }
 
 #[cfg(feature = "app-talk3_d-talklogui-types")]
 pub use __types::*;
-
-#[cfg(feature="app-talk3_d-talklogui")]pub trait ITalkLogUI_ScrollBarMethods:ITalkLogUI_ScrollBar{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, i32)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,item_max:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb580usize)as*mut u8,();
-(TalkLogUI_ScrollBar)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object),(i32)::core::convert::Into::into(item_max))}
-}
-#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb720usize)as*mut u8,();
-(TalkLogUI_ScrollBar)__receiver)}
-}
-#[doc="`MoveSlideHandlePos(f32, f32, f32)` overload"]fn move_slide_handle_pos(self,scroll_index:impl::core::convert::Into<f32> ,log_num:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb7e0usize)as*mut u8,();
-(TalkLogUI_ScrollBar)__receiver,(f32)::core::convert::Into::into(scroll_index),(f32)::core::convert::Into::into(log_num),(f32)::core::convert::Into::into(msec))}
-}
-#[doc="`SetSlideHandleSize(f32)` overload"]fn set_slide_handle_size(self,log_num:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb870usize)as*mut u8,();
-(TalkLogUI_ScrollBar)__receiver,(f32)::core::convert::Into::into(log_num))}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb8a0usize)as*mut u8,();
-(TalkLogUI_ScrollBar)__receiver)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb8e0usize)as*mut u8,();
-(TalkLogUI_ScrollBar)__receiver)}
-}
-}
-
-#[cfg(feature="app-talk3_d-talklogui")]impl<__T:ITalkLogUI_ScrollBar>ITalkLogUI_ScrollBarMethods for __T{}
-
-#[cfg(feature="app-talk3_d-talklogui")]impl TalkLogUI_ScrollBar{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_slide_handle_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_slide_handle_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-talk3_d-talklogui")]impl TalkLogUI_ScrollBar{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, i32)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject,item_max:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TalkLogUI_ScrollBar), ::core::stringify!(new),));
- <Self as ITalkLogUI_ScrollBarMethods> ::ctor(this,root_object,item_max);
-this}
-}
-
-#[cfg(feature="app-talk3_d-talklogui")]pub trait ITalkLogUI_CursorMethods:ITalkLogUI_Cursor{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TalkLogUI_Cursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb1a0usize)as*mut u8,();
-(TalkLogUI_Cursor)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TalkLogUI_Cursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb380usize)as*mut u8,();
-(TalkLogUI_Cursor)__receiver)}
-}
-#[doc="`MovePosition(crate::app::talk3_d::talklogui::TalkLogUI_Window, f32)` overload"]fn move_position(self,win:impl::core::convert::Into<crate::app::talk3_d::talklogui::TalkLogUI_Window> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TalkLogUI_Cursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb4a0usize)as*mut u8,();
-(TalkLogUI_Cursor)__receiver,(crate::app::talk3_d::talklogui::TalkLogUI_Window)::core::convert::Into::into(win),(f32)::core::convert::Into::into(msec))}
-}
-}
-
-#[cfg(feature="app-talk3_d-talklogui")]impl<__T:ITalkLogUI_Cursor>ITalkLogUI_CursorMethods for __T{}
-
-#[cfg(feature="app-talk3_d-talklogui")]impl TalkLogUI_Cursor{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-talk3_d-talklogui")]impl TalkLogUI_Cursor{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TalkLogUI_Cursor), ::core::stringify!(new),));
- <Self as ITalkLogUI_CursorMethods> ::ctor(this,root_object);
-this}
-}
 
 #[cfg(feature="app-talk3_d-talklogui")]pub trait ITalkLogUI_WindowMethods:ITalkLogUI_Window{#[doc="`.ctor(i32, crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TalkLogUI_Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb920usize)as*mut u8,();
@@ -212,21 +141,92 @@ this}
 this}
 }
 
+#[cfg(feature="app-talk3_d-talklogui")]pub trait ITalkLogUI_CursorMethods:ITalkLogUI_Cursor{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TalkLogUI_Cursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb1a0usize)as*mut u8,();
+(TalkLogUI_Cursor)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TalkLogUI_Cursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb380usize)as*mut u8,();
+(TalkLogUI_Cursor)__receiver)}
+}
+#[doc="`MovePosition(crate::app::talk3_d::talklogui::TalkLogUI_Window, f32)` overload"]fn move_position(self,win:impl::core::convert::Into<crate::app::talk3_d::talklogui::TalkLogUI_Window> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TalkLogUI_Cursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb4a0usize)as*mut u8,();
+(TalkLogUI_Cursor)__receiver,(crate::app::talk3_d::talklogui::TalkLogUI_Window)::core::convert::Into::into(win),(f32)::core::convert::Into::into(msec))}
+}
+}
+
+#[cfg(feature="app-talk3_d-talklogui")]impl<__T:ITalkLogUI_Cursor>ITalkLogUI_CursorMethods for __T{}
+
+#[cfg(feature="app-talk3_d-talklogui")]impl TalkLogUI_Cursor{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-talk3_d-talklogui")]impl TalkLogUI_Cursor{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkLogUI_Cursor), ::core::stringify!(new),));
+ <Self as ITalkLogUI_CursorMethods> ::ctor(this,root_object);
+this}
+}
+
+#[cfg(feature="app-talk3_d-talklogui")]pub trait ITalkLogUI_ScrollBarMethods:ITalkLogUI_ScrollBar{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, i32)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,item_max:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb580usize)as*mut u8,();
+(TalkLogUI_ScrollBar)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object),(i32)::core::convert::Into::into(item_max))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb720usize)as*mut u8,();
+(TalkLogUI_ScrollBar)__receiver)}
+}
+#[doc="`MoveSlideHandlePos(f32, f32, f32)` overload"]fn move_slide_handle_pos(self,scroll_index:impl::core::convert::Into<f32> ,log_num:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb7e0usize)as*mut u8,();
+(TalkLogUI_ScrollBar)__receiver,(f32)::core::convert::Into::into(scroll_index),(f32)::core::convert::Into::into(log_num),(f32)::core::convert::Into::into(msec))}
+}
+#[doc="`SetSlideHandleSize(f32)` overload"]fn set_slide_handle_size(self,log_num:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb870usize)as*mut u8,();
+(TalkLogUI_ScrollBar)__receiver,(f32)::core::convert::Into::into(log_num))}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb8a0usize)as*mut u8,();
+(TalkLogUI_ScrollBar)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <TalkLogUI_ScrollBar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fb8e0usize)as*mut u8,();
+(TalkLogUI_ScrollBar)__receiver)}
+}
+}
+
+#[cfg(feature="app-talk3_d-talklogui")]impl<__T:ITalkLogUI_ScrollBar>ITalkLogUI_ScrollBarMethods for __T{}
+
+#[cfg(feature="app-talk3_d-talklogui")]impl TalkLogUI_ScrollBar{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_slide_handle_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_slide_handle_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-talk3_d-talklogui")]impl TalkLogUI_ScrollBar{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, i32)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject,item_max:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkLogUI_ScrollBar), ::core::stringify!(new),));
+ <Self as ITalkLogUI_ScrollBarMethods> ::ctor(this,root_object,item_max);
+this}
+}
+
 #[cfg(feature = "app-talk3_d-talklogui")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TalkLogUI_ScrollBar;
-    pub use super::ITalkLogUI_ScrollBar;
-    pub use super::ITalkLogUI_ScrollBarMethods;
-    pub use super::TalkLogUI_Cursor;
-    pub use super::ITalkLogUI_Cursor;
-    pub use super::ITalkLogUI_CursorMethods;
     pub use super::TalkLogUI_Window;
     pub use super::ITalkLogUI_Window;
     pub use super::ITalkLogUI_WindowMethods;
     pub use super::TalkLogUI;
     pub use super::ITalkLogUI;
     pub use super::ITalkLogUIMethods;
+    pub use super::TalkLogUI_Cursor;
+    pub use super::ITalkLogUI_Cursor;
+    pub use super::ITalkLogUI_CursorMethods;
+    pub use super::TalkLogUI_ScrollBar;
+    pub use super::ITalkLogUI_ScrollBar;
+    pub use super::ITalkLogUI_ScrollBarMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

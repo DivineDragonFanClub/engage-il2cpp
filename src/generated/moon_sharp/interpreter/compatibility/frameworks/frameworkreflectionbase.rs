@@ -19,107 +19,7 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FrameworkReflectionBase_unity2_raw{use super:: * ;
-pub unsafe fn get_type_info_from_type(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",36usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"GetTypeInfoFromType",));
-let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
-pub unsafe fn get_assembly(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"GetAssembly",));
-let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
-pub unsafe fn get_base_type(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"GetBaseType",));
-let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
-pub unsafe fn is_value_type(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsValueType",));
-let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
-pub unsafe fn is_interface(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsInterface",));
-let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
-pub unsafe fn is_nested_public(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsNestedPublic",));
-let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
-pub unsafe fn is_abstract(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsAbstract",));
-let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
-pub unsafe fn is_enum(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsEnum",));
-let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
-pub unsafe fn is_generic_type_definition(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsGenericTypeDefinition",));
-let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
-pub unsafe fn is_generic_type(this:FrameworkReflectionBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsGenericType",));
-let inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<FrameworkReflectionBase as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
 );
@@ -132,34 +32,124 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]pub trait IFrameworkReflectionBaseMethods:IFrameworkReflectionBase{#[doc="`GetTypeInfoFromType(::unity2::SystemType)` overload"]fn get_type_info_from_type(self,t:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::SystemType{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkReflectionBase_unity2_raw::get_type_info_from_type(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"GetTypeInfoFromType",));
+let __inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`GetAssembly(::unity2::SystemType)` overload"]fn get_assembly(self,t:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::reflection::assembly::Assembly{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkReflectionBase_unity2_raw::get_assembly(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"GetAssembly",));
+let __inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`GetBaseType(::unity2::SystemType)` overload"]fn get_base_type(self,t:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::SystemType{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkReflectionBase_unity2_raw::get_base_type(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"GetBaseType",));
+let __inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`IsValueType(::unity2::SystemType)` overload"]fn is_value_type(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkReflectionBase_unity2_raw::is_value_type(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsValueType",));
+let __inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`IsInterface(::unity2::SystemType)` overload"]fn is_interface(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkReflectionBase_unity2_raw::is_interface(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsInterface",));
+let __inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`IsNestedPublic(::unity2::SystemType)` overload"]fn is_nested_public(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkReflectionBase_unity2_raw::is_nested_public(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsNestedPublic",));
+let __inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`IsAbstract(::unity2::SystemType)` overload"]fn is_abstract(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkReflectionBase_unity2_raw::is_abstract(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsAbstract",));
+let __inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`IsEnum(::unity2::SystemType)` overload"]fn is_enum(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkReflectionBase_unity2_raw::is_enum(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsEnum",));
+let __inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`IsGenericTypeDefinition(::unity2::SystemType)` overload"]fn is_generic_type_definition(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkReflectionBase_unity2_raw::is_generic_type_definition(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsGenericTypeDefinition",));
+let __inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`IsGenericType(::unity2::SystemType)` overload"]fn is_generic_type(self,t:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FrameworkReflectionBase_unity2_raw::is_generic_type(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FrameworkReflectionBase as::unity2::ClassIdentity> ::NAME,"IsGenericType",));
+let __inner:extern "C" fn(FrameworkReflectionBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FrameworkReflectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FrameworkReflectionBase_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
@@ -180,6 +170,38 @@ pub fn is_enum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn is_generic_type_definition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn is_generic_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]impl FrameworkReflectionBase{#[doc="Direct (non-virtual) call to `FrameworkReflectionBase`'s own `GetTypeInfoFromType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_type_info_from_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,t: ::unity2::SystemType,)-> ::unity2::SystemType{let __mi=Self::get_type_info_from_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkReflectionBase`'s own `GetAssembly`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_assembly(this:impl::core::convert::Into< ::unity2::IlInstance> ,t: ::unity2::SystemType,)->crate::system::reflection::assembly::Assembly{let __mi=Self::get_assembly_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkReflectionBase`'s own `GetBaseType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_base_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,t: ::unity2::SystemType,)-> ::unity2::SystemType{let __mi=Self::get_base_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkReflectionBase`'s own `IsValueType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_value_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,t: ::unity2::SystemType,)->bool{let __mi=Self::is_value_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkReflectionBase`'s own `IsInterface`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_interface(this:impl::core::convert::Into< ::unity2::IlInstance> ,t: ::unity2::SystemType,)->bool{let __mi=Self::is_interface_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkReflectionBase`'s own `IsNestedPublic`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_nested_public(this:impl::core::convert::Into< ::unity2::IlInstance> ,t: ::unity2::SystemType,)->bool{let __mi=Self::is_nested_public_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkReflectionBase`'s own `IsAbstract`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_abstract(this:impl::core::convert::Into< ::unity2::IlInstance> ,t: ::unity2::SystemType,)->bool{let __mi=Self::is_abstract_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkReflectionBase`'s own `IsEnum`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_enum(this:impl::core::convert::Into< ::unity2::IlInstance> ,t: ::unity2::SystemType,)->bool{let __mi=Self::is_enum_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkReflectionBase`'s own `IsGenericTypeDefinition`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_generic_type_definition(this:impl::core::convert::Into< ::unity2::IlInstance> ,t: ::unity2::SystemType,)->bool{let __mi=Self::is_generic_type_definition_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FrameworkReflectionBase`'s own `IsGenericType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_generic_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,t: ::unity2::SystemType,)->bool{let __mi=Self::is_generic_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkreflectionbase")]impl FrameworkReflectionBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

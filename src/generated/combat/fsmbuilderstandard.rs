@@ -18,39 +18,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-fsmbuilderstandard-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-fsmbuilderstandard")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FSMBuilderStandard_unity2_raw{use super:: * ;
-pub unsafe fn build_end(this:FSMBuilderStandard,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <FSMBuilderStandard as::unity2::ClassIdentity> ::NAME,"BuildEnd",));
-let inner:extern "C" fn(FSMBuilderStandard, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_main(this:FSMBuilderStandard,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <FSMBuilderStandard as::unity2::ClassIdentity> ::NAME,"BuildMain",));
-let inner:extern "C" fn(FSMBuilderStandard, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_start(this:FSMBuilderStandard,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <FSMBuilderStandard as::unity2::ClassIdentity> ::NAME,"BuildStart",));
-let inner:extern "C" fn(FSMBuilderStandard, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="combat-fsmbuilderstandard")]impl FSMBuilderStandard{#[doc="`BuildEnd_BothAlive()` overload"]pub fn build_end_both_alive()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4b490usize)as*mut u8,();
 )}
 }
@@ -87,13 +54,40 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="combat-fsmbuilderstandard")]pub trait IFSMBuilderStandardMethods:IFSMBuilderStandard{#[doc="`BuildEnd()` overload"]fn build_end(self,)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FSMBuilderStandard_unity2_raw::build_end(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <FSMBuilderStandard as::unity2::ClassIdentity> ::NAME,"BuildEnd",));
+let __inner:extern "C" fn(FSMBuilderStandard, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BuildMain()` overload"]fn build_main(self,)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FSMBuilderStandard_unity2_raw::build_main(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <FSMBuilderStandard as::unity2::ClassIdentity> ::NAME,"BuildMain",));
+let __inner:extern "C" fn(FSMBuilderStandard, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BuildStart()` overload"]fn build_start(self,)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FSMBuilderStandard_unity2_raw::build_start(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FSMBuilderStandard as::unity2::ClassIdentity> ::NAME,"BuildStart",));
+let __inner:extern "C" fn(FSMBuilderStandard, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`AllocChainSync()` overload"]fn alloc_chain_sync(self,)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2d4e0f0usize)as*mut u8,();
@@ -133,6 +127,17 @@ pub fn alloc_chain_sync_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn build_chain_attack_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 pub fn build_chain_fsm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
+
+#[cfg(feature="combat-fsmbuilderstandard")]impl FSMBuilderStandard{#[doc="Direct (non-virtual) call to `FSMBuilderStandard`'s own `BuildEnd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_end(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_end_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FSMBuilderStandard`'s own `BuildMain`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_main(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_main_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FSMBuilderStandard`'s own `BuildStart`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-fsmbuilderstandard")]impl FSMBuilderStandard{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

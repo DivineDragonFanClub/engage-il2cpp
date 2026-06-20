@@ -20,25 +20,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-yoga-baselinefunction-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-yoga-baselinefunction")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaselineFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:BaselineFunction,node:crate::unity_engine::yoga::yoganode::YogaNode,width:f32,height:f32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <BaselineFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(BaselineFunction,crate::unity_engine::yoga::yoganode::YogaNode,f32,f32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,node,width,height,__mi)}
-}
-
 #[cfg(feature="unity_engine-yoga-baselinefunction")]pub trait IBaselineFunctionMethods:IBaselineFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BaselineFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f6c0usize)as*mut u8,();
 (BaselineFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32)` overload"]fn invoke(self,node:impl::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode> ,width:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <BaselineFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BaselineFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(node), ::core::convert::Into::into(width), ::core::convert::Into::into(height), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <BaselineFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(BaselineFunction,crate::unity_engine::yoga::yoganode::YogaNode,f32,f32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(node), ::core::convert::Into::into(width), ::core::convert::Into::into(height),__mi)}
+}
 }
 }
 
@@ -46,6 +42,11 @@ __BaselineFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(no
 
 #[cfg(feature="unity_engine-yoga-baselinefunction")]impl BaselineFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-yoga-baselinefunction")]impl BaselineFunction{#[doc="Direct (non-virtual) call to `BaselineFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,node:crate::unity_engine::yoga::yoganode::YogaNode,width:f32,height:f32,)->f32{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::yoga::yoganode::YogaNode,f32,f32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),node,width,height, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-yoga-baselinefunction")]impl BaselineFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -26,79 +26,71 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root_motion-humanoidbaker-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-humanoidbaker")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HumanoidBaker_unity2_raw{use super:: * ;
-pub unsafe fn get_character_root(this:HumanoidBaker,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HumanoidBaker as::unity2::ClassIdentity> ::NAME,"GetCharacterRoot",));
-let inner:extern "C" fn(HumanoidBaker, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_start_baking(this:HumanoidBaker,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <HumanoidBaker as::unity2::ClassIdentity> ::NAME,"OnStartBaking",));
-let inner:extern "C" fn(HumanoidBaker, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_set_loop_frame(this:HumanoidBaker,time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <HumanoidBaker as::unity2::ClassIdentity> ::NAME,"OnSetLoopFrame",));
-let inner:extern "C" fn(HumanoidBaker,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,time,__mi)}
-pub unsafe fn on_set_curves(this:HumanoidBaker,clip: *mut crate::unity_engine::animationclip::AnimationClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <HumanoidBaker as::unity2::ClassIdentity> ::NAME,"OnSetCurves",));
-let inner:extern "C" fn(HumanoidBaker, *mut crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,clip,__mi)}
-pub unsafe fn on_set_keyframes(this:HumanoidBaker,time:f32,last_frame:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <HumanoidBaker as::unity2::ClassIdentity> ::NAME,"OnSetKeyframes",));
-let inner:extern "C" fn(HumanoidBaker,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,time,last_frame,__mi)}
-}
-
 #[cfg(feature="root_motion-humanoidbaker")]pub trait IHumanoidBakerMethods:IHumanoidBaker{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HumanoidBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a762a0usize)as*mut u8,();
 (HumanoidBaker)__receiver)}
 }
 #[doc="`GetCharacterRoot()` overload"]fn get_character_root(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <HumanoidBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HumanoidBaker_unity2_raw::get_character_root(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HumanoidBaker as::unity2::ClassIdentity> ::NAME,"GetCharacterRoot",));
+let __inner:extern "C" fn(HumanoidBaker, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnStartBaking()` overload"]fn on_start_baking(self,)->(){unsafe{let __receiver= <HumanoidBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HumanoidBaker_unity2_raw::on_start_baking(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <HumanoidBaker as::unity2::ClassIdentity> ::NAME,"OnStartBaking",));
+let __inner:extern "C" fn(HumanoidBaker, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSetLoopFrame(f32)` overload"]fn on_set_loop_frame(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HumanoidBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HumanoidBaker_unity2_raw::on_set_loop_frame(__receiver, ::core::convert::Into::into(time), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HumanoidBaker as::unity2::ClassIdentity> ::NAME,"OnSetLoopFrame",));
+let __inner:extern "C" fn(HumanoidBaker,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(time),__mi)}
+}
 }
 #[doc="`OnSetCurves(*mutcrate::unity_engine::animationclip::AnimationClip)` overload"]fn on_set_curves(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <HumanoidBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::animationclip::AnimationClip> ::uninit();
-__HumanoidBaker_unity2_raw::on_set_curves(__receiver,__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <HumanoidBaker as::unity2::ClassIdentity> ::NAME,"OnSetCurves",));
+let __inner:extern "C" fn(HumanoidBaker, *mut crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`OnSetKeyframes(f32, bool)` overload"]fn on_set_keyframes(self,time:impl::core::convert::Into<f32> ,last_frame:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HumanoidBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HumanoidBaker_unity2_raw::on_set_keyframes(__receiver, ::core::convert::Into::into(time), ::core::convert::Into::into(last_frame), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HumanoidBaker as::unity2::ClassIdentity> ::NAME,"OnSetKeyframes",));
+let __inner:extern "C" fn(HumanoidBaker,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(time), ::core::convert::Into::into(last_frame),__mi)}
+}
 }
 #[doc="`UpdateHumanPose()` overload"]fn update_human_pose(self,)->(){unsafe{let __receiver= <HumanoidBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a76d90usize)as*mut u8,();
@@ -120,6 +112,23 @@ pub fn on_set_curves_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn on_set_keyframes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn update_human_pose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="root_motion-humanoidbaker")]impl HumanoidBaker{#[doc="Direct (non-virtual) call to `HumanoidBaker`'s own `GetCharacterRoot`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_character_root(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::transform::Transform{let __mi=Self::get_character_root_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HumanoidBaker`'s own `OnStartBaking`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_start_baking(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_start_baking_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HumanoidBaker`'s own `OnSetLoopFrame`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_set_loop_frame(this:impl::core::convert::Into< ::unity2::IlInstance> ,time:f32,)->(){let __mi=Self::on_set_loop_frame_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),time, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HumanoidBaker`'s own `OnSetCurves`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_set_curves(this:impl::core::convert::Into< ::unity2::IlInstance> ,clip: *mut crate::unity_engine::animationclip::AnimationClip,)->(){let __mi=Self::on_set_curves_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),clip, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HumanoidBaker`'s own `OnSetKeyframes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_set_keyframes(this:impl::core::convert::Into< ::unity2::IlInstance> ,time:f32,last_frame:bool,)->(){let __mi=Self::on_set_keyframes_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),time,last_frame, ::core::option::Option::None)}
 }
 
 #[cfg(feature="root_motion-humanoidbaker")]impl HumanoidBaker{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

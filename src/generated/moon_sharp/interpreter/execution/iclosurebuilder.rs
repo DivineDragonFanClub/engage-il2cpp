@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-execution-iclosurebuilder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IClosureBuilder_unity2_raw{use super:: * ;
-pub unsafe fn create_upvalue(this:IClosureBuilder,scope:crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,symbol:crate::moon_sharp::interpreter::symbolref::SymbolRef,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="moon_sharp-interpreter-execution-iclosurebuilder")]pub trait IIClosureBuilderMethods:IIClosureBuilder{#[doc="`CreateUpvalue(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]fn create_upvalue(self,scope:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope> ,symbol:impl::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{let __receiver= <IClosureBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IClosureBuilder as::unity2::ClassIdentity> ::NAME,"CreateUpvalue",));
-let inner:extern "C" fn(IClosureBuilder,crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,crate::moon_sharp::interpreter::symbolref::SymbolRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IClosureBuilder,crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,crate::moon_sharp::interpreter::symbolref::SymbolRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,scope,symbol,__mi)}
+__inner(__receiver, ::core::convert::Into::into(scope), ::core::convert::Into::into(symbol),__mi)}
 }
-
-#[cfg(feature="moon_sharp-interpreter-execution-iclosurebuilder")]pub trait IIClosureBuilderMethods:IIClosureBuilder{#[doc="`CreateUpvalue(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]fn create_upvalue(self,scope:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope> ,symbol:impl::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{let __receiver= <IClosureBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IClosureBuilder_unity2_raw::create_upvalue(__receiver, ::core::convert::Into::into(scope), ::core::convert::Into::into(symbol), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="moon_sharp-interpreter-execution-iclosurebuilder")]impl<__T:IIClosureBuilder>IIClosureBuilderMethods for __T{}
 
 #[cfg(feature="moon_sharp-interpreter-execution-iclosurebuilder")]impl IClosureBuilder{pub fn create_upvalue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-execution-iclosurebuilder")]impl IClosureBuilder{#[doc="Direct (non-virtual) call to `IClosureBuilder`'s own `CreateUpvalue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_upvalue(this:impl::core::convert::Into< ::unity2::IlInstance> ,scope:crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,symbol:crate::moon_sharp::interpreter::symbolref::SymbolRef,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{let __mi=Self::create_upvalue_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,crate::moon_sharp::interpreter::symbolref::SymbolRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),scope,symbol, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]

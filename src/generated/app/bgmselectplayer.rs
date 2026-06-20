@@ -18,73 +18,65 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-bgmselectplayer-types")]
 pub use __types::*;
 
-#[cfg(feature="app-bgmselectplayer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BgmSelectPlayer_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:BgmSelectPlayer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-bgmselectplayer")]pub trait IBgmSelectPlayerMethods:IBgmSelectPlayer{#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <BgmSelectPlayer as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(BgmSelectPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(BgmSelectPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_playing(this:BgmSelectPlayer,event_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`IsPlaying(::unity2::Il2CppString)` overload"]fn is_playing(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <BgmSelectPlayer as::unity2::ClassIdentity> ::NAME,"IsPlaying",));
-let inner:extern "C" fn(BgmSelectPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(BgmSelectPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_name,__mi)}
-pub unsafe fn pause_current_bgm(this:BgmSelectPlayer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(event_name),__mi)}
+}
+}
+#[doc="`PauseCurrentBgm()` overload"]fn pause_current_bgm(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <BgmSelectPlayer as::unity2::ClassIdentity> ::NAME,"PauseCurrentBgm",));
-let inner:extern "C" fn(BgmSelectPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(BgmSelectPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn play_select(this:BgmSelectPlayer,event_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`PlaySelect(::unity2::Il2CppString)` overload"]fn play_select(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <BgmSelectPlayer as::unity2::ClassIdentity> ::NAME,"PlaySelect",));
-let inner:extern "C" fn(BgmSelectPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(BgmSelectPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,event_name,__mi)}
-pub unsafe fn close(this:BgmSelectPlayer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(event_name),__mi)}
+}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",11usize,__vt.len(), <BgmSelectPlayer as::unity2::ClassIdentity> ::NAME,"Close",));
-let inner:extern "C" fn(BgmSelectPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(BgmSelectPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-bgmselectplayer")]pub trait IBgmSelectPlayerMethods:IBgmSelectPlayer{#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BgmSelectPlayer_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
-}
-#[doc="`IsPlaying(::unity2::Il2CppString)` overload"]fn is_playing(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BgmSelectPlayer_unity2_raw::is_playing(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)}
-}
-#[doc="`PauseCurrentBgm()` overload"]fn pause_current_bgm(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BgmSelectPlayer_unity2_raw::pause_current_bgm(__receiver, ::core::option::Option::None)}
-}
-#[doc="`PlaySelect(::unity2::Il2CppString)` overload"]fn play_select(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BgmSelectPlayer_unity2_raw::play_select(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)}
-}
-#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BgmSelectPlayer_unity2_raw::close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BgmSelectPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95a60usize)as*mut u8,();
@@ -100,6 +92,23 @@ pub fn pause_current_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn play_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-bgmselectplayer")]impl BgmSelectPlayer{#[doc="Direct (non-virtual) call to `BgmSelectPlayer`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BgmSelectPlayer`'s own `IsPlaying`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_playing(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_name: ::unity2::Il2CppString,)->bool{let __mi=Self::is_playing_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_name, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BgmSelectPlayer`'s own `PauseCurrentBgm`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn pause_current_bgm(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::pause_current_bgm_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BgmSelectPlayer`'s own `PlaySelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn play_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_name: ::unity2::Il2CppString,)->(){let __mi=Self::play_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),event_name, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BgmSelectPlayer`'s own `Close`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-bgmselectplayer")]impl BgmSelectPlayer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

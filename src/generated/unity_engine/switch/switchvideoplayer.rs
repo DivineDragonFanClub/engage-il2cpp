@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="SwitchVideoPlayer")]#[parent(crate::system::object::Object)]pub struct SwitchVideoPlayer{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_MovieEvent")]pub m_movie_event:crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate, #[static_field]#[rename(name="OnMovieEvent")]pub on_movie_event:crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_Event.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SwitchVideoPlayer_Event{pub value:i32,}
 impl::unity2::ClassIdentity for SwitchVideoPlayer_Event{const NAMESPACE: &'static str="UnityEngine.Switch";
 const NAME: &'static str="SwitchVideoPlayer.Event";
@@ -42,6 +39,9 @@ pub fn first_frame_ready()->Self{Self{value:4}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="SwitchVideoPlayer")]#[parent(crate::system::object::Object)]pub struct SwitchVideoPlayer{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_MovieEvent")]pub m_movie_event:crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate, #[static_field]#[rename(name="OnMovieEvent")]pub on_movie_event:crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_MovieEventDelegate,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="SwitchVideoPlayer.MovieEventDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SwitchVideoPlayer_MovieEventDelegate{}
 
 }
@@ -61,25 +61,21 @@ pub use __types::*;
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="unity_engine-switch-switchvideoplayer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SwitchVideoPlayer_MovieEventDelegate_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:SwitchVideoPlayer_MovieEventDelegate,eventtype:crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <SwitchVideoPlayer_MovieEventDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(SwitchVideoPlayer_MovieEventDelegate,crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,eventtype,__mi)}
-}
-
 #[cfg(feature="unity_engine-switch-switchvideoplayer")]pub trait ISwitchVideoPlayer_MovieEventDelegateMethods:ISwitchVideoPlayer_MovieEventDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SwitchVideoPlayer_MovieEventDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f41e60usize)as*mut u8,();
 (SwitchVideoPlayer_MovieEventDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"]fn invoke(self,eventtype:impl::core::convert::Into<crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event>)->(){unsafe{let __receiver= <SwitchVideoPlayer_MovieEventDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SwitchVideoPlayer_MovieEventDelegate_unity2_raw::invoke(__receiver, ::core::convert::Into::into(eventtype), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SwitchVideoPlayer_MovieEventDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(SwitchVideoPlayer_MovieEventDelegate,crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(eventtype),__mi)}
+}
 }
 }
 
@@ -87,6 +83,11 @@ __SwitchVideoPlayer_MovieEventDelegate_unity2_raw::invoke(__receiver, ::core::co
 
 #[cfg(feature="unity_engine-switch-switchvideoplayer")]impl SwitchVideoPlayer_MovieEventDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-switch-switchvideoplayer")]impl SwitchVideoPlayer_MovieEventDelegate{#[doc="Direct (non-virtual) call to `SwitchVideoPlayer_MovieEventDelegate`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,eventtype:crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),eventtype, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-switch-switchvideoplayer")]impl SwitchVideoPlayer_MovieEventDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -99,9 +100,9 @@ this}
 #[cfg(feature = "unity_engine-switch-switchvideoplayer")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SwitchVideoPlayer_Event;
     pub use super::SwitchVideoPlayer;
     pub use super::ISwitchVideoPlayer;
-    pub use super::SwitchVideoPlayer_Event;
     pub use super::SwitchVideoPlayer_MovieEventDelegate;
     pub use super::ISwitchVideoPlayer_MovieEventDelegate;
     pub use super::ISwitchVideoPlayer_MovieEventDelegateMethods;

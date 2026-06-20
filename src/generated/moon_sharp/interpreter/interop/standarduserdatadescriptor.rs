@@ -59,16 +59,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <StandardUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"FillMemberList",e),}
 }
 }
-pub unsafe fn prepare_for_wiring(this:StandardUserDataDescriptor,t:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <StandardUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",));
-let inner:extern "C" fn(StandardUserDataDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,t,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_serialize{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type(), <crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2< ::unity2::Il2CppString,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface> >as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<StandardUserDataDescriptor as::unity2::ClassIdentity> ::class(),"Serialize",2,param_types,false,)}
@@ -98,7 +88,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (StandardUserDataDescriptor)__receiver)}
 }
 #[doc="`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]fn prepare_for_wiring(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <StandardUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__StandardUserDataDescriptor_unity2_raw::prepare_for_wiring(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <StandardUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",));
+let __inner:extern "C" fn(StandardUserDataDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(t),__mi)}
+}
 }
 #[doc="`Serialize(crate::moon_sharp::interpreter::table::Table, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<::unity2::Il2CppString,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface>>)` overload"]fn serialize(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table> ,members:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2< ::unity2::Il2CppString,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface> > >)->(){unsafe{let __receiver= <StandardUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__StandardUserDataDescriptor_unity2_raw::__lookup_serialize::get_method_info().method_ptr,();
@@ -114,6 +113,11 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn fill_member_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn prepare_for_wiring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-standarduserdatadescriptor")]impl StandardUserDataDescriptor{#[doc="Direct (non-virtual) call to `StandardUserDataDescriptor`'s own `PrepareForWiring`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn prepare_for_wiring(this:impl::core::convert::Into< ::unity2::IlInstance> ,t:crate::moon_sharp::interpreter::table::Table,)->(){let __mi=Self::prepare_for_wiring_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),t, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-standarduserdatadescriptor")]impl StandardUserDataDescriptor{#[doc="`.ctor(::unity2::SystemType, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, ::unity2::Il2CppString)` — overload selector"]pub fn new(r#type: ::unity2::SystemType,access_mode:crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,friendly_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

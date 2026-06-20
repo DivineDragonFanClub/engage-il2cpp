@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scripting/garbagecollector/GarbageCollector.md"))]#[::unity2::class(namespace="UnityEngine.Scripting",name="GarbageCollector")]#[parent(crate::system::object::Object)]pub struct GarbageCollector{#[static_field]#[rename(name="GCModeChanged")]pub gc_mode_changed:crate::system::action_1::Action_1<crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scripting/garbagecollector/GarbageCollector_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GarbageCollector_Mode{pub value:i32,}
 impl::unity2::ClassIdentity for GarbageCollector_Mode{const NAMESPACE: &'static str="UnityEngine.Scripting";
 const NAME: &'static str="GarbageCollector.Mode";
@@ -32,6 +29,9 @@ pub fn enabled()->Self{Self{value:1}
 pub fn manual()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scripting/garbagecollector/GarbageCollector.md"))]#[::unity2::class(namespace="UnityEngine.Scripting",name="GarbageCollector")]#[parent(crate::system::object::Object)]pub struct GarbageCollector{#[static_field]#[rename(name="GCModeChanged")]pub gc_mode_changed:crate::system::action_1::Action_1<crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode> ,}
 
 }
 
@@ -73,9 +73,9 @@ pub fn set_incremental_time_slice_nanoseconds_method_info()-> & 'static::unity2:
 #[cfg(feature = "unity_engine-scripting-garbagecollector")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GarbageCollector_Mode;
     pub use super::GarbageCollector;
     pub use super::IGarbageCollector;
-    pub use super::GarbageCollector_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

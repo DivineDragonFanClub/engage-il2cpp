@@ -57,16 +57,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <DynamicExpression as::unity2::ClassIdentity> ::NAME,"FindSymbol",e),}
 }
 }
-pub unsafe fn get_owner_script(this:DynamicExpression,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DynamicExpression as::unity2::ClassIdentity> ::NAME,"get_OwnerScript",));
-let inner:extern "C" fn(DynamicExpression, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_owner_script{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<DynamicExpression as::unity2::ClassIdentity> ::class(),"set_OwnerScript",1,param_types,false,)}
@@ -87,26 +77,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <DynamicExpression as::unity2::ClassIdentity> ::NAME,"IsConstant",e),}
 }
 }
-pub unsafe fn get_hash_code(this:DynamicExpression,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",2usize,__vt.len(), <DynamicExpression as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(DynamicExpression, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn equals(this:DynamicExpression,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",0usize,__vt.len(), <DynamicExpression as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(DynamicExpression,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-dynamicexpression")]pub trait IDynamicExpressionMethods:IDynamicExpression{#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString, crate::moon_sharp::interpreter::tree::expressions::dynamicexprexpression::DynamicExprExpression)` overload"]fn ctor(self,s:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,str_expr:impl::core::convert::Into< ::unity2::Il2CppString> ,expr:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::expressions::dynamicexprexpression::DynamicExprExpression>)->(){unsafe{let __receiver= <DynamicExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -126,7 +96,16 @@ inner(this,obj,__mi)}
 (DynamicExpression)__receiver,(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(context))}
 }
 #[doc="`get_OwnerScript()` overload"]fn get_owner_script(self,)->crate::moon_sharp::interpreter::script::Script{unsafe{let __receiver= <DynamicExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DynamicExpression_unity2_raw::get_owner_script(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DynamicExpression as::unity2::ClassIdentity> ::NAME,"get_OwnerScript",));
+let __inner:extern "C" fn(DynamicExpression, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_OwnerScript(crate::moon_sharp::interpreter::script::Script)` overload"]fn set_owner_script(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script>)->(){unsafe{let __receiver= <DynamicExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__DynamicExpression_unity2_raw::__lookup_set_owner_script::get_method_info().method_ptr,();
@@ -137,10 +116,28 @@ __DynamicExpression_unity2_raw::get_owner_script(__receiver, ::core::option::Opt
 (DynamicExpression)__receiver)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <DynamicExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DynamicExpression_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <DynamicExpression as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let __inner:extern "C" fn(DynamicExpression, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <DynamicExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DynamicExpression_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <DynamicExpression as::unity2::ClassIdentity> ::NAME,"Equals",));
+let __inner:extern "C" fn(DynamicExpression,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
 }
 }
 
@@ -155,6 +152,17 @@ pub fn set_owner_script_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 pub fn is_constant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-dynamicexpression")]impl DynamicExpression{#[doc="Direct (non-virtual) call to `DynamicExpression`'s own `get_OwnerScript`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_owner_script(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::moon_sharp::interpreter::script::Script{let __mi=Self::get_owner_script_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DynamicExpression`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DynamicExpression`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)->bool{let __mi=Self::equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-dynamicexpression")]impl DynamicExpression{#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString, crate::moon_sharp::interpreter::tree::expressions::dynamicexprexpression::DynamicExprExpression)` — overload selector"]pub fn new(s:crate::moon_sharp::interpreter::script::Script,str_expr: ::unity2::Il2CppString,expr:crate::moon_sharp::interpreter::tree::expressions::dynamicexprexpression::DynamicExprExpression)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

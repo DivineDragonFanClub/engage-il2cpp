@@ -17,20 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexranking/NexRanking_Data.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct NexRanking_Data{pub person_index:i32,pub god_index:i32,}
-impl::unity2::ClassIdentity for NexRanking_Data{const NAMESPACE: &'static str="App";
-const NAME: &'static str="NexRanking.Data";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NexRanking_Data{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexranking/NexRanking_DownloadSequence.md"))]#[::unity2::class(namespace="App",name="NexRanking.DownloadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexRanking_DownloadSequence{#[static_field]#[rename(name="MaxBatch")]pub max_batch:u32, #[offset(112)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<crate::app::nexranking::NexRanking_Data> , #[offset(120)]#[rename(name="m_RatingValues")]pub m_rating_values: ::unity2::Array<i64> , #[offset(128)]#[rename(name="m_DataIndex")]pub m_data_index:i32, #[offset(132)]#[rename(name="m_ChapterIndex")]pub m_chapter_index:i32, #[offset(136)]#[rename(name="m_StartDataId")]pub m_start_data_id:u64, #[offset(144)]#[rename(name="m_StartSlot")]pub m_start_slot:i32, #[offset(152)]#[rename(name="m_EndDataId")]pub m_end_data_id:u64, #[offset(160)]#[rename(name="m_EndSlot")]pub m_end_slot:i32, #[offset(168)]#[rename(name="m_DataIds")]pub m_data_ids:crate::system::collections::generic::list_1::List_1<u64> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexranking/NexRanking_DownloadSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexRanking_DownloadSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for NexRanking_DownloadSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="NexRanking.DownloadSequence.Label";
@@ -49,6 +35,9 @@ pub fn error()->Self{Self{value:2}
 pub fn end()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexranking/NexRanking_DownloadSequence.md"))]#[::unity2::class(namespace="App",name="NexRanking.DownloadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexRanking_DownloadSequence{#[static_field]#[rename(name="MaxBatch")]pub max_batch:u32, #[offset(112)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<crate::app::nexranking::NexRanking_Data> , #[offset(120)]#[rename(name="m_RatingValues")]pub m_rating_values: ::unity2::Array<i64> , #[offset(128)]#[rename(name="m_DataIndex")]pub m_data_index:i32, #[offset(132)]#[rename(name="m_ChapterIndex")]pub m_chapter_index:i32, #[offset(136)]#[rename(name="m_StartDataId")]pub m_start_data_id:u64, #[offset(144)]#[rename(name="m_StartSlot")]pub m_start_slot:i32, #[offset(152)]#[rename(name="m_EndDataId")]pub m_end_data_id:u64, #[offset(160)]#[rename(name="m_EndSlot")]pub m_end_slot:i32, #[offset(168)]#[rename(name="m_DataIds")]pub m_data_ids:crate::system::collections::generic::list_1::List_1<u64> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexranking/NexRanking_UploadSequence.md"))]#[::unity2::class(namespace="App",name="NexRanking.UploadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexRanking_UploadSequence{#[static_field]#[rename(name="MaxBatch")]pub max_batch:u32, #[static_field]#[rename(name="MaxRatingSlot")]pub max_rating_slot:u32, #[offset(112)]#[rename(name="m_Pairs")]pub m_pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data> , #[offset(120)]#[rename(name="m_DataIndex")]pub m_data_index:i32, #[offset(124)]#[rename(name="m_ChapterIndex")]pub m_chapter_index:i32,}
@@ -74,20 +63,23 @@ pub fn end()->Self{Self{value:3}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexranking/NexRanking_Data.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct NexRanking_Data{pub person_index:i32,pub god_index:i32,}
+impl::unity2::ClassIdentity for NexRanking_Data{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexRanking.Data";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexRanking_Data{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexranking/NexRanking.md"))]#[::unity2::class(namespace="App",name="NexRanking")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::nexranking::NexRanking>)]pub struct NexRanking{#[static_field]#[rename(name="MaxRatingSlot")]pub max_rating_slot:u32, #[static_field]#[rename(name="MaxPerson")]pub max_person:i32, #[static_field]#[rename(name="MaxGod")]pub max_god:i32, #[static_field]#[rename(name="InvalidIndex")]pub invalid_index:i32, #[offset(25)]#[rename(name="m_IsSucceeded")]pub m_is_succeeded:bool,}
 
 }
 
 #[cfg(feature = "app-nexranking-types")]
 pub use __types::*;
-
-#[cfg(feature="app-nexranking")]impl NexRanking_Data{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20a7ae0usize)as*mut u8,();
-(*mut NexRanking_Data)self as*mut NexRanking_Data)}
-}
-}
-
-#[cfg(feature="app-nexranking")]impl NexRanking_Data{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
 
 #[cfg(feature="app-nexranking")]impl NexRanking_DownloadSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cid:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Array<crate::app::nexranking::NexRanking_Data> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20a85e0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(cid),(::unity2::Array<crate::app::nexranking::NexRanking_Data>)::core::convert::Into::into(data))}
@@ -187,17 +179,12 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-nexranking")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NexRanking_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:NexRanking,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <NexRanking as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(NexRanking, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="app-nexranking")]impl NexRanking_Data{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20a7ae0usize)as*mut u8,();
+(*mut NexRanking_Data)self as*mut NexRanking_Data)}
+}
+}
+
+#[cfg(feature="app-nexranking")]impl NexRanking_Data{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature="app-nexranking")]impl NexRanking{#[doc="`GetIdAndSlot(i32, *mutcrate::app::nexranking::NexRanking_Data, *mutu64, *muti32)` overload"]pub fn get_id_and_slot(chapter_index:impl::core::convert::Into<i32>)->(bool,crate::app::nexranking::NexRanking_Data,u64,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::nexranking::NexRanking_Data> ::uninit();
@@ -225,7 +212,16 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1f162a0usize)as*mut
 }
 
 #[cfg(feature="app-nexranking")]pub trait INexRankingMethods:INexRanking{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <NexRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__NexRanking_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <NexRanking as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(NexRanking, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]fn download(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cid:impl::core::convert::Into< ::unity2::Il2CppString> ,ranking:impl::core::convert::Into< ::unity2::Array<crate::app::nexranking::NexRanking_Data> >)->bool{unsafe{let __receiver= <NexRanking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f160c0usize)as*mut u8,bool;
@@ -262,6 +258,11 @@ pub fn get_person_and_god_index_method_info()-> & 'static::unity2::il2cpp::Metho
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 }
 
+#[cfg(feature="app-nexranking")]impl NexRanking{#[doc="Direct (non-virtual) call to `NexRanking`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-nexranking")]impl NexRanking{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(NexRanking), ::core::stringify!(new),));
@@ -272,15 +273,15 @@ this}
 #[cfg(feature = "app-nexranking")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NexRanking_Data;
+    pub use super::NexRanking_DownloadSequence_Label;
     pub use super::NexRanking_DownloadSequence;
     pub use super::INexRanking_DownloadSequence;
     pub use super::INexRanking_DownloadSequenceMethods;
-    pub use super::NexRanking_DownloadSequence_Label;
     pub use super::NexRanking_UploadSequence;
     pub use super::INexRanking_UploadSequence;
     pub use super::INexRanking_UploadSequenceMethods;
     pub use super::NexRanking_UploadSequence_Label;
+    pub use super::NexRanking_Data;
     pub use super::NexRanking;
     pub use super::INexRanking;
     pub use super::INexRankingMethods;

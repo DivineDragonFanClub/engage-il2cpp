@@ -14,47 +14,41 @@ mod __types {
 #[cfg(feature = "system-collections-idictionaryenumerator-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-idictionaryenumerator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IDictionaryEnumerator_unity2_raw{use super:: * ;
-pub unsafe fn get_key(this:IDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-collections-idictionaryenumerator")]pub trait IIDictionaryEnumeratorMethods:IIDictionaryEnumerator{#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <IDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Key",));
-let inner:extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_value(this:IDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <IDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Value",));
-let inner:extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_entry(this:IDictionaryEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <IDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <IDictionaryEnumerator as::unity2::ClassIdentity> ::NAME,"get_Entry",));
-let inner:extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IDictionaryEnumerator, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="system-collections-idictionaryenumerator")]pub trait IIDictionaryEnumeratorMethods:IIDictionaryEnumerator{#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <IDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDictionaryEnumerator_unity2_raw::get_key(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <IDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDictionaryEnumerator_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <IDictionaryEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IDictionaryEnumerator_unity2_raw::get_entry(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -63,6 +57,17 @@ __IDictionaryEnumerator_unity2_raw::get_entry(__receiver, ::core::option::Option
 #[cfg(feature="system-collections-idictionaryenumerator")]impl IDictionaryEnumerator{pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="system-collections-idictionaryenumerator")]impl IDictionaryEnumerator{#[doc="Direct (non-virtual) call to `IDictionaryEnumerator`'s own `get_Key`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_key(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_key_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDictionaryEnumerator`'s own `get_Value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_value_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IDictionaryEnumerator`'s own `get_Entry`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_entry(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::dictionaryentry::DictionaryEntry{let __mi=Self::get_entry_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "system-collections-idictionaryenumerator")]

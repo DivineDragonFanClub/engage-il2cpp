@@ -6,9 +6,9 @@
  #[cfg(feature="system-reflection-ambiguousmatchexception")]pub use ambiguousmatchexception::{IAmbiguousMatchExceptionMethods}
 ;
  #[cfg(any(feature="system-reflection-assembly-types"))]pub mod assembly;
- #[cfg(feature="system-reflection-assembly-types")]pub use assembly::{Assembly,IAssembly,Assembly_ResolveEventHolder,IAssembly_ResolveEventHolder,Assembly_UnmanagedMemoryStreamForModule,IAssembly_UnmanagedMemoryStreamForModule}
+ #[cfg(feature="system-reflection-assembly-types")]pub use assembly::{Assembly_UnmanagedMemoryStreamForModule,IAssembly_UnmanagedMemoryStreamForModule,Assembly_ResolveEventHolder,IAssembly_ResolveEventHolder,Assembly,IAssembly}
 ;
- #[cfg(feature="system-reflection-assembly")]pub use assembly::{IAssemblyMethods,IAssembly_ResolveEventHolderMethods,IAssembly_UnmanagedMemoryStreamForModuleMethods}
+ #[cfg(feature="system-reflection-assembly")]pub use assembly::{IAssembly_UnmanagedMemoryStreamForModuleMethods,IAssembly_ResolveEventHolderMethods,IAssemblyMethods}
 ;
  #[cfg(any(feature="system-reflection-assemblycompanyattribute-types"))]pub mod assemblycompanyattribute;
  #[cfg(feature="system-reflection-assemblycompanyattribute-types")]pub use assemblycompanyattribute::{AssemblyCompanyAttribute,IAssemblyCompanyAttribute}
@@ -266,9 +266,9 @@
  #[cfg(feature="system-reflection-monoparameterinfo")]pub use monoparameterinfo::{IMonoParameterInfoMethods}
 ;
  #[cfg(any(feature="system-reflection-monoproperty-types"))]pub mod monoproperty;
- #[cfg(feature="system-reflection-monoproperty-types")]pub use monoproperty::{MonoProperty_GetterAdapter,IMonoProperty_GetterAdapter,MonoProperty_StaticGetter_1,IMonoProperty_StaticGetter_1,MonoProperty,IMonoProperty,MonoProperty_Getter_2,IMonoProperty_Getter_2}
+ #[cfg(feature="system-reflection-monoproperty-types")]pub use monoproperty::{MonoProperty_GetterAdapter,IMonoProperty_GetterAdapter,MonoProperty_Getter_2,IMonoProperty_Getter_2,MonoProperty_StaticGetter_1,IMonoProperty_StaticGetter_1,MonoProperty,IMonoProperty}
 ;
- #[cfg(feature="system-reflection-monoproperty")]pub use monoproperty::{IMonoProperty_GetterAdapterMethods,IMonoProperty_StaticGetter_1Methods,IMonoPropertyMethods,IMonoProperty_Getter_2Methods}
+ #[cfg(feature="system-reflection-monoproperty")]pub use monoproperty::{IMonoProperty_GetterAdapterMethods,IMonoProperty_Getter_2Methods,IMonoProperty_StaticGetter_1Methods,IMonoPropertyMethods}
 ;
  #[cfg(any(feature="system-reflection-monopropertyinfo-types"))]pub mod monopropertyinfo;
  #[cfg(feature="system-reflection-monopropertyinfo-types")]pub use monopropertyinfo::{MonoPropertyInfo}

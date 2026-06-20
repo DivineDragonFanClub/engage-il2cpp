@@ -11,151 +11,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvertrigonometric/IKSolverTrigonometric_TrigonometricBone.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverTrigonometric.TrigonometricBone")]#[parent(crate::root_motion::final_ik::iksolver::IKSolver_Bone)]pub struct IKSolverTrigonometric_TrigonometricBone{#[offset(116)]#[rename(name="targetToLocalSpace")]pub target_to_local_space:crate::unity_engine::quaternion::Quaternion, #[offset(132)]#[rename(name="defaultLocalBendNormal")]pub default_local_bend_normal:crate::unity_engine::vector3::Vector3,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvertrigonometric/IKSolverTrigonometric.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverTrigonometric")]#[parent(crate::root_motion::final_ik::iksolver::IKSolver)]pub struct IKSolverTrigonometric{#[offset(88)]#[rename(name="target")]pub target:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="IKRotationWeight")]pub ik_rotation_weight_field:f32, #[offset(100)]#[rename(name="IKRotation")]pub ik_rotation_field:crate::unity_engine::quaternion::Quaternion, #[offset(116)]#[rename(name="bendNormal")]pub bend_normal:crate::unity_engine::vector3::Vector3, #[offset(128)]#[rename(name="bone1")]pub bone1:crate::root_motion::final_ik::iksolvertrigonometric::IKSolverTrigonometric_TrigonometricBone, #[offset(136)]#[rename(name="bone2")]pub bone2:crate::root_motion::final_ik::iksolvertrigonometric::IKSolverTrigonometric_TrigonometricBone, #[offset(144)]#[rename(name="bone3")]pub bone3:crate::root_motion::final_ik::iksolvertrigonometric::IKSolverTrigonometric_TrigonometricBone, #[offset(152)]#[rename(name="weightIKPosition")]pub weight_ik_position:crate::unity_engine::vector3::Vector3, #[offset(164)]#[rename(name="directHierarchy")]pub direct_hierarchy:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvertrigonometric/IKSolverTrigonometric_TrigonometricBone.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverTrigonometric.TrigonometricBone")]#[parent(crate::root_motion::final_ik::iksolver::IKSolver_Bone)]pub struct IKSolverTrigonometric_TrigonometricBone{#[offset(116)]#[rename(name="targetToLocalSpace")]pub target_to_local_space:crate::unity_engine::quaternion::Quaternion, #[offset(132)]#[rename(name="defaultLocalBendNormal")]pub default_local_bend_normal:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-iksolvertrigonometric-types")]
 pub use __types::*;
-
-#[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]pub trait IIKSolverTrigonometric_TrigonometricBoneMethods:IIKSolverTrigonometric_TrigonometricBone{#[doc="`Initiate(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn initiate(self,child_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,bend_normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverTrigonometric_TrigonometricBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af2440usize)as*mut u8,();
-(IKSolverTrigonometric_TrigonometricBone)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(child_position),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(bend_normal))}
-}
-#[doc="`GetRotation(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn get_rotation(self,direction:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,bend_normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverTrigonometric_TrigonometricBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af2540usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
-(IKSolverTrigonometric_TrigonometricBone)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(direction),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(bend_normal))}
-}
-#[doc="`GetBendNormalFromCurrentRotation()` overload"]fn get_bend_normal_from_current_rotation(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverTrigonometric_TrigonometricBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af2570usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverTrigonometric_TrigonometricBone)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverTrigonometric_TrigonometricBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af25b0usize)as*mut u8,();
-(IKSolverTrigonometric_TrigonometricBone)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]impl<__T:IIKSolverTrigonometric_TrigonometricBone>IIKSolverTrigonometric_TrigonometricBoneMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]impl IKSolverTrigonometric_TrigonometricBone{pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_bend_normal_from_current_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]impl IKSolverTrigonometric_TrigonometricBone{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKSolverTrigonometric_TrigonometricBone), ::core::stringify!(new),));
- <Self as IIKSolverTrigonometric_TrigonometricBoneMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverTrigonometric_unity2_raw{use super:: * ;
-pub unsafe fn get_points(this:IKSolverTrigonometric,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"GetPoints",));
-let inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_point(this:IKSolverTrigonometric,transform:crate::unity_engine::transform::Transform,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver_Point{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"GetPoint",));
-let inner:extern "C" fn(IKSolverTrigonometric,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver_Point= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,transform,__mi)}
-pub unsafe fn store_default_local_state(this:IKSolverTrigonometric,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"StoreDefaultLocalState",));
-let inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn fix_transforms(this:IKSolverTrigonometric,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"FixTransforms",));
-let inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn is_valid(this:IKSolverTrigonometric,message: *mut::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"IsValid",));
-let inner:extern "C" fn(IKSolverTrigonometric, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,message,__mi)}
-pub unsafe fn on_initiate(this:IKSolverTrigonometric,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"OnInitiate",));
-let inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_update(this:IKSolverTrigonometric,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
-let inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_initiate_virtual(this:IKSolverTrigonometric,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"OnInitiateVirtual",));
-let inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_update_virtual(this:IKSolverTrigonometric,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"OnUpdateVirtual",));
-let inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_post_solve_virtual(this:IKSolverTrigonometric,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"OnPostSolveVirtual",));
-let inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]impl IKSolverTrigonometric{#[doc="`Solve(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn solve(bone1:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,bone2:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,bone3:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,target_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,bend_normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,weight:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c36900usize)as*mut u8,();
 (crate::unity_engine::transform::Transform)::core::convert::Into::into(bone1),(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone2),(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone3),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target_position),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(bend_normal),(f32)::core::convert::Into::into(weight))}
@@ -190,20 +54,65 @@ inner(this,__mi)}
 (IKSolverTrigonometric)__receiver)}
 }
 #[doc="`GetPoints()` overload"]fn get_points(self,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point>{unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverTrigonometric_unity2_raw::get_points(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"GetPoints",));
+let __inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetPoint(crate::unity_engine::transform::Transform)` overload"]fn get_point(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::root_motion::final_ik::iksolver::IKSolver_Point{unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverTrigonometric_unity2_raw::get_point(__receiver, ::core::convert::Into::into(transform), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"GetPoint",));
+let __inner:extern "C" fn(IKSolverTrigonometric,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver_Point= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(transform),__mi)}
+}
 }
 #[doc="`StoreDefaultLocalState()` overload"]fn store_default_local_state(self,)->(){unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverTrigonometric_unity2_raw::store_default_local_state(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"StoreDefaultLocalState",));
+let __inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`FixTransforms()` overload"]fn fix_transforms(self,)->(){unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverTrigonometric_unity2_raw::fix_transforms(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"FixTransforms",));
+let __inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsValid(*mut::unity2::Il2CppString)` overload"]fn is_valid(self,)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let __ret={__IKSolverTrigonometric_unity2_raw::is_valid(__receiver,__out_0.as_mut_ptr(), ::core::option::Option::None)}
+let __ret={{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let __inner:extern "C" fn(IKSolverTrigonometric, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__out_0.as_mut_ptr(),__mi)}
+}
 ;
 (__ret,__out_0.assume_init())}
 }
@@ -212,7 +121,16 @@ let __ret={__IKSolverTrigonometric_unity2_raw::is_valid(__receiver,__out_0.as_mu
 (IKSolverTrigonometric)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone1),(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone2),(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone3),(crate::unity_engine::transform::Transform)::core::convert::Into::into(root))}
 }
 #[doc="`OnInitiate()` overload"]fn on_initiate(self,)->(){unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverTrigonometric_unity2_raw::on_initiate(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"OnInitiate",));
+let __inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsDirectHierarchy()` overload"]fn is_direct_hierarchy(self,)->bool{unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c36fb0usize)as*mut u8,bool;
@@ -223,16 +141,52 @@ __IKSolverTrigonometric_unity2_raw::on_initiate(__receiver, ::core::option::Opti
 (IKSolverTrigonometric)__receiver)}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverTrigonometric_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let __inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnInitiateVirtual()` overload"]fn on_initiate_virtual(self,)->(){unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverTrigonometric_unity2_raw::on_initiate_virtual(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"OnInitiateVirtual",));
+let __inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnUpdateVirtual()` overload"]fn on_update_virtual(self,)->(){unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverTrigonometric_unity2_raw::on_update_virtual(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"OnUpdateVirtual",));
+let __inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnPostSolveVirtual()` overload"]fn on_post_solve_virtual(self,)->(){unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IKSolverTrigonometric_unity2_raw::on_post_solve_virtual(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <IKSolverTrigonometric as::unity2::ClassIdentity> ::NAME,"OnPostSolveVirtual",));
+let __inner:extern "C" fn(IKSolverTrigonometric, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetBendDirection(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn get_bend_direction(self,ik_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,bend_normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverTrigonometric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c375f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
@@ -271,6 +225,38 @@ pub fn get_bend_direction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
 }
 
+#[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]impl IKSolverTrigonometric{#[doc="Direct (non-virtual) call to `IKSolverTrigonometric`'s own `GetPoints`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_points(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point>{let __mi=Self::get_points_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverTrigonometric`'s own `GetPoint`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_point(this:impl::core::convert::Into< ::unity2::IlInstance> ,transform:crate::unity_engine::transform::Transform,)->crate::root_motion::final_ik::iksolver::IKSolver_Point{let __mi=Self::get_point_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver_Point= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),transform, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverTrigonometric`'s own `StoreDefaultLocalState`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn store_default_local_state(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::store_default_local_state_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverTrigonometric`'s own `FixTransforms`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn fix_transforms(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::fix_transforms_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverTrigonometric`'s own `IsValid`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_valid(this:impl::core::convert::Into< ::unity2::IlInstance> ,message: *mut::unity2::Il2CppString,)->bool{let __mi=Self::is_valid_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),message, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverTrigonometric`'s own `OnInitiate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_initiate(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_initiate_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverTrigonometric`'s own `OnUpdate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverTrigonometric`'s own `OnInitiateVirtual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_initiate_virtual(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_initiate_virtual_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverTrigonometric`'s own `OnUpdateVirtual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_update_virtual(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_update_virtual_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IKSolverTrigonometric`'s own `OnPostSolveVirtual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_post_solve_virtual(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_post_solve_virtual_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]impl IKSolverTrigonometric{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(IKSolverTrigonometric), ::core::stringify!(new),));
@@ -278,15 +264,48 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]pub trait IIKSolverTrigonometric_TrigonometricBoneMethods:IIKSolverTrigonometric_TrigonometricBone{#[doc="`Initiate(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn initiate(self,child_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,bend_normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverTrigonometric_TrigonometricBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af2440usize)as*mut u8,();
+(IKSolverTrigonometric_TrigonometricBone)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(child_position),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(bend_normal))}
+}
+#[doc="`GetRotation(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn get_rotation(self,direction:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,bend_normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverTrigonometric_TrigonometricBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af2540usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
+(IKSolverTrigonometric_TrigonometricBone)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(direction),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(bend_normal))}
+}
+#[doc="`GetBendNormalFromCurrentRotation()` overload"]fn get_bend_normal_from_current_rotation(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverTrigonometric_TrigonometricBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af2570usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(IKSolverTrigonometric_TrigonometricBone)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverTrigonometric_TrigonometricBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af25b0usize)as*mut u8,();
+(IKSolverTrigonometric_TrigonometricBone)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]impl<__T:IIKSolverTrigonometric_TrigonometricBone>IIKSolverTrigonometric_TrigonometricBoneMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]impl IKSolverTrigonometric_TrigonometricBone{pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_bend_normal_from_current_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]impl IKSolverTrigonometric_TrigonometricBone{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKSolverTrigonometric_TrigonometricBone), ::core::stringify!(new),));
+ <Self as IIKSolverTrigonometric_TrigonometricBoneMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root_motion-final_ik-iksolvertrigonometric")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IKSolverTrigonometric_TrigonometricBone;
-    pub use super::IIKSolverTrigonometric_TrigonometricBone;
-    pub use super::IIKSolverTrigonometric_TrigonometricBoneMethods;
     pub use super::IKSolverTrigonometric;
     pub use super::IIKSolverTrigonometric;
     pub use super::IIKSolverTrigonometricMethods;
+    pub use super::IKSolverTrigonometric_TrigonometricBone;
+    pub use super::IIKSolverTrigonometric_TrigonometricBone;
+    pub use super::IIKSolverTrigonometric_TrigonometricBoneMethods;
     pub use crate::root_motion::final_ik::iksolver::IIKSolver;
     pub use crate::root_motion::final_ik::iksolver::IIKSolver_Bone;
     pub use crate::root_motion::final_ik::iksolver::IIKSolver_Point;

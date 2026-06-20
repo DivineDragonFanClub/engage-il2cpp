@@ -19,6 +19,9 @@ use crate::unity_engine::tilemaps::tilebase::{ITileBase,TileBase}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/tilemaps/tile/Tile.md"))]#[::unity2::class(namespace="UnityEngine.Tilemaps",name="Tile")]#[parent(crate::unity_engine::tilemaps::tilebase::TileBase)]pub struct Tile{#[offset(24)]#[rename(name="m_Sprite")]pub m_sprite:crate::unity_engine::sprite::Sprite, #[offset(32)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(48)]#[rename(name="m_Transform")]pub m_transform:crate::unity_engine::matrix4x4::Matrix4x4, #[offset(112)]#[rename(name="m_InstancedGameObject")]pub m_instanced_game_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_Flags")]pub m_flags:crate::unity_engine::tilemaps::tileflags::TileFlags, #[offset(124)]#[rename(name="m_ColliderType")]pub m_collider_type:crate::unity_engine::tilemaps::tile::Tile_ColliderType,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/tilemaps/tile/Tile_ColliderType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Tile_ColliderType{pub value:i32,}
 impl::unity2::ClassIdentity for Tile_ColliderType{const NAMESPACE: &'static str="UnityEngine.Tilemaps";
 const NAME: &'static str="Tile.ColliderType";
@@ -36,26 +39,10 @@ pub fn grid()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/tilemaps/tile/Tile.md"))]#[::unity2::class(namespace="UnityEngine.Tilemaps",name="Tile")]#[parent(crate::unity_engine::tilemaps::tilebase::TileBase)]pub struct Tile{#[offset(24)]#[rename(name="m_Sprite")]pub m_sprite:crate::unity_engine::sprite::Sprite, #[offset(32)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(48)]#[rename(name="m_Transform")]pub m_transform:crate::unity_engine::matrix4x4::Matrix4x4, #[offset(112)]#[rename(name="m_InstancedGameObject")]pub m_instanced_game_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_Flags")]pub m_flags:crate::unity_engine::tilemaps::tileflags::TileFlags, #[offset(124)]#[rename(name="m_ColliderType")]pub m_collider_type:crate::unity_engine::tilemaps::tile::Tile_ColliderType,}
-
 }
 
 #[cfg(feature = "unity_engine-tilemaps-tile-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-tilemaps-tile")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Tile_unity2_raw{use super:: * ;
-pub unsafe fn get_tile_data(this:Tile,position:crate::unity_engine::vector3int::Vector3Int,tilemap:crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,tile_data: *mut crate::unity_engine::tilemaps::tiledata::TileData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <Tile as::unity2::ClassIdentity> ::NAME,"GetTileData",));
-let inner:extern "C" fn(Tile,crate::unity_engine::vector3int::Vector3Int,crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, *mut crate::unity_engine::tilemaps::tiledata::TileData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,position,tilemap,tile_data,__mi)}
-}
 
 #[cfg(feature="unity_engine-tilemaps-tile")]pub trait ITileMethods:ITile{#[doc="`get_sprite()` overload"]fn get_sprite(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <Tile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42b50usize)as*mut u8,crate::unity_engine::sprite::Sprite;
@@ -107,7 +94,16 @@ inner(this,position,tilemap,tile_data,__mi)}
 }
 #[doc="`GetTileData(crate::unity_engine::vector3int::Vector3Int, crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, *mutcrate::unity_engine::tilemaps::tiledata::TileData)` overload"]fn get_tile_data(self,position:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int> ,tilemap:impl::core::convert::Into<crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface>)->crate::unity_engine::tilemaps::tiledata::TileData{unsafe{let __receiver= <Tile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::tilemaps::tiledata::TileData> ::uninit();
-__Tile_unity2_raw::get_tile_data(__receiver, ::core::convert::Into::into(position), ::core::convert::Into::into(tilemap),__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Tile as::unity2::ClassIdentity> ::NAME,"GetTileData",));
+let __inner:extern "C" fn(Tile,crate::unity_engine::vector3int::Vector3Int,crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, *mut crate::unity_engine::tilemaps::tiledata::TileData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(position), ::core::convert::Into::into(tilemap),__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Tile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -134,6 +130,11 @@ pub fn get_tile_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 }
 
+#[cfg(feature="unity_engine-tilemaps-tile")]impl Tile{#[doc="Direct (non-virtual) call to `Tile`'s own `GetTileData`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_tile_data(this:impl::core::convert::Into< ::unity2::IlInstance> ,position:crate::unity_engine::vector3int::Vector3Int,tilemap:crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,tile_data: *mut crate::unity_engine::tilemaps::tiledata::TileData,)->(){let __mi=Self::get_tile_data_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::vector3int::Vector3Int,crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, *mut crate::unity_engine::tilemaps::tiledata::TileData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),position,tilemap,tile_data, ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-tilemaps-tile")]impl Tile{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(Tile), ::core::stringify!(new),));
@@ -144,10 +145,10 @@ this}
 #[cfg(feature = "unity_engine-tilemaps-tile")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Tile_ColliderType;
     pub use super::Tile;
     pub use super::ITile;
     pub use super::ITileMethods;
+    pub use super::Tile_ColliderType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

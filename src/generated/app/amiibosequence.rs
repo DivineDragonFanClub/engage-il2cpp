@@ -17,7 +17,37 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosequence/AmiiboSequence.md"))]#[::unity2::class(namespace="App",name="AmiiboSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::amiibosequence::AmiiboSequence>)]pub struct AmiiboSequence{#[offset(116)]#[rename(name="m_RetryCount")]pub m_retry_count:i32, #[static_field]#[rename(name="RetryCountMax")]pub retry_count_max:i32, #[offset(120)]#[rename(name="m_GainItemList")]pub m_gain_item_list:crate::system::collections::generic::list_1::List_1<crate::app::amiibosequence::AmiiboSequence_GainItemData> , #[offset(128)]#[rename(name="m_GainItemIndex")]pub m_gain_item_index:i32, #[offset(132)]#[rename(name="m_DebugAlreadyGetOnceItem")]pub m_debug_already_get_once_item:bool, #[static_field]#[rename(name="ReesetTimeSeconds")]pub reeset_time_seconds:i64,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosequence/AmiiboSequence_TagData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AmiiboSequence_TagData{pub character_id_base:u32,pub character_id_detail:u8,pub numbering_id:u16,pub series_id:u8,pub nfp_type:u8,pub name_base: ::unity2::Il2CppString,pub name_detail: ::unity2::Il2CppString,}
+impl::unity2::ClassIdentity for AmiiboSequence_TagData{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AmiiboSequence.TagData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AmiiboSequence_TagData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosequence/AmiiboSequence_ItemType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AmiiboSequence_ItemType{pub value:i32,}
+impl::unity2::ClassIdentity for AmiiboSequence_ItemType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AmiiboSequence.ItemType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AmiiboSequence_ItemType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AmiiboSequence_ItemType{pub fn item()->Self{Self{value:0}
+}
+pub fn bgm()->Self{Self{value:1}
+}
+pub fn dress_ticket()->Self{Self{value:2}
+}
+pub fn relay_ticket()->Self{Self{value:3}
+}
+pub fn kizuna()->Self{Self{value:4}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosequence/AmiiboSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AmiiboSequence_Label{pub value:i32,}
@@ -50,39 +80,6 @@ pub fn end()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosequence/AmiiboSequence_ItemType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AmiiboSequence_ItemType{pub value:i32,}
-impl::unity2::ClassIdentity for AmiiboSequence_ItemType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AmiiboSequence.ItemType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AmiiboSequence_ItemType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl AmiiboSequence_ItemType{pub fn item()->Self{Self{value:0}
-}
-pub fn bgm()->Self{Self{value:1}
-}
-pub fn dress_ticket()->Self{Self{value:2}
-}
-pub fn relay_ticket()->Self{Self{value:3}
-}
-pub fn kizuna()->Self{Self{value:4}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosequence/AmiiboSequence_TagData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AmiiboSequence_TagData{pub character_id_base:u32,pub character_id_detail:u8,pub numbering_id:u16,pub series_id:u8,pub nfp_type:u8,pub name_base: ::unity2::Il2CppString,pub name_detail: ::unity2::Il2CppString,}
-impl::unity2::ClassIdentity for AmiiboSequence_TagData{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AmiiboSequence.TagData";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AmiiboSequence_TagData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosequence/AmiiboSequence_GainItemData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AmiiboSequence_GainItemData{pub name: ::unity2::Il2CppString,pub num:i32,pub r#type:crate::app::amiibosequence::AmiiboSequence_ItemType,}
 impl::unity2::ClassIdentity for AmiiboSequence_GainItemData{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AmiiboSequence.GainItemData";
@@ -93,10 +90,21 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for AmiiboSequence_GainItemData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosequence/AmiiboSequence.md"))]#[::unity2::class(namespace="App",name="AmiiboSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::amiibosequence::AmiiboSequence>)]pub struct AmiiboSequence{#[offset(116)]#[rename(name="m_RetryCount")]pub m_retry_count:i32, #[static_field]#[rename(name="RetryCountMax")]pub retry_count_max:i32, #[offset(120)]#[rename(name="m_GainItemList")]pub m_gain_item_list:crate::system::collections::generic::list_1::List_1<crate::app::amiibosequence::AmiiboSequence_GainItemData> , #[offset(128)]#[rename(name="m_GainItemIndex")]pub m_gain_item_index:i32, #[offset(132)]#[rename(name="m_DebugAlreadyGetOnceItem")]pub m_debug_already_get_once_item:bool, #[static_field]#[rename(name="ReesetTimeSeconds")]pub reeset_time_seconds:i64,}
+
 }
 
 #[cfg(feature = "app-amiibosequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-amiibosequence")]impl AmiiboSequence_TagData{#[doc="`.ctor(u32, u8, u16, u8, u8, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,character_id_base:impl::core::convert::Into<u32> ,character_id_detail:impl::core::convert::Into<u8> ,numbering_id:impl::core::convert::Into<u16> ,series_id:impl::core::convert::Into<u8> ,nfp_type:impl::core::convert::Into<u8> ,name_base:impl::core::convert::Into< ::unity2::Il2CppString> ,name_detail:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3460usize)as*mut u8,();
+(*mut AmiiboSequence_TagData)self as*mut AmiiboSequence_TagData,(u32)::core::convert::Into::into(character_id_base),(u8)::core::convert::Into::into(character_id_detail),(u16)::core::convert::Into::into(numbering_id),(u8)::core::convert::Into::into(series_id),(u8)::core::convert::Into::into(nfp_type),(::unity2::Il2CppString)::core::convert::Into::into(name_base),(::unity2::Il2CppString)::core::convert::Into::into(name_detail))}
+}
+}
+
+#[cfg(feature="app-amiibosequence")]impl AmiiboSequence_TagData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature="app-amiibosequence")]impl AmiiboSequence{#[doc="`CheckPassedDay(i32, i32)` overload"]pub fn check_passed_day(seconds:impl::core::convert::Into<i32> ,old_seconds:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d349f0usize)as*mut u8,bool;
 (i32)::core::convert::Into::into(seconds),(i32)::core::convert::Into::into(old_seconds))}
@@ -240,24 +248,16 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-amiibosequence")]impl AmiiboSequence_TagData{#[doc="`.ctor(u32, u8, u16, u8, u8, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,character_id_base:impl::core::convert::Into<u32> ,character_id_detail:impl::core::convert::Into<u8> ,numbering_id:impl::core::convert::Into<u16> ,series_id:impl::core::convert::Into<u8> ,nfp_type:impl::core::convert::Into<u8> ,name_base:impl::core::convert::Into< ::unity2::Il2CppString> ,name_detail:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3460usize)as*mut u8,();
-(*mut AmiiboSequence_TagData)self as*mut AmiiboSequence_TagData,(u32)::core::convert::Into::into(character_id_base),(u8)::core::convert::Into::into(character_id_detail),(u16)::core::convert::Into::into(numbering_id),(u8)::core::convert::Into::into(series_id),(u8)::core::convert::Into::into(nfp_type),(::unity2::Il2CppString)::core::convert::Into::into(name_base),(::unity2::Il2CppString)::core::convert::Into::into(name_detail))}
-}
-}
-
-#[cfg(feature="app-amiibosequence")]impl AmiiboSequence_TagData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
 #[cfg(feature = "app-amiibosequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AmiiboSequence_TagData;
+    pub use super::AmiiboSequence_ItemType;
+    pub use super::AmiiboSequence_Label;
+    pub use super::AmiiboSequence_GainItemData;
     pub use super::AmiiboSequence;
     pub use super::IAmiiboSequence;
     pub use super::IAmiiboSequenceMethods;
-    pub use super::AmiiboSequence_Label;
-    pub use super::AmiiboSequence_ItemType;
-    pub use super::AmiiboSequence_TagData;
-    pub use super::AmiiboSequence_GainItemData;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

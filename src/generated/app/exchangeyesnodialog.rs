@@ -15,77 +15,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exchangeyesnodialog/ExchangeYesNoDialog_ItemParam.md"))]#[::unity2::class(namespace="App",name="ExchangeYesNoDialog.ItemParam")]#[parent(crate::system::object::Object)]pub struct ExchangeYesNoDialog_ItemParam{#[offset(16)]#[rename(name="sprite")]pub sprite:crate::unity_engine::sprite::Sprite, #[offset(24)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="num")]pub num:i32, #[offset(36)]#[rename(name="enabledNum")]pub enabled_num:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exchangeyesnodialog/ExchangeYesNoDialog.md"))]#[::unity2::class(namespace="App",name="ExchangeYesNoDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct ExchangeYesNoDialog{#[offset(288)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::system::action::Action, #[offset(296)]#[rename(name="m_IsForWell")]pub m_is_for_well:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exchangeyesnodialog/ExchangeYesNoDialog_MoneyParam.md"))]#[::unity2::class(namespace="App",name="ExchangeYesNoDialog.MoneyParam")]#[parent(crate::system::object::Object)]pub struct ExchangeYesNoDialog_MoneyParam{#[offset(16)]#[rename(name="num")]pub num:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exchangeyesnodialog/ExchangeYesNoDialog.md"))]#[::unity2::class(namespace="App",name="ExchangeYesNoDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct ExchangeYesNoDialog{#[offset(288)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::system::action::Action, #[offset(296)]#[rename(name="m_IsForWell")]pub m_is_for_well:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exchangeyesnodialog/ExchangeYesNoDialog_ItemParam.md"))]#[::unity2::class(namespace="App",name="ExchangeYesNoDialog.ItemParam")]#[parent(crate::system::object::Object)]pub struct ExchangeYesNoDialog_ItemParam{#[offset(16)]#[rename(name="sprite")]pub sprite:crate::unity_engine::sprite::Sprite, #[offset(24)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="num")]pub num:i32, #[offset(36)]#[rename(name="enabledNum")]pub enabled_num:bool,}
 
 }
 
 #[cfg(feature = "app-exchangeyesnodialog-types")]
 pub use __types::*;
-
-#[cfg(feature="app-exchangeyesnodialog")]pub trait IExchangeYesNoDialog_ItemParamMethods:IExchangeYesNoDialog_ItemParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExchangeYesNoDialog_ItemParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e596e0usize)as*mut u8,();
-(ExchangeYesNoDialog_ItemParam)__receiver)}
-}
-}
-
-#[cfg(feature="app-exchangeyesnodialog")]impl<__T:IExchangeYesNoDialog_ItemParam>IExchangeYesNoDialog_ItemParamMethods for __T{}
-
-#[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog_ItemParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog_ItemParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ExchangeYesNoDialog_ItemParam), ::core::stringify!(new),));
- <Self as IExchangeYesNoDialog_ItemParamMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-exchangeyesnodialog")]pub trait IExchangeYesNoDialog_MoneyParamMethods:IExchangeYesNoDialog_MoneyParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExchangeYesNoDialog_MoneyParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e59760usize)as*mut u8,();
-(ExchangeYesNoDialog_MoneyParam)__receiver)}
-}
-}
-
-#[cfg(feature="app-exchangeyesnodialog")]impl<__T:IExchangeYesNoDialog_MoneyParam>IExchangeYesNoDialog_MoneyParamMethods for __T{}
-
-#[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog_MoneyParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog_MoneyParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ExchangeYesNoDialog_MoneyParam), ::core::stringify!(new),));
- <Self as IExchangeYesNoDialog_MoneyParamMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-exchangeyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ExchangeYesNoDialog_unity2_raw{use super:: * ;
-pub unsafe fn on_dispose(this:ExchangeYesNoDialog,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <ExchangeYesNoDialog as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn after_build(this:ExchangeYesNoDialog,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",25usize,__vt.len(), <ExchangeYesNoDialog as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
-let inner:extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,top_message:impl::core::convert::Into< ::unity2::Il2CppString> ,get_item_title:impl::core::convert::Into< ::unity2::Il2CppString> ,get_item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> > ,get_money_param:impl::core::convert::Into<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam> ,cost_item_title:impl::core::convert::Into< ::unity2::Il2CppString> ,cost_item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> > ,cost_money_param:impl::core::convert::Into<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam> ,yes_menu_item:impl::core::convert::Into<crate::app::basicdialogitemyes::BasicDialogItemYes> ,no_menu_item:impl::core::convert::Into<crate::app::basicdialogitemno::BasicDialogItemNo>)->crate::app::exchangeyesnodialog::ExchangeYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e6d10usize)as*mut u8,crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(top_message),(::unity2::Il2CppString)::core::convert::Into::into(get_item_title),(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)::core::convert::Into::into(get_item_param_list),(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)::core::convert::Into::into(get_money_param),(::unity2::Il2CppString)::core::convert::Into::into(cost_item_title),(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)::core::convert::Into::into(cost_item_param_list),(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)::core::convert::Into::into(cost_money_param),(crate::app::basicdialogitemyes::BasicDialogItemYes)::core::convert::Into::into(yes_menu_item),(crate::app::basicdialogitemno::BasicDialogItemNo)::core::convert::Into::into(no_menu_item))}
@@ -238,10 +179,28 @@ inner(this,__mi)}
 (ExchangeYesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::exchangedialogcontent::ExchangeDialogContent)::core::convert::Into::into(menu_content),(::unity2::Il2CppString)::core::convert::Into::into(top_message),(::unity2::Il2CppString)::core::convert::Into::into(get_item_title),(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)::core::convert::Into::into(get_item_list),(::unity2::Il2CppString)::core::convert::Into::into(cost_item_title),(::unity2::Il2CppString)::core::convert::Into::into(cost_item_name))}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ExchangeYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ExchangeYesNoDialog_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ExchangeYesNoDialog as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <ExchangeYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ExchangeYesNoDialog_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <ExchangeYesNoDialog as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let __inner:extern "C" fn(ExchangeYesNoDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetKeyWaitStyle(bool)` overload"]fn set_key_wait_style(self,enabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ExchangeYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24e7f50usize)as*mut u8,();
@@ -300,6 +259,14 @@ pub fn get_cost_item_param_max_method_info()-> & 'static::unity2::il2cpp::Method
 pub fn set_dispose_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
 }
 
+#[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog{#[doc="Direct (non-virtual) call to `ExchangeYesNoDialog`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ExchangeYesNoDialog`'s own `AfterBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn after_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::after_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::exchangedialogcontent::ExchangeDialogContent,top_message: ::unity2::Il2CppString,get_item_title: ::unity2::Il2CppString,get_item_param_list:crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> ,get_money_param:crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,cost_item_title: ::unity2::Il2CppString,cost_item_param_list:crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> ,cost_money_param:crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(ExchangeYesNoDialog), ::core::stringify!(new),));
@@ -327,18 +294,54 @@ this}
 this}
 }
 
+#[cfg(feature="app-exchangeyesnodialog")]pub trait IExchangeYesNoDialog_MoneyParamMethods:IExchangeYesNoDialog_MoneyParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExchangeYesNoDialog_MoneyParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e59760usize)as*mut u8,();
+(ExchangeYesNoDialog_MoneyParam)__receiver)}
+}
+}
+
+#[cfg(feature="app-exchangeyesnodialog")]impl<__T:IExchangeYesNoDialog_MoneyParam>IExchangeYesNoDialog_MoneyParamMethods for __T{}
+
+#[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog_MoneyParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog_MoneyParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExchangeYesNoDialog_MoneyParam), ::core::stringify!(new),));
+ <Self as IExchangeYesNoDialog_MoneyParamMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-exchangeyesnodialog")]pub trait IExchangeYesNoDialog_ItemParamMethods:IExchangeYesNoDialog_ItemParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExchangeYesNoDialog_ItemParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e596e0usize)as*mut u8,();
+(ExchangeYesNoDialog_ItemParam)__receiver)}
+}
+}
+
+#[cfg(feature="app-exchangeyesnodialog")]impl<__T:IExchangeYesNoDialog_ItemParam>IExchangeYesNoDialog_ItemParamMethods for __T{}
+
+#[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog_ItemParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-exchangeyesnodialog")]impl ExchangeYesNoDialog_ItemParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExchangeYesNoDialog_ItemParam), ::core::stringify!(new),));
+ <Self as IExchangeYesNoDialog_ItemParamMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-exchangeyesnodialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ExchangeYesNoDialog_ItemParam;
-    pub use super::IExchangeYesNoDialog_ItemParam;
-    pub use super::IExchangeYesNoDialog_ItemParamMethods;
-    pub use super::ExchangeYesNoDialog_MoneyParam;
-    pub use super::IExchangeYesNoDialog_MoneyParam;
-    pub use super::IExchangeYesNoDialog_MoneyParamMethods;
     pub use super::ExchangeYesNoDialog;
     pub use super::IExchangeYesNoDialog;
     pub use super::IExchangeYesNoDialogMethods;
+    pub use super::ExchangeYesNoDialog_MoneyParam;
+    pub use super::IExchangeYesNoDialog_MoneyParam;
+    pub use super::IExchangeYesNoDialog_MoneyParamMethods;
+    pub use super::ExchangeYesNoDialog_ItemParam;
+    pub use super::IExchangeYesNoDialog_ItemParam;
+    pub use super::IExchangeYesNoDialog_ItemParamMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;

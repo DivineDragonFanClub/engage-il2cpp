@@ -45,24 +45,6 @@ pub fn picas()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/canvasscaler/CanvasScaler_ScaleMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CanvasScaler_ScaleMode{pub value:i32,}
-impl::unity2::ClassIdentity for CanvasScaler_ScaleMode{const NAMESPACE: &'static str="UnityEngine.UI";
-const NAME: &'static str="CanvasScaler.ScaleMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for CanvasScaler_ScaleMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl CanvasScaler_ScaleMode{pub fn constant_pixel_size()->Self{Self{value:0}
-}
-pub fn scale_with_screen_size()->Self{Self{value:1}
-}
-pub fn constant_physical_size()->Self{Self{value:2}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/canvasscaler/CanvasScaler_ScreenMatchMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CanvasScaler_ScreenMatchMode{pub value:i32,}
 impl::unity2::ClassIdentity for CanvasScaler_ScreenMatchMode{const NAMESPACE: &'static str="UnityEngine.UI";
 const NAME: &'static str="CanvasScaler.ScreenMatchMode";
@@ -81,85 +63,30 @@ pub fn shrink()->Self{Self{value:2}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/canvasscaler/CanvasScaler_ScaleMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CanvasScaler_ScaleMode{pub value:i32,}
+impl::unity2::ClassIdentity for CanvasScaler_ScaleMode{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="CanvasScaler.ScaleMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CanvasScaler_ScaleMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CanvasScaler_ScaleMode{pub fn constant_pixel_size()->Self{Self{value:0}
+}
+pub fn scale_with_screen_size()->Self{Self{value:1}
+}
+pub fn constant_physical_size()->Self{Self{value:2}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/canvasscaler/CanvasScaler.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="CanvasScaler")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct CanvasScaler{#[offset(24)]#[rename(name="m_UiScaleMode")]pub m_ui_scale_mode:crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode, #[offset(28)]#[rename(name="m_ReferencePixelsPerUnit")]pub m_reference_pixels_per_unit:f32, #[offset(32)]#[rename(name="m_ScaleFactor")]pub m_scale_factor:f32, #[offset(36)]#[rename(name="m_ReferenceResolution")]pub m_reference_resolution:crate::unity_engine::vector2::Vector2, #[offset(44)]#[rename(name="m_ScreenMatchMode")]pub m_screen_match_mode:crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode, #[offset(48)]#[rename(name="m_MatchWidthOrHeight")]pub m_match_width_or_height:f32, #[static_field]#[rename(name="kLogBase")]pub k_log_base:f32, #[offset(52)]#[rename(name="m_PhysicalUnit")]pub m_physical_unit:crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit, #[offset(56)]#[rename(name="m_FallbackScreenDPI")]pub m_fallback_screen_dpi:f32, #[offset(60)]#[rename(name="m_DefaultSpriteDPI")]pub m_default_sprite_dpi:f32, #[offset(64)]#[rename(name="m_DynamicPixelsPerUnit")]pub m_dynamic_pixels_per_unit:f32, #[offset(72)]#[rename(name="m_Canvas")]pub m_canvas:crate::unity_engine::canvas::Canvas, #[offset(80)]#[rename(name="m_PrevScaleFactor")]pub m_prev_scale_factor:f32, #[offset(84)]#[rename(name="m_PrevReferencePixelsPerUnit")]pub m_prev_reference_pixels_per_unit:f32, #[offset(88)]#[rename(name="m_PresetInfoIsWorld")]pub m_preset_info_is_world:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-canvasscaler-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-ui-canvasscaler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CanvasScaler_unity2_raw{use super:: * ;
-pub unsafe fn on_enable(this:CanvasScaler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"OnEnable",));
-let inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_disable(this:CanvasScaler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"OnDisable",));
-let inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn handle(this:CanvasScaler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"Handle",));
-let inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn handle_world_canvas(this:CanvasScaler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"HandleWorldCanvas",));
-let inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn handle_constant_pixel_size(this:CanvasScaler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"HandleConstantPixelSize",));
-let inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn handle_scale_with_screen_size(this:CanvasScaler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"HandleScaleWithScreenSize",));
-let inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn handle_constant_physical_size(this:CanvasScaler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"HandleConstantPhysicalSize",));
-let inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="unity_engine-ui-canvasscaler")]pub trait ICanvasScalerMethods:ICanvasScaler{#[doc="`get_uiScaleMode()` overload"]fn get_ui_scale_mode(self,)->crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode{unsafe{let __receiver= <CanvasScaler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317c620usize)as*mut u8,crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode;
@@ -246,29 +173,92 @@ inner(this,__mi)}
 (CanvasScaler)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <CanvasScaler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CanvasScaler_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let __inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Canvas_preWillRenderCanvases()` overload"]fn canvas_pre_will_render_canvases(self,)->(){unsafe{let __receiver= <CanvasScaler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317c980usize)as*mut u8,();
 (CanvasScaler)__receiver)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <CanvasScaler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CanvasScaler_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let __inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Handle()` overload"]fn handle(self,)->(){unsafe{let __receiver= <CanvasScaler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CanvasScaler_unity2_raw::handle(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"Handle",));
+let __inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`HandleWorldCanvas()` overload"]fn handle_world_canvas(self,)->(){unsafe{let __receiver= <CanvasScaler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CanvasScaler_unity2_raw::handle_world_canvas(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"HandleWorldCanvas",));
+let __inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`HandleConstantPixelSize()` overload"]fn handle_constant_pixel_size(self,)->(){unsafe{let __receiver= <CanvasScaler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CanvasScaler_unity2_raw::handle_constant_pixel_size(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"HandleConstantPixelSize",));
+let __inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`HandleScaleWithScreenSize()` overload"]fn handle_scale_with_screen_size(self,)->(){unsafe{let __receiver= <CanvasScaler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CanvasScaler_unity2_raw::handle_scale_with_screen_size(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"HandleScaleWithScreenSize",));
+let __inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`HandleConstantPhysicalSize()` overload"]fn handle_constant_physical_size(self,)->(){unsafe{let __receiver= <CanvasScaler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CanvasScaler_unity2_raw::handle_constant_physical_size(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <CanvasScaler as::unity2::ClassIdentity> ::NAME,"HandleConstantPhysicalSize",));
+let __inner:extern "C" fn(CanvasScaler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -305,6 +295,29 @@ pub fn handle_scale_with_screen_size_method_info()-> & 'static::unity2::il2cpp::
 pub fn handle_constant_physical_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
 }
 
+#[cfg(feature="unity_engine-ui-canvasscaler")]impl CanvasScaler{#[doc="Direct (non-virtual) call to `CanvasScaler`'s own `OnEnable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CanvasScaler`'s own `OnDisable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_disable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_disable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CanvasScaler`'s own `Handle`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn handle(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::handle_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CanvasScaler`'s own `HandleWorldCanvas`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn handle_world_canvas(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::handle_world_canvas_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CanvasScaler`'s own `HandleConstantPixelSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn handle_constant_pixel_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::handle_constant_pixel_size_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CanvasScaler`'s own `HandleScaleWithScreenSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn handle_scale_with_screen_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::handle_scale_with_screen_size_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CanvasScaler`'s own `HandleConstantPhysicalSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn handle_constant_physical_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::handle_constant_physical_size_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-ui-canvasscaler")]impl CanvasScaler{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(CanvasScaler), ::core::stringify!(new),));
@@ -316,8 +329,8 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::CanvasScaler_Unit;
-    pub use super::CanvasScaler_ScaleMode;
     pub use super::CanvasScaler_ScreenMatchMode;
+    pub use super::CanvasScaler_ScaleMode;
     pub use super::CanvasScaler;
     pub use super::ICanvasScaler;
     pub use super::ICanvasScalerMethods;

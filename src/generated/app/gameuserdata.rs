@@ -25,6 +25,42 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserdata/GameUserData_Sequences.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameUserData_Sequences{pub value:i32,}
+impl::unity2::ClassIdentity for GameUserData_Sequences{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameUserData.Sequences";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameUserData_Sequences{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameUserData_Sequences{pub fn none()->Self{Self{value:0}
+}
+pub fn chapter_save()->Self{Self{value:1}
+}
+pub fn sortie()->Self{Self{value:2}
+}
+pub fn map()->Self{Self{value:3}
+}
+pub fn hub()->Self{Self{value:4}
+}
+pub fn kizuna()->Self{Self{value:5}
+}
+pub fn gmap()->Self{Self{value:6}
+}
+pub fn chapter()->Self{Self{value:7}
+}
+pub fn num()->Self{Self{value:8}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserdata/GameUserData_StatusField.md"))]#[::unity2::class(namespace="App",name="GameUserData.StatusField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::gameuserdata::GameUserData_Statuses>)]pub struct GameUserData_StatusField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserdata/GameUserData_ProcDescSetSequence.md"))]#[::unity2::class(namespace="App",name="GameUserData.ProcDescSetSequence")]#[parent(crate::app::procdescuser::ProcDescUser)]pub struct GameUserData_ProcDescSetSequence{#[offset(20)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::gameuserdata::GameUserData_Sequences,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserdata/GameUserData_Statuses.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameUserData_Statuses{pub value:i32,}
 impl::unity2::ClassIdentity for GameUserData_Statuses{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GameUserData.Statuses";
@@ -73,9 +109,6 @@ pub fn init_end_of_contents()->Self{Self{value:1537}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserdata/GameUserData.md"))]#[::unity2::class(namespace="App",name="GameUserData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameuserdata::GameUserData>)]pub struct GameUserData{#[static_field]#[rename(name="MaxGold")]pub max_gold:i32, #[static_field]#[rename(name="MaxRefine")]pub max_refine:i32, #[static_field]#[rename(name="MaxPieceOfBond")]pub max_piece_of_bond:i32, #[static_field]#[rename(name="MaxVariable")]pub max_variable:i32, #[offset(32)]#[rename(name="m_Status")]pub m_status:crate::app::gameuserdata::GameUserData_StatusField, #[offset(40)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::gameuserdata::GameUserData_Sequences, #[offset(44)]#[rename(name="m_GameMode")]pub m_game_mode:crate::app::gamemode::GameMode, #[offset(48)]#[rename(name="m_Difficulty")]pub m_difficulty:crate::app::difficulty::Difficulty, #[offset(56)]#[rename(name="m_Chapter")]pub m_chapter:crate::app::chapterdata::ChapterData, #[offset(64)]#[rename(name="m_GmapSpot")]pub m_gmap_spot: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_ContentsIndex")]pub m_contents_index:i32, #[offset(80)]#[rename(name="m_Variable")]pub m_variable:crate::app::gamevariable::GameVariable, #[offset(88)]#[rename(name="m_Gold")]pub m_gold:i32, #[offset(92)]#[rename(name="m_Progress")]pub m_progress:i32, #[offset(96)]#[rename(name="m_TrainingCount")]pub m_training_count:i32, #[offset(100)]#[rename(name="m_ArenaCount")]pub m_arena_count:i32, #[offset(104)]#[rename(name="m_UnitInfoMode")]pub m_unit_info_mode:crate::app::unitinfo::UnitInfo_Mode, #[offset(108)]#[rename(name="m_PieceOfBond")]pub m_piece_of_bond:i32, #[offset(112)]#[rename(name="m_TotalPieceOfBond")]pub m_total_piece_of_bond:i32, #[offset(120)]#[rename(name="m_GmapData")]pub m_gmap_data:crate::app::gameusergmapdata::GameUserGmapData, #[offset(128)]#[rename(name="m_HubData")]pub m_hub_data:crate::app::gameuserhubdata::GameUserHubData, #[offset(136)]#[rename(name="m_ChapterRecord")]pub m_chapter_record:crate::app::chapterrecord::ChapterRecord, #[offset(144)]#[rename(name="m_MascotName")]pub m_mascot_name: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_MapEditData")]pub m_map_edit_data:crate::app::mapeditdata::MapEditData, #[offset(160)]#[rename(name="m_RelayData")]pub m_relay_data:crate::app::relayuserdata::RelayUserData, #[offset(168)]#[rename(name="m_Identifier")]pub m_identifier:u64, #[offset(176)]#[rename(name="m_VersusData")]pub m_versus_data:crate::app::versususerdata::VersusUserData, #[offset(184)]#[rename(name="m_IsShowNetTerms")]pub m_is_show_net_terms:bool, #[offset(185)]#[rename(name="m_IsShowNetHowToReport")]pub m_is_show_net_how_to_report:bool, #[offset(188)]#[rename(name="m_EvilDifficulty")]pub m_evil_difficulty:crate::app::difficulty::Difficulty, #[static_field]#[rename(name="Flag_RefineIron")]pub flag_refine_iron: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_RefineSteel")]pub flag_refine_steel: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_RefineSilver")]pub flag_refine_silver: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeRouteFlag")]pub challenge_route_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeSeedFlag")]pub challenge_seed_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeLevelFlag")]pub challenge_level_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeBestLevelFlag")]pub challenge_best_level_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeOffsetFlag")]pub challenge_offset_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeTurnFlag")]pub challenge_turn_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="KeyInvestmentFilene")]pub key_investment_filene: ::unity2::Il2CppString, #[static_field]#[rename(name="KeyInvestmentBrodia")]pub key_investment_brodia: ::unity2::Il2CppString, #[static_field]#[rename(name="KeyInvestmentIrcion")]pub key_investment_ircion: ::unity2::Il2CppString, #[static_field]#[rename(name="KeyInvestmentSolum")]pub key_investment_solum: ::unity2::Il2CppString, #[static_field]#[rename(name="LOCAL_FLAG")]pub local_flag: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="KeyFieldBGM_Changeable")]pub key_field_bgm_changeable: ::unity2::Il2CppString, #[static_field]#[rename(name="CompletedLongEndingFlag")]pub completed_long_ending_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="CompletedEvilFlag")]pub completed_evil_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_RewindEnable")]pub flag_rewind_enable: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_RelianceAPlusPermit")]pub flag_reliance_a_plus_permit: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_GetPromiseRing")]pub flag_get_promise_ring: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_CC_Enchant")]pub flag_cc_enchant: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_CC_Gunner")]pub flag_cc_gunner: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserdata/GameUserData_MapModes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameUserData_MapModes{pub value:i32,}
 impl::unity2::ClassIdentity for GameUserData_MapModes{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GameUserData.MapModes";
@@ -100,77 +133,83 @@ pub fn recollection()->Self{Self{value:5}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserdata/GameUserData_Sequences.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameUserData_Sequences{pub value:i32,}
-impl::unity2::ClassIdentity for GameUserData_Sequences{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameUserData.Sequences";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameUserData_Sequences{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameUserData_Sequences{pub fn none()->Self{Self{value:0}
-}
-pub fn chapter_save()->Self{Self{value:1}
-}
-pub fn sortie()->Self{Self{value:2}
-}
-pub fn map()->Self{Self{value:3}
-}
-pub fn hub()->Self{Self{value:4}
-}
-pub fn kizuna()->Self{Self{value:5}
-}
-pub fn gmap()->Self{Self{value:6}
-}
-pub fn chapter()->Self{Self{value:7}
-}
-pub fn num()->Self{Self{value:8}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserdata/GameUserData_ProcDescSetSequence.md"))]#[::unity2::class(namespace="App",name="GameUserData.ProcDescSetSequence")]#[parent(crate::app::procdescuser::ProcDescUser)]pub struct GameUserData_ProcDescSetSequence{#[offset(20)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::gameuserdata::GameUserData_Sequences,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserdata/GameUserData_StatusField.md"))]#[::unity2::class(namespace="App",name="GameUserData.StatusField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::gameuserdata::GameUserData_Statuses>)]pub struct GameUserData_StatusField{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserdata/GameUserData.md"))]#[::unity2::class(namespace="App",name="GameUserData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameuserdata::GameUserData>)]pub struct GameUserData{#[static_field]#[rename(name="MaxGold")]pub max_gold:i32, #[static_field]#[rename(name="MaxRefine")]pub max_refine:i32, #[static_field]#[rename(name="MaxPieceOfBond")]pub max_piece_of_bond:i32, #[static_field]#[rename(name="MaxVariable")]pub max_variable:i32, #[offset(32)]#[rename(name="m_Status")]pub m_status:crate::app::gameuserdata::GameUserData_StatusField, #[offset(40)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::gameuserdata::GameUserData_Sequences, #[offset(44)]#[rename(name="m_GameMode")]pub m_game_mode:crate::app::gamemode::GameMode, #[offset(48)]#[rename(name="m_Difficulty")]pub m_difficulty:crate::app::difficulty::Difficulty, #[offset(56)]#[rename(name="m_Chapter")]pub m_chapter:crate::app::chapterdata::ChapterData, #[offset(64)]#[rename(name="m_GmapSpot")]pub m_gmap_spot: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_ContentsIndex")]pub m_contents_index:i32, #[offset(80)]#[rename(name="m_Variable")]pub m_variable:crate::app::gamevariable::GameVariable, #[offset(88)]#[rename(name="m_Gold")]pub m_gold:i32, #[offset(92)]#[rename(name="m_Progress")]pub m_progress:i32, #[offset(96)]#[rename(name="m_TrainingCount")]pub m_training_count:i32, #[offset(100)]#[rename(name="m_ArenaCount")]pub m_arena_count:i32, #[offset(104)]#[rename(name="m_UnitInfoMode")]pub m_unit_info_mode:crate::app::unitinfo::UnitInfo_Mode, #[offset(108)]#[rename(name="m_PieceOfBond")]pub m_piece_of_bond:i32, #[offset(112)]#[rename(name="m_TotalPieceOfBond")]pub m_total_piece_of_bond:i32, #[offset(120)]#[rename(name="m_GmapData")]pub m_gmap_data:crate::app::gameusergmapdata::GameUserGmapData, #[offset(128)]#[rename(name="m_HubData")]pub m_hub_data:crate::app::gameuserhubdata::GameUserHubData, #[offset(136)]#[rename(name="m_ChapterRecord")]pub m_chapter_record:crate::app::chapterrecord::ChapterRecord, #[offset(144)]#[rename(name="m_MascotName")]pub m_mascot_name: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_MapEditData")]pub m_map_edit_data:crate::app::mapeditdata::MapEditData, #[offset(160)]#[rename(name="m_RelayData")]pub m_relay_data:crate::app::relayuserdata::RelayUserData, #[offset(168)]#[rename(name="m_Identifier")]pub m_identifier:u64, #[offset(176)]#[rename(name="m_VersusData")]pub m_versus_data:crate::app::versususerdata::VersusUserData, #[offset(184)]#[rename(name="m_IsShowNetTerms")]pub m_is_show_net_terms:bool, #[offset(185)]#[rename(name="m_IsShowNetHowToReport")]pub m_is_show_net_how_to_report:bool, #[offset(188)]#[rename(name="m_EvilDifficulty")]pub m_evil_difficulty:crate::app::difficulty::Difficulty, #[static_field]#[rename(name="Flag_RefineIron")]pub flag_refine_iron: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_RefineSteel")]pub flag_refine_steel: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_RefineSilver")]pub flag_refine_silver: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeRouteFlag")]pub challenge_route_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeSeedFlag")]pub challenge_seed_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeLevelFlag")]pub challenge_level_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeBestLevelFlag")]pub challenge_best_level_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeOffsetFlag")]pub challenge_offset_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="ChallengeTurnFlag")]pub challenge_turn_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="KeyInvestmentFilene")]pub key_investment_filene: ::unity2::Il2CppString, #[static_field]#[rename(name="KeyInvestmentBrodia")]pub key_investment_brodia: ::unity2::Il2CppString, #[static_field]#[rename(name="KeyInvestmentIrcion")]pub key_investment_ircion: ::unity2::Il2CppString, #[static_field]#[rename(name="KeyInvestmentSolum")]pub key_investment_solum: ::unity2::Il2CppString, #[static_field]#[rename(name="LOCAL_FLAG")]pub local_flag: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="KeyFieldBGM_Changeable")]pub key_field_bgm_changeable: ::unity2::Il2CppString, #[static_field]#[rename(name="CompletedLongEndingFlag")]pub completed_long_ending_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="CompletedEvilFlag")]pub completed_evil_flag: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_RewindEnable")]pub flag_rewind_enable: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_RelianceAPlusPermit")]pub flag_reliance_a_plus_permit: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_GetPromiseRing")]pub flag_get_promise_ring: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_CC_Enchant")]pub flag_cc_enchant: ::unity2::Il2CppString, #[static_field]#[rename(name="Flag_CC_Gunner")]pub flag_cc_gunner: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-gameuserdata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-gameuserdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameUserData_unity2_raw{use super:: * ;
-pub unsafe fn get_version(this:GameUserData,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gameuserdata")]pub trait IGameUserData_StatusFieldMethods:IGameUserData_StatusField{#[doc="`ToInt(crate::app::gameuserdata::GameUserData_Statuses)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::gameuserdata::GameUserData_Statuses>)->i32{unsafe{let __receiver= <GameUserData_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GameUserData_StatusField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let __inner:extern "C" fn(GameUserData_StatusField,crate::app::gameuserdata::GameUserData_Statuses, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserData_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e180usize)as*mut u8,();
+(GameUserData_StatusField)__receiver)}
+}
+}
+
+#[cfg(feature="app-gameuserdata")]impl<__T:IGameUserData_StatusField>IGameUserData_StatusFieldMethods for __T{}
+
+#[cfg(feature="app-gameuserdata")]impl GameUserData_StatusField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-gameuserdata")]impl GameUserData_StatusField{#[doc="Direct (non-virtual) call to `GameUserData_StatusField`'s own `ToInt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_int(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::gameuserdata::GameUserData_Statuses,)->i32{let __mi=Self::to_int_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::gameuserdata::GameUserData_Statuses, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gameuserdata")]impl GameUserData_StatusField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameUserData_StatusField), ::core::stringify!(new),));
+ <Self as IGameUserData_StatusFieldMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gameuserdata")]pub trait IGameUserData_ProcDescSetSequenceMethods:IGameUserData_ProcDescSetSequence{#[doc="`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` overload"]fn ctor(self,sequence:impl::core::convert::Into<crate::app::gameuserdata::GameUserData_Sequences>)->(){unsafe{let __receiver= <GameUserData_ProcDescSetSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e0b0usize)as*mut u8,();
+(GameUserData_ProcDescSetSequence)__receiver,(crate::app::gameuserdata::GameUserData_Sequences)::core::convert::Into::into(sequence))}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <GameUserData_ProcDescSetSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <GameUserData as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(GameUserData, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <GameUserData_ProcDescSetSequence as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(GameUserData_ProcDescSetSequence,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:GameUserData,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <GameUserData as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(GameUserData,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:GameUserData,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <GameUserData as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(GameUserData,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
+__inner(__receiver, ::core::convert::Into::into(inst),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-gameuserdata")]impl<__T:IGameUserData_ProcDescSetSequence>IGameUserData_ProcDescSetSequenceMethods for __T{}
+
+#[cfg(feature="app-gameuserdata")]impl GameUserData_ProcDescSetSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-gameuserdata")]impl GameUserData_ProcDescSetSequence{#[doc="Direct (non-virtual) call to `GameUserData_ProcDescSetSequence`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,inst:crate::app::procinst::ProcInst,)->crate::app::procdesc::ProcDesc_Result{let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),inst, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gameuserdata")]impl GameUserData_ProcDescSetSequence{#[doc="`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` — overload selector"]pub fn new(sequence:crate::app::gameuserdata::GameUserData_Sequences)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameUserData_ProcDescSetSequence), ::core::stringify!(new),));
+ <Self as IGameUserData_ProcDescSetSequenceMethods> ::ctor(this,sequence);
+this}
 }
 
 #[cfg(feature="app-gameuserdata")]impl GameUserData{#[doc="`get_MinChallengeLevel()` overload"]pub fn get_min_challenge_level()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250ee70usize)as*mut u8,i32;
@@ -751,13 +790,40 @@ inner(this,stream,version,__mi)}
 (GameUserData)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <GameUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameUserData_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GameUserData as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(GameUserData, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GameUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameUserData_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GameUserData as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(GameUserData,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameUserData_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <GameUserData as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(GameUserData,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
 }
 #[doc="`SerializeForMapHistoryReplay(crate::app::stream_2::Stream_2)` overload"]fn serialize_for_map_history_replay(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GameUserData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x251a160usize)as*mut u8,();
@@ -939,6 +1005,17 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[153]}
 }
 
+#[cfg(feature="app-gameuserdata")]impl GameUserData{#[doc="Direct (non-virtual) call to `GameUserData`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameUserData`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameUserData`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gameuserdata")]impl GameUserData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GameUserData), ::core::stringify!(new),));
@@ -946,91 +1023,21 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-gameuserdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameUserData_ProcDescSetSequence_unity2_raw{use super:: * ;
-pub unsafe fn execute(this:GameUserData_ProcDescSetSequence,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GameUserData_ProcDescSetSequence as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(GameUserData_ProcDescSetSequence,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,inst,__mi)}
-}
-
-#[cfg(feature="app-gameuserdata")]pub trait IGameUserData_ProcDescSetSequenceMethods:IGameUserData_ProcDescSetSequence{#[doc="`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` overload"]fn ctor(self,sequence:impl::core::convert::Into<crate::app::gameuserdata::GameUserData_Sequences>)->(){unsafe{let __receiver= <GameUserData_ProcDescSetSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e0b0usize)as*mut u8,();
-(GameUserData_ProcDescSetSequence)__receiver,(crate::app::gameuserdata::GameUserData_Sequences)::core::convert::Into::into(sequence))}
-}
-#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <GameUserData_ProcDescSetSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameUserData_ProcDescSetSequence_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-gameuserdata")]impl<__T:IGameUserData_ProcDescSetSequence>IGameUserData_ProcDescSetSequenceMethods for __T{}
-
-#[cfg(feature="app-gameuserdata")]impl GameUserData_ProcDescSetSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-gameuserdata")]impl GameUserData_ProcDescSetSequence{#[doc="`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` — overload selector"]pub fn new(sequence:crate::app::gameuserdata::GameUserData_Sequences)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameUserData_ProcDescSetSequence), ::core::stringify!(new),));
- <Self as IGameUserData_ProcDescSetSequenceMethods> ::ctor(this,sequence);
-this}
-}
-
-#[cfg(feature="app-gameuserdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameUserData_StatusField_unity2_raw{use super:: * ;
-pub unsafe fn to_int(this:GameUserData_StatusField,value:crate::app::gameuserdata::GameUserData_Statuses,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GameUserData_StatusField as::unity2::ClassIdentity> ::NAME,"ToInt",));
-let inner:extern "C" fn(GameUserData_StatusField,crate::app::gameuserdata::GameUserData_Statuses, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-}
-
-#[cfg(feature="app-gameuserdata")]pub trait IGameUserData_StatusFieldMethods:IGameUserData_StatusField{#[doc="`ToInt(crate::app::gameuserdata::GameUserData_Statuses)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::gameuserdata::GameUserData_Statuses>)->i32{unsafe{let __receiver= <GameUserData_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameUserData_StatusField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserData_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e180usize)as*mut u8,();
-(GameUserData_StatusField)__receiver)}
-}
-}
-
-#[cfg(feature="app-gameuserdata")]impl<__T:IGameUserData_StatusField>IGameUserData_StatusFieldMethods for __T{}
-
-#[cfg(feature="app-gameuserdata")]impl GameUserData_StatusField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-gameuserdata")]impl GameUserData_StatusField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameUserData_StatusField), ::core::stringify!(new),));
- <Self as IGameUserData_StatusFieldMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-gameuserdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameUserData_Statuses;
-    pub use super::GameUserData;
-    pub use super::IGameUserData;
-    pub use super::IGameUserDataMethods;
-    pub use super::GameUserData_MapModes;
     pub use super::GameUserData_Sequences;
-    pub use super::GameUserData_ProcDescSetSequence;
-    pub use super::IGameUserData_ProcDescSetSequence;
-    pub use super::IGameUserData_ProcDescSetSequenceMethods;
     pub use super::GameUserData_StatusField;
     pub use super::IGameUserData_StatusField;
     pub use super::IGameUserData_StatusFieldMethods;
+    pub use super::GameUserData_ProcDescSetSequence;
+    pub use super::IGameUserData_ProcDescSetSequence;
+    pub use super::IGameUserData_ProcDescSetSequenceMethods;
+    pub use super::GameUserData_Statuses;
+    pub use super::GameUserData_MapModes;
+    pub use super::GameUserData;
+    pub use super::IGameUserData;
+    pub use super::IGameUserDataMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

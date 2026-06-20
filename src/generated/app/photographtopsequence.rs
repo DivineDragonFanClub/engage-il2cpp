@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographtopsequence/PhotographTopSequence.md"))]#[::unity2::class(namespace="App",name="PhotographTopSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::photographtopsequence::PhotographTopSequence>)]pub struct PhotographTopSequence{#[offset(116)]#[rename(name="m_NextLabel")]pub m_next_label:crate::app::photographtopsequence::PhotographTopSequence_Label, #[offset(120)]#[rename(name="m_SelectAreaData")]pub m_select_area_data:crate::app::photographspotdata::PhotographSpotData, #[offset(128)]#[rename(name="m_UnitAccDataSetList")]pub m_unit_acc_data_set_list:crate::system::collections::generic::list_1::List_1<crate::app::photographtopsequence::PhotographTopSequence_UnitAccDataSet> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographtopsequence/PhotographTopSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PhotographTopSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for PhotographTopSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="PhotographTopSequence.Label";
@@ -38,6 +35,9 @@ pub fn setup_photograph()->Self{Self{value:2}
 pub fn exit()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographtopsequence/PhotographTopSequence.md"))]#[::unity2::class(namespace="App",name="PhotographTopSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::photographtopsequence::PhotographTopSequence>)]pub struct PhotographTopSequence{#[offset(116)]#[rename(name="m_NextLabel")]pub m_next_label:crate::app::photographtopsequence::PhotographTopSequence_Label, #[offset(120)]#[rename(name="m_SelectAreaData")]pub m_select_area_data:crate::app::photographspotdata::PhotographSpotData, #[offset(128)]#[rename(name="m_UnitAccDataSetList")]pub m_unit_acc_data_set_list:crate::system::collections::generic::list_1::List_1<crate::app::photographtopsequence::PhotographTopSequence_UnitAccDataSet> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographtopsequence/PhotographTopSequence_UnitAccDataSet.md"))]#[::unity2::class(namespace="App",name="PhotographTopSequence.UnitAccDataSet")]#[parent(crate::system::object::Object)]pub struct PhotographTopSequence_UnitAccDataSet{#[offset(40)]#[rename(name="m_RecordPid")]pub m_record_pid: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_RecordBodyAccData")]pub m_record_body_acc_data:crate::app::accessorydata::AccessoryData, #[offset(56)]#[rename(name="m_RecordFaceAccData")]pub m_record_face_acc_data:crate::app::accessorydata::AccessoryData,}
@@ -232,10 +232,10 @@ this}
 #[cfg(feature = "app-photographtopsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PhotographTopSequence_Label;
     pub use super::PhotographTopSequence;
     pub use super::IPhotographTopSequence;
     pub use super::IPhotographTopSequenceMethods;
-    pub use super::PhotographTopSequence_Label;
     pub use super::PhotographTopSequence_UnitAccDataSet;
     pub use super::IPhotographTopSequence_UnitAccDataSet;
     pub use super::IPhotographTopSequence_UnitAccDataSetMethods;

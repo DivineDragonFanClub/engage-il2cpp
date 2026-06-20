@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardthemeofeditmapdata/ProfileCardThemeOfEditMapData.md"))]#[::unity2::class(namespace="App",name="ProfileCardThemeOfEditMapData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData>)]pub struct ProfileCardThemeOfEditMapData{#[static_field]#[rename(name="CategoryMid")]pub category_mid: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardthemeofeditmapdata/ProfileCardThemeOfEditMapData_Categories.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardThemeOfEditMapData_Categories{pub value:i32,}
 impl::unity2::ClassIdentity for ProfileCardThemeOfEditMapData_Categories{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCardThemeOfEditMapData.Categories";
@@ -45,23 +42,13 @@ pub fn num()->Self{Self{value:5}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardthemeofeditmapdata/ProfileCardThemeOfEditMapData.md"))]#[::unity2::class(namespace="App",name="ProfileCardThemeOfEditMapData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardthemeofeditmapdata::ProfileCardThemeOfEditMapData>)]pub struct ProfileCardThemeOfEditMapData{#[static_field]#[rename(name="CategoryMid")]pub category_mid: ::unity2::Array< ::unity2::Il2CppString> ,}
+
 }
 
 #[cfg(feature = "app-profilecardthemeofeditmapdata-types")]
 pub use __types::*;
-
-#[cfg(feature="app-profilecardthemeofeditmapdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardThemeOfEditMapData_unity2_raw{use super:: * ;
-pub unsafe fn get_debug_name(this:ProfileCardThemeOfEditMapData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <ProfileCardThemeOfEditMapData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let inner:extern "C" fn(ProfileCardThemeOfEditMapData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-profilecardthemeofeditmapdata")]impl ProfileCardThemeOfEditMapData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bfd6e0usize)as*mut u8,();
 )}
@@ -115,7 +102,16 @@ inner(this,__mi)}
 (ProfileCardThemeOfEditMapData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardThemeOfEditMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProfileCardThemeOfEditMapData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ProfileCardThemeOfEditMapData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let __inner:extern "C" fn(ProfileCardThemeOfEditMapData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardThemeOfEditMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfd8d0usize)as*mut u8,();
@@ -142,6 +138,11 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
+#[cfg(feature="app-profilecardthemeofeditmapdata")]impl ProfileCardThemeOfEditMapData{#[doc="Direct (non-virtual) call to `ProfileCardThemeOfEditMapData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-profilecardthemeofeditmapdata")]impl ProfileCardThemeOfEditMapData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(ProfileCardThemeOfEditMapData), ::core::stringify!(new),));
@@ -152,10 +153,10 @@ this}
 #[cfg(feature = "app-profilecardthemeofeditmapdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProfileCardThemeOfEditMapData_Categories;
     pub use super::ProfileCardThemeOfEditMapData;
     pub use super::IProfileCardThemeOfEditMapData;
     pub use super::IProfileCardThemeOfEditMapDataMethods;
-    pub use super::ProfileCardThemeOfEditMapData_Categories;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

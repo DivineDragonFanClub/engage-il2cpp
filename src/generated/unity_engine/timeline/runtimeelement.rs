@@ -16,64 +16,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-timeline-runtimeelement-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-runtimeelement")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeElement_unity2_raw{use super:: * ;
-pub unsafe fn get_interval_start(this:RuntimeElement,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-timeline-runtimeelement")]pub trait IRuntimeElementMethods:IRuntimeElement{#[doc="`get_intervalStart()` overload"]fn get_interval_start(self,)->i64{unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <RuntimeElement as::unity2::ClassIdentity> ::NAME,"get_intervalStart",));
-let inner:extern "C" fn(RuntimeElement, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RuntimeElement, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_interval_end(this:RuntimeElement,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_intervalEnd()` overload"]fn get_interval_end(self,)->i64{unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <RuntimeElement as::unity2::ClassIdentity> ::NAME,"get_intervalEnd",));
-let inner:extern "C" fn(RuntimeElement, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RuntimeElement, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_enable(this:RuntimeElement,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <RuntimeElement as::unity2::ClassIdentity> ::NAME,"set_enable",));
-let inner:extern "C" fn(RuntimeElement,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn evaluate_at(this:RuntimeElement,local_time:f64,frame_data:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <RuntimeElement as::unity2::ClassIdentity> ::NAME,"EvaluateAt",));
-let inner:extern "C" fn(RuntimeElement,f64,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,local_time,frame_data,__mi)}
-pub unsafe fn reset(this:RuntimeElement,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <RuntimeElement as::unity2::ClassIdentity> ::NAME,"Reset",));
-let inner:extern "C" fn(RuntimeElement, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-timeline-runtimeelement")]pub trait IRuntimeElementMethods:IRuntimeElement{#[doc="`get_intervalStart()` overload"]fn get_interval_start(self,)->i64{unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeElement_unity2_raw::get_interval_start(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_intervalEnd()` overload"]fn get_interval_end(self,)->i64{unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeElement_unity2_raw::get_interval_end(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_intervalBit()` overload"]fn get_interval_bit(self,)->i32{unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35da150usize)as*mut u8,i32;
@@ -84,13 +49,40 @@ __RuntimeElement_unity2_raw::get_interval_end(__receiver, ::core::option::Option
 (RuntimeElement)__receiver,(i32)::core::convert::Into::into(value))}
 }
 #[doc="`set_enable(bool)` overload"]fn set_enable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeElement_unity2_raw::set_enable(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RuntimeElement as::unity2::ClassIdentity> ::NAME,"set_enable",));
+let __inner:extern "C" fn(RuntimeElement,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`EvaluateAt(f64, crate::unity_engine::playables::framedata::FrameData)` overload"]fn evaluate_at(self,local_time:impl::core::convert::Into<f64> ,frame_data:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeElement_unity2_raw::evaluate_at(__receiver, ::core::convert::Into::into(local_time), ::core::convert::Into::into(frame_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <RuntimeElement as::unity2::ClassIdentity> ::NAME,"EvaluateAt",));
+let __inner:extern "C" fn(RuntimeElement,f64,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(local_time), ::core::convert::Into::into(frame_data),__mi)}
+}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RuntimeElement_unity2_raw::reset(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RuntimeElement as::unity2::ClassIdentity> ::NAME,"Reset",));
+let __inner:extern "C" fn(RuntimeElement, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d6eb0usize)as*mut u8,();
@@ -108,6 +100,23 @@ pub fn set_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn evaluate_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="unity_engine-timeline-runtimeelement")]impl RuntimeElement{#[doc="Direct (non-virtual) call to `RuntimeElement`'s own `get_intervalStart`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_interval_start(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i64{let __mi=Self::get_interval_start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeElement`'s own `get_intervalEnd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_interval_end(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i64{let __mi=Self::get_interval_end_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeElement`'s own `set_enable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_enable(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_enable_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeElement`'s own `EvaluateAt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn evaluate_at(this:impl::core::convert::Into< ::unity2::IlInstance> ,local_time:f64,frame_data:crate::unity_engine::playables::framedata::FrameData,)->(){let __mi=Self::evaluate_at_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f64,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),local_time,frame_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RuntimeElement`'s own `Reset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn reset(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::reset_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-timeline-runtimeelement")]impl RuntimeElement{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

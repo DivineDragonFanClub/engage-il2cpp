@@ -17,82 +17,27 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/signalreceiver/SignalReceiver_EventKeyValue.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="SignalReceiver.EventKeyValue")]#[parent(crate::system::object::Object)]pub struct SignalReceiver_EventKeyValue{#[offset(16)]#[rename(name="m_Signals")]pub m_signals:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::signalasset::SignalAsset> , #[offset(24)]#[rename(name="m_Events")]pub m_events:crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::unityevent::UnityEvent> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/signalreceiver/SignalReceiver.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="SignalReceiver")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SignalReceiver{#[offset(24)]#[rename(name="m_Events")]pub m_events:crate::unity_engine::timeline::signalreceiver::SignalReceiver_EventKeyValue,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/signalreceiver/SignalReceiver_EventKeyValue.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="SignalReceiver.EventKeyValue")]#[parent(crate::system::object::Object)]pub struct SignalReceiver_EventKeyValue{#[offset(16)]#[rename(name="m_Signals")]pub m_signals:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::signalasset::SignalAsset> , #[offset(24)]#[rename(name="m_Events")]pub m_events:crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::unityevent::UnityEvent> ,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-signalreceiver-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-signalreceiver")]pub trait ISignalReceiver_EventKeyValueMethods:ISignalReceiver_EventKeyValue{#[doc="`TryGetValue(crate::unity_engine::timeline::signalasset::SignalAsset, *mutcrate::unity_engine::events::unityevent::UnityEvent)` overload"]fn try_get_value(self,key:impl::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>)->(bool,crate::unity_engine::events::unityevent::UnityEvent){unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::events::unityevent::UnityEvent> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x35da640usize)as*mut u8,bool;
-(SignalReceiver_EventKeyValue)__receiver,(crate::unity_engine::timeline::signalasset::SignalAsset)::core::convert::Into::into(key),(*mut crate::unity_engine::events::unityevent::UnityEvent)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`Append(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]fn append(self,key:impl::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset> ,value:impl::core::convert::Into<crate::unity_engine::events::unityevent::UnityEvent>)->(){unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35da8a0usize)as*mut u8,();
-(SignalReceiver_EventKeyValue)__receiver,(crate::unity_engine::timeline::signalasset::SignalAsset)::core::convert::Into::into(key),(crate::unity_engine::events::unityevent::UnityEvent)::core::convert::Into::into(value))}
-}
-#[doc="`Remove(i32)` overload"]fn remove(self,idx:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35daf70usize)as*mut u8,();
-(SignalReceiver_EventKeyValue)__receiver,(i32)::core::convert::Into::into(idx))}
-}
-#[doc="`Remove(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]fn remove_2(self,key:impl::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>)->(){unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35daab0usize)as*mut u8,();
-(SignalReceiver_EventKeyValue)__receiver,(crate::unity_engine::timeline::signalasset::SignalAsset)::core::convert::Into::into(key))}
-}
-#[doc="`get_signals()` overload"]fn get_signals(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::signalasset::SignalAsset>{unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35eac90usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::signalasset::SignalAsset> ;
-(SignalReceiver_EventKeyValue)__receiver)}
-}
-#[doc="`get_events()` overload"]fn get_events(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::unityevent::UnityEvent>{unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35eaca0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::unityevent::UnityEvent> ;
-(SignalReceiver_EventKeyValue)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35db2e0usize)as*mut u8,();
-(SignalReceiver_EventKeyValue)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-timeline-signalreceiver")]impl<__T:ISignalReceiver_EventKeyValue>ISignalReceiver_EventKeyValueMethods for __T{}
-
-#[cfg(feature="unity_engine-timeline-signalreceiver")]impl SignalReceiver_EventKeyValue{pub fn try_get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn append_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn remove_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_signals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="unity_engine-timeline-signalreceiver")]impl SignalReceiver_EventKeyValue{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SignalReceiver_EventKeyValue), ::core::stringify!(new),));
- <Self as ISignalReceiver_EventKeyValueMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="unity_engine-timeline-signalreceiver")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SignalReceiver_unity2_raw{use super:: * ;
-pub unsafe fn on_notify(this:SignalReceiver,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-timeline-signalreceiver")]pub trait ISignalReceiverMethods:ISignalReceiver{#[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SignalReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <SignalReceiver as::unity2::ClassIdentity> ::NAME,"OnNotify",));
-let inner:extern "C" fn(SignalReceiver,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SignalReceiver,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,origin,notification,context,__mi)}
+__inner(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context),__mi)}
 }
-
-#[cfg(feature="unity_engine-timeline-signalreceiver")]pub trait ISignalReceiverMethods:ISignalReceiver{#[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SignalReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SignalReceiver_unity2_raw::on_notify(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context), ::core::option::Option::None)}
 }
 #[doc="`AddReaction(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]fn add_reaction(self,asset:impl::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset> ,reaction:impl::core::convert::Into<crate::unity_engine::events::unityevent::UnityEvent>)->(){unsafe{let __receiver= <SignalReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35da710usize)as*mut u8,();
@@ -166,6 +111,11 @@ pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 }
 
+#[cfg(feature="unity_engine-timeline-signalreceiver")]impl SignalReceiver{#[doc="Direct (non-virtual) call to `SignalReceiver`'s own `OnNotify`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_notify(this:impl::core::convert::Into< ::unity2::IlInstance> ,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,)->(){let __mi=Self::on_notify_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),origin,notification,context, ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-timeline-signalreceiver")]impl SignalReceiver{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(SignalReceiver), ::core::stringify!(new),));
@@ -173,15 +123,66 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="unity_engine-timeline-signalreceiver")]pub trait ISignalReceiver_EventKeyValueMethods:ISignalReceiver_EventKeyValue{#[doc="`TryGetValue(crate::unity_engine::timeline::signalasset::SignalAsset, *mutcrate::unity_engine::events::unityevent::UnityEvent)` overload"]fn try_get_value(self,key:impl::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>)->(bool,crate::unity_engine::events::unityevent::UnityEvent){unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::events::unityevent::UnityEvent> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x35da640usize)as*mut u8,bool;
+(SignalReceiver_EventKeyValue)__receiver,(crate::unity_engine::timeline::signalasset::SignalAsset)::core::convert::Into::into(key),(*mut crate::unity_engine::events::unityevent::UnityEvent)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`Append(crate::unity_engine::timeline::signalasset::SignalAsset, crate::unity_engine::events::unityevent::UnityEvent)` overload"]fn append(self,key:impl::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset> ,value:impl::core::convert::Into<crate::unity_engine::events::unityevent::UnityEvent>)->(){unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da8a0usize)as*mut u8,();
+(SignalReceiver_EventKeyValue)__receiver,(crate::unity_engine::timeline::signalasset::SignalAsset)::core::convert::Into::into(key),(crate::unity_engine::events::unityevent::UnityEvent)::core::convert::Into::into(value))}
+}
+#[doc="`Remove(i32)` overload"]fn remove(self,idx:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35daf70usize)as*mut u8,();
+(SignalReceiver_EventKeyValue)__receiver,(i32)::core::convert::Into::into(idx))}
+}
+#[doc="`Remove(crate::unity_engine::timeline::signalasset::SignalAsset)` overload"]fn remove_2(self,key:impl::core::convert::Into<crate::unity_engine::timeline::signalasset::SignalAsset>)->(){unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35daab0usize)as*mut u8,();
+(SignalReceiver_EventKeyValue)__receiver,(crate::unity_engine::timeline::signalasset::SignalAsset)::core::convert::Into::into(key))}
+}
+#[doc="`get_signals()` overload"]fn get_signals(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::signalasset::SignalAsset>{unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35eac90usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::signalasset::SignalAsset> ;
+(SignalReceiver_EventKeyValue)__receiver)}
+}
+#[doc="`get_events()` overload"]fn get_events(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::unityevent::UnityEvent>{unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35eaca0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::unityevent::UnityEvent> ;
+(SignalReceiver_EventKeyValue)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SignalReceiver_EventKeyValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35db2e0usize)as*mut u8,();
+(SignalReceiver_EventKeyValue)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-timeline-signalreceiver")]impl<__T:ISignalReceiver_EventKeyValue>ISignalReceiver_EventKeyValueMethods for __T{}
+
+#[cfg(feature="unity_engine-timeline-signalreceiver")]impl SignalReceiver_EventKeyValue{pub fn try_get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn append_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn remove_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_signals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="unity_engine-timeline-signalreceiver")]impl SignalReceiver_EventKeyValue{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SignalReceiver_EventKeyValue), ::core::stringify!(new),));
+ <Self as ISignalReceiver_EventKeyValueMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "unity_engine-timeline-signalreceiver")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SignalReceiver_EventKeyValue;
-    pub use super::ISignalReceiver_EventKeyValue;
-    pub use super::ISignalReceiver_EventKeyValueMethods;
     pub use super::SignalReceiver;
     pub use super::ISignalReceiver;
     pub use super::ISignalReceiverMethods;
+    pub use super::SignalReceiver_EventKeyValue;
+    pub use super::ISignalReceiver_EventKeyValue;
+    pub use super::ISignalReceiver_EventKeyValueMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

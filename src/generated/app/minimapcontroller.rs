@@ -21,6 +21,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcontroller/MiniMapController_TImage_1.md"))]#[::unity2::class(namespace="App",name="MiniMapController.TImage`1")]#[parent(crate::system::object::Object)]pub struct MiniMapController_TImage_1<T0: ::unity2::ClassIdentity>{#[rename(name="image")]pub image:T0, #[rename(name="gameObject")]pub game_object:crate::unity_engine::gameobject::GameObject, #[rename(name="transform")]pub transform:crate::unity_engine::recttransform::RectTransform,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcontroller/MiniMapController_IconIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MiniMapController_IconIndex{pub value:i32,}
 impl::unity2::ClassIdentity for MiniMapController_IconIndex{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MiniMapController.IconIndex";
@@ -65,42 +68,7 @@ pub fn invalid()->Self{Self{value:15}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcontroller/MiniMapController_FadeMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MiniMapController_FadeMode{pub value:i32,}
-impl::unity2::ClassIdentity for MiniMapController_FadeMode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MiniMapController.FadeMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MiniMapController_FadeMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MiniMapController_FadeMode{pub fn none()->Self{Self{value:0}
-}
-pub fn fade_in()->Self{Self{value:1}
-}
-pub fn fade_out()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcontroller/MiniMapController_DisplayPosSize.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MiniMapController_DisplayPosSize{pub value:i32,}
-impl::unity2::ClassIdentity for MiniMapController_DisplayPosSize{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MiniMapController.DisplayPosSize";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MiniMapController_DisplayPosSize{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MiniMapController_DisplayPosSize{pub fn small()->Self{Self{value:0}
-}
-pub fn large()->Self{Self{value:1}
-}
-pub fn menu()->Self{Self{value:2}
-}
-pub fn none()->Self{Self{value:3}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcontroller/MiniMapController.md"))]#[::unity2::class(namespace="App",name="MiniMapController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MiniMapController{#[offset(24)]#[rename(name="m_GridSize")]pub m_grid_size:f32, #[offset(28)]#[rename(name="m_OutLineSize")]pub m_out_line_size:f32, #[offset(32)]#[rename(name="m_ViewPort")]pub m_view_port:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Scroll")]pub m_scroll:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_TerrainRoot")]pub m_terrain_root:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_SightRoot")]pub m_sight_root:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_PanelDeployRoot")]pub m_panel_deploy_root:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_PanelDangerRoot")]pub m_panel_danger_root:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_PanelDangerAllRoot")]pub m_panel_danger_all_root:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_FrameForPanelDangerAllRoot")]pub m_frame_for_panel_danger_all_root:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_PanelRouteRoot")]pub m_panel_route_root:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_UnitSymbolRoot")]pub m_unit_symbol_root:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_UnitIconRoot")]pub m_unit_icon_root:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_ColorPlayer")]pub m_color_player:crate::unity_engine::color::Color, #[offset(136)]#[rename(name="m_ColorEnemy")]pub m_color_enemy:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="m_ColorAlly")]pub m_color_ally:crate::unity_engine::color::Color, #[offset(168)]#[rename(name="m_ColorEnemy2")]pub m_color_enemy2:crate::unity_engine::color::Color, #[offset(184)]#[rename(name="m_EventSymbolRoot")]pub m_event_symbol_root:crate::unity_engine::gameobject::GameObject, #[offset(192)]#[rename(name="m_CursorRoot")]pub m_cursor_root:crate::unity_engine::gameobject::GameObject, #[offset(200)]#[rename(name="m_Scale")]pub m_scale:f32, #[offset(204)]#[rename(name="m_PanelDeployScale")]pub m_panel_deploy_scale:f32, #[offset(208)]#[rename(name="m_LargeModePosition")]pub m_large_mode_position:crate::unity_engine::vector3::Vector3, #[offset(220)]#[rename(name="m_LargeModeSize")]pub m_large_mode_size:crate::unity_engine::vector2::Vector2, #[offset(228)]#[rename(name="m_LargeModeScale")]pub m_large_mode_scale:f32, #[offset(232)]#[rename(name="m_LargeModeAlignment")]pub m_large_mode_alignment:crate::app::minimapcontroller::MiniMapController_Alignment, #[offset(236)]#[rename(name="m_LargeModeScaleOld")]pub m_large_mode_scale_old:f32, #[offset(240)]#[rename(name="m_SmallModePosition")]pub m_small_mode_position:crate::unity_engine::vector3::Vector3, #[offset(252)]#[rename(name="m_SmallModeSize")]pub m_small_mode_size:crate::unity_engine::vector2::Vector2, #[offset(260)]#[rename(name="m_SmallModeScale")]pub m_small_mode_scale:f32, #[offset(264)]#[rename(name="m_SmallModeAlignment")]pub m_small_mode_alignment:crate::app::minimapcontroller::MiniMapController_Alignment, #[offset(268)]#[rename(name="m_MenuModePosition")]pub m_menu_mode_position:crate::unity_engine::vector3::Vector3, #[offset(280)]#[rename(name="m_MenuModeSize")]pub m_menu_mode_size:crate::unity_engine::vector2::Vector2, #[offset(288)]#[rename(name="m_MenuModeScale")]pub m_menu_mode_scale:f32, #[offset(292)]#[rename(name="m_MenuModeAlignment")]pub m_menu_mode_alignment:crate::app::minimapcontroller::MiniMapController_Alignment, #[offset(296)]#[rename(name="m_DisplayPosSize")]pub m_display_pos_size:crate::app::minimapcontroller::MiniMapController_DisplayPosSize, #[offset(300)]#[rename(name="m_InterpolateZoom")]pub m_interpolate_zoom:bool, #[offset(304)]#[rename(name="m_MiniMapAlphaChangeTime")]pub m_mini_map_alpha_change_time:f32, #[offset(308)]#[rename(name="m_MiniMapAlphaMax")]pub m_mini_map_alpha_max:f32, #[offset(312)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(320)]#[rename(name="m_InterpolateTime")]pub m_interpolate_time:f32, #[offset(324)]#[rename(name="m_OldScale")]pub m_old_scale:f32, #[offset(328)]#[rename(name="m_UnitSymbolList")]pub m_unit_symbol_list:crate::system::collections::generic::list_1::List_1<crate::app::minimapcontroller::MiniMapController_TImage_1<crate::unity_engine::ui::image::Image> > , #[offset(336)]#[rename(name="m_EventSymbolList")]pub m_event_symbol_list:crate::system::collections::generic::list_1::List_1<crate::app::minimapcontroller::MiniMapController_TImage_1<crate::unity_engine::ui::image::Image> > , #[offset(344)]#[rename(name="m_UnitIconList")]pub m_unit_icon_list:crate::system::collections::generic::list_1::List_1<crate::app::minimapcontroller::MiniMapController_TImage_1<crate::app::uniticon::UnitIcon> > , #[offset(352)]#[rename(name="m_ZoomScaleMax")]pub m_zoom_scale_max:f32, #[offset(356)]#[rename(name="m_ZoomScaleMin")]pub m_zoom_scale_min:f32, #[offset(360)]#[rename(name="m_TargetPosition")]pub m_target_position:crate::app::interpolatorvector3::InterpolatorVector3, #[offset(368)]#[rename(name="m_Offset")]pub m_offset:crate::unity_engine::vector3::Vector3, #[offset(380)]#[rename(name="m_Alignment")]pub m_alignment:crate::app::minimapcontroller::MiniMapController_Alignment, #[static_field]#[rename(name="IconNames")]pub icon_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(384)]#[rename(name="m_Sprites")]pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(392)]#[rename(name="m_Mode")]pub m_mode:crate::app::minimapcontroller::MiniMapController_Mode, #[offset(396)]#[rename(name="m_ModeDirty")]pub m_mode_dirty:bool, #[offset(400)]#[rename(name="m_ModeChangeDelay")]pub m_mode_change_delay:i32, #[offset(408)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(416)]#[rename(name="m_MiniMapAlpha")]pub m_mini_map_alpha:f32, #[offset(420)]#[rename(name="m_MinimapType")]pub m_minimap_type:crate::app::gameconfig::GameConfig_MinimapType, #[offset(424)]#[rename(name="m_TerrainHashCode")]pub m_terrain_hash_code:i32, #[offset(428)]#[rename(name="m_AlphaFadeMode")]pub m_alpha_fade_mode:crate::app::minimapcontroller::MiniMapController_FadeMode, #[offset(432)]#[rename(name="m_minimaplRT")]pub m_minimapl_rt:crate::unity_engine::recttransform::RectTransform, #[offset(440)]#[rename(name="m_scrollRT")]pub m_scroll_rt:crate::unity_engine::recttransform::RectTransform, #[offset(448)]#[rename(name="m_terrainRT")]pub m_terrain_rt:crate::unity_engine::recttransform::RectTransform, #[offset(456)]#[rename(name="m_sightRT")]pub m_sight_rt:crate::unity_engine::recttransform::RectTransform, #[offset(464)]#[rename(name="m_panelDeployRT")]pub m_panel_deploy_rt:crate::unity_engine::recttransform::RectTransform, #[offset(472)]#[rename(name="m_panelDangerRT")]pub m_panel_danger_rt:crate::unity_engine::recttransform::RectTransform, #[offset(480)]#[rename(name="m_panelDangerAllRT")]pub m_panel_danger_all_rt:crate::unity_engine::recttransform::RectTransform, #[offset(488)]#[rename(name="m_frameForDangerAllRT")]pub m_frame_for_danger_all_rt:crate::unity_engine::recttransform::RectTransform, #[offset(496)]#[rename(name="m_panelRouteRT")]pub m_panel_route_rt:crate::unity_engine::recttransform::RectTransform, #[offset(504)]#[rename(name="m_cursor")]pub m_cursor:crate::app::minimapcursor::MiniMapCursor, #[offset(512)]#[rename(name="m_deployRenderer")]pub m_deploy_renderer:crate::app::minimappaneldeployrenderer::MiniMapPanelDeployRenderer, #[offset(520)]#[rename(name="m_dangerRenderer")]pub m_danger_renderer:crate::app::minimappaneldangerrenderer::MiniMapPanelDangerRenderer, #[offset(528)]#[rename(name="m_dangerAllRenderer")]pub m_danger_all_renderer:crate::app::minimappaneldangerallrenderer::MiniMapPanelDangerAllRenderer, #[offset(536)]#[rename(name="m_frameForDangerAllRenderer")]pub m_frame_for_danger_all_renderer:crate::app::minimappanelframefordangerallrenderer::MiniMapPanelFrameForDangerAllRenderer, #[offset(544)]#[rename(name="m_routeRenderer")]pub m_route_renderer:crate::app::minimappanelrouterenderer::MiniMapPanelRouteRenderer, #[offset(552)]#[rename(name="m_terrainRenderer")]pub m_terrain_renderer:crate::app::minimapterrainrenderer::MiniMapTerrainRenderer, #[offset(560)]#[rename(name="m_sightRenderer")]pub m_sight_renderer:crate::app::minimapsightrenderer::MiniMapSightRenderer,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcontroller/MiniMapController_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MiniMapController_Mode{pub value:i32,}
@@ -117,6 +85,24 @@ impl MiniMapController_Mode{pub fn hide()->Self{Self{value:0}
 pub fn show()->Self{Self{value:1}
 }
 pub fn menu()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcontroller/MiniMapController_FadeMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MiniMapController_FadeMode{pub value:i32,}
+impl::unity2::ClassIdentity for MiniMapController_FadeMode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MiniMapController.FadeMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MiniMapController_FadeMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MiniMapController_FadeMode{pub fn none()->Self{Self{value:0}
+}
+pub fn fade_in()->Self{Self{value:1}
+}
+pub fn fade_out()->Self{Self{value:2}
 }
 }
 
@@ -151,15 +137,39 @@ pub fn right_bottom()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcontroller/MiniMapController.md"))]#[::unity2::class(namespace="App",name="MiniMapController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MiniMapController{#[offset(24)]#[rename(name="m_GridSize")]pub m_grid_size:f32, #[offset(28)]#[rename(name="m_OutLineSize")]pub m_out_line_size:f32, #[offset(32)]#[rename(name="m_ViewPort")]pub m_view_port:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Scroll")]pub m_scroll:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_TerrainRoot")]pub m_terrain_root:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_SightRoot")]pub m_sight_root:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_PanelDeployRoot")]pub m_panel_deploy_root:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_PanelDangerRoot")]pub m_panel_danger_root:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_PanelDangerAllRoot")]pub m_panel_danger_all_root:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_FrameForPanelDangerAllRoot")]pub m_frame_for_panel_danger_all_root:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_PanelRouteRoot")]pub m_panel_route_root:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_UnitSymbolRoot")]pub m_unit_symbol_root:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_UnitIconRoot")]pub m_unit_icon_root:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_ColorPlayer")]pub m_color_player:crate::unity_engine::color::Color, #[offset(136)]#[rename(name="m_ColorEnemy")]pub m_color_enemy:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="m_ColorAlly")]pub m_color_ally:crate::unity_engine::color::Color, #[offset(168)]#[rename(name="m_ColorEnemy2")]pub m_color_enemy2:crate::unity_engine::color::Color, #[offset(184)]#[rename(name="m_EventSymbolRoot")]pub m_event_symbol_root:crate::unity_engine::gameobject::GameObject, #[offset(192)]#[rename(name="m_CursorRoot")]pub m_cursor_root:crate::unity_engine::gameobject::GameObject, #[offset(200)]#[rename(name="m_Scale")]pub m_scale:f32, #[offset(204)]#[rename(name="m_PanelDeployScale")]pub m_panel_deploy_scale:f32, #[offset(208)]#[rename(name="m_LargeModePosition")]pub m_large_mode_position:crate::unity_engine::vector3::Vector3, #[offset(220)]#[rename(name="m_LargeModeSize")]pub m_large_mode_size:crate::unity_engine::vector2::Vector2, #[offset(228)]#[rename(name="m_LargeModeScale")]pub m_large_mode_scale:f32, #[offset(232)]#[rename(name="m_LargeModeAlignment")]pub m_large_mode_alignment:crate::app::minimapcontroller::MiniMapController_Alignment, #[offset(236)]#[rename(name="m_LargeModeScaleOld")]pub m_large_mode_scale_old:f32, #[offset(240)]#[rename(name="m_SmallModePosition")]pub m_small_mode_position:crate::unity_engine::vector3::Vector3, #[offset(252)]#[rename(name="m_SmallModeSize")]pub m_small_mode_size:crate::unity_engine::vector2::Vector2, #[offset(260)]#[rename(name="m_SmallModeScale")]pub m_small_mode_scale:f32, #[offset(264)]#[rename(name="m_SmallModeAlignment")]pub m_small_mode_alignment:crate::app::minimapcontroller::MiniMapController_Alignment, #[offset(268)]#[rename(name="m_MenuModePosition")]pub m_menu_mode_position:crate::unity_engine::vector3::Vector3, #[offset(280)]#[rename(name="m_MenuModeSize")]pub m_menu_mode_size:crate::unity_engine::vector2::Vector2, #[offset(288)]#[rename(name="m_MenuModeScale")]pub m_menu_mode_scale:f32, #[offset(292)]#[rename(name="m_MenuModeAlignment")]pub m_menu_mode_alignment:crate::app::minimapcontroller::MiniMapController_Alignment, #[offset(296)]#[rename(name="m_DisplayPosSize")]pub m_display_pos_size:crate::app::minimapcontroller::MiniMapController_DisplayPosSize, #[offset(300)]#[rename(name="m_InterpolateZoom")]pub m_interpolate_zoom:bool, #[offset(304)]#[rename(name="m_MiniMapAlphaChangeTime")]pub m_mini_map_alpha_change_time:f32, #[offset(308)]#[rename(name="m_MiniMapAlphaMax")]pub m_mini_map_alpha_max:f32, #[offset(312)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(320)]#[rename(name="m_InterpolateTime")]pub m_interpolate_time:f32, #[offset(324)]#[rename(name="m_OldScale")]pub m_old_scale:f32, #[offset(328)]#[rename(name="m_UnitSymbolList")]pub m_unit_symbol_list:crate::system::collections::generic::list_1::List_1<crate::app::minimapcontroller::MiniMapController_TImage_1<crate::unity_engine::ui::image::Image> > , #[offset(336)]#[rename(name="m_EventSymbolList")]pub m_event_symbol_list:crate::system::collections::generic::list_1::List_1<crate::app::minimapcontroller::MiniMapController_TImage_1<crate::unity_engine::ui::image::Image> > , #[offset(344)]#[rename(name="m_UnitIconList")]pub m_unit_icon_list:crate::system::collections::generic::list_1::List_1<crate::app::minimapcontroller::MiniMapController_TImage_1<crate::app::uniticon::UnitIcon> > , #[offset(352)]#[rename(name="m_ZoomScaleMax")]pub m_zoom_scale_max:f32, #[offset(356)]#[rename(name="m_ZoomScaleMin")]pub m_zoom_scale_min:f32, #[offset(360)]#[rename(name="m_TargetPosition")]pub m_target_position:crate::app::interpolatorvector3::InterpolatorVector3, #[offset(368)]#[rename(name="m_Offset")]pub m_offset:crate::unity_engine::vector3::Vector3, #[offset(380)]#[rename(name="m_Alignment")]pub m_alignment:crate::app::minimapcontroller::MiniMapController_Alignment, #[static_field]#[rename(name="IconNames")]pub icon_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(384)]#[rename(name="m_Sprites")]pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(392)]#[rename(name="m_Mode")]pub m_mode:crate::app::minimapcontroller::MiniMapController_Mode, #[offset(396)]#[rename(name="m_ModeDirty")]pub m_mode_dirty:bool, #[offset(400)]#[rename(name="m_ModeChangeDelay")]pub m_mode_change_delay:i32, #[offset(408)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(416)]#[rename(name="m_MiniMapAlpha")]pub m_mini_map_alpha:f32, #[offset(420)]#[rename(name="m_MinimapType")]pub m_minimap_type:crate::app::gameconfig::GameConfig_MinimapType, #[offset(424)]#[rename(name="m_TerrainHashCode")]pub m_terrain_hash_code:i32, #[offset(428)]#[rename(name="m_AlphaFadeMode")]pub m_alpha_fade_mode:crate::app::minimapcontroller::MiniMapController_FadeMode, #[offset(432)]#[rename(name="m_minimaplRT")]pub m_minimapl_rt:crate::unity_engine::recttransform::RectTransform, #[offset(440)]#[rename(name="m_scrollRT")]pub m_scroll_rt:crate::unity_engine::recttransform::RectTransform, #[offset(448)]#[rename(name="m_terrainRT")]pub m_terrain_rt:crate::unity_engine::recttransform::RectTransform, #[offset(456)]#[rename(name="m_sightRT")]pub m_sight_rt:crate::unity_engine::recttransform::RectTransform, #[offset(464)]#[rename(name="m_panelDeployRT")]pub m_panel_deploy_rt:crate::unity_engine::recttransform::RectTransform, #[offset(472)]#[rename(name="m_panelDangerRT")]pub m_panel_danger_rt:crate::unity_engine::recttransform::RectTransform, #[offset(480)]#[rename(name="m_panelDangerAllRT")]pub m_panel_danger_all_rt:crate::unity_engine::recttransform::RectTransform, #[offset(488)]#[rename(name="m_frameForDangerAllRT")]pub m_frame_for_danger_all_rt:crate::unity_engine::recttransform::RectTransform, #[offset(496)]#[rename(name="m_panelRouteRT")]pub m_panel_route_rt:crate::unity_engine::recttransform::RectTransform, #[offset(504)]#[rename(name="m_cursor")]pub m_cursor:crate::app::minimapcursor::MiniMapCursor, #[offset(512)]#[rename(name="m_deployRenderer")]pub m_deploy_renderer:crate::app::minimappaneldeployrenderer::MiniMapPanelDeployRenderer, #[offset(520)]#[rename(name="m_dangerRenderer")]pub m_danger_renderer:crate::app::minimappaneldangerrenderer::MiniMapPanelDangerRenderer, #[offset(528)]#[rename(name="m_dangerAllRenderer")]pub m_danger_all_renderer:crate::app::minimappaneldangerallrenderer::MiniMapPanelDangerAllRenderer, #[offset(536)]#[rename(name="m_frameForDangerAllRenderer")]pub m_frame_for_danger_all_renderer:crate::app::minimappanelframefordangerallrenderer::MiniMapPanelFrameForDangerAllRenderer, #[offset(544)]#[rename(name="m_routeRenderer")]pub m_route_renderer:crate::app::minimappanelrouterenderer::MiniMapPanelRouteRenderer, #[offset(552)]#[rename(name="m_terrainRenderer")]pub m_terrain_renderer:crate::app::minimapterrainrenderer::MiniMapTerrainRenderer, #[offset(560)]#[rename(name="m_sightRenderer")]pub m_sight_renderer:crate::app::minimapsightrenderer::MiniMapSightRenderer,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcontroller/MiniMapController_TImage_1.md"))]#[::unity2::class(namespace="App",name="MiniMapController.TImage`1")]#[parent(crate::system::object::Object)]pub struct MiniMapController_TImage_1<T0: ::unity2::ClassIdentity>{#[rename(name="image")]pub image:T0, #[rename(name="gameObject")]pub game_object:crate::unity_engine::gameobject::GameObject, #[rename(name="transform")]pub transform:crate::unity_engine::recttransform::RectTransform,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimapcontroller/MiniMapController_DisplayPosSize.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MiniMapController_DisplayPosSize{pub value:i32,}
+impl::unity2::ClassIdentity for MiniMapController_DisplayPosSize{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MiniMapController.DisplayPosSize";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MiniMapController_DisplayPosSize{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MiniMapController_DisplayPosSize{pub fn small()->Self{Self{value:0}
+}
+pub fn large()->Self{Self{value:1}
+}
+pub fn menu()->Self{Self{value:2}
+}
+pub fn none()->Self{Self{value:3}
+}
+}
 
 }
 
 #[cfg(feature = "app-minimapcontroller-types")]
 pub use __types::*;
+
+#[cfg(feature="app-minimapcontroller")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>MiniMapController_TImage_1<T0>{#[doc="`.ctor(T0)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,image:T0)->();
+}
+
+#[cfg(feature="app-minimapcontroller")]impl<T0: ::unity2::ClassIdentity>MiniMapController_TImage_1<T0>{#[doc="`.ctor(T0)` — overload selector"]pub fn new(image:T0)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MiniMapController_TImage_1), ::core::stringify!(new),));
+ <Self as IMiniMapController_TImage_1Methods<T0> > ::ctor(this,image);
+this}
+}
 
 #[cfg(feature="app-minimapcontroller")]impl MiniMapController{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25e3000usize)as*mut u8,();
 )}
@@ -290,30 +300,20 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-minimapcontroller")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>MiniMapController_TImage_1<T0>{#[doc="`.ctor(T0)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,image:T0)->();
-}
-
-#[cfg(feature="app-minimapcontroller")]impl<T0: ::unity2::ClassIdentity>MiniMapController_TImage_1<T0>{#[doc="`.ctor(T0)` — overload selector"]pub fn new(image:T0)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MiniMapController_TImage_1), ::core::stringify!(new),));
- <Self as IMiniMapController_TImage_1Methods<T0> > ::ctor(this,image);
-this}
-}
-
 #[cfg(feature = "app-minimapcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MiniMapController_IconIndex;
-    pub use super::MiniMapController_FadeMode;
-    pub use super::MiniMapController_DisplayPosSize;
-    pub use super::MiniMapController_Mode;
-    pub use super::MiniMapController_Alignment;
-    pub use super::MiniMapController;
-    pub use super::IMiniMapController;
-    pub use super::IMiniMapControllerMethods;
     pub use super::MiniMapController_TImage_1;
     pub use super::IMiniMapController_TImage_1;
     pub use super::IMiniMapController_TImage_1Methods;
+    pub use super::MiniMapController_IconIndex;
+    pub use super::MiniMapController;
+    pub use super::IMiniMapController;
+    pub use super::IMiniMapControllerMethods;
+    pub use super::MiniMapController_Mode;
+    pub use super::MiniMapController_FadeMode;
+    pub use super::MiniMapController_Alignment;
+    pub use super::MiniMapController_DisplayPosSize;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -23,9 +23,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplayplayername/RelayReplayPlayerName.md"))]#[::unity2::class(namespace="App",name="RelayReplayPlayerName")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::relayreplayplayername::RelayReplayPlayerName>)]pub struct RelayReplayPlayerName{#[offset(32)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_CanvasManager")]pub m_canvas_manager:crate::app::canvasmanager::CanvasManager, #[offset(48)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(56)]#[rename(name="m_Seq")]pub m_seq:crate::app::relayreplayplayername::RelayReplayPlayerName_Seq, #[offset(60)]#[rename(name="m_IsReqClose")]pub m_is_req_close:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplayplayername/RelayReplayPlayerName_Seq.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayReplayPlayerName_Seq{pub value:i32,}
 impl::unity2::ClassIdentity for RelayReplayPlayerName_Seq{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RelayReplayPlayerName.Seq";
@@ -45,23 +42,13 @@ pub fn closing()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplayplayername/RelayReplayPlayerName.md"))]#[::unity2::class(namespace="App",name="RelayReplayPlayerName")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::relayreplayplayername::RelayReplayPlayerName>)]pub struct RelayReplayPlayerName{#[offset(32)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_CanvasManager")]pub m_canvas_manager:crate::app::canvasmanager::CanvasManager, #[offset(48)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(56)]#[rename(name="m_Seq")]pub m_seq:crate::app::relayreplayplayername::RelayReplayPlayerName_Seq, #[offset(60)]#[rename(name="m_IsReqClose")]pub m_is_req_close:bool,}
+
 }
 
 #[cfg(feature = "app-relayreplayplayername-types")]
 pub use __types::*;
-
-#[cfg(feature="app-relayreplayplayername")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayReplayPlayerName_unity2_raw{use super:: * ;
-pub unsafe fn awake(this:RelayReplayPlayerName,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <RelayReplayPlayerName as::unity2::ClassIdentity> ::NAME,"Awake",));
-let inner:extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-relayreplayplayername")]impl RelayReplayPlayerName{#[doc="`TryShow()` overload"]pub fn try_show()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2003a30usize)as*mut u8,();
 )}
@@ -87,7 +74,16 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-relayreplayplayername")]pub trait IRelayReplayPlayerNameMethods:IRelayReplayPlayerName{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayReplayPlayerName_unity2_raw::awake(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RelayReplayPlayerName as::unity2::ClassIdentity> ::NAME,"Awake",));
+let __inner:extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2002ca0usize)as*mut u8,();
@@ -148,6 +144,11 @@ pub fn is_required_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 }
 
+#[cfg(feature="app-relayreplayplayername")]impl RelayReplayPlayerName{#[doc="Direct (non-virtual) call to `RelayReplayPlayerName`'s own `Awake`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn awake(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::awake_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-relayreplayplayername")]impl RelayReplayPlayerName{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RelayReplayPlayerName), ::core::stringify!(new),));
@@ -158,10 +159,10 @@ this}
 #[cfg(feature = "app-relayreplayplayername")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RelayReplayPlayerName_Seq;
     pub use super::RelayReplayPlayerName;
     pub use super::IRelayReplayPlayerName;
     pub use super::IRelayReplayPlayerNameMethods;
-    pub use super::RelayReplayPlayerName_Seq;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

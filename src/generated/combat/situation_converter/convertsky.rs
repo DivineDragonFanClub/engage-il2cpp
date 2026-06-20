@@ -20,25 +20,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-situation_converter-convertsky-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-situation_converter-convertsky")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConvertSky_unity2_raw{use super:: * ;
-pub unsafe fn on_damage(this:ConvertSky,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <ConvertSky as::unity2::ClassIdentity> ::NAME,"OnDamage",));
-let inner:extern "C" fn(ConvertSky, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="combat-situation_converter-convertsky")]pub trait IConvertSkyMethods:IConvertSky{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertSky as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25435f0usize)as*mut u8,();
 (ConvertSky)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
 }
 #[doc="`OnDamage()` overload"]fn on_damage(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertSky as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ConvertSky_unity2_raw::on_damage(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ConvertSky as::unity2::ClassIdentity> ::NAME,"OnDamage",));
+let __inner:extern "C" fn(ConvertSky, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -46,6 +42,11 @@ __ConvertSky_unity2_raw::on_damage(__receiver, ::core::option::Option::None)}
 
 #[cfg(feature="combat-situation_converter-convertsky")]impl ConvertSky{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn on_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="combat-situation_converter-convertsky")]impl ConvertSky{#[doc="Direct (non-virtual) call to `ConvertSky`'s own `OnDamage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_damage(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_damage_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-situation_converter-convertsky")]impl ConvertSky{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

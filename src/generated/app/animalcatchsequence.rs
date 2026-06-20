@@ -31,6 +31,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm.md"))]#[::unity2::class(namespace="App",name="AnimalCatchSequence.CatchConfirm")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct AnimalCatchSequence_CatchConfirm{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimalCatchSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for AnimalCatchSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AnimalCatchSequence.Label";
@@ -49,72 +52,40 @@ pub fn end()->Self{Self{value:2}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence.md"))]#[::unity2::class(namespace="App",name="AnimalCatchSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::animalcatchsequence::AnimalCatchSequence>)]pub struct AnimalCatchSequence{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="AnimalCatchSequence.CatchConfirm.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="AnimalCatchSequence.CatchConfirm.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence.md"))]#[::unity2::class(namespace="App",name="AnimalCatchSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::animalcatchsequence::AnimalCatchSequence>)]pub struct AnimalCatchSequence{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm.md"))]#[::unity2::class(namespace="App",name="AnimalCatchSequence.CatchConfirm")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct AnimalCatchSequence_CatchConfirm{}
 
 }
 
 #[cfg(feature = "app-animalcatchsequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-animalcatchsequence")]pub trait IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31890usize)as*mut u8,();
-(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo)__receiver)}
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5780usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
 }
 
-#[cfg(feature="app-animalcatchsequence")]impl<__T:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo>IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods for __T{}
-
-#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-animalcatchsequence")]pub trait IAnimalCatchSequence_CatchConfirmMethods:IAnimalCatchSequence_CatchConfirm{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5700usize)as*mut u8,();
+(AnimalCatchSequence_CatchConfirm)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
 }
 
-#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-animalcatchsequence")]impl<__T:IAnimalCatchSequence_CatchConfirm>IAnimalCatchSequence_CatchConfirmMethods for __T{}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo), ::core::stringify!(new),));
- <Self as IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-animalcatchsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-animalcatchsequence")]pub trait IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31920usize)as*mut u8,();
-(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-animalcatchsequence")]impl<__T:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes>IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods for __T{}
-
-#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes), ::core::stringify!(new),));
- <Self as IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(AnimalCatchSequence_CatchConfirm), ::core::stringify!(new),));
+ <Self as IAnimalCatchSequence_CatchConfirmMethods> ::ctor(this,menu_item_list);
 this}
 }
 
@@ -202,46 +173,76 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5780usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+#[cfg(feature="app-animalcatchsequence")]pub trait IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31890usize)as*mut u8,();
+(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo)__receiver)}
 }
 }
 
-#[cfg(feature="app-animalcatchsequence")]pub trait IAnimalCatchSequence_CatchConfirmMethods:IAnimalCatchSequence_CatchConfirm{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5700usize)as*mut u8,();
-(AnimalCatchSequence_CatchConfirm)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
-}
-}
+#[cfg(feature="app-animalcatchsequence")]impl<__T:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo>IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods for __T{}
 
-#[cfg(feature="app-animalcatchsequence")]impl<__T:IAnimalCatchSequence_CatchConfirm>IAnimalCatchSequence_CatchConfirmMethods for __T{}
-
-#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AnimalCatchSequence_CatchConfirm), ::core::stringify!(new),));
- <Self as IAnimalCatchSequence_CatchConfirmMethods> ::ctor(this,menu_item_list);
+ failed to instantiate", ::core::stringify!(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo), ::core::stringify!(new),));
+ <Self as IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-animalcatchsequence")]pub trait IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31920usize)as*mut u8,();
+(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-animalcatchsequence")]impl<__T:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes>IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{#[doc="Direct (non-virtual) call to `AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "app-animalcatchsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AnimalCatchSequence_CatchConfirm;
+    pub use super::IAnimalCatchSequence_CatchConfirm;
+    pub use super::IAnimalCatchSequence_CatchConfirmMethods;
     pub use super::AnimalCatchSequence_Label;
+    pub use super::AnimalCatchSequence;
+    pub use super::IAnimalCatchSequence;
+    pub use super::IAnimalCatchSequenceMethods;
     pub use super::AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo;
     pub use super::IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo;
     pub use super::IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods;
     pub use super::AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes;
     pub use super::IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes;
     pub use super::IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods;
-    pub use super::AnimalCatchSequence;
-    pub use super::IAnimalCatchSequence;
-    pub use super::IAnimalCatchSequenceMethods;
-    pub use super::AnimalCatchSequence_CatchConfirm;
-    pub use super::IAnimalCatchSequence_CatchConfirm;
-    pub use super::IAnimalCatchSequence_CatchConfirmMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

@@ -22,47 +22,41 @@ use crate::unity_engine::statemachinebehaviour::{IStateMachineBehaviour,StateMac
 #[cfg(feature = "combat-characteridlesmb-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-characteridlesmb")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CharacterIdleSMB_unity2_raw{use super:: * ;
-pub unsafe fn on_state_enter(this:CharacterIdleSMB,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="combat-characteridlesmb")]pub trait ICharacterIdleSMBMethods:ICharacterIdleSMB{#[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterIdleSMB as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <CharacterIdleSMB as::unity2::ClassIdentity> ::NAME,"OnStateEnter",));
-let inner:extern "C" fn(CharacterIdleSMB,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CharacterIdleSMB,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,animator,state_info,layer_index,__mi)}
-pub unsafe fn on_state_update(this:CharacterIdleSMB,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index),__mi)}
+}
+}
+#[doc="`OnStateUpdate(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_update(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterIdleSMB as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <CharacterIdleSMB as::unity2::ClassIdentity> ::NAME,"OnStateUpdate",));
-let inner:extern "C" fn(CharacterIdleSMB,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CharacterIdleSMB,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,animator,state_info,layer_index,__mi)}
-pub unsafe fn on_state_exit(this:CharacterIdleSMB,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index),__mi)}
+}
+}
+#[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterIdleSMB as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <CharacterIdleSMB as::unity2::ClassIdentity> ::NAME,"OnStateExit",));
-let inner:extern "C" fn(CharacterIdleSMB,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(CharacterIdleSMB,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,animator,state_info,layer_index,__mi)}
+__inner(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index),__mi)}
 }
-
-#[cfg(feature="combat-characteridlesmb")]pub trait ICharacterIdleSMBMethods:ICharacterIdleSMB{#[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterIdleSMB as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CharacterIdleSMB_unity2_raw::on_state_enter(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
-}
-#[doc="`OnStateUpdate(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_update(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterIdleSMB as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CharacterIdleSMB_unity2_raw::on_state_update(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
-}
-#[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterIdleSMB as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CharacterIdleSMB_unity2_raw::on_state_exit(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
 }
 #[doc="`SetDying(f32)` overload"]fn set_dying(self,overwrite:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CharacterIdleSMB as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27e6e10usize)as*mut u8,();
@@ -86,6 +80,17 @@ pub fn on_state_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn set_dying_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn force_dying_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="combat-characteridlesmb")]impl CharacterIdleSMB{#[doc="Direct (non-virtual) call to `CharacterIdleSMB`'s own `OnStateEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_state_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,)->(){let __mi=Self::on_state_enter_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),animator,state_info,layer_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CharacterIdleSMB`'s own `OnStateUpdate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_state_update(this:impl::core::convert::Into< ::unity2::IlInstance> ,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,)->(){let __mi=Self::on_state_update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),animator,state_info,layer_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CharacterIdleSMB`'s own `OnStateExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_state_exit(this:impl::core::convert::Into< ::unity2::IlInstance> ,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,)->(){let __mi=Self::on_state_exit_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),animator,state_info,layer_index, ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-characteridlesmb")]impl CharacterIdleSMB{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

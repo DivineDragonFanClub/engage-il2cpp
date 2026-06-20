@@ -18,73 +18,65 @@ use crate::unity_engine::experimental::rendering::render_graph_module::rendergra
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferpool")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ComputeBufferPool_unity2_raw{use super:: * ;
-pub unsafe fn release_internal_resource(this:ComputeBufferPool,res:crate::unity_engine::computebuffer::ComputeBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferpool")]pub trait IComputeBufferPoolMethods:IComputeBufferPool{#[doc="`ReleaseInternalResource(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]fn release_internal_resource(self,res:impl::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>)->(){unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <ComputeBufferPool as::unity2::ClassIdentity> ::NAME,"ReleaseInternalResource",));
-let inner:extern "C" fn(ComputeBufferPool,crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ComputeBufferPool,crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,res,__mi)}
-pub unsafe fn get_resource_name(this:ComputeBufferPool,res:crate::unity_engine::computebuffer::ComputeBuffer,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(res),__mi)}
+}
+}
+#[doc="`GetResourceName(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]fn get_resource_name(self,res:impl::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>)-> ::unity2::Il2CppString{unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <ComputeBufferPool as::unity2::ClassIdentity> ::NAME,"GetResourceName",));
-let inner:extern "C" fn(ComputeBufferPool,crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ComputeBufferPool,crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,res,__mi)}
-pub unsafe fn get_resource_size(this:ComputeBufferPool,res:crate::unity_engine::computebuffer::ComputeBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(res),__mi)}
+}
+}
+#[doc="`GetResourceSize(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]fn get_resource_size(self,res:impl::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>)->i64{unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <ComputeBufferPool as::unity2::ClassIdentity> ::NAME,"GetResourceSize",));
-let inner:extern "C" fn(ComputeBufferPool,crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ComputeBufferPool,crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,res,__mi)}
-pub unsafe fn get_resource_type_name(this:ComputeBufferPool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(res),__mi)}
+}
+}
+#[doc="`GetResourceTypeName()` overload"]fn get_resource_type_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <ComputeBufferPool as::unity2::ClassIdentity> ::NAME,"GetResourceTypeName",));
-let inner:extern "C" fn(ComputeBufferPool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ComputeBufferPool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn purge_unused_resources(this:ComputeBufferPool,current_frame_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`PurgeUnusedResources(i32)` overload"]fn purge_unused_resources(self,current_frame_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <ComputeBufferPool as::unity2::ClassIdentity> ::NAME,"PurgeUnusedResources",));
-let inner:extern "C" fn(ComputeBufferPool,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ComputeBufferPool,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,current_frame_index,__mi)}
+__inner(__receiver, ::core::convert::Into::into(current_frame_index),__mi)}
 }
-
-#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferpool")]pub trait IComputeBufferPoolMethods:IComputeBufferPool{#[doc="`ReleaseInternalResource(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]fn release_internal_resource(self,res:impl::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>)->(){unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ComputeBufferPool_unity2_raw::release_internal_resource(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)}
-}
-#[doc="`GetResourceName(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]fn get_resource_name(self,res:impl::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>)-> ::unity2::Il2CppString{unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ComputeBufferPool_unity2_raw::get_resource_name(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)}
-}
-#[doc="`GetResourceSize(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]fn get_resource_size(self,res:impl::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>)->i64{unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ComputeBufferPool_unity2_raw::get_resource_size(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)}
-}
-#[doc="`GetResourceTypeName()` overload"]fn get_resource_type_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ComputeBufferPool_unity2_raw::get_resource_type_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`PurgeUnusedResources(i32)` overload"]fn purge_unused_resources(self,current_frame_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ComputeBufferPool_unity2_raw::purge_unused_resources(__receiver, ::core::convert::Into::into(current_frame_index), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3530f10usize)as*mut u8,();
@@ -100,6 +92,23 @@ pub fn get_resource_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn get_resource_type_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn purge_unused_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferpool")]impl ComputeBufferPool{#[doc="Direct (non-virtual) call to `ComputeBufferPool`'s own `ReleaseInternalResource`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn release_internal_resource(this:impl::core::convert::Into< ::unity2::IlInstance> ,res:crate::unity_engine::computebuffer::ComputeBuffer,)->(){let __mi=Self::release_internal_resource_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),res, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ComputeBufferPool`'s own `GetResourceName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_resource_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,res:crate::unity_engine::computebuffer::ComputeBuffer,)-> ::unity2::Il2CppString{let __mi=Self::get_resource_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),res, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ComputeBufferPool`'s own `GetResourceSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_resource_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,res:crate::unity_engine::computebuffer::ComputeBuffer,)->i64{let __mi=Self::get_resource_size_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::computebuffer::ComputeBuffer, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),res, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ComputeBufferPool`'s own `GetResourceTypeName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_resource_type_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_resource_type_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ComputeBufferPool`'s own `PurgeUnusedResources`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn purge_unused_resources(this:impl::core::convert::Into< ::unity2::IlInstance> ,current_frame_index:i32,)->(){let __mi=Self::purge_unused_resources_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),current_frame_index, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferpool")]impl ComputeBufferPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

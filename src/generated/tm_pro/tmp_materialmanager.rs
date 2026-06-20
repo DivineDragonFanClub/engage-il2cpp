@@ -12,10 +12,10 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_FallbackMaterial.md"))]#[::unity2::class(namespace="TMPro",name="TMP_MaterialManager.FallbackMaterial")]#[parent(crate::system::object::Object)]pub struct TMP_MaterialManager_FallbackMaterial{#[offset(16)]#[rename(name="fallbackID")]pub fallback_id:i64, #[offset(24)]#[rename(name="sourceMaterial")]pub source_material:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="sourceMaterialCRC")]pub source_material_crc:i32, #[offset(40)]#[rename(name="fallbackMaterial")]pub fallback_material:crate::unity_engine::material::Material, #[offset(48)]#[rename(name="count")]pub count:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_MaskingMaterial.md"))]#[::unity2::class(namespace="TMPro",name="TMP_MaterialManager.MaskingMaterial")]#[parent(crate::system::object::Object)]pub struct TMP_MaterialManager_MaskingMaterial{#[offset(16)]#[rename(name="baseMaterial")]pub base_material:crate::unity_engine::material::Material, #[offset(24)]#[rename(name="stencilMaterial")]pub stencil_material:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="count")]pub count:i32, #[offset(36)]#[rename(name="stencilID")]pub stencil_id:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_materialmanager/TMP_MaterialManager.md"))]#[::unity2::class(namespace="TMPro",name="TMP_MaterialManager")]#[parent(crate::system::object::Object)]pub struct TMP_MaterialManager{#[static_field]#[rename(name="m_materialList")]pub m_material_list:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_MaskingMaterial> , #[static_field]#[rename(name="m_fallbackMaterials")]pub m_fallback_materials:crate::system::collections::generic::dictionary_2::Dictionary_2<i64,crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_FallbackMaterial> , #[static_field]#[rename(name="m_fallbackMaterialLookup")]pub m_fallback_material_lookup:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,i64> , #[static_field]#[rename(name="m_fallbackCleanupList")]pub m_fallback_cleanup_list:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_FallbackMaterial> , #[static_field]#[rename(name="isFallbackListDirty")]pub is_fallback_list_dirty:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_MaskingMaterial.md"))]#[::unity2::class(namespace="TMPro",name="TMP_MaterialManager.MaskingMaterial")]#[parent(crate::system::object::Object)]pub struct TMP_MaterialManager_MaskingMaterial{#[offset(16)]#[rename(name="baseMaterial")]pub base_material:crate::unity_engine::material::Material, #[offset(24)]#[rename(name="stencilMaterial")]pub stencil_material:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="count")]pub count:i32, #[offset(36)]#[rename(name="stencilID")]pub stencil_id:i32,}
 
 }
 
@@ -37,24 +37,6 @@ pub use __types::*;
 ::{}
  failed to instantiate", ::core::stringify!(TMP_MaterialManager_FallbackMaterial), ::core::stringify!(new),));
  <Self as ITMP_MaterialManager_FallbackMaterialMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="tm_pro-tmp_materialmanager")]pub trait ITMP_MaterialManager_MaskingMaterialMethods:ITMP_MaterialManager_MaskingMaterial{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_MaterialManager_MaskingMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea98b0usize)as*mut u8,();
-(TMP_MaterialManager_MaskingMaterial)__receiver)}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_materialmanager")]impl<__T:ITMP_MaterialManager_MaskingMaterial>ITMP_MaterialManager_MaskingMaterialMethods for __T{}
-
-#[cfg(feature="tm_pro-tmp_materialmanager")]impl TMP_MaterialManager_MaskingMaterial{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="tm_pro-tmp_materialmanager")]impl TMP_MaterialManager_MaskingMaterial{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_MaterialManager_MaskingMaterial), ::core::stringify!(new),));
- <Self as ITMP_MaterialManager_MaskingMaterialMethods> ::ctor(this,);
 this}
 }
 
@@ -142,17 +124,35 @@ pub fn release_fallback_material_method_info()-> & 'static::unity2::il2cpp::Meth
 pub fn copy_material_preset_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 }
 
+#[cfg(feature="tm_pro-tmp_materialmanager")]pub trait ITMP_MaterialManager_MaskingMaterialMethods:ITMP_MaterialManager_MaskingMaterial{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_MaterialManager_MaskingMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea98b0usize)as*mut u8,();
+(TMP_MaterialManager_MaskingMaterial)__receiver)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl<__T:ITMP_MaterialManager_MaskingMaterial>ITMP_MaterialManager_MaskingMaterialMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl TMP_MaterialManager_MaskingMaterial{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl TMP_MaterialManager_MaskingMaterial{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_MaterialManager_MaskingMaterial), ::core::stringify!(new),));
+ <Self as ITMP_MaterialManager_MaskingMaterialMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_MaterialManager_FallbackMaterial;
     pub use super::ITMP_MaterialManager_FallbackMaterial;
     pub use super::ITMP_MaterialManager_FallbackMaterialMethods;
+    pub use super::TMP_MaterialManager;
+    pub use super::ITMP_MaterialManager;
     pub use super::TMP_MaterialManager_MaskingMaterial;
     pub use super::ITMP_MaterialManager_MaskingMaterial;
     pub use super::ITMP_MaterialManager_MaskingMaterialMethods;
-    pub use super::TMP_MaterialManager;
-    pub use super::ITMP_MaterialManager;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -21,19 +21,13 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayprofilesequence/RelayProfileSequence.md"))]#[::unity2::class(namespace="App",name="RelayProfileSequence")]#[parent(crate::system::object::Object)]pub struct RelayProfileSequence{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem.md"))]#[::unity2::class(namespace="App",name="RelayProfileSequence.DownloadSequence.DownloadYesNoDialog.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem{#[offset(112)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog.md"))]#[::unity2::class(namespace="App",name="RelayProfileSequence.DownloadSequence.DownloadYesNoDialog")]#[parent(crate::system::object::Object)]pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem.md"))]#[::unity2::class(namespace="App",name="RelayProfileSequence.DownloadSequence.DownloadYesNoDialog.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem{#[offset(112)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayprofilesequence/RelayProfileSequence_UploadSequence.md"))]#[::unity2::class(namespace="App",name="RelayProfileSequence.UploadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayProfileSequence_UploadSequence{#[offset(112)]#[rename(name="m_Profile")]pub m_profile:crate::app::profilecard::ProfileCard,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence.md"))]#[::unity2::class(namespace="App",name="RelayProfileSequence.DownloadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayProfileSequence_DownloadSequence{#[offset(112)]#[rename(name="m_PrincipalId")]pub m_principal_id:u64, #[offset(120)]#[rename(name="m_PlayerIds")]pub m_player_ids:crate::system::collections::generic::list_1::List_1<u64> , #[offset(128)]#[rename(name="m_PlayerIdIndex")]pub m_player_id_index:i32, #[offset(136)]#[rename(name="m_Profiles")]pub m_profiles:crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayprofilesequence/RelayProfileSequence.md"))]#[::unity2::class(namespace="App",name="RelayProfileSequence")]#[parent(crate::system::object::Object)]pub struct RelayProfileSequence{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayProfileSequence_DownloadSequence_Label{pub value:i32,}
@@ -55,10 +49,76 @@ pub fn end()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayprofilesequence/RelayProfileSequence_UploadSequence.md"))]#[::unity2::class(namespace="App",name="RelayProfileSequence.UploadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayProfileSequence_UploadSequence{#[offset(112)]#[rename(name="m_Profile")]pub m_profile:crate::app::profilecard::ProfileCard,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence.md"))]#[::unity2::class(namespace="App",name="RelayProfileSequence.DownloadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct RelayProfileSequence_DownloadSequence{#[offset(112)]#[rename(name="m_PrincipalId")]pub m_principal_id:u64, #[offset(120)]#[rename(name="m_PlayerIds")]pub m_player_ids:crate::system::collections::generic::list_1::List_1<u64> , #[offset(128)]#[rename(name="m_PlayerIdIndex")]pub m_player_id_index:i32, #[offset(136)]#[rename(name="m_Profiles")]pub m_profiles:crate::system::collections::generic::list_1::List_1<crate::app::profilecard::ProfileCard> ,}
+
 }
 
 #[cfg(feature = "app-relayprofilesequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-relayprofilesequence")]pub trait IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods:IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,decide_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed92d0usize)as*mut u8,();
+(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(decide_callback))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-relayprofilesequence")]impl<__T:IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem>IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods for __T{}
+
+#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem{#[doc="Direct (non-virtual) call to `RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(decide_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem), ::core::stringify!(new),));
+ <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods> ::ctor(this,decide_callback);
+this}
+}
+
+#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mess:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b7bcd0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(mess),(crate::system::action::Action)::core::convert::Into::into(decide_callback))}
+}
+}
+
+#[cfg(feature="app-relayprofilesequence")]pub trait IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods:IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7bd60usize)as*mut u8,();
+(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog)__receiver)}
+}
+}
+
+#[cfg(feature="app-relayprofilesequence")]impl<__T:IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog>IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods for __T{}
+
+#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog), ::core::stringify!(new),));
+ <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence{#[doc="`CreateBindUpload(crate::app::procinst::ProcInst)` overload"]pub fn create_bind_upload(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2001ce0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -93,65 +153,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(RelayProfileSequence), ::core::stringify!(new),));
  <Self as IRelayProfileSequenceMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mess:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b7bcd0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(mess),(crate::system::action::Action)::core::convert::Into::into(decide_callback))}
-}
-}
-
-#[cfg(feature="app-relayprofilesequence")]pub trait IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods:IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7bd60usize)as*mut u8,();
-(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog)__receiver)}
-}
-}
-
-#[cfg(feature="app-relayprofilesequence")]impl<__T:IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog>IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods for __T{}
-
-#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog), ::core::stringify!(new),));
- <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-relayprofilesequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-relayprofilesequence")]pub trait IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods:IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,decide_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ed92d0usize)as*mut u8,();
-(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(decide_callback))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-relayprofilesequence")]impl<__T:IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem>IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods for __T{}
-
-#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-relayprofilesequence")]impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(decide_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem), ::core::stringify!(new),));
- <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods> ::ctor(this,decide_callback);
 this}
 }
 
@@ -246,22 +247,22 @@ this}
 #[cfg(feature = "app-relayprofilesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayProfileSequence;
-    pub use super::IRelayProfileSequence;
-    pub use super::IRelayProfileSequenceMethods;
-    pub use super::RelayProfileSequence_DownloadSequence_DownloadYesNoDialog;
-    pub use super::IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog;
-    pub use super::IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods;
     pub use super::RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem;
     pub use super::IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem;
     pub use super::IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods;
+    pub use super::RelayProfileSequence_DownloadSequence_DownloadYesNoDialog;
+    pub use super::IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog;
+    pub use super::IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods;
+    pub use super::RelayProfileSequence;
+    pub use super::IRelayProfileSequence;
+    pub use super::IRelayProfileSequenceMethods;
+    pub use super::RelayProfileSequence_DownloadSequence_Label;
     pub use super::RelayProfileSequence_UploadSequence;
     pub use super::IRelayProfileSequence_UploadSequence;
     pub use super::IRelayProfileSequence_UploadSequenceMethods;
     pub use super::RelayProfileSequence_DownloadSequence;
     pub use super::IRelayProfileSequence_DownloadSequence;
     pub use super::IRelayProfileSequence_DownloadSequenceMethods;
-    pub use super::RelayProfileSequence_DownloadSequence_Label;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

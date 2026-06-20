@@ -16,19 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-unitaccessory-types")]
 pub use __types::*;
 
-#[cfg(feature="app-unitaccessory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitAccessory_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:UnitAccessory,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <UnitAccessory as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(UnitAccessory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-unitaccessory")]impl UnitAccessory{#[doc="`op_Implicit(crate::app::unitaccessory::UnitAccessory)` overload"]pub fn op_implicit(p:impl::core::convert::Into<crate::app::unitaccessory::UnitAccessory>)->crate::app::accessorydata::AccessoryData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f61710usize)as*mut u8,crate::app::accessorydata::AccessoryData;
 (crate::app::unitaccessory::UnitAccessory)::core::convert::Into::into(p))}
 }
@@ -43,7 +30,16 @@ inner(this,__mi)}
 (UnitAccessory)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <UnitAccessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitAccessory_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <UnitAccessory as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(UnitAccessory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`New(crate::app::accessorydata::AccessoryData)` overload"]fn new(self,accessory:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <UnitAccessory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f616e0usize)as*mut u8,();
@@ -103,6 +99,11 @@ pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
+
+#[cfg(feature="app-unitaccessory")]impl UnitAccessory{#[doc="Direct (non-virtual) call to `UnitAccessory`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "app-unitaccessory")]

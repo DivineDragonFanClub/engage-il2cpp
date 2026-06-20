@@ -16,29 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-events-baseinvokablecall-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-events-baseinvokablecall")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseInvokableCall_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:BaseInvokableCall,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <BaseInvokableCall as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(BaseInvokableCall, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,args,__mi)}
-pub unsafe fn find(this:BaseInvokableCall,target_obj:crate::system::object::Object,method:crate::system::reflection::methodinfo::MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <BaseInvokableCall as::unity2::ClassIdentity> ::NAME,"Find",));
-let inner:extern "C" fn(BaseInvokableCall,crate::system::object::Object,crate::system::reflection::methodinfo::MethodInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,target_obj,method,__mi)}
-}
-
 #[cfg(feature="unity_engine-events-baseinvokablecall")]impl BaseInvokableCall{pub fn throw_on_invalid_arg<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(arg:impl::core::convert::Into<crate::system::object::Object>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<BaseInvokableCall as::unity2::ClassIdentity> ::class(),"ThrowOnInvalidArg",1,)}
 );
  #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
@@ -73,10 +50,28 @@ __f(::core::convert::Into::into(arg), ::core::option::Option::Some(__mi_opaque),
 (BaseInvokableCall)__receiver,(crate::system::object::Object)::core::convert::Into::into(target),(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(function))}
 }
 #[doc="`Invoke(::unity2::Array<crate::system::object::Object>)` overload"]fn invoke(self,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <BaseInvokableCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BaseInvokableCall_unity2_raw::invoke(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BaseInvokableCall as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(BaseInvokableCall, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(args),__mi)}
+}
 }
 #[doc="`Find(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]fn find(self,target_obj:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>)->bool{unsafe{let __receiver= <BaseInvokableCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BaseInvokableCall_unity2_raw::find(__receiver, ::core::convert::Into::into(target_obj), ::core::convert::Into::into(method), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BaseInvokableCall as::unity2::ClassIdentity> ::NAME,"Find",));
+let __inner:extern "C" fn(BaseInvokableCall,crate::system::object::Object,crate::system::reflection::methodinfo::MethodInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(target_obj), ::core::convert::Into::into(method),__mi)}
+}
 }
 }
 
@@ -87,6 +82,14 @@ pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn allow_invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn find_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="unity_engine-events-baseinvokablecall")]impl BaseInvokableCall{#[doc="Direct (non-virtual) call to `BaseInvokableCall`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,args: ::unity2::Array<crate::system::object::Object> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),args, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BaseInvokableCall`'s own `Find`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn find(this:impl::core::convert::Into< ::unity2::IlInstance> ,target_obj:crate::system::object::Object,method:crate::system::reflection::methodinfo::MethodInfo,)->bool{let __mi=Self::find_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::system::reflection::methodinfo::MethodInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),target_obj,method, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-events-baseinvokablecall")]impl BaseInvokableCall{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

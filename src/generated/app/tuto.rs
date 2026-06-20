@@ -23,25 +23,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-tuto-types")]
 pub use __types::*;
 
-#[cfg(feature="app-tuto")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Tuto_ProcDescTutorial_unity2_raw{use super:: * ;
-pub unsafe fn execute(this:Tuto_ProcDescTutorial,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Tuto_ProcDescTutorial as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(Tuto_ProcDescTutorial,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,inst,__mi)}
-}
-
 #[cfg(feature="app-tuto")]pub trait ITuto_ProcDescTutorialMethods:ITuto_ProcDescTutorial{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,tid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Tuto_ProcDescTutorial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b41b30usize)as*mut u8,();
 (Tuto_ProcDescTutorial)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(tid))}
 }
 #[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <Tuto_ProcDescTutorial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Tuto_ProcDescTutorial_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Tuto_ProcDescTutorial as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(Tuto_ProcDescTutorial,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(inst),__mi)}
+}
 }
 }
 
@@ -49,6 +45,11 @@ __Tuto_ProcDescTutorial_unity2_raw::execute(__receiver, ::core::convert::Into::i
 
 #[cfg(feature="app-tuto")]impl Tuto_ProcDescTutorial{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-tuto")]impl Tuto_ProcDescTutorial{#[doc="Direct (non-virtual) call to `Tuto_ProcDescTutorial`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,inst:crate::app::procinst::ProcInst,)->crate::app::procdesc::ProcDesc_Result{let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),inst, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-tuto")]impl Tuto_ProcDescTutorial{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(tid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

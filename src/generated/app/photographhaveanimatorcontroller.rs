@@ -25,6 +25,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_UpdateAnime.md"))]#[::unity2::class(namespace="App",name="PhotographHaveAnimatorController.UpdateAnime")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographHaveAnimatorController_UpdateAnime{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_UpdateFaceAnime.md"))]#[::unity2::class(namespace="App",name="PhotographHaveAnimatorController.UpdateFaceAnime")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographHaveAnimatorController_UpdateFaceAnime{}
 
 
@@ -66,9 +69,6 @@ pub fn surprise()->Self{Self{value:12}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_UpdateAnime.md"))]#[::unity2::class(namespace="App",name="PhotographHaveAnimatorController.UpdateAnime")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographHaveAnimatorController_UpdateAnime{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController.md"))]#[::unity2::class(namespace="App",name="PhotographHaveAnimatorController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct PhotographHaveAnimatorController{#[offset(24)]#[rename(name="m_AnimatorController")]pub m_animator_controller:crate::system::collections::generic::list_1::List_1<crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController> , #[offset(32)]#[rename(name="m_AnimeTime")]pub m_anime_time:f32, #[offset(40)]#[rename(name="m_Update")]pub m_update:crate::app::photographhaveanimatorcontroller::PhotographHaveAnimatorController_UpdateAnime, #[offset(48)]#[rename(name="m_FaceUpdate")]pub m_face_update:crate::app::photographhaveanimatorcontroller::PhotographHaveAnimatorController_UpdateFaceAnime, #[offset(56)]#[rename(name="m_faceAnime")]pub m_face_anime:crate::app::photographhaveanimatorcontroller::PhotographHaveAnimatorController_FaceAnime, #[offset(60)]#[rename(name="m_BeforeFaceAnime")]pub m_before_face_anime:crate::app::photographhaveanimatorcontroller::PhotographHaveAnimatorController_FaceAnime, #[offset(64)]#[rename(name="m_Sprite")]pub m_sprite:crate::unity_engine::sprite::Sprite,}
 
 }
@@ -76,60 +76,21 @@ pub fn surprise()->Self{Self{value:12}
 #[cfg(feature = "app-photographhaveanimatorcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature="app-photographhaveanimatorcontroller")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographHaveAnimatorController_UpdateFaceAnime_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:PhotographHaveAnimatorController_UpdateFaceAnime,face_anime: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <PhotographHaveAnimatorController_UpdateFaceAnime as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(PhotographHaveAnimatorController_UpdateFaceAnime, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,face_anime,__mi)}
-}
-
-#[cfg(feature="app-photographhaveanimatorcontroller")]pub trait IPhotographHaveAnimatorController_UpdateFaceAnimeMethods:IPhotographHaveAnimatorController_UpdateFaceAnime{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographHaveAnimatorController_UpdateFaceAnime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2262740usize)as*mut u8,();
-(PhotographHaveAnimatorController_UpdateFaceAnime)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,face_anime:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographHaveAnimatorController_UpdateFaceAnime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PhotographHaveAnimatorController_UpdateFaceAnime_unity2_raw::invoke(__receiver, ::core::convert::Into::into(face_anime), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-photographhaveanimatorcontroller")]impl<__T:IPhotographHaveAnimatorController_UpdateFaceAnime>IPhotographHaveAnimatorController_UpdateFaceAnimeMethods for __T{}
-
-#[cfg(feature="app-photographhaveanimatorcontroller")]impl PhotographHaveAnimatorController_UpdateFaceAnime{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-photographhaveanimatorcontroller")]impl PhotographHaveAnimatorController_UpdateFaceAnime{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(PhotographHaveAnimatorController_UpdateFaceAnime), ::core::stringify!(new),));
- <Self as IPhotographHaveAnimatorController_UpdateFaceAnimeMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-photographhaveanimatorcontroller")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographHaveAnimatorController_UpdateAnime_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:PhotographHaveAnimatorController_UpdateAnime,time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <PhotographHaveAnimatorController_UpdateAnime as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(PhotographHaveAnimatorController_UpdateAnime,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,time,__mi)}
-}
-
 #[cfg(feature="app-photographhaveanimatorcontroller")]pub trait IPhotographHaveAnimatorController_UpdateAnimeMethods:IPhotographHaveAnimatorController_UpdateAnime{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographHaveAnimatorController_UpdateAnime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2262450usize)as*mut u8,();
 (PhotographHaveAnimatorController_UpdateAnime)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(f32)` overload"]fn invoke(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PhotographHaveAnimatorController_UpdateAnime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PhotographHaveAnimatorController_UpdateAnime_unity2_raw::invoke(__receiver, ::core::convert::Into::into(time), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <PhotographHaveAnimatorController_UpdateAnime as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(PhotographHaveAnimatorController_UpdateAnime,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(time),__mi)}
+}
 }
 }
 
@@ -139,10 +100,51 @@ __PhotographHaveAnimatorController_UpdateAnime_unity2_raw::invoke(__receiver, ::
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-photographhaveanimatorcontroller")]impl PhotographHaveAnimatorController_UpdateAnime{#[doc="Direct (non-virtual) call to `PhotographHaveAnimatorController_UpdateAnime`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,time:f32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),time, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-photographhaveanimatorcontroller")]impl PhotographHaveAnimatorController_UpdateAnime{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(PhotographHaveAnimatorController_UpdateAnime), ::core::stringify!(new),));
  <Self as IPhotographHaveAnimatorController_UpdateAnimeMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-photographhaveanimatorcontroller")]pub trait IPhotographHaveAnimatorController_UpdateFaceAnimeMethods:IPhotographHaveAnimatorController_UpdateFaceAnime{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographHaveAnimatorController_UpdateFaceAnime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2262740usize)as*mut u8,();
+(PhotographHaveAnimatorController_UpdateFaceAnime)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,face_anime:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographHaveAnimatorController_UpdateFaceAnime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <PhotographHaveAnimatorController_UpdateFaceAnime as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(PhotographHaveAnimatorController_UpdateFaceAnime, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(face_anime),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-photographhaveanimatorcontroller")]impl<__T:IPhotographHaveAnimatorController_UpdateFaceAnime>IPhotographHaveAnimatorController_UpdateFaceAnimeMethods for __T{}
+
+#[cfg(feature="app-photographhaveanimatorcontroller")]impl PhotographHaveAnimatorController_UpdateFaceAnime{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-photographhaveanimatorcontroller")]impl PhotographHaveAnimatorController_UpdateFaceAnime{#[doc="Direct (non-virtual) call to `PhotographHaveAnimatorController_UpdateFaceAnime`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,face_anime: ::unity2::Il2CppString,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),face_anime, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-photographhaveanimatorcontroller")]impl PhotographHaveAnimatorController_UpdateFaceAnime{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographHaveAnimatorController_UpdateFaceAnime), ::core::stringify!(new),));
+ <Self as IPhotographHaveAnimatorController_UpdateFaceAnimeMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -192,13 +194,13 @@ this}
 #[cfg(feature = "app-photographhaveanimatorcontroller")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PhotographHaveAnimatorController_UpdateAnime;
+    pub use super::IPhotographHaveAnimatorController_UpdateAnime;
+    pub use super::IPhotographHaveAnimatorController_UpdateAnimeMethods;
     pub use super::PhotographHaveAnimatorController_UpdateFaceAnime;
     pub use super::IPhotographHaveAnimatorController_UpdateFaceAnime;
     pub use super::IPhotographHaveAnimatorController_UpdateFaceAnimeMethods;
     pub use super::PhotographHaveAnimatorController_FaceAnime;
-    pub use super::PhotographHaveAnimatorController_UpdateAnime;
-    pub use super::IPhotographHaveAnimatorController_UpdateAnime;
-    pub use super::IPhotographHaveAnimatorController_UpdateAnimeMethods;
     pub use super::PhotographHaveAnimatorController;
     pub use super::IPhotographHaveAnimatorController;
     pub use super::IPhotographHaveAnimatorControllerMethods;

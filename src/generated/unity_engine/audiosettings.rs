@@ -23,25 +23,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-audiosettings-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-audiosettings")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AudioSettings_AudioConfigurationChangeHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:AudioSettings_AudioConfigurationChangeHandler,device_was_changed:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <AudioSettings_AudioConfigurationChangeHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(AudioSettings_AudioConfigurationChangeHandler,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,device_was_changed,__mi)}
-}
-
 #[cfg(feature="unity_engine-audiosettings")]pub trait IAudioSettings_AudioConfigurationChangeHandlerMethods:IAudioSettings_AudioConfigurationChangeHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AudioSettings_AudioConfigurationChangeHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f5f0usize)as*mut u8,();
 (AudioSettings_AudioConfigurationChangeHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(bool)` overload"]fn invoke(self,device_was_changed:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AudioSettings_AudioConfigurationChangeHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AudioSettings_AudioConfigurationChangeHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(device_was_changed), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AudioSettings_AudioConfigurationChangeHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(AudioSettings_AudioConfigurationChangeHandler,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(device_was_changed),__mi)}
+}
 }
 }
 
@@ -49,6 +45,11 @@ __AudioSettings_AudioConfigurationChangeHandler_unity2_raw::invoke(__receiver, :
 
 #[cfg(feature="unity_engine-audiosettings")]impl AudioSettings_AudioConfigurationChangeHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-audiosettings")]impl AudioSettings_AudioConfigurationChangeHandler{#[doc="Direct (non-virtual) call to `AudioSettings_AudioConfigurationChangeHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,device_was_changed:bool,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),device_was_changed, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-audiosettings")]impl AudioSettings_AudioConfigurationChangeHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

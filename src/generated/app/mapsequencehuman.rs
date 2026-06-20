@@ -17,29 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehuman/MapSequenceHuman.md"))]#[::unity2::class(namespace="App",name="MapSequenceHuman")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencehuman::MapSequenceHuman>)]pub struct MapSequenceHuman{#[offset(120)]#[rename(name="m_JobIntroUnit")]pub m_job_intro_unit:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_JobIntroKeyHelpType")]pub m_job_intro_key_help_type:crate::app::mapkeyhelp::MapKeyHelp_Types, #[offset(132)]#[rename(name="m_ReturnLabel")]pub m_return_label:crate::app::mapsequencehuman::MapSequenceHuman_Label, #[offset(136)]#[rename(name="m_OldUnitX")]pub m_old_unit_x:i32, #[offset(140)]#[rename(name="m_OldUnitZ")]pub m_old_unit_z:i32, #[offset(144)]#[rename(name="m_OldCursorX")]pub m_old_cursor_x:i32, #[offset(148)]#[rename(name="m_OldCursorZ")]pub m_old_cursor_z:i32, #[offset(152)]#[rename(name="m_OldPickupX")]pub m_old_pickup_x:i32, #[offset(156)]#[rename(name="m_OldPickupZ")]pub m_old_pickup_z:i32, #[offset(160)]#[rename(name="m_EngageX")]pub m_engage_x:i32, #[offset(164)]#[rename(name="m_EngageZ")]pub m_engage_z:i32, #[offset(168)]#[rename(name="m_EnterX")]pub m_enter_x:i32, #[offset(172)]#[rename(name="m_EnterZ")]pub m_enter_z:i32, #[offset(176)]#[rename(name="m_IsEnemyAttackRange")]pub m_is_enemy_attack_range:bool, #[offset(177)]#[rename(name="m_IsUpdateSupportSkill")]pub m_is_update_support_skill:bool, #[offset(184)]#[rename(name="m_UpdateSupportSkillUnit")]pub m_update_support_skill_unit:crate::app::unit::Unit, #[offset(192)]#[rename(name="m_OperateMode")]pub m_operate_mode:crate::app::mapsequencehuman::MapSequenceHuman_OperateMode, #[static_field]#[rename(name="PlayerMoveMask")]pub player_move_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="EnemyMoveMask")]pub enemy_move_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="FreeWeaponMask")]pub free_weapon_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="PickWeaponMask")]pub pick_weapon_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="WaitPickFreeCursor")]pub wait_pick_free_cursor:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceHuman_OperateMode{pub value:i32,}
-impl::unity2::ClassIdentity for MapSequenceHuman_OperateMode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapSequenceHuman.OperateMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapSequenceHuman_OperateMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapSequenceHuman_OperateMode{pub fn none()->Self{Self{value:0}
-}
-pub fn direct()->Self{Self{value:1}
-}
-pub fn indirect()->Self{Self{value:2}
-}
-pub fn designate()->Self{Self{value:3}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehuman/MapSequenceHuman_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceHuman_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceHuman_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceHuman.Label";
@@ -158,6 +135,29 @@ pub fn end()->Self{Self{value:52}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehuman/MapSequenceHuman.md"))]#[::unity2::class(namespace="App",name="MapSequenceHuman")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencehuman::MapSequenceHuman>)]pub struct MapSequenceHuman{#[offset(120)]#[rename(name="m_JobIntroUnit")]pub m_job_intro_unit:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_JobIntroKeyHelpType")]pub m_job_intro_key_help_type:crate::app::mapkeyhelp::MapKeyHelp_Types, #[offset(132)]#[rename(name="m_ReturnLabel")]pub m_return_label:crate::app::mapsequencehuman::MapSequenceHuman_Label, #[offset(136)]#[rename(name="m_OldUnitX")]pub m_old_unit_x:i32, #[offset(140)]#[rename(name="m_OldUnitZ")]pub m_old_unit_z:i32, #[offset(144)]#[rename(name="m_OldCursorX")]pub m_old_cursor_x:i32, #[offset(148)]#[rename(name="m_OldCursorZ")]pub m_old_cursor_z:i32, #[offset(152)]#[rename(name="m_OldPickupX")]pub m_old_pickup_x:i32, #[offset(156)]#[rename(name="m_OldPickupZ")]pub m_old_pickup_z:i32, #[offset(160)]#[rename(name="m_EngageX")]pub m_engage_x:i32, #[offset(164)]#[rename(name="m_EngageZ")]pub m_engage_z:i32, #[offset(168)]#[rename(name="m_EnterX")]pub m_enter_x:i32, #[offset(172)]#[rename(name="m_EnterZ")]pub m_enter_z:i32, #[offset(176)]#[rename(name="m_IsEnemyAttackRange")]pub m_is_enemy_attack_range:bool, #[offset(177)]#[rename(name="m_IsUpdateSupportSkill")]pub m_is_update_support_skill:bool, #[offset(184)]#[rename(name="m_UpdateSupportSkillUnit")]pub m_update_support_skill_unit:crate::app::unit::Unit, #[offset(192)]#[rename(name="m_OperateMode")]pub m_operate_mode:crate::app::mapsequencehuman::MapSequenceHuman_OperateMode, #[static_field]#[rename(name="PlayerMoveMask")]pub player_move_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="EnemyMoveMask")]pub enemy_move_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="FreeWeaponMask")]pub free_weapon_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="PickWeaponMask")]pub pick_weapon_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="WaitPickFreeCursor")]pub wait_pick_free_cursor:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceHuman_OperateMode{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceHuman_OperateMode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceHuman.OperateMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSequenceHuman_OperateMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSequenceHuman_OperateMode{pub fn none()->Self{Self{value:0}
+}
+pub fn direct()->Self{Self{value:1}
+}
+pub fn indirect()->Self{Self{value:2}
+}
+pub fn designate()->Self{Self{value:3}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehuman/MapSequenceHuman_NextMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceHuman_NextMode{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceHuman_NextMode{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceHuman.NextMode";
@@ -179,39 +179,6 @@ pub fn order()->Self{Self{value:2}
 
 #[cfg(feature = "app-mapsequencehuman-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapsequencehuman")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceHuman_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:MapSequenceHuman,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <MapSequenceHuman as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(MapSequenceHuman, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:MapSequenceHuman,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MapSequenceHuman as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(MapSequenceHuman, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_shutdown(this:MapSequenceHuman,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <MapSequenceHuman as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
-let inner:extern "C" fn(MapSequenceHuman, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-mapsequencehuman")]impl MapSequenceHuman{#[doc="`UpdateDeploy(crate::app::unit::Unit)` overload"]pub fn update_deploy(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2661fa0usize)as*mut u8,();
 (crate::app::unit::Unit)::core::convert::Into::into(unit))}
@@ -235,13 +202,40 @@ inner(this,__mi)}
 (MapSequenceHuman)__receiver)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceHuman_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapSequenceHuman as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(MapSequenceHuman, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceHuman_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequenceHuman as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(MapSequenceHuman, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceHuman_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <MapSequenceHuman as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let __inner:extern "C" fn(MapSequenceHuman, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetOperateMode()` overload"]fn get_operate_mode(self,)->crate::app::mapsequencehuman::MapSequenceHuman_OperateMode{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x265b9e0usize)as*mut u8,crate::app::mapsequencehuman::MapSequenceHuman_OperateMode;
@@ -1068,6 +1062,17 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[170]}
 }
 
+#[cfg(feature="app-mapsequencehuman")]impl MapSequenceHuman{#[doc="Direct (non-virtual) call to `MapSequenceHuman`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSequenceHuman`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSequenceHuman`'s own `OnShutdown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_shutdown(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_shutdown_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapsequencehuman")]impl MapSequenceHuman{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapSequenceHuman), ::core::stringify!(new),));
@@ -1078,11 +1083,11 @@ this}
 #[cfg(feature = "app-mapsequencehuman")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSequenceHuman_Label;
     pub use super::MapSequenceHuman;
     pub use super::IMapSequenceHuman;
     pub use super::IMapSequenceHumanMethods;
     pub use super::MapSequenceHuman_OperateMode;
-    pub use super::MapSequenceHuman_Label;
     pub use super::MapSequenceHuman_NextMode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

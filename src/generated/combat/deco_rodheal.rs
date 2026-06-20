@@ -20,39 +20,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-deco_rodheal-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-deco_rodheal")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Deco_RodHeal_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:Deco_RodHeal,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Deco_RodHeal as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let inner:extern "C" fn(Deco_RodHeal, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_enemy_damage(this:Deco_RodHeal,ev:crate::unity_engine::animationevent::AnimationEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <Deco_RodHeal as::unity2::ClassIdentity> ::NAME,"OnEnemyDamage_",));
-let inner:extern "C" fn(Deco_RodHeal,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,ev,__mi)}
-}
-
 #[cfg(feature="combat-deco_rodheal")]impl Deco_RodHeal{#[doc="`IsAvailable(crate::combat::decoratorargs::DecoratorArgs)` overload"]pub fn is_available(that:impl::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8620usize)as*mut u8,bool;
 (crate::combat::decoratorargs::DecoratorArgs)::core::convert::Into::into(that))}
 }
 }
 
 #[cfg(feature="combat-deco_rodheal")]pub trait IDeco_RodHealMethods:IDeco_RodHeal{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Deco_RodHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Deco_RodHeal_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Deco_RodHeal as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let __inner:extern "C" fn(Deco_RodHeal, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_enemy_damage(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Deco_RodHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Deco_RodHeal_unity2_raw::on_enemy_damage(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <Deco_RodHeal as::unity2::ClassIdentity> ::NAME,"OnEnemyDamage_",));
+let __inner:extern "C" fn(Deco_RodHeal,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(ev),__mi)}
+}
 }
 #[doc="`UseWideuse13()` overload"]fn use_wideuse13(self,)->bool{unsafe{let __receiver= <Deco_RodHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8910usize)as*mut u8,bool;
@@ -71,6 +66,14 @@ pub fn is_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn on_enemy_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn use_wideuse13_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="combat-deco_rodheal")]impl Deco_RodHeal{#[doc="Direct (non-virtual) call to `Deco_RodHeal`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `Deco_RodHeal`'s own `OnEnemyDamage_`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enemy_damage(this:impl::core::convert::Into< ::unity2::IlInstance> ,ev:crate::unity_engine::animationevent::AnimationEvent,)->(){let __mi=Self::on_enemy_damage_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),ev, ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-deco_rodheal")]impl Deco_RodHeal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

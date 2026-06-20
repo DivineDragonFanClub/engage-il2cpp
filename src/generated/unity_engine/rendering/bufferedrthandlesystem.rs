@@ -16,19 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-rendering-bufferedrthandlesystem-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-bufferedrthandlesystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BufferedRTHandleSystem_unity2_raw{use super:: * ;
-pub unsafe fn dispose_2(this:BufferedRTHandleSystem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <BufferedRTHandleSystem as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(BufferedRTHandleSystem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-bufferedrthandlesystem")]pub trait IBufferedRTHandleSystemMethods:IBufferedRTHandleSystem{#[doc="`get_maxWidth()` overload"]fn get_max_width(self,)->i32{unsafe{let __receiver= <BufferedRTHandleSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x352d8e0usize)as*mut u8,i32;
 (BufferedRTHandleSystem)__receiver)}
@@ -70,7 +57,16 @@ inner(this,__mi)}
 (BufferedRTHandleSystem)__receiver,(bool)::core::convert::Into::into(disposing))}
 }
 #[doc="`Dispose()` overload"]fn dispose_2(self,)->(){unsafe{let __receiver= <BufferedRTHandleSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BufferedRTHandleSystem_unity2_raw::dispose_2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BufferedRTHandleSystem as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(BufferedRTHandleSystem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ReleaseAll()` overload"]fn release_all(self,)->(){unsafe{let __receiver= <BufferedRTHandleSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x352e040usize)as*mut u8,();
@@ -97,6 +93,11 @@ pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn release_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="unity_engine-rendering-bufferedrthandlesystem")]impl BufferedRTHandleSystem{#[doc="Direct (non-virtual) call to `BufferedRTHandleSystem`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-bufferedrthandlesystem")]impl BufferedRTHandleSystem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

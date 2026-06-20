@@ -24,10 +24,10 @@ impl::unity2::IlType for MapInspectors_EventUnitScope{fn il_type()-> &'static::u
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinspectors/MapInspectors_MapInspectorSearch.md"))]#[::unity2::class(namespace="App",name="MapInspectors.MapInspectorSearch")]#[parent(crate::system::object::Object)]pub struct MapInspectors_MapInspectorSearch{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::app::rawclasslist_1::RawClassList_1<crate::app::mapinspector::MapInspector> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinspectors/MapInspectors.md"))]#[::unity2::class(namespace="App",name="MapInspectors")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapinspectors::MapInspectors>)]pub struct MapInspectors{#[offset(32)]#[rename(name="m_Inspectors")]pub m_inspectors:crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector> , #[offset(40)]#[rename(name="m_KindInspectors")]pub m_kind_inspectors: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector> > , #[static_field]#[rename(name="s_InspectorSearch")]pub s_inspector_search:crate::app::mapinspectors::MapInspectors_MapInspectorSearch,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinspectors/MapInspectors_MapInspectorSearch.md"))]#[::unity2::class(namespace="App",name="MapInspectors.MapInspectorSearch")]#[parent(crate::system::object::Object)]pub struct MapInspectors_MapInspectorSearch{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::app::rawclasslist_1::RawClassList_1<crate::app::mapinspector::MapInspector> ,}
 
 }
 
@@ -44,77 +44,6 @@ pub use __types::*;
 
 #[cfg(feature="app-mapinspectors")]impl MapInspectors_EventUnitScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapinspectors")]pub trait IMapInspectors_MapInspectorSearchMethods:IMapInspectors_MapInspectorSearch{#[doc="`TryUpdateEnable(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]fn try_update_enable(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value1:impl::core::convert::Into<i32> ,value2:impl::core::convert::Into<i32> ,value3:impl::core::convert::Into<i32> ,value4:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapInspectors_MapInspectorSearch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217d7d0usize)as*mut u8,bool;
-(MapInspectors_MapInspectorSearch)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value1),(i32)::core::convert::Into::into(value2),(i32)::core::convert::Into::into(value3),(i32)::core::convert::Into::into(value4))}
-}
-#[doc="`GetEnableStack(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]fn get_enable_stack(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value1:impl::core::convert::Into<i32> ,value2:impl::core::convert::Into<i32> ,value3:impl::core::convert::Into<i32> ,value4:impl::core::convert::Into<i32>)->crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>{unsafe{let __receiver= <MapInspectors_MapInspectorSearch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217db20usize)as*mut u8,crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> ;
-(MapInspectors_MapInspectorSearch)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value1),(i32)::core::convert::Into::into(value2),(i32)::core::convert::Into::into(value3),(i32)::core::convert::Into::into(value4))}
-}
-#[doc="`GetEnableInspector(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]fn get_enable_inspector(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value1:impl::core::convert::Into<i32> ,value2:impl::core::convert::Into<i32> ,value3:impl::core::convert::Into<i32> ,value4:impl::core::convert::Into<i32>)->crate::app::mapinspector::MapInspector{unsafe{let __receiver= <MapInspectors_MapInspectorSearch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217dc90usize)as*mut u8,crate::app::mapinspector::MapInspector;
-(MapInspectors_MapInspectorSearch)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value1),(i32)::core::convert::Into::into(value2),(i32)::core::convert::Into::into(value3),(i32)::core::convert::Into::into(value4))}
-}
-#[doc="`GetPokeInspector(crate::app::mapinspector::MapInspector_Kind, i32, i32)` overload"]fn get_poke_inspector(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::pokeinspector::PokeInspector{unsafe{let __receiver= <MapInspectors_MapInspectorSearch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217dd60usize)as*mut u8,crate::app::pokeinspector::PokeInspector;
-(MapInspectors_MapInspectorSearch)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapInspectors_MapInspectorSearch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217df20usize)as*mut u8,();
-(MapInspectors_MapInspectorSearch)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapinspectors")]impl<__T:IMapInspectors_MapInspectorSearch>IMapInspectors_MapInspectorSearchMethods for __T{}
-
-#[cfg(feature="app-mapinspectors")]impl MapInspectors_MapInspectorSearch{pub fn try_update_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_enable_stack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_enable_inspector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_poke_inspector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mapinspectors")]impl MapInspectors_MapInspectorSearch{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapInspectors_MapInspectorSearch), ::core::stringify!(new),));
- <Self as IMapInspectors_MapInspectorSearchMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapinspectors")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapInspectors_unity2_raw{use super:: * ;
-pub unsafe fn get_version(this:MapInspectors,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapInspectors as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(MapInspectors, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:MapInspectors,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MapInspectors as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(MapInspectors,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:MapInspectors,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapInspectors as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(MapInspectors,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
 }
 
 #[cfg(feature="app-mapinspectors")]impl MapInspectors{#[doc="`get_Inspectors()` overload"]pub fn get_inspectors()->crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1de6c00usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::mapinspector::MapInspector> ;
@@ -214,13 +143,40 @@ let mut __out_3= ::core::mem::MaybeUninit:: <i32> ::uninit();
 (MapInspectors)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapInspectors as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapInspectors_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapInspectors as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(MapInspectors, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapInspectors as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapInspectors_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapInspectors as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(MapInspectors,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapInspectors as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapInspectors_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapInspectors as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(MapInspectors,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
 }
 }
 
@@ -253,6 +209,17 @@ pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
 }
 
+#[cfg(feature="app-mapinspectors")]impl MapInspectors{#[doc="Direct (non-virtual) call to `MapInspectors`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapInspectors`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapInspectors`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-mapinspectors")]impl MapInspectors{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapInspectors), ::core::stringify!(new),));
@@ -260,16 +227,54 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-mapinspectors")]pub trait IMapInspectors_MapInspectorSearchMethods:IMapInspectors_MapInspectorSearch{#[doc="`TryUpdateEnable(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]fn try_update_enable(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value1:impl::core::convert::Into<i32> ,value2:impl::core::convert::Into<i32> ,value3:impl::core::convert::Into<i32> ,value4:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapInspectors_MapInspectorSearch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217d7d0usize)as*mut u8,bool;
+(MapInspectors_MapInspectorSearch)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value1),(i32)::core::convert::Into::into(value2),(i32)::core::convert::Into::into(value3),(i32)::core::convert::Into::into(value4))}
+}
+#[doc="`GetEnableStack(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]fn get_enable_stack(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value1:impl::core::convert::Into<i32> ,value2:impl::core::convert::Into<i32> ,value3:impl::core::convert::Into<i32> ,value4:impl::core::convert::Into<i32>)->crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>{unsafe{let __receiver= <MapInspectors_MapInspectorSearch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217db20usize)as*mut u8,crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector> ;
+(MapInspectors_MapInspectorSearch)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value1),(i32)::core::convert::Into::into(value2),(i32)::core::convert::Into::into(value3),(i32)::core::convert::Into::into(value4))}
+}
+#[doc="`GetEnableInspector(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]fn get_enable_inspector(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value1:impl::core::convert::Into<i32> ,value2:impl::core::convert::Into<i32> ,value3:impl::core::convert::Into<i32> ,value4:impl::core::convert::Into<i32>)->crate::app::mapinspector::MapInspector{unsafe{let __receiver= <MapInspectors_MapInspectorSearch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217dc90usize)as*mut u8,crate::app::mapinspector::MapInspector;
+(MapInspectors_MapInspectorSearch)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value1),(i32)::core::convert::Into::into(value2),(i32)::core::convert::Into::into(value3),(i32)::core::convert::Into::into(value4))}
+}
+#[doc="`GetPokeInspector(crate::app::mapinspector::MapInspector_Kind, i32, i32)` overload"]fn get_poke_inspector(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::pokeinspector::PokeInspector{unsafe{let __receiver= <MapInspectors_MapInspectorSearch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217dd60usize)as*mut u8,crate::app::pokeinspector::PokeInspector;
+(MapInspectors_MapInspectorSearch)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapInspectors_MapInspectorSearch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217df20usize)as*mut u8,();
+(MapInspectors_MapInspectorSearch)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapinspectors")]impl<__T:IMapInspectors_MapInspectorSearch>IMapInspectors_MapInspectorSearchMethods for __T{}
+
+#[cfg(feature="app-mapinspectors")]impl MapInspectors_MapInspectorSearch{pub fn try_update_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_enable_stack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_enable_inspector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_poke_inspector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mapinspectors")]impl MapInspectors_MapInspectorSearch{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapInspectors_MapInspectorSearch), ::core::stringify!(new),));
+ <Self as IMapInspectors_MapInspectorSearchMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-mapinspectors")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapInspectors_EventUnitScope;
-    pub use super::MapInspectors_MapInspectorSearch;
-    pub use super::IMapInspectors_MapInspectorSearch;
-    pub use super::IMapInspectors_MapInspectorSearchMethods;
     pub use super::MapInspectors;
     pub use super::IMapInspectors;
     pub use super::IMapInspectorsMethods;
+    pub use super::MapInspectors_MapInspectorSearch;
+    pub use super::IMapInspectors_MapInspectorSearch;
+    pub use super::IMapInspectors_MapInspectorSearchMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;

@@ -29,6 +29,39 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_RankingItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[offset(112)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.NotebookItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GodItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.GodItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_GodItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_ShopItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.ShopItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_ShopItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_EnterChapterItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.EnterChapterItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_EnterChapterItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GmapMenuMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.GmapMenuMenuItem")]#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]pub struct GmapMenuSequence_GmapMenu_GmapMenuMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.RelianceItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[offset(112)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SystemItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SystemItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SystemItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.JumpToRankingSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[offset(112)]#[rename(name="m_JumpFunc")]pub m_jump_func:crate::system::action::Action,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapMenuSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for GmapMenuSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GmapMenuSequence.Label";
@@ -59,19 +92,10 @@ pub fn end()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.RelianceItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_ShopItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.ShopItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_ShopItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.ResetItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SaveItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SaveItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SaveItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_InventoryItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.InventoryItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_InventoryItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_FriendItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.FriendItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_FriendItem{}
@@ -95,995 +119,105 @@ pub fn end()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SystemItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SystemItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SystemItem{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.TutorialItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.KizunaItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_InventoryItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.InventoryItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_InventoryItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_RankingItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[offset(112)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.RingbookItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.ConfigItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_MaterialListItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.MaterialListItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_MaterialListItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GmapMenuMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.GmapMenuMenuItem")]#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]pub struct GmapMenuSequence_GmapMenu_GmapMenuMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GodItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.GodItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_GodItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::gmapmenusequence::GmapMenuSequence>)]pub struct GmapMenuSequence{#[offset(120)]#[rename(name="m_OpenTopCallback")]pub m_open_top_callback:crate::system::action::Action, #[offset(128)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::system::action::Action, #[offset(136)]#[rename(name="m_CloseCallback")]pub m_close_callback:crate::system::action::Action,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.ConfigItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu.ResetItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubShopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubShopMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SaveItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SaveItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SaveItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_MaterialListItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.MaterialListItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_MaterialListItem{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GoToMapSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GoToMapSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapMenuSequence_GoToMapSequence{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[offset(112)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubSystemMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubSystemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubSystemMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubShopMenu.ItemShopMenuItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.JumpToRankingSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[offset(112)]#[rename(name="m_JumpFunc")]pub m_jump_func:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.NotebookItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.RingbookItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubShopMenu.WeaponShopMenuItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.RankingItem.ConfirmSequence.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_EnterChapterItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.EnterChapterItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_EnterChapterItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubFriendMenu.KizunaItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_GoToSolanelItem.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.GoToSolanelItem")]#[parent(crate::app::gmapmenusequence::GmapMenuSequence_GmapMenu_GmapMenuMenuItem)]pub struct GmapMenuSequence_GmapMenu_GoToSolanelItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmenusequence/GmapMenuSequence_GmapMenu_SubShopMenu.md"))]#[::unity2::class(namespace="App",name="GmapMenuSequence.GmapMenu.SubShopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GmapMenuSequence_GmapMenu_SubShopMenu{}
 
 }
 
 #[cfg(feature = "app-gmapmenusequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe600usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubSystemMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d580usize)as*mut u8,();
-(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenuMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d520usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubSystemMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu>IGmapMenuSequence_GmapMenu_SubSystemMenuMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubSystemMenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_ShopItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_ShopItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_ShopItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_ShopItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_ShopItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_ShopItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_ShopItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_ShopItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_ShopItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_ShopItemMethods:IGmapMenuSequence_GmapMenu_ShopItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_ShopItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_ShopItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_ShopItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_ShopItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d450usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_ShopItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_ShopItem>IGmapMenuSequence_GmapMenu_ShopItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_ShopItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_ShopItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_ShopItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_ShopItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff0e0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SaveItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SaveItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SaveItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SaveItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SaveItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_SaveItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SaveItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SaveItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SaveItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SaveItemMethods:IGmapMenuSequence_GmapMenu_SaveItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SaveItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SaveItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SaveItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SaveItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d090usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SaveItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SaveItem>IGmapMenuSequence_GmapMenu_SaveItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SaveItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SaveItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SaveItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SaveItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_FriendItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:GmapMenuSequence_GmapMenu_FriendItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <GmapMenuSequence_GmapMenu_FriendItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_FriendItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_FriendItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_FriendItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_FriendItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:GmapMenuSequence_GmapMenu_FriendItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <GmapMenuSequence_GmapMenu_FriendItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_FriendItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_FriendItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_FriendItemMethods:IGmapMenuSequence_GmapMenu_FriendItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_FriendItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b830usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_FriendItem>IGmapMenuSequence_GmapMenu_FriendItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_FriendItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_FriendItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_FriendItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_FriendItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SystemItem_unity2_raw{use super:: * ;
-pub unsafe fn get_flag_id(this:GmapMenuSequence_GmapMenu_SystemItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <GmapMenuSequence_GmapMenu_SystemItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SystemItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SystemItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SystemItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SystemItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_map_attribute(this:GmapMenuSequence_GmapMenu_SystemItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <GmapMenuSequence_GmapMenu_SystemItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SystemItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SystemItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SystemItemMethods:IGmapMenuSequence_GmapMenu_SystemItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SystemItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d9c0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SystemItem>IGmapMenuSequence_GmapMenu_SystemItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SystemItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SystemItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SystemItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SystemItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff340usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe050usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubFriendMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b5e0usize)as*mut u8,();
-(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenuMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d460usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubFriendMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu>IGmapMenuSequence_GmapMenu_SubFriendMenuMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubFriendMenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_InventoryItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_InventoryItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_InventoryItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_InventoryItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_InventoryItemMethods:IGmapMenuSequence_GmapMenu_InventoryItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_InventoryItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c520usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_InventoryItem>IGmapMenuSequence_GmapMenu_InventoryItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_InventoryItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_InventoryItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_InventoryItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_InventoryItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_RankingItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_RankingItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItemMethods:IGmapMenuSequence_GmapMenu_RankingItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_RankingItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_RankingItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_RankingItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_RankingItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_RankingItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_RankingItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_RankingItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItemMethods:IGmapMenuSequence_GmapMenu_RankingItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_RankingItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_RankingItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_RankingItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_RankingItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3cb60usize)as*mut u8,();
@@ -1100,6 +234,20 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_RankingItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_RankingItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_RankingItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_RankingItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem), ::core::stringify!(new),));
@@ -1107,38 +255,33 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]fn ctor(self,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb0e0usize)as*mut u8,();
 (GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem)__receiver,(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -1149,6 +292,14 @@ pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]pub fn new(result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem), ::core::stringify!(new),));
@@ -1156,83 +307,75 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe880usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe2b0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods for __T{}
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods for __T{}
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
@@ -1240,252 +383,343 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_GodItemMethods:IGmapMenuSequence_GmapMenu_GodItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_GodItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_GodItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_GodItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_GodItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fef60usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c200usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods for __T{}
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_GodItem>IGmapMenuSequence_GmapMenu_GodItemMethods for __T{}
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_MaterialListItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_MaterialListItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_MaterialListItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_MaterialListItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_MaterialListItemMethods:IGmapMenuSequence_GmapMenu_MaterialListItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_MaterialListItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c840usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_MaterialListItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_MaterialListItem>IGmapMenuSequence_GmapMenu_MaterialListItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_MaterialListItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GodItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_MaterialListItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GodItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GodItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GodItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GodItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GodItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GodItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_MaterialListItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_MaterialListItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_GodItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_GodItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_map_attribute(this:GmapMenuSequence_GmapMenu_GmapMenuMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_ShopItemMethods:IGmapMenuSequence_GmapMenu_ShopItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_ShopItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_ShopItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_ShopItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_ShopItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_ShopItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d450usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_ShopItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_ShopItem>IGmapMenuSequence_GmapMenu_ShopItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_ShopItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_ShopItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_ShopItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_ShopItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_ShopItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_ShopItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_ShopItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_ShopItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_ShopItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`get_Type()` overload"]pub fn get_type()->crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3aab0usize)as*mut u8,crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type;
+)}
+}
+#[doc="`set_Type(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"]pub fn set_type(value:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ab00usize)as*mut u8,();
+(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_EnterChapterItemMethods:IGmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ab60usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver,(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_EnterChapterItem>IGmapMenuSequence_GmapMenu_EnterChapterItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_EnterChapterItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_EnterChapterItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_EnterChapterItem`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_EnterChapterItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_EnterChapterItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` — overload selector"]pub fn new(r#type:crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_EnterChapterItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_EnterChapterItemMethods> ::ctor(this,r#type);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods:IGmapMenuSequence_GmapMenu_GmapMenuMenuItem{#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",29usize,__vt.len(), <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_flag_id(this:GmapMenuSequence_GmapMenu_GmapMenuMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",27usize,__vt.len(), <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_GmapMenuMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_GmapMenuMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_select(this:GmapMenuSequence_GmapMenu_GmapMenuMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_deselect(this:GmapMenuSequence_GmapMenu_GmapMenuMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods:IGmapMenuSequence_GmapMenu_GmapMenuMenuItem{#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetHelpVisible(bool)` overload"]fn set_help_visible(self,active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b4e0usize)as*mut u8,();
@@ -1496,13 +730,40 @@ __GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::a_call(__receiver, ::co
 (GmapMenuSequence_GmapMenu_GmapMenuMenuItem)__receiver)}
 }
 #[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GmapMenuMenuItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GmapMenuMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GmapMenuMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3abc0usize)as*mut u8,();
@@ -1523,6 +784,26 @@ pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 }
 
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GmapMenuMenuItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GmapMenuMenuItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GmapMenuMenuItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GmapMenuMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GmapMenuMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GmapMenuMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GmapMenuMenuItem`'s own `OnDeselect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deselect(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_deselect_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GmapMenuMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_GmapMenuMenuItem), ::core::stringify!(new),));
@@ -1530,171 +811,582 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <GmapMenuSequence_GmapMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_resume(this:GmapMenuSequence_GmapMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu as::unity2::ClassIdentity> ::NAME,"OnResume",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:GmapMenuSequence_GmapMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <GmapMenuSequence_GmapMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu{#[doc="`get_EnterChapterType()` overload"]pub fn get_enter_chapter_type()->crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cccd10usize)as*mut u8,crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type;
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cccdc0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`AddStartChapterItem(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]pub fn add_start_chapter_item(menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ccd190usize)as*mut u8,();
-(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenuMethods:IGmapMenuSequence_GmapMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cccd60usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnResume()` overload"]fn on_resume(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_unity2_raw::on_resume(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu>IGmapMenuSequence_GmapMenuMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu{pub fn get_enter_chapter_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn add_start_chapter_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn on_resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_GodItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_GodItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_GodItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_GodItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_GodItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_GodItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_GodItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_GodItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_GodItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GodItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe600usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
 }
 
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_GodItemMethods:IGmapMenuSequence_GmapMenu_GodItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GodItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GodItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GodItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods> ::ctor(this,);
+this}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GodItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GodItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c200usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_GodItem)__receiver)}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fd870usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
 }
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_GodItem>IGmapMenuSequence_GmapMenu_GodItemMethods for __T{}
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]fn ctor(self,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd730usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence)__receiver,(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
+}
+#[doc="`Confirm()` overload"]fn confirm(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd770usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence)__receiver)}
+}
+}
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GodItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence>IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn confirm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]pub fn new(result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods> ::ctor(this,result_func);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SystemItemMethods:IGmapMenuSequence_GmapMenu_SystemItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <GmapMenuSequence_GmapMenu_SystemItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SystemItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SystemItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <GmapMenuSequence_GmapMenu_SystemItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SystemItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SystemItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SystemItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d9c0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SystemItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SystemItem>IGmapMenuSequence_GmapMenu_SystemItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SystemItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SystemItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SystemItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SystemItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SystemItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SystemItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SystemItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SystemItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SystemItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SystemItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,jump_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fdaf0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(jump_func))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods:IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,jump_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fda90usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence)__receiver,(crate::system::action::Action)::core::convert::Into::into(jump_func))}
+}
+#[doc="`JumpToRanking()` overload"]fn jump_to_ranking(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fdad0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence>IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn jump_to_ranking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(jump_func:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods> ::ctor(this,jump_func);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb0d0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem>IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_InventoryItemMethods:IGmapMenuSequence_GmapMenu_InventoryItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_InventoryItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_InventoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c520usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_InventoryItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_InventoryItem>IGmapMenuSequence_GmapMenu_InventoryItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_InventoryItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GodItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_InventoryItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_InventoryItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_InventoryItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_InventoryItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_InventoryItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_InventoryItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_GodItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_GodItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_InventoryItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_InventoryItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_unity2_raw{use super:: * ;
-pub unsafe fn on_shutdown(this:GmapMenuSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_FriendItemMethods:IGmapMenuSequence_GmapMenu_FriendItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",15usize,__vt.len(), <GmapMenuSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
-let inner:extern "C" fn(GmapMenuSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",27usize,__vt.len(), <GmapMenuSequence_GmapMenu_FriendItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_FriendItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_FriendItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <GmapMenuSequence_GmapMenu_FriendItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_FriendItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_FriendItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_FriendItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b830usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_FriendItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_FriendItem>IGmapMenuSequence_GmapMenu_FriendItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_FriendItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_FriendItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_FriendItem`'s own `get_FlagID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flag_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_flag_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_FriendItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_FriendItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_FriendItem`'s own `GetMapAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::get_map_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_FriendItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_FriendItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_FriendItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_FriendItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff340usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,open_top_callback:impl::core::convert::Into<crate::system::action::Action> ,decide_callback:impl::core::convert::Into<crate::system::action::Action> ,close_callback:impl::core::convert::Into<crate::system::action::Action>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x252e3a0usize)as*mut u8,crate::app::procinst::ProcInst;
@@ -1711,7 +1403,16 @@ inner(this,__mi)}
 (GmapMenuSequence)__receiver)}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <GmapMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <GmapMenuSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let __inner:extern "C" fn(GmapMenuSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <GmapMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x252f040usize)as*mut u8,();
@@ -1743,10 +1444,549 @@ pub fn enter_chapter_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInf
 pub fn final_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence{#[doc="Direct (non-virtual) call to `GmapMenuSequence`'s own `OnShutdown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_shutdown(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_shutdown_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence{#[doc="`.ctor(crate::system::action::Action, crate::system::action::Action, crate::system::action::Action)` — overload selector"]pub fn new(open_top_callback:crate::system::action::Action,decide_callback:crate::system::action::Action,close_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GmapMenuSequence), ::core::stringify!(new),));
  <Self as IGmapMenuSequenceMethods> ::ctor(this,open_top_callback,decide_callback,close_callback);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fef60usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ff0e0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem>IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d270usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenuMethods:IGmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d4c0usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubShopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubShopMenu>IGmapMenuSequence_GmapMenu_SubShopMenuMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubShopMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SaveItemMethods:IGmapMenuSequence_GmapMenu_SaveItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SaveItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SaveItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SaveItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SaveItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SaveItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d090usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SaveItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SaveItem>IGmapMenuSequence_GmapMenu_SaveItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SaveItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SaveItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SaveItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SaveItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SaveItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SaveItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SaveItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SaveItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SaveItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu{#[doc="`get_EnterChapterType()` overload"]pub fn get_enter_chapter_type()->crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cccd10usize)as*mut u8,crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cccdc0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`AddStartChapterItem(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]pub fn add_start_chapter_item(menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ccd190usize)as*mut u8,();
+(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenuMethods:IGmapMenuSequence_GmapMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cccd60usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <GmapMenuSequence_GmapMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnResume()` overload"]fn on_resume(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu as::unity2::ClassIdentity> ::NAME,"OnResume",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <GmapMenuSequence_GmapMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu>IGmapMenuSequence_GmapMenuMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu{pub fn get_enter_chapter_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_start_chapter_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu`'s own `OnResume`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_resume(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_resume_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3b5e0usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenuMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d460usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubFriendMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu>IGmapMenuSequence_GmapMenu_SubFriendMenuMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubFriendMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_MaterialListItemMethods:IGmapMenuSequence_GmapMenu_MaterialListItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_MaterialListItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_MaterialListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3c840usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_MaterialListItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_MaterialListItem>IGmapMenuSequence_GmapMenu_MaterialListItemMethods for __T{}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_MaterialListItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_MaterialListItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_MaterialListItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_MaterialListItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_MaterialListItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_MaterialListItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_MaterialListItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_MaterialListItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_MaterialListItemMethods> ::ctor(this,);
 this}
 }
 
@@ -1789,102 +2029,107 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fd870usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d580usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
 }
 }
 
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]fn ctor(self,result_func:impl::core::convert::Into<crate::app::netenablesequence::NetEnableSequence_ResultFunction>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd730usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence)__receiver,(crate::app::netenablesequence::NetEnableSequence_ResultFunction)::core::convert::Into::into(result_func))}
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubSystemMenuMethods:IGmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d520usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubSystemMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
 }
-#[doc="`Confirm()` overload"]fn confirm(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fd770usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence)__receiver)}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubSystemMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubSystemMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence>IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods for __T{}
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubSystemMenu>IGmapMenuSequence_GmapMenu_SubSystemMenuMethods for __T{}
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn confirm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence{#[doc="`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]pub fn new(result_func:crate::app::netenablesequence::NetEnableSequence_ResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubSystemMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods> ::ctor(this,result_func);
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubSystemMenu), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubSystemMenuMethods> ::ctor(this,menu_item_list,menu_content);
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods:IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods:IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22feac0usize)as*mut u8,();
@@ -1902,6 +2147,23 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem), ::core::stringify!(new),));
@@ -1909,112 +2171,75 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,jump_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22fdaf0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(jump_func))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods:IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,jump_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fda90usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence)__receiver,(crate::system::action::Action)::core::convert::Into::into(jump_func))}
-}
-#[doc="`JumpToRanking()` overload"]fn jump_to_ranking(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fdad0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence>IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn jump_to_ranking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(jump_func:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods> ::ctor(this,jump_func);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe2b0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe880usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods for __T{}
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods for __T{}
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
@@ -2022,80 +2247,89 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods:IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods:IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22fed00usize)as*mut u8,();
@@ -2113,6 +2347,23 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem), ::core::stringify!(new),));
@@ -2120,196 +2371,153 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods:IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3edb0d0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem)__receiver)}
+__inner(__receiver,__mi)}
 }
 }
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem>IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_EnterChapterItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_EnterChapterItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_build(this:GmapMenuSequence_GmapMenu_EnterChapterItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_EnterChapterItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_EnterChapterItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_EnterChapterItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`get_Type()` overload"]pub fn get_type()->crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3aab0usize)as*mut u8,crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type;
-)}
-}
-#[doc="`set_Type(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"]pub fn set_type(value:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ab00usize)as*mut u8,();
-(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(value))}
+__inner(__receiver,__mi)}
 }
 }
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_EnterChapterItemMethods:IGmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3ab60usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_EnterChapterItem)__receiver,(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)::core::convert::Into::into(r#type))}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
 }
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_EnterChapterItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_EnterChapterItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22fe050usize)as*mut u8,();
+(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_EnterChapterItem>IGmapMenuSequence_GmapMenu_EnterChapterItemMethods for __T{}
+#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem>IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods for __T{}
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_EnterChapterItem{#[doc="`.ctor(crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)` — overload selector"]pub fn new(r#type:crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_EnterChapterItem), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_EnterChapterItemMethods> ::ctor(this,r#type);
+ failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem), ::core::stringify!(new),));
+ <Self as IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_GoToSolanelItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods:IGmapMenuSequence_GmapMenu_GoToSolanelItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_help_text(this:GmapMenuSequence_GmapMenu_GoToSolanelItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",28usize,__vt.len(), <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:GmapMenuSequence_GmapMenu_GoToSolanelItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:GmapMenuSequence_GmapMenu_GoToSolanelItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",18usize,__vt.len(), <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(GmapMenuSequence_GmapMenu_GoToSolanelItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods:IGmapMenuSequence_GmapMenu_GoToSolanelItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_GoToSolanelItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_GoToSolanelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3bee0usize)as*mut u8,();
@@ -2326,6 +2534,20 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
+#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GoToSolanelItem{#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GoToSolanelItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GoToSolanelItem`'s own `GetHelpText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_help_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_help_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GoToSolanelItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GmapMenuSequence_GmapMenu_GoToSolanelItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_GoToSolanelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_GoToSolanelItem), ::core::stringify!(new),));
@@ -2333,142 +2555,101 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-gmapmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:GmapMenuSequence_GmapMenu_SubShopMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <GmapMenuSequence_GmapMenu_SubShopMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(GmapMenuSequence_GmapMenu_SubShopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d270usize)as*mut u8,();
-(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]pub trait IGmapMenuSequence_GmapMenu_SubShopMenuMethods:IGmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3d4c0usize)as*mut u8,();
-(GmapMenuSequence_GmapMenu_SubShopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GmapMenuSequence_GmapMenu_SubShopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GmapMenuSequence_GmapMenu_SubShopMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl<__T:IGmapMenuSequence_GmapMenu_SubShopMenu>IGmapMenuSequence_GmapMenu_SubShopMenuMethods for __T{}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-gmapmenusequence")]impl GmapMenuSequence_GmapMenu_SubShopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GmapMenuSequence_GmapMenu_SubShopMenu), ::core::stringify!(new),));
- <Self as IGmapMenuSequence_GmapMenu_SubShopMenuMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
 #[cfg(feature = "app-gmapmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapMenuSequence_Label;
-    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenuMethods;
-    pub use super::GmapMenuSequence_GmapMenu_ShopItem;
-    pub use super::IGmapMenuSequence_GmapMenu_ShopItem;
-    pub use super::IGmapMenuSequence_GmapMenu_ShopItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SaveItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SaveItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SaveItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_FriendItem;
-    pub use super::IGmapMenuSequence_GmapMenu_FriendItem;
-    pub use super::IGmapMenuSequence_GmapMenu_FriendItemMethods;
-    pub use super::GmapMenuSequence_GoToMapSequence_Label;
-    pub use super::GmapMenuSequence_GmapMenu_SystemItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SystemItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SystemItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenuMethods;
-    pub use super::GmapMenuSequence_GmapMenu_InventoryItem;
-    pub use super::IGmapMenuSequence_GmapMenu_InventoryItem;
-    pub use super::IGmapMenuSequence_GmapMenu_InventoryItemMethods;
     pub use super::GmapMenuSequence_GmapMenu_RankingItem;
     pub use super::IGmapMenuSequence_GmapMenu_RankingItem;
     pub use super::IGmapMenuSequence_GmapMenu_RankingItemMethods;
     pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem;
     pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItem;
     pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_YesMenuItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_MaterialListItem;
-    pub use super::IGmapMenuSequence_GmapMenu_MaterialListItem;
-    pub use super::IGmapMenuSequence_GmapMenu_MaterialListItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_GmapMenuMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GmapMenuMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu;
-    pub use super::IGmapMenuSequence_GmapMenu;
-    pub use super::IGmapMenuSequence_GmapMenuMethods;
-    pub use super::GmapMenuSequence_GmapMenu_GodItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GodItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GodItemMethods;
-    pub use super::GmapMenuSequence;
-    pub use super::IGmapMenuSequence;
-    pub use super::IGmapMenuSequenceMethods;
-    pub use super::GmapMenuSequence_GoToMapSequence;
-    pub use super::IGmapMenuSequence_GoToMapSequence;
-    pub use super::IGmapMenuSequence_GoToMapSequenceMethods;
-    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods;
     pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem;
     pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItem;
     pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_NotebookItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem;
-    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_GodItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GodItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GodItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_ShopItem;
+    pub use super::IGmapMenuSequence_GmapMenu_ShopItem;
+    pub use super::IGmapMenuSequence_GmapMenu_ShopItemMethods;
     pub use super::GmapMenuSequence_GmapMenu_EnterChapterItem;
     pub use super::IGmapMenuSequence_GmapMenu_EnterChapterItem;
     pub use super::IGmapMenuSequence_GmapMenu_EnterChapterItemMethods;
-    pub use super::GmapMenuSequence_GmapMenu_GoToSolanelItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GoToSolanelItem;
-    pub use super::IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_GmapMenuMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GmapMenuMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GmapMenuMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RelianceItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SystemItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SystemItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SystemItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequence;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_JumpToRankingSequenceMethods;
+    pub use super::GmapMenuSequence_Label;
+    pub use super::GmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_RankingItem_ConfirmSequence_NoMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_InventoryItem;
+    pub use super::IGmapMenuSequence_GmapMenu_InventoryItem;
+    pub use super::IGmapMenuSequence_GmapMenu_InventoryItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_FriendItem;
+    pub use super::IGmapMenuSequence_GmapMenu_FriendItem;
+    pub use super::IGmapMenuSequence_GmapMenu_FriendItemMethods;
+    pub use super::GmapMenuSequence_GoToMapSequence_Label;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_TutorialItemMethods;
+    pub use super::GmapMenuSequence;
+    pub use super::IGmapMenuSequence;
+    pub use super::IGmapMenuSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ConfigItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu_ResetItemMethods;
     pub use super::GmapMenuSequence_GmapMenu_SubShopMenu;
     pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu;
     pub use super::IGmapMenuSequence_GmapMenu_SubShopMenuMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SaveItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SaveItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SaveItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu;
+    pub use super::IGmapMenuSequence_GmapMenu;
+    pub use super::IGmapMenuSequence_GmapMenuMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenuMethods;
+    pub use super::GmapMenuSequence_GmapMenu_MaterialListItem;
+    pub use super::IGmapMenuSequence_GmapMenu_MaterialListItem;
+    pub use super::IGmapMenuSequence_GmapMenu_MaterialListItemMethods;
+    pub use super::GmapMenuSequence_GoToMapSequence;
+    pub use super::IGmapMenuSequence_GoToMapSequence;
+    pub use super::IGmapMenuSequence_GoToMapSequenceMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubSystemMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenu;
+    pub use super::IGmapMenuSequence_GmapMenu_SubSystemMenuMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_ItemShopMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_RingbookItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubShopMenu_WeaponShopMenuItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItem;
+    pub use super::IGmapMenuSequence_GmapMenu_SubFriendMenu_KizunaItemMethods;
+    pub use super::GmapMenuSequence_GmapMenu_GoToSolanelItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GoToSolanelItem;
+    pub use super::IGmapMenuSequence_GmapMenu_GoToSolanelItemMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

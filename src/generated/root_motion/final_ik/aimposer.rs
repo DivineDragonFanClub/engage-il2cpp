@@ -17,43 +17,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/aimposer/AimPoser.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="AimPoser")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AimPoser{#[offset(24)]#[rename(name="angleBuffer")]pub angle_buffer:f32, #[offset(32)]#[rename(name="poses")]pub poses: ::unity2::Array<crate::root_motion::final_ik::aimposer::AimPoser_Pose> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/aimposer/AimPoser_Pose.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="AimPoser.Pose")]#[parent(crate::system::object::Object)]pub struct AimPoser_Pose{#[offset(16)]#[rename(name="visualize")]pub visualize:bool, #[offset(24)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="direction")]pub direction:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="yaw")]pub yaw:f32, #[offset(48)]#[rename(name="pitch")]pub pitch:f32, #[offset(52)]#[rename(name="angleBuffer")]pub angle_buffer_field:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/aimposer/AimPoser.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="AimPoser")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AimPoser{#[offset(24)]#[rename(name="angleBuffer")]pub angle_buffer:f32, #[offset(32)]#[rename(name="poses")]pub poses: ::unity2::Array<crate::root_motion::final_ik::aimposer::AimPoser_Pose> ,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-aimposer-types")]
 pub use __types::*;
-
-#[cfg(feature="root_motion-final_ik-aimposer")]pub trait IAimPoserMethods:IAimPoser{#[doc="`GetPose(crate::unity_engine::vector3::Vector3)` overload"]fn get_pose(self,local_direction:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::root_motion::final_ik::aimposer::AimPoser_Pose{unsafe{let __receiver= <AimPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb540usize)as*mut u8,crate::root_motion::final_ik::aimposer::AimPoser_Pose;
-(AimPoser)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(local_direction))}
-}
-#[doc="`SetPoseActive(crate::root_motion::final_ik::aimposer::AimPoser_Pose)` overload"]fn set_pose_active(self,pose:impl::core::convert::Into<crate::root_motion::final_ik::aimposer::AimPoser_Pose>)->(){unsafe{let __receiver= <AimPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb620usize)as*mut u8,();
-(AimPoser)__receiver,(crate::root_motion::final_ik::aimposer::AimPoser_Pose)::core::convert::Into::into(pose))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AimPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb6a0usize)as*mut u8,();
-(AimPoser)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-aimposer")]impl<__T:IAimPoser>IAimPoserMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-aimposer")]impl AimPoser{pub fn get_pose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_pose_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="root_motion-final_ik-aimposer")]impl AimPoser{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AimPoser), ::core::stringify!(new),));
- <Self as IAimPoserMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="root_motion-final_ik-aimposer")]pub trait IAimPoser_PoseMethods:IAimPoser_Pose{#[doc="`IsInDirection(crate::unity_engine::vector3::Vector3)` overload"]fn is_in_direction(self,d:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{let __receiver= <AimPoser_Pose as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ad00usize)as*mut u8,bool;
@@ -83,15 +55,43 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-aimposer")]pub trait IAimPoserMethods:IAimPoser{#[doc="`GetPose(crate::unity_engine::vector3::Vector3)` overload"]fn get_pose(self,local_direction:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::root_motion::final_ik::aimposer::AimPoser_Pose{unsafe{let __receiver= <AimPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb540usize)as*mut u8,crate::root_motion::final_ik::aimposer::AimPoser_Pose;
+(AimPoser)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(local_direction))}
+}
+#[doc="`SetPoseActive(crate::root_motion::final_ik::aimposer::AimPoser_Pose)` overload"]fn set_pose_active(self,pose:impl::core::convert::Into<crate::root_motion::final_ik::aimposer::AimPoser_Pose>)->(){unsafe{let __receiver= <AimPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb620usize)as*mut u8,();
+(AimPoser)__receiver,(crate::root_motion::final_ik::aimposer::AimPoser_Pose)::core::convert::Into::into(pose))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AimPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb6a0usize)as*mut u8,();
+(AimPoser)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-aimposer")]impl<__T:IAimPoser>IAimPoserMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-aimposer")]impl AimPoser{pub fn get_pose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pose_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root_motion-final_ik-aimposer")]impl AimPoser{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AimPoser), ::core::stringify!(new),));
+ <Self as IAimPoserMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root_motion-final_ik-aimposer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AimPoser;
-    pub use super::IAimPoser;
-    pub use super::IAimPoserMethods;
     pub use super::AimPoser_Pose;
     pub use super::IAimPoser_Pose;
     pub use super::IAimPoser_PoseMethods;
+    pub use super::AimPoser;
+    pub use super::IAimPoser;
+    pub use super::IAimPoserMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

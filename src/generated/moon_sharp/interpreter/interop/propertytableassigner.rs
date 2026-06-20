@@ -77,16 +77,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <PropertyTableAssigner as::unity2::ClassIdentity> ::NAME,"SetSubassignerForType",e),}
 }
 }
-pub unsafe fn moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(this:PropertyTableAssigner,obj:crate::system::object::Object,data:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <PropertyTableAssigner as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked",));
-let inner:extern "C" fn(PropertyTableAssigner,crate::system::object::Object,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,data,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-propertytableassigner")]pub trait IPropertyTableAssignerMethods:IPropertyTableAssigner{#[doc="`.ctor(::unity2::SystemType, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,expected_missing_properties:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PropertyTableAssigner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -114,7 +104,16 @@ inner(this,obj,data,__mi)}
 (PropertyTableAssigner)__receiver,(::unity2::SystemType)::core::convert::Into::into(property_type),(crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface)::core::convert::Into::into(assigner))}
 }
 #[doc="`MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked(crate::system::object::Object, crate::moon_sharp::interpreter::table::Table)` overload"]fn moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(self,obj:impl::core::convert::Into<crate::system::object::Object> ,data:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <PropertyTableAssigner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PropertyTableAssigner_unity2_raw::moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <PropertyTableAssigner as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked",));
+let __inner:extern "C" fn(PropertyTableAssigner,crate::system::object::Object,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(data),__mi)}
+}
 }
 }
 
@@ -127,6 +126,11 @@ pub fn assign_property_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn assign_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn set_subassigner_for_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-propertytableassigner")]impl PropertyTableAssigner{#[doc="Direct (non-virtual) call to `PropertyTableAssigner`'s own `MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,data:crate::moon_sharp::interpreter::table::Table,)->(){let __mi=Self::moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj,data, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-propertytableassigner")]impl PropertyTableAssigner{#[doc="`.ctor(::unity2::SystemType, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new(r#type: ::unity2::SystemType,expected_missing_properties: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

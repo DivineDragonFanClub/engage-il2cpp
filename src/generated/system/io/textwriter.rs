@@ -12,74 +12,67 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/textwriter/TextWriter_NullTextWriter.md"))]#[::unity2::class(namespace="System.IO",name="TextWriter.NullTextWriter")]#[parent(crate::system::io::textwriter::TextWriter)]pub struct TextWriter_NullTextWriter{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/textwriter/TextWriter_SyncTextWriter.md"))]#[::unity2::class(namespace="System.IO",name="TextWriter.SyncTextWriter")]#[parent(crate::system::io::textwriter::TextWriter)]pub struct TextWriter_SyncTextWriter{#[offset(40)]#[rename(name="_out")]pub out:crate::system::io::textwriter::TextWriter,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/textwriter/TextWriter.md"))]#[::unity2::class(namespace="System.IO",name="TextWriter")]pub struct TextWriter{#[static_field]#[rename(name="Null")]pub null:crate::system::io::textwriter::TextWriter, #[static_field]#[rename(name="_WriteCharDelegate")]pub write_char_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteStringDelegate")]pub write_string_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteCharArrayRangeDelegate")]pub write_char_array_range_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteLineCharDelegate")]pub write_line_char_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteLineStringDelegate")]pub write_line_string_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_WriteLineCharArrayRangeDelegate")]pub write_line_char_array_range_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[static_field]#[rename(name="_FlushDelegate")]pub flush_delegate:crate::system::action_1::Action_1<crate::system::object::Object> , #[offset(24)]#[rename(name="CoreNewLine")]pub core_new_line: ::unity2::Array<u16> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/textwriter/TextWriter_SyncTextWriter.md"))]#[::unity2::class(namespace="System.IO",name="TextWriter.SyncTextWriter")]#[parent(crate::system::io::textwriter::TextWriter)]pub struct TextWriter_SyncTextWriter{#[offset(40)]#[rename(name="_out")]pub out:crate::system::io::textwriter::TextWriter,}
 
 }
 
 #[cfg(feature = "system-io-textwriter-types")]
 pub use __types::*;
 
-#[cfg(feature="system-io-textwriter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextWriter_NullTextWriter_unity2_raw{use super:: * ;
-pub unsafe fn write(this:TextWriter_NullTextWriter,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <TextWriter_NullTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(TextWriter_NullTextWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,buffer,index,count,__mi)}
-pub unsafe fn write_2(this:TextWriter_NullTextWriter,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <TextWriter_NullTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(TextWriter_NullTextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_line(this:TextWriter_NullTextWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <TextWriter_NullTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter_NullTextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn write_line_2(this:TextWriter_NullTextWriter,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <TextWriter_NullTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter_NullTextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-}
-
 #[cfg(feature="system-io-textwriter")]pub trait ITextWriter_NullTextWriterMethods:ITextWriter_NullTextWriter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5ae90usize)as*mut u8,();
 (TextWriter_NullTextWriter)__receiver)}
 }
 #[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_NullTextWriter_unity2_raw::write(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <TextWriter_NullTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(TextWriter_NullTextWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count),__mi)}
+}
 }
 #[doc="`Write(::unity2::Il2CppString)` overload"]fn write_2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_NullTextWriter_unity2_raw::write_2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <TextWriter_NullTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(TextWriter_NullTextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`WriteLine()` overload"]fn write_line(self,)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_NullTextWriter_unity2_raw::write_line(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <TextWriter_NullTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter_NullTextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`WriteLine(::unity2::Il2CppString)` overload"]fn write_line_2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter_NullTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_NullTextWriter_unity2_raw::write_line_2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <TextWriter_NullTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter_NullTextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -92,357 +85,25 @@ pub fn write_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn write_line_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
+#[cfg(feature="system-io-textwriter")]impl TextWriter_NullTextWriter{#[doc="Direct (non-virtual) call to `TextWriter_NullTextWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::Array<u16> ,index:i32,count:i32,)->(){let __mi=Self::write_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),buffer,index,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_NullTextWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::write_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_NullTextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::write_line_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_NullTextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::write_line_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-io-textwriter")]impl TextWriter_NullTextWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TextWriter_NullTextWriter), ::core::stringify!(new),));
  <Self as ITextWriter_NullTextWriterMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="system-io-textwriter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextWriter_SyncTextWriter_unity2_raw{use super:: * ;
-pub unsafe fn close(this:TextWriter_SyncTextWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Close",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:TextWriter_SyncTextWriter,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,disposing,__mi)}
-pub unsafe fn flush(this:TextWriter_SyncTextWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Flush",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn write(this:TextWriter_SyncTextWriter,value:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_2(this:TextWriter_SyncTextWriter,buffer: ::unity2::Array<u16> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,buffer,__mi)}
-pub unsafe fn write_3(this:TextWriter_SyncTextWriter,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,buffer,index,count,__mi)}
-pub unsafe fn write_4(this:TextWriter_SyncTextWriter,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_line(this:TextWriter_SyncTextWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn write_line_2(this:TextWriter_SyncTextWriter,value:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_line_3(this:TextWriter_SyncTextWriter,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,buffer,index,count,__mi)}
-pub unsafe fn write_line_4(this:TextWriter_SyncTextWriter,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_line_5(this:TextWriter_SyncTextWriter,format: ::unity2::Il2CppString,arg0:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,format,arg0,__mi)}
-pub unsafe fn write_line_6(this:TextWriter_SyncTextWriter,format: ::unity2::Il2CppString,arg0:crate::system::object::Object,arg1:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Il2CppString,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,format,arg0,arg1,__mi)}
-}
-
-#[cfg(feature="system-io-textwriter")]pub trait ITextWriter_SyncTextWriterMethods:ITextWriter_SyncTextWriter{#[doc="`.ctor(crate::system::io::textwriter::TextWriter)` overload"]fn ctor(self,t:impl::core::convert::Into<crate::system::io::textwriter::TextWriter>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af90usize)as*mut u8,();
-(TextWriter_SyncTextWriter)__receiver,(crate::system::io::textwriter::TextWriter)::core::convert::Into::into(t))}
-}
-#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::close(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
-}
-#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::flush(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Write(u16)` overload"]fn write(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::write(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`Write(::unity2::Array<u16>)` overload"]fn write_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::write_2(__receiver, ::core::convert::Into::into(buffer), ::core::option::Option::None)}
-}
-#[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write_3(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::write_3(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
-}
-#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::write_4(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`WriteLine()` overload"]fn write_line(self,)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::write_line(__receiver, ::core::option::Option::None)}
-}
-#[doc="`WriteLine(u16)` overload"]fn write_line_2(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::write_line_2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`WriteLine(::unity2::Array<u16>, i32, i32)` overload"]fn write_line_3(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::write_line_3(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
-}
-#[doc="`WriteLine(::unity2::Il2CppString)` overload"]fn write_line_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::write_line_4(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`WriteLine(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn write_line_5(self,format:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::write_line_5(__receiver, ::core::convert::Into::into(format), ::core::convert::Into::into(arg0), ::core::option::Option::None)}
-}
-#[doc="`WriteLine(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]fn write_line_6(self,format:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into<crate::system::object::Object> ,arg1:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_SyncTextWriter_unity2_raw::write_line_6(__receiver, ::core::convert::Into::into(format), ::core::convert::Into::into(arg0), ::core::convert::Into::into(arg1), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="system-io-textwriter")]impl<__T:ITextWriter_SyncTextWriter>ITextWriter_SyncTextWriterMethods for __T{}
-
-#[cfg(feature="system-io-textwriter")]impl TextWriter_SyncTextWriter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn write_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn write_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn write_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn write_line_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn write_line_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn write_line_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn write_line_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn write_line_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-}
-
-#[cfg(feature="system-io-textwriter")]impl TextWriter_SyncTextWriter{#[doc="`.ctor(crate::system::io::textwriter::TextWriter)` — overload selector"]pub fn new(t:crate::system::io::textwriter::TextWriter)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TextWriter_SyncTextWriter), ::core::stringify!(new),));
- <Self as ITextWriter_SyncTextWriterMethods> ::ctor(this,t);
-this}
-}
-
-#[cfg(feature="system-io-textwriter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextWriter_unity2_raw{use super:: * ;
-pub unsafe fn close(this:TextWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Close",));
-let inner:extern "C" fn(TextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:TextWriter,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(TextWriter,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,disposing,__mi)}
-pub unsafe fn dispose_2(this:TextWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(TextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn flush(this:TextWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Flush",));
-let inner:extern "C" fn(TextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn write(this:TextWriter,value:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(TextWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_2(this:TextWriter,buffer: ::unity2::Array<u16> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(TextWriter, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,buffer,__mi)}
-pub unsafe fn write_3(this:TextWriter,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(TextWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,buffer,index,count,__mi)}
-pub unsafe fn write_4(this:TextWriter,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(TextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_line(this:TextWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn write_line_2(this:TextWriter,value:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_line_3(this:TextWriter,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,buffer,index,count,__mi)}
-pub unsafe fn write_line_4(this:TextWriter,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn write_line_5(this:TextWriter,format: ::unity2::Il2CppString,arg0:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,format,arg0,__mi)}
-pub unsafe fn write_line_6(this:TextWriter,format: ::unity2::Il2CppString,arg0:crate::system::object::Object,arg1:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
-let inner:extern "C" fn(TextWriter, ::unity2::Il2CppString,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,format,arg0,arg1,__mi)}
 }
 
 #[cfg(feature="system-io-textwriter")]impl TextWriter{#[doc="`get_InitialNewLine()` overload"]pub fn get_initial_new_line()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34e1330usize)as*mut u8, ::unity2::Il2CppString;
@@ -461,46 +122,172 @@ inner(this,format,arg0,arg1,__mi)}
 (TextWriter)__receiver)}
 }
 #[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Close",));
+let __inner:extern "C" fn(TextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(TextWriter,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
+}
 }
 #[doc="`Dispose()` overload"]fn dispose_2(self,)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::dispose_2(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(TextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::flush(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Flush",));
+let __inner:extern "C" fn(TextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Write(u16)` overload"]fn write(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::write(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(TextWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`Write(::unity2::Array<u16>)` overload"]fn write_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::write_2(__receiver, ::core::convert::Into::into(buffer), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(TextWriter, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(buffer),__mi)}
+}
 }
 #[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write_3(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::write_3(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(TextWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count),__mi)}
+}
 }
 #[doc="`Write(::unity2::Il2CppString)` overload"]fn write_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::write_4(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(TextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`WriteLine()` overload"]fn write_line(self,)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::write_line(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`WriteLine(u16)` overload"]fn write_line_2(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::write_line_2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`WriteLine(::unity2::Array<u16>, i32, i32)` overload"]fn write_line_3(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::write_line_3(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count),__mi)}
+}
 }
 #[doc="`WriteLine(::unity2::Il2CppString)` overload"]fn write_line_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::write_line_4(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`WriteLine(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn write_line_5(self,format:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::write_line_5(__receiver, ::core::convert::Into::into(format), ::core::convert::Into::into(arg0), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(format), ::core::convert::Into::into(arg0),__mi)}
+}
 }
 #[doc="`WriteLine(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]fn write_line_6(self,format:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into<crate::system::object::Object> ,arg1:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <TextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__TextWriter_unity2_raw::write_line_6(__receiver, ::core::convert::Into::into(format), ::core::convert::Into::into(arg0), ::core::convert::Into::into(arg1), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <TextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter, ::unity2::Il2CppString,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(format), ::core::convert::Into::into(arg0), ::core::convert::Into::into(arg1),__mi)}
+}
 }
 }
 
@@ -526,10 +313,282 @@ pub fn write_line_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 }
 
+#[cfg(feature="system-io-textwriter")]impl TextWriter{#[doc="Direct (non-virtual) call to `TextWriter`'s own `Close`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),disposing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `Flush`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn flush(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::flush_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:u16,)->(){let __mi=Self::write_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::Array<u16> ,)->(){let __mi=Self::write_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),buffer, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_3(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::Array<u16> ,index:i32,count:i32,)->(){let __mi=Self::write_3_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),buffer,index,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_4(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::write_4_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::write_line_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:u16,)->(){let __mi=Self::write_line_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_3(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::Array<u16> ,index:i32,count:i32,)->(){let __mi=Self::write_line_3_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),buffer,index,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_4(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::write_line_4_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_5(this:impl::core::convert::Into< ::unity2::IlInstance> ,format: ::unity2::Il2CppString,arg0:crate::system::object::Object,)->(){let __mi=Self::write_line_5_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),format,arg0, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_6(this:impl::core::convert::Into< ::unity2::IlInstance> ,format: ::unity2::Il2CppString,arg0:crate::system::object::Object,arg1:crate::system::object::Object,)->(){let __mi=Self::write_line_6_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),format,arg0,arg1, ::core::option::Option::None)}
+}
+
 #[cfg(feature="system-io-textwriter")]impl TextWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(TextWriter), ::core::stringify!(new),));
  <Self as ITextWriterMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="system-io-textwriter")]pub trait ITextWriter_SyncTextWriterMethods:ITextWriter_SyncTextWriter{#[doc="`.ctor(crate::system::io::textwriter::TextWriter)` overload"]fn ctor(self,t:impl::core::convert::Into<crate::system::io::textwriter::TextWriter>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5af90usize)as*mut u8,();
+(TextWriter_SyncTextWriter)__receiver,(crate::system::io::textwriter::TextWriter)::core::convert::Into::into(t))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Close",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
+}
+}
+#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Flush",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Write(u16)` overload"]fn write(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`Write(::unity2::Array<u16>)` overload"]fn write_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(buffer),__mi)}
+}
+}
+#[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write_3(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count),__mi)}
+}
+}
+#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`WriteLine()` overload"]fn write_line(self,)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`WriteLine(u16)` overload"]fn write_line_2(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`WriteLine(::unity2::Array<u16>, i32, i32)` overload"]fn write_line_3(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count),__mi)}
+}
+}
+#[doc="`WriteLine(::unity2::Il2CppString)` overload"]fn write_line_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`WriteLine(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn write_line_5(self,format:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(format), ::core::convert::Into::into(arg0),__mi)}
+}
+}
+#[doc="`WriteLine(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]fn write_line_6(self,format:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into<crate::system::object::Object> ,arg1:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <TextWriter_SyncTextWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <TextWriter_SyncTextWriter as::unity2::ClassIdentity> ::NAME,"WriteLine",));
+let __inner:extern "C" fn(TextWriter_SyncTextWriter, ::unity2::Il2CppString,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(format), ::core::convert::Into::into(arg0), ::core::convert::Into::into(arg1),__mi)}
+}
+}
+}
+
+#[cfg(feature="system-io-textwriter")]impl<__T:ITextWriter_SyncTextWriter>ITextWriter_SyncTextWriterMethods for __T{}
+
+#[cfg(feature="system-io-textwriter")]impl TextWriter_SyncTextWriter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn write_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn write_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn write_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn write_line_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn write_line_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn write_line_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn write_line_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn write_line_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
+
+#[cfg(feature="system-io-textwriter")]impl TextWriter_SyncTextWriter{#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `Close`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),disposing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `Flush`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn flush(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::flush_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:u16,)->(){let __mi=Self::write_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::Array<u16> ,)->(){let __mi=Self::write_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),buffer, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_3(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::Array<u16> ,index:i32,count:i32,)->(){let __mi=Self::write_3_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),buffer,index,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_4(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::write_4_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::write_line_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:u16,)->(){let __mi=Self::write_line_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_3(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::Array<u16> ,index:i32,count:i32,)->(){let __mi=Self::write_line_3_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),buffer,index,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_4(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::write_line_4_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_5(this:impl::core::convert::Into< ::unity2::IlInstance> ,format: ::unity2::Il2CppString,arg0:crate::system::object::Object,)->(){let __mi=Self::write_line_5_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),format,arg0, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `TextWriter_SyncTextWriter`'s own `WriteLine`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_line_6(this:impl::core::convert::Into< ::unity2::IlInstance> ,format: ::unity2::Il2CppString,arg0:crate::system::object::Object,arg1:crate::system::object::Object,)->(){let __mi=Self::write_line_6_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),format,arg0,arg1, ::core::option::Option::None)}
+}
+
+#[cfg(feature="system-io-textwriter")]impl TextWriter_SyncTextWriter{#[doc="`.ctor(crate::system::io::textwriter::TextWriter)` — overload selector"]pub fn new(t:crate::system::io::textwriter::TextWriter)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextWriter_SyncTextWriter), ::core::stringify!(new),));
+ <Self as ITextWriter_SyncTextWriterMethods> ::ctor(this,t);
 this}
 }
 
@@ -539,12 +598,12 @@ pub mod prelude {
     pub use super::TextWriter_NullTextWriter;
     pub use super::ITextWriter_NullTextWriter;
     pub use super::ITextWriter_NullTextWriterMethods;
-    pub use super::TextWriter_SyncTextWriter;
-    pub use super::ITextWriter_SyncTextWriter;
-    pub use super::ITextWriter_SyncTextWriterMethods;
     pub use super::TextWriter;
     pub use super::ITextWriter;
     pub use super::ITextWriterMethods;
+    pub use super::TextWriter_SyncTextWriter;
+    pub use super::ITextWriter_SyncTextWriter;
+    pub use super::ITextWriter_SyncTextWriterMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

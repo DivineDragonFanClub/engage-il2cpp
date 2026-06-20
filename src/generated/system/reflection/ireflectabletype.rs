@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "system-reflection-ireflectabletype-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-ireflectabletype")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IReflectableType_unity2_raw{use super:: * ;
-pub unsafe fn get_type_info(this:IReflectableType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::typeinfo::TypeInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-reflection-ireflectabletype")]pub trait IIReflectableTypeMethods:IIReflectableType{#[doc="`GetTypeInfo()` overload"]fn get_type_info(self,)->crate::system::reflection::typeinfo::TypeInfo{unsafe{let __receiver= <IReflectableType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IReflectableType as::unity2::ClassIdentity> ::NAME,"GetTypeInfo",));
-let inner:extern "C" fn(IReflectableType, ::unity2::OptionalMethod,)->crate::system::reflection::typeinfo::TypeInfo= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IReflectableType, ::unity2::OptionalMethod,)->crate::system::reflection::typeinfo::TypeInfo= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="system-reflection-ireflectabletype")]pub trait IIReflectableTypeMethods:IIReflectableType{#[doc="`GetTypeInfo()` overload"]fn get_type_info(self,)->crate::system::reflection::typeinfo::TypeInfo{unsafe{let __receiver= <IReflectableType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IReflectableType_unity2_raw::get_type_info(__receiver, ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="system-reflection-ireflectabletype")]impl<__T:IIReflectableType>IIReflectableTypeMethods for __T{}
 
 #[cfg(feature="system-reflection-ireflectabletype")]impl IReflectableType{pub fn get_type_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="system-reflection-ireflectabletype")]impl IReflectableType{#[doc="Direct (non-virtual) call to `IReflectableType`'s own `GetTypeInfo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_type_info(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::typeinfo::TypeInfo{let __mi=Self::get_type_info_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::typeinfo::TypeInfo= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "system-reflection-ireflectabletype")]

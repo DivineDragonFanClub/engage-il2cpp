@@ -17,13 +17,13 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_UnitObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectFoodInfoContent.UnitObject")]#[parent(crate::system::object::Object)]pub struct DishSelectFoodInfoContent_UnitObject{#[offset(16)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_LikeObject")]pub m_like_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_DislikeObject")]pub m_dislike_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_NormalObject")]pub m_normal_object:crate::unity_engine::gameobject::GameObject,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectFoodInfoContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DishSelectFoodInfoContent{#[offset(24)]#[rename(name="m_FoodName")]pub m_food_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_FoodMessage")]pub m_food_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_DifficultyIcon")]pub m_difficulty_icon:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_DifficultyText")]pub m_difficulty_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_EnhanceAtkObject")]pub m_enhance_atk_object:crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, #[offset(64)]#[rename(name="m_EnhanceMagObject")]pub m_enhance_mag_object:crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, #[offset(72)]#[rename(name="m_EnhanceSpdObject")]pub m_enhance_spd_object:crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, #[offset(80)]#[rename(name="m_EnhanceDefObject")]pub m_enhance_def_object:crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, #[offset(88)]#[rename(name="m_EnhanceResObject")]pub m_enhance_res_object:crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, #[offset(96)]#[rename(name="m_FoodstuffList")]pub m_foodstuff_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_FoodstuffObject> , #[offset(104)]#[rename(name="m_UnitObjectList")]pub m_unit_object_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_UnitObject> , #[offset(112)]#[rename(name="m_Cook")]pub m_cook:crate::app::cookdata::CookData, #[offset(120)]#[rename(name="m_SelectedUnitCookList")]pub m_selected_unit_cook_list:crate::system::collections::generic::list_1::List_1<crate::app::cookdata::CookData> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_FoodstuffObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectFoodInfoContent.FoodstuffObject")]#[parent(crate::system::object::Object)]pub struct DishSelectFoodInfoContent_FoodstuffObject{#[offset(16)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_IconImage")]pub m_icon_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_NumText")]pub m_num_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_CountMessText")]pub m_count_mess_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_UnitObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectFoodInfoContent.UnitObject")]#[parent(crate::system::object::Object)]pub struct DishSelectFoodInfoContent_UnitObject{#[offset(16)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_LikeObject")]pub m_like_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_DislikeObject")]pub m_dislike_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_NormalObject")]pub m_normal_object:crate::unity_engine::gameobject::GameObject,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_EnhanceObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectFoodInfoContent.EnhanceObject")]#[parent(crate::system::object::Object)]pub struct DishSelectFoodInfoContent_EnhanceObject{#[offset(16)]#[rename(name="m_Value")]pub m_value:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Nothing")]pub m_nothing:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
@@ -32,6 +32,24 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent-types")]
 pub use __types::*;
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]pub trait IDishSelectFoodInfoContent_UnitObjectMethods:IDishSelectFoodInfoContent_UnitObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishSelectFoodInfoContent_UnitObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd24b0usize)as*mut u8,();
+(DishSelectFoodInfoContent_UnitObject)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl<__T:IDishSelectFoodInfoContent_UnitObject>IDishSelectFoodInfoContent_UnitObjectMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent_UnitObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent_UnitObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectFoodInfoContent_UnitObject), ::core::stringify!(new),));
+ <Self as IDishSelectFoodInfoContent_UnitObjectMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]pub trait IDishSelectFoodInfoContentMethods:IDishSelectFoodInfoContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <DishSelectFoodInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf6400usize)as*mut u8,();
@@ -99,24 +117,6 @@ this}
 this}
 }
 
-#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]pub trait IDishSelectFoodInfoContent_UnitObjectMethods:IDishSelectFoodInfoContent_UnitObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishSelectFoodInfoContent_UnitObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd24b0usize)as*mut u8,();
-(DishSelectFoodInfoContent_UnitObject)__receiver)}
-}
-}
-
-#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl<__T:IDishSelectFoodInfoContent_UnitObject>IDishSelectFoodInfoContent_UnitObjectMethods for __T{}
-
-#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent_UnitObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent_UnitObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DishSelectFoodInfoContent_UnitObject), ::core::stringify!(new),));
- <Self as IDishSelectFoodInfoContent_UnitObjectMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]pub trait IDishSelectFoodInfoContent_EnhanceObjectMethods:IDishSelectFoodInfoContent_EnhanceObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishSelectFoodInfoContent_EnhanceObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd2490usize)as*mut u8,();
 (DishSelectFoodInfoContent_EnhanceObject)__receiver)}
@@ -138,15 +138,15 @@ this}
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DishSelectFoodInfoContent_UnitObject;
+    pub use super::IDishSelectFoodInfoContent_UnitObject;
+    pub use super::IDishSelectFoodInfoContent_UnitObjectMethods;
     pub use super::DishSelectFoodInfoContent;
     pub use super::IDishSelectFoodInfoContent;
     pub use super::IDishSelectFoodInfoContentMethods;
     pub use super::DishSelectFoodInfoContent_FoodstuffObject;
     pub use super::IDishSelectFoodInfoContent_FoodstuffObject;
     pub use super::IDishSelectFoodInfoContent_FoodstuffObjectMethods;
-    pub use super::DishSelectFoodInfoContent_UnitObject;
-    pub use super::IDishSelectFoodInfoContent_UnitObject;
-    pub use super::IDishSelectFoodInfoContent_UnitObjectMethods;
     pub use super::DishSelectFoodInfoContent_EnhanceObject;
     pub use super::IDishSelectFoodInfoContent_EnhanceObject;
     pub use super::IDishSelectFoodInfoContent_EnhanceObjectMethods;

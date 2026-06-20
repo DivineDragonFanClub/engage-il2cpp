@@ -21,9 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/softnormalstovertexcolor/SoftNormalsToVertexColor.md"))]#[::unity2::class(namespace="",name="SoftNormalsToVertexColor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SoftNormalsToVertexColor{#[offset(24)]#[rename(name="method")]pub method:crate::root::softnormalstovertexcolor::SoftNormalsToVertexColor_Method, #[offset(28)]#[rename(name="generateOnAwake")]pub generate_on_awake:bool, #[offset(29)]#[rename(name="generateNow")]pub generate_now:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/softnormalstovertexcolor/SoftNormalsToVertexColor_Method.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SoftNormalsToVertexColor_Method{pub value:i32,}
 impl::unity2::ClassIdentity for SoftNormalsToVertexColor_Method{const NAMESPACE: &'static str="";
 const NAME: &'static str="SoftNormalsToVertexColor.Method";
@@ -38,6 +35,9 @@ impl SoftNormalsToVertexColor_Method{pub fn simple()->Self{Self{value:0}
 pub fn angular_deviation()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/softnormalstovertexcolor/SoftNormalsToVertexColor.md"))]#[::unity2::class(namespace="",name="SoftNormalsToVertexColor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SoftNormalsToVertexColor{#[offset(24)]#[rename(name="method")]pub method:crate::root::softnormalstovertexcolor::SoftNormalsToVertexColor_Method, #[offset(28)]#[rename(name="generateOnAwake")]pub generate_on_awake:bool, #[offset(29)]#[rename(name="generateNow")]pub generate_now:bool,}
 
 }
 
@@ -85,10 +85,10 @@ this}
 #[cfg(feature = "root-softnormalstovertexcolor")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SoftNormalsToVertexColor_Method;
     pub use super::SoftNormalsToVertexColor;
     pub use super::ISoftNormalsToVertexColor;
     pub use super::ISoftNormalsToVertexColorMethods;
-    pub use super::SoftNormalsToVertexColor_Method;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

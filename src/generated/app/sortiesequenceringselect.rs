@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceringselect/SortieSequenceRingSelect.md"))]#[::unity2::class(namespace="App",name="SortieSequenceRingSelect")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequenceringselect::SortieSequenceRingSelect>)]pub struct SortieSequenceRingSelect{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="HelpPrefabPath")]pub help_prefab_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_Window")]pub m_window:crate::app::ringselectroot::RingSelectRoot, #[offset(136)]#[rename(name="m_RingMenu")]pub m_ring_menu:crate::app::ringselectmenu::RingSelectMenu,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceringselect/SortieSequenceRingSelect_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSequenceRingSelect_Label{pub value:i32,}
 impl::unity2::ClassIdentity for SortieSequenceRingSelect_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SortieSequenceRingSelect.Label";
@@ -35,9 +38,6 @@ pub fn end_wait()->Self{Self{value:2}
 pub fn end()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceringselect/SortieSequenceRingSelect.md"))]#[::unity2::class(namespace="App",name="SortieSequenceRingSelect")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequenceringselect::SortieSequenceRingSelect>)]pub struct SortieSequenceRingSelect{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="HelpPrefabPath")]pub help_prefab_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_Window")]pub m_window:crate::app::ringselectroot::RingSelectRoot, #[offset(136)]#[rename(name="m_RingMenu")]pub m_ring_menu:crate::app::ringselectmenu::RingSelectMenu,}
 
 }
 
@@ -116,10 +116,10 @@ this}
 #[cfg(feature = "app-sortiesequenceringselect")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieSequenceRingSelect_Label;
     pub use super::SortieSequenceRingSelect;
     pub use super::ISortieSequenceRingSelect;
     pub use super::ISortieSequenceRingSelectMethods;
+    pub use super::SortieSequenceRingSelect_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

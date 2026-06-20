@@ -17,7 +17,16 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToPrevEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.ChangeUnitToPrevEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.SwitchDetailDisplaywayEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct WeaponShopBuyMenu{#[offset(200)]#[rename(name="m_ShopContentArray")]pub m_shop_content_array: ::unity2::Array<crate::app::shopcontent::ShopContent> , #[offset(208)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds, #[offset(216)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(224)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_RequestCloseEventHandler, #[offset(232)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(240)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler, #[offset(248)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler, #[offset(256)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler, #[offset(264)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToNextEventHandler, #[offset(272)]#[rename(name="m_SwitchDetailDisplaywayEventHandler")]pub m_switch_detail_displayway_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_SelectEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToNextEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.ChangeUnitToNextEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_ChangeUnitToNextEventHandler{}
@@ -26,103 +35,83 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_RequestCloseEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_SelectEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.SwitchDetailDisplaywayEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToPrevEventHandler.md"))]#[::unity2::class(namespace="App",name="WeaponShopBuyMenu.ChangeUnitToPrevEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{}
 
 }
 
 #[cfg(feature = "app-weaponshopbuymenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-weaponshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WeaponShopBuyMenu_unity2_raw{use super:: * ;
-pub unsafe fn after_build(this:WeaponShopBuyMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods:IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2ac20usize)as*mut u8,();
+(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",25usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
-let inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_name(this:WeaponShopBuyMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver, ::core::convert::Into::into(unit_item),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler>IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods for __T{}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu_ChangeUnitToPrevEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit_item:crate::app::unititem::UnitItem,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit_item, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler), ::core::stringify!(new),));
+ <Self as IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods:IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b9f0usize)as*mut u8,();
+(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",30usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn key_left(this:WeaponShopBuyMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
-let inner:extern "C" fn(WeaponShopBuyMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-pub unsafe fn key_right(this:WeaponShopBuyMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
-let inner:extern "C" fn(WeaponShopBuyMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-pub unsafe fn a_call(this:WeaponShopBuyMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",50usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:WeaponShopBuyMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn x_call(this:WeaponShopBuyMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",52usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"XCall",));
-let inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn custom_call(this:WeaponShopBuyMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",58usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
-let inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler>IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods for __T{}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler), ::core::stringify!(new),));
+ <Self as IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_RequestCloseEventHandler, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToNextEventHandler, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,select_event_handler:impl::core::convert::Into<crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler> ,request_close_menu_event_handler:impl::core::convert::Into<crate::app::weaponshopbuymenu::WeaponShopBuyMenu_RequestCloseEventHandler> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToNextEventHandler> ,switch_detail_display_way_event_handler:impl::core::convert::Into<crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler>)->crate::app::weaponshopbuymenu::WeaponShopBuyMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21cb480usize)as*mut u8,crate::app::weaponshopbuymenu::WeaponShopBuyMenu;
@@ -149,32 +138,104 @@ inner(this,__mi)}
 (WeaponShopBuyMenu)__receiver,(bool)::core::convert::Into::into(keep_select),(bool)::core::convert::Into::into(setup_shopdata))}
 }
 #[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <WeaponShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let __inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WeaponShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetSelect()` overload"]fn get_select(self,)->crate::app::basicmenuselect::BasicMenuSelect{unsafe{let __receiver= <WeaponShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21cc0d0usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
 (WeaponShopBuyMenu)__receiver)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <WeaponShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let __inner:extern "C" fn(WeaponShopBuyMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <WeaponShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let __inner:extern "C" fn(WeaponShopBuyMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WeaponShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WeaponShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WeaponShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",52usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"XCall",));
+let __inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WeaponShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <WeaponShopBuyMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let __inner:extern "C" fn(WeaponShopBuyMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDoneToBuy()` overload"]fn on_done_to_buy(self,)->(){unsafe{let __receiver= <WeaponShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21cd0a0usize)as*mut u8,();
@@ -202,6 +263,32 @@ pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn on_done_to_buy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu{#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu`'s own `AfterBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn after_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::after_build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu`'s own `KeyLeft`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_left(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::key_left_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu`'s own `KeyRight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_right(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::key_right_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu`'s own `XCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn x_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::x_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu`'s own `CustomCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn custom_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::custom_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::weaponshopbuymenucontent::WeaponShopBuyMenuContent, ::unity2::Array<crate::app::shopcontent::ShopContent>, crate::app::unit::Unit, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_RequestCloseEventHandler, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToNextEventHandler, crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::weaponshopbuymenucontent::WeaponShopBuyMenuContent,shop_content_array: ::unity2::Array<crate::app::shopcontent::ShopContent> ,unit:crate::app::unit::Unit,select_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler,decide_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler,request_close_menu_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_RequestCloseEventHandler,change_unit_to_prev_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,change_unit_to_next_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToNextEventHandler,switch_detail_displayway_event_handler:crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(WeaponShopBuyMenu), ::core::stringify!(new),));
@@ -209,95 +296,21 @@ pub fn on_done_to_buy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 this}
 }
 
-#[cfg(feature="app-weaponshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WeaponShopBuyMenu_ChangeUnitToNextEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:WeaponShopBuyMenu_ChangeUnitToNextEventHandler,unit_item:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(WeaponShopBuyMenu_ChangeUnitToNextEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit_item,__mi)}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods:IWeaponShopBuyMenu_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2a860usize)as*mut u8,();
-(WeaponShopBuyMenu_ChangeUnitToNextEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_ChangeUnitToNextEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit_item), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_ChangeUnitToNextEventHandler>IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods for __T{}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToNextEventHandler), ::core::stringify!(new),));
- <Self as IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WeaponShopBuyMenu_RequestCloseEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:WeaponShopBuyMenu_RequestCloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <WeaponShopBuyMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(WeaponShopBuyMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_RequestCloseEventHandlerMethods:IWeaponShopBuyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b3c0usize)as*mut u8,();
-(WeaponShopBuyMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <WeaponShopBuyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_RequestCloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_RequestCloseEventHandler>IWeaponShopBuyMenu_RequestCloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_RequestCloseEventHandler), ::core::stringify!(new),));
- <Self as IWeaponShopBuyMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WeaponShopBuyMenu_SelectEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:WeaponShopBuyMenu_SelectEventHandler,unit:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <WeaponShopBuyMenu_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(WeaponShopBuyMenu_SelectEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit,__mi)}
-}
-
 #[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_SelectEventHandlerMethods:IWeaponShopBuyMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b630usize)as*mut u8,();
 (WeaponShopBuyMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_SelectEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <WeaponShopBuyMenu_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(WeaponShopBuyMenu_SelectEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(unit),__mi)}
+}
 }
 }
 
@@ -307,6 +320,11 @@ __WeaponShopBuyMenu_SelectEventHandler_unity2_raw::invoke(__receiver, ::core::co
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SelectEventHandler{#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu_SelectEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit:crate::app::unititem::UnitItem,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_SelectEventHandler), ::core::stringify!(new),));
@@ -314,52 +332,76 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-weaponshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods:IWeaponShopBuyMenu_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2a860usize)as*mut u8,();
+(WeaponShopBuyMenu_ChangeUnitToNextEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <WeaponShopBuyMenu_ChangeUnitToNextEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(WeaponShopBuyMenu_ChangeUnitToNextEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver, ::core::convert::Into::into(unit_item),__mi)}
 }
-
-#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods:IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b9f0usize)as*mut u8,();
-(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler>IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods for __T{}
+#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_ChangeUnitToNextEventHandler>IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods for __T{}
 
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler{#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu_ChangeUnitToNextEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,unit_item:crate::app::unititem::UnitItem,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),unit_item, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler), ::core::stringify!(new),));
- <Self as IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToNextEventHandler), ::core::stringify!(new),));
+ <Self as IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
-#[cfg(feature="app-weaponshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WeaponShopBuyMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:WeaponShopBuyMenu_DecideEventHandler,item_data:crate::app::itemdata::ItemData,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_RequestCloseEventHandlerMethods:IWeaponShopBuyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2b3c0usize)as*mut u8,();
+(WeaponShopBuyMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <WeaponShopBuyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <WeaponShopBuyMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(WeaponShopBuyMenu_DecideEventHandler,crate::app::itemdata::ItemData, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <WeaponShopBuyMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(WeaponShopBuyMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,item_data,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_RequestCloseEventHandler>IWeaponShopBuyMenu_RequestCloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_RequestCloseEventHandler{#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu_RequestCloseEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_RequestCloseEventHandler), ::core::stringify!(new),));
+ <Self as IWeaponShopBuyMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_DecideEventHandlerMethods:IWeaponShopBuyMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -367,7 +409,16 @@ inner(this,item_data,__mi)}
 (WeaponShopBuyMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::itemdata::ItemData)` overload"]fn invoke(self,item_data:impl::core::convert::Into<crate::app::itemdata::ItemData>)->bool{unsafe{let __receiver= <WeaponShopBuyMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(item_data), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <WeaponShopBuyMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(WeaponShopBuyMenu_DecideEventHandler,crate::app::itemdata::ItemData, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(item_data),__mi)}
+}
 }
 }
 
@@ -377,6 +428,11 @@ __WeaponShopBuyMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::co
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `WeaponShopBuyMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,item_data:crate::app::itemdata::ItemData,)->bool{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::itemdata::ItemData, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),item_data, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_DecideEventHandler), ::core::stringify!(new),));
@@ -384,65 +440,30 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-weaponshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WeaponShopBuyMenu_ChangeUnitToPrevEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,unit_item:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,unit_item,__mi)}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]pub trait IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods:IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2ac20usize)as*mut u8,();
-(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <WeaponShopBuyMenu_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WeaponShopBuyMenu_ChangeUnitToPrevEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit_item), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl<__T:IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler>IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods for __T{}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-weaponshopbuymenu")]impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler), ::core::stringify!(new),));
- <Self as IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-weaponshopbuymenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler;
+    pub use super::IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler;
+    pub use super::IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods;
+    pub use super::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler;
+    pub use super::IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler;
+    pub use super::IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods;
     pub use super::WeaponShopBuyMenu;
     pub use super::IWeaponShopBuyMenu;
     pub use super::IWeaponShopBuyMenuMethods;
+    pub use super::WeaponShopBuyMenu_SelectEventHandler;
+    pub use super::IWeaponShopBuyMenu_SelectEventHandler;
+    pub use super::IWeaponShopBuyMenu_SelectEventHandlerMethods;
     pub use super::WeaponShopBuyMenu_ChangeUnitToNextEventHandler;
     pub use super::IWeaponShopBuyMenu_ChangeUnitToNextEventHandler;
     pub use super::IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods;
     pub use super::WeaponShopBuyMenu_RequestCloseEventHandler;
     pub use super::IWeaponShopBuyMenu_RequestCloseEventHandler;
     pub use super::IWeaponShopBuyMenu_RequestCloseEventHandlerMethods;
-    pub use super::WeaponShopBuyMenu_SelectEventHandler;
-    pub use super::IWeaponShopBuyMenu_SelectEventHandler;
-    pub use super::IWeaponShopBuyMenu_SelectEventHandlerMethods;
-    pub use super::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler;
-    pub use super::IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler;
-    pub use super::IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods;
     pub use super::WeaponShopBuyMenu_DecideEventHandler;
     pub use super::IWeaponShopBuyMenu_DecideEventHandler;
     pub use super::IWeaponShopBuyMenu_DecideEventHandlerMethods;
-    pub use super::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler;
-    pub use super::IWeaponShopBuyMenu_ChangeUnitToPrevEventHandler;
-    pub use super::IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

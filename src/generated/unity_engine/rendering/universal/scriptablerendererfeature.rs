@@ -20,59 +20,34 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererfeature-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-universal-scriptablerendererfeature")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptableRendererFeature_unity2_raw{use super:: * ;
-pub unsafe fn create(this:ScriptableRendererFeature,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"Create",));
-let inner:extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn add_render_passes(this:ScriptableRendererFeature,renderer:crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"AddRenderPasses",));
-let inner:extern "C" fn(ScriptableRendererFeature,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,renderer,rendering_data,__mi)}
-pub unsafe fn dispose(this:ScriptableRendererFeature,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose_2(this:ScriptableRendererFeature,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(ScriptableRendererFeature,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,disposing,__mi)}
-}
-
 #[cfg(feature="unity_engine-rendering-universal-scriptablerendererfeature")]pub trait IScriptableRendererFeatureMethods:IScriptableRendererFeature{#[doc="`get_isActive()` overload"]fn get_is_active(self,)->bool{unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed6820usize)as*mut u8,bool;
 (ScriptableRendererFeature)__receiver)}
 }
 #[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptableRendererFeature_unity2_raw::create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"Create",));
+let __inner:extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn add_render_passes(self,renderer:impl::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
-__ScriptableRendererFeature_unity2_raw::add_render_passes(__receiver, ::core::convert::Into::into(renderer),__out_0.as_mut_ptr(), ::core::option::Option::None);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"AddRenderPasses",));
+let __inner:extern "C" fn(ScriptableRendererFeature,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(renderer),__out_0.as_mut_ptr(),__mi)}
+;
 __out_0.assume_init()}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -88,10 +63,28 @@ __out_0.assume_init()}
 (ScriptableRendererFeature)__receiver,(bool)::core::convert::Into::into(active))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptableRendererFeature_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose_2(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ScriptableRendererFeature_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(ScriptableRendererFeature,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ecec10usize)as*mut u8,();
@@ -110,6 +103,20 @@ pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-scriptablerendererfeature")]impl ScriptableRendererFeature{#[doc="Direct (non-virtual) call to `ScriptableRendererFeature`'s own `Create`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScriptableRendererFeature`'s own `AddRenderPasses`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add_render_passes(this:impl::core::convert::Into< ::unity2::IlInstance> ,renderer:crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,)->(){let __mi=Self::add_render_passes_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),renderer,rendering_data, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScriptableRendererFeature`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ScriptableRendererFeature`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),disposing, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-rendering-universal-scriptablerendererfeature")]impl ScriptableRendererFeature{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -18,38 +18,33 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-procdesccallbase-types")]
 pub use __types::*;
 
-#[cfg(feature="app-procdesccallbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDescCallBase_unity2_raw{use super:: * ;
-pub unsafe fn execute(this:ProcDescCallBase,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ProcDescCallBase as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(ProcDescCallBase,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,inst,__mi)}
-pub unsafe fn execute_impl(this:ProcDescCallBase,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <ProcDescCallBase as::unity2::ClassIdentity> ::NAME,"ExecuteImpl",));
-let inner:extern "C" fn(ProcDescCallBase,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,inst,__mi)}
-}
-
 #[cfg(feature="app-procdesccallbase")]pub trait IProcDescCallBaseMethods:IProcDescCallBase{#[doc="`.ctor(crate::app::procdesc::ProcDesc_Type)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::procdesc::ProcDesc_Type>)->(){unsafe{let __receiver= <ProcDescCallBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd90usize)as*mut u8,();
 (ProcDescCallBase)__receiver,(crate::app::procdesc::ProcDesc_Type)::core::convert::Into::into(r#type))}
 }
 #[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescCallBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProcDescCallBase_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ProcDescCallBase as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(ProcDescCallBase,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(inst),__mi)}
+}
 }
 #[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescCallBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProcDescCallBase_unity2_raw::execute_impl(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ProcDescCallBase as::unity2::ClassIdentity> ::NAME,"ExecuteImpl",));
+let __inner:extern "C" fn(ProcDescCallBase,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(inst),__mi)}
+}
 }
 }
 
@@ -58,6 +53,14 @@ __ProcDescCallBase_unity2_raw::execute_impl(__receiver, ::core::convert::Into::i
 #[cfg(feature="app-procdesccallbase")]impl ProcDescCallBase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn execute_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-procdesccallbase")]impl ProcDescCallBase{#[doc="Direct (non-virtual) call to `ProcDescCallBase`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,inst:crate::app::procinst::ProcInst,)->crate::app::procdesc::ProcDesc_Result{let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),inst, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ProcDescCallBase`'s own `ExecuteImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,inst:crate::app::procinst::ProcInst,)->(){let __mi=Self::execute_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),inst, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-procdesccallbase")]impl ProcDescCallBase{#[doc="`.ctor(crate::app::procdesc::ProcDesc_Type)` — overload selector"]pub fn new(r#type:crate::app::procdesc::ProcDesc_Type)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

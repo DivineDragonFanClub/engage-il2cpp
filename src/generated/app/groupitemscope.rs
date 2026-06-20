@@ -16,29 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-groupitemscope-types")]
 pub use __types::*;
 
-#[cfg(feature="app-groupitemscope")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GroupItemScope_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:GroupItemScope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <GroupItemScope as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(GroupItemScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:GroupItemScope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GroupItemScope as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(GroupItemScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-groupitemscope")]pub trait IGroupItemScopeMethods:IGroupItemScope{#[doc="`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]fn ctor(self,menu:impl::core::convert::Into<crate::app::debugmenu::DebugMenu> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,state:impl::core::convert::Into<crate::app::menuitem::MenuItem_State>)->(){unsafe{let __receiver= <GroupItemScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2978220usize)as*mut u8,();
 (GroupItemScope)__receiver,(crate::app::debugmenu::DebugMenu)::core::convert::Into::into(menu),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::menuitem::MenuItem_State)::core::convert::Into::into(state))}
@@ -52,10 +29,28 @@ inner(this,__mi)}
 (GroupItemScope)__receiver,(crate::app::debugmenu::DebugMenu)::core::convert::Into::into(menu),(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(english),(crate::app::menuitem::MenuItem_State)::core::convert::Into::into(state))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <GroupItemScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GroupItemScope_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <GroupItemScope as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(GroupItemScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <GroupItemScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GroupItemScope_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GroupItemScope as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(GroupItemScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -66,6 +61,14 @@ pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-groupitemscope")]impl GroupItemScope{#[doc="Direct (non-virtual) call to `GroupItemScope`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GroupItemScope`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-groupitemscope")]impl GroupItemScope{#[doc="`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"]pub fn new(menu:crate::app::debugmenu::DebugMenu,name: ::unity2::Il2CppString,state:crate::app::menuitem::MenuItem_State)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

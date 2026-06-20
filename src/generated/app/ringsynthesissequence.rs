@@ -20,12 +20,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringsynthesissequence/RingSynthesisSequence_SkipListenerProc.md"))]#[::unity2::class(namespace="App",name="RingSynthesisSequence.SkipListenerProc")]#[parent(crate::app::procinst::ProcInst)]pub struct RingSynthesisSequence_SkipListenerProc{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringsynthesissequence/RingSynthesisSequence.md"))]#[::unity2::class(namespace="App",name="RingSynthesisSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::ringsynthesissequence::RingSynthesisSequence>)]pub struct RingSynthesisSequence{#[offset(120)]#[rename(name="m_MenuResult")]pub m_menu_result:crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, #[offset(128)]#[rename(name="m_MaterialRing")]pub m_material_ring:crate::app::ringdata::RingData, #[offset(136)]#[rename(name="m_NextRing")]pub m_next_ring:crate::app::ringdata::RingData, #[offset(144)]#[rename(name="m_EngageZonePrefabPath")]pub m_engage_zone_prefab_path: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_SceneResourceHandle")]pub m_scene_resource_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(160)]#[rename(name="m_DisableList")]pub m_disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(168)]#[rename(name="SceneName")]pub scene_name: ::unity2::Il2CppString, #[offset(176)]#[rename(name="m_RingMergeScene")]pub m_ring_merge_scene:crate::unity_engine::scene_management::scene::Scene, #[offset(184)]#[rename(name="m_EffectObject")]pub m_effect_object:crate::unity_engine::gameobject::GameObject, #[offset(192)]#[rename(name="m_MaterialRingHandle")]pub m_material_ring_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(200)]#[rename(name="m_NextRingHandle")]pub m_next_ring_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(208)]#[rename(name="m_NextRingController")]pub m_next_ring_controller:crate::app::commonringcontroller::CommonRingController, #[offset(216)]#[rename(name="m_NextRingObject")]pub m_next_ring_object:crate::unity_engine::gameobject::GameObject, #[offset(224)]#[rename(name="m_RingRoot")]pub m_ring_root:crate::unity_engine::gameobject::GameObject, #[offset(232)]#[rename(name="m_RingRotateRoot")]pub m_ring_rotate_root:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_EndEventHandler")]pub m_end_event_handler:crate::system::action::Action, #[offset(248)]#[rename(name="m_SkipListenerProc")]pub m_skip_listener_proc:crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc, #[offset(256)]#[rename(name="m_IsSkipped")]pub m_is_skipped:bool, #[offset(260)]#[rename(name="InitRotate")]pub init_rotate:crate::unity_engine::vector3::Vector3, #[offset(272)]#[rename(name="CreateEffectPaths")]pub create_effect_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(280)]#[rename(name="LoopEffectPaths")]pub loop_effect_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(288)]#[rename(name="EmitEffect")]pub emit_effect: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringsynthesissequence/RingSynthesisSequence_Result1Proc.md"))]#[::unity2::class(namespace="App",name="RingSynthesisSequence.Result1Proc")]#[parent(crate::app::procinst::ProcInst)]pub struct RingSynthesisSequence_Result1Proc{#[offset(112)]#[rename(name="m_RefineRingResult1Window")]pub m_refine_ring_result1_window:crate::app::refineringresult1window::RefineRingResult1Window, #[offset(120)]#[rename(name="m_RingData")]pub m_ring_data:crate::app::ringdata::RingData,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringsynthesissequence/RingSynthesisSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingSynthesisSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for RingSynthesisSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RingSynthesisSequence.Label";
@@ -39,23 +33,16 @@ impl RingSynthesisSequence_Label{pub fn skip()->Self{Self{value:0}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringsynthesissequence/RingSynthesisSequence.md"))]#[::unity2::class(namespace="App",name="RingSynthesisSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::ringsynthesissequence::RingSynthesisSequence>)]pub struct RingSynthesisSequence{#[offset(120)]#[rename(name="m_MenuResult")]pub m_menu_result:crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, #[offset(128)]#[rename(name="m_MaterialRing")]pub m_material_ring:crate::app::ringdata::RingData, #[offset(136)]#[rename(name="m_NextRing")]pub m_next_ring:crate::app::ringdata::RingData, #[offset(144)]#[rename(name="m_EngageZonePrefabPath")]pub m_engage_zone_prefab_path: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_SceneResourceHandle")]pub m_scene_resource_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(160)]#[rename(name="m_DisableList")]pub m_disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(168)]#[rename(name="SceneName")]pub scene_name: ::unity2::Il2CppString, #[offset(176)]#[rename(name="m_RingMergeScene")]pub m_ring_merge_scene:crate::unity_engine::scene_management::scene::Scene, #[offset(184)]#[rename(name="m_EffectObject")]pub m_effect_object:crate::unity_engine::gameobject::GameObject, #[offset(192)]#[rename(name="m_MaterialRingHandle")]pub m_material_ring_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(200)]#[rename(name="m_NextRingHandle")]pub m_next_ring_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(208)]#[rename(name="m_NextRingController")]pub m_next_ring_controller:crate::app::commonringcontroller::CommonRingController, #[offset(216)]#[rename(name="m_NextRingObject")]pub m_next_ring_object:crate::unity_engine::gameobject::GameObject, #[offset(224)]#[rename(name="m_RingRoot")]pub m_ring_root:crate::unity_engine::gameobject::GameObject, #[offset(232)]#[rename(name="m_RingRotateRoot")]pub m_ring_rotate_root:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_EndEventHandler")]pub m_end_event_handler:crate::system::action::Action, #[offset(248)]#[rename(name="m_SkipListenerProc")]pub m_skip_listener_proc:crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc, #[offset(256)]#[rename(name="m_IsSkipped")]pub m_is_skipped:bool, #[offset(260)]#[rename(name="InitRotate")]pub init_rotate:crate::unity_engine::vector3::Vector3, #[offset(272)]#[rename(name="CreateEffectPaths")]pub create_effect_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(280)]#[rename(name="LoopEffectPaths")]pub loop_effect_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(288)]#[rename(name="EmitEffect")]pub emit_effect: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringsynthesissequence/RingSynthesisSequence_Result1Proc.md"))]#[::unity2::class(namespace="App",name="RingSynthesisSequence.Result1Proc")]#[parent(crate::app::procinst::ProcInst)]pub struct RingSynthesisSequence_Result1Proc{#[offset(112)]#[rename(name="m_RefineRingResult1Window")]pub m_refine_ring_result1_window:crate::app::refineringresult1window::RefineRingResult1Window, #[offset(120)]#[rename(name="m_RingData")]pub m_ring_data:crate::app::ringdata::RingData,}
+
 }
 
 #[cfg(feature = "app-ringsynthesissequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-ringsynthesissequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingSynthesisSequence_SkipListenerProc_unity2_raw{use super:: * ;
-pub unsafe fn on_tick(this:RingSynthesisSequence_SkipListenerProc,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <RingSynthesisSequence_SkipListenerProc as::unity2::ClassIdentity> ::NAME,"OnTick",));
-let inner:extern "C" fn(RingSynthesisSequence_SkipListenerProc, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence_SkipListenerProc{#[doc="`Create(crate::app::ringsynthesissequence::RingSynthesisSequence)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::ringsynthesissequence::RingSynthesisSequence>)->crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d626d0usize)as*mut u8,crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc;
 (crate::app::ringsynthesissequence::RingSynthesisSequence)::core::convert::Into::into(super_))}
@@ -71,7 +58,16 @@ inner(this,__mi)}
 (RingSynthesisSequence_SkipListenerProc)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <RingSynthesisSequence_SkipListenerProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingSynthesisSequence_SkipListenerProc_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <RingSynthesisSequence_SkipListenerProc as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let __inner:extern "C" fn(RingSynthesisSequence_SkipListenerProc, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingSynthesisSequence_SkipListenerProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62750usize)as*mut u8,();
@@ -86,6 +82,11 @@ pub fn set_m_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence_SkipListenerProc{#[doc="Direct (non-virtual) call to `RingSynthesisSequence_SkipListenerProc`'s own `OnTick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-ringsynthesissequence")]impl RingSynthesisSequence_SkipListenerProc{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -269,13 +270,13 @@ pub mod prelude {
     pub use super::RingSynthesisSequence_SkipListenerProc;
     pub use super::IRingSynthesisSequence_SkipListenerProc;
     pub use super::IRingSynthesisSequence_SkipListenerProcMethods;
+    pub use super::RingSynthesisSequence_Label;
     pub use super::RingSynthesisSequence;
     pub use super::IRingSynthesisSequence;
     pub use super::IRingSynthesisSequenceMethods;
     pub use super::RingSynthesisSequence_Result1Proc;
     pub use super::IRingSynthesisSequence_Result1Proc;
     pub use super::IRingSynthesisSequence_Result1ProcMethods;
-    pub use super::RingSynthesisSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

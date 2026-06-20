@@ -14,34 +14,29 @@ mod __types {
 #[cfg(feature = "unity_engine-ui-imeshmodifier-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ui-imeshmodifier")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMeshModifier_unity2_raw{use super:: * ;
-pub unsafe fn modify_mesh(this:IMeshModifier,mesh:crate::unity_engine::mesh::Mesh,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-ui-imeshmodifier")]pub trait IIMeshModifierMethods:IIMeshModifier{#[doc="`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"]fn modify_mesh(self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{let __receiver= <IMeshModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IMeshModifier as::unity2::ClassIdentity> ::NAME,"ModifyMesh",));
-let inner:extern "C" fn(IMeshModifier,crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IMeshModifier,crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,mesh,__mi)}
-pub unsafe fn modify_mesh_2(this:IMeshModifier,verts:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(mesh),__mi)}
+}
+}
+#[doc="`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn modify_mesh_2(self,verts:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <IMeshModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IMeshModifier as::unity2::ClassIdentity> ::NAME,"ModifyMesh",));
-let inner:extern "C" fn(IMeshModifier,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IMeshModifier,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,verts,__mi)}
+__inner(__receiver, ::core::convert::Into::into(verts),__mi)}
 }
-
-#[cfg(feature="unity_engine-ui-imeshmodifier")]pub trait IIMeshModifierMethods:IIMeshModifier{#[doc="`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"]fn modify_mesh(self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{let __receiver= <IMeshModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IMeshModifier_unity2_raw::modify_mesh(__receiver, ::core::convert::Into::into(mesh), ::core::option::Option::None)}
-}
-#[doc="`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn modify_mesh_2(self,verts:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <IMeshModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IMeshModifier_unity2_raw::modify_mesh_2(__receiver, ::core::convert::Into::into(verts), ::core::option::Option::None)}
 }
 }
 
@@ -49,6 +44,14 @@ __IMeshModifier_unity2_raw::modify_mesh_2(__receiver, ::core::convert::Into::int
 
 #[cfg(feature="unity_engine-ui-imeshmodifier")]impl IMeshModifier{pub fn modify_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn modify_mesh_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-ui-imeshmodifier")]impl IMeshModifier{#[doc="Direct (non-virtual) call to `IMeshModifier`'s own `ModifyMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn modify_mesh(this:impl::core::convert::Into< ::unity2::IlInstance> ,mesh:crate::unity_engine::mesh::Mesh,)->(){let __mi=Self::modify_mesh_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),mesh, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IMeshModifier`'s own `ModifyMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn modify_mesh_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,verts:crate::unity_engine::ui::vertexhelper::VertexHelper,)->(){let __mi=Self::modify_mesh_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),verts, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-ui-imeshmodifier")]

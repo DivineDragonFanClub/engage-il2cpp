@@ -54,49 +54,6 @@ pub fn end()->Self{Self{value:8}
 #[cfg(feature = "app-mapsequencebattleaction-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapsequencebattleaction")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceBattleAction_unity2_raw{use super:: * ;
-pub unsafe fn get_can_wait_skip(this:MapSequenceBattleAction,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapSequenceBattleAction as::unity2::ClassIdentity> ::NAME,"get_CanWaitSkip",));
-let inner:extern "C" fn(MapSequenceBattleAction, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_create(this:MapSequenceBattleAction,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <MapSequenceBattleAction as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(MapSequenceBattleAction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:MapSequenceBattleAction,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MapSequenceBattleAction as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(MapSequenceBattleAction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_persistent(this:MapSequenceBattleAction,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <MapSequenceBattleAction as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
-let inner:extern "C" fn(MapSequenceBattleAction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-mapsequencebattleaction")]impl MapSequenceBattleAction{#[doc="`GetRotation(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn get_rotation(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,target:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->crate::unity_engine::quaternion::Quaternion{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23c1230usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
 (crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(target))}
 }
@@ -109,17 +66,44 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-mapsequencebattleaction")]pub trait IMapSequenceBattleActionMethods:IMapSequenceBattleAction{#[doc="`get_CanWaitSkip()` overload"]fn get_can_wait_skip(self,)->bool{unsafe{let __receiver= <MapSequenceBattleAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceBattleAction_unity2_raw::get_can_wait_skip(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapSequenceBattleAction as::unity2::ClassIdentity> ::NAME,"get_CanWaitSkip",));
+let __inner:extern "C" fn(MapSequenceBattleAction, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::battlecalculator::BattleCalculator, i32)` overload"]fn ctor(self,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,sim_calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,battle_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceBattleAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23c0540usize)as*mut u8,();
 (MapSequenceBattleAction)__receiver,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(sim_calculator),(i32)::core::convert::Into::into(battle_count))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceBattleAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceBattleAction_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapSequenceBattleAction as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(MapSequenceBattleAction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceBattleAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceBattleAction_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequenceBattleAction as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(MapSequenceBattleAction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_BattleCount()` overload"]fn get_battle_count(self,)->i32{unsafe{let __receiver= <MapSequenceBattleAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23c0820usize)as*mut u8,i32;
@@ -310,7 +294,16 @@ __MapSequenceBattleAction_unity2_raw::on_dispose(__receiver, ::core::option::Opt
 (MapSequenceBattleAction)__receiver)}
 }
 #[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <MapSequenceBattleAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapSequenceBattleAction_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapSequenceBattleAction as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
+let __inner:extern "C" fn(MapSequenceBattleAction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetModelItem(crate::app::battleinfoside::BattleInfoSide, crate::app::unititem::UnitItem)` overload"]fn set_model_item(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <MapSequenceBattleAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23c36a0usize)as*mut u8,();
@@ -471,6 +464,20 @@ pub fn has_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn try_trans_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
 pub fn try_trans_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
 pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+}
+
+#[cfg(feature="app-mapsequencebattleaction")]impl MapSequenceBattleAction{#[doc="Direct (non-virtual) call to `MapSequenceBattleAction`'s own `get_CanWaitSkip`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_can_wait_skip(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_can_wait_skip_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSequenceBattleAction`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSequenceBattleAction`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapSequenceBattleAction`'s own `OnPersistent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_persistent(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_persistent_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-mapsequencebattleaction")]impl MapSequenceBattleAction{#[doc="`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::battlecalculator::BattleCalculator, i32)` — overload selector"]pub fn new(calculator:crate::app::battlecalculator::BattleCalculator,sim_calculator:crate::app::battlecalculator::BattleCalculator,battle_count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -77,36 +77,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <EnumerableWrapper as::unity2::ClassIdentity> ::NAME,"ConvertTable",e),}
 }
 }
-pub unsafe fn index(this:EnumerableWrapper,script:crate::moon_sharp::interpreter::script::Script,index:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <EnumerableWrapper as::unity2::ClassIdentity> ::NAME,"Index",));
-let inner:extern "C" fn(EnumerableWrapper,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,index,is_direct_indexing,__mi)}
-pub unsafe fn set_index(this:EnumerableWrapper,script:crate::moon_sharp::interpreter::script::Script,index:crate::moon_sharp::interpreter::dynvalue::DynValue,value:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <EnumerableWrapper as::unity2::ClassIdentity> ::NAME,"SetIndex",));
-let inner:extern "C" fn(EnumerableWrapper,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,index,value,is_direct_indexing,__mi)}
-pub unsafe fn meta_index(this:EnumerableWrapper,script:crate::moon_sharp::interpreter::script::Script,metaname: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <EnumerableWrapper as::unity2::ClassIdentity> ::NAME,"MetaIndex",));
-let inner:extern "C" fn(EnumerableWrapper,crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,script,metaname,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-enumerablewrapper")]impl EnumerableWrapper{#[doc="`ConvertIterator(crate::moon_sharp::interpreter::script::Script, crate::system::collections::ienumerator::IEnumerator)` overload"]pub fn convert_iterator(script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,enumerator:impl::core::convert::Into<crate::system::collections::ienumerator::IEnumerator>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__EnumerableWrapper_unity2_raw::__lookup_convert_iterator::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
@@ -134,13 +104,40 @@ inner(this,script,metaname,__mi)}
 (EnumerableWrapper)__receiver,(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(execution_context),(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args))}
 }
 #[doc="`Index(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]fn index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,index:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,is_direct_indexing:impl::core::convert::Into<bool>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EnumerableWrapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EnumerableWrapper_unity2_raw::index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(index), ::core::convert::Into::into(is_direct_indexing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <EnumerableWrapper as::unity2::ClassIdentity> ::NAME,"Index",));
+let __inner:extern "C" fn(EnumerableWrapper,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(index), ::core::convert::Into::into(is_direct_indexing),__mi)}
+}
 }
 #[doc="`SetIndex(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]fn set_index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,index:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,is_direct_indexing:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <EnumerableWrapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EnumerableWrapper_unity2_raw::set_index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::convert::Into::into(is_direct_indexing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <EnumerableWrapper as::unity2::ClassIdentity> ::NAME,"SetIndex",));
+let __inner:extern "C" fn(EnumerableWrapper,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::convert::Into::into(is_direct_indexing),__mi)}
+}
 }
 #[doc="`MetaIndex(crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString)` overload"]fn meta_index(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,metaname:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EnumerableWrapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__EnumerableWrapper_unity2_raw::meta_index(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(metaname), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <EnumerableWrapper as::unity2::ClassIdentity> ::NAME,"MetaIndex",));
+let __inner:extern "C" fn(EnumerableWrapper,crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(metaname),__mi)}
+}
 }
 }
 
@@ -155,6 +152,17 @@ pub fn convert_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn meta_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-enumerablewrapper")]impl EnumerableWrapper{#[doc="Direct (non-virtual) call to `EnumerableWrapper`'s own `Index`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,index:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,index,is_direct_indexing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `EnumerableWrapper`'s own `SetIndex`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,index:crate::moon_sharp::interpreter::dynvalue::DynValue,value:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,)->bool{let __mi=Self::set_index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,index,value,is_direct_indexing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `EnumerableWrapper`'s own `MetaIndex`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn meta_index(this:impl::core::convert::Into< ::unity2::IlInstance> ,script:crate::moon_sharp::interpreter::script::Script,metaname: ::unity2::Il2CppString,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::meta_index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::script::Script, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),script,metaname, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-enumerablewrapper")]impl EnumerableWrapper{#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script, crate::system::collections::ienumerator::IEnumerator)` — overload selector"]pub fn new(script:crate::moon_sharp::interpreter::script::Script,enumerator:crate::system::collections::ienumerator::IEnumerator)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

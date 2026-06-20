@@ -18,47 +18,41 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-generic-internalstringcomparer-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-generic-internalstringcomparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InternalStringComparer_unity2_raw{use super:: * ;
-pub unsafe fn get_hash_code(this:InternalStringComparer,obj: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-collections-generic-internalstringcomparer")]pub trait IInternalStringComparerMethods:IInternalStringComparer{#[doc="`GetHashCode(::unity2::Il2CppString)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",9usize,__vt.len(), <InternalStringComparer as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(InternalStringComparer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(InternalStringComparer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
-pub unsafe fn equals(this:InternalStringComparer,x: ::unity2::Il2CppString,y: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
+}
+#[doc="`Equals(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn equals(self,x:impl::core::convert::Into< ::unity2::Il2CppString> ,y:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <InternalStringComparer as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(InternalStringComparer, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(InternalStringComparer, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,y,__mi)}
-pub unsafe fn index_of(this:InternalStringComparer,array: ::unity2::Array< ::unity2::Il2CppString> ,value: ::unity2::Il2CppString,start_index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y),__mi)}
+}
+}
+#[doc="`IndexOf(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString, i32, i32)` overload"]fn index_of(self,array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,value:impl::core::convert::Into< ::unity2::Il2CppString> ,start_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <InternalStringComparer as::unity2::ClassIdentity> ::NAME,"IndexOf",));
-let inner:extern "C" fn(InternalStringComparer, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::Il2CppString,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(InternalStringComparer, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::Il2CppString,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,value,start_index,count,__mi)}
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(value), ::core::convert::Into::into(start_index), ::core::convert::Into::into(count),__mi)}
 }
-
-#[cfg(feature="system-collections-generic-internalstringcomparer")]pub trait IInternalStringComparerMethods:IInternalStringComparer{#[doc="`GetHashCode(::unity2::Il2CppString)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InternalStringComparer_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
-}
-#[doc="`Equals(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn equals(self,x:impl::core::convert::Into< ::unity2::Il2CppString> ,y:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InternalStringComparer_unity2_raw::equals(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
-}
-#[doc="`IndexOf(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString, i32, i32)` overload"]fn index_of(self,array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,value:impl::core::convert::Into< ::unity2::Il2CppString> ,start_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InternalStringComparer_unity2_raw::index_of(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(value), ::core::convert::Into::into(start_index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3263700usize)as*mut u8,();
@@ -72,6 +66,17 @@ __InternalStringComparer_unity2_raw::index_of(__receiver, ::core::convert::Into:
 pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="system-collections-generic-internalstringcomparer")]impl InternalStringComparer{#[doc="Direct (non-virtual) call to `InternalStringComparer`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj: ::unity2::Il2CppString,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InternalStringComparer`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,x: ::unity2::Il2CppString,y: ::unity2::Il2CppString,)->bool{let __mi=Self::equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,y, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InternalStringComparer`'s own `IndexOf`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn index_of(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::Array< ::unity2::Il2CppString> ,value: ::unity2::Il2CppString,start_index:i32,count:i32,)->i32{let __mi=Self::index_of_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::Il2CppString,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,value,start_index,count, ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-collections-generic-internalstringcomparer")]impl InternalStringComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

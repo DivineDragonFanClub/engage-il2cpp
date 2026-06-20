@@ -17,6 +17,24 @@ use crate::unity_engine::event_systems::baseeventdata::{BaseEventData,IBaseEvent
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/pointereventdata/PointerEventData_InputButton.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PointerEventData_InputButton{pub value:i32,}
+impl::unity2::ClassIdentity for PointerEventData_InputButton{const NAMESPACE: &'static str="UnityEngine.EventSystems";
+const NAME: &'static str="PointerEventData.InputButton";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PointerEventData_InputButton{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PointerEventData_InputButton{pub fn left()->Self{Self{value:0}
+}
+pub fn right()->Self{Self{value:1}
+}
+pub fn middle()->Self{Self{value:2}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/pointereventdata/PointerEventData.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="PointerEventData")]#[parent(crate::unity_engine::event_systems::baseeventdata::BaseEventData)]pub struct PointerEventData{#[offset(40)]#[rename(name="m_PointerPress")]pub m_pointer_press:crate::unity_engine::gameobject::GameObject, #[offset(224)]#[rename(name="hovered")]pub hovered:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
 
 
@@ -39,41 +57,10 @@ pub fn not_changed()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/pointereventdata/PointerEventData_InputButton.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PointerEventData_InputButton{pub value:i32,}
-impl::unity2::ClassIdentity for PointerEventData_InputButton{const NAMESPACE: &'static str="UnityEngine.EventSystems";
-const NAME: &'static str="PointerEventData.InputButton";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for PointerEventData_InputButton{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl PointerEventData_InputButton{pub fn left()->Self{Self{value:0}
-}
-pub fn right()->Self{Self{value:1}
-}
-pub fn middle()->Self{Self{value:2}
-}
-}
-
 }
 
 #[cfg(feature = "unity_engine-event_systems-pointereventdata-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-event_systems-pointereventdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PointerEventData_unity2_raw{use super:: * ;
-pub unsafe fn to_string(this:PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <PointerEventData as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(PointerEventData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="unity_engine-event_systems-pointereventdata")]pub trait IPointerEventDataMethods:IPointerEventData{#[doc="`get_pointerEnter()` overload"]fn get_pointer_enter(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371f020usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
@@ -264,7 +251,16 @@ inner(this,__mi)}
 (PointerEventData)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PointerEventData_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <PointerEventData as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(PointerEventData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -320,6 +316,11 @@ pub fn set_pointer_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
 }
 
+#[cfg(feature="unity_engine-event_systems-pointereventdata")]impl PointerEventData{#[doc="Direct (non-virtual) call to `PointerEventData`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="unity_engine-event_systems-pointereventdata")]impl PointerEventData{#[doc="`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` — overload selector"]pub fn new(event_system:crate::unity_engine::event_systems::eventsystem::EventSystem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(PointerEventData), ::core::stringify!(new),));
@@ -330,11 +331,11 @@ this}
 #[cfg(feature = "unity_engine-event_systems-pointereventdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PointerEventData_InputButton;
     pub use super::PointerEventData;
     pub use super::IPointerEventData;
     pub use super::IPointerEventDataMethods;
     pub use super::PointerEventData_FramePressState;
-    pub use super::PointerEventData_InputButton;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

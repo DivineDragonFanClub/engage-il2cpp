@@ -16,19 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-caseinsensitivehashcodeprovider-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CaseInsensitiveHashCodeProvider_unity2_raw{use super:: * ;
-pub unsafe fn get_hash_code(this:CaseInsensitiveHashCodeProvider,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <CaseInsensitiveHashCodeProvider as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(CaseInsensitiveHashCodeProvider,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
-}
-
 #[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]impl CaseInsensitiveHashCodeProvider{#[doc="`get_Default()` overload"]pub fn get_default()->crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a1330usize)as*mut u8,crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider;
 )}
 }
@@ -39,7 +26,16 @@ inner(this,obj,__mi)}
 (CaseInsensitiveHashCodeProvider)__receiver)}
 }
 #[doc="`GetHashCode(crate::system::object::Object)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <CaseInsensitiveHashCodeProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CaseInsensitiveHashCodeProvider_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CaseInsensitiveHashCodeProvider as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let __inner:extern "C" fn(CaseInsensitiveHashCodeProvider,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
 }
 }
 
@@ -48,6 +44,11 @@ __CaseInsensitiveHashCodeProvider_unity2_raw::get_hash_code(__receiver, ::core::
 #[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]impl CaseInsensitiveHashCodeProvider{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]impl CaseInsensitiveHashCodeProvider{#[doc="Direct (non-virtual) call to `CaseInsensitiveHashCodeProvider`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]impl CaseInsensitiveHashCodeProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

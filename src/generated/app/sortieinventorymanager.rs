@@ -34,7 +34,22 @@ pub fn trade()->Self{Self{value:1}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo.md"))]#[::unity2::class(namespace="App",name="SortieInventoryManager.SelectionInfo")]#[parent(crate::system::object::Object)]pub struct SortieInventoryManager_SelectionInfo{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieinventorymanager/SortieInventoryManager.md"))]#[::unity2::class(namespace="App",name="SortieInventoryManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortieinventorymanager::SortieInventoryManager>)]pub struct SortieInventoryManager{#[offset(28)]#[rename(name="m_Mode")]pub m_mode:crate::app::sortieinventorymanager::SortieInventoryManager_Modes, #[offset(32)]#[rename(name="m_Selection")]pub m_selection:crate::app::sortieinventorymanager::SortieInventoryManager_SelectionInfo, #[offset(40)]#[rename(name="m_MenuItemDisplayIndex")]pub m_menu_item_display_index:i32, #[offset(48)]#[rename(name="m_UnitItemMenu")]pub m_unit_item_menu:crate::app::inventoryunititemmenu::InventoryUnitItemMenu, #[offset(56)]#[rename(name="m_PoolItemMenu")]pub m_pool_item_menu:crate::app::inventorypoolitemmenu::InventoryPoolItemMenu, #[offset(64)]#[rename(name="m_ActiveWindow")]pub m_active_window:crate::app::sortieinventorymanager::SortieInventoryManager_ActiveWindow, #[offset(72)]#[rename(name="m_ItemInfo")]pub m_item_info:crate::unity_engine::gameobject::GameObject,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieinventorymanager/SortieInventoryManager_ActiveWindow.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieInventoryManager_ActiveWindow{pub value:i32,}
+impl::unity2::ClassIdentity for SortieInventoryManager_ActiveWindow{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SortieInventoryManager.ActiveWindow";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SortieInventoryManager_ActiveWindow{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SortieInventoryManager_ActiveWindow{pub fn none()->Self{Self{value:0}
+}
+pub fn unit_item()->Self{Self{value:1}
+}
+pub fn pool_item()->Self{Self{value:2}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieinventorymanager/SortieInventoryManager_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieInventoryManager_Modes{pub value:i32,}
@@ -53,22 +68,7 @@ pub fn transporter()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieinventorymanager/SortieInventoryManager_ActiveWindow.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieInventoryManager_ActiveWindow{pub value:i32,}
-impl::unity2::ClassIdentity for SortieInventoryManager_ActiveWindow{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SortieInventoryManager.ActiveWindow";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SortieInventoryManager_ActiveWindow{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SortieInventoryManager_ActiveWindow{pub fn none()->Self{Self{value:0}
-}
-pub fn unit_item()->Self{Self{value:1}
-}
-pub fn pool_item()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieinventorymanager/SortieInventoryManager.md"))]#[::unity2::class(namespace="App",name="SortieInventoryManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortieinventorymanager::SortieInventoryManager>)]pub struct SortieInventoryManager{#[offset(28)]#[rename(name="m_Mode")]pub m_mode:crate::app::sortieinventorymanager::SortieInventoryManager_Modes, #[offset(32)]#[rename(name="m_Selection")]pub m_selection:crate::app::sortieinventorymanager::SortieInventoryManager_SelectionInfo, #[offset(40)]#[rename(name="m_MenuItemDisplayIndex")]pub m_menu_item_display_index:i32, #[offset(48)]#[rename(name="m_UnitItemMenu")]pub m_unit_item_menu:crate::app::inventoryunititemmenu::InventoryUnitItemMenu, #[offset(56)]#[rename(name="m_PoolItemMenu")]pub m_pool_item_menu:crate::app::inventorypoolitemmenu::InventoryPoolItemMenu, #[offset(64)]#[rename(name="m_ActiveWindow")]pub m_active_window:crate::app::sortieinventorymanager::SortieInventoryManager_ActiveWindow, #[offset(72)]#[rename(name="m_ItemInfo")]pub m_item_info:crate::unity_engine::gameobject::GameObject,}
 
 }
 
@@ -303,11 +303,11 @@ pub mod prelude {
     pub use super::SortieInventoryManager_SelectionInfo;
     pub use super::ISortieInventoryManager_SelectionInfo;
     pub use super::ISortieInventoryManager_SelectionInfoMethods;
+    pub use super::SortieInventoryManager_ActiveWindow;
+    pub use super::SortieInventoryManager_Modes;
     pub use super::SortieInventoryManager;
     pub use super::ISortieInventoryManager;
     pub use super::ISortieInventoryManagerMethods;
-    pub use super::SortieInventoryManager_Modes;
-    pub use super::SortieInventoryManager_ActiveWindow;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

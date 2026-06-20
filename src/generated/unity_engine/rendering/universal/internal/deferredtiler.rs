@@ -13,6 +13,17 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DeferredTiler{}
+impl::unity2::ClassIdentity for DeferredTiler{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal.Internal";
+const NAME: &'static str="DeferredTiler";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DeferredTiler{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler_PrePunctualLight.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DeferredTiler_PrePunctualLight{}
 impl::unity2::ClassIdentity for DeferredTiler_PrePunctualLight{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal.Internal";
 const NAME: &'static str="DeferredTiler.PrePunctualLight";
@@ -39,17 +50,6 @@ pub fn r#in()->Self{Self{value:1}
 }
 pub fn out()->Self{Self{value:2}
 }
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DeferredTiler{}
-impl::unity2::ClassIdentity for DeferredTiler{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal.Internal";
-const NAME: &'static str="DeferredTiler";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for DeferredTiler{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -149,9 +149,9 @@ pub fn align_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DeferredTiler;
     pub use super::DeferredTiler_PrePunctualLight;
     pub use super::DeferredTiler_ClipResult;
-    pub use super::DeferredTiler;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

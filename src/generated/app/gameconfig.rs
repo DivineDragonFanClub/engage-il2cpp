@@ -15,45 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig.md"))]#[::unity2::class(namespace="App",name="GameConfig")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameconfig::GameConfig>)]pub struct GameConfig{#[static_field]#[rename(name="ValumeMax")]pub valume_max:f32, #[static_field]#[rename(name="ValumeMin")]pub valume_min:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_MapCursorMoveTyep.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_MapCursorMoveTyep{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_MapCursorMoveTyep{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.MapCursorMoveTyep";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameConfig_MapCursorMoveTyep{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameConfig_MapCursorMoveTyep{pub fn cell()->Self{Self{value:0}
-}
-pub fn unit()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_AnimeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_AnimeType{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_AnimeType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.AnimeType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameConfig_AnimeType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameConfig_AnimeType{pub fn off()->Self{Self{value:0}
-}
-pub fn on()->Self{Self{value:1}
-}
-pub fn player_unit()->Self{Self{value:2}
-}
-pub fn player_turn()->Self{Self{value:3}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_UnitInfoType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_UnitInfoType{pub value:i32,}
 impl::unity2::ClassIdentity for GameConfig_UnitInfoType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GameConfig.UnitInfoType";
@@ -80,72 +41,6 @@ pub fn info6()->Self{Self{value:6}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_DragonRideOperationType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_DragonRideOperationType{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_DragonRideOperationType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.DragonRideOperationType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameConfig_DragonRideOperationType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameConfig_DragonRideOperationType{pub fn stick()->Self{Self{value:0}
-}
-pub fn gyro()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_InfoLocation.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_InfoLocation{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_InfoLocation{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.InfoLocation";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameConfig_InfoLocation{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameConfig_InfoLocation{pub fn left()->Self{Self{value:0}
-}
-pub fn right()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_AllInfoSwitch.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_AllInfoSwitch{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_AllInfoSwitch{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.AllInfoSwitch";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameConfig_AllInfoSwitch{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameConfig_AllInfoSwitch{pub fn toggle()->Self{Self{value:0}
-}
-pub fn press()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_AllInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_AllInfo{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_AllInfo{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.AllInfo";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameConfig_AllInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameConfig_AllInfo{pub fn off()->Self{Self{value:0}
-}
-pub fn on()->Self{Self{value:1}
-}
-pub fn num()->Self{Self{value:2}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_OperationType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_OperationType{pub value:i32,}
 impl::unity2::ClassIdentity for GameConfig_OperationType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GameConfig.OperationType";
@@ -162,20 +57,20 @@ pub fn direct()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_StickTriggerMarginType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_StickTriggerMarginType{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_StickTriggerMarginType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.StickTriggerMarginType";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_SpeedType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_SpeedType{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_SpeedType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.SpeedType";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for GameConfig_StickTriggerMarginType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for GameConfig_SpeedType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl GameConfig_StickTriggerMarginType{pub fn small()->Self{Self{value:0}
+impl GameConfig_SpeedType{pub fn slow()->Self{Self{value:0}
 }
-pub fn medium()->Self{Self{value:1}
+pub fn normal()->Self{Self{value:1}
 }
-pub fn large()->Self{Self{value:2}
+pub fn fast()->Self{Self{value:2}
 }
 }
 
@@ -200,70 +95,34 @@ pub fn unit()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_Toggle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_Toggle{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_Toggle{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.Toggle";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_MapCursorMoveTyep.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_MapCursorMoveTyep{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_MapCursorMoveTyep{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.MapCursorMoveTyep";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for GameConfig_Toggle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for GameConfig_MapCursorMoveTyep{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl GameConfig_Toggle{pub fn off()->Self{Self{value:0}
+impl GameConfig_MapCursorMoveTyep{pub fn cell()->Self{Self{value:0}
 }
-pub fn on()->Self{Self{value:1}
+pub fn unit()->Self{Self{value:1}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_Modes{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_Modes{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.Modes";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_AllInfoSwitch.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_AllInfoSwitch{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_AllInfoSwitch{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.AllInfoSwitch";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for GameConfig_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for GameConfig_AllInfoSwitch{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl GameConfig_Modes{pub fn quality()->Self{Self{value:0}
+impl GameConfig_AllInfoSwitch{pub fn toggle()->Self{Self{value:0}
 }
-pub fn performance()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_MinimapType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_MinimapType{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_MinimapType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.MinimapType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameConfig_MinimapType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameConfig_MinimapType{pub fn large()->Self{Self{value:0}
-}
-pub fn small()->Self{Self{value:1}
-}
-pub fn off()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_SpeedType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_SpeedType{pub value:i32,}
-impl::unity2::ClassIdentity for GameConfig_SpeedType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameConfig.SpeedType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameConfig_SpeedType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameConfig_SpeedType{pub fn slow()->Self{Self{value:0}
-}
-pub fn normal()->Self{Self{value:1}
-}
-pub fn fast()->Self{Self{value:2}
+pub fn press()->Self{Self{value:1}
 }
 }
 
@@ -286,6 +145,129 @@ pub fn on()->Self{Self{value:2}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_MinimapType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_MinimapType{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_MinimapType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.MinimapType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameConfig_MinimapType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameConfig_MinimapType{pub fn large()->Self{Self{value:0}
+}
+pub fn small()->Self{Self{value:1}
+}
+pub fn off()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_Toggle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_Toggle{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_Toggle{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.Toggle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameConfig_Toggle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameConfig_Toggle{pub fn off()->Self{Self{value:0}
+}
+pub fn on()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_DragonRideOperationType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_DragonRideOperationType{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_DragonRideOperationType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.DragonRideOperationType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameConfig_DragonRideOperationType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameConfig_DragonRideOperationType{pub fn stick()->Self{Self{value:0}
+}
+pub fn gyro()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_Modes{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_Modes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.Modes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameConfig_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameConfig_Modes{pub fn quality()->Self{Self{value:0}
+}
+pub fn performance()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_InfoLocation.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_InfoLocation{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_InfoLocation{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.InfoLocation";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameConfig_InfoLocation{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameConfig_InfoLocation{pub fn left()->Self{Self{value:0}
+}
+pub fn right()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig.md"))]#[::unity2::class(namespace="App",name="GameConfig")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameconfig::GameConfig>)]pub struct GameConfig{#[static_field]#[rename(name="ValumeMax")]pub valume_max:f32, #[static_field]#[rename(name="ValumeMin")]pub valume_min:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_AnimeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_AnimeType{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_AnimeType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.AnimeType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameConfig_AnimeType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameConfig_AnimeType{pub fn off()->Self{Self{value:0}
+}
+pub fn on()->Self{Self{value:1}
+}
+pub fn player_unit()->Self{Self{value:2}
+}
+pub fn player_turn()->Self{Self{value:3}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_StickTriggerMarginType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_StickTriggerMarginType{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_StickTriggerMarginType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.StickTriggerMarginType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameConfig_StickTriggerMarginType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameConfig_StickTriggerMarginType{pub fn small()->Self{Self{value:0}
+}
+pub fn medium()->Self{Self{value:1}
+}
+pub fn large()->Self{Self{value:2}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_CameraRotationType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_CameraRotationType{pub value:i32,}
 impl::unity2::ClassIdentity for GameConfig_CameraRotationType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GameConfig.CameraRotationType";
@@ -301,63 +283,28 @@ pub fn reverse()->Self{Self{value:1}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameconfig/GameConfig_AllInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameConfig_AllInfo{pub value:i32,}
+impl::unity2::ClassIdentity for GameConfig_AllInfo{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameConfig.AllInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameConfig_AllInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameConfig_AllInfo{pub fn off()->Self{Self{value:0}
+}
+pub fn on()->Self{Self{value:1}
+}
+pub fn num()->Self{Self{value:2}
+}
+}
+
 }
 
 #[cfg(feature = "app-gameconfig-types")]
 pub use __types::*;
-
-#[cfg(feature="app-gameconfig")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameConfig_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:GameConfig,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <GameConfig as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(GameConfig, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:GameConfig,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <GameConfig as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(GameConfig, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_version(this:GameConfig,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <GameConfig as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(GameConfig, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:GameConfig,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <GameConfig as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(GameConfig,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:GameConfig,stream:crate::app::stream_2::Stream_2,load_version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <GameConfig as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(GameConfig,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,load_version,__mi)}
-}
 
 #[cfg(feature="app-gameconfig")]impl GameConfig{#[doc="`IsPerformance()` overload"]pub fn is_performance()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x227bbe0usize)as*mut u8,bool;
 )}
@@ -600,23 +547,68 @@ inner(this,stream,load_version,__mi)}
 (GameConfig)__receiver,(crate::app::gameconfig::GameConfig_MapCursorMoveTyep)::core::convert::Into::into(value))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GameConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameConfig_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GameConfig as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(GameConfig, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <GameConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameConfig_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GameConfig as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(GameConfig, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <GameConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x227a590usize)as*mut u8,();
 (GameConfig)__receiver)}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <GameConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameConfig_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GameConfig as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(GameConfig, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GameConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameConfig_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GameConfig as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(GameConfig,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,load_version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GameConfig_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(load_version), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <GameConfig as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(GameConfig,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(load_version),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x227be40usize)as*mut u8,();
@@ -695,6 +687,23 @@ pub fn is_fast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
 }
 
+#[cfg(feature="app-gameconfig")]impl GameConfig{#[doc="Direct (non-virtual) call to `GameConfig`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameConfig`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameConfig`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameConfig`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GameConfig`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,load_version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,load_version, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-gameconfig")]impl GameConfig{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(GameConfig), ::core::stringify!(new),));
@@ -705,25 +714,25 @@ this}
 #[cfg(feature = "app-gameconfig")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GameConfig_UnitInfoType;
+    pub use super::GameConfig_OperationType;
+    pub use super::GameConfig_SpeedType;
+    pub use super::GameConfig_InfoType;
+    pub use super::GameConfig_MapCursorMoveTyep;
+    pub use super::GameConfig_AllInfoSwitch;
+    pub use super::GameConfig_EngageAnimeType;
+    pub use super::GameConfig_MinimapType;
+    pub use super::GameConfig_Toggle;
+    pub use super::GameConfig_DragonRideOperationType;
+    pub use super::GameConfig_Modes;
+    pub use super::GameConfig_InfoLocation;
     pub use super::GameConfig;
     pub use super::IGameConfig;
     pub use super::IGameConfigMethods;
-    pub use super::GameConfig_MapCursorMoveTyep;
     pub use super::GameConfig_AnimeType;
-    pub use super::GameConfig_UnitInfoType;
-    pub use super::GameConfig_DragonRideOperationType;
-    pub use super::GameConfig_InfoLocation;
-    pub use super::GameConfig_AllInfoSwitch;
-    pub use super::GameConfig_AllInfo;
-    pub use super::GameConfig_OperationType;
     pub use super::GameConfig_StickTriggerMarginType;
-    pub use super::GameConfig_InfoType;
-    pub use super::GameConfig_Toggle;
-    pub use super::GameConfig_Modes;
-    pub use super::GameConfig_MinimapType;
-    pub use super::GameConfig_SpeedType;
-    pub use super::GameConfig_EngageAnimeType;
     pub use super::GameConfig_CameraRotationType;
+    pub use super::GameConfig_AllInfo;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -25,32 +25,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Command.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Command{pub m_type:u8,pub m_size:u16,pub m_offset:i32,}
-impl::unity2::ClassIdentity for MapHistory_Command{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.Command";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_Command{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayCommandWriter.md"))]#[::unity2::class(namespace="App",name="MapHistory.ReplayCommandWriter")]#[parent(crate::app::maphistory::MapHistory_CommandWriter)]pub struct MapHistory_ReplayCommandWriter{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_UnitMapBase_2_IData.md"))]#[::unity2::class(namespace="App",name="MapHistory.UnitMapBase`2.IData")]pub struct MapHistory_UnitMapBase_2_IData<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindCommandReader.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindCommandReader")]#[parent(crate::app::maphistory::MapHistory_CommandReader)]pub struct MapHistory_RewindCommandReader{#[offset(48)]#[rename(name="m_DummySkills")]pub m_dummy_skills:crate::app::skillarray::SkillArray, #[offset(56)]#[rename(name="m_DummyUnitItem")]pub m_dummy_unit_item:crate::app::unititem::UnitItem,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind.md"))]#[::unity2::class(namespace="App",name="MapHistory.Rewind")]#[parent(crate::app::maphistory::MapHistory_Base_1<crate::app::maphistory::MapHistory_Rewind>)]pub struct MapHistory_Rewind{#[static_field]#[rename(name="MaxLogCommand")]pub max_log_command:i32, #[static_field]#[rename(name="Version")]pub version:i32, #[offset(48)]#[rename(name="m_Mode")]pub m_mode:crate::app::maphistory::MapHistory_Mode, #[offset(52)]#[rename(name="m_UseCount")]pub m_use_count:i32, #[offset(56)]#[rename(name="m_Writers")]pub m_writers: ::unity2::Array<crate::app::maphistory::MapHistory_RewindCommandWriter> , #[offset(64)]#[rename(name="m_Writer")]pub m_writer:crate::app::maphistory::MapHistory_RewindCommandWriter, #[offset(72)]#[rename(name="m_Reader")]pub m_reader:crate::app::maphistory::MapHistory_RewindCommandReader, #[offset(80)]#[rename(name="m_PreviewIndex")]pub m_preview_index:i32, #[offset(88)]#[rename(name="m_LatestStream")]pub m_latest_stream:crate::app::stream_2::Stream_2, #[offset(96)]#[rename(name="m_GodChangedInfos")]pub m_god_changed_infos:crate::system::collections::generic::dictionary_2::Dictionary_2<i32, ::unity2::Il2CppString> , #[offset(104)]#[rename(name="m_LatestInspectors")]pub m_latest_inspectors:crate::system::collections::generic::list_1::List_1<crate::app::maphistory::MapHistory_Rewind_LatestInspectorData> , #[offset(112)]#[rename(name="m_AbsentPids")]pub m_absent_pids:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> , #[offset(120)]#[rename(name="m_FieldBgmPlayerPhaseBgm")]pub m_field_bgm_player_phase_bgm: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_FieldBgmEnemyPhaseBgm")]pub m_field_bgm_enemy_phase_bgm: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_FieldBgmAllyPhaseBgm")]pub m_field_bgm_ally_phase_bgm: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_FieldBgmWarSituation")]pub m_field_bgm_war_situation: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_FieldBgmSpecialTurn")]pub m_field_bgm_special_turn:i32, #[offset(160)]#[rename(name="m_PostChangeBgmEvent")]pub m_post_change_bgm_event: ::unity2::Il2CppString, #[offset(168)]#[rename(name="m_BattleCalcData")]pub m_battle_calc_data:crate::app::maphistory::MapHistory_Rewind_BattleCalcData, #[offset(176)]#[rename(name="m_UnitPhaseCountPos")]pub m_unit_phase_count_pos:i32, #[offset(180)]#[rename(name="m_UnitPhaseCount")]pub m_unit_phase_count:i32, #[offset(184)]#[rename(name="m_UnitPhaseBeginOnePos")]pub m_unit_phase_begin_one_pos:i32, #[offset(188)]#[rename(name="m_UnitPhaseBeginCountPos")]pub m_unit_phase_begin_count_pos:i32, #[offset(192)]#[rename(name="m_UnitPhaseBeginCount")]pub m_unit_phase_begin_count:i32, #[offset(196)]#[rename(name="m_UnitPhaseBeginFlags")]pub m_unit_phase_begin_flags:i32, #[offset(200)]#[rename(name="m_TerrainSetCountPos")]pub m_terrain_set_count_pos:i32, #[offset(204)]#[rename(name="m_TerrainSetCount")]pub m_terrain_set_count:i32, #[offset(208)]#[rename(name="m_OverlapCountPos")]pub m_overlap_count_pos:i32, #[offset(212)]#[rename(name="m_OverlapCount")]pub m_overlap_count:i32, #[offset(216)]#[rename(name="m_RangeCountPos")]pub m_range_count_pos:i32, #[offset(220)]#[rename(name="m_RangeCount")]pub m_range_count:i32, #[offset(224)]#[rename(name="m_EffectDeleteCountPos")]pub m_effect_delete_count_pos:i32, #[offset(228)]#[rename(name="m_EffectDeleteCount")]pub m_effect_delete_count:i32, #[offset(232)]#[rename(name="m_HasMaterialFloat")]pub m_has_material_float:bool, #[offset(233)]#[rename(name="m_HasMaterialColor")]pub m_has_material_color:bool, #[offset(236)]#[rename(name="m_PositionListCountPos")]pub m_position_list_count_pos:i32, #[offset(240)]#[rename(name="m_PositionListUnits")]pub m_position_list_units:crate::system::collections::generic::list_1::List_1<u8> , #[offset(248)]#[rename(name="m_WorkTerrains")]pub m_work_terrains:crate::system::collections::generic::list_1::List_1<crate::app::maphistory::MapHistory_Rewind_WorkTerrainData> , #[offset(256)]#[rename(name="m_OverlapPool")]pub m_overlap_pool:crate::app::maphistory::MapHistory_Rewind_OverlapDataPool, #[offset(264)]#[rename(name="m_LatestOverlaps")]pub m_latest_overlaps:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::maphistory::MapHistory_Rewind_OverlapData> , #[offset(272)]#[rename(name="m_PostapplyOverlaps")]pub m_postapply_overlaps:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::maphistory::MapHistory_Rewind_OverlapData> , #[offset(280)]#[rename(name="m_KillBonusKindImage")]pub m_kill_bonus_kind_image:crate::app::mapkillbonus::MapKillBonus_KindImage, #[offset(288)]#[rename(name="m_Skills")]pub m_skills:crate::app::skillarray::SkillArray, #[offset(296)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(304)]#[rename(name="m_UnitItemList")]pub m_unit_item_list:crate::app::unititemlist::UnitItemList, #[offset(312)]#[rename(name="m_MaxUseCountNormalHolder")]pub m_max_use_count_normal_holder:crate::app::gameparam::GameParam_Holder, #[offset(320)]#[rename(name="m_MaxUseCountHardHolder")]pub m_max_use_count_hard_holder:crate::app::gameparam::GameParam_Holder, #[offset(328)]#[rename(name="m_MaxUseCountLunaticHolder")]pub m_max_use_count_lunatic_holder:crate::app::gameparam::GameParam_Holder, #[offset(336)]#[rename(name="m_MaxSplitHolder")]pub m_max_split_holder:crate::app::gameparam::GameParam_Holder,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_OverlapData.md"))]#[::unity2::class(namespace="App",name="MapHistory.Rewind.OverlapData")]#[parent(crate::app::pool::Pool_Node)]pub struct MapHistory_Rewind_OverlapData{#[offset(16)]#[rename(name="hasData")]pub has_data:bool, #[offset(17)]#[rename(name="x")]pub x:u8, #[offset(18)]#[rename(name="z")]pub z:u8, #[offset(19)]#[rename(name="hp")]pub hp:u8, #[offset(20)]#[rename(name="life")]pub life:u8, #[offset(22)]#[rename(name="turn")]pub turn:i16, #[offset(24)]#[rename(name="phase")]pub phase:u8, #[offset(25)]#[rename(name="tidMapIndex")]pub tid_map_index:u8, #[offset(26)]#[rename(name="isDone")]pub is_done:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_WorkLayerData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Rewind_WorkLayerData{pub group:u8,pub enable:bool,}
 impl::unity2::ClassIdentity for MapHistory_Rewind_WorkLayerData{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapHistory.Rewind.WorkLayerData";
@@ -62,130 +36,13 @@ impl::unity2::IlType for MapHistory_Rewind_WorkLayerData{fn il_type()-> &'static
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_RangeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Rewind_RangeType{pub value:i32,}
-impl::unity2::ClassIdentity for MapHistory_Rewind_RangeType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.Rewind.RangeType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_Rewind_RangeType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapHistory_Rewind_RangeType{pub fn by_add()->Self{Self{value:0}
-}
-pub fn by_clear()->Self{Self{value:1}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayCommandWriter.md"))]#[::unity2::class(namespace="App",name="MapHistory.ReplayCommandWriter")]#[parent(crate::app::maphistory::MapHistory_CommandWriter)]pub struct MapHistory_ReplayCommandWriter{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindUnitMap_Data.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_RewindUnitMap_Data{pub force_type:crate::app::force::Force_Type,pub stream:crate::app::stream_2::Stream_2,pub buffer: ::unity2::Array<u8>,pub is_restored_in_preview:bool,pub is_created_in_preview:bool,pub is_used_in_preview:bool,pub is_before_dispos_in_preview:bool,}
-impl::unity2::ClassIdentity for MapHistory_RewindUnitMap_Data{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.RewindUnitMap.Data";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_RewindUnitMap_Data{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Base_1.md"))]#[::unity2::class(namespace="App",name="MapHistory.Base`1")]#[parent(crate::system::object::Object)]pub struct MapHistory_Base_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="StreamAdditionalSize")]pub stream_additional_size:i32, #[rename(name="m_CommandStreamBuffer")]pub m_command_stream_buffer: ::unity2::Array<u8> , #[rename(name="m_CommandStream")]pub m_command_stream:crate::app::stream_2::Stream_2, #[rename(name="m_Commands")]pub m_commands: ::unity2::Array<crate::app::maphistory::MapHistory_Command> , #[rename(name="m_NumCommand")]pub m_num_command:i32, #[rename(name="m_NumSplit")]pub m_num_split:i32, #[static_field]#[rename(name="s_Instance")]pub s_instance:T0,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindUnitMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindUnitMap")]#[parent(crate::app::maphistory::MapHistory_UnitMapBase_2<crate::app::maphistory::MapHistory_RewindUnitMap,crate::app::maphistory::MapHistory_RewindUnitMap_Data>)]pub struct MapHistory_RewindUnitMap{#[static_field]#[rename(name="StreamBufferSize")]pub stream_buffer_size:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayUnitMap_Data.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_ReplayUnitMap_Data{}
-impl::unity2::ClassIdentity for MapHistory_ReplayUnitMap_Data{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.ReplayUnitMap.Data";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_ReplayUnitMap_Data{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_SerializeDisabled.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_SerializeDisabled{pub m_is_prev_disabled:bool,}
-impl::unity2::ClassIdentity for MapHistory_SerializeDisabled{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.SerializeDisabled";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_SerializeDisabled{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_EffectNameMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.EffectNameMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_EffectNameMap>)]pub struct MapHistory_EffectNameMap{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_LatestInspectorData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Rewind_LatestInspectorData{pub x:u8,pub z:u8,pub is_checked:bool,}
-impl::unity2::ClassIdentity for MapHistory_Rewind_LatestInspectorData{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.Rewind.LatestInspectorData";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_Rewind_LatestInspectorData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindLogBuilder.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindLogBuilder")]#[parent(crate::system::object::Object)]pub struct MapHistory_RewindLogBuilder{#[offset(16)]#[rename(name="m_Log")]pub m_log:crate::app::maphistory::MapHistory_RewindLog, #[offset(24)]#[rename(name="m_IsNeedToBuild")]pub m_is_need_to_build:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_IsEngagings.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Rewind_IsEngagings{pub value:i32,}
-impl::unity2::ClassIdentity for MapHistory_Rewind_IsEngagings{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.Rewind.IsEngagings";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_Rewind_IsEngagings{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapHistory_Rewind_IsEngagings{pub fn from_unit()->Self{Self{value:0}
-}
-pub fn r#true()->Self{Self{value:1}
-}
-pub fn r#false()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_CommonType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_CommonType{pub value:i32,}
-impl::unity2::ClassIdentity for MapHistory_CommonType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.CommonType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_CommonType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapHistory_CommonType{pub fn none()->Self{Self{value:0}
-}
-pub fn split()->Self{Self{value:1}
-}
-pub fn custom()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_GidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.GidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_GidMap>)]pub struct MapHistory_GidMap{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindCommandWriter.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindCommandWriter")]#[parent(crate::app::maphistory::MapHistory_CommandWriter)]pub struct MapHistory_RewindCommandWriter{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_TurnSave.md"))]#[::unity2::class(namespace="App",name="MapHistory.Replay.TurnSave")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::maphistory::MapHistory_Replay_TurnSave>)]pub struct MapHistory_Replay_TurnSave{#[static_field]#[rename(name="StreamBufferSize")]pub stream_buffer_size:i32, #[offset(32)]#[rename(name="m_StreamBuffer")]pub m_stream_buffer: ::unity2::Array<u8> , #[offset(40)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(48)]#[rename(name="m_SaveAsyncMethod")]pub m_save_async_method:crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_VariableMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.VariableMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_VariableMap>)]pub struct MapHistory_VariableMap{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RnidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.RnidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_RnidMap>)]pub struct MapHistory_RnidMap{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_SaveAsync_SaveMethod.md"))]#[::unity2::class(namespace="App",name="MapHistory.Replay.SaveAsync.SaveMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapHistory_Replay_SaveAsync_SaveMethod{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_PidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.PidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_PidMap>)]pub struct MapHistory_PidMap{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_SidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.SidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_SidMap>)]pub struct MapHistory_SidMap{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_SaveAsyncThread_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Replay_SaveAsyncThread_Status{pub value:i32,}
@@ -206,35 +63,138 @@ pub fn end()->Self{Self{value:2}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindCommandReader.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindCommandReader")]#[parent(crate::app::maphistory::MapHistory_CommandReader)]pub struct MapHistory_RewindCommandReader{#[offset(48)]#[rename(name="m_DummySkills")]pub m_dummy_skills:crate::app::skillarray::SkillArray, #[offset(56)]#[rename(name="m_DummyUnitItem")]pub m_dummy_unit_item:crate::app::unititem::UnitItem,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_SaveAsync_SaveMethod.md"))]#[::unity2::class(namespace="App",name="MapHistory.Replay.SaveAsync.SaveMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapHistory_Replay_SaveAsync_SaveMethod{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_IdMap_1.md"))]#[::unity2::class(namespace="App",name="MapHistory.IdMap`1")]#[parent(crate::app::maphistory::MapHistory_IdMapBase_1<T0>)]#[parent(crate::app::singletonclass_1::SingletonClass_1<T0>)]#[parent(crate::system::object::Object)]pub struct MapHistory_IdMap_1<T0: ::unity2::ClassIdentity>{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_ReadResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Replay_ReadResult{pub value:i32,}
-impl::unity2::ClassIdentity for MapHistory_Replay_ReadResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.Replay.ReadResult";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_Replay_ReadResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapHistory_Replay_ReadResult{pub fn next()->Self{Self{value:0}
-}
-pub fn mind()->Self{Self{value:1}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_SaveAsync.md"))]#[::unity2::class(namespace="App",name="MapHistory.Replay.SaveAsync")]#[parent(crate::app::procinst::ProcInst)]pub struct MapHistory_Replay_SaveAsync{#[static_field]#[rename(name="s_Thread")]pub s_thread:crate::app::maphistory::MapHistory_Replay_SaveAsyncThread, #[offset(112)]#[rename(name="m_SaveMethod")]pub m_save_method:crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_SidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.SidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_SidMap>)]pub struct MapHistory_SidMap{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindRelianceMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindRelianceMap")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::maphistory::MapHistory_RewindRelianceMap>)]pub struct MapHistory_RewindRelianceMap{#[offset(32)]#[rename(name="m_Ids")]pub m_ids:crate::system::collections::generic::list_1::List_1<u32> , #[offset(40)]#[rename(name="m_IsUnitMapVer")]pub m_is_unit_map_ver:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindUnitMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindUnitMap")]#[parent(crate::app::maphistory::MapHistory_UnitMapBase_2<crate::app::maphistory::MapHistory_RewindUnitMap,crate::app::maphistory::MapHistory_RewindUnitMap_Data>)]pub struct MapHistory_RewindUnitMap{#[static_field]#[rename(name="StreamBufferSize")]pub stream_buffer_size:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_UnitMapBase_2.md"))]#[::unity2::class(namespace="App",name="MapHistory.UnitMapBase`2")]#[parent(crate::app::singletonclass_1::SingletonClass_1<T0>)]#[parent(crate::system::object::Object)]pub struct MapHistory_UnitMapBase_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{#[static_field]#[rename(name="MaxDataCount")]pub max_data_count:i32, #[rename(name="m_Data")]pub m_data: ::unity2::Array<T1> , #[rename(name="m_NoEmptyFunction")]pub m_no_empty_function:crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1> ,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind.md"))]#[::unity2::class(namespace="App",name="MapHistory.Rewind")]#[parent(crate::app::maphistory::MapHistory_Base_1<crate::app::maphistory::MapHistory_Rewind>)]pub struct MapHistory_Rewind{#[static_field]#[rename(name="MaxLogCommand")]pub max_log_command:i32, #[static_field]#[rename(name="Version")]pub version:i32, #[offset(48)]#[rename(name="m_Mode")]pub m_mode:crate::app::maphistory::MapHistory_Mode, #[offset(52)]#[rename(name="m_UseCount")]pub m_use_count:i32, #[offset(56)]#[rename(name="m_Writers")]pub m_writers: ::unity2::Array<crate::app::maphistory::MapHistory_RewindCommandWriter> , #[offset(64)]#[rename(name="m_Writer")]pub m_writer:crate::app::maphistory::MapHistory_RewindCommandWriter, #[offset(72)]#[rename(name="m_Reader")]pub m_reader:crate::app::maphistory::MapHistory_RewindCommandReader, #[offset(80)]#[rename(name="m_PreviewIndex")]pub m_preview_index:i32, #[offset(88)]#[rename(name="m_LatestStream")]pub m_latest_stream:crate::app::stream_2::Stream_2, #[offset(96)]#[rename(name="m_GodChangedInfos")]pub m_god_changed_infos:crate::system::collections::generic::dictionary_2::Dictionary_2<i32, ::unity2::Il2CppString> , #[offset(104)]#[rename(name="m_LatestInspectors")]pub m_latest_inspectors:crate::system::collections::generic::list_1::List_1<crate::app::maphistory::MapHistory_Rewind_LatestInspectorData> , #[offset(112)]#[rename(name="m_AbsentPids")]pub m_absent_pids:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> , #[offset(120)]#[rename(name="m_FieldBgmPlayerPhaseBgm")]pub m_field_bgm_player_phase_bgm: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_FieldBgmEnemyPhaseBgm")]pub m_field_bgm_enemy_phase_bgm: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_FieldBgmAllyPhaseBgm")]pub m_field_bgm_ally_phase_bgm: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_FieldBgmWarSituation")]pub m_field_bgm_war_situation: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_FieldBgmSpecialTurn")]pub m_field_bgm_special_turn:i32, #[offset(160)]#[rename(name="m_PostChangeBgmEvent")]pub m_post_change_bgm_event: ::unity2::Il2CppString, #[offset(168)]#[rename(name="m_BattleCalcData")]pub m_battle_calc_data:crate::app::maphistory::MapHistory_Rewind_BattleCalcData, #[offset(176)]#[rename(name="m_UnitPhaseCountPos")]pub m_unit_phase_count_pos:i32, #[offset(180)]#[rename(name="m_UnitPhaseCount")]pub m_unit_phase_count:i32, #[offset(184)]#[rename(name="m_UnitPhaseBeginOnePos")]pub m_unit_phase_begin_one_pos:i32, #[offset(188)]#[rename(name="m_UnitPhaseBeginCountPos")]pub m_unit_phase_begin_count_pos:i32, #[offset(192)]#[rename(name="m_UnitPhaseBeginCount")]pub m_unit_phase_begin_count:i32, #[offset(196)]#[rename(name="m_UnitPhaseBeginFlags")]pub m_unit_phase_begin_flags:i32, #[offset(200)]#[rename(name="m_TerrainSetCountPos")]pub m_terrain_set_count_pos:i32, #[offset(204)]#[rename(name="m_TerrainSetCount")]pub m_terrain_set_count:i32, #[offset(208)]#[rename(name="m_OverlapCountPos")]pub m_overlap_count_pos:i32, #[offset(212)]#[rename(name="m_OverlapCount")]pub m_overlap_count:i32, #[offset(216)]#[rename(name="m_RangeCountPos")]pub m_range_count_pos:i32, #[offset(220)]#[rename(name="m_RangeCount")]pub m_range_count:i32, #[offset(224)]#[rename(name="m_EffectDeleteCountPos")]pub m_effect_delete_count_pos:i32, #[offset(228)]#[rename(name="m_EffectDeleteCount")]pub m_effect_delete_count:i32, #[offset(232)]#[rename(name="m_HasMaterialFloat")]pub m_has_material_float:bool, #[offset(233)]#[rename(name="m_HasMaterialColor")]pub m_has_material_color:bool, #[offset(236)]#[rename(name="m_PositionListCountPos")]pub m_position_list_count_pos:i32, #[offset(240)]#[rename(name="m_PositionListUnits")]pub m_position_list_units:crate::system::collections::generic::list_1::List_1<u8> , #[offset(248)]#[rename(name="m_WorkTerrains")]pub m_work_terrains:crate::system::collections::generic::list_1::List_1<crate::app::maphistory::MapHistory_Rewind_WorkTerrainData> , #[offset(256)]#[rename(name="m_OverlapPool")]pub m_overlap_pool:crate::app::maphistory::MapHistory_Rewind_OverlapDataPool, #[offset(264)]#[rename(name="m_LatestOverlaps")]pub m_latest_overlaps:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::maphistory::MapHistory_Rewind_OverlapData> , #[offset(272)]#[rename(name="m_PostapplyOverlaps")]pub m_postapply_overlaps:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::maphistory::MapHistory_Rewind_OverlapData> , #[offset(280)]#[rename(name="m_KillBonusKindImage")]pub m_kill_bonus_kind_image:crate::app::mapkillbonus::MapKillBonus_KindImage, #[offset(288)]#[rename(name="m_Skills")]pub m_skills:crate::app::skillarray::SkillArray, #[offset(296)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(304)]#[rename(name="m_UnitItemList")]pub m_unit_item_list:crate::app::unititemlist::UnitItemList, #[offset(312)]#[rename(name="m_MaxUseCountNormalHolder")]pub m_max_use_count_normal_holder:crate::app::gameparam::GameParam_Holder, #[offset(320)]#[rename(name="m_MaxUseCountHardHolder")]pub m_max_use_count_hard_holder:crate::app::gameparam::GameParam_Holder, #[offset(328)]#[rename(name="m_MaxUseCountLunaticHolder")]pub m_max_use_count_lunatic_holder:crate::app::gameparam::GameParam_Holder, #[offset(336)]#[rename(name="m_MaxSplitHolder")]pub m_max_split_holder:crate::app::gameparam::GameParam_Holder,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_RangeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Rewind_RangeType{pub value:i32,}
+impl::unity2::ClassIdentity for MapHistory_Rewind_RangeType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.Rewind.RangeType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_Rewind_RangeType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapHistory_Rewind_RangeType{pub fn by_add()->Self{Self{value:0}
+}
+pub fn by_clear()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayAppearanceMap_Appearance.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_ReplayAppearanceMap_Appearance{pub turn:u8,pub buffer: ::unity2::Array<u8>,pub stream:crate::app::stream_2::Stream_2,}
+impl::unity2::ClassIdentity for MapHistory_ReplayAppearanceMap_Appearance{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.ReplayAppearanceMap.Appearance";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_ReplayAppearanceMap_Appearance{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayCommandReader.md"))]#[::unity2::class(namespace="App",name="MapHistory.ReplayCommandReader")]#[parent(crate::app::maphistory::MapHistory_CommandReader)]pub struct MapHistory_ReplayCommandReader{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_WorkTerrainData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Rewind_WorkTerrainData{pub x:u8,pub z:u8,pub index:u8,}
+impl::unity2::ClassIdentity for MapHistory_Rewind_WorkTerrainData{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.Rewind.WorkTerrainData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_Rewind_WorkTerrainData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindLogBuilder.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindLogBuilder")]#[parent(crate::system::object::Object)]pub struct MapHistory_RewindLogBuilder{#[offset(16)]#[rename(name="m_Log")]pub m_log:crate::app::maphistory::MapHistory_RewindLog, #[offset(24)]#[rename(name="m_IsNeedToBuild")]pub m_is_need_to_build:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayAppearanceMap_Leaving.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_ReplayAppearanceMap_Leaving{pub turn:u8,pub map_history_index:u8,}
+impl::unity2::ClassIdentity for MapHistory_ReplayAppearanceMap_Leaving{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.ReplayAppearanceMap.Leaving";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_ReplayAppearanceMap_Leaving{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_BattleCalcData.md"))]#[::unity2::class(namespace="App",name="MapHistory.Rewind.BattleCalcData")]#[parent(crate::system::object::Object)]pub struct MapHistory_Rewind_BattleCalcData{#[offset(16)]#[rename(name="m_SavedUnits")]pub m_saved_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(24)]#[rename(name="m_WorkUnits")]pub m_work_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(32)]#[rename(name="m_SavedInspectors")]pub m_saved_inspectors:crate::system::collections::generic::list_1::List_1<crate::app::pokeinspector::PokeInspector> , #[offset(40)]#[rename(name="m_WorkInspectors")]pub m_work_inspectors:crate::system::collections::generic::list_1::List_1<crate::app::pokeinspector::PokeInspector> , #[offset(48)]#[rename(name="m_SavedOverlaps")]pub m_saved_overlaps:crate::system::collections::generic::list_1::List_1<crate::app::mapoverlap::MapOverlap_Data> , #[offset(56)]#[rename(name="m_WorkOverlaps")]pub m_work_overlaps:crate::system::collections::generic::list_1::List_1<crate::app::mapoverlap::MapOverlap_Data> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for MapHistory_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapHistory_Mode{pub fn none()->Self{Self{value:0}
+}
+pub fn write()->Self{Self{value:1}
+}
+pub fn read()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay.md"))]#[::unity2::class(namespace="App",name="MapHistory.Replay")]#[parent(crate::app::maphistory::MapHistory_Base_1<crate::app::maphistory::MapHistory_Replay>)]pub struct MapHistory_Replay{#[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="SnapshotVersion")]pub snapshot_version:u8, #[offset(48)]#[rename(name="m_Mode")]pub m_mode:crate::app::maphistory::MapHistory_Mode, #[offset(56)]#[rename(name="m_Writer")]pub m_writer:crate::app::maphistory::MapHistory_ReplayCommandWriter, #[offset(64)]#[rename(name="m_Reader")]pub m_reader:crate::app::maphistory::MapHistory_ReplayCommandReader, #[offset(72)]#[rename(name="m_InitialStreamBuffer")]pub m_initial_stream_buffer: ::unity2::Array<u8> , #[offset(80)]#[rename(name="m_InitialStream")]pub m_initial_stream:crate::app::stream_2::Stream_2, #[offset(88)]#[rename(name="m_LastEngageIndex")]pub m_last_engage_index:i32, #[offset(92)]#[rename(name="m_FirstGodChangeIndex")]pub m_first_god_change_index:i32, #[offset(96)]#[rename(name="m_LastGodChangeIndex")]pub m_last_god_change_index:i32, #[offset(100)]#[rename(name="m_FirstUnitItemListIndex")]pub m_first_unit_item_list_index:i32, #[offset(104)]#[rename(name="m_ReadIndex")]pub m_read_index:i32, #[offset(108)]#[rename(name="m_IsReadPhaseBegin")]pub m_is_read_phase_begin:bool, #[offset(112)]#[rename(name="m_SavedBattleType")]pub m_saved_battle_type:crate::app::gameconfig::GameConfig_AnimeType, #[offset(116)]#[rename(name="m_SavedSupportType")]pub m_saved_support_type:crate::app::gameconfig::GameConfig_AnimeType, #[offset(120)]#[rename(name="m_SavedEngageAnim")]pub m_saved_engage_anim:crate::app::gameconfig::GameConfig_EngageAnimeType, #[offset(128)]#[rename(name="m_RelayTakeOverTurns")]pub m_relay_take_over_turns:crate::system::collections::generic::list_1::List_1<u8> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Command.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Command{pub m_type:u8,pub m_size:u16,pub m_offset:i32,}
+impl::unity2::ClassIdentity for MapHistory_Command{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.Command";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_Command{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindCommandWriter.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindCommandWriter")]#[parent(crate::app::maphistory::MapHistory_CommandWriter)]pub struct MapHistory_RewindCommandWriter{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_CommandWriter.md"))]#[::unity2::class(namespace="App",name="MapHistory.CommandWriter")]#[parent(crate::app::stream_2::Stream_2)]pub struct MapHistory_CommandWriter{#[static_field]#[rename(name="BufferSize")]pub buffer_size:i32, #[offset(40)]#[rename(name="m_Type")]pub m_type:u8,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_GidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.GidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_GidMap>)]pub struct MapHistory_GidMap{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_PidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.PidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_PidMap>)]pub struct MapHistory_PidMap{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindUnitMap_Data.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_RewindUnitMap_Data{pub force_type:crate::app::force::Force_Type,pub stream:crate::app::stream_2::Stream_2,pub buffer: ::unity2::Array<u8>,pub is_restored_in_preview:bool,pub is_created_in_preview:bool,pub is_used_in_preview:bool,pub is_before_dispos_in_preview:bool,}
+impl::unity2::ClassIdentity for MapHistory_RewindUnitMap_Data{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.RewindUnitMap.Data";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_RewindUnitMap_Data{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_ReplayType{pub value:i32,}
@@ -263,27 +223,39 @@ pub fn surrender()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_IdMapBase_1.md"))]#[::unity2::class(namespace="App",name="MapHistory.IdMapBase`1")]#[parent(crate::app::singletonclass_1::SingletonClass_1<T0>)]#[parent(crate::system::object::Object)]pub struct MapHistory_IdMapBase_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_Ids")]pub m_ids:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[rename(name="m_IdIndexDict")]pub m_id_index_dict:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,u8> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_MaterialStringMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.MaterialStringMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_MaterialStringMap>)]pub struct MapHistory_MaterialStringMap{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayCommandReader.md"))]#[::unity2::class(namespace="App",name="MapHistory.ReplayCommandReader")]#[parent(crate::app::maphistory::MapHistory_CommandReader)]pub struct MapHistory_ReplayCommandReader{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_SerializeDisabled.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_SerializeDisabled{pub m_is_prev_disabled:bool,}
+impl::unity2::ClassIdentity for MapHistory_SerializeDisabled{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.SerializeDisabled";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_SerializeDisabled{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_VariableMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.VariableMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_VariableMap>)]pub struct MapHistory_VariableMap{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_TidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.TidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_TidMap>)]pub struct MapHistory_TidMap{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_UnitMapBase_2_NoEmptyFunction.md"))]#[::unity2::class(namespace="App",name="MapHistory.UnitMapBase`2.NoEmptyFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct MapHistory_UnitMapBase_2_NoEmptyFunction<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Base_1.md"))]#[::unity2::class(namespace="App",name="MapHistory.Base`1")]#[parent(crate::system::object::Object)]pub struct MapHistory_Base_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="StreamAdditionalSize")]pub stream_additional_size:i32, #[rename(name="m_CommandStreamBuffer")]pub m_command_stream_buffer: ::unity2::Array<u8> , #[rename(name="m_CommandStream")]pub m_command_stream:crate::app::stream_2::Stream_2, #[rename(name="m_Commands")]pub m_commands: ::unity2::Array<crate::app::maphistory::MapHistory_Command> , #[rename(name="m_NumCommand")]pub m_num_command:i32, #[rename(name="m_NumSplit")]pub m_num_split:i32, #[static_field]#[rename(name="s_Instance")]pub s_instance:T0,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindLog_UnitIcon.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindLog.UnitIcon")]#[parent(crate::system::object::Object)]pub struct MapHistory_RewindLog_UnitIcon{#[offset(16)]#[rename(name="m_Person")]pub m_person:crate::app::persondata::PersonData, #[offset(24)]#[rename(name="m_Job")]pub m_job:crate::app::jobdata::JobData, #[offset(32)]#[rename(name="m_ItemKind")]pub m_item_kind:crate::app::itemdata::ItemData_Kinds, #[offset(36)]#[rename(name="m_IsFemale")]pub m_is_female:bool, #[offset(37)]#[rename(name="m_IsEngage")]pub m_is_engage:bool, #[offset(40)]#[rename(name="m_God")]pub m_god:crate::app::goddata::GodData,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_ModeScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Rewind_ModeScope{pub m_prev_mode:crate::app::maphistory::MapHistory_Mode,}
-impl::unity2::ClassIdentity for MapHistory_Rewind_ModeScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.Rewind.ModeScope";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_Rewind_ModeScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayUnitMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.ReplayUnitMap")]#[parent(crate::app::maphistory::MapHistory_UnitMapBase_2<crate::app::maphistory::MapHistory_ReplayUnitMap,crate::app::maphistory::MapHistory_ReplayUnitMap_Data>)]pub struct MapHistory_ReplayUnitMap{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_UnitMapBase_2_IData.md"))]#[::unity2::class(namespace="App",name="MapHistory.UnitMapBase`2.IData")]pub struct MapHistory_UnitMapBase_2_IData<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_OverlapDataPool.md"))]#[::unity2::class(namespace="App",name="MapHistory.Rewind.OverlapDataPool")]#[parent(crate::app::pool::Pool_List_1<crate::app::maphistory::MapHistory_Rewind_OverlapData>)]pub struct MapHistory_Rewind_OverlapDataPool{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_WriterKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Rewind_WriterKind{pub value:i32,}
@@ -302,6 +274,25 @@ pub fn terrain_set()->Self{Self{value:1}
 pub fn overlap()->Self{Self{value:2}
 }
 pub fn num()->Self{Self{value:3}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_IdMapBase_1.md"))]#[::unity2::class(namespace="App",name="MapHistory.IdMapBase`1")]#[parent(crate::app::singletonclass_1::SingletonClass_1<T0>)]#[parent(crate::system::object::Object)]pub struct MapHistory_IdMapBase_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_Ids")]pub m_ids:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[rename(name="m_IdIndexDict")]pub m_id_index_dict:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,u8> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_SplitArgs.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Rewind_SplitArgs{pub value:i32,}
+impl::unity2::ClassIdentity for MapHistory_Rewind_SplitArgs{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.Rewind.SplitArgs";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_Rewind_SplitArgs{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapHistory_Rewind_SplitArgs{pub fn default()->Self{Self{value:0}
+}
+pub fn pick_up()->Self{Self{value:1}
 }
 }
 
@@ -325,48 +316,22 @@ pub fn breakable()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_TidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.TidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_TidMap>)]pub struct MapHistory_TidMap{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayAppearanceMap_Leaving.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_ReplayAppearanceMap_Leaving{pub turn:u8,pub map_history_index:u8,}
-impl::unity2::ClassIdentity for MapHistory_ReplayAppearanceMap_Leaving{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.ReplayAppearanceMap.Leaving";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_IsEngagings.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Rewind_IsEngagings{pub value:i32,}
+impl::unity2::ClassIdentity for MapHistory_Rewind_IsEngagings{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.Rewind.IsEngagings";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for MapHistory_ReplayAppearanceMap_Leaving{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for MapHistory_Rewind_IsEngagings{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay.md"))]#[::unity2::class(namespace="App",name="MapHistory.Replay")]#[parent(crate::app::maphistory::MapHistory_Base_1<crate::app::maphistory::MapHistory_Replay>)]pub struct MapHistory_Replay{#[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="SnapshotVersion")]pub snapshot_version:u8, #[offset(48)]#[rename(name="m_Mode")]pub m_mode:crate::app::maphistory::MapHistory_Mode, #[offset(56)]#[rename(name="m_Writer")]pub m_writer:crate::app::maphistory::MapHistory_ReplayCommandWriter, #[offset(64)]#[rename(name="m_Reader")]pub m_reader:crate::app::maphistory::MapHistory_ReplayCommandReader, #[offset(72)]#[rename(name="m_InitialStreamBuffer")]pub m_initial_stream_buffer: ::unity2::Array<u8> , #[offset(80)]#[rename(name="m_InitialStream")]pub m_initial_stream:crate::app::stream_2::Stream_2, #[offset(88)]#[rename(name="m_LastEngageIndex")]pub m_last_engage_index:i32, #[offset(92)]#[rename(name="m_FirstGodChangeIndex")]pub m_first_god_change_index:i32, #[offset(96)]#[rename(name="m_LastGodChangeIndex")]pub m_last_god_change_index:i32, #[offset(100)]#[rename(name="m_FirstUnitItemListIndex")]pub m_first_unit_item_list_index:i32, #[offset(104)]#[rename(name="m_ReadIndex")]pub m_read_index:i32, #[offset(108)]#[rename(name="m_IsReadPhaseBegin")]pub m_is_read_phase_begin:bool, #[offset(112)]#[rename(name="m_SavedBattleType")]pub m_saved_battle_type:crate::app::gameconfig::GameConfig_AnimeType, #[offset(116)]#[rename(name="m_SavedSupportType")]pub m_saved_support_type:crate::app::gameconfig::GameConfig_AnimeType, #[offset(120)]#[rename(name="m_SavedEngageAnim")]pub m_saved_engage_anim:crate::app::gameconfig::GameConfig_EngageAnimeType, #[offset(128)]#[rename(name="m_RelayTakeOverTurns")]pub m_relay_take_over_turns:crate::system::collections::generic::list_1::List_1<u8> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindLog.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindLog")]#[parent(crate::system::object::Object)]pub struct MapHistory_RewindLog{#[static_field]#[rename(name="MaxItem")]pub max_item:i32, #[static_field]#[rename(name="MaxDeadUnitIcon")]pub max_dead_unit_icon:i32, #[offset(16)]#[rename(name="m_ActorUnitIcon")]pub m_actor_unit_icon:crate::app::maphistory::MapHistory_RewindLog_UnitIcon, #[offset(24)]#[rename(name="m_ActorMapHistoryIndex")]pub m_actor_map_history_index:i32, #[offset(32)]#[rename(name="m_ActorName")]pub m_actor_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Action")]pub m_action: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_Items")]pub m_items: ::unity2::Array<crate::app::itemdata::ItemData> , #[offset(56)]#[rename(name="m_ItemCount")]pub m_item_count:i32, #[offset(64)]#[rename(name="m_DeadUnitIcons")]pub m_dead_unit_icons: ::unity2::Array<crate::app::maphistory::MapHistory_RewindLog_UnitIcon> , #[offset(72)]#[rename(name="m_DeadUnitIconCount")]pub m_dead_unit_icon_count:i32, #[offset(76)]#[rename(name="m_Priority")]pub m_priority:i32, #[offset(80)]#[rename(name="m_IsForCheck")]pub m_is_for_check:bool, #[offset(84)]#[rename(name="m_ForceType")]pub m_force_type:crate::app::force::Force_Type, #[offset(88)]#[rename(name="m_PrevForceType")]pub m_prev_force_type:crate::app::force::Force_Type,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_CommandWriter.md"))]#[::unity2::class(namespace="App",name="MapHistory.CommandWriter")]#[parent(crate::app::stream_2::Stream_2)]pub struct MapHistory_CommandWriter{#[static_field]#[rename(name="BufferSize")]pub buffer_size:i32, #[offset(40)]#[rename(name="m_Type")]pub m_type:u8,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Mode{pub value:i32,}
-impl::unity2::ClassIdentity for MapHistory_Mode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.Mode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
+impl MapHistory_Rewind_IsEngagings{pub fn from_unit()->Self{Self{value:0}
 }
-impl::unity2::IlType for MapHistory_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+pub fn r#true()->Self{Self{value:1}
 }
-impl MapHistory_Mode{pub fn none()->Self{Self{value:0}
-}
-pub fn write()->Self{Self{value:1}
-}
-pub fn read()->Self{Self{value:2}
+pub fn r#false()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_OverlapDataPool.md"))]#[::unity2::class(namespace="App",name="MapHistory.Rewind.OverlapDataPool")]#[parent(crate::app::pool::Pool_List_1<crate::app::maphistory::MapHistory_Rewind_OverlapData>)]pub struct MapHistory_Rewind_OverlapDataPool{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindVariableType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_RewindVariableType{pub value:i32,}
@@ -387,49 +352,85 @@ pub fn number()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindLog_UnitIcon.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindLog.UnitIcon")]#[parent(crate::system::object::Object)]pub struct MapHistory_RewindLog_UnitIcon{#[offset(16)]#[rename(name="m_Person")]pub m_person:crate::app::persondata::PersonData, #[offset(24)]#[rename(name="m_Job")]pub m_job:crate::app::jobdata::JobData, #[offset(32)]#[rename(name="m_ItemKind")]pub m_item_kind:crate::app::itemdata::ItemData_Kinds, #[offset(36)]#[rename(name="m_IsFemale")]pub m_is_female:bool, #[offset(37)]#[rename(name="m_IsEngage")]pub m_is_engage:bool, #[offset(40)]#[rename(name="m_God")]pub m_god:crate::app::goddata::GodData,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindNameMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindNameMap")]#[parent(crate::app::maphistory::MapHistory_IdMapBase_1<crate::app::maphistory::MapHistory_RewindNameMap>)]pub struct MapHistory_RewindNameMap{#[static_field]#[rename(name="IdMask")]pub id_mask:u8, #[static_field]#[rename(name="EditNameBit")]pub edit_name_bit:u8,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_SaveAsync.md"))]#[::unity2::class(namespace="App",name="MapHistory.Replay.SaveAsync")]#[parent(crate::app::procinst::ProcInst)]pub struct MapHistory_Replay_SaveAsync{#[static_field]#[rename(name="s_Thread")]pub s_thread:crate::app::maphistory::MapHistory_Replay_SaveAsyncThread, #[offset(112)]#[rename(name="m_SaveMethod")]pub m_save_method:crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayAppearanceMap_Appearance.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_ReplayAppearanceMap_Appearance{pub turn:u8,pub buffer: ::unity2::Array<u8>,pub stream:crate::app::stream_2::Stream_2,}
-impl::unity2::ClassIdentity for MapHistory_ReplayAppearanceMap_Appearance{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.ReplayAppearanceMap.Appearance";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_ReplayAppearanceMap_Appearance{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayUnitMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.ReplayUnitMap")]#[parent(crate::app::maphistory::MapHistory_UnitMapBase_2<crate::app::maphistory::MapHistory_ReplayUnitMap,crate::app::maphistory::MapHistory_ReplayUnitMap_Data>)]pub struct MapHistory_ReplayUnitMap{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_CommandReader.md"))]#[::unity2::class(namespace="App",name="MapHistory.CommandReader")]#[parent(crate::app::stream_2::Stream_2)]pub struct MapHistory_CommandReader{#[offset(40)]#[rename(name="m_Type")]pub m_type:u8,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_SplitArgs.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Rewind_SplitArgs{pub value:i32,}
-impl::unity2::ClassIdentity for MapHistory_Rewind_SplitArgs{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.Rewind.SplitArgs";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_Rewind_SplitArgs{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapHistory_Rewind_SplitArgs{pub fn default()->Self{Self{value:0}
-}
-pub fn pick_up()->Self{Self{value:1}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_EffectNameMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.EffectNameMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_EffectNameMap>)]pub struct MapHistory_EffectNameMap{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_SaveAsyncThread.md"))]#[::unity2::class(namespace="App",name="MapHistory.Replay.SaveAsyncThread")]#[parent(crate::system::object::Object)]pub struct MapHistory_Replay_SaveAsyncThread{#[offset(24)]#[rename(name="m_Lock")]pub m_lock: ::unity2::IlInstance, #[offset(40)]#[rename(name="m_Status")]pub m_status:crate::app::maphistory::MapHistory_Replay_SaveAsyncThread_Status, #[offset(48)]#[rename(name="m_SaveMethod")]pub m_save_method:crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_OverwriteStreamScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Replay_OverwriteStreamScope{pub m_stream:crate::app::stream_2::Stream_2,pub m_saved_pos:i32,}
+impl::unity2::ClassIdentity for MapHistory_Replay_OverwriteStreamScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.Replay.OverwriteStreamScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_Replay_OverwriteStreamScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_ReplayUnitMap_Data.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_ReplayUnitMap_Data{}
+impl::unity2::ClassIdentity for MapHistory_ReplayUnitMap_Data{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.ReplayUnitMap.Data";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_ReplayUnitMap_Data{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindUnitPhaseBeginKinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_RewindUnitPhaseBeginKinds{pub value:u8,}
+impl::unity2::ClassIdentity for MapHistory_RewindUnitPhaseBeginKinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.RewindUnitPhaseBeginKinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_RewindUnitPhaseBeginKinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapHistory_RewindUnitPhaseBeginKinds{pub fn status()->Self{Self{value:0}
+}
+pub fn private_skill()->Self{Self{value:1}
+}
+pub fn extra_sight()->Self{Self{value:2}
+}
+pub fn engage_turn()->Self{Self{value:3}
+}
+pub fn engage()->Self{Self{value:4}
+}
+pub fn ai_prohibit_engage_attack()->Self{Self{value:5}
+}
+pub fn ai_prohibit_rod()->Self{Self{value:6}
+}
+pub fn ai_prohibit_overlap()->Self{Self{value:7}
+}
+pub fn engage_count()->Self{Self{value:8}
+}
+pub fn multi_change_god()->Self{Self{value:9}
+}
+pub fn position()->Self{Self{value:10}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory.md"))]#[::unity2::class(namespace="App",name="MapHistory")]#[parent(crate::system::object::Object)]pub struct MapHistory{#[static_field]#[rename(name="InvalidIndex")]pub invalid_index:u8, #[static_field]#[rename(name="Version")]pub version:u8, #[static_field]#[rename(name="s_IsSerializeDisabled")]pub s_is_serialize_disabled:bool, #[static_field]#[rename(name="UnitStreamBufferSize")]pub unit_stream_buffer_size:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_ReadResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_Replay_ReadResult{pub value:i32,}
+impl::unity2::ClassIdentity for MapHistory_Replay_ReadResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.Replay.ReadResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_Replay_ReadResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapHistory_Replay_ReadResult{pub fn next()->Self{Self{value:0}
+}
+pub fn mind()->Self{Self{value:1}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_RewindType{pub value:i32,}
@@ -710,120 +711,83 @@ pub fn ai_enchant_weapon_done()->Self{Self{value:134}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_JidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.JidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_JidMap>)]pub struct MapHistory_JidMap{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_ModeScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Rewind_ModeScope{pub m_prev_mode:crate::app::maphistory::MapHistory_Mode,}
+impl::unity2::ClassIdentity for MapHistory_Rewind_ModeScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.Rewind.ModeScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_Rewind_ModeScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_LatestInspectorData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Rewind_LatestInspectorData{pub x:u8,pub z:u8,pub is_checked:bool,}
+impl::unity2::ClassIdentity for MapHistory_Rewind_LatestInspectorData{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.Rewind.LatestInspectorData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapHistory_Rewind_LatestInspectorData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindRelianceMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindRelianceMap")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::maphistory::MapHistory_RewindRelianceMap>)]pub struct MapHistory_RewindRelianceMap{#[offset(32)]#[rename(name="m_Ids")]pub m_ids:crate::system::collections::generic::list_1::List_1<u32> , #[offset(40)]#[rename(name="m_IsUnitMapVer")]pub m_is_unit_map_ver:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_TurnSave.md"))]#[::unity2::class(namespace="App",name="MapHistory.Replay.TurnSave")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::maphistory::MapHistory_Replay_TurnSave>)]pub struct MapHistory_Replay_TurnSave{#[static_field]#[rename(name="StreamBufferSize")]pub stream_buffer_size:i32, #[offset(32)]#[rename(name="m_StreamBuffer")]pub m_stream_buffer: ::unity2::Array<u8> , #[offset(40)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(48)]#[rename(name="m_SaveAsyncMethod")]pub m_save_async_method:crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_IidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.IidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_IidMap>)]pub struct MapHistory_IidMap{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_MaterialStringMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.MaterialStringMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_MaterialStringMap>)]pub struct MapHistory_MaterialStringMap{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory.md"))]#[::unity2::class(namespace="App",name="MapHistory")]#[parent(crate::system::object::Object)]pub struct MapHistory{#[static_field]#[rename(name="InvalidIndex")]pub invalid_index:u8, #[static_field]#[rename(name="Version")]pub version:u8, #[static_field]#[rename(name="s_IsSerializeDisabled")]pub s_is_serialize_disabled:bool, #[static_field]#[rename(name="UnitStreamBufferSize")]pub unit_stream_buffer_size:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindUnitPhaseBeginKinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_RewindUnitPhaseBeginKinds{pub value:u8,}
-impl::unity2::ClassIdentity for MapHistory_RewindUnitPhaseBeginKinds{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.RewindUnitPhaseBeginKinds";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_CommonType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHistory_CommonType{pub value:i32,}
+impl::unity2::ClassIdentity for MapHistory_CommonType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapHistory.CommonType";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for MapHistory_RewindUnitPhaseBeginKinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for MapHistory_CommonType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl MapHistory_RewindUnitPhaseBeginKinds{pub fn status()->Self{Self{value:0}
+impl MapHistory_CommonType{pub fn none()->Self{Self{value:0}
 }
-pub fn private_skill()->Self{Self{value:1}
+pub fn split()->Self{Self{value:1}
 }
-pub fn extra_sight()->Self{Self{value:2}
-}
-pub fn engage_turn()->Self{Self{value:3}
-}
-pub fn engage()->Self{Self{value:4}
-}
-pub fn ai_prohibit_engage_attack()->Self{Self{value:5}
-}
-pub fn ai_prohibit_rod()->Self{Self{value:6}
-}
-pub fn ai_prohibit_overlap()->Self{Self{value:7}
-}
-pub fn engage_count()->Self{Self{value:8}
-}
-pub fn multi_change_god()->Self{Self{value:9}
-}
-pub fn position()->Self{Self{value:10}
+pub fn custom()->Self{Self{value:2}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_WorkTerrainData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Rewind_WorkTerrainData{pub x:u8,pub z:u8,pub index:u8,}
-impl::unity2::ClassIdentity for MapHistory_Rewind_WorkTerrainData{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.Rewind.WorkTerrainData";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_Rewind_WorkTerrainData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindNameMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindNameMap")]#[parent(crate::app::maphistory::MapHistory_IdMapBase_1<crate::app::maphistory::MapHistory_RewindNameMap>)]pub struct MapHistory_RewindNameMap{#[static_field]#[rename(name="IdMask")]pub id_mask:u8, #[static_field]#[rename(name="EditNameBit")]pub edit_name_bit:u8,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Replay_OverwriteStreamScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapHistory_Replay_OverwriteStreamScope{pub m_stream:crate::app::stream_2::Stream_2,pub m_saved_pos:i32,}
-impl::unity2::ClassIdentity for MapHistory_Replay_OverwriteStreamScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapHistory.Replay.OverwriteStreamScope";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapHistory_Replay_OverwriteStreamScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_Rewind_OverlapData.md"))]#[::unity2::class(namespace="App",name="MapHistory.Rewind.OverlapData")]#[parent(crate::app::pool::Pool_Node)]pub struct MapHistory_Rewind_OverlapData{#[offset(16)]#[rename(name="hasData")]pub has_data:bool, #[offset(17)]#[rename(name="x")]pub x:u8, #[offset(18)]#[rename(name="z")]pub z:u8, #[offset(19)]#[rename(name="hp")]pub hp:u8, #[offset(20)]#[rename(name="life")]pub life:u8, #[offset(22)]#[rename(name="turn")]pub turn:i16, #[offset(24)]#[rename(name="phase")]pub phase:u8, #[offset(25)]#[rename(name="tidMapIndex")]pub tid_map_index:u8, #[offset(26)]#[rename(name="isDone")]pub is_done:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_CommandReader.md"))]#[::unity2::class(namespace="App",name="MapHistory.CommandReader")]#[parent(crate::app::stream_2::Stream_2)]pub struct MapHistory_CommandReader{#[offset(40)]#[rename(name="m_Type")]pub m_type:u8,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RnidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.RnidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_RnidMap>)]pub struct MapHistory_RnidMap{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_JidMap.md"))]#[::unity2::class(namespace="App",name="MapHistory.JidMap")]#[parent(crate::app::maphistory::MapHistory_IdMap_1<crate::app::maphistory::MapHistory_JidMap>)]pub struct MapHistory_JidMap{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maphistory/MapHistory_RewindLog.md"))]#[::unity2::class(namespace="App",name="MapHistory.RewindLog")]#[parent(crate::system::object::Object)]pub struct MapHistory_RewindLog{#[static_field]#[rename(name="MaxItem")]pub max_item:i32, #[static_field]#[rename(name="MaxDeadUnitIcon")]pub max_dead_unit_icon:i32, #[offset(16)]#[rename(name="m_ActorUnitIcon")]pub m_actor_unit_icon:crate::app::maphistory::MapHistory_RewindLog_UnitIcon, #[offset(24)]#[rename(name="m_ActorMapHistoryIndex")]pub m_actor_map_history_index:i32, #[offset(32)]#[rename(name="m_ActorName")]pub m_actor_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Action")]pub m_action: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_Items")]pub m_items: ::unity2::Array<crate::app::itemdata::ItemData> , #[offset(56)]#[rename(name="m_ItemCount")]pub m_item_count:i32, #[offset(64)]#[rename(name="m_DeadUnitIcons")]pub m_dead_unit_icons: ::unity2::Array<crate::app::maphistory::MapHistory_RewindLog_UnitIcon> , #[offset(72)]#[rename(name="m_DeadUnitIconCount")]pub m_dead_unit_icon_count:i32, #[offset(76)]#[rename(name="m_Priority")]pub m_priority:i32, #[offset(80)]#[rename(name="m_IsForCheck")]pub m_is_for_check:bool, #[offset(84)]#[rename(name="m_ForceType")]pub m_force_type:crate::app::force::Force_Type, #[offset(88)]#[rename(name="m_PrevForceType")]pub m_prev_force_type:crate::app::force::Force_Type,}
 
 }
 
 #[cfg(feature = "app-maphistory-types")]
 pub use __types::*;
 
-#[cfg(feature="app-maphistory")]impl MapHistory_Command{#[doc="`get_Type()` overload"]pub fn get_type(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cac60usize)as*mut u8,i32;
-(*mut MapHistory_Command)self as*mut MapHistory_Command)}
-}
-#[doc="`set_Type(i32)` overload"]pub fn set_type(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cac70usize)as*mut u8,();
-(*mut MapHistory_Command)self as*mut MapHistory_Command,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Size()` overload"]pub fn get_size(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cac80usize)as*mut u8,i32;
-(*mut MapHistory_Command)self as*mut MapHistory_Command)}
-}
-#[doc="`set_Size(i32)` overload"]pub fn set_size(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cac90usize)as*mut u8,();
-(*mut MapHistory_Command)self as*mut MapHistory_Command,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Offset()` overload"]pub fn get_offset(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24caca0usize)as*mut u8,i32;
-(*mut MapHistory_Command)self as*mut MapHistory_Command)}
-}
-#[doc="`set_Offset(i32)` overload"]pub fn set_offset(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cacb0usize)as*mut u8,();
-(*mut MapHistory_Command)self as*mut MapHistory_Command,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Tail()` overload"]pub fn get_tail(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cacc0usize)as*mut u8,i32;
-(*mut MapHistory_Command)self as*mut MapHistory_Command)}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cacd0usize)as*mut u8,();
-(*mut MapHistory_Command)self as*mut MapHistory_Command)}
-}
-#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cace0usize)as*mut u8,();
-(*mut MapHistory_Command)self as*mut MapHistory_Command,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
-}
-#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cad30usize)as*mut u8,();
-(*mut MapHistory_Command)self as*mut MapHistory_Command,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_WorkLayerData{#[doc="`.ctor(i32, bool)` overload"]pub fn ctor(&mut self,group:impl::core::convert::Into<i32> ,enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b890usize)as*mut u8,();
+(*mut MapHistory_Rewind_WorkLayerData)self as*mut MapHistory_Rewind_WorkLayerData,(i32)::core::convert::Into::into(group),(bool)::core::convert::Into::into(enable))}
 }
 }
 
-#[cfg(feature="app-maphistory")]impl MapHistory_Command{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_tail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_WorkLayerData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature="app-maphistory")]pub trait IMapHistory_ReplayCommandWriterMethods:IMapHistory_ReplayCommandWriter{#[doc="`Prepare(crate::app::maphistory::MapHistory_ReplayType)` overload"]fn prepare(self,r#type:impl::core::convert::Into<crate::app::maphistory::MapHistory_ReplayType>)->(){unsafe{let __receiver= <MapHistory_ReplayCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -874,10 +838,65 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MapHistory_UnitMapBase_2_IData<T0,T1>{#[doc="`get_unit()` overload"]#[method(name="get_unit",args=0,abstract_dispatch)]pub fn get_unit(self,)->crate::app::unit::Unit;
- #[doc="`set_unit(crate::app::unit::Unit)` overload"]#[method(name="set_unit",args=1,abstract_dispatch)]pub fn set_unit(self,value:crate::app::unit::Unit)->();
- #[doc="`IsUsed()` overload"]#[method(name="IsUsed",args=0,abstract_dispatch)]pub fn is_used(self,)->bool;
- #[doc="`Clear()` overload"]#[method(name="Clear",args=0,abstract_dispatch)]pub fn clear(self,)->();
+#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>MapHistory_Base_1<T0>{#[doc="`Initialize()` overload"]#[method(name="Initialize",args=0)]pub fn initialize(self,)->();
+ #[doc="`OnInitialize()` overload"]#[method(name="OnInitialize",args=0)]pub fn on_initialize(self,)->();
+ #[doc="`Delete()` overload"]#[method(name="Delete",args=0)]pub fn delete(self,)->();
+ #[doc="`OnDelete()` overload"]#[method(name="OnDelete",args=0)]pub fn on_delete(self,)->();
+ #[doc="`Add(crate::app::maphistory::MapHistory_CommandWriter)` overload"]#[method(name="Add",args=1)]pub fn add(self,writer:crate::app::maphistory::MapHistory_CommandWriter)->bool;
+ #[doc="`Preadd(crate::app::maphistory::MapHistory_CommandWriter)` overload"]#[method(name="Preadd",args=1)]pub fn preadd(self,writer:crate::app::maphistory::MapHistory_CommandWriter)->();
+ #[doc="`AddSplit(crate::app::maphistory::MapHistory_CommandWriter, u8)` overload"]#[method(name="AddSplit",args=2)]pub fn add_split(self,writer:crate::app::maphistory::MapHistory_CommandWriter,arg:u8)->bool;
+ #[doc="`Overwrite(crate::app::maphistory::MapHistory_CommandWriter, i32)` overload"]#[method(name="Overwrite",args=2)]pub fn overwrite(self,writer:crate::app::maphistory::MapHistory_CommandWriter,command_index:i32)->bool;
+ #[doc="`CommandStackCancel(crate::app::unit::Unit, i32, i32)` overload"]#[method(name="CommandStackCancel",args=3)]pub fn command_stack_cancel(self,unit:crate::app::unit::Unit,target_command_type:i32,related_command_type:i32)->();
+ #[doc="`GetCommandEngage()` overload"]#[method(name="GetCommandEngage",args=0)]pub fn get_command_engage(self,)->i32;
+ #[doc="`GetCommandGodChange()` overload"]#[method(name="GetCommandGodChange",args=0)]pub fn get_command_god_change(self,)->i32;
+ #[doc="`GetCommandUnitItemList()` overload"]#[method(name="GetCommandUnitItemList",args=0)]pub fn get_command_unit_item_list(self,)->i32;
+ #[doc="`GetUnitForCommandEngage(i32)` overload"]#[method(name="GetUnitForCommandEngage",args=1)]pub fn get_unit_for_command_engage(self,command_index:i32)->crate::app::unit::Unit;
+ #[doc="`GetUnitForCommandGodChange(i32)` overload"]#[method(name="GetUnitForCommandGodChange",args=1)]pub fn get_unit_for_command_god_change(self,command_index:i32)->crate::app::unit::Unit;
+ #[doc="`GetUnitForCommandUnitItemList(i32)` overload"]#[method(name="GetUnitForCommandUnitItemList",args=1)]pub fn get_unit_for_command_unit_item_list(self,command_index:i32)->crate::app::unit::Unit;
+ #[doc="`TryDeleteCommand(i32, crate::app::unit::Unit, i32)` overload"]#[method(name="TryDeleteCommand",args=3)]pub fn try_delete_command(self,command_index:i32,unit:crate::app::unit::Unit,target_command_type:i32)->bool;
+ #[doc="`DeleteCommand(i32)` overload"]#[method(name="DeleteCommand",args=1)]pub fn delete_command(self,command_index:i32)->bool;
+ #[doc="`PredeleteCommand(i32)` overload"]#[method(name="PredeleteCommand",args=1)]pub fn predelete_command(self,command_index:i32)->();
+ #[doc="`DeleteCommandError()` overload"]#[method(name="DeleteCommandError",args=0)]pub fn delete_command_error(self,)->();
+ #[doc="`Clear()` overload"]#[method(name="Clear",args=0)]pub fn clear(self,)->();
+ #[doc="`get_CurrentIndex()` overload"]#[method(name="get_CurrentIndex",args=0)]pub fn get_current_index(self,)->i32;
+ #[doc="`GetLastSplitIndex()` overload"]#[method(name="GetLastSplitIndex",args=0)]pub fn get_last_split_index(self,)->i32;
+ #[doc="`GetNextSplitIndex(i32)` overload"]#[method(name="GetNextSplitIndex",args=1)]pub fn get_next_split_index(self,index:i32)->i32;
+ #[doc="`GetPrevSplitIndex(i32)` overload"]#[method(name="GetPrevSplitIndex",args=1)]pub fn get_prev_split_index(self,index:i32)->i32;
+ #[doc="`SerializeCommands(crate::app::stream_2::Stream_2)` overload"]#[method(name="SerializeCommands",args=1)]pub fn serialize_commands(self,stream:crate::app::stream_2::Stream_2)->();
+ #[doc="`DeserializeCommands(crate::app::stream_2::Stream_2)` overload"]#[method(name="DeserializeCommands",args=1)]pub fn deserialize_commands(self,stream:crate::app::stream_2::Stream_2)->();
+ #[doc="`SerializeCommandStream(crate::app::stream_2::Stream_2)` overload"]#[method(name="SerializeCommandStream",args=1)]pub fn serialize_command_stream(self,stream:crate::app::stream_2::Stream_2)->();
+ #[doc="`DeserializeCommandStream(crate::app::stream_2::Stream_2)` overload"]#[method(name="DeserializeCommandStream",args=1)]pub fn deserialize_command_stream(self,stream:crate::app::stream_2::Stream_2)->();
+ #[doc="`get_CommandStreamBufferSize()` overload"]#[method(name="get_CommandStreamBufferSize",args=0)]pub fn get_command_stream_buffer_size(self,)->u32;
+ #[doc="`get_MaxCommandCount()` overload"]#[method(name="get_MaxCommandCount",args=0)]pub fn get_max_command_count(self,)->u32;
+ #[doc="`TryCreateInstance()` overload"]#[method(name="TryCreateInstance",args=0)]pub fn try_create_instance()->();
+ #[doc="`TryDeleteInstance()` overload"]#[method(name="TryDeleteInstance",args=0)]pub fn try_delete_instance()->();
+ #[doc="`get_Instance()` overload"]#[method(name="get_Instance",args=0)]pub fn get_instance()->T0;
+ #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
+}
+
+#[cfg(feature="app-maphistory")]impl<T0: ::unity2::ClassIdentity>MapHistory_Base_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_Base_1), ::core::stringify!(new),));
+ <Self as IMapHistory_Base_1Methods<T0> > ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_SidMapMethods:IMapHistory_SidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_SidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217c040usize)as*mut u8,();
+(MapHistory_SidMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_SidMap>IMapHistory_SidMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_SidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_SidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_SidMap), ::core::stringify!(new),));
+ <Self as IMapHistory_SidMapMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-maphistory")]impl MapHistory_RewindCommandReader{#[doc="`ReadOverlap(crate::app::stream_2::Stream_2, *mutbool, *muti32, *muti32, *muti32, *muti32, *muti32, *mutcrate::app::force::Force_Type, *mut::unity2::Il2CppString)` overload"]pub fn read_overlap_2(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(bool,i32,i32,i32,i32,i32,crate::app::force::Force_Type, ::unity2::Il2CppString){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
@@ -1076,107 +1095,226 @@ pub fn read_lock_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 this}
 }
 
-#[cfg(feature="app-maphistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapHistory_Rewind_unity2_raw{use super:: * ;
-pub unsafe fn on_initialize(this:MapHistory_Rewind,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"OnInitialize",));
-let inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_delete(this:MapHistory_Rewind,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"OnDelete",));
-let inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_command_engage(this:MapHistory_Rewind,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"GetCommandEngage",));
-let inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_command_god_change(this:MapHistory_Rewind,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"GetCommandGodChange",));
-let inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_unit_for_command_engage(this:MapHistory_Rewind,command_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unit::Unit{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"GetUnitForCommandEngage",));
-let inner:extern "C" fn(MapHistory_Rewind,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,command_index,__mi)}
-pub unsafe fn get_unit_for_command_god_change(this:MapHistory_Rewind,command_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unit::Unit{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"GetUnitForCommandGodChange",));
-let inner:extern "C" fn(MapHistory_Rewind,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,command_index,__mi)}
-pub unsafe fn preadd(this:MapHistory_Rewind,writer:crate::app::maphistory::MapHistory_CommandWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"Preadd",));
-let inner:extern "C" fn(MapHistory_Rewind,crate::app::maphistory::MapHistory_CommandWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,writer,__mi)}
-pub unsafe fn predelete_command(this:MapHistory_Rewind,command_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_Replay_SaveAsync_SaveMethodMethods:IMapHistory_Replay_SaveAsync_SaveMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapHistory_Replay_SaveAsync_SaveMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2307180usize)as*mut u8,();
+(MapHistory_Replay_SaveAsync_SaveMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <MapHistory_Replay_SaveAsync_SaveMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"PredeleteCommand",));
-let inner:extern "C" fn(MapHistory_Rewind,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <MapHistory_Replay_SaveAsync_SaveMethod as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(MapHistory_Replay_SaveAsync_SaveMethod, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,command_index,__mi)}
-pub unsafe fn delete_command_error(this:MapHistory_Rewind,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_Replay_SaveAsync_SaveMethod>IMapHistory_Replay_SaveAsync_SaveMethodMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync_SaveMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync_SaveMethod{#[doc="Direct (non-virtual) call to `MapHistory_Replay_SaveAsync_SaveMethod`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync_SaveMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_Replay_SaveAsync_SaveMethod), ::core::stringify!(new),));
+ <Self as IMapHistory_Replay_SaveAsync_SaveMethodMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>MapHistory_IdMap_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,capacity:i32)->();
+ #[doc="`Entry(::unity2::Il2CppString)` overload"]#[method(name="Entry",args=1)]pub fn entry(self,id: ::unity2::Il2CppString)->i32;
+ #[doc="`TryGet(i32)` overload"]#[method(name="TryGet",args=1)]pub fn try_get(self,index:i32)-> ::unity2::Il2CppString;
+ #[doc="`get_Version()` overload"]#[method(name="get_Version",args=0)]pub fn get_version(self,)->i32;
+ #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]#[method(name="OnSerialize",args=1)]pub fn on_serialize(self,stream:crate::app::stream_2::Stream_2)->();
+ #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]#[method(name="OnDeserialize",args=2)]pub fn on_deserialize(self,stream:crate::app::stream_2::Stream_2,version:i32)->();
+}
+
+#[cfg(feature="app-maphistory")]impl<T0: ::unity2::ClassIdentity>MapHistory_IdMap_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_IdMap_1), ::core::stringify!(new),));
+ <Self as IMapHistory_IdMap_1Methods<T0> > ::ctor(this,capacity);
+this}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,save_method:impl::core::convert::Into<crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69f00usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)::core::convert::Into::into(save_method))}
+}
+#[doc="`CreateThread()` overload"]pub fn create_thread()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a160usize)as*mut u8,();
+)}
+}
+#[doc="`DestroyThread()` overload"]pub fn destroy_thread()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a380usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_Replay_SaveAsyncMethods:IMapHistory_Replay_SaveAsync{#[doc="`.ctor(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` overload"]fn ctor(self,method:impl::core::convert::Into<crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod>)->(){unsafe{let __receiver= <MapHistory_Replay_SaveAsync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69cb0usize)as*mut u8,();
+(MapHistory_Replay_SaveAsync)__receiver,(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)::core::convert::Into::into(method))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapHistory_Replay_SaveAsync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69cf0usize)as*mut u8,();
+(MapHistory_Replay_SaveAsync)__receiver)}
+}
+#[doc="`IsRunning()` overload"]fn is_running(self,)->bool{unsafe{let __receiver= <MapHistory_Replay_SaveAsync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69dd0usize)as*mut u8,bool;
+(MapHistory_Replay_SaveAsync)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_Replay_SaveAsync>IMapHistory_Replay_SaveAsyncMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn destroy_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync{#[doc="`.ctor(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` — overload selector"]pub fn new(method:crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_Replay_SaveAsync), ::core::stringify!(new),));
+ <Self as IMapHistory_Replay_SaveAsyncMethods> ::ctor(this,method);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindUnitMapMethods:IMapHistory_RewindUnitMap{#[doc="`Preserve(crate::app::unit::Unit, crate::app::force::Force_Type)` overload"]fn preserve(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,next_force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217b130usize)as*mut u8,();
+(MapHistory_RewindUnitMap)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::force::Force_Type)::core::convert::Into::into(next_force_type))}
+}
+#[doc="`Restore(i32, crate::app::unit::Unit)` overload"]fn restore(self,index:impl::core::convert::Into<i32> ,prev_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217b2c0usize)as*mut u8,();
+(MapHistory_RewindUnitMap)__receiver,(i32)::core::convert::Into::into(index),(crate::app::unit::Unit)::core::convert::Into::into(prev_unit))}
+}
+#[doc="`BeforeDispos(i32)` overload"]fn before_dispos(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217b580usize)as*mut u8,();
+(MapHistory_RewindUnitMap)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`PreviewLatest()` overload"]fn preview_latest(self,)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217b5f0usize)as*mut u8,();
+(MapHistory_RewindUnitMap)__receiver)}
+}
+#[doc="`PreviewDecide()` overload"]fn preview_decide(self,)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217b6b0usize)as*mut u8,();
+(MapHistory_RewindUnitMap)__receiver)}
+}
+#[doc="`PreviewCancel()` overload"]fn preview_cancel(self,)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217b8c0usize)as*mut u8,();
+(MapHistory_RewindUnitMap)__receiver)}
+}
+#[doc="`PreviewDeleteRestoredUnit(i32)` overload"]fn preview_delete_restored_unit(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217b7b0usize)as*mut u8,();
+(MapHistory_RewindUnitMap)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`PreviewCleanup(i32)` overload"]fn preview_cleanup(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217b880usize)as*mut u8,();
+(MapHistory_RewindUnitMap)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",14usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"DeleteCommandError",));
-let inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",4usize,__vt.len(), <MapHistory_RewindUnitMap as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(MapHistory_RewindUnitMap, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_command_stream_buffer_size(this:MapHistory_Rewind,__unity2_method_info: ::unity2::OptionalMethod,)->u32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",15usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"get_CommandStreamBufferSize",));
-let inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",11usize,__vt.len(), <MapHistory_RewindUnitMap as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(MapHistory_RewindUnitMap,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapHistory_RewindUnitMap as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(MapHistory_RewindUnitMap,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217be70usize)as*mut u8,();
+(MapHistory_RewindUnitMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RewindUnitMap>IMapHistory_RewindUnitMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindUnitMap{pub fn preserve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn restore_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn before_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn preview_latest_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn preview_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn preview_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn preview_delete_restored_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn preview_cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindUnitMap{#[doc="Direct (non-virtual) call to `MapHistory_RewindUnitMap`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_RewindUnitMap`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_RewindUnitMap`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindUnitMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_RewindUnitMap), ::core::stringify!(new),));
+ <Self as IMapHistory_RewindUnitMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MapHistory_UnitMapBase_2<T0,T1>{#[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
+ #[doc="`EntryAll()` overload"]#[method(name="EntryAll",args=0)]pub fn entry_all(self,)->();
+ #[doc="`EntryAllImpl()` overload"]#[method(name="EntryAllImpl",args=0)]pub fn entry_all_impl(self,)->();
+ #[doc="`Entry(crate::app::unit::Unit)` overload"]#[method(name="Entry",args=1)]pub fn entry(self,unit:crate::app::unit::Unit)->i32;
+ #[doc="`Delete(crate::app::unit::Unit)` overload"]#[method(name="Delete",args=1)]pub fn delete(self,unit:crate::app::unit::Unit)->();
+ #[doc="`Delete(i32)` overload"]#[method(name="Delete",args=1)]pub fn delete_2(self,index:i32)->();
+ #[doc="`Clear()` overload"]#[method(name="Clear",args=0)]pub fn clear(self,)->();
+ #[doc="`TryGet(i32, bool)` overload"]#[method(name="TryGet",args=2)]pub fn try_get(self,index:i32,with_error:bool)->crate::app::unit::Unit;
+ #[doc="`get_NoEmpty()` overload"]#[method(name="get_NoEmpty",args=0)]pub fn get_no_empty(self,)->crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1> ;
+ #[doc="`set_NoEmpty(crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1>)` overload"]#[method(name="set_NoEmpty",args=1)]pub fn set_no_empty(self,value:crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1>)->();
+ #[doc="`FindUnusedIndex()` overload"]#[method(name="FindUnusedIndex",args=0)]pub fn find_unused_index(self,)->i32;
+ #[doc="`DbgError(::unity2::Il2CppString)` overload"]#[method(name="DbgError",args=1)]pub fn dbg_error(self,message: ::unity2::Il2CppString)->();
+}
+
+#[cfg(feature="app-maphistory")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MapHistory_UnitMapBase_2<T0,T1>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_UnitMapBase_2), ::core::stringify!(new),));
+ <Self as IMapHistory_UnitMapBase_2Methods<T0,T1> > ::ctor(this,);
+this}
 }
 
 #[cfg(feature="app-maphistory")]impl MapHistory_Rewind{#[doc="`GetPokeInspector(i32, i32)` overload"]pub fn get_poke_inspector(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::pokeinspector::PokeInspector{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2711910usize)as*mut u8,crate::app::pokeinspector::PokeInspector;
@@ -1191,10 +1329,28 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindMethods:IMapHistory_Rewind{#[doc="`OnInitialize()` overload"]fn on_initialize(self,)->(){unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_unity2_raw::on_initialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"OnInitialize",));
+let __inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDelete()` overload"]fn on_delete(self,)->(){unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_unity2_raw::on_delete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"OnDelete",));
+let __inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2707d10usize)as*mut u8,bool;
@@ -1249,16 +1405,52 @@ __MapHistory_Rewind_unity2_raw::on_delete(__receiver, ::core::option::Option::No
 (MapHistory_Rewind)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
 #[doc="`GetCommandEngage()` overload"]fn get_command_engage(self,)->i32{unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_unity2_raw::get_command_engage(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"GetCommandEngage",));
+let __inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetCommandGodChange()` overload"]fn get_command_god_change(self,)->i32{unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_unity2_raw::get_command_god_change(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"GetCommandGodChange",));
+let __inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetUnitForCommandEngage(i32)` overload"]fn get_unit_for_command_engage(self,command_index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_unity2_raw::get_unit_for_command_engage(__receiver, ::core::convert::Into::into(command_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"GetUnitForCommandEngage",));
+let __inner:extern "C" fn(MapHistory_Rewind,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(command_index),__mi)}
+}
 }
 #[doc="`GetUnitForCommandGodChange(i32)` overload"]fn get_unit_for_command_god_change(self,command_index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_unity2_raw::get_unit_for_command_god_change(__receiver, ::core::convert::Into::into(command_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"GetUnitForCommandGodChange",));
+let __inner:extern "C" fn(MapHistory_Rewind,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(command_index),__mi)}
+}
 }
 #[doc="`CreateLog(i32, crate::app::maphistory::MapHistory_RewindLog)` overload"]fn create_log(self,index:impl::core::convert::Into<i32> ,result:impl::core::convert::Into<crate::app::maphistory::MapHistory_RewindLog>)->bool{unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2708820usize)as*mut u8,bool;
@@ -1348,7 +1540,16 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x270eb30usize)as*mut
 (MapHistory_Rewind)__receiver)}
 }
 #[doc="`Preadd(crate::app::maphistory::MapHistory_CommandWriter)` overload"]fn preadd(self,writer:impl::core::convert::Into<crate::app::maphistory::MapHistory_CommandWriter>)->(){unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_unity2_raw::preadd(__receiver, ::core::convert::Into::into(writer), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"Preadd",));
+let __inner:extern "C" fn(MapHistory_Rewind,crate::app::maphistory::MapHistory_CommandWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(writer),__mi)}
+}
 }
 #[doc="`DeleteOldCommandsIfNotEnoughSpace(crate::app::maphistory::MapHistory_CommandWriter)` overload"]fn delete_old_commands_if_not_enough_space(self,writer:impl::core::convert::Into<crate::app::maphistory::MapHistory_CommandWriter>)->(){unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x270ef70usize)as*mut u8,();
@@ -1367,10 +1568,28 @@ __MapHistory_Rewind_unity2_raw::preadd(__receiver, ::core::convert::Into::into(w
 (MapHistory_Rewind)__receiver,(i32)::core::convert::Into::into(new_top_command_index))}
 }
 #[doc="`PredeleteCommand(i32)` overload"]fn predelete_command(self,command_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_unity2_raw::predelete_command(__receiver, ::core::convert::Into::into(command_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"PredeleteCommand",));
+let __inner:extern "C" fn(MapHistory_Rewind,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(command_index),__mi)}
+}
 }
 #[doc="`DeleteCommandError()` overload"]fn delete_command_error(self,)->(){unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_unity2_raw::delete_command_error(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"DeleteCommandError",));
+let __inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`CountSplit(i32)` overload"]fn count_split(self,next_num_command:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x270dbe0usize)as*mut u8,i32;
@@ -1469,7 +1688,16 @@ __MapHistory_Rewind_unity2_raw::delete_command_error(__receiver, ::core::option:
 (MapHistory_Rewind)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(war_situation_state_name))}
 }
 #[doc="`get_CommandStreamBufferSize()` overload"]fn get_command_stream_buffer_size(self,)->u32{unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_unity2_raw::get_command_stream_buffer_size(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <MapHistory_Rewind as::unity2::ClassIdentity> ::NAME,"get_CommandStreamBufferSize",));
+let __inner:extern "C" fn(MapHistory_Rewind, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`DbgDump()` overload"]fn dbg_dump(self,)->(){unsafe{let __receiver= <MapHistory_Rewind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2711e70usize)as*mut u8,();
@@ -3341,6 +3569,38 @@ pub fn preview_apply_ai_enchant_weapon_done_method_info()-> & 'static::unity2::i
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[425]}
 }
 
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind{#[doc="Direct (non-virtual) call to `MapHistory_Rewind`'s own `OnInitialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_initialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_initialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Rewind`'s own `OnDelete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_delete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_delete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Rewind`'s own `GetCommandEngage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_command_engage(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_command_engage_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Rewind`'s own `GetCommandGodChange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_command_god_change(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_command_god_change_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Rewind`'s own `GetUnitForCommandEngage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_unit_for_command_engage(this:impl::core::convert::Into< ::unity2::IlInstance> ,command_index:i32,)->crate::app::unit::Unit{let __mi=Self::get_unit_for_command_engage_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),command_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Rewind`'s own `GetUnitForCommandGodChange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_unit_for_command_god_change(this:impl::core::convert::Into< ::unity2::IlInstance> ,command_index:i32,)->crate::app::unit::Unit{let __mi=Self::get_unit_for_command_god_change_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),command_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Rewind`'s own `Preadd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn preadd(this:impl::core::convert::Into< ::unity2::IlInstance> ,writer:crate::app::maphistory::MapHistory_CommandWriter,)->(){let __mi=Self::preadd_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::maphistory::MapHistory_CommandWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),writer, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Rewind`'s own `PredeleteCommand`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn predelete_command(this:impl::core::convert::Into< ::unity2::IlInstance> ,command_index:i32,)->(){let __mi=Self::predelete_command_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),command_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Rewind`'s own `DeleteCommandError`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn delete_command_error(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::delete_command_error_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Rewind`'s own `get_CommandStreamBufferSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_command_stream_buffer_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->u32{let __mi=Self::get_command_stream_buffer_size_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-maphistory")]impl MapHistory_Rewind{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapHistory_Rewind), ::core::stringify!(new),));
@@ -3348,273 +3608,60 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-maphistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapHistory_Rewind_OverlapData_unity2_raw{use super:: * ;
-pub unsafe fn on_enter(this:MapHistory_Rewind_OverlapData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapHistory_Rewind_OverlapData as::unity2::ClassIdentity> ::NAME,"OnEnter",));
-let inner:extern "C" fn(MapHistory_Rewind_OverlapData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_exit(this:MapHistory_Rewind_OverlapData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MapHistory_Rewind_OverlapData as::unity2::ClassIdentity> ::NAME,"OnExit",));
-let inner:extern "C" fn(MapHistory_Rewind_OverlapData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_ReplayCommandReaderMethods:IMapHistory_ReplayCommandReader{#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,command_stream_buffer:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2706120usize)as*mut u8,();
+(MapHistory_ReplayCommandReader)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(command_stream_buffer))}
 }
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapData{#[doc="`GetKey(i32, i32)` overload"]pub fn get_key_2(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b810usize)as*mut u8,i32;
-(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+#[doc="`ReadUnit()` overload"]fn read_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2706130usize)as*mut u8,crate::app::unit::Unit;
+(MapHistory_ReplayCommandReader)__receiver)}
 }
+#[doc="`ReadUnitByIndex()` overload"]fn read_unit_by_index(self,)->i32{unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2706220usize)as*mut u8,i32;
+(MapHistory_ReplayCommandReader)__receiver)}
 }
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_Rewind_OverlapDataMethods:IMapHistory_Rewind_OverlapData{#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_OverlapData_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
+#[doc="`ReadUnitItem(crate::app::unititem::UnitItem)` overload"]fn read_unit_item(self,item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2706280usize)as*mut u8,();
+(MapHistory_ReplayCommandReader)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(item))}
 }
-#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Rewind_OverlapData_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
+#[doc="`ReadUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]fn read_unit_item_list(self,item_list:impl::core::convert::Into<crate::app::unititemlist::UnitItemList>)->(){unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2706790usize)as*mut u8,();
+(MapHistory_ReplayCommandReader)__receiver,(crate::app::unititemlist::UnitItemList)::core::convert::Into::into(item_list))}
 }
-#[doc="`Set(crate::app::mapoverlap::MapOverlap_Data)` overload"]fn set(self,map_overlap_data:impl::core::convert::Into<crate::app::mapoverlap::MapOverlap_Data>)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b490usize)as*mut u8,();
-(MapHistory_Rewind_OverlapData)__receiver,(crate::app::mapoverlap::MapOverlap_Data)::core::convert::Into::into(map_overlap_data))}
+#[doc="`ReadMultiTargets(crate::app::mapmind::MapMind_MultiTargets)` overload"]fn read_multi_targets(self,targets:impl::core::convert::Into<crate::app::mapmind::MapMind_MultiTargets>)->(){unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27068a0usize)as*mut u8,();
+(MapHistory_ReplayCommandReader)__receiver,(crate::app::mapmind::MapMind_MultiTargets)::core::convert::Into::into(targets))}
 }
-#[doc="`Set(crate::app::maphistory::MapHistory_Rewind_OverlapData)` overload"]fn set_2(self,other:impl::core::convert::Into<crate::app::maphistory::MapHistory_Rewind_OverlapData>)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b5e0usize)as*mut u8,();
-(MapHistory_Rewind_OverlapData)__receiver,(crate::app::maphistory::MapHistory_Rewind_OverlapData)::core::convert::Into::into(other))}
-}
-#[doc="`IsSame(crate::app::mapoverlap::MapOverlap_Data)` overload"]fn is_same(self,map_overlap_data:impl::core::convert::Into<crate::app::mapoverlap::MapOverlap_Data>)->bool{unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b630usize)as*mut u8,bool;
-(MapHistory_Rewind_OverlapData)__receiver,(crate::app::mapoverlap::MapOverlap_Data)::core::convert::Into::into(map_overlap_data))}
-}
-#[doc="`TryGetTerrain()` overload"]fn try_get_terrain(self,)->crate::app::terraindata_2::TerrainData_2{unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b6e0usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
-(MapHistory_Rewind_OverlapData)__receiver)}
-}
-#[doc="`GetKey()` overload"]fn get_key(self,)->i32{unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b800usize)as*mut u8,i32;
-(MapHistory_Rewind_OverlapData)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b820usize)as*mut u8,();
-(MapHistory_Rewind_OverlapData)__receiver)}
+#[doc="`ReadForce()` overload"]fn read_force(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2706a30usize)as*mut u8,crate::app::force::Force_Type;
+(MapHistory_ReplayCommandReader)__receiver)}
 }
 }
 
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_Rewind_OverlapData>IMapHistory_Rewind_OverlapDataMethods for __T{}
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_ReplayCommandReader>IMapHistory_ReplayCommandReaderMethods for __T{}
 
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapData{pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn is_same_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn try_get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_key_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+#[cfg(feature="app-maphistory")]impl MapHistory_ReplayCommandReader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn read_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn read_unit_by_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn read_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn read_unit_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn read_multi_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn read_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 }
 
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-maphistory")]impl MapHistory_ReplayCommandReader{#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new(command_stream_buffer: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MapHistory_Rewind_OverlapData), ::core::stringify!(new),));
- <Self as IMapHistory_Rewind_OverlapDataMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MapHistory_ReplayCommandReader), ::core::stringify!(new),));
+ <Self as IMapHistory_ReplayCommandReaderMethods> ::ctor(this,command_stream_buffer);
 this}
 }
 
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_WorkLayerData{#[doc="`.ctor(i32, bool)` overload"]pub fn ctor(&mut self,group:impl::core::convert::Into<i32> ,enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b890usize)as*mut u8,();
-(*mut MapHistory_Rewind_WorkLayerData)self as*mut MapHistory_Rewind_WorkLayerData,(i32)::core::convert::Into::into(group),(bool)::core::convert::Into::into(enable))}
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_WorkTerrainData{#[doc="`.ctor(i32, i32, i32)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b8a0usize)as*mut u8,();
+(*mut MapHistory_Rewind_WorkTerrainData)self as*mut MapHistory_Rewind_WorkTerrainData,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(index))}
 }
 }
 
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_WorkLayerData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindUnitMap_Data{#[doc="`get_unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6bca0usize)as*mut u8,crate::app::unit::Unit;
-(*mut MapHistory_RewindUnitMap_Data)self as*mut MapHistory_RewindUnitMap_Data)}
-}
-#[doc="`set_unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6bcb0usize)as*mut u8,();
-(*mut MapHistory_RewindUnitMap_Data)self as*mut MapHistory_RewindUnitMap_Data,(crate::app::unit::Unit)::core::convert::Into::into(value))}
-}
-#[doc="`IsUsed()` overload"]pub fn is_used(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6bcc0usize)as*mut u8,bool;
-(*mut MapHistory_RewindUnitMap_Data)self as*mut MapHistory_RewindUnitMap_Data)}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6bce0usize)as*mut u8,();
-(*mut MapHistory_RewindUnitMap_Data)self as*mut MapHistory_RewindUnitMap_Data)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindUnitMap_Data{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_used_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-maphistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapHistory_RewindUnitMap_unity2_raw{use super:: * ;
-pub unsafe fn get_version(this:MapHistory_RewindUnitMap,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapHistory_RewindUnitMap as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(MapHistory_RewindUnitMap, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:MapHistory_RewindUnitMap,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MapHistory_RewindUnitMap as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(MapHistory_RewindUnitMap,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:MapHistory_RewindUnitMap,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapHistory_RewindUnitMap as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(MapHistory_RewindUnitMap,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindUnitMapMethods:IMapHistory_RewindUnitMap{#[doc="`Preserve(crate::app::unit::Unit, crate::app::force::Force_Type)` overload"]fn preserve(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,next_force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217b130usize)as*mut u8,();
-(MapHistory_RewindUnitMap)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::force::Force_Type)::core::convert::Into::into(next_force_type))}
-}
-#[doc="`Restore(i32, crate::app::unit::Unit)` overload"]fn restore(self,index:impl::core::convert::Into<i32> ,prev_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217b2c0usize)as*mut u8,();
-(MapHistory_RewindUnitMap)__receiver,(i32)::core::convert::Into::into(index),(crate::app::unit::Unit)::core::convert::Into::into(prev_unit))}
-}
-#[doc="`BeforeDispos(i32)` overload"]fn before_dispos(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217b580usize)as*mut u8,();
-(MapHistory_RewindUnitMap)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`PreviewLatest()` overload"]fn preview_latest(self,)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217b5f0usize)as*mut u8,();
-(MapHistory_RewindUnitMap)__receiver)}
-}
-#[doc="`PreviewDecide()` overload"]fn preview_decide(self,)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217b6b0usize)as*mut u8,();
-(MapHistory_RewindUnitMap)__receiver)}
-}
-#[doc="`PreviewCancel()` overload"]fn preview_cancel(self,)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217b8c0usize)as*mut u8,();
-(MapHistory_RewindUnitMap)__receiver)}
-}
-#[doc="`PreviewDeleteRestoredUnit(i32)` overload"]fn preview_delete_restored_unit(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217b7b0usize)as*mut u8,();
-(MapHistory_RewindUnitMap)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`PreviewCleanup(i32)` overload"]fn preview_cleanup(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217b880usize)as*mut u8,();
-(MapHistory_RewindUnitMap)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_RewindUnitMap_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_RewindUnitMap_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
-}
-#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_RewindUnitMap_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217be70usize)as*mut u8,();
-(MapHistory_RewindUnitMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RewindUnitMap>IMapHistory_RewindUnitMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindUnitMap{pub fn preserve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn restore_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn before_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn preview_latest_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn preview_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn preview_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn preview_delete_restored_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn preview_cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindUnitMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_RewindUnitMap), ::core::stringify!(new),));
- <Self as IMapHistory_RewindUnitMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_ReplayUnitMap_Data{#[doc="`get_unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6aa50usize)as*mut u8,crate::app::unit::Unit;
-(*mut MapHistory_ReplayUnitMap_Data)self as*mut MapHistory_ReplayUnitMap_Data)}
-}
-#[doc="`set_unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6aa60usize)as*mut u8,();
-(*mut MapHistory_ReplayUnitMap_Data)self as*mut MapHistory_ReplayUnitMap_Data,(crate::app::unit::Unit)::core::convert::Into::into(value))}
-}
-#[doc="`IsUsed()` overload"]pub fn is_used(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6aa70usize)as*mut u8,bool;
-(*mut MapHistory_ReplayUnitMap_Data)self as*mut MapHistory_ReplayUnitMap_Data)}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6aa80usize)as*mut u8,();
-(*mut MapHistory_ReplayUnitMap_Data)self as*mut MapHistory_ReplayUnitMap_Data)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_ReplayUnitMap_Data{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_used_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_SerializeDisabled{#[doc="`.ctor(bool)` overload"]pub fn ctor(&mut self,is_disabled:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217bf30usize)as*mut u8,();
-(*mut MapHistory_SerializeDisabled)self as*mut MapHistory_SerializeDisabled,(bool)::core::convert::Into::into(is_disabled))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217bfc0usize)as*mut u8,();
-(*mut MapHistory_SerializeDisabled)self as*mut MapHistory_SerializeDisabled)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_SerializeDisabled{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_EffectNameMapMethods:IMapHistory_EffectNameMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_EffectNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc330usize)as*mut u8,();
-(MapHistory_EffectNameMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_EffectNameMap>IMapHistory_EffectNameMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_EffectNameMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_EffectNameMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_EffectNameMap), ::core::stringify!(new),));
- <Self as IMapHistory_EffectNameMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_LatestInspectorData{#[doc="`.ctor(i32, i32)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b2b0usize)as*mut u8,();
-(*mut MapHistory_Rewind_LatestInspectorData)self as*mut MapHistory_Rewind_LatestInspectorData,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_LatestInspectorData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_WorkTerrainData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindLogBuilderMethods:IMapHistory_RewindLogBuilder{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindLogBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -3657,565 +3704,6 @@ pub fn get_is_need_to_build_method_info()-> & 'static::unity2::il2cpp::MethodInf
 ::{}
  failed to instantiate", ::core::stringify!(MapHistory_RewindLogBuilder), ::core::stringify!(new),));
  <Self as IMapHistory_RewindLogBuilderMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_GidMapMethods:IMapHistory_GidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_GidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc390usize)as*mut u8,();
-(MapHistory_GidMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_GidMap>IMapHistory_GidMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_GidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_GidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_GidMap), ::core::stringify!(new),));
- <Self as IMapHistory_GidMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindCommandWriter{#[doc="`WriteOverlap(crate::app::stream_2::Stream_2, i32, i32)` overload"]pub fn write_overlap_2(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2177ef0usize)as*mut u8,();
-(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindCommandWriterMethods:IMapHistory_RewindCommandWriter{#[doc="`Prepare(crate::app::maphistory::MapHistory_RewindType)` overload"]fn prepare(self,r#type:impl::core::convert::Into<crate::app::maphistory::MapHistory_RewindType>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21773a0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::maphistory::MapHistory_RewindType)::core::convert::Into::into(r#type))}
-}
-#[doc="`WriteUnitAndName(crate::app::unit::Unit)` overload"]fn write_unit_and_name(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21773b0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteUnit(crate::app::unit::Unit)` overload"]fn write_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21773e0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteName(crate::app::unit::Unit)` overload"]fn write_name(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21774a0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WritePosition(crate::app::unit::Unit)` overload"]fn write_position(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21776d0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteStatus(crate::app::unit::Unit)` overload"]fn write_status(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177710usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteStatus(i64)` overload"]fn write_status_2(self,status:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177780usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(i64)::core::convert::Into::into(status))}
-}
-#[doc="`WriteHp(crate::app::unit::Unit)` overload"]fn write_hp(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177790usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteHp(i32)` overload"]fn write_hp_2(self,hp:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21777a0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(hp))}
-}
-#[doc="`WriteBaseCapability(crate::app::unit::Unit, i32)` overload"]fn write_base_capability(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21777b0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(index))}
-}
-#[doc="`WriteBaseCapabilityAll(crate::app::unit::Unit)` overload"]fn write_base_capability_all(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177830usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteGrowCapabilityAll(crate::app::unit::Unit)` overload"]fn write_grow_capability_all(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177a00usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteLevelCapabilityAll(crate::app::unit::Unit)` overload"]fn write_level_capability_all(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177be0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteUnitBaseCapabilityAll(crate::app::unitbasecapability::UnitBaseCapability)` overload"]fn write_unit_base_capability_all(self,capability:impl::core::convert::Into<crate::app::unitbasecapability::UnitBaseCapability>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177840usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unitbasecapability::UnitBaseCapability)::core::convert::Into::into(capability))}
-}
-#[doc="`WriteEngageCount(crate::app::unit::Unit)` overload"]fn write_engage_count(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177bf0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteEngageCount(i32)` overload"]fn write_engage_count_2(self,engage_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177c00usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(engage_count))}
-}
-#[doc="`WriteEngageTurn(crate::app::unit::Unit)` overload"]fn write_engage_turn(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177c10usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteShowInSearchMap(crate::app::unit::Unit, i32, i32)` overload"]fn write_show_in_search_map(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177c20usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z))}
-}
-#[doc="`WriteTurn(i32)` overload"]fn write_turn(self,turn:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177d80usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(turn))}
-}
-#[doc="`WriteForce(crate::app::force::Force_Type)` overload"]fn write_force(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177d90usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
-}
-#[doc="`WriteSkills(crate::app::skillarray::SkillArray)` overload"]fn write_skills(self,skills:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177da0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(skills))}
-}
-#[doc="`WriteUnitPhaseBeginKinds(crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds)` overload"]fn write_unit_phase_begin_kinds(self,kind:impl::core::convert::Into<crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177dc0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds)::core::convert::Into::into(kind))}
-}
-#[doc="`WriteUnitItem(crate::app::unititem::UnitItem)` overload"]fn write_unit_item(self,item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177dd0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(item))}
-}
-#[doc="`WriteUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]fn write_unit_item_list(self,item_list:impl::core::convert::Into<crate::app::unititemlist::UnitItemList>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177df0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unititemlist::UnitItemList)::core::convert::Into::into(item_list))}
-}
-#[doc="`WriteGodUnit(crate::app::godunit::GodUnit)` overload"]fn write_god_unit(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177e10usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
-}
-#[doc="`WriteTransporterData(crate::app::transporter::Transporter_Data)` overload"]fn write_transporter_data(self,data:impl::core::convert::Into<crate::app::transporter::Transporter_Data>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177ec0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::transporter::Transporter_Data)::core::convert::Into::into(data))}
-}
-#[doc="`WriteOverlap(i32, i32)` overload"]fn write_overlap(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177ee0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`WriteUnitIconInfo(crate::app::unit::Unit)` overload"]fn write_unit_icon_info(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2178050usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`WriteLockTarget(crate::app::unit::Unit)` overload"]fn write_lock_target(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21788e0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`OverwriteByte(i32, u8)` overload"]fn overwrite_byte(self,pos:impl::core::convert::Into<i32> ,val:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21789a0usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(pos),(u8)::core::convert::Into::into(val))}
-}
-#[doc="`OverwriteUshort(i32, u16)` overload"]fn overwrite_ushort(self,pos:impl::core::convert::Into<i32> ,val:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2178a10usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(pos),(u16)::core::convert::Into::into(val))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2178a80usize)as*mut u8,();
-(MapHistory_RewindCommandWriter)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RewindCommandWriter>IMapHistory_RewindCommandWriterMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindCommandWriter{pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn write_unit_and_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn write_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn write_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn write_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn write_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn write_status_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn write_hp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn write_hp_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn write_base_capability_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn write_base_capability_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn write_grow_capability_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn write_level_capability_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn write_unit_base_capability_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn write_engage_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn write_engage_count_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn write_engage_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn write_show_in_search_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn write_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn write_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn write_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn write_unit_phase_begin_kinds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn write_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn write_unit_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn write_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn write_transporter_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn write_overlap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn write_overlap_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn write_unit_icon_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn write_lock_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-pub fn overwrite_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
-pub fn overwrite_ushort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindCommandWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_RewindCommandWriter), ::core::stringify!(new),));
- <Self as IMapHistory_RewindCommandWriterMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapHistory_Replay_TurnSave_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:MapHistory_Replay_TurnSave,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MapHistory_Replay_TurnSave as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(MapHistory_Replay_TurnSave, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_version(this:MapHistory_Replay_TurnSave,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapHistory_Replay_TurnSave as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(MapHistory_Replay_TurnSave, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:MapHistory_Replay_TurnSave,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MapHistory_Replay_TurnSave as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(MapHistory_Replay_TurnSave,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:MapHistory_Replay_TurnSave,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapHistory_Replay_TurnSave as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(MapHistory_Replay_TurnSave,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_Replay_TurnSaveMethods:IMapHistory_Replay_TurnSave{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_TurnSave_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Write(crate::app::procinst::ProcInst)` overload"]fn write(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a820usize)as*mut u8,();
-(MapHistory_Replay_TurnSave)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a830usize)as*mut u8,();
-(MapHistory_Replay_TurnSave)__receiver)}
-}
-#[doc="`WriteToStream()` overload"]fn write_to_stream(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a850usize)as*mut u8,();
-(MapHistory_Replay_TurnSave)__receiver)}
-}
-#[doc="`ReadFromStream()` overload"]fn read_from_stream(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a840usize)as*mut u8,();
-(MapHistory_Replay_TurnSave)__receiver)}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a810usize)as*mut u8,();
-(MapHistory_Replay_TurnSave)__receiver)}
-}
-#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_TurnSave_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_TurnSave_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
-}
-#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_TurnSave_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a9d0usize)as*mut u8,();
-(MapHistory_Replay_TurnSave)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_Replay_TurnSave>IMapHistory_Replay_TurnSaveMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Replay_TurnSave{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn write_to_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn read_from_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Replay_TurnSave{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_Replay_TurnSave), ::core::stringify!(new),));
- <Self as IMapHistory_Replay_TurnSaveMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_VariableMapMethods:IMapHistory_VariableMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_VariableMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217c100usize)as*mut u8,();
-(MapHistory_VariableMap)__receiver)}
-}
-#[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{let __receiver= <MapHistory_VariableMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217c160usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
-(MapHistory_VariableMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_VariableMap>IMapHistory_VariableMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_VariableMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_keys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_VariableMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_VariableMap), ::core::stringify!(new),));
- <Self as IMapHistory_VariableMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_RnidMapMethods:IMapHistory_RnidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RnidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217bed0usize)as*mut u8,();
-(MapHistory_RnidMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RnidMap>IMapHistory_RnidMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RnidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RnidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_RnidMap), ::core::stringify!(new),));
- <Self as IMapHistory_RnidMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapHistory_Replay_SaveAsync_SaveMethod_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:MapHistory_Replay_SaveAsync_SaveMethod,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <MapHistory_Replay_SaveAsync_SaveMethod as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(MapHistory_Replay_SaveAsync_SaveMethod, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_Replay_SaveAsync_SaveMethodMethods:IMapHistory_Replay_SaveAsync_SaveMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapHistory_Replay_SaveAsync_SaveMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2307180usize)as*mut u8,();
-(MapHistory_Replay_SaveAsync_SaveMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <MapHistory_Replay_SaveAsync_SaveMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_SaveAsync_SaveMethod_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_Replay_SaveAsync_SaveMethod>IMapHistory_Replay_SaveAsync_SaveMethodMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync_SaveMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync_SaveMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_Replay_SaveAsync_SaveMethod), ::core::stringify!(new),));
- <Self as IMapHistory_Replay_SaveAsync_SaveMethodMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_PidMapMethods:IMapHistory_PidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_PidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc510usize)as*mut u8,();
-(MapHistory_PidMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_PidMap>IMapHistory_PidMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_PidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_PidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_PidMap), ::core::stringify!(new),));
- <Self as IMapHistory_PidMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>MapHistory_IdMap_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,capacity:i32)->();
- #[doc="`Entry(::unity2::Il2CppString)` overload"]#[method(name="Entry",args=1)]pub fn entry(self,id: ::unity2::Il2CppString)->i32;
- #[doc="`TryGet(i32)` overload"]#[method(name="TryGet",args=1)]pub fn try_get(self,index:i32)-> ::unity2::Il2CppString;
- #[doc="`get_Version()` overload"]#[method(name="get_Version",args=0)]pub fn get_version(self,)->i32;
- #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]#[method(name="OnSerialize",args=1)]pub fn on_serialize(self,stream:crate::app::stream_2::Stream_2)->();
- #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]#[method(name="OnDeserialize",args=2)]pub fn on_deserialize(self,stream:crate::app::stream_2::Stream_2,version:i32)->();
-}
-
-#[cfg(feature="app-maphistory")]impl<T0: ::unity2::ClassIdentity>MapHistory_IdMap_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_IdMap_1), ::core::stringify!(new),));
- <Self as IMapHistory_IdMap_1Methods<T0> > ::ctor(this,capacity);
-this}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_SidMapMethods:IMapHistory_SidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_SidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217c040usize)as*mut u8,();
-(MapHistory_SidMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_SidMap>IMapHistory_SidMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_SidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_SidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_SidMap), ::core::stringify!(new),));
- <Self as IMapHistory_SidMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapHistory_RewindRelianceMap_unity2_raw{use super:: * ;
-pub unsafe fn get_version(this:MapHistory_RewindRelianceMap,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapHistory_RewindRelianceMap as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(MapHistory_RewindRelianceMap, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:MapHistory_RewindRelianceMap,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MapHistory_RewindRelianceMap as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(MapHistory_RewindRelianceMap,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:MapHistory_RewindRelianceMap,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapHistory_RewindRelianceMap as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(MapHistory_RewindRelianceMap,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindRelianceMap{#[doc="`Index2Id(i32, i32)` overload"]pub fn index2_id(map_history_index_a:impl::core::convert::Into<i32> ,map_history_index_b:impl::core::convert::Into<i32>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217a700usize)as*mut u8,u32;
-(i32)::core::convert::Into::into(map_history_index_a),(i32)::core::convert::Into::into(map_history_index_b))}
-}
-#[doc="`Id2Index(u32, *muti32, *muti32)` overload"]pub fn id2_index(id:impl::core::convert::Into<u32>)->(i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217a970usize)as*mut u8,();
-(u32)::core::convert::Into::into(id),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr());
-(__out_0.assume_init(),__out_1.assume_init())}
-}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindRelianceMapMethods:IMapHistory_RewindRelianceMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217a380usize)as*mut u8,();
-(MapHistory_RewindRelianceMap)__receiver)}
-}
-#[doc="`Entry(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn entry(self,unit_a:impl::core::convert::Into<crate::app::unit::Unit> ,unit_b:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217a500usize)as*mut u8,();
-(MapHistory_RewindRelianceMap)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_a),(crate::app::unit::Unit)::core::convert::Into::into(unit_b))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217a4a0usize)as*mut u8,();
-(MapHistory_RewindRelianceMap)__receiver)}
-}
-#[doc="`TryGetRelianceData(u32)` overload"]fn try_get_reliance_data(self,id:impl::core::convert::Into<u32>)->crate::app::unitreliancedata::UnitRelianceData{unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217a710usize)as*mut u8,crate::app::unitreliancedata::UnitRelianceData;
-(MapHistory_RewindRelianceMap)__receiver,(u32)::core::convert::Into::into(id))}
-}
-#[doc="`GetPids(u32, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]fn get_pids(self,id:impl::core::convert::Into<u32>)->(::unity2::Il2CppString, ::unity2::Il2CppString){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217a780usize)as*mut u8,();
-(MapHistory_RewindRelianceMap)__receiver,(u32)::core::convert::Into::into(id),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_1.as_mut_ptr());
-(__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`GetUnits(u32, *mutcrate::app::unit::Unit, *mutcrate::app::unit::Unit)` overload"]fn get_units(self,id:impl::core::convert::Into<u32>)->(crate::app::unit::Unit,crate::app::unit::Unit){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::unit::Unit> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <crate::app::unit::Unit> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217a870usize)as*mut u8,();
-(MapHistory_RewindRelianceMap)__receiver,(u32)::core::convert::Into::into(id),(*mut crate::app::unit::Unit)__out_0.as_mut_ptr(),(*mut crate::app::unit::Unit)__out_1.as_mut_ptr());
-(__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`get_Ids()` overload"]fn get_ids(self,)->crate::system::collections::generic::list_1::List_1<u32>{unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217a990usize)as*mut u8,crate::system::collections::generic::list_1::List_1<u32> ;
-(MapHistory_RewindRelianceMap)__receiver)}
-}
-#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_RewindRelianceMap_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_RewindRelianceMap_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
-}
-#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_RewindRelianceMap_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RewindRelianceMap>IMapHistory_RewindRelianceMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindRelianceMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn try_get_reliance_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_pids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_ids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn index2_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn id2_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindRelianceMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_RewindRelianceMap), ::core::stringify!(new),));
- <Self as IMapHistory_RewindRelianceMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MapHistory_UnitMapBase_2<T0,T1>{#[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
- #[doc="`EntryAll()` overload"]#[method(name="EntryAll",args=0)]pub fn entry_all(self,)->();
- #[doc="`EntryAllImpl()` overload"]#[method(name="EntryAllImpl",args=0)]pub fn entry_all_impl(self,)->();
- #[doc="`Entry(crate::app::unit::Unit)` overload"]#[method(name="Entry",args=1)]pub fn entry(self,unit:crate::app::unit::Unit)->i32;
- #[doc="`Delete(crate::app::unit::Unit)` overload"]#[method(name="Delete",args=1)]pub fn delete(self,unit:crate::app::unit::Unit)->();
- #[doc="`Delete(i32)` overload"]#[method(name="Delete",args=1)]pub fn delete_2(self,index:i32)->();
- #[doc="`Clear()` overload"]#[method(name="Clear",args=0)]pub fn clear(self,)->();
- #[doc="`TryGet(i32, bool)` overload"]#[method(name="TryGet",args=2)]pub fn try_get(self,index:i32,with_error:bool)->crate::app::unit::Unit;
- #[doc="`get_NoEmpty()` overload"]#[method(name="get_NoEmpty",args=0)]pub fn get_no_empty(self,)->crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1> ;
- #[doc="`set_NoEmpty(crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1>)` overload"]#[method(name="set_NoEmpty",args=1)]pub fn set_no_empty(self,value:crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1>)->();
- #[doc="`FindUnusedIndex()` overload"]#[method(name="FindUnusedIndex",args=0)]pub fn find_unused_index(self,)->i32;
- #[doc="`DbgError(::unity2::Il2CppString)` overload"]#[method(name="DbgError",args=1)]pub fn dbg_error(self,message: ::unity2::Il2CppString)->();
-}
-
-#[cfg(feature="app-maphistory")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MapHistory_UnitMapBase_2<T0,T1>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_UnitMapBase_2), ::core::stringify!(new),));
- <Self as IMapHistory_UnitMapBase_2Methods<T0,T1> > ::ctor(this,);
 this}
 }
 
@@ -4339,353 +3827,6 @@ pub fn save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>MapHistory_IdMapBase_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,capacity:i32)->();
- #[doc="`EntryInternal(::unity2::Il2CppString)` overload"]#[method(name="EntryInternal",args=1)]pub fn entry_internal(self,id: ::unity2::Il2CppString)->i32;
- #[doc="`EntryInternal(::unity2::Il2CppString, u8)` overload"]#[method(name="EntryInternal",args=2)]pub fn entry_internal_2(self,id: ::unity2::Il2CppString,index:u8)->i32;
- #[doc="`GetNextIndex()` overload"]#[method(name="GetNextIndex",args=0)]pub fn get_next_index(self,)->u8;
- #[doc="`Clear()` overload"]#[method(name="Clear",args=0)]pub fn clear(self,)->();
- #[doc="`TryGetInternal(i32)` overload"]#[method(name="TryGetInternal",args=1)]pub fn try_get_internal(self,index:i32)-> ::unity2::Il2CppString;
- #[doc="`DbgError(::unity2::Il2CppString)` overload"]#[method(name="DbgError",args=1)]pub fn dbg_error(self,message: ::unity2::Il2CppString)->();
-}
-
-#[cfg(feature="app-maphistory")]impl<T0: ::unity2::ClassIdentity>MapHistory_IdMapBase_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_IdMapBase_1), ::core::stringify!(new),));
- <Self as IMapHistory_IdMapBase_1Methods<T0> > ::ctor(this,capacity);
-this}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_ReplayCommandReaderMethods:IMapHistory_ReplayCommandReader{#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,command_stream_buffer:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2706120usize)as*mut u8,();
-(MapHistory_ReplayCommandReader)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(command_stream_buffer))}
-}
-#[doc="`ReadUnit()` overload"]fn read_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2706130usize)as*mut u8,crate::app::unit::Unit;
-(MapHistory_ReplayCommandReader)__receiver)}
-}
-#[doc="`ReadUnitByIndex()` overload"]fn read_unit_by_index(self,)->i32{unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2706220usize)as*mut u8,i32;
-(MapHistory_ReplayCommandReader)__receiver)}
-}
-#[doc="`ReadUnitItem(crate::app::unititem::UnitItem)` overload"]fn read_unit_item(self,item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2706280usize)as*mut u8,();
-(MapHistory_ReplayCommandReader)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(item))}
-}
-#[doc="`ReadUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]fn read_unit_item_list(self,item_list:impl::core::convert::Into<crate::app::unititemlist::UnitItemList>)->(){unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2706790usize)as*mut u8,();
-(MapHistory_ReplayCommandReader)__receiver,(crate::app::unititemlist::UnitItemList)::core::convert::Into::into(item_list))}
-}
-#[doc="`ReadMultiTargets(crate::app::mapmind::MapMind_MultiTargets)` overload"]fn read_multi_targets(self,targets:impl::core::convert::Into<crate::app::mapmind::MapMind_MultiTargets>)->(){unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27068a0usize)as*mut u8,();
-(MapHistory_ReplayCommandReader)__receiver,(crate::app::mapmind::MapMind_MultiTargets)::core::convert::Into::into(targets))}
-}
-#[doc="`ReadForce()` overload"]fn read_force(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <MapHistory_ReplayCommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2706a30usize)as*mut u8,crate::app::force::Force_Type;
-(MapHistory_ReplayCommandReader)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_ReplayCommandReader>IMapHistory_ReplayCommandReaderMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_ReplayCommandReader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn read_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn read_unit_by_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn read_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn read_unit_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn read_multi_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn read_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_ReplayCommandReader{#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new(command_stream_buffer: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_ReplayCommandReader), ::core::stringify!(new),));
- <Self as IMapHistory_ReplayCommandReaderMethods> ::ctor(this,command_stream_buffer);
-this}
-}
-
-#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
- #[doc="`Invoke()` overload"]#[method(name="Invoke",args=0)]pub fn invoke(self,)->();
-}
-
-#[cfg(feature="app-maphistory")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_UnitMapBase_2_NoEmptyFunction), ::core::stringify!(new),));
- <Self as IMapHistory_UnitMapBase_2_NoEmptyFunctionMethods<T0,T1> > ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>MapHistory_Base_1<T0>{#[doc="`Initialize()` overload"]#[method(name="Initialize",args=0)]pub fn initialize(self,)->();
- #[doc="`OnInitialize()` overload"]#[method(name="OnInitialize",args=0)]pub fn on_initialize(self,)->();
- #[doc="`Delete()` overload"]#[method(name="Delete",args=0)]pub fn delete(self,)->();
- #[doc="`OnDelete()` overload"]#[method(name="OnDelete",args=0)]pub fn on_delete(self,)->();
- #[doc="`Add(crate::app::maphistory::MapHistory_CommandWriter)` overload"]#[method(name="Add",args=1)]pub fn add(self,writer:crate::app::maphistory::MapHistory_CommandWriter)->bool;
- #[doc="`Preadd(crate::app::maphistory::MapHistory_CommandWriter)` overload"]#[method(name="Preadd",args=1)]pub fn preadd(self,writer:crate::app::maphistory::MapHistory_CommandWriter)->();
- #[doc="`AddSplit(crate::app::maphistory::MapHistory_CommandWriter, u8)` overload"]#[method(name="AddSplit",args=2)]pub fn add_split(self,writer:crate::app::maphistory::MapHistory_CommandWriter,arg:u8)->bool;
- #[doc="`Overwrite(crate::app::maphistory::MapHistory_CommandWriter, i32)` overload"]#[method(name="Overwrite",args=2)]pub fn overwrite(self,writer:crate::app::maphistory::MapHistory_CommandWriter,command_index:i32)->bool;
- #[doc="`CommandStackCancel(crate::app::unit::Unit, i32, i32)` overload"]#[method(name="CommandStackCancel",args=3)]pub fn command_stack_cancel(self,unit:crate::app::unit::Unit,target_command_type:i32,related_command_type:i32)->();
- #[doc="`GetCommandEngage()` overload"]#[method(name="GetCommandEngage",args=0)]pub fn get_command_engage(self,)->i32;
- #[doc="`GetCommandGodChange()` overload"]#[method(name="GetCommandGodChange",args=0)]pub fn get_command_god_change(self,)->i32;
- #[doc="`GetCommandUnitItemList()` overload"]#[method(name="GetCommandUnitItemList",args=0)]pub fn get_command_unit_item_list(self,)->i32;
- #[doc="`GetUnitForCommandEngage(i32)` overload"]#[method(name="GetUnitForCommandEngage",args=1)]pub fn get_unit_for_command_engage(self,command_index:i32)->crate::app::unit::Unit;
- #[doc="`GetUnitForCommandGodChange(i32)` overload"]#[method(name="GetUnitForCommandGodChange",args=1)]pub fn get_unit_for_command_god_change(self,command_index:i32)->crate::app::unit::Unit;
- #[doc="`GetUnitForCommandUnitItemList(i32)` overload"]#[method(name="GetUnitForCommandUnitItemList",args=1)]pub fn get_unit_for_command_unit_item_list(self,command_index:i32)->crate::app::unit::Unit;
- #[doc="`TryDeleteCommand(i32, crate::app::unit::Unit, i32)` overload"]#[method(name="TryDeleteCommand",args=3)]pub fn try_delete_command(self,command_index:i32,unit:crate::app::unit::Unit,target_command_type:i32)->bool;
- #[doc="`DeleteCommand(i32)` overload"]#[method(name="DeleteCommand",args=1)]pub fn delete_command(self,command_index:i32)->bool;
- #[doc="`PredeleteCommand(i32)` overload"]#[method(name="PredeleteCommand",args=1)]pub fn predelete_command(self,command_index:i32)->();
- #[doc="`DeleteCommandError()` overload"]#[method(name="DeleteCommandError",args=0)]pub fn delete_command_error(self,)->();
- #[doc="`Clear()` overload"]#[method(name="Clear",args=0)]pub fn clear(self,)->();
- #[doc="`get_CurrentIndex()` overload"]#[method(name="get_CurrentIndex",args=0)]pub fn get_current_index(self,)->i32;
- #[doc="`GetLastSplitIndex()` overload"]#[method(name="GetLastSplitIndex",args=0)]pub fn get_last_split_index(self,)->i32;
- #[doc="`GetNextSplitIndex(i32)` overload"]#[method(name="GetNextSplitIndex",args=1)]pub fn get_next_split_index(self,index:i32)->i32;
- #[doc="`GetPrevSplitIndex(i32)` overload"]#[method(name="GetPrevSplitIndex",args=1)]pub fn get_prev_split_index(self,index:i32)->i32;
- #[doc="`SerializeCommands(crate::app::stream_2::Stream_2)` overload"]#[method(name="SerializeCommands",args=1)]pub fn serialize_commands(self,stream:crate::app::stream_2::Stream_2)->();
- #[doc="`DeserializeCommands(crate::app::stream_2::Stream_2)` overload"]#[method(name="DeserializeCommands",args=1)]pub fn deserialize_commands(self,stream:crate::app::stream_2::Stream_2)->();
- #[doc="`SerializeCommandStream(crate::app::stream_2::Stream_2)` overload"]#[method(name="SerializeCommandStream",args=1)]pub fn serialize_command_stream(self,stream:crate::app::stream_2::Stream_2)->();
- #[doc="`DeserializeCommandStream(crate::app::stream_2::Stream_2)` overload"]#[method(name="DeserializeCommandStream",args=1)]pub fn deserialize_command_stream(self,stream:crate::app::stream_2::Stream_2)->();
- #[doc="`get_CommandStreamBufferSize()` overload"]#[method(name="get_CommandStreamBufferSize",args=0)]pub fn get_command_stream_buffer_size(self,)->u32;
- #[doc="`get_MaxCommandCount()` overload"]#[method(name="get_MaxCommandCount",args=0)]pub fn get_max_command_count(self,)->u32;
- #[doc="`TryCreateInstance()` overload"]#[method(name="TryCreateInstance",args=0)]pub fn try_create_instance()->();
- #[doc="`TryDeleteInstance()` overload"]#[method(name="TryDeleteInstance",args=0)]pub fn try_delete_instance()->();
- #[doc="`get_Instance()` overload"]#[method(name="get_Instance",args=0)]pub fn get_instance()->T0;
- #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
-}
-
-#[cfg(feature="app-maphistory")]impl<T0: ::unity2::ClassIdentity>MapHistory_Base_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_Base_1), ::core::stringify!(new),));
- <Self as IMapHistory_Base_1Methods<T0> > ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_ModeScope{#[doc="`.ctor(crate::app::maphistory::MapHistory_Mode)` overload"]pub fn ctor(&mut self,mode:impl::core::convert::Into<crate::app::maphistory::MapHistory_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b2c0usize)as*mut u8,();
-(*mut MapHistory_Rewind_ModeScope)self as*mut MapHistory_Rewind_ModeScope,(crate::app::maphistory::MapHistory_Mode)::core::convert::Into::into(mode))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b3b0usize)as*mut u8,();
-(*mut MapHistory_Rewind_ModeScope)self as*mut MapHistory_Rewind_ModeScope)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_ModeScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-maphistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapHistory_ReplayAppearanceMap_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:MapHistory_ReplayAppearanceMap,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MapHistory_ReplayAppearanceMap as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(MapHistory_ReplayAppearanceMap, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_version(this:MapHistory_ReplayAppearanceMap,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapHistory_ReplayAppearanceMap as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(MapHistory_ReplayAppearanceMap, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:MapHistory_ReplayAppearanceMap,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MapHistory_ReplayAppearanceMap as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(MapHistory_ReplayAppearanceMap,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:MapHistory_ReplayAppearanceMap,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapHistory_ReplayAppearanceMap as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(MapHistory_ReplayAppearanceMap,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_ReplayAppearanceMapMethods:IMapHistory_ReplayAppearanceMap{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_ReplayAppearanceMap_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
-}
-#[doc="`RegisterAppearanceUnit(crate::app::unit::Unit)` overload"]fn register_appearance_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2704cb0usize)as*mut u8,i32;
-(MapHistory_ReplayAppearanceMap)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`RegisterLeavingUnit(crate::app::unit::Unit)` overload"]fn register_leaving_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2704f80usize)as*mut u8,i32;
-(MapHistory_ReplayAppearanceMap)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`GetIndexes(*mut::unity2::Array<i32>, *mut::unity2::Array<i32>)` overload"]fn get_indexes(self,)->(bool, ::unity2::Array<i32> , ::unity2::Array<i32>){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<i32> > ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Array<i32> > ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2705070usize)as*mut u8,bool;
-(MapHistory_ReplayAppearanceMap)__receiver,(*mut::unity2::Array<i32>)__out_0.as_mut_ptr(),(*mut::unity2::Array<i32>)__out_1.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`CreateAppearanceUnit(i32)` overload"]fn create_appearance_unit(self,index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27053e0usize)as*mut u8,crate::app::unit::Unit;
-(MapHistory_ReplayAppearanceMap)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`GetLeavingUnit(i32)` overload"]fn get_leaving_unit(self,index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2705740usize)as*mut u8,crate::app::unit::Unit;
-(MapHistory_ReplayAppearanceMap)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`SerializeForAppearance(crate::app::stream_2::Stream_2, crate::app::unit::Unit)` overload"]fn serialize_for_appearance(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2704e10usize)as*mut u8,();
-(MapHistory_ReplayAppearanceMap)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`DeserializeForAppearance(crate::app::stream_2::Stream_2)` overload"]fn deserialize_for_appearance(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2705450usize)as*mut u8,crate::app::unit::Unit;
-(MapHistory_ReplayAppearanceMap)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
-}
-#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_ReplayAppearanceMap_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_ReplayAppearanceMap_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
-}
-#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_ReplayAppearanceMap_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27060a0usize)as*mut u8,();
-(MapHistory_ReplayAppearanceMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_ReplayAppearanceMap>IMapHistory_ReplayAppearanceMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_ReplayAppearanceMap{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn register_appearance_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn register_leaving_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_indexes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_appearance_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_leaving_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn serialize_for_appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn deserialize_for_appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_ReplayAppearanceMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_ReplayAppearanceMap), ::core::stringify!(new),));
- <Self as IMapHistory_ReplayAppearanceMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_TidMapMethods:IMapHistory_TidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_TidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x217c0a0usize)as*mut u8,();
-(MapHistory_TidMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_TidMap>IMapHistory_TidMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_TidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_TidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_TidMap), ::core::stringify!(new),));
- <Self as IMapHistory_TidMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapHistory_Replay_unity2_raw{use super:: * ;
-pub unsafe fn on_initialize(this:MapHistory_Replay,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"OnInitialize",));
-let inner:extern "C" fn(MapHistory_Replay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_delete(this:MapHistory_Replay,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"OnDelete",));
-let inner:extern "C" fn(MapHistory_Replay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_command_engage(this:MapHistory_Replay,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetCommandEngage",));
-let inner:extern "C" fn(MapHistory_Replay, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_command_god_change(this:MapHistory_Replay,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetCommandGodChange",));
-let inner:extern "C" fn(MapHistory_Replay, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_command_unit_item_list(this:MapHistory_Replay,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetCommandUnitItemList",));
-let inner:extern "C" fn(MapHistory_Replay, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_unit_for_command_engage(this:MapHistory_Replay,command_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unit::Unit{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetUnitForCommandEngage",));
-let inner:extern "C" fn(MapHistory_Replay,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,command_index,__mi)}
-pub unsafe fn get_unit_for_command_god_change(this:MapHistory_Replay,command_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unit::Unit{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetUnitForCommandGodChange",));
-let inner:extern "C" fn(MapHistory_Replay,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,command_index,__mi)}
-pub unsafe fn get_unit_for_command_unit_item_list(this:MapHistory_Replay,command_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unit::Unit{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetUnitForCommandUnitItemList",));
-let inner:extern "C" fn(MapHistory_Replay,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,command_index,__mi)}
-}
-
 #[cfg(feature="app-maphistory")]impl MapHistory_Replay{#[doc="`SerializeSnapshot(crate::app::stream_2::Stream_2)` overload"]pub fn serialize_snapshot(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cf1d0usize)as*mut u8,();
 (crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
 }
@@ -4695,10 +3836,28 @@ inner(this,command_index,__mi)}
 }
 
 #[cfg(feature="app-maphistory")]pub trait IMapHistory_ReplayMethods:IMapHistory_Replay{#[doc="`OnInitialize()` overload"]fn on_initialize(self,)->(){unsafe{let __receiver= <MapHistory_Replay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_unity2_raw::on_initialize(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"OnInitialize",));
+let __inner:extern "C" fn(MapHistory_Replay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDelete()` overload"]fn on_delete(self,)->(){unsafe{let __receiver= <MapHistory_Replay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_unity2_raw::on_delete(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"OnDelete",));
+let __inner:extern "C" fn(MapHistory_Replay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Begin(crate::app::procinst::ProcInst)` overload"]fn begin(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MapHistory_Replay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24ccc70usize)as*mut u8,();
@@ -4721,22 +3880,76 @@ __MapHistory_Replay_unity2_raw::on_delete(__receiver, ::core::option::Option::No
 (MapHistory_Replay)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
 #[doc="`GetCommandEngage()` overload"]fn get_command_engage(self,)->i32{unsafe{let __receiver= <MapHistory_Replay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_unity2_raw::get_command_engage(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetCommandEngage",));
+let __inner:extern "C" fn(MapHistory_Replay, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetCommandGodChange()` overload"]fn get_command_god_change(self,)->i32{unsafe{let __receiver= <MapHistory_Replay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_unity2_raw::get_command_god_change(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetCommandGodChange",));
+let __inner:extern "C" fn(MapHistory_Replay, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetCommandUnitItemList()` overload"]fn get_command_unit_item_list(self,)->i32{unsafe{let __receiver= <MapHistory_Replay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_unity2_raw::get_command_unit_item_list(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetCommandUnitItemList",));
+let __inner:extern "C" fn(MapHistory_Replay, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetUnitForCommandEngage(i32)` overload"]fn get_unit_for_command_engage(self,command_index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_Replay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_unity2_raw::get_unit_for_command_engage(__receiver, ::core::convert::Into::into(command_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetUnitForCommandEngage",));
+let __inner:extern "C" fn(MapHistory_Replay,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(command_index),__mi)}
+}
 }
 #[doc="`GetUnitForCommandGodChange(i32)` overload"]fn get_unit_for_command_god_change(self,command_index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_Replay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_unity2_raw::get_unit_for_command_god_change(__receiver, ::core::convert::Into::into(command_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetUnitForCommandGodChange",));
+let __inner:extern "C" fn(MapHistory_Replay,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(command_index),__mi)}
+}
 }
 #[doc="`GetUnitForCommandUnitItemList(i32)` overload"]fn get_unit_for_command_unit_item_list(self,command_index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_Replay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_Replay_unity2_raw::get_unit_for_command_unit_item_list(__receiver, ::core::convert::Into::into(command_index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapHistory_Replay as::unity2::ClassIdentity> ::NAME,"GetUnitForCommandUnitItemList",));
+let __inner:extern "C" fn(MapHistory_Replay,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(command_index),__mi)}
+}
 }
 #[doc="`AfterCommandStackCancel(crate::app::unit::Unit)` overload"]fn after_command_stack_cancel(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_Replay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24cd1f0usize)as*mut u8,();
@@ -5104,6 +4317,32 @@ pub fn setup_mind_routes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
 }
 
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay{#[doc="Direct (non-virtual) call to `MapHistory_Replay`'s own `OnInitialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_initialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_initialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Replay`'s own `OnDelete`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_delete(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_delete_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Replay`'s own `GetCommandEngage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_command_engage(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_command_engage_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Replay`'s own `GetCommandGodChange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_command_god_change(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_command_god_change_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Replay`'s own `GetCommandUnitItemList`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_command_unit_item_list(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_command_unit_item_list_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Replay`'s own `GetUnitForCommandEngage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_unit_for_command_engage(this:impl::core::convert::Into< ::unity2::IlInstance> ,command_index:i32,)->crate::app::unit::Unit{let __mi=Self::get_unit_for_command_engage_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),command_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Replay`'s own `GetUnitForCommandGodChange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_unit_for_command_god_change(this:impl::core::convert::Into< ::unity2::IlInstance> ,command_index:i32,)->crate::app::unit::Unit{let __mi=Self::get_unit_for_command_god_change_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),command_index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Replay`'s own `GetUnitForCommandUnitItemList`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_unit_for_command_unit_item_list(this:impl::core::convert::Into< ::unity2::IlInstance> ,command_index:i32,)->crate::app::unit::Unit{let __mi=Self::get_unit_for_command_unit_item_list_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),command_index, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-maphistory")]impl MapHistory_Replay{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(MapHistory_Replay), ::core::stringify!(new),));
@@ -5111,171 +4350,226 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindLogMethods:IMapHistory_RewindLog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2178a90usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver)}
+#[cfg(feature="app-maphistory")]impl MapHistory_Command{#[doc="`get_Type()` overload"]pub fn get_type(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cac60usize)as*mut u8,i32;
+(*mut MapHistory_Command)self as*mut MapHistory_Command)}
 }
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2178ea0usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver)}
+#[doc="`set_Type(i32)` overload"]pub fn set_type(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cac70usize)as*mut u8,();
+(*mut MapHistory_Command)self as*mut MapHistory_Command,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179150usize)as*mut u8,bool;
-(MapHistory_RewindLog)__receiver)}
+#[doc="`get_Size()` overload"]pub fn get_size(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cac80usize)as*mut u8,i32;
+(*mut MapHistory_Command)self as*mut MapHistory_Command)}
 }
-#[doc="`SetActorUnitIcon(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]fn set_actor_unit_icon(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,jid:impl::core::convert::Into< ::unity2::Il2CppString> ,item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,is_female:impl::core::convert::Into<bool> ,is_engage:impl::core::convert::Into<bool> ,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179180usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(jid),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(item_kind),(bool)::core::convert::Into::into(is_female),(bool)::core::convert::Into::into(is_engage),(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+#[doc="`set_Size(i32)` overload"]pub fn set_size(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cac90usize)as*mut u8,();
+(*mut MapHistory_Command)self as*mut MapHistory_Command,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`SetActorUnitIconEngage(::unity2::Il2CppString)` overload"]fn set_actor_unit_icon_engage(self,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21791a0usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+#[doc="`get_Offset()` overload"]pub fn get_offset(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24caca0usize)as*mut u8,i32;
+(*mut MapHistory_Command)self as*mut MapHistory_Command)}
 }
-#[doc="`SetActorMapHistoryIndex(i32)` overload"]fn set_actor_map_history_index(self,map_history_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21791c0usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(i32)::core::convert::Into::into(map_history_index))}
+#[doc="`set_Offset(i32)` overload"]pub fn set_offset(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cacb0usize)as*mut u8,();
+(*mut MapHistory_Command)self as*mut MapHistory_Command,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`ClearActor()` overload"]fn clear_actor(self,)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21791e0usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver)}
+#[doc="`get_Tail()` overload"]pub fn get_tail(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cacc0usize)as*mut u8,i32;
+(*mut MapHistory_Command)self as*mut MapHistory_Command)}
 }
-#[doc="`SetAction(::unity2::Il2CppString)` overload"]fn set_action(self,mhid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179220usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mhid))}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cacd0usize)as*mut u8,();
+(*mut MapHistory_Command)self as*mut MapHistory_Command)}
 }
-#[doc="`SetAction(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set_action_2(self,mhid:impl::core::convert::Into< ::unity2::Il2CppString> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21793b0usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mhid),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cace0usize)as*mut u8,();
+(*mut MapHistory_Command)self as*mut MapHistory_Command,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
 }
-#[doc="`SetAction(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set_action_3(self,mhid:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into< ::unity2::Il2CppString> ,arg1:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21794e0usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mhid),(::unity2::Il2CppString)::core::convert::Into::into(arg0),(::unity2::Il2CppString)::core::convert::Into::into(arg1))}
-}
-#[doc="`SetAction(::unity2::Il2CppString, i32)` overload"]fn set_action_4(self,action:impl::core::convert::Into< ::unity2::Il2CppString> ,priority:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179340usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(action),(i32)::core::convert::Into::into(priority))}
-}
-#[doc="`AddItem(::unity2::Il2CppString)` overload"]fn add_item(self,iid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179620usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(iid))}
-}
-#[doc="`AddDeadUnit(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]fn add_dead_unit(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,jid:impl::core::convert::Into< ::unity2::Il2CppString> ,item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,is_female:impl::core::convert::Into<bool> ,is_engage:impl::core::convert::Into<bool> ,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179730usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(jid),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(item_kind),(bool)::core::convert::Into::into(is_female),(bool)::core::convert::Into::into(is_engage),(::unity2::Il2CppString)::core::convert::Into::into(gid))}
-}
-#[doc="`DeleteDeadUnitIcons()` overload"]fn delete_dead_unit_icons(self,)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21797f0usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`get_ActorUnitIcon()` overload"]fn get_actor_unit_icon(self,)->crate::app::maphistory::MapHistory_RewindLog_UnitIcon{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179940usize)as*mut u8,crate::app::maphistory::MapHistory_RewindLog_UnitIcon;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`get_ActorMapHistoryIndex()` overload"]fn get_actor_map_history_index(self,)->i32{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179950usize)as*mut u8,i32;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`get_ActorName()` overload"]fn get_actor_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179960usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`set_ActorName(::unity2::Il2CppString)` overload"]fn set_actor_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179970usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Action()` overload"]fn get_action(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179980usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`get_Items()` overload"]fn get_items(self,)-> ::unity2::Array<crate::app::itemdata::ItemData>{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179990usize)as*mut u8, ::unity2::Array<crate::app::itemdata::ItemData> ;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`get_ItemCount()` overload"]fn get_item_count(self,)->i32{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21799a0usize)as*mut u8,i32;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`get_DeadUnitIcons()` overload"]fn get_dead_unit_icons(self,)-> ::unity2::Array<crate::app::maphistory::MapHistory_RewindLog_UnitIcon>{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21799b0usize)as*mut u8, ::unity2::Array<crate::app::maphistory::MapHistory_RewindLog_UnitIcon> ;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`get_DeadUnitIconCount()` overload"]fn get_dead_unit_icon_count(self,)->i32{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21799c0usize)as*mut u8,i32;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`get_IsForCheck()` overload"]fn get_is_for_check(self,)->bool{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21799d0usize)as*mut u8,bool;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`set_IsForCheck(bool)` overload"]fn set_is_for_check(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21799e0usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_IsPhaseBegin()` overload"]fn get_is_phase_begin(self,)->bool{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21799f0usize)as*mut u8,bool;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`get_PhaseBeginForce()` overload"]fn get_phase_begin_force(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179a00usize)as*mut u8,crate::app::force::Force_Type;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`set_PhaseBeginForce(crate::app::force::Force_Type)` overload"]fn set_phase_begin_force(self,value:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179a10usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(value))}
-}
-#[doc="`get_HasPrevForce()` overload"]fn get_has_prev_force(self,)->bool{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179a20usize)as*mut u8,bool;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`get_PrevForce()` overload"]fn get_prev_force(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179a30usize)as*mut u8,crate::app::force::Force_Type;
-(MapHistory_RewindLog)__receiver)}
-}
-#[doc="`set_PrevForce(crate::app::force::Force_Type)` overload"]fn set_prev_force(self,value:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179a40usize)as*mut u8,();
-(MapHistory_RewindLog)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(value))}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cad30usize)as*mut u8,();
+(*mut MapHistory_Command)self as*mut MapHistory_Command,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
 }
 }
 
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RewindLog>IMapHistory_RewindLogMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindLog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_actor_unit_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_actor_unit_icon_engage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_actor_map_history_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn clear_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_action_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_action_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn set_action_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn add_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn add_dead_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn delete_dead_unit_icons_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_actor_unit_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_actor_map_history_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn get_actor_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn set_actor_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn get_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn get_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn get_item_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn get_dead_unit_icons_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn get_dead_unit_icon_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn get_is_for_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn set_is_for_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn get_is_phase_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn get_phase_begin_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn set_phase_begin_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn get_has_prev_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn get_prev_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-pub fn set_prev_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+#[cfg(feature="app-maphistory")]impl MapHistory_Command{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_tail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 }
 
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindLog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindCommandWriter{#[doc="`WriteOverlap(crate::app::stream_2::Stream_2, i32, i32)` overload"]pub fn write_overlap_2(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2177ef0usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindCommandWriterMethods:IMapHistory_RewindCommandWriter{#[doc="`Prepare(crate::app::maphistory::MapHistory_RewindType)` overload"]fn prepare(self,r#type:impl::core::convert::Into<crate::app::maphistory::MapHistory_RewindType>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21773a0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::maphistory::MapHistory_RewindType)::core::convert::Into::into(r#type))}
+}
+#[doc="`WriteUnitAndName(crate::app::unit::Unit)` overload"]fn write_unit_and_name(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21773b0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteUnit(crate::app::unit::Unit)` overload"]fn write_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21773e0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteName(crate::app::unit::Unit)` overload"]fn write_name(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21774a0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WritePosition(crate::app::unit::Unit)` overload"]fn write_position(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21776d0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteStatus(crate::app::unit::Unit)` overload"]fn write_status(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177710usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteStatus(i64)` overload"]fn write_status_2(self,status:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177780usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(i64)::core::convert::Into::into(status))}
+}
+#[doc="`WriteHp(crate::app::unit::Unit)` overload"]fn write_hp(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177790usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteHp(i32)` overload"]fn write_hp_2(self,hp:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21777a0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(hp))}
+}
+#[doc="`WriteBaseCapability(crate::app::unit::Unit, i32)` overload"]fn write_base_capability(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21777b0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`WriteBaseCapabilityAll(crate::app::unit::Unit)` overload"]fn write_base_capability_all(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177830usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteGrowCapabilityAll(crate::app::unit::Unit)` overload"]fn write_grow_capability_all(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177a00usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteLevelCapabilityAll(crate::app::unit::Unit)` overload"]fn write_level_capability_all(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177be0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteUnitBaseCapabilityAll(crate::app::unitbasecapability::UnitBaseCapability)` overload"]fn write_unit_base_capability_all(self,capability:impl::core::convert::Into<crate::app::unitbasecapability::UnitBaseCapability>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177840usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unitbasecapability::UnitBaseCapability)::core::convert::Into::into(capability))}
+}
+#[doc="`WriteEngageCount(crate::app::unit::Unit)` overload"]fn write_engage_count(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177bf0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteEngageCount(i32)` overload"]fn write_engage_count_2(self,engage_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177c00usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(engage_count))}
+}
+#[doc="`WriteEngageTurn(crate::app::unit::Unit)` overload"]fn write_engage_turn(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177c10usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteShowInSearchMap(crate::app::unit::Unit, i32, i32)` overload"]fn write_show_in_search_map(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177c20usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z))}
+}
+#[doc="`WriteTurn(i32)` overload"]fn write_turn(self,turn:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177d80usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(turn))}
+}
+#[doc="`WriteForce(crate::app::force::Force_Type)` overload"]fn write_force(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177d90usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`WriteSkills(crate::app::skillarray::SkillArray)` overload"]fn write_skills(self,skills:impl::core::convert::Into<crate::app::skillarray::SkillArray>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177da0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::skillarray::SkillArray)::core::convert::Into::into(skills))}
+}
+#[doc="`WriteUnitPhaseBeginKinds(crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds)` overload"]fn write_unit_phase_begin_kinds(self,kind:impl::core::convert::Into<crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177dc0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds)::core::convert::Into::into(kind))}
+}
+#[doc="`WriteUnitItem(crate::app::unititem::UnitItem)` overload"]fn write_unit_item(self,item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177dd0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(item))}
+}
+#[doc="`WriteUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]fn write_unit_item_list(self,item_list:impl::core::convert::Into<crate::app::unititemlist::UnitItemList>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177df0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unititemlist::UnitItemList)::core::convert::Into::into(item_list))}
+}
+#[doc="`WriteGodUnit(crate::app::godunit::GodUnit)` overload"]fn write_god_unit(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177e10usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
+}
+#[doc="`WriteTransporterData(crate::app::transporter::Transporter_Data)` overload"]fn write_transporter_data(self,data:impl::core::convert::Into<crate::app::transporter::Transporter_Data>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177ec0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::transporter::Transporter_Data)::core::convert::Into::into(data))}
+}
+#[doc="`WriteOverlap(i32, i32)` overload"]fn write_overlap(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177ee0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`WriteUnitIconInfo(crate::app::unit::Unit)` overload"]fn write_unit_icon_info(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2178050usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteLockTarget(crate::app::unit::Unit)` overload"]fn write_lock_target(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21788e0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`OverwriteByte(i32, u8)` overload"]fn overwrite_byte(self,pos:impl::core::convert::Into<i32> ,val:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21789a0usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(pos),(u8)::core::convert::Into::into(val))}
+}
+#[doc="`OverwriteUshort(i32, u16)` overload"]fn overwrite_ushort(self,pos:impl::core::convert::Into<i32> ,val:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2178a10usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver,(i32)::core::convert::Into::into(pos),(u16)::core::convert::Into::into(val))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindCommandWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2178a80usize)as*mut u8,();
+(MapHistory_RewindCommandWriter)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RewindCommandWriter>IMapHistory_RewindCommandWriterMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindCommandWriter{pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn write_unit_and_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn write_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn write_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn write_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn write_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn write_status_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn write_hp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn write_hp_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn write_base_capability_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn write_base_capability_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn write_grow_capability_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn write_level_capability_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn write_unit_base_capability_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn write_engage_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn write_engage_count_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn write_engage_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn write_show_in_search_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn write_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn write_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn write_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn write_unit_phase_begin_kinds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn write_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn write_unit_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn write_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn write_transporter_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn write_overlap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn write_overlap_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn write_unit_icon_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn write_lock_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn overwrite_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn overwrite_ushort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindCommandWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MapHistory_RewindLog), ::core::stringify!(new),));
- <Self as IMapHistory_RewindLogMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MapHistory_RewindCommandWriter), ::core::stringify!(new),));
+ <Self as IMapHistory_RewindCommandWriterMethods> ::ctor(this,);
 this}
 }
 
@@ -5377,21 +4671,141 @@ pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_Rewind_OverlapDataPoolMethods:IMapHistory_Rewind_OverlapDataPool{#[doc="`.ctor(i32)` overload"]fn ctor(self,max:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapDataPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b830usize)as*mut u8,();
-(MapHistory_Rewind_OverlapDataPool)__receiver,(i32)::core::convert::Into::into(max))}
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_GidMapMethods:IMapHistory_GidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_GidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc390usize)as*mut u8,();
+(MapHistory_GidMap)__receiver)}
 }
 }
 
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_Rewind_OverlapDataPool>IMapHistory_Rewind_OverlapDataPoolMethods for __T{}
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_GidMap>IMapHistory_GidMapMethods for __T{}
 
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapDataPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-maphistory")]impl MapHistory_GidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapDataPool{#[doc="`.ctor(i32)` — overload selector"]pub fn new(max:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-maphistory")]impl MapHistory_GidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MapHistory_Rewind_OverlapDataPool), ::core::stringify!(new),));
- <Self as IMapHistory_Rewind_OverlapDataPoolMethods> ::ctor(this,max);
+ failed to instantiate", ::core::stringify!(MapHistory_GidMap), ::core::stringify!(new),));
+ <Self as IMapHistory_GidMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_PidMapMethods:IMapHistory_PidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_PidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc510usize)as*mut u8,();
+(MapHistory_PidMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_PidMap>IMapHistory_PidMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_PidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_PidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_PidMap), ::core::stringify!(new),));
+ <Self as IMapHistory_PidMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindUnitMap_Data{#[doc="`get_unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6bca0usize)as*mut u8,crate::app::unit::Unit;
+(*mut MapHistory_RewindUnitMap_Data)self as*mut MapHistory_RewindUnitMap_Data)}
+}
+#[doc="`set_unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6bcb0usize)as*mut u8,();
+(*mut MapHistory_RewindUnitMap_Data)self as*mut MapHistory_RewindUnitMap_Data,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`IsUsed()` overload"]pub fn is_used(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6bcc0usize)as*mut u8,bool;
+(*mut MapHistory_RewindUnitMap_Data)self as*mut MapHistory_RewindUnitMap_Data)}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6bce0usize)as*mut u8,();
+(*mut MapHistory_RewindUnitMap_Data)self as*mut MapHistory_RewindUnitMap_Data)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindUnitMap_Data{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_used_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_MaterialStringMapMethods:IMapHistory_MaterialStringMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_MaterialStringMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc4b0usize)as*mut u8,();
+(MapHistory_MaterialStringMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_MaterialStringMap>IMapHistory_MaterialStringMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_MaterialStringMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_MaterialStringMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_MaterialStringMap), ::core::stringify!(new),));
+ <Self as IMapHistory_MaterialStringMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_SerializeDisabled{#[doc="`.ctor(bool)` overload"]pub fn ctor(&mut self,is_disabled:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217bf30usize)as*mut u8,();
+(*mut MapHistory_SerializeDisabled)self as*mut MapHistory_SerializeDisabled,(bool)::core::convert::Into::into(is_disabled))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217bfc0usize)as*mut u8,();
+(*mut MapHistory_SerializeDisabled)self as*mut MapHistory_SerializeDisabled)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_SerializeDisabled{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_VariableMapMethods:IMapHistory_VariableMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_VariableMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217c100usize)as*mut u8,();
+(MapHistory_VariableMap)__receiver)}
+}
+#[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{let __receiver= <MapHistory_VariableMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217c160usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+(MapHistory_VariableMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_VariableMap>IMapHistory_VariableMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_VariableMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_keys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_VariableMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_VariableMap), ::core::stringify!(new),));
+ <Self as IMapHistory_VariableMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_TidMapMethods:IMapHistory_TidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_TidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217c0a0usize)as*mut u8,();
+(MapHistory_TidMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_TidMap>IMapHistory_TidMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_TidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_TidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_TidMap), ::core::stringify!(new),));
+ <Self as IMapHistory_TidMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke()` overload"]#[method(name="Invoke",args=0)]pub fn invoke(self,)->();
+}
+
+#[cfg(feature="app-maphistory")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_UnitMapBase_2_NoEmptyFunction), ::core::stringify!(new),));
+ <Self as IMapHistory_UnitMapBase_2_NoEmptyFunctionMethods<T0,T1> > ::ctor(this,object,method);
 this}
 }
 
@@ -5463,121 +4877,6 @@ pub fn get_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 this}
 }
 
-#[cfg(feature="app-maphistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapHistory_RewindNameMap_unity2_raw{use super:: * ;
-pub unsafe fn get_version(this:MapHistory_RewindNameMap,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <MapHistory_RewindNameMap as::unity2::ClassIdentity> ::NAME,"get_Version",));
-let inner:extern "C" fn(MapHistory_RewindNameMap, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_serialize(this:MapHistory_RewindNameMap,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <MapHistory_RewindNameMap as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
-let inner:extern "C" fn(MapHistory_RewindNameMap,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,__mi)}
-pub unsafe fn on_deserialize(this:MapHistory_RewindNameMap,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <MapHistory_RewindNameMap as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
-let inner:extern "C" fn(MapHistory_RewindNameMap,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,stream,version,__mi)}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindNameMapMethods:IMapHistory_RewindNameMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2179b50usize)as*mut u8,();
-(MapHistory_RewindNameMap)__receiver)}
-}
-#[doc="`Entry(crate::app::unit::Unit)` overload"]fn entry(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2177550usize)as*mut u8,i32;
-(MapHistory_RewindNameMap)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`TryGet(i32)` overload"]fn try_get(self,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21759c0usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_RewindNameMap)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_RewindNameMap_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
-}
-#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_RewindNameMap_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
-}
-#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__MapHistory_RewindNameMap_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RewindNameMap>IMapHistory_RewindNameMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindNameMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn try_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_RewindNameMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_RewindNameMap), ::core::stringify!(new),));
- <Self as IMapHistory_RewindNameMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,save_method:impl::core::convert::Into<crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69f00usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)::core::convert::Into::into(save_method))}
-}
-#[doc="`CreateThread()` overload"]pub fn create_thread()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a160usize)as*mut u8,();
-)}
-}
-#[doc="`DestroyThread()` overload"]pub fn destroy_thread()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a380usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_Replay_SaveAsyncMethods:IMapHistory_Replay_SaveAsync{#[doc="`.ctor(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` overload"]fn ctor(self,method:impl::core::convert::Into<crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod>)->(){unsafe{let __receiver= <MapHistory_Replay_SaveAsync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69cb0usize)as*mut u8,();
-(MapHistory_Replay_SaveAsync)__receiver,(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)::core::convert::Into::into(method))}
-}
-#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapHistory_Replay_SaveAsync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69cf0usize)as*mut u8,();
-(MapHistory_Replay_SaveAsync)__receiver)}
-}
-#[doc="`IsRunning()` overload"]fn is_running(self,)->bool{unsafe{let __receiver= <MapHistory_Replay_SaveAsync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69dd0usize)as*mut u8,bool;
-(MapHistory_Replay_SaveAsync)__receiver)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_Replay_SaveAsync>IMapHistory_Replay_SaveAsyncMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn destroy_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Replay_SaveAsync{#[doc="`.ctor(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` — overload selector"]pub fn new(method:crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_Replay_SaveAsync), ::core::stringify!(new),));
- <Self as IMapHistory_Replay_SaveAsyncMethods> ::ctor(this,method);
-this}
-}
-
 #[cfg(feature="app-maphistory")]pub trait IMapHistory_ReplayUnitMapMethods:IMapHistory_ReplayUnitMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_ReplayUnitMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2706ff0usize)as*mut u8,();
 (MapHistory_ReplayUnitMap)__receiver)}
@@ -5596,121 +4895,184 @@ this}
 this}
 }
 
-#[cfg(feature="app-maphistory")]impl MapHistory_CommandReader{#[doc="`ReadVariableKey(crate::app::stream_2::Stream_2)` overload"]pub fn read_variable_key_2(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24caee0usize)as*mut u8, ::unity2::Il2CppString;
-(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>MapHistory_UnitMapBase_2_IData<T0,T1>{#[doc="`get_unit()` overload"]#[method(name="get_unit",args=0,abstract_dispatch)]pub fn get_unit(self,)->crate::app::unit::Unit;
+ #[doc="`set_unit(crate::app::unit::Unit)` overload"]#[method(name="set_unit",args=1,abstract_dispatch)]pub fn set_unit(self,value:crate::app::unit::Unit)->();
+ #[doc="`IsUsed()` overload"]#[method(name="IsUsed",args=0,abstract_dispatch)]pub fn is_used(self,)->bool;
+ #[doc="`Clear()` overload"]#[method(name="Clear",args=0,abstract_dispatch)]pub fn clear(self,)->();
 }
-#[doc="`ReadTid(crate::app::stream_2::Stream_2)` overload"]pub fn read_tid_2(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cb140usize)as*mut u8, ::unity2::Il2CppString;
-(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_Rewind_OverlapDataPoolMethods:IMapHistory_Rewind_OverlapDataPool{#[doc="`.ctor(i32)` overload"]fn ctor(self,max:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapDataPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b830usize)as*mut u8,();
+(MapHistory_Rewind_OverlapDataPool)__receiver,(i32)::core::convert::Into::into(max))}
 }
 }
 
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_CommandReaderMethods:IMapHistory_CommandReader{#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,command_stream_buffer:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24caeb0usize)as*mut u8,();
-(MapHistory_CommandReader)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(command_stream_buffer))}
-}
-#[doc="`Prepare(crate::app::maphistory::MapHistory_Command)` overload"]fn prepare(self,command:impl::core::convert::Into<crate::app::maphistory::MapHistory_Command>)->(){unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24caec0usize)as*mut u8,();
-(MapHistory_CommandReader)__receiver,(crate::app::maphistory::MapHistory_Command)::core::convert::Into::into(command))}
-}
-#[doc="`ReadVariableKey()` overload"]fn read_variable_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24caed0usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadGid()` overload"]fn read_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cafc0usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadGodData()` overload"]fn read_god_data(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb0a0usize)as*mut u8,crate::app::goddata::GodData;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadTid()` overload"]fn read_tid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb130usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadIid()` overload"]fn read_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb220usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadItemData()` overload"]fn read_item_data(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb300usize)as*mut u8,crate::app::itemdata::ItemData;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadPid()` overload"]fn read_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb390usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`SkipPid()` overload"]fn skip_pid(self,)->(){unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb470usize)as*mut u8,();
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadJid()` overload"]fn read_jid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb4c0usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`SkipJid()` overload"]fn skip_jid(self,)->(){unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb5a0usize)as*mut u8,();
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadSid()` overload"]fn read_sid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb5f0usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadSkillData()` overload"]fn read_skill_data(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb6d0usize)as*mut u8,crate::app::skilldata::SkillData;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadEffectName()` overload"]fn read_effect_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb760usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadMaterialString()` overload"]fn read_material_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb840usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadRnid()` overload"]fn read_rnid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb920usize)as*mut u8, ::unity2::Il2CppString;
-(MapHistory_CommandReader)__receiver)}
-}
-#[doc="`ReadRandom(crate::app::random_2::Random_2)` overload"]fn read_random(self,random:impl::core::convert::Into<crate::app::random_2::Random_2>)->(){unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cba00usize)as*mut u8,();
-(MapHistory_CommandReader)__receiver,(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
-}
-#[doc="`get_Type()` overload"]fn get_type(self,)->i32{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cba40usize)as*mut u8,i32;
-(MapHistory_CommandReader)__receiver)}
-}
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_Rewind_OverlapDataPool>IMapHistory_Rewind_OverlapDataPoolMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapDataPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_CommandReader>IMapHistory_CommandReaderMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_CommandReader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn read_variable_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn read_variable_key_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn read_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn read_god_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn read_tid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn read_tid_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn read_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn read_item_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn read_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn skip_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn read_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn skip_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn read_sid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn read_skill_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn read_effect_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn read_material_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn read_rnid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn read_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_CommandReader{#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new(command_stream_buffer: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapDataPool{#[doc="`.ctor(i32)` — overload selector"]pub fn new(max:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MapHistory_CommandReader), ::core::stringify!(new),));
- <Self as IMapHistory_CommandReaderMethods> ::ctor(this,command_stream_buffer);
+ failed to instantiate", ::core::stringify!(MapHistory_Rewind_OverlapDataPool), ::core::stringify!(new),));
+ <Self as IMapHistory_Rewind_OverlapDataPoolMethods> ::ctor(this,max);
+this}
+}
+
+#[cfg(feature="app-maphistory")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>MapHistory_IdMapBase_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,capacity:i32)->();
+ #[doc="`EntryInternal(::unity2::Il2CppString)` overload"]#[method(name="EntryInternal",args=1)]pub fn entry_internal(self,id: ::unity2::Il2CppString)->i32;
+ #[doc="`EntryInternal(::unity2::Il2CppString, u8)` overload"]#[method(name="EntryInternal",args=2)]pub fn entry_internal_2(self,id: ::unity2::Il2CppString,index:u8)->i32;
+ #[doc="`GetNextIndex()` overload"]#[method(name="GetNextIndex",args=0)]pub fn get_next_index(self,)->u8;
+ #[doc="`Clear()` overload"]#[method(name="Clear",args=0)]pub fn clear(self,)->();
+ #[doc="`TryGetInternal(i32)` overload"]#[method(name="TryGetInternal",args=1)]pub fn try_get_internal(self,index:i32)-> ::unity2::Il2CppString;
+ #[doc="`DbgError(::unity2::Il2CppString)` overload"]#[method(name="DbgError",args=1)]pub fn dbg_error(self,message: ::unity2::Il2CppString)->();
+}
+
+#[cfg(feature="app-maphistory")]impl<T0: ::unity2::ClassIdentity>MapHistory_IdMapBase_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_IdMapBase_1), ::core::stringify!(new),));
+ <Self as IMapHistory_IdMapBase_1Methods<T0> > ::ctor(this,capacity);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_ReplayAppearanceMapMethods:IMapHistory_ReplayAppearanceMap{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapHistory_ReplayAppearanceMap as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(MapHistory_ReplayAppearanceMap, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`RegisterAppearanceUnit(crate::app::unit::Unit)` overload"]fn register_appearance_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2704cb0usize)as*mut u8,i32;
+(MapHistory_ReplayAppearanceMap)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`RegisterLeavingUnit(crate::app::unit::Unit)` overload"]fn register_leaving_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2704f80usize)as*mut u8,i32;
+(MapHistory_ReplayAppearanceMap)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetIndexes(*mut::unity2::Array<i32>, *mut::unity2::Array<i32>)` overload"]fn get_indexes(self,)->(bool, ::unity2::Array<i32> , ::unity2::Array<i32>){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<i32> > ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Array<i32> > ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2705070usize)as*mut u8,bool;
+(MapHistory_ReplayAppearanceMap)__receiver,(*mut::unity2::Array<i32>)__out_0.as_mut_ptr(),(*mut::unity2::Array<i32>)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`CreateAppearanceUnit(i32)` overload"]fn create_appearance_unit(self,index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27053e0usize)as*mut u8,crate::app::unit::Unit;
+(MapHistory_ReplayAppearanceMap)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetLeavingUnit(i32)` overload"]fn get_leaving_unit(self,index:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2705740usize)as*mut u8,crate::app::unit::Unit;
+(MapHistory_ReplayAppearanceMap)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SerializeForAppearance(crate::app::stream_2::Stream_2, crate::app::unit::Unit)` overload"]fn serialize_for_appearance(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2704e10usize)as*mut u8,();
+(MapHistory_ReplayAppearanceMap)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`DeserializeForAppearance(crate::app::stream_2::Stream_2)` overload"]fn deserialize_for_appearance(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->crate::app::unit::Unit{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2705450usize)as*mut u8,crate::app::unit::Unit;
+(MapHistory_ReplayAppearanceMap)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapHistory_ReplayAppearanceMap as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(MapHistory_ReplayAppearanceMap, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapHistory_ReplayAppearanceMap as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(MapHistory_ReplayAppearanceMap,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapHistory_ReplayAppearanceMap as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(MapHistory_ReplayAppearanceMap,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_ReplayAppearanceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27060a0usize)as*mut u8,();
+(MapHistory_ReplayAppearanceMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_ReplayAppearanceMap>IMapHistory_ReplayAppearanceMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_ReplayAppearanceMap{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn register_appearance_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn register_leaving_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_indexes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_appearance_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_leaving_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn serialize_for_appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn deserialize_for_appearance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_ReplayAppearanceMap{#[doc="Direct (non-virtual) call to `MapHistory_ReplayAppearanceMap`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_ReplayAppearanceMap`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_ReplayAppearanceMap`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_ReplayAppearanceMap`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_ReplayAppearanceMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_ReplayAppearanceMap), ::core::stringify!(new),));
+ <Self as IMapHistory_ReplayAppearanceMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_EffectNameMapMethods:IMapHistory_EffectNameMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_EffectNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc330usize)as*mut u8,();
+(MapHistory_EffectNameMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_EffectNameMap>IMapHistory_EffectNameMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_EffectNameMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_EffectNameMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_EffectNameMap), ::core::stringify!(new),));
+ <Self as IMapHistory_EffectNameMapMethods> ::ctor(this,);
 this}
 }
 
@@ -5753,58 +5115,36 @@ pub fn thread_function_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 this}
 }
 
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_JidMapMethods:IMapHistory_JidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_JidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc450usize)as*mut u8,();
-(MapHistory_JidMap)__receiver)}
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_OverwriteStreamScope{#[doc="`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]pub fn ctor(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,overwrite_pos:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69c40usize)as*mut u8,();
+(*mut MapHistory_Replay_OverwriteStreamScope)self as*mut MapHistory_Replay_OverwriteStreamScope,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(overwrite_pos))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69c90usize)as*mut u8,();
+(*mut MapHistory_Replay_OverwriteStreamScope)self as*mut MapHistory_Replay_OverwriteStreamScope)}
 }
 }
 
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_JidMap>IMapHistory_JidMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_JidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_OverwriteStreamScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-maphistory")]impl MapHistory_JidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_JidMap), ::core::stringify!(new),));
- <Self as IMapHistory_JidMapMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-maphistory")]impl MapHistory_ReplayUnitMap_Data{#[doc="`get_unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6aa50usize)as*mut u8,crate::app::unit::Unit;
+(*mut MapHistory_ReplayUnitMap_Data)self as*mut MapHistory_ReplayUnitMap_Data)}
 }
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_IidMapMethods:IMapHistory_IidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_IidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc3f0usize)as*mut u8,();
-(MapHistory_IidMap)__receiver)}
+#[doc="`set_unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6aa60usize)as*mut u8,();
+(*mut MapHistory_ReplayUnitMap_Data)self as*mut MapHistory_ReplayUnitMap_Data,(crate::app::unit::Unit)::core::convert::Into::into(value))}
 }
+#[doc="`IsUsed()` overload"]pub fn is_used(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6aa70usize)as*mut u8,bool;
+(*mut MapHistory_ReplayUnitMap_Data)self as*mut MapHistory_ReplayUnitMap_Data)}
 }
-
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_IidMap>IMapHistory_IidMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_IidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_IidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_IidMap), ::core::stringify!(new),));
- <Self as IMapHistory_IidMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-maphistory")]pub trait IMapHistory_MaterialStringMapMethods:IMapHistory_MaterialStringMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_MaterialStringMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc4b0usize)as*mut u8,();
-(MapHistory_MaterialStringMap)__receiver)}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6aa80usize)as*mut u8,();
+(*mut MapHistory_ReplayUnitMap_Data)self as*mut MapHistory_ReplayUnitMap_Data)}
 }
 }
 
-#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_MaterialStringMap>IMapHistory_MaterialStringMapMethods for __T{}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_MaterialStringMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_MaterialStringMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHistory_MaterialStringMap), ::core::stringify!(new),));
- <Self as IMapHistory_MaterialStringMapMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-maphistory")]impl MapHistory_ReplayUnitMap_Data{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_used_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
 #[cfg(feature="app-maphistory")]impl MapHistory{#[doc="`RewindCreate()` overload"]pub fn rewind_create()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dd6200usize)as*mut u8,();
@@ -6707,172 +6047,899 @@ pub fn replay_dbg_dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[221]}
 }
 
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_WorkTerrainData{#[doc="`.ctor(i32, i32, i32)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b8a0usize)as*mut u8,();
-(*mut MapHistory_Rewind_WorkTerrainData)self as*mut MapHistory_Rewind_WorkTerrainData,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(index))}
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_ModeScope{#[doc="`.ctor(crate::app::maphistory::MapHistory_Mode)` overload"]pub fn ctor(&mut self,mode:impl::core::convert::Into<crate::app::maphistory::MapHistory_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b2c0usize)as*mut u8,();
+(*mut MapHistory_Rewind_ModeScope)self as*mut MapHistory_Rewind_ModeScope,(crate::app::maphistory::MapHistory_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b3b0usize)as*mut u8,();
+(*mut MapHistory_Rewind_ModeScope)self as*mut MapHistory_Rewind_ModeScope)}
 }
 }
 
-#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_WorkTerrainData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Replay_OverwriteStreamScope{#[doc="`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]pub fn ctor(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,overwrite_pos:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69c40usize)as*mut u8,();
-(*mut MapHistory_Replay_OverwriteStreamScope)self as*mut MapHistory_Replay_OverwriteStreamScope,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(overwrite_pos))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b69c90usize)as*mut u8,();
-(*mut MapHistory_Replay_OverwriteStreamScope)self as*mut MapHistory_Replay_OverwriteStreamScope)}
-}
-}
-
-#[cfg(feature="app-maphistory")]impl MapHistory_Replay_OverwriteStreamScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_ModeScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_LatestInspectorData{#[doc="`.ctor(i32, i32)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b2b0usize)as*mut u8,();
+(*mut MapHistory_Rewind_LatestInspectorData)self as*mut MapHistory_Rewind_LatestInspectorData,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_LatestInspectorData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindRelianceMap{#[doc="`Index2Id(i32, i32)` overload"]pub fn index2_id(map_history_index_a:impl::core::convert::Into<i32> ,map_history_index_b:impl::core::convert::Into<i32>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217a700usize)as*mut u8,u32;
+(i32)::core::convert::Into::into(map_history_index_a),(i32)::core::convert::Into::into(map_history_index_b))}
+}
+#[doc="`Id2Index(u32, *muti32, *muti32)` overload"]pub fn id2_index(id:impl::core::convert::Into<u32>)->(i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217a970usize)as*mut u8,();
+(u32)::core::convert::Into::into(id),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindRelianceMapMethods:IMapHistory_RewindRelianceMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217a380usize)as*mut u8,();
+(MapHistory_RewindRelianceMap)__receiver)}
+}
+#[doc="`Entry(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn entry(self,unit_a:impl::core::convert::Into<crate::app::unit::Unit> ,unit_b:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217a500usize)as*mut u8,();
+(MapHistory_RewindRelianceMap)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_a),(crate::app::unit::Unit)::core::convert::Into::into(unit_b))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217a4a0usize)as*mut u8,();
+(MapHistory_RewindRelianceMap)__receiver)}
+}
+#[doc="`TryGetRelianceData(u32)` overload"]fn try_get_reliance_data(self,id:impl::core::convert::Into<u32>)->crate::app::unitreliancedata::UnitRelianceData{unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217a710usize)as*mut u8,crate::app::unitreliancedata::UnitRelianceData;
+(MapHistory_RewindRelianceMap)__receiver,(u32)::core::convert::Into::into(id))}
+}
+#[doc="`GetPids(u32, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]fn get_pids(self,id:impl::core::convert::Into<u32>)->(::unity2::Il2CppString, ::unity2::Il2CppString){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217a780usize)as*mut u8,();
+(MapHistory_RewindRelianceMap)__receiver,(u32)::core::convert::Into::into(id),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetUnits(u32, *mutcrate::app::unit::Unit, *mutcrate::app::unit::Unit)` overload"]fn get_units(self,id:impl::core::convert::Into<u32>)->(crate::app::unit::Unit,crate::app::unit::Unit){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::unit::Unit> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::app::unit::Unit> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217a870usize)as*mut u8,();
+(MapHistory_RewindRelianceMap)__receiver,(u32)::core::convert::Into::into(id),(*mut crate::app::unit::Unit)__out_0.as_mut_ptr(),(*mut crate::app::unit::Unit)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`get_Ids()` overload"]fn get_ids(self,)->crate::system::collections::generic::list_1::List_1<u32>{unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217a990usize)as*mut u8,crate::system::collections::generic::list_1::List_1<u32> ;
+(MapHistory_RewindRelianceMap)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapHistory_RewindRelianceMap as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(MapHistory_RewindRelianceMap, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapHistory_RewindRelianceMap as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(MapHistory_RewindRelianceMap,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindRelianceMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapHistory_RewindRelianceMap as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(MapHistory_RewindRelianceMap,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RewindRelianceMap>IMapHistory_RewindRelianceMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindRelianceMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_get_reliance_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_pids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_ids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn index2_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn id2_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindRelianceMap{#[doc="Direct (non-virtual) call to `MapHistory_RewindRelianceMap`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_RewindRelianceMap`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_RewindRelianceMap`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindRelianceMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_RewindRelianceMap), ::core::stringify!(new),));
+ <Self as IMapHistory_RewindRelianceMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_Replay_TurnSaveMethods:IMapHistory_Replay_TurnSave{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapHistory_Replay_TurnSave as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(MapHistory_Replay_TurnSave, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Write(crate::app::procinst::ProcInst)` overload"]fn write(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a820usize)as*mut u8,();
+(MapHistory_Replay_TurnSave)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a830usize)as*mut u8,();
+(MapHistory_Replay_TurnSave)__receiver)}
+}
+#[doc="`WriteToStream()` overload"]fn write_to_stream(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a850usize)as*mut u8,();
+(MapHistory_Replay_TurnSave)__receiver)}
+}
+#[doc="`ReadFromStream()` overload"]fn read_from_stream(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a840usize)as*mut u8,();
+(MapHistory_Replay_TurnSave)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a810usize)as*mut u8,();
+(MapHistory_Replay_TurnSave)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapHistory_Replay_TurnSave as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(MapHistory_Replay_TurnSave, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapHistory_Replay_TurnSave as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(MapHistory_Replay_TurnSave,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapHistory_Replay_TurnSave as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(MapHistory_Replay_TurnSave,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_Replay_TurnSave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6a9d0usize)as*mut u8,();
+(MapHistory_Replay_TurnSave)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_Replay_TurnSave>IMapHistory_Replay_TurnSaveMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_TurnSave{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn write_to_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn read_from_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_TurnSave{#[doc="Direct (non-virtual) call to `MapHistory_Replay_TurnSave`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Replay_TurnSave`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Replay_TurnSave`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Replay_TurnSave`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Replay_TurnSave{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_Replay_TurnSave), ::core::stringify!(new),));
+ <Self as IMapHistory_Replay_TurnSaveMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_IidMapMethods:IMapHistory_IidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_IidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc3f0usize)as*mut u8,();
+(MapHistory_IidMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_IidMap>IMapHistory_IidMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_IidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_IidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_IidMap), ::core::stringify!(new),));
+ <Self as IMapHistory_IidMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindNameMapMethods:IMapHistory_RewindNameMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179b50usize)as*mut u8,();
+(MapHistory_RewindNameMap)__receiver)}
+}
+#[doc="`Entry(crate::app::unit::Unit)` overload"]fn entry(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2177550usize)as*mut u8,i32;
+(MapHistory_RewindNameMap)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`TryGet(i32)` overload"]fn try_get(self,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21759c0usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_RewindNameMap)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapHistory_RewindNameMap as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let __inner:extern "C" fn(MapHistory_RewindNameMap, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapHistory_RewindNameMap as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let __inner:extern "C" fn(MapHistory_RewindNameMap,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream),__mi)}
+}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindNameMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapHistory_RewindNameMap as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let __inner:extern "C" fn(MapHistory_RewindNameMap,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RewindNameMap>IMapHistory_RewindNameMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindNameMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindNameMap{#[doc="Direct (non-virtual) call to `MapHistory_RewindNameMap`'s own `get_Version`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_RewindNameMap`'s own `OnSerialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_serialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,)->(){let __mi=Self::on_serialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_RewindNameMap`'s own `OnDeserialize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_deserialize(this:impl::core::convert::Into< ::unity2::IlInstance> ,stream:crate::app::stream_2::Stream_2,version:i32,)->(){let __mi=Self::on_deserialize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),stream,version, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindNameMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_RewindNameMap), ::core::stringify!(new),));
+ <Self as IMapHistory_RewindNameMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapData{#[doc="`GetKey(i32, i32)` overload"]pub fn get_key_2(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b810usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_Rewind_OverlapDataMethods:IMapHistory_Rewind_OverlapData{#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapHistory_Rewind_OverlapData as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let __inner:extern "C" fn(MapHistory_Rewind_OverlapData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapHistory_Rewind_OverlapData as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let __inner:extern "C" fn(MapHistory_Rewind_OverlapData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Set(crate::app::mapoverlap::MapOverlap_Data)` overload"]fn set(self,map_overlap_data:impl::core::convert::Into<crate::app::mapoverlap::MapOverlap_Data>)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b490usize)as*mut u8,();
+(MapHistory_Rewind_OverlapData)__receiver,(crate::app::mapoverlap::MapOverlap_Data)::core::convert::Into::into(map_overlap_data))}
+}
+#[doc="`Set(crate::app::maphistory::MapHistory_Rewind_OverlapData)` overload"]fn set_2(self,other:impl::core::convert::Into<crate::app::maphistory::MapHistory_Rewind_OverlapData>)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b5e0usize)as*mut u8,();
+(MapHistory_Rewind_OverlapData)__receiver,(crate::app::maphistory::MapHistory_Rewind_OverlapData)::core::convert::Into::into(other))}
+}
+#[doc="`IsSame(crate::app::mapoverlap::MapOverlap_Data)` overload"]fn is_same(self,map_overlap_data:impl::core::convert::Into<crate::app::mapoverlap::MapOverlap_Data>)->bool{unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b630usize)as*mut u8,bool;
+(MapHistory_Rewind_OverlapData)__receiver,(crate::app::mapoverlap::MapOverlap_Data)::core::convert::Into::into(map_overlap_data))}
+}
+#[doc="`TryGetTerrain()` overload"]fn try_get_terrain(self,)->crate::app::terraindata_2::TerrainData_2{unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b6e0usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
+(MapHistory_Rewind_OverlapData)__receiver)}
+}
+#[doc="`GetKey()` overload"]fn get_key(self,)->i32{unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b800usize)as*mut u8,i32;
+(MapHistory_Rewind_OverlapData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_Rewind_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b6b820usize)as*mut u8,();
+(MapHistory_Rewind_OverlapData)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_Rewind_OverlapData>IMapHistory_Rewind_OverlapDataMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapData{pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_same_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn try_get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_key_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapData{#[doc="Direct (non-virtual) call to `MapHistory_Rewind_OverlapData`'s own `OnEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enter_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `MapHistory_Rewind_OverlapData`'s own `OnExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_exit(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_exit_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_Rewind_OverlapData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_Rewind_OverlapData), ::core::stringify!(new),));
+ <Self as IMapHistory_Rewind_OverlapDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_CommandReader{#[doc="`ReadVariableKey(crate::app::stream_2::Stream_2)` overload"]pub fn read_variable_key_2(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24caee0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`ReadTid(crate::app::stream_2::Stream_2)` overload"]pub fn read_tid_2(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24cb140usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_CommandReaderMethods:IMapHistory_CommandReader{#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,command_stream_buffer:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24caeb0usize)as*mut u8,();
+(MapHistory_CommandReader)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(command_stream_buffer))}
+}
+#[doc="`Prepare(crate::app::maphistory::MapHistory_Command)` overload"]fn prepare(self,command:impl::core::convert::Into<crate::app::maphistory::MapHistory_Command>)->(){unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24caec0usize)as*mut u8,();
+(MapHistory_CommandReader)__receiver,(crate::app::maphistory::MapHistory_Command)::core::convert::Into::into(command))}
+}
+#[doc="`ReadVariableKey()` overload"]fn read_variable_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24caed0usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadGid()` overload"]fn read_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cafc0usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadGodData()` overload"]fn read_god_data(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb0a0usize)as*mut u8,crate::app::goddata::GodData;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadTid()` overload"]fn read_tid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb130usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadIid()` overload"]fn read_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb220usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadItemData()` overload"]fn read_item_data(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb300usize)as*mut u8,crate::app::itemdata::ItemData;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadPid()` overload"]fn read_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb390usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`SkipPid()` overload"]fn skip_pid(self,)->(){unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb470usize)as*mut u8,();
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadJid()` overload"]fn read_jid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb4c0usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`SkipJid()` overload"]fn skip_jid(self,)->(){unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb5a0usize)as*mut u8,();
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadSid()` overload"]fn read_sid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb5f0usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadSkillData()` overload"]fn read_skill_data(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb6d0usize)as*mut u8,crate::app::skilldata::SkillData;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadEffectName()` overload"]fn read_effect_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb760usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadMaterialString()` overload"]fn read_material_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb840usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadRnid()` overload"]fn read_rnid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cb920usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_CommandReader)__receiver)}
+}
+#[doc="`ReadRandom(crate::app::random_2::Random_2)` overload"]fn read_random(self,random:impl::core::convert::Into<crate::app::random_2::Random_2>)->(){unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cba00usize)as*mut u8,();
+(MapHistory_CommandReader)__receiver,(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
+}
+#[doc="`get_Type()` overload"]fn get_type(self,)->i32{unsafe{let __receiver= <MapHistory_CommandReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cba40usize)as*mut u8,i32;
+(MapHistory_CommandReader)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_CommandReader>IMapHistory_CommandReaderMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_CommandReader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn read_variable_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn read_variable_key_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn read_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn read_god_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn read_tid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn read_tid_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn read_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn read_item_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn read_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn skip_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn read_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn skip_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn read_sid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn read_skill_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn read_effect_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn read_material_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn read_rnid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn read_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_CommandReader{#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new(command_stream_buffer: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_CommandReader), ::core::stringify!(new),));
+ <Self as IMapHistory_CommandReaderMethods> ::ctor(this,command_stream_buffer);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_RnidMapMethods:IMapHistory_RnidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RnidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x217bed0usize)as*mut u8,();
+(MapHistory_RnidMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RnidMap>IMapHistory_RnidMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RnidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RnidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_RnidMap), ::core::stringify!(new),));
+ <Self as IMapHistory_RnidMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_JidMapMethods:IMapHistory_JidMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_JidMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cc450usize)as*mut u8,();
+(MapHistory_JidMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_JidMap>IMapHistory_JidMapMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_JidMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_JidMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_JidMap), ::core::stringify!(new),));
+ <Self as IMapHistory_JidMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maphistory")]pub trait IMapHistory_RewindLogMethods:IMapHistory_RewindLog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2178a90usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2178ea0usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179150usize)as*mut u8,bool;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`SetActorUnitIcon(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]fn set_actor_unit_icon(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,jid:impl::core::convert::Into< ::unity2::Il2CppString> ,item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,is_female:impl::core::convert::Into<bool> ,is_engage:impl::core::convert::Into<bool> ,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179180usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(jid),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(item_kind),(bool)::core::convert::Into::into(is_female),(bool)::core::convert::Into::into(is_engage),(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`SetActorUnitIconEngage(::unity2::Il2CppString)` overload"]fn set_actor_unit_icon_engage(self,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21791a0usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`SetActorMapHistoryIndex(i32)` overload"]fn set_actor_map_history_index(self,map_history_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21791c0usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(i32)::core::convert::Into::into(map_history_index))}
+}
+#[doc="`ClearActor()` overload"]fn clear_actor(self,)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21791e0usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`SetAction(::unity2::Il2CppString)` overload"]fn set_action(self,mhid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179220usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mhid))}
+}
+#[doc="`SetAction(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set_action_2(self,mhid:impl::core::convert::Into< ::unity2::Il2CppString> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21793b0usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mhid),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+#[doc="`SetAction(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set_action_3(self,mhid:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into< ::unity2::Il2CppString> ,arg1:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21794e0usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mhid),(::unity2::Il2CppString)::core::convert::Into::into(arg0),(::unity2::Il2CppString)::core::convert::Into::into(arg1))}
+}
+#[doc="`SetAction(::unity2::Il2CppString, i32)` overload"]fn set_action_4(self,action:impl::core::convert::Into< ::unity2::Il2CppString> ,priority:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179340usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(action),(i32)::core::convert::Into::into(priority))}
+}
+#[doc="`AddItem(::unity2::Il2CppString)` overload"]fn add_item(self,iid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179620usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+#[doc="`AddDeadUnit(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]fn add_dead_unit(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,jid:impl::core::convert::Into< ::unity2::Il2CppString> ,item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,is_female:impl::core::convert::Into<bool> ,is_engage:impl::core::convert::Into<bool> ,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179730usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(jid),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(item_kind),(bool)::core::convert::Into::into(is_female),(bool)::core::convert::Into::into(is_engage),(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`DeleteDeadUnitIcons()` overload"]fn delete_dead_unit_icons(self,)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21797f0usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`get_ActorUnitIcon()` overload"]fn get_actor_unit_icon(self,)->crate::app::maphistory::MapHistory_RewindLog_UnitIcon{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179940usize)as*mut u8,crate::app::maphistory::MapHistory_RewindLog_UnitIcon;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`get_ActorMapHistoryIndex()` overload"]fn get_actor_map_history_index(self,)->i32{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179950usize)as*mut u8,i32;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`get_ActorName()` overload"]fn get_actor_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179960usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`set_ActorName(::unity2::Il2CppString)` overload"]fn set_actor_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179970usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Action()` overload"]fn get_action(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179980usize)as*mut u8, ::unity2::Il2CppString;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`get_Items()` overload"]fn get_items(self,)-> ::unity2::Array<crate::app::itemdata::ItemData>{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179990usize)as*mut u8, ::unity2::Array<crate::app::itemdata::ItemData> ;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`get_ItemCount()` overload"]fn get_item_count(self,)->i32{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21799a0usize)as*mut u8,i32;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`get_DeadUnitIcons()` overload"]fn get_dead_unit_icons(self,)-> ::unity2::Array<crate::app::maphistory::MapHistory_RewindLog_UnitIcon>{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21799b0usize)as*mut u8, ::unity2::Array<crate::app::maphistory::MapHistory_RewindLog_UnitIcon> ;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`get_DeadUnitIconCount()` overload"]fn get_dead_unit_icon_count(self,)->i32{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21799c0usize)as*mut u8,i32;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`get_IsForCheck()` overload"]fn get_is_for_check(self,)->bool{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21799d0usize)as*mut u8,bool;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`set_IsForCheck(bool)` overload"]fn set_is_for_check(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21799e0usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsPhaseBegin()` overload"]fn get_is_phase_begin(self,)->bool{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21799f0usize)as*mut u8,bool;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`get_PhaseBeginForce()` overload"]fn get_phase_begin_force(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179a00usize)as*mut u8,crate::app::force::Force_Type;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`set_PhaseBeginForce(crate::app::force::Force_Type)` overload"]fn set_phase_begin_force(self,value:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179a10usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(value))}
+}
+#[doc="`get_HasPrevForce()` overload"]fn get_has_prev_force(self,)->bool{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179a20usize)as*mut u8,bool;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`get_PrevForce()` overload"]fn get_prev_force(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179a30usize)as*mut u8,crate::app::force::Force_Type;
+(MapHistory_RewindLog)__receiver)}
+}
+#[doc="`set_PrevForce(crate::app::force::Force_Type)` overload"]fn set_prev_force(self,value:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapHistory_RewindLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2179a40usize)as*mut u8,();
+(MapHistory_RewindLog)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-maphistory")]impl<__T:IMapHistory_RewindLog>IMapHistory_RewindLogMethods for __T{}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindLog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_actor_unit_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_actor_unit_icon_engage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_actor_map_history_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_action_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_action_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_action_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn add_dead_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn delete_dead_unit_icons_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_actor_unit_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_actor_map_history_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_actor_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_actor_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_item_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_dead_unit_icons_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_dead_unit_icon_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_is_for_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_is_for_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_is_phase_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_phase_begin_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_phase_begin_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_has_prev_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_prev_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_prev_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+}
+
+#[cfg(feature="app-maphistory")]impl MapHistory_RewindLog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHistory_RewindLog), ::core::stringify!(new),));
+ <Self as IMapHistory_RewindLogMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-maphistory")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapHistory_Command;
+    pub use super::MapHistory_Rewind_WorkLayerData;
     pub use super::MapHistory_ReplayCommandWriter;
     pub use super::IMapHistory_ReplayCommandWriter;
     pub use super::IMapHistory_ReplayCommandWriterMethods;
-    pub use super::MapHistory_UnitMapBase_2_IData;
-    pub use super::IMapHistory_UnitMapBase_2_IData;
-    pub use super::IMapHistory_UnitMapBase_2_IDataMethods;
-    pub use super::MapHistory_RewindCommandReader;
-    pub use super::IMapHistory_RewindCommandReader;
-    pub use super::IMapHistory_RewindCommandReaderMethods;
-    pub use super::MapHistory_Rewind;
-    pub use super::IMapHistory_Rewind;
-    pub use super::IMapHistory_RewindMethods;
-    pub use super::MapHistory_Rewind_OverlapData;
-    pub use super::IMapHistory_Rewind_OverlapData;
-    pub use super::IMapHistory_Rewind_OverlapDataMethods;
-    pub use super::MapHistory_Rewind_WorkLayerData;
-    pub use super::MapHistory_Rewind_RangeType;
-    pub use super::MapHistory_RewindUnitMap_Data;
-    pub use super::MapHistory_RewindUnitMap;
-    pub use super::IMapHistory_RewindUnitMap;
-    pub use super::IMapHistory_RewindUnitMapMethods;
-    pub use super::MapHistory_ReplayUnitMap_Data;
-    pub use super::MapHistory_SerializeDisabled;
-    pub use super::MapHistory_EffectNameMap;
-    pub use super::IMapHistory_EffectNameMap;
-    pub use super::IMapHistory_EffectNameMapMethods;
-    pub use super::MapHistory_Rewind_LatestInspectorData;
-    pub use super::MapHistory_RewindLogBuilder;
-    pub use super::IMapHistory_RewindLogBuilder;
-    pub use super::IMapHistory_RewindLogBuilderMethods;
-    pub use super::MapHistory_Rewind_IsEngagings;
-    pub use super::MapHistory_CommonType;
-    pub use super::MapHistory_GidMap;
-    pub use super::IMapHistory_GidMap;
-    pub use super::IMapHistory_GidMapMethods;
-    pub use super::MapHistory_RewindCommandWriter;
-    pub use super::IMapHistory_RewindCommandWriter;
-    pub use super::IMapHistory_RewindCommandWriterMethods;
-    pub use super::MapHistory_Replay_TurnSave;
-    pub use super::IMapHistory_Replay_TurnSave;
-    pub use super::IMapHistory_Replay_TurnSaveMethods;
-    pub use super::MapHistory_VariableMap;
-    pub use super::IMapHistory_VariableMap;
-    pub use super::IMapHistory_VariableMapMethods;
-    pub use super::MapHistory_RnidMap;
-    pub use super::IMapHistory_RnidMap;
-    pub use super::IMapHistory_RnidMapMethods;
-    pub use super::MapHistory_Replay_SaveAsync_SaveMethod;
-    pub use super::IMapHistory_Replay_SaveAsync_SaveMethod;
-    pub use super::IMapHistory_Replay_SaveAsync_SaveMethodMethods;
-    pub use super::MapHistory_PidMap;
-    pub use super::IMapHistory_PidMap;
-    pub use super::IMapHistory_PidMapMethods;
-    pub use super::MapHistory_Replay_SaveAsyncThread_Status;
-    pub use super::MapHistory_IdMap_1;
-    pub use super::IMapHistory_IdMap_1;
-    pub use super::IMapHistory_IdMap_1Methods;
-    pub use super::MapHistory_Replay_ReadResult;
-    pub use super::MapHistory_SidMap;
-    pub use super::IMapHistory_SidMap;
-    pub use super::IMapHistory_SidMapMethods;
-    pub use super::MapHistory_RewindRelianceMap;
-    pub use super::IMapHistory_RewindRelianceMap;
-    pub use super::IMapHistory_RewindRelianceMapMethods;
-    pub use super::MapHistory_UnitMapBase_2;
-    pub use super::IMapHistory_UnitMapBase_2;
-    pub use super::IMapHistory_UnitMapBase_2Methods;
-    pub use super::MapHistory_Rewind_BattleCalcData;
-    pub use super::IMapHistory_Rewind_BattleCalcData;
-    pub use super::IMapHistory_Rewind_BattleCalcDataMethods;
-    pub use super::MapHistory_ReplayType;
-    pub use super::MapHistory_IdMapBase_1;
-    pub use super::IMapHistory_IdMapBase_1;
-    pub use super::IMapHistory_IdMapBase_1Methods;
-    pub use super::MapHistory_ReplayCommandReader;
-    pub use super::IMapHistory_ReplayCommandReader;
-    pub use super::IMapHistory_ReplayCommandReaderMethods;
-    pub use super::MapHistory_UnitMapBase_2_NoEmptyFunction;
-    pub use super::IMapHistory_UnitMapBase_2_NoEmptyFunction;
-    pub use super::IMapHistory_UnitMapBase_2_NoEmptyFunctionMethods;
     pub use super::MapHistory_Base_1;
     pub use super::IMapHistory_Base_1;
     pub use super::IMapHistory_Base_1Methods;
-    pub use super::MapHistory_Rewind_ModeScope;
+    pub use super::MapHistory_SidMap;
+    pub use super::IMapHistory_SidMap;
+    pub use super::IMapHistory_SidMapMethods;
+    pub use super::MapHistory_Replay_SaveAsyncThread_Status;
+    pub use super::MapHistory_RewindCommandReader;
+    pub use super::IMapHistory_RewindCommandReader;
+    pub use super::IMapHistory_RewindCommandReaderMethods;
+    pub use super::MapHistory_Replay_SaveAsync_SaveMethod;
+    pub use super::IMapHistory_Replay_SaveAsync_SaveMethod;
+    pub use super::IMapHistory_Replay_SaveAsync_SaveMethodMethods;
+    pub use super::MapHistory_IdMap_1;
+    pub use super::IMapHistory_IdMap_1;
+    pub use super::IMapHistory_IdMap_1Methods;
+    pub use super::MapHistory_Replay_SaveAsync;
+    pub use super::IMapHistory_Replay_SaveAsync;
+    pub use super::IMapHistory_Replay_SaveAsyncMethods;
+    pub use super::MapHistory_RewindUnitMap;
+    pub use super::IMapHistory_RewindUnitMap;
+    pub use super::IMapHistory_RewindUnitMapMethods;
+    pub use super::MapHistory_UnitMapBase_2;
+    pub use super::IMapHistory_UnitMapBase_2;
+    pub use super::IMapHistory_UnitMapBase_2Methods;
+    pub use super::MapHistory_Rewind;
+    pub use super::IMapHistory_Rewind;
+    pub use super::IMapHistory_RewindMethods;
+    pub use super::MapHistory_Rewind_RangeType;
+    pub use super::MapHistory_ReplayAppearanceMap_Appearance;
+    pub use super::MapHistory_ReplayCommandReader;
+    pub use super::IMapHistory_ReplayCommandReader;
+    pub use super::IMapHistory_ReplayCommandReaderMethods;
+    pub use super::MapHistory_Rewind_WorkTerrainData;
+    pub use super::MapHistory_RewindLogBuilder;
+    pub use super::IMapHistory_RewindLogBuilder;
+    pub use super::IMapHistory_RewindLogBuilderMethods;
+    pub use super::MapHistory_ReplayAppearanceMap_Leaving;
+    pub use super::MapHistory_Rewind_BattleCalcData;
+    pub use super::IMapHistory_Rewind_BattleCalcData;
+    pub use super::IMapHistory_Rewind_BattleCalcDataMethods;
+    pub use super::MapHistory_Mode;
+    pub use super::MapHistory_Replay;
+    pub use super::IMapHistory_Replay;
+    pub use super::IMapHistory_ReplayMethods;
+    pub use super::MapHistory_Command;
+    pub use super::MapHistory_RewindCommandWriter;
+    pub use super::IMapHistory_RewindCommandWriter;
+    pub use super::IMapHistory_RewindCommandWriterMethods;
+    pub use super::MapHistory_CommandWriter;
+    pub use super::IMapHistory_CommandWriter;
+    pub use super::IMapHistory_CommandWriterMethods;
+    pub use super::MapHistory_GidMap;
+    pub use super::IMapHistory_GidMap;
+    pub use super::IMapHistory_GidMapMethods;
+    pub use super::MapHistory_PidMap;
+    pub use super::IMapHistory_PidMap;
+    pub use super::IMapHistory_PidMapMethods;
+    pub use super::MapHistory_RewindUnitMap_Data;
+    pub use super::MapHistory_ReplayType;
+    pub use super::MapHistory_MaterialStringMap;
+    pub use super::IMapHistory_MaterialStringMap;
+    pub use super::IMapHistory_MaterialStringMapMethods;
+    pub use super::MapHistory_SerializeDisabled;
+    pub use super::MapHistory_VariableMap;
+    pub use super::IMapHistory_VariableMap;
+    pub use super::IMapHistory_VariableMapMethods;
+    pub use super::MapHistory_TidMap;
+    pub use super::IMapHistory_TidMap;
+    pub use super::IMapHistory_TidMapMethods;
+    pub use super::MapHistory_UnitMapBase_2_NoEmptyFunction;
+    pub use super::IMapHistory_UnitMapBase_2_NoEmptyFunction;
+    pub use super::IMapHistory_UnitMapBase_2_NoEmptyFunctionMethods;
+    pub use super::MapHistory_RewindLog_UnitIcon;
+    pub use super::IMapHistory_RewindLog_UnitIcon;
+    pub use super::IMapHistory_RewindLog_UnitIconMethods;
+    pub use super::MapHistory_ReplayUnitMap;
+    pub use super::IMapHistory_ReplayUnitMap;
+    pub use super::IMapHistory_ReplayUnitMapMethods;
+    pub use super::MapHistory_UnitMapBase_2_IData;
+    pub use super::IMapHistory_UnitMapBase_2_IData;
+    pub use super::IMapHistory_UnitMapBase_2_IDataMethods;
+    pub use super::MapHistory_Rewind_OverlapDataPool;
+    pub use super::IMapHistory_Rewind_OverlapDataPool;
+    pub use super::IMapHistory_Rewind_OverlapDataPoolMethods;
     pub use super::MapHistory_Rewind_WriterKind;
+    pub use super::MapHistory_IdMapBase_1;
+    pub use super::IMapHistory_IdMapBase_1;
+    pub use super::IMapHistory_IdMapBase_1Methods;
+    pub use super::MapHistory_Rewind_SplitArgs;
     pub use super::MapHistory_ReplayAppearanceMap;
     pub use super::IMapHistory_ReplayAppearanceMap;
     pub use super::IMapHistory_ReplayAppearanceMapMethods;
     pub use super::MapHistory_Rewind_InspectorType;
-    pub use super::MapHistory_TidMap;
-    pub use super::IMapHistory_TidMap;
-    pub use super::IMapHistory_TidMapMethods;
-    pub use super::MapHistory_ReplayAppearanceMap_Leaving;
-    pub use super::MapHistory_Replay;
-    pub use super::IMapHistory_Replay;
-    pub use super::IMapHistory_ReplayMethods;
-    pub use super::MapHistory_RewindLog;
-    pub use super::IMapHistory_RewindLog;
-    pub use super::IMapHistory_RewindLogMethods;
-    pub use super::MapHistory_CommandWriter;
-    pub use super::IMapHistory_CommandWriter;
-    pub use super::IMapHistory_CommandWriterMethods;
-    pub use super::MapHistory_Mode;
-    pub use super::MapHistory_Rewind_OverlapDataPool;
-    pub use super::IMapHistory_Rewind_OverlapDataPool;
-    pub use super::IMapHistory_Rewind_OverlapDataPoolMethods;
+    pub use super::MapHistory_Rewind_IsEngagings;
     pub use super::MapHistory_RewindVariableType;
-    pub use super::MapHistory_RewindLog_UnitIcon;
-    pub use super::IMapHistory_RewindLog_UnitIcon;
-    pub use super::IMapHistory_RewindLog_UnitIconMethods;
-    pub use super::MapHistory_RewindNameMap;
-    pub use super::IMapHistory_RewindNameMap;
-    pub use super::IMapHistory_RewindNameMapMethods;
-    pub use super::MapHistory_Replay_SaveAsync;
-    pub use super::IMapHistory_Replay_SaveAsync;
-    pub use super::IMapHistory_Replay_SaveAsyncMethods;
-    pub use super::MapHistory_ReplayAppearanceMap_Appearance;
-    pub use super::MapHistory_ReplayUnitMap;
-    pub use super::IMapHistory_ReplayUnitMap;
-    pub use super::IMapHistory_ReplayUnitMapMethods;
-    pub use super::MapHistory_CommandReader;
-    pub use super::IMapHistory_CommandReader;
-    pub use super::IMapHistory_CommandReaderMethods;
-    pub use super::MapHistory_Rewind_SplitArgs;
+    pub use super::MapHistory_EffectNameMap;
+    pub use super::IMapHistory_EffectNameMap;
+    pub use super::IMapHistory_EffectNameMapMethods;
     pub use super::MapHistory_Replay_SaveAsyncThread;
     pub use super::IMapHistory_Replay_SaveAsyncThread;
     pub use super::IMapHistory_Replay_SaveAsyncThreadMethods;
+    pub use super::MapHistory_Replay_OverwriteStreamScope;
+    pub use super::MapHistory_ReplayUnitMap_Data;
+    pub use super::MapHistory_RewindUnitPhaseBeginKinds;
+    pub use super::MapHistory;
+    pub use super::IMapHistory;
+    pub use super::MapHistory_Replay_ReadResult;
     pub use super::MapHistory_RewindType;
-    pub use super::MapHistory_JidMap;
-    pub use super::IMapHistory_JidMap;
-    pub use super::IMapHistory_JidMapMethods;
+    pub use super::MapHistory_Rewind_ModeScope;
+    pub use super::MapHistory_Rewind_LatestInspectorData;
+    pub use super::MapHistory_RewindRelianceMap;
+    pub use super::IMapHistory_RewindRelianceMap;
+    pub use super::IMapHistory_RewindRelianceMapMethods;
+    pub use super::MapHistory_Replay_TurnSave;
+    pub use super::IMapHistory_Replay_TurnSave;
+    pub use super::IMapHistory_Replay_TurnSaveMethods;
     pub use super::MapHistory_IidMap;
     pub use super::IMapHistory_IidMap;
     pub use super::IMapHistory_IidMapMethods;
-    pub use super::MapHistory_MaterialStringMap;
-    pub use super::IMapHistory_MaterialStringMap;
-    pub use super::IMapHistory_MaterialStringMapMethods;
-    pub use super::MapHistory;
-    pub use super::IMapHistory;
-    pub use super::MapHistory_RewindUnitPhaseBeginKinds;
-    pub use super::MapHistory_Rewind_WorkTerrainData;
-    pub use super::MapHistory_Replay_OverwriteStreamScope;
+    pub use super::MapHistory_CommonType;
+    pub use super::MapHistory_RewindNameMap;
+    pub use super::IMapHistory_RewindNameMap;
+    pub use super::IMapHistory_RewindNameMapMethods;
+    pub use super::MapHistory_Rewind_OverlapData;
+    pub use super::IMapHistory_Rewind_OverlapData;
+    pub use super::IMapHistory_Rewind_OverlapDataMethods;
+    pub use super::MapHistory_CommandReader;
+    pub use super::IMapHistory_CommandReader;
+    pub use super::IMapHistory_CommandReaderMethods;
+    pub use super::MapHistory_RnidMap;
+    pub use super::IMapHistory_RnidMap;
+    pub use super::IMapHistory_RnidMapMethods;
+    pub use super::MapHistory_JidMap;
+    pub use super::IMapHistory_JidMap;
+    pub use super::IMapHistory_JidMapMethods;
+    pub use super::MapHistory_RewindLog;
+    pub use super::IMapHistory_RewindLog;
+    pub use super::IMapHistory_RewindLogMethods;
     pub use crate::app::pool::IPool_List_1;
     pub use crate::app::pool::IPool_Node;
     pub use crate::app::procinst::IProcInst;

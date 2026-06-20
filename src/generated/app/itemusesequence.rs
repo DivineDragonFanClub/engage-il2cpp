@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemusesequence/ItemUseSequence.md"))]#[::unity2::class(namespace="App",name="ItemUseSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct ItemUseSequence{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_UseItem")]pub m_use_item:crate::app::unititem::UnitItem, #[offset(128)]#[rename(name="m_ItemData")]pub m_item_data:crate::app::itemdata::ItemData, #[offset(136)]#[rename(name="m_TargetIndex")]pub m_target_index:i32, #[offset(140)]#[rename(name="m_GainExp")]pub m_gain_exp:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemusesequence/ItemUseSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ItemUseSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for ItemUseSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ItemUseSequence.Label";
@@ -37,36 +40,10 @@ pub fn end()->Self{Self{value:2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemusesequence/ItemUseSequence_EnchantedUnitList.md"))]#[::unity2::class(namespace="App",name="ItemUseSequence.EnchantedUnitList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)]pub struct ItemUseSequence_EnchantedUnitList{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemusesequence/ItemUseSequence.md"))]#[::unity2::class(namespace="App",name="ItemUseSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct ItemUseSequence{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_UseItem")]pub m_use_item:crate::app::unititem::UnitItem, #[offset(128)]#[rename(name="m_ItemData")]pub m_item_data:crate::app::itemdata::ItemData, #[offset(136)]#[rename(name="m_TargetIndex")]pub m_target_index:i32, #[offset(140)]#[rename(name="m_GainExp")]pub m_gain_exp:i32,}
-
 }
 
 #[cfg(feature = "app-itemusesequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-itemusesequence")]pub trait IItemUseSequence_EnchantedUnitListMethods:IItemUseSequence_EnchantedUnitList{#[doc="`Search()` overload"]fn search(self,)->(){unsafe{let __receiver= <ItemUseSequence_EnchantedUnitList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1b40usize)as*mut u8,();
-(ItemUseSequence_EnchantedUnitList)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemUseSequence_EnchantedUnitList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1db0usize)as*mut u8,();
-(ItemUseSequence_EnchantedUnitList)__receiver)}
-}
-}
-
-#[cfg(feature="app-itemusesequence")]impl<__T:IItemUseSequence_EnchantedUnitList>IItemUseSequence_EnchantedUnitListMethods for __T{}
-
-#[cfg(feature="app-itemusesequence")]impl ItemUseSequence_EnchantedUnitList{pub fn search_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-itemusesequence")]impl ItemUseSequence_EnchantedUnitList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ItemUseSequence_EnchantedUnitList), ::core::stringify!(new),));
- <Self as IItemUseSequence_EnchantedUnitListMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-itemusesequence")]impl ItemUseSequence{#[doc="`HealHp(crate::app::unit::Unit, i32)` overload"]pub fn heal_hp(unit:impl::core::convert::Into<crate::app::unit::Unit> ,heal:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2051c30usize)as*mut u8,();
 (crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(heal))}
@@ -195,16 +172,39 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-itemusesequence")]pub trait IItemUseSequence_EnchantedUnitListMethods:IItemUseSequence_EnchantedUnitList{#[doc="`Search()` overload"]fn search(self,)->(){unsafe{let __receiver= <ItemUseSequence_EnchantedUnitList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1b40usize)as*mut u8,();
+(ItemUseSequence_EnchantedUnitList)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemUseSequence_EnchantedUnitList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd1db0usize)as*mut u8,();
+(ItemUseSequence_EnchantedUnitList)__receiver)}
+}
+}
+
+#[cfg(feature="app-itemusesequence")]impl<__T:IItemUseSequence_EnchantedUnitList>IItemUseSequence_EnchantedUnitListMethods for __T{}
+
+#[cfg(feature="app-itemusesequence")]impl ItemUseSequence_EnchantedUnitList{pub fn search_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-itemusesequence")]impl ItemUseSequence_EnchantedUnitList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ItemUseSequence_EnchantedUnitList), ::core::stringify!(new),));
+ <Self as IItemUseSequence_EnchantedUnitListMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-itemusesequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ItemUseSequence;
+    pub use super::IItemUseSequence;
+    pub use super::IItemUseSequenceMethods;
     pub use super::ItemUseSequence_Label;
     pub use super::ItemUseSequence_EnchantedUnitList;
     pub use super::IItemUseSequence_EnchantedUnitList;
     pub use super::IItemUseSequence_EnchantedUnitListMethods;
-    pub use super::ItemUseSequence;
-    pub use super::IItemUseSequence;
-    pub use super::IItemUseSequenceMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::collections::generic::list_1::IList_1;
     pub use crate::system::object::IObject;

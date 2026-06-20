@@ -20,25 +20,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-procdescwaittrue-types")]
 pub use __types::*;
 
-#[cfg(feature="app-procdescwaittrue")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDescWaitTrue_unity2_raw{use super:: * ;
-pub unsafe fn is_wait(this:ProcDescWaitTrue,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <ProcDescWaitTrue as::unity2::ClassIdentity> ::NAME,"IsWait",));
-let inner:extern "C" fn(ProcDescWaitTrue,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,inst,__mi)}
-}
-
 #[cfg(feature="app-procdescwaittrue")]pub trait IProcDescWaitTrueMethods:IProcDescWaitTrue{#[doc="`.ctor(crate::app::procboolfunction::ProcBoolFunction)` overload"]fn ctor(self,function:impl::core::convert::Into<crate::app::procboolfunction::ProcBoolFunction>)->(){unsafe{let __receiver= <ProcDescWaitTrue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x281b8f0usize)as*mut u8,();
 (ProcDescWaitTrue)__receiver,(crate::app::procboolfunction::ProcBoolFunction)::core::convert::Into::into(function))}
 }
 #[doc="`IsWait(crate::app::procinst::ProcInst)` overload"]fn is_wait(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <ProcDescWaitTrue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ProcDescWaitTrue_unity2_raw::is_wait(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ProcDescWaitTrue as::unity2::ClassIdentity> ::NAME,"IsWait",));
+let __inner:extern "C" fn(ProcDescWaitTrue,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(inst),__mi)}
+}
 }
 }
 
@@ -46,6 +42,11 @@ __ProcDescWaitTrue_unity2_raw::is_wait(__receiver, ::core::convert::Into::into(i
 
 #[cfg(feature="app-procdescwaittrue")]impl ProcDescWaitTrue{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn is_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-procdescwaittrue")]impl ProcDescWaitTrue{#[doc="Direct (non-virtual) call to `ProcDescWaitTrue`'s own `IsWait`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_wait(this:impl::core::convert::Into< ::unity2::IlInstance> ,inst:crate::app::procinst::ProcInst,)->bool{let __mi=Self::is_wait_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),inst, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-procdescwaittrue")]impl ProcDescWaitTrue{#[doc="`.ctor(crate::app::procboolfunction::ProcBoolFunction)` — overload selector"]pub fn new(function:crate::app::procboolfunction::ProcBoolFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

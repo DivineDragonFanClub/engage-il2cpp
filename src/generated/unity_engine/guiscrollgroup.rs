@@ -20,64 +20,57 @@ use crate::unity_engine::guilayoutgroup::{GUILayoutGroup,IGUILayoutGroup}
 #[cfg(feature = "unity_engine-guiscrollgroup-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-guiscrollgroup")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GUIScrollGroup_unity2_raw{use super:: * ;
-pub unsafe fn calc_width(this:GUIScrollGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <GUIScrollGroup as::unity2::ClassIdentity> ::NAME,"CalcWidth",));
-let inner:extern "C" fn(GUIScrollGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_horizontal(this:GUIScrollGroup,x:f32,width:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <GUIScrollGroup as::unity2::ClassIdentity> ::NAME,"SetHorizontal",));
-let inner:extern "C" fn(GUIScrollGroup,f32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,width,__mi)}
-pub unsafe fn calc_height(this:GUIScrollGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <GUIScrollGroup as::unity2::ClassIdentity> ::NAME,"CalcHeight",));
-let inner:extern "C" fn(GUIScrollGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_vertical(this:GUIScrollGroup,y:f32,height:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <GUIScrollGroup as::unity2::ClassIdentity> ::NAME,"SetVertical",));
-let inner:extern "C" fn(GUIScrollGroup,f32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,y,height,__mi)}
-}
-
 #[cfg(feature="unity_engine-guiscrollgroup")]pub trait IGUIScrollGroupMethods:IGUIScrollGroup{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GUIScrollGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c4ae00usize)as*mut u8,();
 (GUIScrollGroup)__receiver)}
 }
 #[doc="`CalcWidth()` overload"]fn calc_width(self,)->(){unsafe{let __receiver= <GUIScrollGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GUIScrollGroup_unity2_raw::calc_width(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GUIScrollGroup as::unity2::ClassIdentity> ::NAME,"CalcWidth",));
+let __inner:extern "C" fn(GUIScrollGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetHorizontal(f32, f32)` overload"]fn set_horizontal(self,x:impl::core::convert::Into<f32> ,width:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GUIScrollGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GUIScrollGroup_unity2_raw::set_horizontal(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(width), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GUIScrollGroup as::unity2::ClassIdentity> ::NAME,"SetHorizontal",));
+let __inner:extern "C" fn(GUIScrollGroup,f32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(width),__mi)}
+}
 }
 #[doc="`CalcHeight()` overload"]fn calc_height(self,)->(){unsafe{let __receiver= <GUIScrollGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GUIScrollGroup_unity2_raw::calc_height(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <GUIScrollGroup as::unity2::ClassIdentity> ::NAME,"CalcHeight",));
+let __inner:extern "C" fn(GUIScrollGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetVertical(f32, f32)` overload"]fn set_vertical(self,y:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GUIScrollGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GUIScrollGroup_unity2_raw::set_vertical(__receiver, ::core::convert::Into::into(y), ::core::convert::Into::into(height), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GUIScrollGroup as::unity2::ClassIdentity> ::NAME,"SetVertical",));
+let __inner:extern "C" fn(GUIScrollGroup,f32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(y), ::core::convert::Into::into(height),__mi)}
+}
 }
 }
 
@@ -88,6 +81,20 @@ pub fn calc_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn set_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn calc_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn set_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-guiscrollgroup")]impl GUIScrollGroup{#[doc="Direct (non-virtual) call to `GUIScrollGroup`'s own `CalcWidth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_width(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calc_width_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GUIScrollGroup`'s own `SetHorizontal`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_horizontal(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:f32,width:f32,)->(){let __mi=Self::set_horizontal_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,width, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GUIScrollGroup`'s own `CalcHeight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_height(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calc_height_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `GUIScrollGroup`'s own `SetVertical`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_vertical(this:impl::core::convert::Into< ::unity2::IlInstance> ,y:f32,height:f32,)->(){let __mi=Self::set_vertical_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),y,height, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-guiscrollgroup")]impl GUIScrollGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

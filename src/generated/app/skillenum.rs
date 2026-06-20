@@ -11,6 +11,17 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skillenum/SkillEnum_Enumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SkillEnum_Enumerator{pub m_index:i32,pub m_count:i32,pub m_array:crate::app::skillarray::SkillArray,pub m_current:crate::app::skilldata::SkillData,pub m_mask:crate::app::skilldata::SkillData_TimingMasks,}
+impl::unity2::ClassIdentity for SkillEnum_Enumerator{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillEnum.Enumerator";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillEnum_Enumerator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skillenum/SkillEnum.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SkillEnum{pub m_array:crate::app::skillarray::SkillArray,pub m_mask:crate::app::skilldata::SkillData_TimingMasks,}
 impl::unity2::ClassIdentity for SkillEnum{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SkillEnum";
@@ -29,21 +40,38 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_SkillList"
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skillenum/SkillEnum_Enumerator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SkillEnum_Enumerator{pub m_index:i32,pub m_count:i32,pub m_array:crate::app::skillarray::SkillArray,pub m_current:crate::app::skilldata::SkillData,pub m_mask:crate::app::skilldata::SkillData_TimingMasks,}
-impl::unity2::ClassIdentity for SkillEnum_Enumerator{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillEnum.Enumerator";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SkillEnum_Enumerator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
 }
 
 #[cfg(feature = "app-skillenum-types")]
 pub use __types::*;
+
+#[cfg(feature="app-skillenum")]impl SkillEnum_Enumerator{#[doc="`.ctor(crate::app::skillarray::SkillArray, crate::app::skilldata::SkillData_TimingMasks, i32)` overload"]pub fn ctor(&mut self,array:impl::core::convert::Into<crate::app::skillarray::SkillArray> ,mask:impl::core::convert::Into<crate::app::skilldata::SkillData_TimingMasks> ,count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6eba0usize)as*mut u8,();
+(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator,(crate::app::skillarray::SkillArray)::core::convert::Into::into(array),(crate::app::skilldata::SkillData_TimingMasks)::core::convert::Into::into(mask),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6ebf0usize)as*mut u8,();
+(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator)}
+}
+#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6ec30usize)as*mut u8,bool;
+(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator)}
+}
+#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6edb0usize)as*mut u8,();
+(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator)}
+}
+#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6edc0usize)as*mut u8,crate::system::object::Object;
+(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator)}
+}
+#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6edd0usize)as*mut u8,crate::app::skilldata::SkillData;
+(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator)}
+}
+}
+
+#[cfg(feature="app-skillenum")]impl SkillEnum_Enumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature="app-skillenum")]impl SkillEnum{#[doc="`Get(crate::app::skillarray::SkillArray, crate::app::skilldata::SkillData_TimingMasks)` overload"]pub fn get(array:impl::core::convert::Into<crate::app::skillarray::SkillArray> ,mask:impl::core::convert::Into<crate::app::skilldata::SkillData_TimingMasks>)->crate::app::skillenum::SkillEnum{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24a1720usize)as*mut u8,crate::app::skillenum::SkillEnum;
 (crate::app::skillarray::SkillArray)::core::convert::Into::into(array),(crate::app::skilldata::SkillData_TimingMasks)::core::convert::Into::into(mask))}
@@ -95,39 +123,11 @@ pub fn get_unsafe_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 }
 
-#[cfg(feature="app-skillenum")]impl SkillEnum_Enumerator{#[doc="`.ctor(crate::app::skillarray::SkillArray, crate::app::skilldata::SkillData_TimingMasks, i32)` overload"]pub fn ctor(&mut self,array:impl::core::convert::Into<crate::app::skillarray::SkillArray> ,mask:impl::core::convert::Into<crate::app::skilldata::SkillData_TimingMasks> ,count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6eba0usize)as*mut u8,();
-(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator,(crate::app::skillarray::SkillArray)::core::convert::Into::into(array),(crate::app::skilldata::SkillData_TimingMasks)::core::convert::Into::into(mask),(i32)::core::convert::Into::into(count))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6ebf0usize)as*mut u8,();
-(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator)}
-}
-#[doc="`MoveNext()` overload"]pub fn move_next(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6ec30usize)as*mut u8,bool;
-(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator)}
-}
-#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6edb0usize)as*mut u8,();
-(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator)}
-}
-#[doc="`System.Collections.IEnumerator.get_Current()` overload"]pub fn system_collections_i_enumerator_get_current(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6edc0usize)as*mut u8,crate::system::object::Object;
-(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator)}
-}
-#[doc="`get_Current()` overload"]pub fn get_current(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d6edd0usize)as*mut u8,crate::app::skilldata::SkillData;
-(*mut SkillEnum_Enumerator)self as*mut SkillEnum_Enumerator)}
-}
-}
-
-#[cfg(feature="app-skillenum")]impl SkillEnum_Enumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn system_collections_i_enumerator_get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
 #[cfg(feature = "app-skillenum")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SkillEnum;
     pub use super::SkillEnum_Enumerator;
+    pub use super::SkillEnum;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

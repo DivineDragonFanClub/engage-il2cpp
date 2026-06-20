@@ -15,140 +15,89 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream")]#[parent(crate::system::io::stream::Stream)]pub struct DeflateStream{#[offset(40)]#[rename(name="base_stream")]pub base_stream:crate::system::io::stream::Stream, #[offset(48)]#[rename(name="mode")]pub mode:crate::system::io::compression::compressionmode::CompressionMode, #[offset(52)]#[rename(name="leaveOpen")]pub leave_open:bool, #[offset(53)]#[rename(name="disposed")]pub disposed:bool, #[offset(56)]#[rename(name="native")]pub native:crate::system::io::compression::deflatestreamnative::DeflateStreamNative,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream_ReadMethod.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream.ReadMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStream_ReadMethod{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream_WriteMethod.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream.WriteMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStream_WriteMethod{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream")]#[parent(crate::system::io::stream::Stream)]pub struct DeflateStream{#[offset(40)]#[rename(name="base_stream")]pub base_stream:crate::system::io::stream::Stream, #[offset(48)]#[rename(name="mode")]pub mode:crate::system::io::compression::compressionmode::CompressionMode, #[offset(52)]#[rename(name="leaveOpen")]pub leave_open:bool, #[offset(53)]#[rename(name="disposed")]pub disposed:bool, #[offset(56)]#[rename(name="native")]pub native:crate::system::io::compression::deflatestreamnative::DeflateStreamNative,}
 
 }
 
 #[cfg(feature = "system-io-compression-deflatestream-types")]
 pub use __types::*;
 
-#[cfg(feature="system-io-compression-deflatestream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DeflateStream_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:DeflateStream,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(DeflateStream,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,disposing,__mi)}
-pub unsafe fn read(this:DeflateStream,array: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",29usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"Read",));
-let inner:extern "C" fn(DeflateStream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,offset,count,__mi)}
-pub unsafe fn write(this:DeflateStream,array: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"Write",));
-let inner:extern "C" fn(DeflateStream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,offset,count,__mi)}
-pub unsafe fn flush(this:DeflateStream,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"Flush",));
-let inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn seek(this:DeflateStream,offset:i64,origin:crate::system::io::seekorigin::SeekOrigin,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",27usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"Seek",));
-let inner:extern "C" fn(DeflateStream,i64,crate::system::io::seekorigin::SeekOrigin, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,offset,origin,__mi)}
-pub unsafe fn set_length(this:DeflateStream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"SetLength",));
-let inner:extern "C" fn(DeflateStream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_can_read(this:DeflateStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"get_CanRead",));
-let inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_can_seek(this:DeflateStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"get_CanSeek",));
-let inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_can_write(this:DeflateStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"get_CanWrite",));
-let inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_length(this:DeflateStream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"get_Length",));
-let inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_position(this:DeflateStream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"get_Position",));
-let inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_position(this:DeflateStream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStream_ReadMethodMethods:IDeflateStream_ReadMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStream_ReadMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f340usize)as*mut u8,();
+(DeflateStream_ReadMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DeflateStream_ReadMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"set_Position",));
-let inner:extern "C" fn(DeflateStream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <DeflateStream_ReadMethod as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(DeflateStream_ReadMethod, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count),__mi)}
+}
+}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl<__T:IDeflateStream_ReadMethod>IDeflateStream_ReadMethodMethods for __T{}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{#[doc="Direct (non-virtual) call to `DeflateStream_ReadMethod`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::Array<u8> ,offset:i32,count:i32,)->i32{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,offset,count, ::core::option::Option::None)}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStream_ReadMethod), ::core::stringify!(new),));
+ <Self as IDeflateStream_ReadMethodMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStream_WriteMethodMethods:IDeflateStream_WriteMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStream_WriteMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f7e0usize)as*mut u8,();
+(DeflateStream_WriteMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DeflateStream_WriteMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <DeflateStream_WriteMethod as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(DeflateStream_WriteMethod, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count),__mi)}
+}
+}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl<__T:IDeflateStream_WriteMethod>IDeflateStream_WriteMethodMethods for __T{}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_WriteMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_WriteMethod{#[doc="Direct (non-virtual) call to `DeflateStream_WriteMethod`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::Array<u8> ,offset:i32,count:i32,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,offset,count, ::core::option::Option::None)}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_WriteMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStream_WriteMethod), ::core::stringify!(new),));
+ <Self as IDeflateStream_WriteMethodMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStreamMethods:IDeflateStream{#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` overload"]fn ctor(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,mode:impl::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -172,48 +121,156 @@ inner(this,value,__mi)}
 (DeflateStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(crate::system::io::compression::compressionlevel::CompressionLevel)::core::convert::Into::into(compression_level),(bool)::core::convert::Into::into(leave_open),(bool)::core::convert::Into::into(gzip))}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(DeflateStream,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
+}
 }
 #[doc="`ReadInternal(::unity2::Array<u8>, i32, i32)` overload"]fn read_internal(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3558840usize)as*mut u8,i32;
 (DeflateStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
 }
 #[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::read(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"Read",));
+let __inner:extern "C" fn(DeflateStream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count),__mi)}
+}
 }
 #[doc="`WriteInternal(::unity2::Array<u8>, i32, i32)` overload"]fn write_internal(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3558b50usize)as*mut u8,();
 (DeflateStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
 }
 #[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::write(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"Write",));
+let __inner:extern "C" fn(DeflateStream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count),__mi)}
+}
 }
 #[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::flush(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"Flush",));
+let __inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"]fn seek(self,offset:impl::core::convert::Into<i64> ,origin:impl::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>)->i64{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::seek(__receiver, ::core::convert::Into::into(offset), ::core::convert::Into::into(origin), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"Seek",));
+let __inner:extern "C" fn(DeflateStream,i64,crate::system::io::seekorigin::SeekOrigin, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(offset), ::core::convert::Into::into(origin),__mi)}
+}
 }
 #[doc="`SetLength(i64)` overload"]fn set_length(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::set_length(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"SetLength",));
+let __inner:extern "C" fn(DeflateStream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::get_can_read(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"get_CanRead",));
+let __inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_CanSeek()` overload"]fn get_can_seek(self,)->bool{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::get_can_seek(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"get_CanSeek",));
+let __inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::get_can_write(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"get_CanWrite",));
+let __inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Length()` overload"]fn get_length(self,)->i64{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::get_length(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"get_Length",));
+let __inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Position()` overload"]fn get_position(self,)->i64{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::get_position(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"get_Position",));
+let __inner:extern "C" fn(DeflateStream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_Position(i64)` overload"]fn set_position(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_unity2_raw::set_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <DeflateStream as::unity2::ClassIdentity> ::NAME,"set_Position",));
+let __inner:extern "C" fn(DeflateStream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 }
 
@@ -238,6 +295,44 @@ pub fn get_can_write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
 pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream{#[doc="Direct (non-virtual) call to `DeflateStream`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),disposing, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `Read`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn read(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::Array<u8> ,offset:i32,count:i32,)->i32{let __mi=Self::read_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,offset,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::Array<u8> ,offset:i32,count:i32,)->(){let __mi=Self::write_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,offset,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `Flush`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn flush(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::flush_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `Seek`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn seek(this:impl::core::convert::Into< ::unity2::IlInstance> ,offset:i64,origin:crate::system::io::seekorigin::SeekOrigin,)->i64{let __mi=Self::seek_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i64,crate::system::io::seekorigin::SeekOrigin, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),offset,origin, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `SetLength`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_length(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:i64,)->(){let __mi=Self::set_length_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `get_CanRead`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_can_read(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_can_read_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `get_CanSeek`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_can_seek(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_can_seek_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `get_CanWrite`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_can_write(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_can_write_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `get_Length`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_length(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i64{let __mi=Self::get_length_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `get_Position`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_position(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i64{let __mi=Self::get_position_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DeflateStream`'s own `set_Position`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_position(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:i64,)->(){let __mi=Self::set_position_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream{#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` — overload selector"]pub fn new(stream:crate::system::io::stream::Stream,mode:crate::system::io::compression::compressionmode::CompressionMode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -267,88 +362,18 @@ this}
 this}
 }
 
-#[cfg(feature="system-io-compression-deflatestream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DeflateStream_ReadMethod_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:DeflateStream_ReadMethod,array: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <DeflateStream_ReadMethod as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(DeflateStream_ReadMethod, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,offset,count,__mi)}
-}
-
-#[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStream_ReadMethodMethods:IDeflateStream_ReadMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStream_ReadMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f340usize)as*mut u8,();
-(DeflateStream_ReadMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DeflateStream_ReadMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_ReadMethod_unity2_raw::invoke(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="system-io-compression-deflatestream")]impl<__T:IDeflateStream_ReadMethod>IDeflateStream_ReadMethodMethods for __T{}
-
-#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DeflateStream_ReadMethod), ::core::stringify!(new),));
- <Self as IDeflateStream_ReadMethodMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="system-io-compression-deflatestream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DeflateStream_WriteMethod_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:DeflateStream_WriteMethod,array: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <DeflateStream_WriteMethod as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(DeflateStream_WriteMethod, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,offset,count,__mi)}
-}
-
-#[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStream_WriteMethodMethods:IDeflateStream_WriteMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStream_WriteMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f7e0usize)as*mut u8,();
-(DeflateStream_WriteMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DeflateStream_WriteMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DeflateStream_WriteMethod_unity2_raw::invoke(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="system-io-compression-deflatestream")]impl<__T:IDeflateStream_WriteMethod>IDeflateStream_WriteMethodMethods for __T{}
-
-#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_WriteMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_WriteMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DeflateStream_WriteMethod), ::core::stringify!(new),));
- <Self as IDeflateStream_WriteMethodMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "system-io-compression-deflatestream")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DeflateStream;
-    pub use super::IDeflateStream;
-    pub use super::IDeflateStreamMethods;
     pub use super::DeflateStream_ReadMethod;
     pub use super::IDeflateStream_ReadMethod;
     pub use super::IDeflateStream_ReadMethodMethods;
     pub use super::DeflateStream_WriteMethod;
     pub use super::IDeflateStream_WriteMethod;
     pub use super::IDeflateStream_WriteMethodMethods;
+    pub use super::DeflateStream;
+    pub use super::IDeflateStream;
+    pub use super::IDeflateStreamMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::io::stream::IStream;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

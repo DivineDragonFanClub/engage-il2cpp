@@ -27,115 +27,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exchangeitemyesnodialog/ExchangeItemYesNoDialog.md"))]#[::unity2::class(namespace="App",name="ExchangeItemYesNoDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ExchangeItemYesNoDialog{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exchangeitemyesnodialog/ExchangeItemYesNoDialog_YesEventHandler.md"))]#[::unity2::class(namespace="App",name="ExchangeItemYesNoDialog.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ExchangeItemYesNoDialog_YesEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exchangeitemyesnodialog/ExchangeItemYesNoDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="ExchangeItemYesNoDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ExchangeItemYesNoDialog_YesMenuItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler,}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exchangeitemyesnodialog/ExchangeItemYesNoDialog.md"))]#[::unity2::class(namespace="App",name="ExchangeItemYesNoDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ExchangeItemYesNoDialog{}
-
 }
 
 #[cfg(feature = "app-exchangeitemyesnodialog-types")]
 pub use __types::*;
-
-#[cfg(feature="app-exchangeitemyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ExchangeItemYesNoDialog_YesEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:ExchangeItemYesNoDialog_YesEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <ExchangeItemYesNoDialog_YesEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(ExchangeItemYesNoDialog_YesEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-exchangeitemyesnodialog")]pub trait IExchangeItemYesNoDialog_YesEventHandlerMethods:IExchangeItemYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ExchangeItemYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e592b0usize)as*mut u8,();
-(ExchangeItemYesNoDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ExchangeItemYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ExchangeItemYesNoDialog_YesEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-exchangeitemyesnodialog")]impl<__T:IExchangeItemYesNoDialog_YesEventHandler>IExchangeItemYesNoDialog_YesEventHandlerMethods for __T{}
-
-#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ExchangeItemYesNoDialog_YesEventHandler), ::core::stringify!(new),));
- <Self as IExchangeItemYesNoDialog_YesEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-exchangeitemyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ExchangeItemYesNoDialog_YesMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:ExchangeItemYesNoDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <ExchangeItemYesNoDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(ExchangeItemYesNoDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:ExchangeItemYesNoDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <ExchangeItemYesNoDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(ExchangeItemYesNoDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-exchangeitemyesnodialog")]pub trait IExchangeItemYesNoDialog_YesMenuItemMethods:IExchangeItemYesNoDialog_YesMenuItem{#[doc="`.ctor(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler>)->(){unsafe{let __receiver= <ExchangeItemYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e59520usize)as*mut u8,();
-(ExchangeItemYesNoDialog_YesMenuItem)__receiver,(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ExchangeItemYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ExchangeItemYesNoDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ExchangeItemYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ExchangeItemYesNoDialog_YesMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-exchangeitemyesnodialog")]impl<__T:IExchangeItemYesNoDialog_YesMenuItem>IExchangeItemYesNoDialog_YesMenuItemMethods for __T{}
-
-#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog_YesMenuItem{#[doc="`.ctor(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)` — overload selector"]pub fn new(yes_event_handler:crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ExchangeItemYesNoDialog_YesMenuItem), ::core::stringify!(new),));
- <Self as IExchangeItemYesNoDialog_YesMenuItemMethods> ::ctor(this,yes_event_handler);
-this}
-}
-
-#[cfg(feature="app-exchangeitemyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ExchangeItemYesNoDialog_unity2_raw{use super:: * ;
-pub unsafe fn on_close(this:ExchangeItemYesNoDialog,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <ExchangeItemYesNoDialog as::unity2::ClassIdentity> ::NAME,"OnClose",));
-let inner:extern "C" fn(ExchangeItemYesNoDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem>, i32, crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem> > ,expected:impl::core::convert::Into<i32> ,yes_event_handler:impl::core::convert::Into<crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler>)->crate::app::exchangeyesnodialog::ExchangeYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e6010usize)as*mut u8,crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::unititem::UnitItem>)::core::convert::Into::into(unit_item_list),(i32)::core::convert::Into::into(expected),(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
@@ -147,7 +50,16 @@ inner(this,__mi)}
 (ExchangeItemYesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <ExchangeItemYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ExchangeItemYesNoDialog_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <ExchangeItemYesNoDialog as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let __inner:extern "C" fn(ExchangeItemYesNoDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -158,6 +70,11 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog{#[doc="Direct (non-virtual) call to `ExchangeItemYesNoDialog`'s own `OnClose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(ExchangeItemYesNoDialog), ::core::stringify!(new),));
@@ -165,18 +82,106 @@ pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
+#[cfg(feature="app-exchangeitemyesnodialog")]pub trait IExchangeItemYesNoDialog_YesEventHandlerMethods:IExchangeItemYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ExchangeItemYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e592b0usize)as*mut u8,();
+(ExchangeItemYesNoDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ExchangeItemYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ExchangeItemYesNoDialog_YesEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(ExchangeItemYesNoDialog_YesEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-exchangeitemyesnodialog")]impl<__T:IExchangeItemYesNoDialog_YesEventHandler>IExchangeItemYesNoDialog_YesEventHandlerMethods for __T{}
+
+#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog_YesEventHandler{#[doc="Direct (non-virtual) call to `ExchangeItemYesNoDialog_YesEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExchangeItemYesNoDialog_YesEventHandler), ::core::stringify!(new),));
+ <Self as IExchangeItemYesNoDialog_YesEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-exchangeitemyesnodialog")]pub trait IExchangeItemYesNoDialog_YesMenuItemMethods:IExchangeItemYesNoDialog_YesMenuItem{#[doc="`.ctor(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler>)->(){unsafe{let __receiver= <ExchangeItemYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e59520usize)as*mut u8,();
+(ExchangeItemYesNoDialog_YesMenuItem)__receiver,(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ExchangeItemYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ExchangeItemYesNoDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(ExchangeItemYesNoDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ExchangeItemYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <ExchangeItemYesNoDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(ExchangeItemYesNoDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-exchangeitemyesnodialog")]impl<__T:IExchangeItemYesNoDialog_YesMenuItem>IExchangeItemYesNoDialog_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog_YesMenuItem{#[doc="Direct (non-virtual) call to `ExchangeItemYesNoDialog_YesMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ExchangeItemYesNoDialog_YesMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-exchangeitemyesnodialog")]impl ExchangeItemYesNoDialog_YesMenuItem{#[doc="`.ctor(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)` — overload selector"]pub fn new(yes_event_handler:crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExchangeItemYesNoDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as IExchangeItemYesNoDialog_YesMenuItemMethods> ::ctor(this,yes_event_handler);
+this}
+}
+
 #[cfg(feature = "app-exchangeitemyesnodialog")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ExchangeItemYesNoDialog;
+    pub use super::IExchangeItemYesNoDialog;
+    pub use super::IExchangeItemYesNoDialogMethods;
     pub use super::ExchangeItemYesNoDialog_YesEventHandler;
     pub use super::IExchangeItemYesNoDialog_YesEventHandler;
     pub use super::IExchangeItemYesNoDialog_YesEventHandlerMethods;
     pub use super::ExchangeItemYesNoDialog_YesMenuItem;
     pub use super::IExchangeItemYesNoDialog_YesMenuItem;
     pub use super::IExchangeItemYesNoDialog_YesMenuItemMethods;
-    pub use super::ExchangeItemYesNoDialog;
-    pub use super::IExchangeItemYesNoDialog;
-    pub use super::IExchangeItemYesNoDialogMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

@@ -19,9 +19,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hublensflare/HubLensFlare.md"))]#[::unity2::class(namespace="App",name="HubLensFlare")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubLensFlare{#[offset(24)]#[rename(name="FlareScale")]pub flare_scale:f32, #[offset(28)]#[rename(name="FlareMaxSize")]pub flare_max_size:f32, #[offset(32)]#[rename(name="FlareZ")]pub flare_z:f32, #[offset(36)]#[rename(name="RotateV")]pub rotate_v:f32, #[offset(40)]#[rename(name="m_flare")]pub m_flare:crate::system::collections::generic::list_1::List_1<crate::app::hublensflare::HubLensFlare_Flare> , #[offset(48)]#[rename(name="m_sunPosition")]pub m_sun_position:crate::unity_engine::vector3::Vector3, #[offset(64)]#[rename(name="m_light")]pub m_light:crate::unity_engine::gameobject::GameObject,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hublensflare/HubLensFlare_Flare.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HubLensFlare_Flare{pub game_object:crate::unity_engine::gameobject::GameObject,pub ps:crate::unity_engine::particlesystem::ParticleSystem,pub particles: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,pub material:crate::unity_engine::material::Material,pub distance:f32,pub scale:f32,pub anglebias:f32,}
 impl::unity2::ClassIdentity for HubLensFlare_Flare{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubLensFlare.Flare";
@@ -31,6 +28,9 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for HubLensFlare_Flare{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hublensflare/HubLensFlare.md"))]#[::unity2::class(namespace="App",name="HubLensFlare")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubLensFlare{#[offset(24)]#[rename(name="FlareScale")]pub flare_scale:f32, #[offset(28)]#[rename(name="FlareMaxSize")]pub flare_max_size:f32, #[offset(32)]#[rename(name="FlareZ")]pub flare_z:f32, #[offset(36)]#[rename(name="RotateV")]pub rotate_v:f32, #[offset(40)]#[rename(name="m_flare")]pub m_flare:crate::system::collections::generic::list_1::List_1<crate::app::hublensflare::HubLensFlare_Flare> , #[offset(48)]#[rename(name="m_sunPosition")]pub m_sun_position:crate::unity_engine::vector3::Vector3, #[offset(64)]#[rename(name="m_light")]pub m_light:crate::unity_engine::gameobject::GameObject,}
 
 }
 
@@ -73,10 +73,10 @@ this}
 #[cfg(feature = "app-hublensflare")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubLensFlare_Flare;
     pub use super::HubLensFlare;
     pub use super::IHubLensFlare;
     pub use super::IHubLensFlareMethods;
-    pub use super::HubLensFlare_Flare;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

@@ -20,64 +20,57 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-cannoninspector-types")]
 pub use __types::*;
 
-#[cfg(feature="app-cannoninspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CannonInspector_unity2_raw{use super:: * ;
-pub unsafe fn is_eanble(this:CannonInspector,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <CannonInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
-let inner:extern "C" fn(CannonInspector, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn completed(this:CannonInspector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <CannonInspector as::unity2::ClassIdentity> ::NAME,"Completed",));
-let inner:extern "C" fn(CannonInspector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_x(this:CannonInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <CannonInspector as::unity2::ClassIdentity> ::NAME,"get_X",));
-let inner:extern "C" fn(CannonInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_z(this:CannonInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <CannonInspector as::unity2::ClassIdentity> ::NAME,"get_Z",));
-let inner:extern "C" fn(CannonInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-cannoninspector")]pub trait ICannonInspectorMethods:ICannonInspector{#[doc="`.ctor(i32, i32, i32)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,max_shells:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25bacf0usize)as*mut u8,();
 (CannonInspector)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(max_shells))}
 }
 #[doc="`IsEanble()` overload"]fn is_eanble(self,)->bool{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CannonInspector_unity2_raw::is_eanble(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CannonInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
+let __inner:extern "C" fn(CannonInspector, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Completed()` overload"]fn completed(self,)->(){unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CannonInspector_unity2_raw::completed(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CannonInspector as::unity2::ClassIdentity> ::NAME,"Completed",));
+let __inner:extern "C" fn(CannonInspector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CannonInspector_unity2_raw::get_x(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <CannonInspector as::unity2::ClassIdentity> ::NAME,"get_X",));
+let __inner:extern "C" fn(CannonInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__CannonInspector_unity2_raw::get_z(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <CannonInspector as::unity2::ClassIdentity> ::NAME,"get_Z",));
+let __inner:extern "C" fn(CannonInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetMaxShells()` overload"]fn get_max_shells(self,)->i32{unsafe{let __receiver= <CannonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25bafe0usize)as*mut u8,i32;
@@ -138,6 +131,20 @@ pub fn is_bow_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn is_magic_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 pub fn is_fire_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 pub fn get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="app-cannoninspector")]impl CannonInspector{#[doc="Direct (non-virtual) call to `CannonInspector`'s own `IsEanble`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_eanble(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_eanble_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CannonInspector`'s own `Completed`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn completed(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::completed_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CannonInspector`'s own `get_X`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_x(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_x_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `CannonInspector`'s own `get_Z`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_z(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_z_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-cannoninspector")]impl CannonInspector{#[doc="`.ctor(i32, i32, i32)` — overload selector"]pub fn new(x:i32,z:i32,max_shells:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

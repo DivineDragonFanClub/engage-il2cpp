@@ -207,16 +207,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ParameterDescriptor as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn to_string(this:ParameterDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",3usize,__vt.len(), <ParameterDescriptor as::unity2::ClassIdentity> ::NAME,"ToString",));
-let inner:extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_restrict_type{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<ParameterDescriptor as::unity2::ClassIdentity> ::class(),"RestrictType",1,param_types,false,)}
@@ -227,16 +217,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ParameterDescriptor as::unity2::ClassIdentity> ::NAME,"RestrictType",e),}
 }
 }
-pub unsafe fn prepare_for_wiring(this:ParameterDescriptor,table:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ParameterDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",));
-let inner:extern "C" fn(ParameterDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,table,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-parameterdescriptor")]pub trait IParameterDescriptorMethods:IParameterDescriptor{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ParameterDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -316,14 +296,32 @@ inner(this,table,__mi)}
 (ParameterDescriptor)__receiver,(crate::system::reflection::parameterinfo::ParameterInfo)::core::convert::Into::into(pi))}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ParameterDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParameterDescriptor_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <ParameterDescriptor as::unity2::ClassIdentity> ::NAME,"ToString",));
+let __inner:extern "C" fn(ParameterDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`RestrictType(::unity2::SystemType)` overload"]fn restrict_type(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <ParameterDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__ParameterDescriptor_unity2_raw::__lookup_restrict_type::get_method_info().method_ptr,();
 (ParameterDescriptor)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
 }
 #[doc="`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]fn prepare_for_wiring(self,table:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <ParameterDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParameterDescriptor_unity2_raw::prepare_for_wiring(__receiver, ::core::convert::Into::into(table), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ParameterDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",));
+let __inner:extern "C" fn(ParameterDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(table),__mi)}
+}
 }
 }
 
@@ -351,6 +349,14 @@ pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 pub fn restrict_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 pub fn prepare_for_wiring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-parameterdescriptor")]impl ParameterDescriptor{#[doc="Direct (non-virtual) call to `ParameterDescriptor`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParameterDescriptor`'s own `PrepareForWiring`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn prepare_for_wiring(this:impl::core::convert::Into< ::unity2::IlInstance> ,table:crate::moon_sharp::interpreter::table::Table,)->(){let __mi=Self::prepare_for_wiring_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),table, ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-parameterdescriptor")]impl ParameterDescriptor{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::SystemType, bool, ::unity2::IlInstance, bool, bool, bool)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,r#type: ::unity2::SystemType,has_default_value:bool,default_value: ::unity2::IlInstance,is_out:bool,is_ref:bool,is_var_args:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

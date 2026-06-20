@@ -14,47 +14,41 @@ mod __types {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-ilight2dcullresult_interface-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-ilight2dcullresult_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ILight2DCullResult_Interface_unity2_raw{use super:: * ;
-pub unsafe fn get_visible_lights(this:ILight2DCullResult_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-experimental-rendering-universal-ilight2dcullresult_interface")]pub trait IILight2DCullResult_InterfaceMethods:IILight2DCullResult_Interface{#[doc="`get_visibleLights()` overload"]fn get_visible_lights(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>{unsafe{let __receiver= <ILight2DCullResult_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <ILight2DCullResult_Interface as::unity2::ClassIdentity> ::NAME,"get_visibleLights",));
-let inner:extern "C" fn(ILight2DCullResult_Interface, ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ILight2DCullResult_Interface, ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2> = ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_light_stats_by_layer(this:ILight2DCullResult_Interface,layer:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::experimental::rendering::universal::lightstats::LightStats{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetLightStatsByLayer(i32)` overload"]fn get_light_stats_by_layer(self,layer:impl::core::convert::Into<i32>)->crate::unity_engine::experimental::rendering::universal::lightstats::LightStats{unsafe{let __receiver= <ILight2DCullResult_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <ILight2DCullResult_Interface as::unity2::ClassIdentity> ::NAME,"GetLightStatsByLayer",));
-let inner:extern "C" fn(ILight2DCullResult_Interface,i32, ::unity2::OptionalMethod,)->crate::unity_engine::experimental::rendering::universal::lightstats::LightStats= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ILight2DCullResult_Interface,i32, ::unity2::OptionalMethod,)->crate::unity_engine::experimental::rendering::universal::lightstats::LightStats= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,layer,__mi)}
-pub unsafe fn is_scene_lit(this:ILight2DCullResult_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(layer),__mi)}
+}
+}
+#[doc="`IsSceneLit()` overload"]fn is_scene_lit(self,)->bool{unsafe{let __receiver= <ILight2DCullResult_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <ILight2DCullResult_Interface as::unity2::ClassIdentity> ::NAME,"IsSceneLit",));
-let inner:extern "C" fn(ILight2DCullResult_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ILight2DCullResult_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-ilight2dcullresult_interface")]pub trait IILight2DCullResult_InterfaceMethods:IILight2DCullResult_Interface{#[doc="`get_visibleLights()` overload"]fn get_visible_lights(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>{unsafe{let __receiver= <ILight2DCullResult_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ILight2DCullResult_Interface_unity2_raw::get_visible_lights(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetLightStatsByLayer(i32)` overload"]fn get_light_stats_by_layer(self,layer:impl::core::convert::Into<i32>)->crate::unity_engine::experimental::rendering::universal::lightstats::LightStats{unsafe{let __receiver= <ILight2DCullResult_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ILight2DCullResult_Interface_unity2_raw::get_light_stats_by_layer(__receiver, ::core::convert::Into::into(layer), ::core::option::Option::None)}
-}
-#[doc="`IsSceneLit()` overload"]fn is_scene_lit(self,)->bool{unsafe{let __receiver= <ILight2DCullResult_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ILight2DCullResult_Interface_unity2_raw::is_scene_lit(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -63,6 +57,17 @@ __ILight2DCullResult_Interface_unity2_raw::is_scene_lit(__receiver, ::core::opti
 #[cfg(feature="unity_engine-experimental-rendering-universal-ilight2dcullresult_interface")]impl ILight2DCullResult_Interface{pub fn get_visible_lights_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_light_stats_by_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn is_scene_lit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-ilight2dcullresult_interface")]impl ILight2DCullResult_Interface{#[doc="Direct (non-virtual) call to `ILight2DCullResult_Interface`'s own `get_visibleLights`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_visible_lights(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>{let __mi=Self::get_visible_lights_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ILight2DCullResult_Interface`'s own `GetLightStatsByLayer`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_light_stats_by_layer(this:impl::core::convert::Into< ::unity2::IlInstance> ,layer:i32,)->crate::unity_engine::experimental::rendering::universal::lightstats::LightStats{let __mi=Self::get_light_stats_by_layer_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->crate::unity_engine::experimental::rendering::universal::lightstats::LightStats= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),layer, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ILight2DCullResult_Interface`'s own `IsSceneLit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_scene_lit(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_scene_lit_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-ilight2dcullresult_interface")]

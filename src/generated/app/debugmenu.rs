@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmenu/DebugMenu.md"))]#[::unity2::class(namespace="App",name="DebugMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct DebugMenu{#[static_field]#[rename(name="COLOR_WINDOW")]pub color_window:crate::unity_engine::color::Color, #[static_field]#[rename(name="COLOR_ZERO")]pub color_zero:crate::unity_engine::color::Color, #[offset(112)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::rect::Rect, #[offset(128)]#[rename(name="m_Select")]pub m_select:i32, #[offset(132)]#[rename(name="m_Orient")]pub m_orient:f32, #[offset(136)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="m_Depth")]pub m_depth:i32, #[offset(156)]#[rename(name="m_Anchor")]pub m_anchor:crate::app::gx::GX_Anchor, #[offset(160)]#[rename(name="m_Prefab")]pub m_prefab:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_Window")]pub m_window:crate::app::debugwindow::DebugWindow, #[offset(176)]#[rename(name="m_BindMode")]pub m_bind_mode:crate::app::debugmenu::DebugMenu_BindMode, #[offset(184)]#[rename(name="m_Items")]pub m_items:crate::system::collections::generic::list_1::List_1<crate::app::menuitem::MenuItem> , #[offset(192)]#[rename(name="m_IsFirst")]pub m_is_first:bool, #[offset(193)]#[rename(name="m_IsRelay")]pub m_is_relay:bool, #[offset(194)]#[rename(name="m_IsCalcW")]pub m_is_calc_w:bool, #[offset(195)]#[rename(name="m_IsCalcH")]pub m_is_calc_h:bool, #[offset(196)]#[rename(name="m_IsMovePage")]pub m_is_move_page:bool, #[offset(197)]#[rename(name="m_IsMapCursor")]pub m_is_map_cursor:bool, #[offset(200)]#[rename(name="m_RecordKey")]pub m_record_key: ::unity2::Il2CppString, #[offset(208)]#[rename(name="m_SelectTick")]pub m_select_tick:i32, #[offset(212)]#[rename(name="m_SelectTime")]pub m_select_time:f32, #[offset(216)]#[rename(name="m_TimeScale")]pub m_time_scale:f32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmenu/DebugMenu_AnchorLocation.md"))]#[::unity2::class(namespace="App",name="DebugMenu.AnchorLocation")]#[parent(crate::system::object::Object)]pub struct DebugMenu_AnchorLocation{}
 
 
@@ -35,142 +38,10 @@ pub fn alpha()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmenu/DebugMenu.md"))]#[::unity2::class(namespace="App",name="DebugMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct DebugMenu{#[static_field]#[rename(name="COLOR_WINDOW")]pub color_window:crate::unity_engine::color::Color, #[static_field]#[rename(name="COLOR_ZERO")]pub color_zero:crate::unity_engine::color::Color, #[offset(112)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::rect::Rect, #[offset(128)]#[rename(name="m_Select")]pub m_select:i32, #[offset(132)]#[rename(name="m_Orient")]pub m_orient:f32, #[offset(136)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="m_Depth")]pub m_depth:i32, #[offset(156)]#[rename(name="m_Anchor")]pub m_anchor:crate::app::gx::GX_Anchor, #[offset(160)]#[rename(name="m_Prefab")]pub m_prefab:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_Window")]pub m_window:crate::app::debugwindow::DebugWindow, #[offset(176)]#[rename(name="m_BindMode")]pub m_bind_mode:crate::app::debugmenu::DebugMenu_BindMode, #[offset(184)]#[rename(name="m_Items")]pub m_items:crate::system::collections::generic::list_1::List_1<crate::app::menuitem::MenuItem> , #[offset(192)]#[rename(name="m_IsFirst")]pub m_is_first:bool, #[offset(193)]#[rename(name="m_IsRelay")]pub m_is_relay:bool, #[offset(194)]#[rename(name="m_IsCalcW")]pub m_is_calc_w:bool, #[offset(195)]#[rename(name="m_IsCalcH")]pub m_is_calc_h:bool, #[offset(196)]#[rename(name="m_IsMovePage")]pub m_is_move_page:bool, #[offset(197)]#[rename(name="m_IsMapCursor")]pub m_is_map_cursor:bool, #[offset(200)]#[rename(name="m_RecordKey")]pub m_record_key: ::unity2::Il2CppString, #[offset(208)]#[rename(name="m_SelectTick")]pub m_select_tick:i32, #[offset(212)]#[rename(name="m_SelectTime")]pub m_select_time:f32, #[offset(216)]#[rename(name="m_TimeScale")]pub m_time_scale:f32,}
-
 }
 
 #[cfg(feature = "app-debugmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-debugmenu")]impl DebugMenu_AnchorLocation{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d4b80usize)as*mut u8,();
-)}
-}
-#[doc="`GetX(crate::app::gx::GX_Anchor)` overload"]pub fn get_x(anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d4de0usize)as*mut u8,i32;
-(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor))}
-}
-#[doc="`GetY(crate::app::gx::GX_Anchor)` overload"]pub fn get_y(anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d5110usize)as*mut u8,i32;
-(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor))}
-}
-#[doc="`GetNext(crate::app::gx::GX_Anchor, i32, i32)` overload"]pub fn get_next(anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor> ,dx:impl::core::convert::Into<i32> ,dy:impl::core::convert::Into<i32>)->crate::app::gx::GX_Anchor{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d5440usize)as*mut u8,crate::app::gx::GX_Anchor;
-(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor),(i32)::core::convert::Into::into(dx),(i32)::core::convert::Into::into(dy))}
-}
-}
-
-#[cfg(feature="app-debugmenu")]pub trait IDebugMenu_AnchorLocationMethods:IDebugMenu_AnchorLocation{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugMenu_AnchorLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d5540usize)as*mut u8,();
-(DebugMenu_AnchorLocation)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugmenu")]impl<__T:IDebugMenu_AnchorLocation>IDebugMenu_AnchorLocationMethods for __T{}
-
-#[cfg(feature="app-debugmenu")]impl DebugMenu_AnchorLocation{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-debugmenu")]impl DebugMenu_AnchorLocation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugMenu_AnchorLocation), ::core::stringify!(new),));
- <Self as IDebugMenu_AnchorLocationMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugMenu_unity2_raw{use super:: * ;
-pub unsafe fn on_create(this:DebugMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnCreate",));
-let inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:DebugMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_open(this:DebugMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnOpen",));
-let inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_close(this:DebugMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
-let inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_rebuild(this:DebugMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",20usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnRebuild",));
-let inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_select(this:DebugMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",21usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:DebugMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn x_call(this:DebugMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",23usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"XCall",));
-let inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_tick(this:DebugMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnTick",));
-let inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-debugmenu")]impl DebugMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::debugmenu::DebugMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a02670usize)as*mut u8,crate::app::debugmenu::DebugMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -187,22 +58,76 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-debugmenu")]pub trait IDebugMenuMethods:IDebugMenu{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugMenu_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let __inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnOpen()` overload"]fn on_open(self,)->(){unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugMenu_unity2_raw::on_open(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnOpen",));
+let __inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let __inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnRebuild()` overload"]fn on_rebuild(self,)->(){unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugMenu_unity2_raw::on_rebuild(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnRebuild",));
+let __inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugMenu_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`TickItem(crate::app::menuitem::MenuItem)` overload"]fn tick_item(self,item:impl::core::convert::Into<crate::app::menuitem::MenuItem>)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a06260usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
@@ -253,13 +178,40 @@ __DebugMenu_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 (DebugMenu)__receiver)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"XCall",));
+let __inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugMenu_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <DebugMenu as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let __inner:extern "C" fn(DebugMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetItemBlank(i32, i32)` overload"]fn get_item_blank(self,index:impl::core::convert::Into<i32> ,dir:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <DebugMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0a1c0usize)as*mut u8,f32;
@@ -632,6 +584,35 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[93]}
 }
 
+#[cfg(feature="app-debugmenu")]impl DebugMenu{#[doc="Direct (non-virtual) call to `DebugMenu`'s own `OnCreate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_create(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_create_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugMenu`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugMenu`'s own `OnOpen`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_open(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_open_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugMenu`'s own `OnClose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugMenu`'s own `OnRebuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_rebuild(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_rebuild_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugMenu`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugMenu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugMenu`'s own `XCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn x_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::menuitem::MenuItem_Result{let __mi=Self::x_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugMenu`'s own `OnTick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_tick_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-debugmenu")]impl DebugMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(DebugMenu), ::core::stringify!(new),));
@@ -639,16 +620,52 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-debugmenu")]impl DebugMenu_AnchorLocation{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d4b80usize)as*mut u8,();
+)}
+}
+#[doc="`GetX(crate::app::gx::GX_Anchor)` overload"]pub fn get_x(anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d4de0usize)as*mut u8,i32;
+(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor))}
+}
+#[doc="`GetY(crate::app::gx::GX_Anchor)` overload"]pub fn get_y(anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d5110usize)as*mut u8,i32;
+(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor))}
+}
+#[doc="`GetNext(crate::app::gx::GX_Anchor, i32, i32)` overload"]pub fn get_next(anchor:impl::core::convert::Into<crate::app::gx::GX_Anchor> ,dx:impl::core::convert::Into<i32> ,dy:impl::core::convert::Into<i32>)->crate::app::gx::GX_Anchor{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d5440usize)as*mut u8,crate::app::gx::GX_Anchor;
+(crate::app::gx::GX_Anchor)::core::convert::Into::into(anchor),(i32)::core::convert::Into::into(dx),(i32)::core::convert::Into::into(dy))}
+}
+}
+
+#[cfg(feature="app-debugmenu")]pub trait IDebugMenu_AnchorLocationMethods:IDebugMenu_AnchorLocation{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugMenu_AnchorLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d5540usize)as*mut u8,();
+(DebugMenu_AnchorLocation)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugmenu")]impl<__T:IDebugMenu_AnchorLocation>IDebugMenu_AnchorLocationMethods for __T{}
+
+#[cfg(feature="app-debugmenu")]impl DebugMenu_AnchorLocation{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-debugmenu")]impl DebugMenu_AnchorLocation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugMenu_AnchorLocation), ::core::stringify!(new),));
+ <Self as IDebugMenu_AnchorLocationMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-debugmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DebugMenu;
+    pub use super::IDebugMenu;
+    pub use super::IDebugMenuMethods;
     pub use super::DebugMenu_AnchorLocation;
     pub use super::IDebugMenu_AnchorLocation;
     pub use super::IDebugMenu_AnchorLocationMethods;
     pub use super::DebugMenu_BindMode;
-    pub use super::DebugMenu;
-    pub use super::IDebugMenu;
-    pub use super::IDebugMenuMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

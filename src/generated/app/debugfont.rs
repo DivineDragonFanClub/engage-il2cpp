@@ -11,9 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugfont/DebugFont.md"))]#[::unity2::class(namespace="App",name="DebugFont")]#[parent(crate::system::object::Object)]pub struct DebugFont{#[static_field]#[rename(name="s_Font")]pub s_font:crate::unity_engine::font::Font, #[static_field]#[rename(name="s_NormalStyle")]pub s_normal_style:crate::unity_engine::guistyle::GUIStyle, #[static_field]#[rename(name="s_MiddleStyle")]pub s_middle_style:crate::unity_engine::guistyle::GUIStyle, #[static_field]#[rename(name="s_SmallStyle")]pub s_small_style:crate::unity_engine::guistyle::GUIStyle, #[static_field]#[rename(name="s_CurrentStyle")]pub s_current_style:crate::unity_engine::guistyle::GUIStyle,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugfont/DebugFont_Scope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DebugFont_Scope{pub m_style:crate::unity_engine::guistyle::GUIStyle,}
 impl::unity2::ClassIdentity for DebugFont_Scope{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DebugFont.Scope";
@@ -24,10 +21,25 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for DebugFont_Scope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugfont/DebugFont.md"))]#[::unity2::class(namespace="App",name="DebugFont")]#[parent(crate::system::object::Object)]pub struct DebugFont{#[static_field]#[rename(name="s_Font")]pub s_font:crate::unity_engine::font::Font, #[static_field]#[rename(name="s_NormalStyle")]pub s_normal_style:crate::unity_engine::guistyle::GUIStyle, #[static_field]#[rename(name="s_MiddleStyle")]pub s_middle_style:crate::unity_engine::guistyle::GUIStyle, #[static_field]#[rename(name="s_SmallStyle")]pub s_small_style:crate::unity_engine::guistyle::GUIStyle, #[static_field]#[rename(name="s_CurrentStyle")]pub s_current_style:crate::unity_engine::guistyle::GUIStyle,}
+
 }
 
 #[cfg(feature = "app-debugfont-types")]
 pub use __types::*;
+
+#[cfg(feature="app-debugfont")]impl DebugFont_Scope{#[doc="`.ctor(crate::unity_engine::guistyle::GUIStyle)` overload"]pub fn ctor(&mut self,style:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d4400usize)as*mut u8,();
+(*mut DebugFont_Scope)self as*mut DebugFont_Scope,(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d4540usize)as*mut u8,();
+(*mut DebugFont_Scope)self as*mut DebugFont_Scope)}
+}
+}
+
+#[cfg(feature="app-debugfont")]impl DebugFont_Scope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature="app-debugfont")]impl DebugFont{#[doc="`Intialize()` overload"]pub fn intialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a042b0usize)as*mut u8,();
 )}
@@ -93,25 +105,13 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-debugfont")]impl DebugFont_Scope{#[doc="`.ctor(crate::unity_engine::guistyle::GUIStyle)` overload"]pub fn ctor(&mut self,style:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d4400usize)as*mut u8,();
-(*mut DebugFont_Scope)self as*mut DebugFont_Scope,(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d4540usize)as*mut u8,();
-(*mut DebugFont_Scope)self as*mut DebugFont_Scope)}
-}
-}
-
-#[cfg(feature="app-debugfont")]impl DebugFont_Scope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
 #[cfg(feature = "app-debugfont")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DebugFont_Scope;
     pub use super::DebugFont;
     pub use super::IDebugFont;
     pub use super::IDebugFontMethods;
-    pub use super::DebugFont_Scope;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

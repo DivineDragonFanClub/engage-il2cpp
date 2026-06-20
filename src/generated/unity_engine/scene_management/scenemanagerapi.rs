@@ -16,29 +16,6 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-scene_management-scenemanagerapi-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-scene_management-scenemanagerapi")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SceneManagerAPI_unity2_raw{use super:: * ;
-pub unsafe fn load_scene_async_by_name_or_index(this:SceneManagerAPI,scene_name: ::unity2::Il2CppString,scene_build_index:i32,parameters:crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,must_complete_next_frame:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::asyncoperation::AsyncOperation{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <SceneManagerAPI as::unity2::ClassIdentity> ::NAME,"LoadSceneAsyncByNameOrIndex",));
-let inner:extern "C" fn(SceneManagerAPI, ::unity2::Il2CppString,i32,crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,bool, ::unity2::OptionalMethod,)->crate::unity_engine::asyncoperation::AsyncOperation= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,scene_name,scene_build_index,parameters,must_complete_next_frame,__mi)}
-pub unsafe fn load_first_scene(this:SceneManagerAPI,must_load_async:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::asyncoperation::AsyncOperation{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <SceneManagerAPI as::unity2::ClassIdentity> ::NAME,"LoadFirstScene",));
-let inner:extern "C" fn(SceneManagerAPI,bool, ::unity2::OptionalMethod,)->crate::unity_engine::asyncoperation::AsyncOperation= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,must_load_async,__mi)}
-}
-
 #[cfg(feature="unity_engine-scene_management-scenemanagerapi")]impl SceneManagerAPI{#[doc="`get_ActiveAPI()` overload"]pub fn get_active_api()->crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8a9f0usize)as*mut u8,crate::unity_engine::scene_management::scenemanagerapi::SceneManagerAPI;
 )}
 }
@@ -55,10 +32,28 @@ inner(this,must_load_async,__mi)}
 (SceneManagerAPI)__receiver)}
 }
 #[doc="`LoadSceneAsyncByNameOrIndex(::unity2::Il2CppString, i32, crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters, bool)` overload"]fn load_scene_async_by_name_or_index(self,scene_name:impl::core::convert::Into< ::unity2::Il2CppString> ,scene_build_index:impl::core::convert::Into<i32> ,parameters:impl::core::convert::Into<crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters> ,must_complete_next_frame:impl::core::convert::Into<bool>)->crate::unity_engine::asyncoperation::AsyncOperation{unsafe{let __receiver= <SceneManagerAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SceneManagerAPI_unity2_raw::load_scene_async_by_name_or_index(__receiver, ::core::convert::Into::into(scene_name), ::core::convert::Into::into(scene_build_index), ::core::convert::Into::into(parameters), ::core::convert::Into::into(must_complete_next_frame), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SceneManagerAPI as::unity2::ClassIdentity> ::NAME,"LoadSceneAsyncByNameOrIndex",));
+let __inner:extern "C" fn(SceneManagerAPI, ::unity2::Il2CppString,i32,crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,bool, ::unity2::OptionalMethod,)->crate::unity_engine::asyncoperation::AsyncOperation= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(scene_name), ::core::convert::Into::into(scene_build_index), ::core::convert::Into::into(parameters), ::core::convert::Into::into(must_complete_next_frame),__mi)}
+}
 }
 #[doc="`LoadFirstScene(bool)` overload"]fn load_first_scene(self,must_load_async:impl::core::convert::Into<bool>)->crate::unity_engine::asyncoperation::AsyncOperation{unsafe{let __receiver= <SceneManagerAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SceneManagerAPI_unity2_raw::load_first_scene(__receiver, ::core::convert::Into::into(must_load_async), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SceneManagerAPI as::unity2::ClassIdentity> ::NAME,"LoadFirstScene",));
+let __inner:extern "C" fn(SceneManagerAPI,bool, ::unity2::OptionalMethod,)->crate::unity_engine::asyncoperation::AsyncOperation= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(must_load_async),__mi)}
+}
 }
 }
 
@@ -70,6 +65,14 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn load_scene_async_by_name_or_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn load_first_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="unity_engine-scene_management-scenemanagerapi")]impl SceneManagerAPI{#[doc="Direct (non-virtual) call to `SceneManagerAPI`'s own `LoadSceneAsyncByNameOrIndex`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn load_scene_async_by_name_or_index(this:impl::core::convert::Into< ::unity2::IlInstance> ,scene_name: ::unity2::Il2CppString,scene_build_index:i32,parameters:crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,must_complete_next_frame:bool,)->crate::unity_engine::asyncoperation::AsyncOperation{let __mi=Self::load_scene_async_by_name_or_index_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString,i32,crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,bool, ::unity2::OptionalMethod,)->crate::unity_engine::asyncoperation::AsyncOperation= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),scene_name,scene_build_index,parameters,must_complete_next_frame, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `SceneManagerAPI`'s own `LoadFirstScene`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn load_first_scene(this:impl::core::convert::Into< ::unity2::IlInstance> ,must_load_async:bool,)->crate::unity_engine::asyncoperation::AsyncOperation{let __mi=Self::load_first_scene_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->crate::unity_engine::asyncoperation::AsyncOperation= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),must_load_async, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-scene_management-scenemanagerapi")]impl SceneManagerAPI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

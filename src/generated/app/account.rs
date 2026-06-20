@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaResultFunction.md"))]#[::unity2::class(namespace="App",name="Account.SetupNsaResultFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Account_SetupNsaResultFunction{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Account_SetupNsaResult{pub value:i32,}
 impl::unity2::ClassIdentity for Account_SetupNsaResult{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Account.SetupNsaResult";
@@ -38,6 +35,9 @@ pub fn cancelled()->Self{Self{value:1}
 pub fn succeeded()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaResultFunction.md"))]#[::unity2::class(namespace="App",name="Account.SetupNsaResultFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Account_SetupNsaResultFunction{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Account_SetupNsaSequence_Label{pub value:i32,}
@@ -74,25 +74,21 @@ pub fn end()->Self{Self{value:5}
 #[cfg(feature = "app-account-types")]
 pub use __types::*;
 
-#[cfg(feature="app-account")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Account_SetupNsaResultFunction_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:Account_SetupNsaResultFunction,result:crate::app::account::Account_SetupNsaResult,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <Account_SetupNsaResultFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(Account_SetupNsaResultFunction,crate::app::account::Account_SetupNsaResult, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,result,__mi)}
-}
-
 #[cfg(feature="app-account")]pub trait IAccount_SetupNsaResultFunctionMethods:IAccount_SetupNsaResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Account_SetupNsaResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2906460usize)as*mut u8,();
 (Account_SetupNsaResultFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::account::Account_SetupNsaResult)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::account::Account_SetupNsaResult>)->(){unsafe{let __receiver= <Account_SetupNsaResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Account_SetupNsaResultFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Account_SetupNsaResultFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(Account_SetupNsaResultFunction,crate::app::account::Account_SetupNsaResult, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(result),__mi)}
+}
 }
 }
 
@@ -100,6 +96,11 @@ __Account_SetupNsaResultFunction_unity2_raw::invoke(__receiver, ::core::convert:
 
 #[cfg(feature="app-account")]impl Account_SetupNsaResultFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-account")]impl Account_SetupNsaResultFunction{#[doc="Direct (non-virtual) call to `Account_SetupNsaResultFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,result:crate::app::account::Account_SetupNsaResult,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::account::Account_SetupNsaResult, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),result, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-account")]impl Account_SetupNsaResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -203,10 +204,10 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 #[cfg(feature = "app-account")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Account_SetupNsaResult;
     pub use super::Account_SetupNsaResultFunction;
     pub use super::IAccount_SetupNsaResultFunction;
     pub use super::IAccount_SetupNsaResultFunctionMethods;
-    pub use super::Account_SetupNsaResult;
     pub use super::Account_SetupNsaSequence_Label;
     pub use super::Account_SetupNsaSequence;
     pub use super::IAccount_SetupNsaSequence;

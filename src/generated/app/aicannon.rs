@@ -11,9 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon_CannonData.md"))]#[::unity2::class(namespace="App",name="AICannon.CannonData")]#[parent(crate::system::object::Object)]pub struct AICannon_CannonData{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon.md"))]#[::unity2::class(namespace="App",name="AICannon")]#[parent(crate::system::object::Object)]pub struct AICannon{#[offset(16)]#[rename(name="m_Cannons")]pub m_cannons:crate::system::collections::generic::list_1::List_1<crate::app::aicannon::AICannon_CannonData> , #[offset(24)]#[rename(name="m_Simulator")]pub m_simulator:crate::app::aibattlesimulator::AIBattleSimulator, #[offset(32)]#[rename(name="m_EnemiesMoveImage")]pub m_enemies_move_image:crate::app::mapdeploymoveimage::MapDeployMoveImage, #[offset(40)]#[rename(name="m_NearEnemies")]pub m_near_enemies: ::unity2::Array<crate::app::unit::Unit> , #[offset(48)]#[rename(name="m_EnemyDists")]pub m_enemy_dists: ::unity2::Array<i32> ,}
 
 
@@ -26,6 +23,9 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for AICannon_CannonSkillScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon_CannonData.md"))]#[::unity2::class(namespace="App",name="AICannon.CannonData")]#[parent(crate::system::object::Object)]pub struct AICannon_CannonData{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon_ChangeEquipScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AICannon_ChangeEquipScope{pub m_actor:crate::app::unit::Unit,pub m_equipped_index:i32,}
@@ -42,49 +42,6 @@ impl::unity2::IlType for AICannon_ChangeEquipScope{fn il_type()-> &'static::unit
 
 #[cfg(feature = "app-aicannon-types")]
 pub use __types::*;
-
-#[cfg(feature="app-aicannon")]pub trait IAICannon_CannonDataMethods:IAICannon_CannonData{#[doc="`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,inspector:impl::core::convert::Into<crate::app::cannoninspector::CannonInspector>)->(){unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29413c0usize)as*mut u8,();
-(AICannon_CannonData)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::cannoninspector::CannonInspector)::core::convert::Into::into(inspector))}
-}
-#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29420b0usize)as*mut u8,i32;
-(AICannon_CannonData)__receiver)}
-}
-#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29420c0usize)as*mut u8,i32;
-(AICannon_CannonData)__receiver)}
-}
-#[doc="`get_Inspector()` overload"]fn get_inspector(self,)->crate::app::cannoninspector::CannonInspector{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29420d0usize)as*mut u8,crate::app::cannoninspector::CannonInspector;
-(AICannon_CannonData)__receiver)}
-}
-#[doc="`get_Occupant()` overload"]fn get_occupant(self,)->i32{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29420e0usize)as*mut u8,i32;
-(AICannon_CannonData)__receiver)}
-}
-#[doc="`set_Occupant(i32)` overload"]fn set_occupant(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29420f0usize)as*mut u8,();
-(AICannon_CannonData)__receiver,(i32)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-aicannon")]impl<__T:IAICannon_CannonData>IAICannon_CannonDataMethods for __T{}
-
-#[cfg(feature="app-aicannon")]impl AICannon_CannonData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_inspector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_occupant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_occupant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-aicannon")]impl AICannon_CannonData{#[doc="`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` — overload selector"]pub fn new(x:i32,z:i32,inspector:crate::app::cannoninspector::CannonInspector)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AICannon_CannonData), ::core::stringify!(new),));
- <Self as IAICannon_CannonDataMethods> ::ctor(this,x,z,inspector);
-this}
-}
 
 #[cfg(feature="app-aicannon")]impl AICannon{#[doc="`CanUse(crate::app::unit::Unit, crate::app::aicannon::AICannon_CannonData)` overload"]pub fn can_use(actor:impl::core::convert::Into<crate::app::unit::Unit> ,cannon:impl::core::convert::Into<crate::app::aicannon::AICannon_CannonData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x192c8a0usize)as*mut u8,bool;
 (crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::aicannon::AICannon_CannonData)::core::convert::Into::into(cannon))}
@@ -156,6 +113,49 @@ this}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-aicannon")]pub trait IAICannon_CannonDataMethods:IAICannon_CannonData{#[doc="`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,inspector:impl::core::convert::Into<crate::app::cannoninspector::CannonInspector>)->(){unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29413c0usize)as*mut u8,();
+(AICannon_CannonData)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::cannoninspector::CannonInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29420b0usize)as*mut u8,i32;
+(AICannon_CannonData)__receiver)}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29420c0usize)as*mut u8,i32;
+(AICannon_CannonData)__receiver)}
+}
+#[doc="`get_Inspector()` overload"]fn get_inspector(self,)->crate::app::cannoninspector::CannonInspector{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29420d0usize)as*mut u8,crate::app::cannoninspector::CannonInspector;
+(AICannon_CannonData)__receiver)}
+}
+#[doc="`get_Occupant()` overload"]fn get_occupant(self,)->i32{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29420e0usize)as*mut u8,i32;
+(AICannon_CannonData)__receiver)}
+}
+#[doc="`set_Occupant(i32)` overload"]fn set_occupant(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29420f0usize)as*mut u8,();
+(AICannon_CannonData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-aicannon")]impl<__T:IAICannon_CannonData>IAICannon_CannonDataMethods for __T{}
+
+#[cfg(feature="app-aicannon")]impl AICannon_CannonData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_inspector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_occupant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_occupant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-aicannon")]impl AICannon_CannonData{#[doc="`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` — overload selector"]pub fn new(x:i32,z:i32,inspector:crate::app::cannoninspector::CannonInspector)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AICannon_CannonData), ::core::stringify!(new),));
+ <Self as IAICannon_CannonDataMethods> ::ctor(this,x,z,inspector);
+this}
+}
+
 #[cfg(feature="app-aicannon")]impl AICannon_ChangeEquipScope{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,actor:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2942160usize)as*mut u8,();
 (*mut AICannon_ChangeEquipScope)self as*mut AICannon_ChangeEquipScope,(crate::app::unit::Unit)::core::convert::Into::into(actor))}
 }
@@ -171,13 +171,13 @@ pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 #[cfg(feature = "app-aicannon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AICannon_CannonData;
-    pub use super::IAICannon_CannonData;
-    pub use super::IAICannon_CannonDataMethods;
     pub use super::AICannon;
     pub use super::IAICannon;
     pub use super::IAICannonMethods;
     pub use super::AICannon_CannonSkillScope;
+    pub use super::AICannon_CannonData;
+    pub use super::IAICannon_CannonData;
+    pub use super::IAICannon_CannonDataMethods;
     pub use super::AICannon_ChangeEquipScope;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;

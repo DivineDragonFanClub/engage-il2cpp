@@ -18,29 +18,6 @@ use crate::unity_engine::networking::downloadhandler::{DownloadHandler,IDownload
 #[cfg(feature = "unity_engine-networking-downloadhandlerassetbundle-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-networking-downloadhandlerassetbundle")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DownloadHandlerAssetBundle_unity2_raw{use super:: * ;
-pub unsafe fn get_data(this:DownloadHandlerAssetBundle,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<u8>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <DownloadHandlerAssetBundle as::unity2::ClassIdentity> ::NAME,"GetData",));
-let inner:extern "C" fn(DownloadHandlerAssetBundle, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_text(this:DownloadHandlerAssetBundle,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <DownloadHandlerAssetBundle as::unity2::ClassIdentity> ::NAME,"GetText",));
-let inner:extern "C" fn(DownloadHandlerAssetBundle, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-networking-downloadhandlerassetbundle")]impl DownloadHandlerAssetBundle{#[doc="`Create(crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle, ::unity2::Il2CppString, u32)` overload"]pub fn create(obj:impl::core::convert::Into<crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle> ,url:impl::core::convert::Into< ::unity2::Il2CppString> ,crc:impl::core::convert::Into<u32>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f45390usize)as*mut u8, ::unity2::IntPtr;
 (crate::unity_engine::networking::downloadhandlerassetbundle::DownloadHandlerAssetBundle)::core::convert::Into::into(obj),(::unity2::Il2CppString)::core::convert::Into::into(url),(u32)::core::convert::Into::into(crc))}
 }
@@ -72,10 +49,28 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f45470usize)as*mut
 (DownloadHandlerAssetBundle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(url),(crate::unity_engine::cachedassetbundle::CachedAssetBundle)::core::convert::Into::into(cached_bundle),(u32)::core::convert::Into::into(crc))}
 }
 #[doc="`GetData()` overload"]fn get_data(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <DownloadHandlerAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DownloadHandlerAssetBundle_unity2_raw::get_data(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DownloadHandlerAssetBundle as::unity2::ClassIdentity> ::NAME,"GetData",));
+let __inner:extern "C" fn(DownloadHandlerAssetBundle, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetText()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DownloadHandlerAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DownloadHandlerAssetBundle_unity2_raw::get_text(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <DownloadHandlerAssetBundle as::unity2::ClassIdentity> ::NAME,"GetText",));
+let __inner:extern "C" fn(DownloadHandlerAssetBundle, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_assetBundle()` overload"]fn get_asset_bundle(self,)->crate::unity_engine::assetbundle::AssetBundle{unsafe{let __receiver= <DownloadHandlerAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f457a0usize)as*mut u8,crate::unity_engine::assetbundle::AssetBundle;
@@ -95,6 +90,14 @@ pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn get_asset_bundle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn create_cached_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="unity_engine-networking-downloadhandlerassetbundle")]impl DownloadHandlerAssetBundle{#[doc="Direct (non-virtual) call to `DownloadHandlerAssetBundle`'s own `GetData`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_data(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<u8>{let __mi=Self::get_data_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DownloadHandlerAssetBundle`'s own `GetText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_text_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-networking-downloadhandlerassetbundle")]impl DownloadHandlerAssetBundle{#[doc="`.ctor(::unity2::Il2CppString, u32)` — overload selector"]pub fn new(url: ::unity2::Il2CppString,crc:u32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -18,21 +18,17 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-playreportcommon-types")]
 pub use __types::*;
 
-#[cfg(feature="app-playreportcommon")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PlayReportCommon_unity2_raw{use super:: * ;
-pub unsafe fn get_buffer_size_impl(this:PlayReportCommon,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-playreportcommon")]pub trait IPlayReportCommonMethods:IPlayReportCommon{#[doc="`GetBufferSizeImpl()` overload"]fn get_buffer_size_impl(self,)->i64{unsafe{let __receiver= <PlayReportCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <PlayReportCommon as::unity2::ClassIdentity> ::NAME,"GetBufferSizeImpl",));
-let inner:extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PlayReportCommon, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-playreportcommon")]pub trait IPlayReportCommonMethods:IPlayReportCommon{#[doc="`GetBufferSizeImpl()` overload"]fn get_buffer_size_impl(self,)->i64{unsafe{let __receiver= <PlayReportCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PlayReportCommon_unity2_raw::get_buffer_size_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReportChapterClear()` overload"]fn report_chapter_clear(self,)->(){unsafe{let __receiver= <PlayReportCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x280c3e0usize)as*mut u8,();
@@ -139,6 +135,11 @@ pub fn report_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn report_hub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 pub fn report_other_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
+
+#[cfg(feature="app-playreportcommon")]impl PlayReportCommon{#[doc="Direct (non-virtual) call to `PlayReportCommon`'s own `GetBufferSizeImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_buffer_size_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i64{let __mi=Self::get_buffer_size_impl_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-playreportcommon")]impl PlayReportCommon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

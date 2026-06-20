@@ -487,16 +487,6 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <Script as::unity2::ClassIdentity> ::NAME,"GetBanner",e),}
 }
 }
-pub unsafe fn moon_sharp_interpreter_i_script_private_resource_get_owner_script(this:Script,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <Script as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.IScriptPrivateResource.get_OwnerScript",));
-let inner:extern "C" fn(Script, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_line{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<Script as::unity2::ClassIdentity> ::class(),"GetLine",1,param_types,false,)}
@@ -711,7 +701,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (Script)__receiver,(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(value))}
 }
 #[doc="`MoonSharp.Interpreter.IScriptPrivateResource.get_OwnerScript()` overload"]fn moon_sharp_interpreter_i_script_private_resource_get_owner_script(self,)->crate::moon_sharp::interpreter::script::Script{unsafe{let __receiver= <Script as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__Script_unity2_raw::moon_sharp_interpreter_i_script_private_resource_get_owner_script(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Script as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.IScriptPrivateResource.get_OwnerScript",));
+let __inner:extern "C" fn(Script, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetLine(i32)` overload"]fn get_line(self,i_address:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <Script as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__Script_unity2_raw::__lookup_get_line::get_method_info().method_ptr,i32;
@@ -780,6 +779,11 @@ pub fn moon_sharp_interpreter_i_script_private_resource_get_owner_script_method_
 pub fn get_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
 pub fn get_line_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
 pub fn get_source_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-script")]impl Script{#[doc="Direct (non-virtual) call to `Script`'s own `MoonSharp.Interpreter.IScriptPrivateResource.get_OwnerScript`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn moon_sharp_interpreter_i_script_private_resource_get_owner_script(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::moon_sharp::interpreter::script::Script{let __mi=Self::moon_sharp_interpreter_i_script_private_resource_get_owner_script_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-script")]impl Script{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

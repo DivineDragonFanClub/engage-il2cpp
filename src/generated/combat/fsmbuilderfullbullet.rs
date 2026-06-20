@@ -18,34 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-fsmbuilderfullbullet-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-fsmbuilderfullbullet")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FSMBuilderFullBullet_unity2_raw{use super:: * ;
-pub unsafe fn build(this:FSMBuilderFullBullet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="combat-fsmbuilderfullbullet")]pub trait IFSMBuilderFullBulletMethods:IFSMBuilderFullBullet{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <FSMBuilderFullBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <FSMBuilderFullBullet as::unity2::ClassIdentity> ::NAME,"Build",));
-let inner:extern "C" fn(FSMBuilderFullBullet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(FSMBuilderFullBullet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_skipover(this:FSMBuilderFullBullet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildSkipover()` overload"]fn build_skipover(self,)->(){unsafe{let __receiver= <FSMBuilderFullBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <FSMBuilderFullBullet as::unity2::ClassIdentity> ::NAME,"BuildSkipover",));
-let inner:extern "C" fn(FSMBuilderFullBullet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(FSMBuilderFullBullet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="combat-fsmbuilderfullbullet")]pub trait IFSMBuilderFullBulletMethods:IFSMBuilderFullBullet{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <FSMBuilderFullBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FSMBuilderFullBullet_unity2_raw::build(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildSkipover()` overload"]fn build_skipover(self,)->(){unsafe{let __receiver= <FSMBuilderFullBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__FSMBuilderFullBullet_unity2_raw::build_skipover(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FSMBuilderFullBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2d478a0usize)as*mut u8,();
@@ -58,6 +53,14 @@ __FSMBuilderFullBullet_unity2_raw::build_skipover(__receiver, ::core::option::Op
 #[cfg(feature="combat-fsmbuilderfullbullet")]impl FSMBuilderFullBullet{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn build_skipover_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="combat-fsmbuilderfullbullet")]impl FSMBuilderFullBullet{#[doc="Direct (non-virtual) call to `FSMBuilderFullBullet`'s own `Build`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `FSMBuilderFullBullet`'s own `BuildSkipover`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_skipover(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_skipover_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="combat-fsmbuilderfullbullet")]impl FSMBuilderFullBullet{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

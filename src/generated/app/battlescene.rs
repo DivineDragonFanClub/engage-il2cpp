@@ -21,9 +21,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlescene/BattleScene.md"))]#[::unity2::class(namespace="App",name="BattleScene")]#[parent(crate::app::pool::Pool_Node)]pub struct BattleScene{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::app::battlescenelist::BattleSceneList, #[offset(24)]#[rename(name="m_Side")]pub m_side:crate::app::battleside::BattleSide_Type, #[offset(28)]#[rename(name="m_Target")]pub m_target:crate::app::battleside::BattleSide_Type, #[offset(32)]#[rename(name="m_Kind")]pub m_kind:crate::app::battlescene::BattleScene_Kind, #[offset(36)]#[rename(name="m_Skill")]pub m_skill:i32, #[offset(40)]#[rename(name="m_Item")]pub m_item:i32, #[offset(44)]#[rename(name="m_God")]pub m_god:i32, #[offset(48)]#[rename(name="m_Index")]pub m_index:i32, #[offset(56)]#[rename(name="m_Result")]pub m_result:crate::app::battlescene::BattleScene_FieldResult, #[offset(64)]#[rename(name="m_Guardian")]pub m_guardian:crate::app::battleside::BattleSide_Type, #[offset(72)]#[rename(name="m_Hps")]pub m_hps:crate::app::battleside::BattleSide_ShortArray, #[offset(80)]#[rename(name="m_Engages")]pub m_engages:crate::app::battleside::BattleSide_SbyteArray, #[offset(88)]#[rename(name="m_Damages")]pub m_damages:crate::app::battleside::BattleSide_ShortArray,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlescene/BattleScene_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleScene_Kind{pub value:i32,}
 impl::unity2::ClassIdentity for BattleScene_Kind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BattleScene.Kind";
@@ -82,9 +79,6 @@ pub fn num()->Self{Self{value:22}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlescene/BattleScene_FieldResult.md"))]#[::unity2::class(namespace="App",name="BattleScene.FieldResult")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::battlescene::BattleScene_Result>)]pub struct BattleScene_FieldResult{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlescene/BattleScene_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleScene_Result{pub value:i32,}
 impl::unity2::ClassIdentity for BattleScene_Result{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BattleScene.Result";
@@ -128,33 +122,16 @@ pub fn ignore()->Self{Self{value:16384}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlescene/BattleScene.md"))]#[::unity2::class(namespace="App",name="BattleScene")]#[parent(crate::app::pool::Pool_Node)]pub struct BattleScene{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::app::battlescenelist::BattleSceneList, #[offset(24)]#[rename(name="m_Side")]pub m_side:crate::app::battleside::BattleSide_Type, #[offset(28)]#[rename(name="m_Target")]pub m_target:crate::app::battleside::BattleSide_Type, #[offset(32)]#[rename(name="m_Kind")]pub m_kind:crate::app::battlescene::BattleScene_Kind, #[offset(36)]#[rename(name="m_Skill")]pub m_skill:i32, #[offset(40)]#[rename(name="m_Item")]pub m_item:i32, #[offset(44)]#[rename(name="m_God")]pub m_god:i32, #[offset(48)]#[rename(name="m_Index")]pub m_index:i32, #[offset(56)]#[rename(name="m_Result")]pub m_result:crate::app::battlescene::BattleScene_FieldResult, #[offset(64)]#[rename(name="m_Guardian")]pub m_guardian:crate::app::battleside::BattleSide_Type, #[offset(72)]#[rename(name="m_Hps")]pub m_hps:crate::app::battleside::BattleSide_ShortArray, #[offset(80)]#[rename(name="m_Engages")]pub m_engages:crate::app::battleside::BattleSide_SbyteArray, #[offset(88)]#[rename(name="m_Damages")]pub m_damages:crate::app::battleside::BattleSide_ShortArray,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlescene/BattleScene_FieldResult.md"))]#[::unity2::class(namespace="App",name="BattleScene.FieldResult")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::battlescene::BattleScene_Result>)]pub struct BattleScene_FieldResult{}
+
 }
 
 #[cfg(feature = "app-battlescene-types")]
 pub use __types::*;
-
-#[cfg(feature="app-battlescene")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleScene_unity2_raw{use super:: * ;
-pub unsafe fn on_enter(this:BattleScene,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <BattleScene as::unity2::ClassIdentity> ::NAME,"OnEnter",));
-let inner:extern "C" fn(BattleScene, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_exit(this:BattleScene,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <BattleScene as::unity2::ClassIdentity> ::NAME,"OnExit",));
-let inner:extern "C" fn(BattleScene, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-battlescene")]pub trait IBattleSceneMethods:IBattleScene{#[doc="`get_DebuggerDisplay()` overload"]fn get_debugger_display(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f9b0usize)as*mut u8, ::unity2::Il2CppString;
@@ -169,10 +146,28 @@ inner(this,__mi)}
 (BattleScene)__receiver)}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BattleScene_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BattleScene as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let __inner:extern "C" fn(BattleScene, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BattleScene_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BattleScene as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let __inner:extern "C" fn(BattleScene, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Setup(crate::app::battlescenelist::BattleSceneList, crate::app::battlescene::BattleScene_Kind, crate::app::battleside::BattleSide_Type, crate::app::battleside::BattleSide_Type, crate::app::battleinfo::BattleInfo, i32)` overload"]fn setup(self,list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList> ,kind:impl::core::convert::Into<crate::app::battlescene::BattleScene_Kind> ,current:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,target:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90550usize)as*mut u8,();
@@ -355,24 +350,19 @@ pub fn get_reverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn is_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
 }
 
+#[cfg(feature="app-battlescene")]impl BattleScene{#[doc="Direct (non-virtual) call to `BattleScene`'s own `OnEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enter_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `BattleScene`'s own `OnExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_exit(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_exit_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-battlescene")]impl BattleScene{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(BattleScene), ::core::stringify!(new),));
  <Self as IBattleSceneMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="app-battlescene")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleScene_FieldResult_unity2_raw{use super:: * ;
-pub unsafe fn to_int(this:BattleScene_FieldResult,value:crate::app::battlescene::BattleScene_Result,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <BattleScene_FieldResult as::unity2::ClassIdentity> ::NAME,"ToInt",));
-let inner:extern "C" fn(BattleScene_FieldResult,crate::app::battlescene::BattleScene_Result, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
 }
 
 #[cfg(feature="app-battlescene")]impl BattleScene_FieldResult{#[doc="`op_Implicit(crate::app::battlescene::BattleScene_FieldResult)` overload"]pub fn op_implicit(self_:impl::core::convert::Into<crate::app::battlescene::BattleScene_FieldResult>)->crate::app::battlescene::BattleScene_Result{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bbb00usize)as*mut u8,crate::app::battlescene::BattleScene_Result;
@@ -381,7 +371,16 @@ inner(this,value,__mi)}
 }
 
 #[cfg(feature="app-battlescene")]pub trait IBattleScene_FieldResultMethods:IBattleScene_FieldResult{#[doc="`ToInt(crate::app::battlescene::BattleScene_Result)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::battlescene::BattleScene_Result>)->i32{unsafe{let __receiver= <BattleScene_FieldResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__BattleScene_FieldResult_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BattleScene_FieldResult as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let __inner:extern "C" fn(BattleScene_FieldResult,crate::app::battlescene::BattleScene_Result, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleScene_FieldResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19bbb10usize)as*mut u8,();
@@ -396,6 +395,11 @@ pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="app-battlescene")]impl BattleScene_FieldResult{#[doc="Direct (non-virtual) call to `BattleScene_FieldResult`'s own `ToInt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_int(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::battlescene::BattleScene_Result,)->i32{let __mi=Self::to_int_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::battlescene::BattleScene_Result, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-battlescene")]impl BattleScene_FieldResult{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(BattleScene_FieldResult), ::core::stringify!(new),));
@@ -406,14 +410,14 @@ this}
 #[cfg(feature = "app-battlescene")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::BattleScene_Kind;
+    pub use super::BattleScene_Result;
     pub use super::BattleScene;
     pub use super::IBattleScene;
     pub use super::IBattleSceneMethods;
-    pub use super::BattleScene_Kind;
     pub use super::BattleScene_FieldResult;
     pub use super::IBattleScene_FieldResult;
     pub use super::IBattleScene_FieldResultMethods;
-    pub use super::BattleScene_Result;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

@@ -18,64 +18,57 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-hubmovestatemovespline-types")]
 pub use __types::*;
 
-#[cfg(feature="app-hubmovestatemovespline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubMoveStateMoveSpline_unity2_raw{use super:: * ;
-pub unsafe fn is_end(this:HubMoveStateMoveSpline,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <HubMoveStateMoveSpline as::unity2::ClassIdentity> ::NAME,"IsEnd",));
-let inner:extern "C" fn(HubMoveStateMoveSpline, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn start(this:HubMoveStateMoveSpline,resume:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <HubMoveStateMoveSpline as::unity2::ClassIdentity> ::NAME,"Start",));
-let inner:extern "C" fn(HubMoveStateMoveSpline,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,resume,__mi)}
-pub unsafe fn update(this:HubMoveStateMoveSpline,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <HubMoveStateMoveSpline as::unity2::ClassIdentity> ::NAME,"Update",));
-let inner:extern "C" fn(HubMoveStateMoveSpline, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_draw_gizmos(this:HubMoveStateMoveSpline,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <HubMoveStateMoveSpline as::unity2::ClassIdentity> ::NAME,"OnDrawGizmos",));
-let inner:extern "C" fn(HubMoveStateMoveSpline, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="app-hubmovestatemovespline")]pub trait IHubMoveStateMoveSplineMethods:IHubMoveStateMoveSpline{#[doc="`.ctor(crate::app::hubunitcontroller::HubUnitController, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::hubunitcontroller::HubUnitController> ,data:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,body_anim:impl::core::convert::Into< ::unity2::Il2CppString> ,face_anim:impl::core::convert::Into< ::unity2::Il2CppString> ,is_turn:impl::core::convert::Into<bool> ,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubMoveStateMoveSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23d2ef0usize)as*mut u8,();
 (HubMoveStateMoveSpline)__receiver,(crate::app::hubunitcontroller::HubUnitController)::core::convert::Into::into(unit),(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(data),(::unity2::Il2CppString)::core::convert::Into::into(body_anim),(::unity2::Il2CppString)::core::convert::Into::into(face_anim),(bool)::core::convert::Into::into(is_turn),(f32)::core::convert::Into::into(speed))}
 }
 #[doc="`IsEnd()` overload"]fn is_end(self,)->bool{unsafe{let __receiver= <HubMoveStateMoveSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubMoveStateMoveSpline_unity2_raw::is_end(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubMoveStateMoveSpline as::unity2::ClassIdentity> ::NAME,"IsEnd",));
+let __inner:extern "C" fn(HubMoveStateMoveSpline, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Start(bool)` overload"]fn start(self,resume:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubMoveStateMoveSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubMoveStateMoveSpline_unity2_raw::start(__receiver, ::core::convert::Into::into(resume), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <HubMoveStateMoveSpline as::unity2::ClassIdentity> ::NAME,"Start",));
+let __inner:extern "C" fn(HubMoveStateMoveSpline,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(resume),__mi)}
+}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubMoveStateMoveSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubMoveStateMoveSpline_unity2_raw::update(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HubMoveStateMoveSpline as::unity2::ClassIdentity> ::NAME,"Update",));
+let __inner:extern "C" fn(HubMoveStateMoveSpline, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDrawGizmos()` overload"]fn on_draw_gizmos(self,)->(){unsafe{let __receiver= <HubMoveStateMoveSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubMoveStateMoveSpline_unity2_raw::on_draw_gizmos(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <HubMoveStateMoveSpline as::unity2::ClassIdentity> ::NAME,"OnDrawGizmos",));
+let __inner:extern "C" fn(HubMoveStateMoveSpline, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -86,6 +79,20 @@ pub fn is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn on_draw_gizmos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubmovestatemovespline")]impl HubMoveStateMoveSpline{#[doc="Direct (non-virtual) call to `HubMoveStateMoveSpline`'s own `IsEnd`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_end(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_end_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubMoveStateMoveSpline`'s own `Start`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn start(this:impl::core::convert::Into< ::unity2::IlInstance> ,resume:bool,)->(){let __mi=Self::start_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),resume, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubMoveStateMoveSpline`'s own `Update`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubMoveStateMoveSpline`'s own `OnDrawGizmos`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_draw_gizmos(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_draw_gizmos_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-hubmovestatemovespline")]impl HubMoveStateMoveSpline{#[doc="`.ctor(crate::app::hubunitcontroller::HubUnitController, ::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32)` — overload selector"]pub fn new(unit:crate::app::hubunitcontroller::HubUnitController,data: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,body_anim: ::unity2::Il2CppString,face_anim: ::unity2::Il2CppString,is_turn:bool,speed:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

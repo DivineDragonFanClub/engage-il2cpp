@@ -18,9 +18,6 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap.md"))]#[::unity2::class(namespace="UnityEngine.AssetGraph",name="AssetBundleBuildMap")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct AssetBundleBuildMap{#[offset(24)]#[rename(name="m_assetBundles")]pub m_asset_bundles:crate::system::collections::generic::list_1::List_1<crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry> , #[static_field]#[rename(name="s_map")]pub s_map:crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry.md"))]#[::unity2::class(namespace="UnityEngine.AssetGraph",name="AssetBundleBuildMap.AssetBundleEntry")]#[parent(crate::system::object::Object)]pub struct AssetBundleBuildMap_AssetBundleEntry{#[offset(16)]#[rename(name="m_assetBundleName")]pub m_asset_bundle_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_assetBundleVariantName")]pub m_asset_bundle_variant_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_fullName")]pub m_full_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_assets")]pub m_assets:crate::system::collections::generic::list_1::List_1<crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry_AssetPathString> , #[offset(48)]#[rename(name="m_registererId")]pub m_registerer_id: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry_AssetPathString.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AssetBundleBuildMap_AssetBundleEntry_AssetPathString{pub original: ::unity2::Il2CppString,pub lower: ::unity2::Il2CppString,}
 impl::unity2::ClassIdentity for AssetBundleBuildMap_AssetBundleEntry_AssetPathString{const NAMESPACE: &'static str="UnityEngine.AssetGraph";
 const NAME: &'static str="AssetBundleBuildMap.AssetBundleEntry.AssetPathString";
@@ -30,6 +27,9 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for AssetBundleBuildMap_AssetBundleEntry_AssetPathString{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry.md"))]#[::unity2::class(namespace="UnityEngine.AssetGraph",name="AssetBundleBuildMap.AssetBundleEntry")]#[parent(crate::system::object::Object)]pub struct AssetBundleBuildMap_AssetBundleEntry{#[offset(16)]#[rename(name="m_assetBundleName")]pub m_asset_bundle_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_assetBundleVariantName")]pub m_asset_bundle_variant_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_fullName")]pub m_full_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_assets")]pub m_assets:crate::system::collections::generic::list_1::List_1<crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry_AssetPathString> , #[offset(48)]#[rename(name="m_registererId")]pub m_registerer_id: ::unity2::Il2CppString,}
 
 }
 
@@ -121,6 +121,14 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString{#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,s:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31fa0usize)as*mut u8,();
+(*mut AssetBundleBuildMap_AssetBundleEntry_AssetPathString)self as*mut AssetBundleBuildMap_AssetBundleEntry_AssetPathString,(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+}
+
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]pub trait IAssetBundleBuildMap_AssetBundleEntryMethods:IAssetBundleBuildMap_AssetBundleEntry{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetBundleBuildMap_AssetBundleEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf0f0usize)as*mut u8, ::unity2::Il2CppString;
 (AssetBundleBuildMap_AssetBundleEntry)__receiver)}
@@ -169,24 +177,16 @@ pub fn get_asset_from_asset_name_method_info()-> & 'static::unity2::il2cpp::Meth
 this}
 }
 
-#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString{#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,s:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31fa0usize)as*mut u8,();
-(*mut AssetBundleBuildMap_AssetBundleEntry_AssetPathString)self as*mut AssetBundleBuildMap_AssetBundleEntry_AssetPathString,(::unity2::Il2CppString)::core::convert::Into::into(s))}
-}
-}
-
-#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
 #[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AssetBundleBuildMap;
     pub use super::IAssetBundleBuildMap;
     pub use super::IAssetBundleBuildMapMethods;
+    pub use super::AssetBundleBuildMap_AssetBundleEntry_AssetPathString;
     pub use super::AssetBundleBuildMap_AssetBundleEntry;
     pub use super::IAssetBundleBuildMap_AssetBundleEntry;
     pub use super::IAssetBundleBuildMap_AssetBundleEntryMethods;
-    pub use super::AssetBundleBuildMap_AssetBundleEntry_AssetPathString;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::object_2::IObject_2;

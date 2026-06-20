@@ -20,10 +20,10 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectroot/ChallengeMapSelectRoot.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ChallengeMapSelectRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SpriteAtlasPath")]pub sprite_atlas_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(32)]#[rename(name="m_MapSelectMenuContent")]pub m_map_select_menu_content:crate::app::basicmenucontent::BasicMenuContent, #[offset(40)]#[rename(name="m_DifficultySelectMenu")]pub m_difficulty_select_menu:crate::app::basicmenucontent::BasicMenuContent, #[offset(48)]#[rename(name="m_MapHelpObj")]pub m_map_help_obj:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_MapTitleText")]pub m_map_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_BattleCountText")]pub m_battle_count_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_MapImage")]pub m_map_image:crate::unity_engine::ui::image::Image, #[offset(80)]#[rename(name="m_DifficultyValueText")]pub m_difficulty_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(88)]#[rename(name="m_TurnCountValueText")]pub m_turn_count_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_RewardInfoItem")]pub m_reward_info_item: ::unity2::Array<crate::app::challengemapselectroot::ChallengeMapSelectRoot_RewardInfoItem> , #[offset(104)]#[rename(name="m_ExpTextList")]pub m_exp_text_list: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI> , #[offset(112)]#[rename(name="m_SpRoot")]pub m_sp_root:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_SpTextList")]pub m_sp_text_list: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI> , #[offset(128)]#[rename(name="m_SelectChallengeData")]pub m_select_challenge_data:crate::app::challengedata::ChallengeData, #[offset(136)]#[rename(name="m_MapImageSprite")]pub m_map_image_sprite:crate::unity_engine::sprite::Sprite, #[offset(144)]#[rename(name="m_RootAnim")]pub m_root_anim:crate::unity_engine::animator::Animator,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectroot/ChallengeMapSelectRoot_RewardInfoItem.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectRoot.RewardInfoItem")]#[parent(crate::system::object::Object)]pub struct ChallengeMapSelectRoot_RewardInfoItem{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_IconImage")]pub m_icon_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_MinText")]pub m_min_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_Tilde")]pub m_tilde:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_MaxText")]pub m_max_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_FrmImage")]pub m_frm_image:crate::unity_engine::ui::image::Image,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectroot/ChallengeMapSelectRoot_ItemDropNum.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectRoot.ItemDropNum")]#[parent(crate::system::object::Object)]pub struct ChallengeMapSelectRoot_ItemDropNum{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengemapselectroot/ChallengeMapSelectRoot_RewardInfoItem.md"))]#[::unity2::class(namespace="App",name="ChallengeMapSelectRoot.RewardInfoItem")]#[parent(crate::system::object::Object)]pub struct ChallengeMapSelectRoot_RewardInfoItem{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_IconImage")]pub m_icon_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_MinText")]pub m_min_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_Tilde")]pub m_tilde:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_MaxText")]pub m_max_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_FrmImage")]pub m_frm_image:crate::unity_engine::ui::image::Image,}
 
 }
 
@@ -111,24 +111,6 @@ pub fn is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="app-challengemapselectroot")]pub trait IChallengeMapSelectRoot_RewardInfoItemMethods:IChallengeMapSelectRoot_RewardInfoItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ChallengeMapSelectRoot_RewardInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bff40usize)as*mut u8,();
-(ChallengeMapSelectRoot_RewardInfoItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-challengemapselectroot")]impl<__T:IChallengeMapSelectRoot_RewardInfoItem>IChallengeMapSelectRoot_RewardInfoItemMethods for __T{}
-
-#[cfg(feature="app-challengemapselectroot")]impl ChallengeMapSelectRoot_RewardInfoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-challengemapselectroot")]impl ChallengeMapSelectRoot_RewardInfoItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ChallengeMapSelectRoot_RewardInfoItem), ::core::stringify!(new),));
- <Self as IChallengeMapSelectRoot_RewardInfoItemMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-challengemapselectroot")]pub trait IChallengeMapSelectRoot_ItemDropNumMethods:IChallengeMapSelectRoot_ItemDropNum{#[doc="`get_Min()` overload"]fn get_min(self,)->i32{unsafe{let __receiver= <ChallengeMapSelectRoot_ItemDropNum as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19bfef0usize)as*mut u8,i32;
 (ChallengeMapSelectRoot_ItemDropNum)__receiver)}
@@ -167,18 +149,36 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-challengemapselectroot")]pub trait IChallengeMapSelectRoot_RewardInfoItemMethods:IChallengeMapSelectRoot_RewardInfoItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ChallengeMapSelectRoot_RewardInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bff40usize)as*mut u8,();
+(ChallengeMapSelectRoot_RewardInfoItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-challengemapselectroot")]impl<__T:IChallengeMapSelectRoot_RewardInfoItem>IChallengeMapSelectRoot_RewardInfoItemMethods for __T{}
+
+#[cfg(feature="app-challengemapselectroot")]impl ChallengeMapSelectRoot_RewardInfoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-challengemapselectroot")]impl ChallengeMapSelectRoot_RewardInfoItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChallengeMapSelectRoot_RewardInfoItem), ::core::stringify!(new),));
+ <Self as IChallengeMapSelectRoot_RewardInfoItemMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-challengemapselectroot")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ChallengeMapSelectRoot;
     pub use super::IChallengeMapSelectRoot;
     pub use super::IChallengeMapSelectRootMethods;
-    pub use super::ChallengeMapSelectRoot_RewardInfoItem;
-    pub use super::IChallengeMapSelectRoot_RewardInfoItem;
-    pub use super::IChallengeMapSelectRoot_RewardInfoItemMethods;
     pub use super::ChallengeMapSelectRoot_ItemDropNum;
     pub use super::IChallengeMapSelectRoot_ItemDropNum;
     pub use super::IChallengeMapSelectRoot_ItemDropNumMethods;
+    pub use super::ChallengeMapSelectRoot_RewardInfoItem;
+    pub use super::IChallengeMapSelectRoot_RewardInfoItem;
+    pub use super::IChallengeMapSelectRoot_RewardInfoItemMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

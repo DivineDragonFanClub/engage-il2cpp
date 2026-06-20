@@ -28,21 +28,17 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root-akswitch-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akswitch")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkSwitch_unity2_raw{use super:: * ;
-pub unsafe fn handle_event(this:AkSwitch,in_game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-akswitch")]pub trait IAkSwitchMethods:IAkSwitch{#[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkSwitch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <AkSwitch as::unity2::ClassIdentity> ::NAME,"HandleEvent",));
-let inner:extern "C" fn(AkSwitch,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(AkSwitch,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,in_game_object,__mi)}
+__inner(__receiver, ::core::convert::Into::into(in_game_object),__mi)}
 }
-
-#[cfg(feature="root-akswitch")]pub trait IAkSwitchMethods:IAkSwitch{#[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkSwitch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__AkSwitch_unity2_raw::handle_event(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)}
 }
 #[doc="`get_valueID()` overload"]fn get_value_id(self,)->i32{unsafe{let __receiver= <AkSwitch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d25a00usize)as*mut u8,i32;
@@ -74,6 +70,11 @@ pub fn get_group_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn get_value_guid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn get_group_guid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="root-akswitch")]impl AkSwitch{#[doc="Direct (non-virtual) call to `AkSwitch`'s own `HandleEvent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn handle_event(this:impl::core::convert::Into< ::unity2::IlInstance> ,in_game_object:crate::unity_engine::gameobject::GameObject,)->(){let __mi=Self::handle_event_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),in_game_object, ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-akswitch")]impl AkSwitch{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

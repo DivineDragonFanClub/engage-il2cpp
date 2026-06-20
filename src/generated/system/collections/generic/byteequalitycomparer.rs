@@ -18,86 +18,77 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-generic-byteequalitycomparer-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-generic-byteequalitycomparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ByteEqualityComparer_unity2_raw{use super:: * ;
-pub unsafe fn equals(this:ByteEqualityComparer,x:u8,y:u8,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-collections-generic-byteequalitycomparer")]pub trait IByteEqualityComparerMethods:IByteEqualityComparer{#[doc="`Equals(u8, u8)` overload"]fn equals(self,x:impl::core::convert::Into<u8> ,y:impl::core::convert::Into<u8>)->bool{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <ByteEqualityComparer as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(ByteEqualityComparer,u8,u8, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ByteEqualityComparer,u8,u8, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,y,__mi)}
-pub unsafe fn get_hash_code(this:ByteEqualityComparer,b:u8,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y),__mi)}
+}
+}
+#[doc="`GetHashCode(u8)` overload"]fn get_hash_code(self,b:impl::core::convert::Into<u8>)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",9usize,__vt.len(), <ByteEqualityComparer as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(ByteEqualityComparer,u8, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ByteEqualityComparer,u8, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,b,__mi)}
-pub unsafe fn index_of(this:ByteEqualityComparer,array: ::unity2::Array<u8> ,value:u8,start_index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(b),__mi)}
+}
+}
+#[doc="`IndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"]fn index_of(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,value:impl::core::convert::Into<u8> ,start_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <ByteEqualityComparer as::unity2::ClassIdentity> ::NAME,"IndexOf",));
-let inner:extern "C" fn(ByteEqualityComparer, ::unity2::Array<u8> ,u8,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ByteEqualityComparer, ::unity2::Array<u8> ,u8,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,value,start_index,count,__mi)}
-pub unsafe fn last_index_of(this:ByteEqualityComparer,array: ::unity2::Array<u8> ,value:u8,start_index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(value), ::core::convert::Into::into(start_index), ::core::convert::Into::into(count),__mi)}
+}
+}
+#[doc="`LastIndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"]fn last_index_of(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,value:impl::core::convert::Into<u8> ,start_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",11usize,__vt.len(), <ByteEqualityComparer as::unity2::ClassIdentity> ::NAME,"LastIndexOf",));
-let inner:extern "C" fn(ByteEqualityComparer, ::unity2::Array<u8> ,u8,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ByteEqualityComparer, ::unity2::Array<u8> ,u8,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,array,value,start_index,count,__mi)}
-pub unsafe fn equals_2(this:ByteEqualityComparer,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(value), ::core::convert::Into::into(start_index), ::core::convert::Into::into(count),__mi)}
+}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals_2(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <ByteEqualityComparer as::unity2::ClassIdentity> ::NAME,"Equals",));
-let inner:extern "C" fn(ByteEqualityComparer,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ByteEqualityComparer,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
-pub unsafe fn get_hash_code_2(this:ByteEqualityComparer,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
+}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code_2(self,)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <ByteEqualityComparer as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(ByteEqualityComparer, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(ByteEqualityComparer, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="system-collections-generic-byteequalitycomparer")]pub trait IByteEqualityComparerMethods:IByteEqualityComparer{#[doc="`Equals(u8, u8)` overload"]fn equals(self,x:impl::core::convert::Into<u8> ,y:impl::core::convert::Into<u8>)->bool{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ByteEqualityComparer_unity2_raw::equals(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
-}
-#[doc="`GetHashCode(u8)` overload"]fn get_hash_code(self,b:impl::core::convert::Into<u8>)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ByteEqualityComparer_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(b), ::core::option::Option::None)}
-}
-#[doc="`IndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"]fn index_of(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,value:impl::core::convert::Into<u8> ,start_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ByteEqualityComparer_unity2_raw::index_of(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(value), ::core::convert::Into::into(start_index), ::core::convert::Into::into(count), ::core::option::Option::None)}
-}
-#[doc="`LastIndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"]fn last_index_of(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,value:impl::core::convert::Into<u8> ,start_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ByteEqualityComparer_unity2_raw::last_index_of(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(value), ::core::convert::Into::into(start_index), ::core::convert::Into::into(count), ::core::option::Option::None)}
-}
-#[doc="`Equals(crate::system::object::Object)` overload"]fn equals_2(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ByteEqualityComparer_unity2_raw::equals_2(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
-}
-#[doc="`GetHashCode()` overload"]fn get_hash_code_2(self,)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ByteEqualityComparer_unity2_raw::get_hash_code_2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33960c0usize)as*mut u8,();
@@ -114,6 +105,26 @@ pub fn last_index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn get_hash_code_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="system-collections-generic-byteequalitycomparer")]impl ByteEqualityComparer{#[doc="Direct (non-virtual) call to `ByteEqualityComparer`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:u8,y:u8,)->bool{let __mi=Self::equals_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,u8,u8, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,y, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ByteEqualityComparer`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,b:u8,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,u8, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),b, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ByteEqualityComparer`'s own `IndexOf`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn index_of(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::Array<u8> ,value:u8,start_index:i32,count:i32,)->i32{let __mi=Self::index_of_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u8> ,u8,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,value,start_index,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ByteEqualityComparer`'s own `LastIndexOf`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn last_index_of(this:impl::core::convert::Into< ::unity2::IlInstance> ,array: ::unity2::Array<u8> ,value:u8,start_index:i32,count:i32,)->i32{let __mi=Self::last_index_of_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u8> ,u8,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),array,value,start_index,count, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ByteEqualityComparer`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)->bool{let __mi=Self::equals_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ByteEqualityComparer`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_hash_code_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="system-collections-generic-byteequalitycomparer")]impl ByteEqualityComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

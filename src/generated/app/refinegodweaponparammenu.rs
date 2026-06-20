@@ -17,143 +17,56 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponParamMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineGodWeaponParamMenu_SelectEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponParamMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineGodWeaponParamMenu_RequestCloseEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponParamMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineGodWeaponParamMenu_DecideEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponParamMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefineGodWeaponParamMenu{#[static_field]#[rename(name="m_MenuItemOrder")]pub m_menu_item_order: ::unity2::Array<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind> , #[offset(240)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(248)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler, #[offset(256)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_DecideEventHandler, #[offset(264)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponParamMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineGodWeaponParamMenu_DecideEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponParamMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineGodWeaponParamMenu_SelectEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponParamMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineGodWeaponParamMenu_RequestCloseEventHandler{}
 
 }
 
 #[cfg(feature = "app-refinegodweaponparammenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-refinegodweaponparammenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponParamMenu_SelectEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RefineGodWeaponParamMenu_SelectEventHandler,god_unit:crate::app::godunit::GodUnit,item_data:crate::app::itemdata::ItemData,refine_kind:crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,refine_or_reset:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-refinegodweaponparammenu")]pub trait IRefineGodWeaponParamMenu_DecideEventHandlerMethods:IRefineGodWeaponParamMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af6380usize)as*mut u8,();
+(RefineGodWeaponParamMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, i32, ::unity2::Il2CppString)` overload"]fn invoke(self,refine_data:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData> ,refine_kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind> ,current_level:impl::core::convert::Into<i32> ,sid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <RefineGodWeaponParamMenu_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RefineGodWeaponParamMenu_SelectEventHandler,crate::app::godunit::GodUnit,crate::app::itemdata::ItemData,crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <RefineGodWeaponParamMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RefineGodWeaponParamMenu_DecideEventHandler,crate::app::godweaponrefinedata::GodWeaponRefineData,crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,i32, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,god_unit,item_data,refine_kind,refine_or_reset,__mi)}
+__inner(__receiver, ::core::convert::Into::into(refine_data), ::core::convert::Into::into(refine_kind), ::core::convert::Into::into(current_level), ::core::convert::Into::into(sid),__mi)}
 }
-
-#[cfg(feature="app-refinegodweaponparammenu")]pub trait IRefineGodWeaponParamMenu_SelectEventHandlerMethods:IRefineGodWeaponParamMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af6ab0usize)as*mut u8,();
-(RefineGodWeaponParamMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, bool)` overload"]fn invoke(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,item_data:impl::core::convert::Into<crate::app::itemdata::ItemData> ,refine_kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind> ,refine_or_reset:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineGodWeaponParamMenu_SelectEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(god_unit), ::core::convert::Into::into(item_data), ::core::convert::Into::into(refine_kind), ::core::convert::Into::into(refine_or_reset), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-refinegodweaponparammenu")]impl<__T:IRefineGodWeaponParamMenu_SelectEventHandler>IRefineGodWeaponParamMenu_SelectEventHandlerMethods for __T{}
+#[cfg(feature="app-refinegodweaponparammenu")]impl<__T:IRefineGodWeaponParamMenu_DecideEventHandler>IRefineGodWeaponParamMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_DecideEventHandler{#[doc="Direct (non-virtual) call to `RefineGodWeaponParamMenu_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,refine_data:crate::app::godweaponrefinedata::GodWeaponRefineData,refine_kind:crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,current_level:i32,sid: ::unity2::Il2CppString,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::godweaponrefinedata::GodWeaponRefineData,crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,i32, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),refine_data,refine_kind,current_level,sid, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RefineGodWeaponParamMenu_SelectEventHandler), ::core::stringify!(new),));
- <Self as IRefineGodWeaponParamMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(RefineGodWeaponParamMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponParamMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
 this}
-}
-
-#[cfg(feature="app-refinegodweaponparammenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponParamMenu_RequestCloseEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RefineGodWeaponParamMenu_RequestCloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <RefineGodWeaponParamMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RefineGodWeaponParamMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-refinegodweaponparammenu")]pub trait IRefineGodWeaponParamMenu_RequestCloseEventHandlerMethods:IRefineGodWeaponParamMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af6840usize)as*mut u8,();
-(RefineGodWeaponParamMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineGodWeaponParamMenu_RequestCloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-refinegodweaponparammenu")]impl<__T:IRefineGodWeaponParamMenu_RequestCloseEventHandler>IRefineGodWeaponParamMenu_RequestCloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefineGodWeaponParamMenu_RequestCloseEventHandler), ::core::stringify!(new),));
- <Self as IRefineGodWeaponParamMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-refinegodweaponparammenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponParamMenu_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:RefineGodWeaponParamMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",30usize,__vt.len(), <RefineGodWeaponParamMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RefineGodWeaponParamMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn key_left(this:RefineGodWeaponParamMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",42usize,__vt.len(), <RefineGodWeaponParamMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
-let inner:extern "C" fn(RefineGodWeaponParamMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-pub unsafe fn key_right(this:RefineGodWeaponParamMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",43usize,__vt.len(), <RefineGodWeaponParamMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
-let inner:extern "C" fn(RefineGodWeaponParamMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,is_trigger,__mi)}
-pub unsafe fn a_call(this:RefineGodWeaponParamMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",50usize,__vt.len(), <RefineGodWeaponParamMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(RefineGodWeaponParamMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_dispose(this:RefineGodWeaponParamMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <RefineGodWeaponParamMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
-let inner:extern "C" fn(RefineGodWeaponParamMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::refinegodweaponparammenucontent::RefineGodWeaponParamMenuContent, crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, bool, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_DecideEventHandler, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::refinegodweaponparammenucontent::RefineGodWeaponParamMenuContent> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,initial_god_weapon:impl::core::convert::Into<crate::app::itemdata::ItemData> ,refine_or_reset:impl::core::convert::Into<bool> ,select_event_handler:impl::core::convert::Into<crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_DecideEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler>)->crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23807e0usize)as*mut u8,crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu;
@@ -216,23 +129,68 @@ inner(this,__mi)}
 (RefineGodWeaponParamMenu)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineGodWeaponParamMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineGodWeaponParamMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RefineGodWeaponParamMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RefineGodWeaponParamMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetSelect()` overload"]fn get_select(self,)->crate::app::basicmenuselect::BasicMenuSelect{unsafe{let __receiver= <RefineGodWeaponParamMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2382630usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
 (RefineGodWeaponParamMenu)__receiver)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineGodWeaponParamMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <RefineGodWeaponParamMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let __inner:extern "C" fn(RefineGodWeaponParamMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineGodWeaponParamMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <RefineGodWeaponParamMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let __inner:extern "C" fn(RefineGodWeaponParamMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(is_trigger),__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineGodWeaponParamMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineGodWeaponParamMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <RefineGodWeaponParamMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(RefineGodWeaponParamMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineGodWeaponParamMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RefineGodWeaponParamMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let __inner:extern "C" fn(RefineGodWeaponParamMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -261,6 +219,23 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 }
 
+#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu{#[doc="Direct (non-virtual) call to `RefineGodWeaponParamMenu`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RefineGodWeaponParamMenu`'s own `KeyLeft`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_left(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::key_left_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RefineGodWeaponParamMenu`'s own `KeyRight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn key_right(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_trigger:bool,)->(){let __mi=Self::key_right_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),is_trigger, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RefineGodWeaponParamMenu`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RefineGodWeaponParamMenu`'s own `OnDispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::godunit::GodUnit, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_DecideEventHandler, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,god_unit:crate::app::godunit::GodUnit,god_weapon_list:crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> ,initial_god_weapon_index:i32,refine_or_reset:bool,select_event_handler:crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler,decide_event_handler:crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_DecideEventHandler,request_close_event_handler:crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RefineGodWeaponParamMenu), ::core::stringify!(new),));
@@ -268,56 +243,93 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-refinegodweaponparammenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponParamMenu_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RefineGodWeaponParamMenu_DecideEventHandler,refine_data:crate::app::godweaponrefinedata::GodWeaponRefineData,refine_kind:crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,current_level:i32,sid: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-refinegodweaponparammenu")]pub trait IRefineGodWeaponParamMenu_SelectEventHandlerMethods:IRefineGodWeaponParamMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af6ab0usize)as*mut u8,();
+(RefineGodWeaponParamMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, bool)` overload"]fn invoke(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,item_data:impl::core::convert::Into<crate::app::itemdata::ItemData> ,refine_kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind> ,refine_or_reset:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <RefineGodWeaponParamMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RefineGodWeaponParamMenu_DecideEventHandler,crate::app::godweaponrefinedata::GodWeaponRefineData,crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,i32, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <RefineGodWeaponParamMenu_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RefineGodWeaponParamMenu_SelectEventHandler,crate::app::godunit::GodUnit,crate::app::itemdata::ItemData,crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,refine_data,refine_kind,current_level,sid,__mi)}
+__inner(__receiver, ::core::convert::Into::into(god_unit), ::core::convert::Into::into(item_data), ::core::convert::Into::into(refine_kind), ::core::convert::Into::into(refine_or_reset),__mi)}
 }
-
-#[cfg(feature="app-refinegodweaponparammenu")]pub trait IRefineGodWeaponParamMenu_DecideEventHandlerMethods:IRefineGodWeaponParamMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af6380usize)as*mut u8,();
-(RefineGodWeaponParamMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, i32, ::unity2::Il2CppString)` overload"]fn invoke(self,refine_data:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData> ,refine_kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind> ,current_level:impl::core::convert::Into<i32> ,sid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RefineGodWeaponParamMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(refine_data), ::core::convert::Into::into(refine_kind), ::core::convert::Into::into(current_level), ::core::convert::Into::into(sid), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-refinegodweaponparammenu")]impl<__T:IRefineGodWeaponParamMenu_DecideEventHandler>IRefineGodWeaponParamMenu_DecideEventHandlerMethods for __T{}
+#[cfg(feature="app-refinegodweaponparammenu")]impl<__T:IRefineGodWeaponParamMenu_SelectEventHandler>IRefineGodWeaponParamMenu_SelectEventHandlerMethods for __T{}
 
-#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_SelectEventHandler{#[doc="Direct (non-virtual) call to `RefineGodWeaponParamMenu_SelectEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,god_unit:crate::app::godunit::GodUnit,item_data:crate::app::itemdata::ItemData,refine_kind:crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,refine_or_reset:bool,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::godunit::GodUnit,crate::app::itemdata::ItemData,crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),god_unit,item_data,refine_kind,refine_or_reset, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RefineGodWeaponParamMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IRefineGodWeaponParamMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(RefineGodWeaponParamMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponParamMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-refinegodweaponparammenu")]pub trait IRefineGodWeaponParamMenu_RequestCloseEventHandlerMethods:IRefineGodWeaponParamMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af6840usize)as*mut u8,();
+(RefineGodWeaponParamMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineGodWeaponParamMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefineGodWeaponParamMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RefineGodWeaponParamMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-refinegodweaponparammenu")]impl<__T:IRefineGodWeaponParamMenu_RequestCloseEventHandler>IRefineGodWeaponParamMenu_RequestCloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_RequestCloseEventHandler{#[doc="Direct (non-virtual) call to `RefineGodWeaponParamMenu_RequestCloseEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-refinegodweaponparammenu")]impl RefineGodWeaponParamMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineGodWeaponParamMenu_RequestCloseEventHandler), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponParamMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
 #[cfg(feature = "app-refinegodweaponparammenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RefineGodWeaponParamMenu_DecideEventHandler;
+    pub use super::IRefineGodWeaponParamMenu_DecideEventHandler;
+    pub use super::IRefineGodWeaponParamMenu_DecideEventHandlerMethods;
+    pub use super::RefineGodWeaponParamMenu;
+    pub use super::IRefineGodWeaponParamMenu;
+    pub use super::IRefineGodWeaponParamMenuMethods;
     pub use super::RefineGodWeaponParamMenu_SelectEventHandler;
     pub use super::IRefineGodWeaponParamMenu_SelectEventHandler;
     pub use super::IRefineGodWeaponParamMenu_SelectEventHandlerMethods;
     pub use super::RefineGodWeaponParamMenu_RequestCloseEventHandler;
     pub use super::IRefineGodWeaponParamMenu_RequestCloseEventHandler;
     pub use super::IRefineGodWeaponParamMenu_RequestCloseEventHandlerMethods;
-    pub use super::RefineGodWeaponParamMenu;
-    pub use super::IRefineGodWeaponParamMenu;
-    pub use super::IRefineGodWeaponParamMenuMethods;
-    pub use super::RefineGodWeaponParamMenu_DecideEventHandler;
-    pub use super::IRefineGodWeaponParamMenu_DecideEventHandler;
-    pub use super::IRefineGodWeaponParamMenu_DecideEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

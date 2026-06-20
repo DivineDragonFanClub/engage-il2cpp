@@ -26,19 +26,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root_motion-final_ik-rotationlimithinge-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-rotationlimithinge")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RotationLimitHinge_unity2_raw{use super:: * ;
-pub unsafe fn limit_rotation(this:RotationLimitHinge,rotation:crate::unity_engine::quaternion::Quaternion,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <RotationLimitHinge as::unity2::ClassIdentity> ::NAME,"LimitRotation",));
-let inner:extern "C" fn(RotationLimitHinge,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,rotation,__mi)}
-}
-
 #[cfg(feature="root_motion-final_ik-rotationlimithinge")]pub trait IRotationLimitHingeMethods:IRotationLimitHinge{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <RotationLimitHinge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec1150usize)as*mut u8,();
 (RotationLimitHinge)__receiver)}
@@ -56,7 +43,16 @@ inner(this,rotation,__mi)}
 (RotationLimitHinge)__receiver)}
 }
 #[doc="`LimitRotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn limit_rotation(self,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <RotationLimitHinge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RotationLimitHinge_unity2_raw::limit_rotation(__receiver, ::core::convert::Into::into(rotation), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RotationLimitHinge as::unity2::ClassIdentity> ::NAME,"LimitRotation",));
+let __inner:extern "C" fn(RotationLimitHinge,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(rotation),__mi)}
+}
 }
 #[doc="`LimitHinge(crate::unity_engine::quaternion::Quaternion)` overload"]fn limit_hinge(self,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <RotationLimitHinge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec12a0usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
@@ -77,6 +73,11 @@ pub fn as_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 pub fn limit_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn limit_hinge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="root_motion-final_ik-rotationlimithinge")]impl RotationLimitHinge{#[doc="Direct (non-virtual) call to `RotationLimitHinge`'s own `LimitRotation`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn limit_rotation(this:impl::core::convert::Into< ::unity2::IlInstance> ,rotation:crate::unity_engine::quaternion::Quaternion,)->crate::unity_engine::quaternion::Quaternion{let __mi=Self::limit_rotation_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),rotation, ::core::option::Option::None)}
 }
 
 #[cfg(feature="root_motion-final_ik-rotationlimithinge")]impl RotationLimitHinge{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

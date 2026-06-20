@@ -22,149 +22,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-animations-parentconstraint-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-animations-parentconstraint")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ParentConstraint_unity2_raw{use super:: * ;
-pub unsafe fn get_weight(this:ParentConstraint,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"get_weight",));
-let inner:extern "C" fn(ParentConstraint, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_weight(this:ParentConstraint,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"set_weight",));
-let inner:extern "C" fn(ParentConstraint,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_constraint_active(this:ParentConstraint,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"get_constraintActive",));
-let inner:extern "C" fn(ParentConstraint, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_constraint_active(this:ParentConstraint,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"set_constraintActive",));
-let inner:extern "C" fn(ParentConstraint,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_locked(this:ParentConstraint,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"get_locked",));
-let inner:extern "C" fn(ParentConstraint, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_locked(this:ParentConstraint,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"set_locked",));
-let inner:extern "C" fn(ParentConstraint,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_source_count(this:ParentConstraint,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"get_sourceCount",));
-let inner:extern "C" fn(ParentConstraint, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_sources(this:ParentConstraint,sources:crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"GetSources",));
-let inner:extern "C" fn(ParentConstraint,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sources,__mi)}
-pub unsafe fn set_sources(this:ParentConstraint,sources:crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"SetSources",));
-let inner:extern "C" fn(ParentConstraint,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,sources,__mi)}
-pub unsafe fn add_source(this:ParentConstraint,source:crate::unity_engine::animations::constraintsource::ConstraintSource,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"AddSource",));
-let inner:extern "C" fn(ParentConstraint,crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,source,__mi)}
-pub unsafe fn remove_source(this:ParentConstraint,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",14usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"RemoveSource",));
-let inner:extern "C" fn(ParentConstraint,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,__mi)}
-pub unsafe fn get_source(this:ParentConstraint,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::animations::constraintsource::ConstraintSource{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"GetSource",));
-let inner:extern "C" fn(ParentConstraint,i32, ::unity2::OptionalMethod,)->crate::unity_engine::animations::constraintsource::ConstraintSource= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,__mi)}
-pub unsafe fn set_source(this:ParentConstraint,index:i32,source:crate::unity_engine::animations::constraintsource::ConstraintSource,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",16usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"SetSource",));
-let inner:extern "C" fn(ParentConstraint,i32,crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,index,source,__mi)}
-pub unsafe fn add_source_injected(this:ParentConstraint,source: *mut crate::unity_engine::animations::constraintsource::ConstraintSource,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",17usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"AddSource_Injected",));
-let inner:extern "C" fn(ParentConstraint, *mut crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,source,__mi)}
-}
-
 #[cfg(feature="unity_engine-animations-parentconstraint")]impl ParentConstraint{#[doc="`Internal_Create(crate::unity_engine::animations::parentconstraint::ParentConstraint)` overload"]pub fn internal_create(self_:impl::core::convert::Into<crate::unity_engine::animations::parentconstraint::ParentConstraint>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb9a00usize)as*mut u8,();
 (crate::unity_engine::animations::parentconstraint::ParentConstraint)::core::convert::Into::into(self_))}
 }
@@ -181,25 +38,88 @@ inner(this,source,__mi)}
 (ParentConstraint)__receiver)}
 }
 #[doc="`get_weight()` overload"]fn get_weight(self,)->f32{unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::get_weight(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"get_weight",));
+let __inner:extern "C" fn(ParentConstraint, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_weight(f32)` overload"]fn set_weight(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::set_weight(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"set_weight",));
+let __inner:extern "C" fn(ParentConstraint,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_constraintActive()` overload"]fn get_constraint_active(self,)->bool{unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::get_constraint_active(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"get_constraintActive",));
+let __inner:extern "C" fn(ParentConstraint, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_constraintActive(bool)` overload"]fn set_constraint_active(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::set_constraint_active(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"set_constraintActive",));
+let __inner:extern "C" fn(ParentConstraint,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_locked()` overload"]fn get_locked(self,)->bool{unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::get_locked(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"get_locked",));
+let __inner:extern "C" fn(ParentConstraint, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`set_locked(bool)` overload"]fn set_locked(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::set_locked(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"set_locked",));
+let __inner:extern "C" fn(ParentConstraint,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
 }
 #[doc="`get_sourceCount()` overload"]fn get_source_count(self,)->i32{unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::get_source_count(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"get_sourceCount",));
+let __inner:extern "C" fn(ParentConstraint, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_translationAtRest()` overload"]fn get_translation_at_rest(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb9cd0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
@@ -286,30 +206,84 @@ __ParentConstraint_unity2_raw::get_source_count(__receiver, ::core::option::Opti
 (ParentConstraint)__receiver,(i32)::core::convert::Into::into(index))}
 }
 #[doc="`GetSources(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>)` overload"]fn get_sources(self,sources:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> >)->(){unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::get_sources(__receiver, ::core::convert::Into::into(sources), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"GetSources",));
+let __inner:extern "C" fn(ParentConstraint,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(sources),__mi)}
+}
 }
 #[doc="`SetSources(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>)` overload"]fn set_sources(self,sources:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> >)->(){unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::set_sources(__receiver, ::core::convert::Into::into(sources), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"SetSources",));
+let __inner:extern "C" fn(ParentConstraint,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(sources),__mi)}
+}
 }
 #[doc="`AddSource(crate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]fn add_source(self,source:impl::core::convert::Into<crate::unity_engine::animations::constraintsource::ConstraintSource>)->i32{unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::add_source(__receiver, ::core::convert::Into::into(source), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"AddSource",));
+let __inner:extern "C" fn(ParentConstraint,crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(source),__mi)}
+}
 }
 #[doc="`RemoveSource(i32)` overload"]fn remove_source(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::remove_source(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"RemoveSource",));
+let __inner:extern "C" fn(ParentConstraint,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index),__mi)}
+}
 }
 #[doc="`RemoveSourceInternal(i32)` overload"]fn remove_source_internal(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebab40usize)as*mut u8,();
 (ParentConstraint)__receiver,(i32)::core::convert::Into::into(index))}
 }
 #[doc="`GetSource(i32)` overload"]fn get_source(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::animations::constraintsource::ConstraintSource{unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::get_source(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"GetSource",));
+let __inner:extern "C" fn(ParentConstraint,i32, ::unity2::OptionalMethod,)->crate::unity_engine::animations::constraintsource::ConstraintSource= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index),__mi)}
+}
 }
 #[doc="`GetSourceInternal(i32)` overload"]fn get_source_internal(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::animations::constraintsource::ConstraintSource{unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebac00usize)as*mut u8,crate::unity_engine::animations::constraintsource::ConstraintSource;
 (ParentConstraint)__receiver,(i32)::core::convert::Into::into(index))}
 }
 #[doc="`SetSource(i32, crate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]fn set_source(self,index:impl::core::convert::Into<i32> ,source:impl::core::convert::Into<crate::unity_engine::animations::constraintsource::ConstraintSource>)->(){unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ParentConstraint_unity2_raw::set_source(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(source), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"SetSource",));
+let __inner:extern "C" fn(ParentConstraint,i32,crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(source),__mi)}
+}
 }
 #[doc="`SetSourceInternal(i32, crate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]fn set_source_internal(self,index:impl::core::convert::Into<i32> ,source:impl::core::convert::Into<crate::unity_engine::animations::constraintsource::ConstraintSource>)->(){unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebad40usize)as*mut u8,();
@@ -365,7 +339,16 @@ __out_0.assume_init()}
 }
 #[doc="`AddSource_Injected(*mutcrate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]fn add_source_injected(self,)->(i32,crate::unity_engine::animations::constraintsource::ConstraintSource){unsafe{let __receiver= <ParentConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::animations::constraintsource::ConstraintSource> ::uninit();
-let __ret={__ParentConstraint_unity2_raw::add_source_injected(__receiver,__out_0.as_mut_ptr(), ::core::option::Option::None)}
+let __ret={{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <ParentConstraint as::unity2::ClassIdentity> ::NAME,"AddSource_Injected",));
+let __inner:extern "C" fn(ParentConstraint, *mut crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__out_0.as_mut_ptr(),__mi)}
+}
 ;
 (__ret,__out_0.assume_init())}
 }
@@ -437,6 +420,50 @@ pub fn set_rotation_offset_internal_injected_method_info()-> & 'static::unity2::
 pub fn add_source_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
 pub fn get_source_internal_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
 pub fn set_source_internal_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+}
+
+#[cfg(feature="unity_engine-animations-parentconstraint")]impl ParentConstraint{#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `get_weight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_weight(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_weight_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `set_weight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_weight(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,)->(){let __mi=Self::set_weight_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `get_constraintActive`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_constraint_active(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_constraint_active_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `set_constraintActive`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_constraint_active(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_constraint_active_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `get_locked`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_locked(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_locked_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `set_locked`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_locked(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:bool,)->(){let __mi=Self::set_locked_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `get_sourceCount`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_source_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_source_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `GetSources`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_sources(this:impl::core::convert::Into< ::unity2::IlInstance> ,sources:crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> ,)->(){let __mi=Self::get_sources_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sources, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `SetSources`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_sources(this:impl::core::convert::Into< ::unity2::IlInstance> ,sources:crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> ,)->(){let __mi=Self::set_sources_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),sources, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `AddSource`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add_source(this:impl::core::convert::Into< ::unity2::IlInstance> ,source:crate::unity_engine::animations::constraintsource::ConstraintSource,)->i32{let __mi=Self::add_source_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),source, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `RemoveSource`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn remove_source(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,)->(){let __mi=Self::remove_source_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `GetSource`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_source(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,)->crate::unity_engine::animations::constraintsource::ConstraintSource{let __mi=Self::get_source_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->crate::unity_engine::animations::constraintsource::ConstraintSource= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `SetSource`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_source(this:impl::core::convert::Into< ::unity2::IlInstance> ,index:i32,source:crate::unity_engine::animations::constraintsource::ConstraintSource,)->(){let __mi=Self::set_source_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32,crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),index,source, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `ParentConstraint`'s own `AddSource_Injected`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add_source_injected(this:impl::core::convert::Into< ::unity2::IlInstance> ,source: *mut crate::unity_engine::animations::constraintsource::ConstraintSource,)->i32{let __mi=Self::add_source_injected_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, *mut crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),source, ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-animations-parentconstraint")]impl ParentConstraint{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

@@ -21,15 +21,51 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitsignal/UnitSignal.md"))]#[::unity2::class(namespace="App",name="UnitSignal")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitSignal{#[offset(24)]#[rename(name="m_Model")]pub m_model:crate::app::unitmodel::UnitModel, #[offset(32)]#[rename(name="m_HitCallback")]pub m_hit_callback:crate::app::unitsignal::UnitSignal_Func, #[offset(40)]#[rename(name="m_ShootCallback")]pub m_shoot_callback:crate::app::unitsignal::UnitSignal_Func, #[offset(48)]#[rename(name="m_AvoidCallback")]pub m_avoid_callback:crate::app::unitsignal::UnitSignal_Func, #[offset(56)]#[rename(name="m_Arg")]pub m_arg: ::unity2::IlInstance,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitsignal/UnitSignal_Func.md"))]#[::unity2::class(namespace="App",name="UnitSignal.Func")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSignal_Func{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitsignal/UnitSignal.md"))]#[::unity2::class(namespace="App",name="UnitSignal")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitSignal{#[offset(24)]#[rename(name="m_Model")]pub m_model:crate::app::unitmodel::UnitModel, #[offset(32)]#[rename(name="m_HitCallback")]pub m_hit_callback:crate::app::unitsignal::UnitSignal_Func, #[offset(40)]#[rename(name="m_ShootCallback")]pub m_shoot_callback:crate::app::unitsignal::UnitSignal_Func, #[offset(48)]#[rename(name="m_AvoidCallback")]pub m_avoid_callback:crate::app::unitsignal::UnitSignal_Func, #[offset(56)]#[rename(name="m_Arg")]pub m_arg: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "app-unitsignal-types")]
 pub use __types::*;
+
+#[cfg(feature="app-unitsignal")]pub trait IUnitSignal_FuncMethods:IUnitSignal_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSignal_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b57d50usize)as*mut u8,();
+(UnitSignal_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unitsignal::UnitSignal)` overload"]fn invoke(self,signal:impl::core::convert::Into<crate::app::unitsignal::UnitSignal>)->(){unsafe{let __receiver= <UnitSignal_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <UnitSignal_Func as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(UnitSignal_Func,crate::app::unitsignal::UnitSignal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(signal),__mi)}
+}
+}
+}
+
+#[cfg(feature="app-unitsignal")]impl<__T:IUnitSignal_Func>IUnitSignal_FuncMethods for __T{}
+
+#[cfg(feature="app-unitsignal")]impl UnitSignal_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unitsignal")]impl UnitSignal_Func{#[doc="Direct (non-virtual) call to `UnitSignal_Func`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,signal:crate::app::unitsignal::UnitSignal,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::unitsignal::UnitSignal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),signal, ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unitsignal")]impl UnitSignal_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSignal_Func), ::core::stringify!(new),));
+ <Self as IUnitSignal_FuncMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-unitsignal")]impl UnitSignal{#[doc="`PlayShoot(crate::app::unitsignal::UnitSignal)` overload"]pub fn play_shoot(signal:impl::core::convert::Into<crate::app::unitsignal::UnitSignal>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c62b00usize)as*mut u8,();
 (crate::app::unitsignal::UnitSignal)::core::convert::Into::into(signal))}
@@ -440,50 +476,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-unitsignal")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSignal_Func_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:UnitSignal_Func,signal:crate::app::unitsignal::UnitSignal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <UnitSignal_Func as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(UnitSignal_Func,crate::app::unitsignal::UnitSignal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,signal,__mi)}
-}
-
-#[cfg(feature="app-unitsignal")]pub trait IUnitSignal_FuncMethods:IUnitSignal_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSignal_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b57d50usize)as*mut u8,();
-(UnitSignal_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unitsignal::UnitSignal)` overload"]fn invoke(self,signal:impl::core::convert::Into<crate::app::unitsignal::UnitSignal>)->(){unsafe{let __receiver= <UnitSignal_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSignal_Func_unity2_raw::invoke(__receiver, ::core::convert::Into::into(signal), ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-unitsignal")]impl<__T:IUnitSignal_Func>IUnitSignal_FuncMethods for __T{}
-
-#[cfg(feature="app-unitsignal")]impl UnitSignal_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unitsignal")]impl UnitSignal_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSignal_Func), ::core::stringify!(new),));
- <Self as IUnitSignal_FuncMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-unitsignal")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitSignal;
-    pub use super::IUnitSignal;
-    pub use super::IUnitSignalMethods;
     pub use super::UnitSignal_Func;
     pub use super::IUnitSignal_Func;
     pub use super::IUnitSignal_FuncMethods;
+    pub use super::UnitSignal;
+    pub use super::IUnitSignal;
+    pub use super::IUnitSignalMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

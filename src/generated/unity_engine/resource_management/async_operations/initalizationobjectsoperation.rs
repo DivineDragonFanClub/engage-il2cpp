@@ -18,55 +18,49 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 #[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resource_management-async_operations-initalizationobjectsoperation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InitalizationObjectsOperation_unity2_raw{use super:: * ;
-pub unsafe fn get_debug_name(this:InitalizationObjectsOperation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",31usize,__vt.len(), <InitalizationObjectsOperation as::unity2::ClassIdentity> ::NAME,"get_DebugName",));
-let inner:extern "C" fn(InitalizationObjectsOperation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn invoke_wait_for_completion(this:InitalizationObjectsOperation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",33usize,__vt.len(), <InitalizationObjectsOperation as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
-let inner:extern "C" fn(InitalizationObjectsOperation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn execute(this:InitalizationObjectsOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",28usize,__vt.len(), <InitalizationObjectsOperation as::unity2::ClassIdentity> ::NAME,"Execute",));
-let inner:extern "C" fn(InitalizationObjectsOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
 #[cfg(feature="unity_engine-resource_management-async_operations-initalizationobjectsoperation")]pub trait IInitalizationObjectsOperationMethods:IInitalizationObjectsOperation{#[doc="`Init(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData>, crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` overload"]fn init(self,rtd_op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData> > ,addressables:impl::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>)->(){unsafe{let __receiver= <InitalizationObjectsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db6e10usize)as*mut u8,();
 (InitalizationObjectsOperation)__receiver,(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::initialization::resourcemanagerruntimedata::ResourceManagerRuntimeData>)::core::convert::Into::into(rtd_op),(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)::core::convert::Into::into(addressables))}
 }
 #[doc="`get_DebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InitalizationObjectsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InitalizationObjectsOperation_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <InitalizationObjectsOperation as::unity2::ClassIdentity> ::NAME,"get_DebugName",));
+let __inner:extern "C" fn(InitalizationObjectsOperation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`LogRuntimeWarnings(::unity2::Il2CppString)` overload"]fn log_runtime_warnings(self,path_to_build_logs:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <InitalizationObjectsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db6ec0usize)as*mut u8,bool;
 (InitalizationObjectsOperation)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path_to_build_logs))}
 }
 #[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <InitalizationObjectsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InitalizationObjectsOperation_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <InitalizationObjectsOperation as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
+let __inner:extern "C" fn(InitalizationObjectsOperation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <InitalizationObjectsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__InitalizationObjectsOperation_unity2_raw::execute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <InitalizationObjectsOperation as::unity2::ClassIdentity> ::NAME,"Execute",));
+let __inner:extern "C" fn(InitalizationObjectsOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InitalizationObjectsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db7900usize)as*mut u8,();
@@ -82,6 +76,17 @@ pub fn log_runtime_warnings_method_info()-> & 'static::unity2::il2cpp::MethodInf
 pub fn invoke_wait_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="unity_engine-resource_management-async_operations-initalizationobjectsoperation")]impl InitalizationObjectsOperation{#[doc="Direct (non-virtual) call to `InitalizationObjectsOperation`'s own `get_DebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InitalizationObjectsOperation`'s own `InvokeWaitForCompletion`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke_wait_for_completion(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::invoke_wait_for_completion_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `InitalizationObjectsOperation`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::execute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-resource_management-async_operations-initalizationobjectsoperation")]impl InitalizationObjectsOperation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

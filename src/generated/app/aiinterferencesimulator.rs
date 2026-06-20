@@ -15,33 +15,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterferencesimulator/AIInterferenceSimulator_Flag.md"))]#[::unity2::class(namespace="App",name="AIInterferenceSimulator.Flag")]#[parent(crate::app::bitfield32::BitField32)]pub struct AIInterferenceSimulator_Flag{#[static_field]#[rename(name="HighMagic")]pub high_magic:i32, #[static_field]#[rename(name="LowMagic")]pub low_magic:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterferencesimulator/AIInterferenceSimulator.md"))]#[::unity2::class(namespace="App",name="AIInterferenceSimulator")]#[parent(crate::app::aisimulatorbase::AISimulatorBase)]pub struct AIInterferenceSimulator{#[offset(52)]#[rename(name="m_IsNotSuitable")]pub m_is_not_suitable:bool, #[offset(56)]#[rename(name="m_flag")]pub m_flag:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterferencesimulator/AIInterferenceSimulator_Flag.md"))]#[::unity2::class(namespace="App",name="AIInterferenceSimulator.Flag")]#[parent(crate::app::bitfield32::BitField32)]pub struct AIInterferenceSimulator_Flag{#[static_field]#[rename(name="HighMagic")]pub high_magic:i32, #[static_field]#[rename(name="LowMagic")]pub low_magic:i32,}
 
 }
 
 #[cfg(feature = "app-aiinterferencesimulator-types")]
 pub use __types::*;
-
-#[cfg(feature="app-aiinterferencesimulator")]pub trait IAIInterferenceSimulator_FlagMethods:IAIInterferenceSimulator_Flag{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIInterferenceSimulator_Flag as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29443f0usize)as*mut u8,();
-(AIInterferenceSimulator_Flag)__receiver)}
-}
-}
-
-#[cfg(feature="app-aiinterferencesimulator")]impl<__T:IAIInterferenceSimulator_Flag>IAIInterferenceSimulator_FlagMethods for __T{}
-
-#[cfg(feature="app-aiinterferencesimulator")]impl AIInterferenceSimulator_Flag{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-aiinterferencesimulator")]impl AIInterferenceSimulator_Flag{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIInterferenceSimulator_Flag), ::core::stringify!(new),));
- <Self as IAIInterferenceSimulator_FlagMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-aiinterferencesimulator")]pub trait IAIInterferenceSimulatorMethods:IAIInterferenceSimulator{#[doc="`get_IsNotSuitable()` overload"]fn get_is_not_suitable(self,)->bool{unsafe{let __receiver= <AIInterferenceSimulator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19302c0usize)as*mut u8,bool;
@@ -91,15 +73,33 @@ pub fn calculate_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 this}
 }
 
+#[cfg(feature="app-aiinterferencesimulator")]pub trait IAIInterferenceSimulator_FlagMethods:IAIInterferenceSimulator_Flag{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIInterferenceSimulator_Flag as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29443f0usize)as*mut u8,();
+(AIInterferenceSimulator_Flag)__receiver)}
+}
+}
+
+#[cfg(feature="app-aiinterferencesimulator")]impl<__T:IAIInterferenceSimulator_Flag>IAIInterferenceSimulator_FlagMethods for __T{}
+
+#[cfg(feature="app-aiinterferencesimulator")]impl AIInterferenceSimulator_Flag{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-aiinterferencesimulator")]impl AIInterferenceSimulator_Flag{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIInterferenceSimulator_Flag), ::core::stringify!(new),));
+ <Self as IAIInterferenceSimulator_FlagMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-aiinterferencesimulator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AIInterferenceSimulator_Flag;
-    pub use super::IAIInterferenceSimulator_Flag;
-    pub use super::IAIInterferenceSimulator_FlagMethods;
     pub use super::AIInterferenceSimulator;
     pub use super::IAIInterferenceSimulator;
     pub use super::IAIInterferenceSimulatorMethods;
+    pub use super::AIInterferenceSimulator_Flag;
+    pub use super::IAIInterferenceSimulator_Flag;
+    pub use super::IAIInterferenceSimulator_FlagMethods;
     pub use crate::app::aisimulatorbase::IAISimulatorBase;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;

@@ -19,20 +19,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubAccessoryRoom_Shop{pub value:i32,}
-impl::unity2::ClassIdentity for HubAccessoryRoom_Shop{const NAMESPACE: &'static str="App";
-const NAME: &'static str="HubAccessoryRoom.Shop";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for HubAccessoryRoom_Shop{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl HubAccessoryRoom_Shop{pub fn hub()->Self{Self{value:0}
-}
-pub fn amiibo()->Self{Self{value:1}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroom/HubAccessoryRoom.md"))]#[::unity2::class(namespace="App",name="HubAccessoryRoom")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubaccessoryroom::HubAccessoryRoom>)]pub struct HubAccessoryRoom{#[offset(136)]#[rename(name="_DisableList")]pub disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(152)]#[rename(name="m_Shop")]pub m_shop:crate::app::hubaccessoryroom::HubAccessoryRoom_Shop, #[offset(168)]#[rename(name="m_LastResultHash")]pub m_last_result_hash:i32, #[offset(176)]#[rename(name="m_Character")]pub m_character:crate::combat::character::Character, #[offset(184)]#[rename(name="m_LoadingAppearance")]pub m_loading_appearance:crate::combat::characterappearance::CharacterAppearance, #[offset(192)]#[rename(name="m_LoadingChara")]pub m_loading_chara:crate::combat::character::Character, #[offset(200)]#[rename(name="m_LastPID")]pub m_last_pid: ::unity2::Il2CppString,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubAccessoryRoom_Label{pub value:i32,}
@@ -55,6 +42,22 @@ pub fn exit()->Self{Self{value:3}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubAccessoryRoom_Shop{pub value:i32,}
+impl::unity2::ClassIdentity for HubAccessoryRoom_Shop{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubAccessoryRoom.Shop";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubAccessoryRoom_Shop{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubAccessoryRoom_Shop{pub fn hub()->Self{Self{value:0}
+}
+pub fn amiibo()->Self{Self{value:1}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubAccessoryRoom_ViewMode{pub value:i32,}
 impl::unity2::ClassIdentity for HubAccessoryRoom_ViewMode{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubAccessoryRoom.ViewMode";
@@ -72,36 +75,10 @@ pub fn preview()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroom/HubAccessoryRoom.md"))]#[::unity2::class(namespace="App",name="HubAccessoryRoom")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubaccessoryroom::HubAccessoryRoom>)]pub struct HubAccessoryRoom{#[offset(136)]#[rename(name="_DisableList")]pub disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(152)]#[rename(name="m_Shop")]pub m_shop:crate::app::hubaccessoryroom::HubAccessoryRoom_Shop, #[offset(168)]#[rename(name="m_LastResultHash")]pub m_last_result_hash:i32, #[offset(176)]#[rename(name="m_Character")]pub m_character:crate::combat::character::Character, #[offset(184)]#[rename(name="m_LoadingAppearance")]pub m_loading_appearance:crate::combat::characterappearance::CharacterAppearance, #[offset(192)]#[rename(name="m_LoadingChara")]pub m_loading_chara:crate::combat::character::Character, #[offset(200)]#[rename(name="m_LastPID")]pub m_last_pid: ::unity2::Il2CppString,}
-
 }
 
 #[cfg(feature = "app-hubaccessoryroom-types")]
 pub use __types::*;
-
-#[cfg(feature="app-hubaccessoryroom")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubAccessoryRoom_unity2_raw{use super:: * ;
-pub unsafe fn get_scene_name(this:HubAccessoryRoom,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",22usize,__vt.len(), <HubAccessoryRoom as::unity2::ClassIdentity> ::NAME,"get_SceneName",));
-let inner:extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn on_shutdown(this:HubAccessoryRoom,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",15usize,__vt.len(), <HubAccessoryRoom as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
-let inner:extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-hubaccessoryroom")]impl HubAccessoryRoom{#[doc="`SetUnit(crate::app::unit::Unit, crate::app::accessorydata::AccessoryData, bool, bool)` overload"]pub fn set_unit(base_unit:impl::core::convert::Into<crate::app::unit::Unit> ,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,is_delay_load:impl::core::convert::Into<bool> ,is_amiibo:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21737a0usize)as*mut u8,();
 (crate::app::unit::Unit)::core::convert::Into::into(base_unit),(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data),(bool)::core::convert::Into::into(is_delay_load),(bool)::core::convert::Into::into(is_amiibo))}
@@ -115,7 +92,16 @@ inner(this,__mi)}
 }
 
 #[cfg(feature="app-hubaccessoryroom")]pub trait IHubAccessoryRoomMethods:IHubAccessoryRoom{#[doc="`get_SceneName()` overload"]fn get_scene_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubAccessoryRoom_unity2_raw::get_scene_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <HubAccessoryRoom as::unity2::ClassIdentity> ::NAME,"get_SceneName",));
+let __inner:extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`get_ReturnSceneName()` overload"]fn get_return_scene_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2173790usize)as*mut u8, ::unity2::Il2CppString;
@@ -182,7 +168,16 @@ __HubAccessoryRoom_unity2_raw::get_scene_name(__receiver, ::core::option::Option
 (HubAccessoryRoom)__receiver,(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)::core::convert::Into::into(mode))}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__HubAccessoryRoom_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <HubAccessoryRoom as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let __inner:extern "C" fn(HubAccessoryRoom, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -211,6 +206,14 @@ pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
 }
 
+#[cfg(feature="app-hubaccessoryroom")]impl HubAccessoryRoom{#[doc="Direct (non-virtual) call to `HubAccessoryRoom`'s own `get_SceneName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_scene_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_scene_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `HubAccessoryRoom`'s own `OnShutdown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_shutdown(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_shutdown_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-hubaccessoryroom")]impl HubAccessoryRoom{#[doc="`.ctor(crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` — overload selector"]pub fn new(shop:crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(HubAccessoryRoom), ::core::stringify!(new),));
@@ -221,12 +224,12 @@ this}
 #[cfg(feature = "app-hubaccessoryroom")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubAccessoryRoom_Shop;
-    pub use super::HubAccessoryRoom_Label;
-    pub use super::HubAccessoryRoom_ViewMode;
     pub use super::HubAccessoryRoom;
     pub use super::IHubAccessoryRoom;
     pub use super::IHubAccessoryRoomMethods;
+    pub use super::HubAccessoryRoom_Label;
+    pub use super::HubAccessoryRoom_Shop;
+    pub use super::HubAccessoryRoom_ViewMode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

@@ -11,6 +11,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubfasttravel/HubFastTravel.md"))]#[::unity2::class(namespace="App",name="HubFastTravel")]#[parent(crate::system::object::Object)]pub struct HubFastTravel{#[offset(16)]#[rename(name="m_location")]pub m_location:crate::system::collections::generic::list_1::List_1<crate::app::hubfasttravel::HubFastTravel_Location> , #[offset(24)]#[rename(name="m_currentAccessManager")]pub m_current_access_manager:crate::app::hubaccessmanager::HubAccessManager,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubfasttravel/HubFastTravel_Location.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HubFastTravel_Location{pub area: ::unity2::Il2CppString,pub pid: ::unity2::Il2CppString,pub access:crate::app::hubaccessdata::HubAccessData,}
 impl::unity2::ClassIdentity for HubFastTravel_Location{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubFastTravel.Location";
@@ -20,9 +23,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for HubFastTravel_Location{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubfasttravel/HubFastTravel.md"))]#[::unity2::class(namespace="App",name="HubFastTravel")]#[parent(crate::system::object::Object)]pub struct HubFastTravel{#[offset(16)]#[rename(name="m_location")]pub m_location:crate::system::collections::generic::list_1::List_1<crate::app::hubfasttravel::HubFastTravel_Location> , #[offset(24)]#[rename(name="m_currentAccessManager")]pub m_current_access_manager:crate::app::hubaccessmanager::HubAccessManager,}
 
 }
 
@@ -65,10 +65,10 @@ this}
 #[cfg(feature = "app-hubfasttravel")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubFastTravel_Location;
     pub use super::HubFastTravel;
     pub use super::IHubFastTravel;
     pub use super::IHubFastTravelMethods;
+    pub use super::HubFastTravel_Location;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

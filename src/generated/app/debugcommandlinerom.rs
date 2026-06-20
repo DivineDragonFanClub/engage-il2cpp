@@ -9,15 +9,55 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandlinerom/DebugCommandlineRom_Options.md"))]#[::unity2::class(namespace="App",name="DebugCommandlineRom.Options")]#[parent(crate::system::object::Object)]pub struct DebugCommandlineRom_Options{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandlinerom/DebugCommandlineRom.md"))]#[::unity2::class(namespace="App",name="DebugCommandlineRom")]#[parent(crate::system::object::Object)]pub struct DebugCommandlineRom{#[static_field]#[rename(name="s_Options")]pub s_options:crate::app::debugcommandlinerom::DebugCommandlineRom_Options,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugcommandlinerom/DebugCommandlineRom_Options.md"))]#[::unity2::class(namespace="App",name="DebugCommandlineRom.Options")]#[parent(crate::system::object::Object)]pub struct DebugCommandlineRom_Options{}
 
 }
 
 #[cfg(feature = "app-debugcommandlinerom-types")]
 pub use __types::*;
+
+#[cfg(feature="app-debugcommandlinerom")]impl DebugCommandlineRom{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a02990usize)as*mut u8,();
+)}
+}
+#[doc="`get_SaveDataRootPath()` overload"]pub fn get_save_data_root_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a029a0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_RelayDataRootPath()` overload"]pub fn get_relay_data_root_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a029b0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_VersusDataRootPath()` overload"]pub fn get_versus_data_root_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a029c0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_IsAutoPlay()` overload"]pub fn get_is_auto_play()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a029d0usize)as*mut u8,bool;
+)}
+}
+}
+
+#[cfg(feature="app-debugcommandlinerom")]pub trait IDebugCommandlineRomMethods:IDebugCommandlineRom{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandlineRom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a029e0usize)as*mut u8,();
+(DebugCommandlineRom)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugcommandlinerom")]impl<__T:IDebugCommandlineRom>IDebugCommandlineRomMethods for __T{}
+
+#[cfg(feature="app-debugcommandlinerom")]impl DebugCommandlineRom{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_save_data_root_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_relay_data_root_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_versus_data_root_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_auto_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-debugcommandlinerom")]impl DebugCommandlineRom{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugCommandlineRom), ::core::stringify!(new),));
+ <Self as IDebugCommandlineRomMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-debugcommandlinerom")]pub trait IDebugCommandlineRom_OptionsMethods:IDebugCommandlineRom_Options{#[doc="`get_SaveDataRootPath()` overload"]fn get_save_data_root_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugCommandlineRom_Options as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4370usize)as*mut u8, ::unity2::Il2CppString;
@@ -77,55 +117,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-debugcommandlinerom")]impl DebugCommandlineRom{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a02990usize)as*mut u8,();
-)}
-}
-#[doc="`get_SaveDataRootPath()` overload"]pub fn get_save_data_root_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a029a0usize)as*mut u8, ::unity2::Il2CppString;
-)}
-}
-#[doc="`get_RelayDataRootPath()` overload"]pub fn get_relay_data_root_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a029b0usize)as*mut u8, ::unity2::Il2CppString;
-)}
-}
-#[doc="`get_VersusDataRootPath()` overload"]pub fn get_versus_data_root_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a029c0usize)as*mut u8, ::unity2::Il2CppString;
-)}
-}
-#[doc="`get_IsAutoPlay()` overload"]pub fn get_is_auto_play()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a029d0usize)as*mut u8,bool;
-)}
-}
-}
-
-#[cfg(feature="app-debugcommandlinerom")]pub trait IDebugCommandlineRomMethods:IDebugCommandlineRom{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugCommandlineRom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a029e0usize)as*mut u8,();
-(DebugCommandlineRom)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugcommandlinerom")]impl<__T:IDebugCommandlineRom>IDebugCommandlineRomMethods for __T{}
-
-#[cfg(feature="app-debugcommandlinerom")]impl DebugCommandlineRom{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_save_data_root_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_relay_data_root_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_versus_data_root_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_is_auto_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-debugcommandlinerom")]impl DebugCommandlineRom{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugCommandlineRom), ::core::stringify!(new),));
- <Self as IDebugCommandlineRomMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-debugcommandlinerom")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugCommandlineRom_Options;
-    pub use super::IDebugCommandlineRom_Options;
-    pub use super::IDebugCommandlineRom_OptionsMethods;
     pub use super::DebugCommandlineRom;
     pub use super::IDebugCommandlineRom;
     pub use super::IDebugCommandlineRomMethods;
+    pub use super::DebugCommandlineRom_Options;
+    pub use super::IDebugCommandlineRom_Options;
+    pub use super::IDebugCommandlineRom_OptionsMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

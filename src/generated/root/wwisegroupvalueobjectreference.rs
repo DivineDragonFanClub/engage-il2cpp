@@ -22,60 +22,53 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "root-wwisegroupvalueobjectreference-types")]
 pub use __types::*;
 
-#[cfg(feature="root-wwisegroupvalueobjectreference")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WwiseGroupValueObjectReference_unity2_raw{use super:: * ;
-pub unsafe fn get_group_object_reference(this:WwiseGroupValueObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::wwiseobjectreference::WwiseObjectReference{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="root-wwisegroupvalueobjectreference")]pub trait IWwiseGroupValueObjectReferenceMethods:IWwiseGroupValueObjectReference{#[doc="`get_GroupObjectReference()` overload"]fn get_group_object_reference(self,)->crate::root::wwiseobjectreference::WwiseObjectReference{unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",6usize,__vt.len(), <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,"get_GroupObjectReference",));
-let inner:extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjectreference::WwiseObjectReference= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjectreference::WwiseObjectReference= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_group_object_reference(this:WwiseGroupValueObjectReference,value:crate::root::wwiseobjectreference::WwiseObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`set_GroupObjectReference(crate::root::wwiseobjectreference::WwiseObjectReference)` overload"]fn set_group_object_reference(self,value:impl::core::convert::Into<crate::root::wwiseobjectreference::WwiseObjectReference>)->(){unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",7usize,__vt.len(), <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,"set_GroupObjectReference",));
-let inner:extern "C" fn(WwiseGroupValueObjectReference,crate::root::wwiseobjectreference::WwiseObjectReference, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(WwiseGroupValueObjectReference,crate::root::wwiseobjectreference::WwiseObjectReference, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
-pub unsafe fn get_group_wwise_object_type(this:WwiseGroupValueObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
+}
+}
+#[doc="`get_GroupWwiseObjectType()` overload"]fn get_group_wwise_object_type(self,)->crate::root::wwiseobjecttype::WwiseObjectType{unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,"get_GroupWwiseObjectType",));
-let inner:extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_display_name(this:WwiseGroupValueObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_DisplayName()` overload"]fn get_display_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,"get_DisplayName",));
-let inner:extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="root-wwisegroupvalueobjectreference")]pub trait IWwiseGroupValueObjectReferenceMethods:IWwiseGroupValueObjectReference{#[doc="`get_GroupObjectReference()` overload"]fn get_group_object_reference(self,)->crate::root::wwiseobjectreference::WwiseObjectReference{unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WwiseGroupValueObjectReference_unity2_raw::get_group_object_reference(__receiver, ::core::option::Option::None)}
-}
-#[doc="`set_GroupObjectReference(crate::root::wwiseobjectreference::WwiseObjectReference)` overload"]fn set_group_object_reference(self,value:impl::core::convert::Into<crate::root::wwiseobjectreference::WwiseObjectReference>)->(){unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WwiseGroupValueObjectReference_unity2_raw::set_group_object_reference(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
-}
-#[doc="`get_GroupWwiseObjectType()` overload"]fn get_group_wwise_object_type(self,)->crate::root::wwiseobjecttype::WwiseObjectType{unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WwiseGroupValueObjectReference_unity2_raw::get_group_wwise_object_type(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_DisplayName()` overload"]fn get_display_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__WwiseGroupValueObjectReference_unity2_raw::get_display_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x293fd00usize)as*mut u8,();
@@ -90,6 +83,20 @@ pub fn set_group_object_reference_method_info()-> & 'static::unity2::il2cpp::Met
 pub fn get_group_wwise_object_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn get_display_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="root-wwisegroupvalueobjectreference")]impl WwiseGroupValueObjectReference{#[doc="Direct (non-virtual) call to `WwiseGroupValueObjectReference`'s own `get_GroupObjectReference`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_group_object_reference(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::wwiseobjectreference::WwiseObjectReference{let __mi=Self::get_group_object_reference_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::wwiseobjectreference::WwiseObjectReference= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WwiseGroupValueObjectReference`'s own `set_GroupObjectReference`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_group_object_reference(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::root::wwiseobjectreference::WwiseObjectReference,)->(){let __mi=Self::set_group_object_reference_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::root::wwiseobjectreference::WwiseObjectReference, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WwiseGroupValueObjectReference`'s own `get_GroupWwiseObjectType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_group_wwise_object_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::wwiseobjecttype::WwiseObjectType{let __mi=Self::get_group_wwise_object_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `WwiseGroupValueObjectReference`'s own `get_DisplayName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_display_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_display_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="root-wwisegroupvalueobjectreference")]impl WwiseGroupValueObjectReference{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

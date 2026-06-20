@@ -13,7 +13,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI.md"))]#[::unity2::class(namespace="App",name="DragonRideResultUI")]#[parent(crate::system::object::Object)]pub struct DragonRideResultUI{#[static_field]#[rename(name="cFanfareExcellentIndex")]pub c_fanfare_excellent_index:i32, #[static_field]#[rename(name="cFanfareGoodIndex")]pub c_fanfare_good_index:i32, #[offset(16)]#[rename(name="cRankNodeList")]pub c_rank_node_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(24)]#[rename(name="cTargetNodeList")]pub c_target_node_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="cTargetMessageList")]pub c_target_message_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(40)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_data")]pub m_data:crate::app::dragonrideresultui::DragonRideResultUI_DataSet, #[offset(56)]#[rename(name="m_Timer")]pub m_timer:f64, #[offset(64)]#[rename(name="m_Phase")]pub m_phase:crate::app::dragonrideresultui::DragonRideResultUI_ResultPhase, #[offset(72)]#[rename(name="m_LevelText")]pub m_level_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_BrokenTargetNode")]pub m_broken_target_node:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="m_AssistNode")]pub m_assist_node:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="m_ScoreNode")]pub m_score_node:crate::unity_engine::transform::Transform, #[offset(104)]#[rename(name="m_ScoreText")]pub m_score_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(112)]#[rename(name="m_RankRoot")]pub m_rank_root:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="m_RankNode")]pub m_rank_node:crate::unity_engine::transform::Transform, #[offset(128)]#[rename(name="m_BestScoreNode")]pub m_best_score_node:crate::unity_engine::transform::Transform, #[offset(136)]#[rename(name="m_BestScoreText")]pub m_best_score_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_NewRecordNode")]pub m_new_record_node:crate::unity_engine::transform::Transform, #[offset(152)]#[rename(name="m_Config")]pub m_config:crate::app::dragonrideconfig::DragonRideConfig,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI_DragonRideResultUITarget.md"))]#[::unity2::class(namespace="App",name="DragonRideResultUI.DragonRideResultUITarget")]#[parent(crate::system::object::Object)]pub struct DragonRideResultUI_DragonRideResultUITarget{#[offset(16)]#[rename(name="m_Node")]pub m_node:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI_ResultPhase.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DragonRideResultUI_ResultPhase{pub value:i32,}
@@ -48,83 +48,15 @@ pub fn phase_count()->Self{Self{value:9}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI_DragonRideResultUITarget.md"))]#[::unity2::class(namespace="App",name="DragonRideResultUI.DragonRideResultUITarget")]#[parent(crate::system::object::Object)]pub struct DragonRideResultUI_DragonRideResultUITarget{#[offset(16)]#[rename(name="m_Node")]pub m_node:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI_DataSet.md"))]#[::unity2::class(namespace="App",name="DragonRideResultUI.DataSet")]#[parent(crate::system::object::Object)]pub struct DragonRideResultUI_DataSet{#[offset(16)]#[rename(name="Level")]pub level:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideresultui/DragonRideResultUI.md"))]#[::unity2::class(namespace="App",name="DragonRideResultUI")]#[parent(crate::system::object::Object)]pub struct DragonRideResultUI{#[static_field]#[rename(name="cFanfareExcellentIndex")]pub c_fanfare_excellent_index:i32, #[static_field]#[rename(name="cFanfareGoodIndex")]pub c_fanfare_good_index:i32, #[offset(16)]#[rename(name="cRankNodeList")]pub c_rank_node_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(24)]#[rename(name="cTargetNodeList")]pub c_target_node_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="cTargetMessageList")]pub c_target_message_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(40)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_data")]pub m_data:crate::app::dragonrideresultui::DragonRideResultUI_DataSet, #[offset(56)]#[rename(name="m_Timer")]pub m_timer:f64, #[offset(64)]#[rename(name="m_Phase")]pub m_phase:crate::app::dragonrideresultui::DragonRideResultUI_ResultPhase, #[offset(72)]#[rename(name="m_LevelText")]pub m_level_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_BrokenTargetNode")]pub m_broken_target_node:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="m_AssistNode")]pub m_assist_node:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="m_ScoreNode")]pub m_score_node:crate::unity_engine::transform::Transform, #[offset(104)]#[rename(name="m_ScoreText")]pub m_score_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(112)]#[rename(name="m_RankRoot")]pub m_rank_root:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="m_RankNode")]pub m_rank_node:crate::unity_engine::transform::Transform, #[offset(128)]#[rename(name="m_BestScoreNode")]pub m_best_score_node:crate::unity_engine::transform::Transform, #[offset(136)]#[rename(name="m_BestScoreText")]pub m_best_score_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_NewRecordNode")]pub m_new_record_node:crate::unity_engine::transform::Transform, #[offset(152)]#[rename(name="m_Config")]pub m_config:crate::app::dragonrideconfig::DragonRideConfig,}
 
 }
 
 #[cfg(feature = "app-dragonrideresultui-types")]
 pub use __types::*;
-
-#[cfg(feature="app-dragonrideresultui")]pub trait IDragonRideResultUIMethods:IDragonRideResultUI{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2acd870usize)as*mut u8,();
-(DragonRideResultUI)__receiver)}
-}
-#[doc="`Init(crate::unity_engine::gameobject::GameObject, crate::app::dragonrideresultui::DragonRideResultUI_DataSet)` overload"]fn init(self,root_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,data:impl::core::convert::Into<crate::app::dragonrideresultui::DragonRideResultUI_DataSet>)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ace0c0usize)as*mut u8,();
-(DragonRideResultUI)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_obj),(crate::app::dragonrideresultui::DragonRideResultUI_DataSet)::core::convert::Into::into(data))}
-}
-#[doc="`NextPhase()` overload"]fn next_phase(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3d10usize)as*mut u8,();
-(DragonRideResultUI)__receiver)}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2acf170usize)as*mut u8,();
-(DragonRideResultUI)__receiver)}
-}
-#[doc="`PlayResult()` overload"]fn play_result(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2acef00usize)as*mut u8,();
-(DragonRideResultUI)__receiver)}
-}
-#[doc="`PlayCloseAnime()` overload"]fn play_close_anime(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2acf640usize)as*mut u8,();
-(DragonRideResultUI)__receiver)}
-}
-#[doc="`VoiceResultPerfect()` overload"]fn voice_result_perfect(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3d30usize)as*mut u8,();
-(DragonRideResultUI)__receiver)}
-}
-#[doc="`VoiceResultGood()` overload"]fn voice_result_good(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3db0usize)as*mut u8,();
-(DragonRideResultUI)__receiver)}
-}
-#[doc="`VoiceResultBad()` overload"]fn voice_result_bad(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3e30usize)as*mut u8,();
-(DragonRideResultUI)__receiver)}
-}
-#[doc="`DestroyResult()` overload"]fn destroy_result(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2acffc0usize)as*mut u8,();
-(DragonRideResultUI)__receiver)}
-}
-#[doc="`get_IsFinished()` overload"]fn get_is_finished(self,)->bool{unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2acf630usize)as*mut u8,bool;
-(DragonRideResultUI)__receiver)}
-}
-}
-
-#[cfg(feature="app-dragonrideresultui")]impl<__T:IDragonRideResultUI>IDragonRideResultUIMethods for __T{}
-
-#[cfg(feature="app-dragonrideresultui")]impl DragonRideResultUI{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn next_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn play_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn play_close_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn voice_result_perfect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn voice_result_good_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn voice_result_bad_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn destroy_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_is_finished_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="app-dragonrideresultui")]impl DragonRideResultUI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DragonRideResultUI), ::core::stringify!(new),));
- <Self as IDragonRideResultUIMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-dragonrideresultui")]pub trait IDragonRideResultUI_DragonRideResultUITargetMethods:IDragonRideResultUI_DragonRideResultUITarget{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideResultUI_DragonRideResultUITarget as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd50f0usize)as*mut u8,();
@@ -302,19 +234,87 @@ pub fn set_target_count_list_method_info()-> & 'static::unity2::il2cpp::MethodIn
 this}
 }
 
+#[cfg(feature="app-dragonrideresultui")]pub trait IDragonRideResultUIMethods:IDragonRideResultUI{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2acd870usize)as*mut u8,();
+(DragonRideResultUI)__receiver)}
+}
+#[doc="`Init(crate::unity_engine::gameobject::GameObject, crate::app::dragonrideresultui::DragonRideResultUI_DataSet)` overload"]fn init(self,root_obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,data:impl::core::convert::Into<crate::app::dragonrideresultui::DragonRideResultUI_DataSet>)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ace0c0usize)as*mut u8,();
+(DragonRideResultUI)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_obj),(crate::app::dragonrideresultui::DragonRideResultUI_DataSet)::core::convert::Into::into(data))}
+}
+#[doc="`NextPhase()` overload"]fn next_phase(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3d10usize)as*mut u8,();
+(DragonRideResultUI)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2acf170usize)as*mut u8,();
+(DragonRideResultUI)__receiver)}
+}
+#[doc="`PlayResult()` overload"]fn play_result(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2acef00usize)as*mut u8,();
+(DragonRideResultUI)__receiver)}
+}
+#[doc="`PlayCloseAnime()` overload"]fn play_close_anime(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2acf640usize)as*mut u8,();
+(DragonRideResultUI)__receiver)}
+}
+#[doc="`VoiceResultPerfect()` overload"]fn voice_result_perfect(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3d30usize)as*mut u8,();
+(DragonRideResultUI)__receiver)}
+}
+#[doc="`VoiceResultGood()` overload"]fn voice_result_good(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3db0usize)as*mut u8,();
+(DragonRideResultUI)__receiver)}
+}
+#[doc="`VoiceResultBad()` overload"]fn voice_result_bad(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3e30usize)as*mut u8,();
+(DragonRideResultUI)__receiver)}
+}
+#[doc="`DestroyResult()` overload"]fn destroy_result(self,)->(){unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2acffc0usize)as*mut u8,();
+(DragonRideResultUI)__receiver)}
+}
+#[doc="`get_IsFinished()` overload"]fn get_is_finished(self,)->bool{unsafe{let __receiver= <DragonRideResultUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2acf630usize)as*mut u8,bool;
+(DragonRideResultUI)__receiver)}
+}
+}
+
+#[cfg(feature="app-dragonrideresultui")]impl<__T:IDragonRideResultUI>IDragonRideResultUIMethods for __T{}
+
+#[cfg(feature="app-dragonrideresultui")]impl DragonRideResultUI{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn next_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn play_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn play_close_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn voice_result_perfect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn voice_result_good_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn voice_result_bad_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn destroy_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_finished_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-dragonrideresultui")]impl DragonRideResultUI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideResultUI), ::core::stringify!(new),));
+ <Self as IDragonRideResultUIMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-dragonrideresultui")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRideResultUI;
-    pub use super::IDragonRideResultUI;
-    pub use super::IDragonRideResultUIMethods;
-    pub use super::DragonRideResultUI_ResultPhase;
     pub use super::DragonRideResultUI_DragonRideResultUITarget;
     pub use super::IDragonRideResultUI_DragonRideResultUITarget;
     pub use super::IDragonRideResultUI_DragonRideResultUITargetMethods;
+    pub use super::DragonRideResultUI_ResultPhase;
     pub use super::DragonRideResultUI_DataSet;
     pub use super::IDragonRideResultUI_DataSet;
     pub use super::IDragonRideResultUI_DataSetMethods;
+    pub use super::DragonRideResultUI;
+    pub use super::IDragonRideResultUI;
+    pub use super::IDragonRideResultUIMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

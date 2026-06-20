@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "system-collections-ihashcodeprovider-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-ihashcodeprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IHashCodeProvider_unity2_raw{use super:: * ;
-pub unsafe fn get_hash_code(this:IHashCodeProvider,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="system-collections-ihashcodeprovider")]pub trait IIHashCodeProviderMethods:IIHashCodeProvider{#[doc="`GetHashCode(crate::system::object::Object)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <IHashCodeProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IHashCodeProvider as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let inner:extern "C" fn(IHashCodeProvider,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IHashCodeProvider,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,obj,__mi)}
+__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
 }
-
-#[cfg(feature="system-collections-ihashcodeprovider")]pub trait IIHashCodeProviderMethods:IIHashCodeProvider{#[doc="`GetHashCode(crate::system::object::Object)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <IHashCodeProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IHashCodeProvider_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="system-collections-ihashcodeprovider")]impl<__T:IIHashCodeProvider>IIHashCodeProviderMethods for __T{}
 
 #[cfg(feature="system-collections-ihashcodeprovider")]impl IHashCodeProvider{pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="system-collections-ihashcodeprovider")]impl IHashCodeProvider{#[doc="Direct (non-virtual) call to `IHashCodeProvider`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)->i32{let __mi=Self::get_hash_code_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),obj, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "system-collections-ihashcodeprovider")]

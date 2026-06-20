@@ -26,25 +26,25 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu.ConfirmDialog")]#[parent(crate::system::object::Object)]pub struct UnitSelectRingMenu_ConfirmDialog{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu_DialogNoMenuItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu.DialogNoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct UnitSelectRingMenu_DialogNoMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu_EntrustRingMenuItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu.EntrustRingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct UnitSelectRingMenu_EntrustRingMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu_ConfirmDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu.ConfirmDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectRingMenu_ConfirmDialog_DecideEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu_DialogYesMenuItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu.DialogYesMenuItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct UnitSelectRingMenu_DialogYesMenuItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu_DialogNoMenuItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu.DialogNoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct UnitSelectRingMenu_DialogNoMenuItem{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu_TakeOffAllRingsMenuItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu.TakeOffAllRingsMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct UnitSelectRingMenu_TakeOffAllRingsMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct UnitSelectRingMenu{#[offset(200)]#[rename(name="m_CloseEventHandler")]pub m_close_event_handler:crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu_CloseEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu.CloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectRingMenu_CloseEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu_ConfirmDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu.ConfirmDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectRingMenu_ConfirmDialog_DecideEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct UnitSelectRingMenu{#[offset(200)]#[rename(name="m_CloseEventHandler")]pub m_close_event_handler:crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectringmenu/UnitSelectRingMenu_EntrustRingMenuItem.md"))]#[::unity2::class(namespace="App",name="UnitSelectRingMenu.EntrustRingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct UnitSelectRingMenu_EntrustRingMenuItem{}
 
 }
 
@@ -75,115 +75,40 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-unitselectringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectRingMenu_DialogNoMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn build_attribute(this:UnitSelectRingMenu_DialogNoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-unitselectringmenu")]pub trait IUnitSelectRingMenu_ConfirmDialog_DecideEventHandlerMethods:IUnitSelectRingMenu_ConfirmDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectRingMenu_ConfirmDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5e10usize)as*mut u8,();
+(UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnitSelectRingMenu_ConfirmDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <UnitSelectRingMenu_DialogNoMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(UnitSelectRingMenu_DialogNoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <UnitSelectRingMenu_ConfirmDialog_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(UnitSelectRingMenu_ConfirmDialog_DecideEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="app-unitselectringmenu")]pub trait IUnitSelectRingMenu_DialogNoMenuItemMethods:IUnitSelectRingMenu_DialogNoMenuItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnitSelectRingMenu_DialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b56280usize)as*mut u8,();
-(UnitSelectRingMenu_DialogNoMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <UnitSelectRingMenu_DialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_DialogNoMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-unitselectringmenu")]impl<__T:IUnitSelectRingMenu_DialogNoMenuItem>IUnitSelectRingMenu_DialogNoMenuItemMethods for __T{}
+#[cfg(feature="app-unitselectringmenu")]impl<__T:IUnitSelectRingMenu_ConfirmDialog_DecideEventHandler>IUnitSelectRingMenu_ConfirmDialog_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_DialogNoMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_ConfirmDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_DialogNoMenuItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_ConfirmDialog_DecideEventHandler{#[doc="Direct (non-virtual) call to `UnitSelectRingMenu_ConfirmDialog_DecideEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_ConfirmDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(UnitSelectRingMenu_DialogNoMenuItem), ::core::stringify!(new),));
- <Self as IUnitSelectRingMenu_DialogNoMenuItemMethods> ::ctor(this,message);
+ failed to instantiate", ::core::stringify!(UnitSelectRingMenu_ConfirmDialog_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IUnitSelectRingMenu_ConfirmDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
 this}
-}
-
-#[cfg(feature="app-unitselectringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:UnitSelectRingMenu_EntrustRingMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(UnitSelectRingMenu_EntrustRingMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:UnitSelectRingMenu_EntrustRingMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(UnitSelectRingMenu_EntrustRingMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:UnitSelectRingMenu_EntrustRingMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(UnitSelectRingMenu_EntrustRingMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-unitselectringmenu")]pub trait IUnitSelectRingMenu_EntrustRingMenuItemMethods:IUnitSelectRingMenu_EntrustRingMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b562e0usize)as*mut u8,();
-(UnitSelectRingMenu_EntrustRingMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_EntrustRingMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-unitselectringmenu")]impl<__T:IUnitSelectRingMenu_EntrustRingMenuItem>IUnitSelectRingMenu_EntrustRingMenuItemMethods for __T{}
-
-#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_EntrustRingMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_EntrustRingMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSelectRingMenu_EntrustRingMenuItem), ::core::stringify!(new),));
- <Self as IUnitSelectRingMenu_EntrustRingMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-unitselectringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectRingMenu_DialogYesMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn a_call(this:UnitSelectRingMenu_DialogYesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <UnitSelectRingMenu_DialogYesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(UnitSelectRingMenu_DialogYesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-unitselectringmenu")]pub trait IUnitSelectRingMenu_DialogYesMenuItemMethods:IUnitSelectRingMenu_DialogYesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_event_handler:impl::core::convert::Into<crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler>)->(){unsafe{let __receiver= <UnitSelectRingMenu_DialogYesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -191,7 +116,16 @@ inner(this,__mi)}
 (UnitSelectRingMenu_DialogYesMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <UnitSelectRingMenu_DialogYesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_DialogYesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <UnitSelectRingMenu_DialogYesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(UnitSelectRingMenu_DialogYesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -201,6 +135,11 @@ __UnitSelectRingMenu_DialogYesMenuItem_unity2_raw::a_call(__receiver, ::core::op
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_DialogYesMenuItem{#[doc="Direct (non-virtual) call to `UnitSelectRingMenu_DialogYesMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_DialogYesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)` — overload selector"]pub fn new(message: ::unity2::Il2CppString,decide_event_handler:crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(UnitSelectRingMenu_DialogYesMenuItem), ::core::stringify!(new),));
@@ -208,37 +147,40 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-unitselectringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:UnitSelectRingMenu_TakeOffAllRingsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <UnitSelectRingMenu_TakeOffAllRingsMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(UnitSelectRingMenu_TakeOffAllRingsMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:UnitSelectRingMenu_TakeOffAllRingsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-unitselectringmenu")]pub trait IUnitSelectRingMenu_DialogNoMenuItemMethods:IUnitSelectRingMenu_DialogNoMenuItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnitSelectRingMenu_DialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b56280usize)as*mut u8,();
+(UnitSelectRingMenu_DialogNoMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <UnitSelectRingMenu_DialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <UnitSelectRingMenu_TakeOffAllRingsMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(UnitSelectRingMenu_TakeOffAllRingsMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",8usize,__vt.len(), <UnitSelectRingMenu_DialogNoMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(UnitSelectRingMenu_DialogNoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn a_call(this:UnitSelectRingMenu_TakeOffAllRingsMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",18usize,__vt.len(), <UnitSelectRingMenu_TakeOffAllRingsMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let inner:extern "C" fn(UnitSelectRingMenu_TakeOffAllRingsMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-unitselectringmenu")]impl<__T:IUnitSelectRingMenu_DialogNoMenuItem>IUnitSelectRingMenu_DialogNoMenuItemMethods for __T{}
+
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_DialogNoMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_DialogNoMenuItem{#[doc="Direct (non-virtual) call to `UnitSelectRingMenu_DialogNoMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_DialogNoMenuItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectRingMenu_DialogNoMenuItem), ::core::stringify!(new),));
+ <Self as IUnitSelectRingMenu_DialogNoMenuItemMethods> ::ctor(this,message);
+this}
 }
 
 #[cfg(feature="app-unitselectringmenu")]pub trait IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods:IUnitSelectRingMenu_TakeOffAllRingsMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitSelectRingMenu_TakeOffAllRingsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -246,13 +188,40 @@ inner(this,__mi)}
 (UnitSelectRingMenu_TakeOffAllRingsMenuItem)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitSelectRingMenu_TakeOffAllRingsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <UnitSelectRingMenu_TakeOffAllRingsMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(UnitSelectRingMenu_TakeOffAllRingsMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <UnitSelectRingMenu_TakeOffAllRingsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <UnitSelectRingMenu_TakeOffAllRingsMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(UnitSelectRingMenu_TakeOffAllRingsMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <UnitSelectRingMenu_TakeOffAllRingsMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_TakeOffAllRingsMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <UnitSelectRingMenu_TakeOffAllRingsMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(UnitSelectRingMenu_TakeOffAllRingsMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -264,94 +233,22 @@ pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_TakeOffAllRingsMenuItem{#[doc="Direct (non-virtual) call to `UnitSelectRingMenu_TakeOffAllRingsMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnitSelectRingMenu_TakeOffAllRingsMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnitSelectRingMenu_TakeOffAllRingsMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_TakeOffAllRingsMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(UnitSelectRingMenu_TakeOffAllRingsMenuItem), ::core::stringify!(new),));
  <Self as IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods> ::ctor(this,);
 this}
-}
-
-#[cfg(feature="app-unitselectringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectRingMenu_CloseEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:UnitSelectRingMenu_CloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <UnitSelectRingMenu_CloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(UnitSelectRingMenu_CloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-unitselectringmenu")]pub trait IUnitSelectRingMenu_CloseEventHandlerMethods:IUnitSelectRingMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectRingMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b55df0usize)as*mut u8,();
-(UnitSelectRingMenu_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnitSelectRingMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_CloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-unitselectringmenu")]impl<__T:IUnitSelectRingMenu_CloseEventHandler>IUnitSelectRingMenu_CloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_CloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSelectRingMenu_CloseEventHandler), ::core::stringify!(new),));
- <Self as IUnitSelectRingMenu_CloseEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-unitselectringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectRingMenu_ConfirmDialog_DecideEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <UnitSelectRingMenu_ConfirmDialog_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(UnitSelectRingMenu_ConfirmDialog_DecideEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-unitselectringmenu")]pub trait IUnitSelectRingMenu_ConfirmDialog_DecideEventHandlerMethods:IUnitSelectRingMenu_ConfirmDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectRingMenu_ConfirmDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5e10usize)as*mut u8,();
-(UnitSelectRingMenu_ConfirmDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnitSelectRingMenu_ConfirmDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_ConfirmDialog_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-unitselectringmenu")]impl<__T:IUnitSelectRingMenu_ConfirmDialog_DecideEventHandler>IUnitSelectRingMenu_ConfirmDialog_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_ConfirmDialog_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_ConfirmDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSelectRingMenu_ConfirmDialog_DecideEventHandler), ::core::stringify!(new),));
- <Self as IUnitSelectRingMenu_ConfirmDialog_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-unitselectringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectRingMenu_unity2_raw{use super:: * ;
-pub unsafe fn on_close(this:UnitSelectRingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",26usize,__vt.len(), <UnitSelectRingMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
-let inner:extern "C" fn(UnitSelectRingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
 }
 
 #[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,close_event_handler:impl::core::convert::Into<crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler>)->crate::app::unitselectringmenu::UnitSelectRingMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c60be0usize)as*mut u8,crate::app::unitselectringmenu::UnitSelectRingMenu;
@@ -364,7 +261,16 @@ inner(this,__mi)}
 (UnitSelectRingMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler)::core::convert::Into::into(close_event_handler))}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <UnitSelectRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__UnitSelectRingMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <UnitSelectRingMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let __inner:extern "C" fn(UnitSelectRingMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`EntrustRing()` overload"]fn entrust_ring(self,)->(){unsafe{let __receiver= <UnitSelectRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c60ea0usize)as*mut u8,();
@@ -400,10 +306,119 @@ pub fn is_exist_to_be_anabled_to_take_off_rings_method_info()-> & 'static::unity
 pub fn is_equipped_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu{#[doc="Direct (non-virtual) call to `UnitSelectRingMenu`'s own `OnClose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_close_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,close_event_handler:crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(UnitSelectRingMenu), ::core::stringify!(new),));
  <Self as IUnitSelectRingMenuMethods> ::ctor(this,menu_item_list,close_event_handler);
+this}
+}
+
+#[cfg(feature="app-unitselectringmenu")]pub trait IUnitSelectRingMenu_CloseEventHandlerMethods:IUnitSelectRingMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectRingMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b55df0usize)as*mut u8,();
+(UnitSelectRingMenu_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnitSelectRingMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <UnitSelectRingMenu_CloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(UnitSelectRingMenu_CloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-unitselectringmenu")]impl<__T:IUnitSelectRingMenu_CloseEventHandler>IUnitSelectRingMenu_CloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_CloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_CloseEventHandler{#[doc="Direct (non-virtual) call to `UnitSelectRingMenu_CloseEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectRingMenu_CloseEventHandler), ::core::stringify!(new),));
+ <Self as IUnitSelectRingMenu_CloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-unitselectringmenu")]pub trait IUnitSelectRingMenu_EntrustRingMenuItemMethods:IUnitSelectRingMenu_EntrustRingMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b562e0usize)as*mut u8,();
+(UnitSelectRingMenu_EntrustRingMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(UnitSelectRingMenu_EntrustRingMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(UnitSelectRingMenu_EntrustRingMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <UnitSelectRingMenu_EntrustRingMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let __inner:extern "C" fn(UnitSelectRingMenu_EntrustRingMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-unitselectringmenu")]impl<__T:IUnitSelectRingMenu_EntrustRingMenuItem>IUnitSelectRingMenu_EntrustRingMenuItemMethods for __T{}
+
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_EntrustRingMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_EntrustRingMenuItem{#[doc="Direct (non-virtual) call to `UnitSelectRingMenu_EntrustRingMenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnitSelectRingMenu_EntrustRingMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `UnitSelectRingMenu_EntrustRingMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-unitselectringmenu")]impl UnitSelectRingMenu_EntrustRingMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectRingMenu_EntrustRingMenuItem), ::core::stringify!(new),));
+ <Self as IUnitSelectRingMenu_EntrustRingMenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -413,27 +428,27 @@ pub mod prelude {
     pub use super::UnitSelectRingMenu_ConfirmDialog;
     pub use super::IUnitSelectRingMenu_ConfirmDialog;
     pub use super::IUnitSelectRingMenu_ConfirmDialogMethods;
-    pub use super::UnitSelectRingMenu_DialogNoMenuItem;
-    pub use super::IUnitSelectRingMenu_DialogNoMenuItem;
-    pub use super::IUnitSelectRingMenu_DialogNoMenuItemMethods;
-    pub use super::UnitSelectRingMenu_EntrustRingMenuItem;
-    pub use super::IUnitSelectRingMenu_EntrustRingMenuItem;
-    pub use super::IUnitSelectRingMenu_EntrustRingMenuItemMethods;
-    pub use super::UnitSelectRingMenu_DialogYesMenuItem;
-    pub use super::IUnitSelectRingMenu_DialogYesMenuItem;
-    pub use super::IUnitSelectRingMenu_DialogYesMenuItemMethods;
-    pub use super::UnitSelectRingMenu_TakeOffAllRingsMenuItem;
-    pub use super::IUnitSelectRingMenu_TakeOffAllRingsMenuItem;
-    pub use super::IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods;
-    pub use super::UnitSelectRingMenu_CloseEventHandler;
-    pub use super::IUnitSelectRingMenu_CloseEventHandler;
-    pub use super::IUnitSelectRingMenu_CloseEventHandlerMethods;
     pub use super::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler;
     pub use super::IUnitSelectRingMenu_ConfirmDialog_DecideEventHandler;
     pub use super::IUnitSelectRingMenu_ConfirmDialog_DecideEventHandlerMethods;
+    pub use super::UnitSelectRingMenu_DialogYesMenuItem;
+    pub use super::IUnitSelectRingMenu_DialogYesMenuItem;
+    pub use super::IUnitSelectRingMenu_DialogYesMenuItemMethods;
+    pub use super::UnitSelectRingMenu_DialogNoMenuItem;
+    pub use super::IUnitSelectRingMenu_DialogNoMenuItem;
+    pub use super::IUnitSelectRingMenu_DialogNoMenuItemMethods;
+    pub use super::UnitSelectRingMenu_TakeOffAllRingsMenuItem;
+    pub use super::IUnitSelectRingMenu_TakeOffAllRingsMenuItem;
+    pub use super::IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods;
     pub use super::UnitSelectRingMenu;
     pub use super::IUnitSelectRingMenu;
     pub use super::IUnitSelectRingMenuMethods;
+    pub use super::UnitSelectRingMenu_CloseEventHandler;
+    pub use super::IUnitSelectRingMenu_CloseEventHandler;
+    pub use super::IUnitSelectRingMenu_CloseEventHandlerMethods;
+    pub use super::UnitSelectRingMenu_EntrustRingMenuItem;
+    pub use super::IUnitSelectRingMenu_EntrustRingMenuItem;
+    pub use super::IUnitSelectRingMenu_EntrustRingMenuItemMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicmenu::IBasicMenu;

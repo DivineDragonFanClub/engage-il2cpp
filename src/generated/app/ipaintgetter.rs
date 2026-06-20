@@ -14,27 +14,28 @@ mod __types {
 #[cfg(feature = "app-ipaintgetter-types")]
 pub use __types::*;
 
-#[cfg(feature="app-ipaintgetter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPaintGetter_unity2_raw{use super:: * ;
-pub unsafe fn get(this:IPaintGetter,x:f32,y:f32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-ipaintgetter")]pub trait IIPaintGetterMethods:IIPaintGetter{#[doc="`Get(f32, f32)` overload"]fn get(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <IPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IPaintGetter as::unity2::ClassIdentity> ::NAME,"Get",));
-let inner:extern "C" fn(IPaintGetter,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IPaintGetter,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,x,y,__mi)}
+__inner(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y),__mi)}
 }
-
-#[cfg(feature="app-ipaintgetter")]pub trait IIPaintGetterMethods:IIPaintGetter{#[doc="`Get(f32, f32)` overload"]fn get(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <IPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IPaintGetter_unity2_raw::get(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
 }
 }
 
 #[cfg(feature="app-ipaintgetter")]impl<__T:IIPaintGetter>IIPaintGetterMethods for __T{}
 
 #[cfg(feature="app-ipaintgetter")]impl IPaintGetter{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-ipaintgetter")]impl IPaintGetter{#[doc="Direct (non-virtual) call to `IPaintGetter`'s own `Get`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get(this:impl::core::convert::Into< ::unity2::IlInstance> ,x:f32,y:f32,)-> ::unity2::Il2CppString{let __mi=Self::get_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),x,y, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "app-ipaintgetter")]

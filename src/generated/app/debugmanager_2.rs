@@ -13,21 +13,148 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_2.md"))]#[::unity2::class(namespace="App",name="DebugManager")]#[parent(crate::system::object::Object)]pub struct DebugManager_2{#[static_field]#[rename(name="s_LogStack")]pub s_log_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::debugmanager_2::DebugManager_LogArg> , #[static_field]#[rename(name="s_LogLock")]pub s_log_lock:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_LogArg.md"))]#[::unity2::class(namespace="App",name="DebugManager.LogArg")]#[parent(crate::system::object::Object)]pub struct DebugManager_LogArg{#[offset(24)]#[rename(name="m_Func")]pub m_func:crate::app::debugmanager_2::DebugManager_LogFunc, #[offset(32)]#[rename(name="m_Args")]pub m_args: ::unity2::Array< ::unity2::Il2CppString> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_LogScope.md"))]#[::unity2::class(namespace="App",name="DebugManager.LogScope")]#[parent(crate::system::object::Object)]pub struct DebugManager_LogScope{#[offset(16)]#[rename(name="m_Disposed")]pub m_disposed:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_LogFunc.md"))]#[::unity2::class(namespace="App",name="DebugManager.LogFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DebugManager_LogFunc{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_LogScope.md"))]#[::unity2::class(namespace="App",name="DebugManager.LogScope")]#[parent(crate::system::object::Object)]pub struct DebugManager_LogScope{#[offset(16)]#[rename(name="m_Disposed")]pub m_disposed:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_LogArg.md"))]#[::unity2::class(namespace="App",name="DebugManager.LogArg")]#[parent(crate::system::object::Object)]pub struct DebugManager_LogArg{#[offset(24)]#[rename(name="m_Func")]pub m_func:crate::app::debugmanager_2::DebugManager_LogFunc, #[offset(32)]#[rename(name="m_Args")]pub m_args: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmanager_2/DebugManager_2.md"))]#[::unity2::class(namespace="App",name="DebugManager")]#[parent(crate::system::object::Object)]pub struct DebugManager_2{#[static_field]#[rename(name="s_LogStack")]pub s_log_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::debugmanager_2::DebugManager_LogArg> , #[static_field]#[rename(name="s_LogLock")]pub s_log_lock:bool,}
 
 }
 
 #[cfg(feature = "app-debugmanager_2-types")]
 pub use __types::*;
+
+#[cfg(feature="app-debugmanager_2")]pub trait IDebugManager_LogScopeMethods:IDebugManager_LogScope{#[doc="`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor(self,func:impl::core::convert::Into<crate::app::debugmanager_2::DebugManager_LogFunc> ,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4b40usize)as*mut u8,();
+(DebugManager_LogScope)__receiver,(crate::app::debugmanager_2::DebugManager_LogFunc)::core::convert::Into::into(func),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor_2(self,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4b50usize)as*mut u8,();
+(DebugManager_LogScope)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(args))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <DebugManager_LogScope as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let __inner:extern "C" fn(DebugManager_LogScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DebugManager_LogScope as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(DebugManager_LogScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl<__T:IDebugManager_LogScope>IDebugManager_LogScopeMethods for __T{}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogScope{#[doc="Direct (non-virtual) call to `DebugManager_LogScope`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `DebugManager_LogScope`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogScope{#[doc="`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new(func:crate::app::debugmanager_2::DebugManager_LogFunc,args: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugManager_LogScope), ::core::stringify!(new),));
+ <Self as IDebugManager_LogScopeMethods> ::ctor(this,func,args);
+this}
+#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new_2(args: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugManager_LogScope), ::core::stringify!(new_2),));
+ <Self as IDebugManager_LogScopeMethods> ::ctor_2(this,args);
+this}
+}
+
+#[cfg(feature="app-debugmanager_2")]pub trait IDebugManager_LogFuncMethods:IDebugManager_LogFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DebugManager_LogFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4ae0usize)as*mut u8,();
+(DebugManager_LogFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugManager_LogFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <DebugManager_LogFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(DebugManager_LogFunc, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl<__T:IDebugManager_LogFunc>IDebugManager_LogFuncMethods for __T{}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogFunc{#[doc="Direct (non-virtual) call to `DebugManager_LogFunc`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugManager_LogFunc), ::core::stringify!(new),));
+ <Self as IDebugManager_LogFuncMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-debugmanager_2")]pub trait IDebugManager_LogArgMethods:IDebugManager_LogArg{#[doc="`Call()` overload"]fn call(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugManager_LogArg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4690usize)as*mut u8, ::unity2::Il2CppString;
+(DebugManager_LogArg)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DebugManager_LogArg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DebugManager_LogArg as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let __inner:extern "C" fn(DebugManager_LogArg, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl<__T:IDebugManager_LogArg>IDebugManager_LogArgMethods for __T{}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogArg{pub fn call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogArg{#[doc="Direct (non-virtual) call to `DebugManager_LogArg`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
 
 #[cfg(feature="app-debugmanager_2")]impl DebugManager_2{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a05a10usize)as*mut u8,();
 )}
@@ -73,143 +200,21 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-debugmanager_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugManager_LogArg_unity2_raw{use super:: * ;
-pub unsafe fn dispose(this:DebugManager_LogArg,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DebugManager_LogArg as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(DebugManager_LogArg, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugmanager_2")]pub trait IDebugManager_LogArgMethods:IDebugManager_LogArg{#[doc="`Call()` overload"]fn call(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugManager_LogArg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4690usize)as*mut u8, ::unity2::Il2CppString;
-(DebugManager_LogArg)__receiver)}
-}
-#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DebugManager_LogArg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugManager_LogArg_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-debugmanager_2")]impl<__T:IDebugManager_LogArg>IDebugManager_LogArgMethods for __T{}
-
-#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogArg{pub fn call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugmanager_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugManager_LogFunc_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:DebugManager_LogFunc,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <DebugManager_LogFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(DebugManager_LogFunc, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugmanager_2")]pub trait IDebugManager_LogFuncMethods:IDebugManager_LogFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DebugManager_LogFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4ae0usize)as*mut u8,();
-(DebugManager_LogFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugManager_LogFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugManager_LogFunc_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-debugmanager_2")]impl<__T:IDebugManager_LogFunc>IDebugManager_LogFuncMethods for __T{}
-
-#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugManager_LogFunc), ::core::stringify!(new),));
- <Self as IDebugManager_LogFuncMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-debugmanager_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugManager_LogScope_unity2_raw{use super:: * ;
-pub unsafe fn finalize(this:DebugManager_LogScope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",1usize,__vt.len(), <DebugManager_LogScope as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let inner:extern "C" fn(DebugManager_LogScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn dispose(this:DebugManager_LogScope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <DebugManager_LogScope as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let inner:extern "C" fn(DebugManager_LogScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-debugmanager_2")]pub trait IDebugManager_LogScopeMethods:IDebugManager_LogScope{#[doc="`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor(self,func:impl::core::convert::Into<crate::app::debugmanager_2::DebugManager_LogFunc> ,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4b40usize)as*mut u8,();
-(DebugManager_LogScope)__receiver,(crate::app::debugmanager_2::DebugManager_LogFunc)::core::convert::Into::into(func),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(args))}
-}
-#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor_2(self,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d4b50usize)as*mut u8,();
-(DebugManager_LogScope)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(args))}
-}
-#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugManager_LogScope_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
-}
-#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DebugManager_LogScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__DebugManager_LogScope_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-debugmanager_2")]impl<__T:IDebugManager_LogScope>IDebugManager_LogScopeMethods for __T{}
-
-#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-debugmanager_2")]impl DebugManager_LogScope{#[doc="`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new(func:crate::app::debugmanager_2::DebugManager_LogFunc,args: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugManager_LogScope), ::core::stringify!(new),));
- <Self as IDebugManager_LogScopeMethods> ::ctor(this,func,args);
-this}
-#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new_2(args: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugManager_LogScope), ::core::stringify!(new_2),));
- <Self as IDebugManager_LogScopeMethods> ::ctor_2(this,args);
-this}
-}
-
 #[cfg(feature = "app-debugmanager_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugManager_2;
-    pub use super::IDebugManager_2;
-    pub use super::IDebugManager_2Methods;
-    pub use super::DebugManager_LogArg;
-    pub use super::IDebugManager_LogArg;
-    pub use super::IDebugManager_LogArgMethods;
-    pub use super::DebugManager_LogFunc;
-    pub use super::IDebugManager_LogFunc;
-    pub use super::IDebugManager_LogFuncMethods;
     pub use super::DebugManager_LogScope;
     pub use super::IDebugManager_LogScope;
     pub use super::IDebugManager_LogScopeMethods;
+    pub use super::DebugManager_LogFunc;
+    pub use super::IDebugManager_LogFunc;
+    pub use super::IDebugManager_LogFuncMethods;
+    pub use super::DebugManager_LogArg;
+    pub use super::IDebugManager_LogArg;
+    pub use super::IDebugManager_LogArgMethods;
+    pub use super::DebugManager_2;
+    pub use super::IDebugManager_2;
+    pub use super::IDebugManager_2Methods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

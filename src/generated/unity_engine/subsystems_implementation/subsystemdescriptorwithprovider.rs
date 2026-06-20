@@ -16,21 +16,17 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SubsystemDescriptorWithProvider_unity2_raw{use super:: * ;
-pub unsafe fn get_id(this:SubsystemDescriptorWithProvider,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]pub trait ISubsystemDescriptorWithProviderMethods:ISubsystemDescriptorWithProvider{#[doc="`get_id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SubsystemDescriptorWithProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <SubsystemDescriptorWithProvider as::unity2::ClassIdentity> ::NAME,"get_id",));
-let inner:extern "C" fn(SubsystemDescriptorWithProvider, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(SubsystemDescriptorWithProvider, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
 }
-
-#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]pub trait ISubsystemDescriptorWithProviderMethods:ISubsystemDescriptorWithProvider{#[doc="`get_id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SubsystemDescriptorWithProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__SubsystemDescriptorWithProvider_unity2_raw::get_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SubsystemDescriptorWithProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ae60usize)as*mut u8,();
@@ -42,6 +38,11 @@ __SubsystemDescriptorWithProvider_unity2_raw::get_id(__receiver, ::core::option:
 
 #[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]impl SubsystemDescriptorWithProvider{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]impl SubsystemDescriptorWithProvider{#[doc="Direct (non-virtual) call to `SubsystemDescriptorWithProvider`'s own `get_id`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_id_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
 }
 
 #[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]impl SubsystemDescriptorWithProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}

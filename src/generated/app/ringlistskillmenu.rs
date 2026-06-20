@@ -35,22 +35,25 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_SkillHelpWindow.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.SkillHelpWindow")]#[parent(crate::system::object::Object)]pub struct RingListSkillMenu_SkillHelpWindow{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_HelpText")]pub m_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RingListSkillMenu_MenuItem{#[offset(104)]#[rename(name="m_Root")]pub m_root:crate::app::ringlistskillmenu::RingListSkillMenu,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_ExtraSkill.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuItem_ExtraSkill")]#[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]pub struct RingListSkillMenu_MenuItem_ExtraSkill{#[static_field]#[rename(name="SpriteNameTable")]pub sprite_name_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="NameMidTable")]pub name_mid_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="HelpMidTable")]pub help_mid_table: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu")]#[parent(crate::system::object::Object)]pub struct RingListSkillMenu{#[offset(16)]#[rename(name="m_Menu")]pub m_menu:crate::app::ringlistskillmenu::RingListSkillMenu_Menu, #[offset(24)]#[rename(name="m_menuContent")]pub m_menu_content:crate::app::basicmenucontent::BasicMenuContent,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_ItemHelpWindow.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.ItemHelpWindow")]#[parent(crate::system::object::Object)]pub struct RingListSkillMenu_ItemHelpWindow{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_ItemDetailSetter")]pub m_item_detail_setter:crate::app::itemmenudetailsetter::ItemMenuDetailSetter,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_Menu.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.Menu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RingListSkillMenu_Menu{#[offset(200)]#[rename(name="m_CancelEventHandler")]pub m_cancel_event_handler:crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, #[offset(208)]#[rename(name="m_IsBindParent")]pub m_is_bind_parent:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_CancelEventHandler.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.CancelEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RingListSkillMenu_CancelEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RingListSkillMenu_MenuItem{#[offset(104)]#[rename(name="m_Root")]pub m_root:crate::app::ringlistskillmenu::RingListSkillMenu,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_WeaponTalent.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuItem_WeaponTalent")]#[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]pub struct RingListSkillMenu_MenuItem_WeaponTalent{#[static_field]#[rename(name="ItemKindTable")]pub item_kind_table: ::unity2::Array<crate::app::itemdata::ItemData_Kinds> , #[static_field]#[rename(name="NameMidTable")]pub name_mid_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="HelpMidTable")]pub help_mid_table: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_Skill.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuItem_Skill")]#[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]pub struct RingListSkillMenu_MenuItem_Skill{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_ItemHelpWindow.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.ItemHelpWindow")]#[parent(crate::system::object::Object)]pub struct RingListSkillMenu_ItemHelpWindow{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_ItemDetailSetter")]pub m_item_detail_setter:crate::app::itemmenudetailsetter::ItemMenuDetailSetter,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_ExtraSkill_SkillType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingListSkillMenu_MenuItem_ExtraSkill_SkillType{pub value:i32,}
@@ -76,191 +79,86 @@ pub fn max()->Self{Self{value:3}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuContent.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct RingListSkillMenu_MenuContent{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_Skill.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuItem_Skill")]#[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]pub struct RingListSkillMenu_MenuItem_Skill{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItemContent.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct RingListSkillMenu_MenuItemContent{#[offset(72)]#[rename(name="m_Level")]pub m_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_LevelText")]pub m_level_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(88)]#[rename(name="m_IconImage")]pub m_icon_image:crate::unity_engine::ui::image::Image, #[offset(96)]#[rename(name="m_IconFrameImage")]pub m_icon_frame_image:crate::unity_engine::ui::image::Image, #[offset(104)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(112)]#[rename(name="m_GotCheckImage")]pub m_got_check_image:crate::unity_engine::ui::image::Image, #[offset(120)]#[rename(name="m_IsDisable")]pub m_is_disable:bool, #[offset(121)]#[rename(name="m_IsInitialized")]pub m_is_initialized:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_WeaponTalent.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuItem_WeaponTalent")]#[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]pub struct RingListSkillMenu_MenuItem_WeaponTalent{#[static_field]#[rename(name="ItemKindTable")]pub item_kind_table: ::unity2::Array<crate::app::itemdata::ItemData_Kinds> , #[static_field]#[rename(name="NameMidTable")]pub name_mid_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="HelpMidTable")]pub help_mid_table: ::unity2::Array< ::unity2::Il2CppString> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_SkillHelpWindow.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.SkillHelpWindow")]#[parent(crate::system::object::Object)]pub struct RingListSkillMenu_SkillHelpWindow{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_RootAnimator")]pub m_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_HelpText")]pub m_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_CancelEventHandler.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.CancelEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RingListSkillMenu_CancelEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_EngageItem.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuItem_EngageItem")]#[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]pub struct RingListSkillMenu_MenuItem_EngageItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenu/RingListSkillMenu_MenuItem_ExtraSkill.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenu.MenuItem_ExtraSkill")]#[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)]pub struct RingListSkillMenu_MenuItem_ExtraSkill{#[static_field]#[rename(name="SpriteNameTable")]pub sprite_name_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="NameMidTable")]pub name_mid_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="HelpMidTable")]pub help_mid_table: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-ringlistskillmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_SkillHelpWindowMethods:IRingListSkillMenu_SkillHelpWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f040usize)as*mut u8,();
-(RingListSkillMenu_SkillHelpWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`SetSkillData(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_Skill)` overload"]fn set_skill_data(self,menu_item:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_Skill>)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e3f0usize)as*mut u8,();
-(RingListSkillMenu_SkillHelpWindow)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_Skill)::core::convert::Into::into(menu_item))}
-}
-#[doc="`SetSkillData(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill)` overload"]fn set_skill_data_2(self,menu_item:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill>)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5def0usize)as*mut u8,();
-(RingListSkillMenu_SkillHelpWindow)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill)::core::convert::Into::into(menu_item))}
-}
-#[doc="`SetItemKind(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_WeaponTalent)` overload"]fn set_item_kind(self,menu_item:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_WeaponTalent>)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e890usize)as*mut u8,();
-(RingListSkillMenu_SkillHelpWindow)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_WeaponTalent)::core::convert::Into::into(menu_item))}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5df30usize)as*mut u8,();
-(RingListSkillMenu_SkillHelpWindow)__receiver)}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dbc0usize)as*mut u8,();
-(RingListSkillMenu_SkillHelpWindow)__receiver)}
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_ExtraSkill{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d5df40usize)as*mut u8,();
+)}
 }
 }
 
-#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_SkillHelpWindow>IRingListSkillMenu_SkillHelpWindowMethods for __T{}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_SkillHelpWindow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_skill_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_skill_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_item_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItem_ExtraSkillMethods:IRingListSkillMenu_MenuItem_ExtraSkill{#[doc="`get_Type()` overload"]fn get_type(self,)->crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType{unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dbd0usize)as*mut u8,crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType;
+(RingListSkillMenu_MenuItem_ExtraSkill)__receiver)}
+}
+#[doc="`set_Type(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType)` overload"]fn set_type(self,value:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dbe0usize)as*mut u8,();
+(RingListSkillMenu_MenuItem_ExtraSkill)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType)::core::convert::Into::into(value))}
+}
+#[doc="`GetSprite()` overload"]fn get_sprite(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dbf0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(RingListSkillMenu_MenuItem_ExtraSkill)__receiver)}
+}
+#[doc="`GetSkillName()` overload"]fn get_skill_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dc90usize)as*mut u8, ::unity2::Il2CppString;
+(RingListSkillMenu_MenuItem_ExtraSkill)__receiver)}
+}
+#[doc="`GetSkillHelp()` overload"]fn get_skill_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dd60usize)as*mut u8, ::unity2::Il2CppString;
+(RingListSkillMenu_MenuItem_ExtraSkill)__receiver)}
+}
+#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType, bool)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu> ,level:impl::core::convert::Into<i32> ,skill_type:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType> ,is_got_skill:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5de30usize)as*mut u8,();
+(RingListSkillMenu_MenuItem_ExtraSkill)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu)::core::convert::Into::into(root),(i32)::core::convert::Into::into(level),(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType)::core::convert::Into::into(skill_type),(bool)::core::convert::Into::into(is_got_skill))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItem_ExtraSkill, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
 }
 
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_SkillHelpWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_MenuItem_ExtraSkill>IRingListSkillMenu_MenuItem_ExtraSkillMethods for __T{}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_ExtraSkill{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_skill_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_skill_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_ExtraSkill{#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItem_ExtraSkill`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_ExtraSkill{#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType, bool)` — overload selector"]pub fn new(root:crate::app::ringlistskillmenu::RingListSkillMenu,level:i32,skill_type:crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,is_got_skill:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RingListSkillMenu_SkillHelpWindow), ::core::stringify!(new),));
- <Self as IRingListSkillMenu_SkillHelpWindowMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingListSkillMenu_MenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:RingListSkillMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",4usize,__vt.len(), <RingListSkillMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_width(this:RingListSkillMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",5usize,__vt.len(), <RingListSkillMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetWidth",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_height(this:RingListSkillMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",6usize,__vt.len(), <RingListSkillMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetHeight",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn build_attribute(this:RingListSkillMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <RingListSkillMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn b_call(this:RingListSkillMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",19usize,__vt.len(), <RingListSkillMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItemMethods:IRingListSkillMenu_MenuItem{#[doc="`get_Level()` overload"]fn get_level(self,)->i32{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d00usize)as*mut u8,i32;
-(RingListSkillMenu_MenuItem)__receiver)}
-}
-#[doc="`set_Level(i32)` overload"]fn set_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d10usize)as*mut u8,();
-(RingListSkillMenu_MenuItem)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_IsGotSKill()` overload"]fn get_is_got_s_kill(self,)->bool{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d20usize)as*mut u8,bool;
-(RingListSkillMenu_MenuItem)__receiver)}
-}
-#[doc="`set_IsGotSKill(bool)` overload"]fn set_is_got_s_kill(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d30usize)as*mut u8,();
-(RingListSkillMenu_MenuItem)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_IsEnableGotIcon()` overload"]fn get_is_enable_got_icon(self,)->bool{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d40usize)as*mut u8,bool;
-(RingListSkillMenu_MenuItem)__receiver)}
-}
-#[doc="`get_IsEnableUnitGotIcon()` overload"]fn get_is_enable_unit_got_icon(self,)->bool{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d60usize)as*mut u8,bool;
-(RingListSkillMenu_MenuItem)__receiver)}
-}
-#[doc="`get_FromLv()` overload"]fn get_from_lv(self,)->i32{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d80usize)as*mut u8,i32;
-(RingListSkillMenu_MenuItem)__receiver)}
-}
-#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu> ,level:impl::core::convert::Into<i32> ,is_got_skill:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19da0usize)as*mut u8,();
-(RingListSkillMenu_MenuItem)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu)::core::convert::Into::into(root),(i32)::core::convert::Into::into(level),(bool)::core::convert::Into::into(is_got_skill))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetWidth()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItem_unity2_raw::get_width(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetHeight()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItem_unity2_raw::get_height(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_MenuItem>IRingListSkillMenu_MenuItemMethods for __T{}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem{pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_is_got_s_kill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_is_got_s_kill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_is_enable_got_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_is_enable_unit_got_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_from_lv_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem{#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` — overload selector"]pub fn new(root:crate::app::ringlistskillmenu::RingListSkillMenu,level:i32,is_got_skill:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuItem), ::core::stringify!(new),));
- <Self as IRingListSkillMenu_MenuItemMethods> ::ctor(this,root,level,is_got_skill);
+ failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuItem_ExtraSkill), ::core::stringify!(new),));
+ <Self as IRingListSkillMenu_MenuItem_ExtraSkillMethods> ::ctor(this,root,level,skill_type,is_got_skill);
 this}
 }
 
@@ -370,6 +268,317 @@ pub fn dec_suspend_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_Menu{#[doc="`CreateMenu(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::basicmenuselect::BasicMenuSelect, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` overload"]pub fn create_menu(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,ms:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect> ,cancel:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler> ,is_bind_parent:impl::core::convert::Into<bool>)->crate::app::ringlistskillmenu::RingListSkillMenu_Menu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b19850usize)as*mut u8,crate::app::ringlistskillmenu::RingListSkillMenu_Menu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::basicmenuselect::BasicMenuSelect)::core::convert::Into::into(ms),(crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler)::core::convert::Into::into(cancel),(bool)::core::convert::Into::into(is_bind_parent))}
+}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuMethods:IRingListSkillMenu_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,cancel:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler> ,is_bind_parent:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19800usize)as*mut u8,();
+(RingListSkillMenu_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler)::core::convert::Into::into(cancel),(bool)::core::convert::Into::into(is_bind_parent))}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSkillMenu_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <RingListSkillMenu_Menu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(RingListSkillMenu_Menu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSkillMenu_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <RingListSkillMenu_Menu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let __inner:extern "C" fn(RingListSkillMenu_Menu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetDisplayIndex()` overload"]fn get_display_index(self,)->i32{unsafe{let __receiver= <RingListSkillMenu_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19af0usize)as*mut u8,i32;
+(RingListSkillMenu_Menu)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_Menu>IRingListSkillMenu_MenuMethods for __T{}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_Menu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_display_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_Menu{#[doc="Direct (non-virtual) call to `RingListSkillMenu_Menu`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingListSkillMenu_Menu`'s own `CustomCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn custom_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::custom_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,cancel:crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,is_bind_parent:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSkillMenu_Menu), ::core::stringify!(new),));
+ <Self as IRingListSkillMenu_MenuMethods> ::ctor(this,menu_item_list,menu_content,cancel,is_bind_parent);
+this}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItemMethods:IRingListSkillMenu_MenuItem{#[doc="`get_Level()` overload"]fn get_level(self,)->i32{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d00usize)as*mut u8,i32;
+(RingListSkillMenu_MenuItem)__receiver)}
+}
+#[doc="`set_Level(i32)` overload"]fn set_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d10usize)as*mut u8,();
+(RingListSkillMenu_MenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsGotSKill()` overload"]fn get_is_got_s_kill(self,)->bool{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d20usize)as*mut u8,bool;
+(RingListSkillMenu_MenuItem)__receiver)}
+}
+#[doc="`set_IsGotSKill(bool)` overload"]fn set_is_got_s_kill(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d30usize)as*mut u8,();
+(RingListSkillMenu_MenuItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsEnableGotIcon()` overload"]fn get_is_enable_got_icon(self,)->bool{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d40usize)as*mut u8,bool;
+(RingListSkillMenu_MenuItem)__receiver)}
+}
+#[doc="`get_IsEnableUnitGotIcon()` overload"]fn get_is_enable_unit_got_icon(self,)->bool{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d60usize)as*mut u8,bool;
+(RingListSkillMenu_MenuItem)__receiver)}
+}
+#[doc="`get_FromLv()` overload"]fn get_from_lv(self,)->i32{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19d80usize)as*mut u8,i32;
+(RingListSkillMenu_MenuItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu> ,level:impl::core::convert::Into<i32> ,is_got_skill:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19da0usize)as*mut u8,();
+(RingListSkillMenu_MenuItem)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu)::core::convert::Into::into(root),(i32)::core::convert::Into::into(level),(bool)::core::convert::Into::into(is_got_skill))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RingListSkillMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetWidth()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RingListSkillMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetWidth",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetHeight()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <RingListSkillMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetHeight",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RingListSkillMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSkillMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <RingListSkillMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_MenuItem>IRingListSkillMenu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem{pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_got_s_kill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_got_s_kill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_enable_got_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_enable_unit_got_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_from_lv_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem{#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItem`'s own `GetName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItem`'s own `GetWidth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_width(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_width_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItem`'s own `GetHeight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_height(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_height_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem{#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, bool)` — overload selector"]pub fn new(root:crate::app::ringlistskillmenu::RingListSkillMenu,level:i32,is_got_skill:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuItem), ::core::stringify!(new),));
+ <Self as IRingListSkillMenu_MenuItemMethods> ::ctor(this,root,level,is_got_skill);
+this}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_WeaponTalent{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e8d0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItem_WeaponTalentMethods:IRingListSkillMenu_MenuItem_WeaponTalent{#[doc="`get_ItemKindTableIndex()` overload"]fn get_item_kind_table_index(self,)->i32{unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e4b0usize)as*mut u8,i32;
+(RingListSkillMenu_MenuItem_WeaponTalent)__receiver)}
+}
+#[doc="`set_ItemKindTableIndex(i32)` overload"]fn set_item_kind_table_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e4c0usize)as*mut u8,();
+(RingListSkillMenu_MenuItem_WeaponTalent)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetSprite()` overload"]fn get_sprite(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e4d0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(RingListSkillMenu_MenuItem_WeaponTalent)__receiver)}
+}
+#[doc="`GetSkillName()` overload"]fn get_skill_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e570usize)as*mut u8, ::unity2::Il2CppString;
+(RingListSkillMenu_MenuItem_WeaponTalent)__receiver)}
+}
+#[doc="`GetSkillHelp()` overload"]fn get_skill_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e640usize)as*mut u8, ::unity2::Il2CppString;
+(RingListSkillMenu_MenuItem_WeaponTalent)__receiver)}
+}
+#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::itemdata::ItemData_Kinds, bool)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu> ,level:impl::core::convert::Into<i32> ,item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,is_got_skill:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e710usize)as*mut u8,();
+(RingListSkillMenu_MenuItem_WeaponTalent)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu)::core::convert::Into::into(root),(i32)::core::convert::Into::into(level),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(item_kind),(bool)::core::convert::Into::into(is_got_skill))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_MenuItem_WeaponTalent>IRingListSkillMenu_MenuItem_WeaponTalentMethods for __T{}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_WeaponTalent{pub fn get_item_kind_table_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_item_kind_table_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_skill_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_skill_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_WeaponTalent{#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItem_WeaponTalent`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_WeaponTalent{#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::itemdata::ItemData_Kinds, bool)` — overload selector"]pub fn new(root:crate::app::ringlistskillmenu::RingListSkillMenu,level:i32,item_kind:crate::app::itemdata::ItemData_Kinds,is_got_skill:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuItem_WeaponTalent), ::core::stringify!(new),));
+ <Self as IRingListSkillMenu_MenuItem_WeaponTalentMethods> ::ctor(this,root,level,item_kind,is_got_skill);
+this}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItem_SkillMethods:IRingListSkillMenu_MenuItem_Skill{#[doc="`get_Skill()` overload"]fn get_skill(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <RingListSkillMenu_MenuItem_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e320usize)as*mut u8,crate::app::skilldata::SkillData;
+(RingListSkillMenu_MenuItem_Skill)__receiver)}
+}
+#[doc="`set_Skill(crate::app::skilldata::SkillData)` overload"]fn set_skill(self,value:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e330usize)as*mut u8,();
+(RingListSkillMenu_MenuItem_Skill)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu> ,level:impl::core::convert::Into<i32> ,skill_data:impl::core::convert::Into<crate::app::skilldata::SkillData> ,is_got_skill:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e340usize)as*mut u8,();
+(RingListSkillMenu_MenuItem_Skill)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu)::core::convert::Into::into(root),(i32)::core::convert::Into::into(level),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill_data),(bool)::core::convert::Into::into(is_got_skill))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RingListSkillMenu_MenuItem_Skill as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItem_Skill, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_MenuItem_Skill>IRingListSkillMenu_MenuItem_SkillMethods for __T{}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_Skill{pub fn get_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_Skill{#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItem_Skill`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_Skill{#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` — overload selector"]pub fn new(root:crate::app::ringlistskillmenu::RingListSkillMenu,level:i32,skill_data:crate::app::skilldata::SkillData,is_got_skill:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuItem_Skill), ::core::stringify!(new),));
+ <Self as IRingListSkillMenu_MenuItem_SkillMethods> ::ctor(this,root,level,skill_data,is_got_skill);
+this}
+}
+
 #[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_ItemHelpWindowMethods:IRingListSkillMenu_ItemHelpWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSkillMenu_ItemHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19610usize)as*mut u8,();
 (RingListSkillMenu_ItemHelpWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
@@ -403,142 +612,41 @@ pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-ringlistskillmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingListSkillMenu_Menu_unity2_raw{use super:: * ;
-pub unsafe fn b_call(this:RingListSkillMenu_Menu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",51usize,__vt.len(), <RingListSkillMenu_Menu as::unity2::ClassIdentity> ::NAME,"BCall",));
-let inner:extern "C" fn(RingListSkillMenu_Menu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn custom_call(this:RingListSkillMenu_Menu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",58usize,__vt.len(), <RingListSkillMenu_Menu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
-let inner:extern "C" fn(RingListSkillMenu_Menu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_Menu{#[doc="`CreateMenu(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::basicmenuselect::BasicMenuSelect, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` overload"]pub fn create_menu(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,ms:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect> ,cancel:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler> ,is_bind_parent:impl::core::convert::Into<bool>)->crate::app::ringlistskillmenu::RingListSkillMenu_Menu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b19850usize)as*mut u8,crate::app::ringlistskillmenu::RingListSkillMenu_Menu;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::basicmenuselect::BasicMenuSelect)::core::convert::Into::into(ms),(crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler)::core::convert::Into::into(cancel),(bool)::core::convert::Into::into(is_bind_parent))}
-}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuMethods:IRingListSkillMenu_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,cancel:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler> ,is_bind_parent:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19800usize)as*mut u8,();
-(RingListSkillMenu_Menu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler)::core::convert::Into::into(cancel),(bool)::core::convert::Into::into(is_bind_parent))}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSkillMenu_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_Menu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSkillMenu_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_Menu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetDisplayIndex()` overload"]fn get_display_index(self,)->i32{unsafe{let __receiver= <RingListSkillMenu_Menu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19af0usize)as*mut u8,i32;
-(RingListSkillMenu_Menu)__receiver)}
-}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_Menu>IRingListSkillMenu_MenuMethods for __T{}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_Menu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_display_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_Menu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler, bool)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,cancel:crate::app::ringlistskillmenu::RingListSkillMenu_CancelEventHandler,is_bind_parent:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSkillMenu_Menu), ::core::stringify!(new),));
- <Self as IRingListSkillMenu_MenuMethods> ::ctor(this,menu_item_list,menu_content,cancel,is_bind_parent);
-this}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingListSkillMenu_CancelEventHandler_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:RingListSkillMenu_CancelEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",13usize,__vt.len(), <RingListSkillMenu_CancelEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let inner:extern "C" fn(RingListSkillMenu_CancelEventHandler, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_CancelEventHandlerMethods:IRingListSkillMenu_CancelEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingListSkillMenu_CancelEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19380usize)as*mut u8,();
-(RingListSkillMenu_CancelEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSkillMenu_CancelEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_CancelEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_CancelEventHandler>IRingListSkillMenu_CancelEventHandlerMethods for __T{}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_CancelEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_CancelEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSkillMenu_CancelEventHandler), ::core::stringify!(new),));
- <Self as IRingListSkillMenu_CancelEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingListSkillMenu_MenuContent_unity2_raw{use super:: * ;
-pub unsafe fn calc_w(this:RingListSkillMenu_MenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuContentMethods:IRingListSkillMenu_MenuContent{#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <RingListSkillMenu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",21usize,__vt.len(), <RingListSkillMenu_MenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
-let inner:extern "C" fn(RingListSkillMenu_MenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RingListSkillMenu_MenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn calc_h(this:RingListSkillMenu_MenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <RingListSkillMenu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",22usize,__vt.len(), <RingListSkillMenu_MenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
-let inner:extern "C" fn(RingListSkillMenu_MenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RingListSkillMenu_MenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn calc_cursor_moved_pos_y(this:RingListSkillMenu_MenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RingListSkillMenu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",10usize,__vt.len(), <RingListSkillMenu_MenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
-let inner:extern "C" fn(RingListSkillMenu_MenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RingListSkillMenu_MenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,menu_item_index,__mi)}
+__inner(__receiver, ::core::convert::Into::into(menu_item_index),__mi)}
 }
-
-#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuContentMethods:IRingListSkillMenu_MenuContent{#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <RingListSkillMenu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
-}
-#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <RingListSkillMenu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
-}
-#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RingListSkillMenu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19c90usize)as*mut u8,();
@@ -554,6 +662,17 @@ pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::Method
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuContent{#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuContent`'s own `CalcW`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_w(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::calc_w_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuContent`'s own `CalcH`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_h(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::calc_h_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuContent`'s own `CalcCursorMovedPosY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_cursor_moved_pos_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,menu_item_index:i32,)->f32{let __mi=Self::calc_cursor_moved_pos_y_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),menu_item_index, ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuContent), ::core::stringify!(new),));
@@ -561,86 +680,17 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-ringlistskillmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingListSkillMenu_MenuItem_Skill_unity2_raw{use super:: * ;
-pub unsafe fn on_select(this:RingListSkillMenu_MenuItem_Skill,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <RingListSkillMenu_MenuItem_Skill as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItem_Skill, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItem_SkillMethods:IRingListSkillMenu_MenuItem_Skill{#[doc="`get_Skill()` overload"]fn get_skill(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <RingListSkillMenu_MenuItem_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e320usize)as*mut u8,crate::app::skilldata::SkillData;
-(RingListSkillMenu_MenuItem_Skill)__receiver)}
-}
-#[doc="`set_Skill(crate::app::skilldata::SkillData)` overload"]fn set_skill(self,value:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e330usize)as*mut u8,();
-(RingListSkillMenu_MenuItem_Skill)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu> ,level:impl::core::convert::Into<i32> ,skill_data:impl::core::convert::Into<crate::app::skilldata::SkillData> ,is_got_skill:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e340usize)as*mut u8,();
-(RingListSkillMenu_MenuItem_Skill)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu)::core::convert::Into::into(root),(i32)::core::convert::Into::into(level),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill_data),(bool)::core::convert::Into::into(is_got_skill))}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_Skill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItem_Skill_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_MenuItem_Skill>IRingListSkillMenu_MenuItem_SkillMethods for __T{}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_Skill{pub fn get_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_Skill{#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::skilldata::SkillData, bool)` — overload selector"]pub fn new(root:crate::app::ringlistskillmenu::RingListSkillMenu,level:i32,skill_data:crate::app::skilldata::SkillData,is_got_skill:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuItem_Skill), ::core::stringify!(new),));
- <Self as IRingListSkillMenu_MenuItem_SkillMethods> ::ctor(this,root,level,skill_data,is_got_skill);
-this}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingListSkillMenu_MenuItemContent_unity2_raw{use super:: * ;
-pub unsafe fn build(this:RingListSkillMenu_MenuItemContent,menu_item:crate::app::basicmenuitem::BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItemContentMethods:IRingListSkillMenu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",8usize,__vt.len(), <RingListSkillMenu_MenuItemContent as::unity2::ClassIdentity> ::NAME,"Build",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItemContent,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(RingListSkillMenu_MenuItemContent,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,menu_item,__mi)}
-pub unsafe fn build_text_color(this:RingListSkillMenu_MenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <RingListSkillMenu_MenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildTextColor",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn update_text_color(this:RingListSkillMenu_MenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <RingListSkillMenu_MenuItemContent as::unity2::ClassIdentity> ::NAME,"UpdateTextColor",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver, ::core::convert::Into::into(menu_item),__mi)}
 }
-
-#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItemContentMethods:IRingListSkillMenu_MenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)}
 }
 #[doc="`SetupByMenuItem(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem)` overload"]fn setup_by_menu_item(self,menu_item:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1a310usize)as*mut u8,();
@@ -651,10 +701,28 @@ __RingListSkillMenu_MenuItemContent_unity2_raw::build(__receiver, ::core::conver
 (RingListSkillMenu_MenuItemContent)__receiver,(bool)::core::convert::Into::into(disable))}
 }
 #[doc="`BuildTextColor()` overload"]fn build_text_color(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItemContent_unity2_raw::build_text_color(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <RingListSkillMenu_MenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildTextColor",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <RingListSkillMenu_MenuItemContent as::unity2::ClassIdentity> ::NAME,"UpdateTextColor",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1ad60usize)as*mut u8,();
@@ -672,6 +740,17 @@ pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItemContent{#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItemContent`'s own `Build`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build(this:impl::core::convert::Into< ::unity2::IlInstance> ,menu_item:crate::app::basicmenuitem::BasicMenuItem,)->(){let __mi=Self::build_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),menu_item, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItemContent`'s own `BuildTextColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_text_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_text_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItemContent`'s own `UpdateTextColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn update_text_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::update_text_color_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuItemContent), ::core::stringify!(new),));
@@ -679,83 +758,83 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-ringlistskillmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw{use super:: * ;
-pub unsafe fn on_select(this:RingListSkillMenu_MenuItem_WeaponTalent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItem_WeaponTalent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_SkillHelpWindowMethods:IRingListSkillMenu_SkillHelpWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5f040usize)as*mut u8,();
+(RingListSkillMenu_SkillHelpWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
 }
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_WeaponTalent{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e8d0usize)as*mut u8,();
-)}
+#[doc="`SetSkillData(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_Skill)` overload"]fn set_skill_data(self,menu_item:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_Skill>)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e3f0usize)as*mut u8,();
+(RingListSkillMenu_SkillHelpWindow)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_Skill)::core::convert::Into::into(menu_item))}
 }
+#[doc="`SetSkillData(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill)` overload"]fn set_skill_data_2(self,menu_item:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill>)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5def0usize)as*mut u8,();
+(RingListSkillMenu_SkillHelpWindow)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill)::core::convert::Into::into(menu_item))}
 }
-
-#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItem_WeaponTalentMethods:IRingListSkillMenu_MenuItem_WeaponTalent{#[doc="`get_ItemKindTableIndex()` overload"]fn get_item_kind_table_index(self,)->i32{unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e4b0usize)as*mut u8,i32;
-(RingListSkillMenu_MenuItem_WeaponTalent)__receiver)}
+#[doc="`SetItemKind(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_WeaponTalent)` overload"]fn set_item_kind(self,menu_item:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_WeaponTalent>)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e890usize)as*mut u8,();
+(RingListSkillMenu_SkillHelpWindow)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_WeaponTalent)::core::convert::Into::into(menu_item))}
 }
-#[doc="`set_ItemKindTableIndex(i32)` overload"]fn set_item_kind_table_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e4c0usize)as*mut u8,();
-(RingListSkillMenu_MenuItem_WeaponTalent)__receiver,(i32)::core::convert::Into::into(value))}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5df30usize)as*mut u8,();
+(RingListSkillMenu_SkillHelpWindow)__receiver)}
 }
-#[doc="`GetSprite()` overload"]fn get_sprite(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e4d0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
-(RingListSkillMenu_MenuItem_WeaponTalent)__receiver)}
-}
-#[doc="`GetSkillName()` overload"]fn get_skill_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e570usize)as*mut u8, ::unity2::Il2CppString;
-(RingListSkillMenu_MenuItem_WeaponTalent)__receiver)}
-}
-#[doc="`GetSkillHelp()` overload"]fn get_skill_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e640usize)as*mut u8, ::unity2::Il2CppString;
-(RingListSkillMenu_MenuItem_WeaponTalent)__receiver)}
-}
-#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::itemdata::ItemData_Kinds, bool)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu> ,level:impl::core::convert::Into<i32> ,item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,is_got_skill:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5e710usize)as*mut u8,();
-(RingListSkillMenu_MenuItem_WeaponTalent)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu)::core::convert::Into::into(root),(i32)::core::convert::Into::into(level),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(item_kind),(bool)::core::convert::Into::into(is_got_skill))}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_WeaponTalent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItem_WeaponTalent_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <RingListSkillMenu_SkillHelpWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dbc0usize)as*mut u8,();
+(RingListSkillMenu_SkillHelpWindow)__receiver)}
 }
 }
 
-#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_MenuItem_WeaponTalent>IRingListSkillMenu_MenuItem_WeaponTalentMethods for __T{}
+#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_SkillHelpWindow>IRingListSkillMenu_SkillHelpWindowMethods for __T{}
 
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_WeaponTalent{pub fn get_item_kind_table_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_item_kind_table_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_skill_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_skill_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_SkillHelpWindow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_skill_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_skill_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_item_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_WeaponTalent{#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::itemdata::ItemData_Kinds, bool)` — overload selector"]pub fn new(root:crate::app::ringlistskillmenu::RingListSkillMenu,level:i32,item_kind:crate::app::itemdata::ItemData_Kinds,is_got_skill:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_SkillHelpWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuItem_WeaponTalent), ::core::stringify!(new),));
- <Self as IRingListSkillMenu_MenuItem_WeaponTalentMethods> ::ctor(this,root,level,item_kind,is_got_skill);
+ failed to instantiate", ::core::stringify!(RingListSkillMenu_SkillHelpWindow), ::core::stringify!(new),));
+ <Self as IRingListSkillMenu_SkillHelpWindowMethods> ::ctor(this,root_object);
 this}
 }
 
-#[cfg(feature="app-ringlistskillmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingListSkillMenu_MenuItem_EngageItem_unity2_raw{use super:: * ;
-pub unsafe fn on_select(this:RingListSkillMenu_MenuItem_EngageItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_CancelEventHandlerMethods:IRingListSkillMenu_CancelEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RingListSkillMenu_CancelEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b19380usize)as*mut u8,();
+(RingListSkillMenu_CancelEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingListSkillMenu_CancelEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",12usize,__vt.len(), <RingListSkillMenu_MenuItem_EngageItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItem_EngageItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+`)",13usize,__vt.len(), <RingListSkillMenu_CancelEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let __inner:extern "C" fn(RingListSkillMenu_CancelEventHandler, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+__inner(__receiver,__mi)}
+}
+}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_CancelEventHandler>IRingListSkillMenu_CancelEventHandlerMethods for __T{}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_CancelEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_CancelEventHandler{#[doc="Direct (non-virtual) call to `RingListSkillMenu_CancelEventHandler`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::invoke_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_CancelEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSkillMenu_CancelEventHandler), ::core::stringify!(new),));
+ <Self as IRingListSkillMenu_CancelEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItem_EngageItemMethods:IRingListSkillMenu_MenuItem_EngageItem{#[doc="`get_Item()` overload"]fn get_item(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <RingListSkillMenu_MenuItem_EngageItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -771,7 +850,16 @@ inner(this,__mi)}
 (RingListSkillMenu_MenuItem_EngageItem)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu)::core::convert::Into::into(root),(i32)::core::convert::Into::into(level),(crate::app::itemdata::ItemData)::core::convert::Into::into(item_data),(bool)::core::convert::Into::into(is_got_skill))}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_EngageItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItem_EngageItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RingListSkillMenu_MenuItem_EngageItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let __inner:extern "C" fn(RingListSkillMenu_MenuItem_EngageItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 }
 
@@ -783,6 +871,11 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_EngageItem{#[doc="Direct (non-virtual) call to `RingListSkillMenu_MenuItem_EngageItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_EngageItem{#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::itemdata::ItemData, bool)` — overload selector"]pub fn new(root:crate::app::ringlistskillmenu::RingListSkillMenu,level:i32,item_data:crate::app::itemdata::ItemData,is_got_skill:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuItem_EngageItem), ::core::stringify!(new),));
@@ -790,112 +883,46 @@ pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="app-ringlistskillmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw{use super:: * ;
-pub unsafe fn on_select(this:RingListSkillMenu_MenuItem_ExtraSkill,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",12usize,__vt.len(), <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let inner:extern "C" fn(RingListSkillMenu_MenuItem_ExtraSkill, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_ExtraSkill{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d5df40usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]pub trait IRingListSkillMenu_MenuItem_ExtraSkillMethods:IRingListSkillMenu_MenuItem_ExtraSkill{#[doc="`get_Type()` overload"]fn get_type(self,)->crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType{unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dbd0usize)as*mut u8,crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType;
-(RingListSkillMenu_MenuItem_ExtraSkill)__receiver)}
-}
-#[doc="`set_Type(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType)` overload"]fn set_type(self,value:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dbe0usize)as*mut u8,();
-(RingListSkillMenu_MenuItem_ExtraSkill)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType)::core::convert::Into::into(value))}
-}
-#[doc="`GetSprite()` overload"]fn get_sprite(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dbf0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
-(RingListSkillMenu_MenuItem_ExtraSkill)__receiver)}
-}
-#[doc="`GetSkillName()` overload"]fn get_skill_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dc90usize)as*mut u8, ::unity2::Il2CppString;
-(RingListSkillMenu_MenuItem_ExtraSkill)__receiver)}
-}
-#[doc="`GetSkillHelp()` overload"]fn get_skill_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5dd60usize)as*mut u8, ::unity2::Il2CppString;
-(RingListSkillMenu_MenuItem_ExtraSkill)__receiver)}
-}
-#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType, bool)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu> ,level:impl::core::convert::Into<i32> ,skill_type:impl::core::convert::Into<crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType> ,is_got_skill:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d5de30usize)as*mut u8,();
-(RingListSkillMenu_MenuItem_ExtraSkill)__receiver,(crate::app::ringlistskillmenu::RingListSkillMenu)::core::convert::Into::into(root),(i32)::core::convert::Into::into(level),(crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType)::core::convert::Into::into(skill_type),(bool)::core::convert::Into::into(is_got_skill))}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RingListSkillMenu_MenuItem_ExtraSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingListSkillMenu_MenuItem_ExtraSkill_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
-}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl<__T:IRingListSkillMenu_MenuItem_ExtraSkill>IRingListSkillMenu_MenuItem_ExtraSkillMethods for __T{}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_ExtraSkill{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_skill_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_skill_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-ringlistskillmenu")]impl RingListSkillMenu_MenuItem_ExtraSkill{#[doc="`.ctor(crate::app::ringlistskillmenu::RingListSkillMenu, i32, crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType, bool)` — overload selector"]pub fn new(root:crate::app::ringlistskillmenu::RingListSkillMenu,level:i32,skill_type:crate::app::ringlistskillmenu::RingListSkillMenu_MenuItem_ExtraSkill_SkillType,is_got_skill:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RingListSkillMenu_MenuItem_ExtraSkill), ::core::stringify!(new),));
- <Self as IRingListSkillMenu_MenuItem_ExtraSkillMethods> ::ctor(this,root,level,skill_type,is_got_skill);
-this}
-}
-
 #[cfg(feature = "app-ringlistskillmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingListSkillMenu_SkillHelpWindow;
-    pub use super::IRingListSkillMenu_SkillHelpWindow;
-    pub use super::IRingListSkillMenu_SkillHelpWindowMethods;
-    pub use super::RingListSkillMenu_MenuItem;
-    pub use super::IRingListSkillMenu_MenuItem;
-    pub use super::IRingListSkillMenu_MenuItemMethods;
+    pub use super::RingListSkillMenu_MenuItem_ExtraSkill;
+    pub use super::IRingListSkillMenu_MenuItem_ExtraSkill;
+    pub use super::IRingListSkillMenu_MenuItem_ExtraSkillMethods;
     pub use super::RingListSkillMenu;
     pub use super::IRingListSkillMenu;
     pub use super::IRingListSkillMenuMethods;
-    pub use super::RingListSkillMenu_ItemHelpWindow;
-    pub use super::IRingListSkillMenu_ItemHelpWindow;
-    pub use super::IRingListSkillMenu_ItemHelpWindowMethods;
     pub use super::RingListSkillMenu_Menu;
     pub use super::IRingListSkillMenu_Menu;
     pub use super::IRingListSkillMenu_MenuMethods;
-    pub use super::RingListSkillMenu_CancelEventHandler;
-    pub use super::IRingListSkillMenu_CancelEventHandler;
-    pub use super::IRingListSkillMenu_CancelEventHandlerMethods;
+    pub use super::RingListSkillMenu_MenuItem;
+    pub use super::IRingListSkillMenu_MenuItem;
+    pub use super::IRingListSkillMenu_MenuItemMethods;
+    pub use super::RingListSkillMenu_MenuItem_WeaponTalent;
+    pub use super::IRingListSkillMenu_MenuItem_WeaponTalent;
+    pub use super::IRingListSkillMenu_MenuItem_WeaponTalentMethods;
+    pub use super::RingListSkillMenu_MenuItem_Skill;
+    pub use super::IRingListSkillMenu_MenuItem_Skill;
+    pub use super::IRingListSkillMenu_MenuItem_SkillMethods;
+    pub use super::RingListSkillMenu_ItemHelpWindow;
+    pub use super::IRingListSkillMenu_ItemHelpWindow;
+    pub use super::IRingListSkillMenu_ItemHelpWindowMethods;
     pub use super::RingListSkillMenu_MenuItem_ExtraSkill_SkillType;
     pub use super::RingListSkillMenu_MenuContent;
     pub use super::IRingListSkillMenu_MenuContent;
     pub use super::IRingListSkillMenu_MenuContentMethods;
-    pub use super::RingListSkillMenu_MenuItem_Skill;
-    pub use super::IRingListSkillMenu_MenuItem_Skill;
-    pub use super::IRingListSkillMenu_MenuItem_SkillMethods;
     pub use super::RingListSkillMenu_MenuItemContent;
     pub use super::IRingListSkillMenu_MenuItemContent;
     pub use super::IRingListSkillMenu_MenuItemContentMethods;
-    pub use super::RingListSkillMenu_MenuItem_WeaponTalent;
-    pub use super::IRingListSkillMenu_MenuItem_WeaponTalent;
-    pub use super::IRingListSkillMenu_MenuItem_WeaponTalentMethods;
+    pub use super::RingListSkillMenu_SkillHelpWindow;
+    pub use super::IRingListSkillMenu_SkillHelpWindow;
+    pub use super::IRingListSkillMenu_SkillHelpWindowMethods;
+    pub use super::RingListSkillMenu_CancelEventHandler;
+    pub use super::IRingListSkillMenu_CancelEventHandler;
+    pub use super::IRingListSkillMenu_CancelEventHandlerMethods;
     pub use super::RingListSkillMenu_MenuItem_EngageItem;
     pub use super::IRingListSkillMenu_MenuItem_EngageItem;
     pub use super::IRingListSkillMenu_MenuItem_EngageItemMethods;
-    pub use super::RingListSkillMenu_MenuItem_ExtraSkill;
-    pub use super::IRingListSkillMenu_MenuItem_ExtraSkill;
-    pub use super::IRingListSkillMenu_MenuItem_ExtraSkillMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

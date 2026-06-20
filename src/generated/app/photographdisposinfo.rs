@@ -46,9 +46,6 @@ pub fn mascot()->Self{Self{value:5}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographdisposinfo/PhotographDisposInfo.md"))]#[::unity2::class(namespace="App",name="PhotographDisposInfo")]#[parent(crate::system::object::Object)]pub struct PhotographDisposInfo{#[static_field]#[rename(name="s_FruitsPath")]pub s_fruits_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_WaterCanPath")]pub s_water_can_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_BrushPath")]pub s_brush_path: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_IsVisible")]pub m_is_visible:bool, #[offset(72)]#[rename(name="m_Locator")]pub m_locator:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_LookTarget")]pub m_look_target:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_PauseGroupNameList")]pub m_pause_group_name_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(96)]#[rename(name="m_AnimeControllerDic")]pub m_anime_controller_dic:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController> , #[offset(104)]#[rename(name="m_Flag")]pub m_flag:crate::app::photographdisposinfo::PhotographDisposInfo_FlagField, #[offset(112)]#[rename(name="m_IsLoadingCharacter")]pub m_is_loading_character:bool, #[offset(120)]#[rename(name="m_CharacterIdList")]pub m_character_id_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(128)]#[rename(name="m_CurrentCharacterId")]pub m_current_character_id: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_CharacterType")]pub m_character_type:crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType, #[offset(144)]#[rename(name="m_CharacterCmp")]pub m_character_cmp:crate::combat::character::Character, #[offset(152)]#[rename(name="m_IsLookAtCamera")]pub m_is_look_at_camera:bool, #[offset(156)]#[rename(name="m_LookAtRate")]pub m_look_at_rate:f32, #[offset(160)]#[rename(name="m_LookAtIKEye")]pub m_look_at_ik_eye:crate::root_motion::final_ik::lookatik::LookAtIK, #[offset(168)]#[rename(name="m_LookAtIKBody")]pub m_look_at_ik_body:crate::root_motion::final_ik::lookatik::LookAtIK, #[offset(176)]#[rename(name="m_PauseDataList")]pub m_pause_data_list:crate::system::collections::generic::list_1::List_1<crate::app::photographpausedata::PhotographPauseData> , #[offset(184)]#[rename(name="m_CurrentPauseData")]pub m_current_pause_data:crate::app::photographpausedata::PhotographPauseData, #[offset(192)]#[rename(name="m_HoldItem")]pub m_hold_item:crate::unity_engine::gameobject::GameObject, #[offset(200)]#[rename(name="m_HoldWeapon")]pub m_hold_weapon:crate::unity_engine::gameobject::GameObject, #[offset(208)]#[rename(name="m_HoldWeaponData")]pub m_hold_weapon_data:crate::app::itemdata::ItemData, #[offset(216)]#[rename(name="m_HoldWeaponPath")]pub m_hold_weapon_path: ::unity2::Il2CppString, #[offset(224)]#[rename(name="m_IsLoadingWeapon")]pub m_is_loading_weapon:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))]#[::unity2::class(namespace="App",name="PhotographDisposInfo.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::photographdisposinfo::PhotographDisposInfo_Flags>)]pub struct PhotographDisposInfo_FlagField{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PhotographDisposInfo_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for PhotographDisposInfo_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="PhotographDisposInfo.Flags";
@@ -71,6 +68,9 @@ pub fn mascot()->Self{Self{value:16}
 pub fn sitting()->Self{Self{value:32}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))]#[::unity2::class(namespace="App",name="PhotographDisposInfo.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::photographdisposinfo::PhotographDisposInfo_Flags>)]pub struct PhotographDisposInfo_FlagField{}
 
 }
 
@@ -266,21 +266,17 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-photographdisposinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographDisposInfo_FlagField_unity2_raw{use super:: * ;
-pub unsafe fn to_int(this:PhotographDisposInfo_FlagField,value:crate::app::photographdisposinfo::PhotographDisposInfo_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="app-photographdisposinfo")]pub trait IPhotographDisposInfo_FlagFieldMethods:IPhotographDisposInfo_FlagField{#[doc="`ToInt(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::photographdisposinfo::PhotographDisposInfo_Flags>)->i32{unsafe{let __receiver= <PhotographDisposInfo_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <PhotographDisposInfo_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
-let inner:extern "C" fn(PhotographDisposInfo_FlagField,crate::app::photographdisposinfo::PhotographDisposInfo_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(PhotographDisposInfo_FlagField,crate::app::photographdisposinfo::PhotographDisposInfo_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,value,__mi)}
+__inner(__receiver, ::core::convert::Into::into(value),__mi)}
 }
-
-#[cfg(feature="app-photographdisposinfo")]pub trait IPhotographDisposInfo_FlagFieldMethods:IPhotographDisposInfo_FlagField{#[doc="`ToInt(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::photographdisposinfo::PhotographDisposInfo_Flags>)->i32{unsafe{let __receiver= <PhotographDisposInfo_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__PhotographDisposInfo_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographDisposInfo_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2261d40usize)as*mut u8,();
@@ -292,6 +288,11 @@ __PhotographDisposInfo_FlagField_unity2_raw::to_int(__receiver, ::core::convert:
 
 #[cfg(feature="app-photographdisposinfo")]impl PhotographDisposInfo_FlagField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-photographdisposinfo")]impl PhotographDisposInfo_FlagField{#[doc="Direct (non-virtual) call to `PhotographDisposInfo_FlagField`'s own `ToInt`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_int(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::app::photographdisposinfo::PhotographDisposInfo_Flags,)->i32{let __mi=Self::to_int_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::app::photographdisposinfo::PhotographDisposInfo_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),value, ::core::option::Option::None)}
 }
 
 #[cfg(feature="app-photographdisposinfo")]impl PhotographDisposInfo_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
@@ -308,10 +309,10 @@ pub mod prelude {
     pub use super::PhotographDisposInfo;
     pub use super::IPhotographDisposInfo;
     pub use super::IPhotographDisposInfoMethods;
+    pub use super::PhotographDisposInfo_Flags;
     pub use super::PhotographDisposInfo_FlagField;
     pub use super::IPhotographDisposInfo_FlagField;
     pub use super::IPhotographDisposInfo_FlagFieldMethods;
-    pub use super::PhotographDisposInfo_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

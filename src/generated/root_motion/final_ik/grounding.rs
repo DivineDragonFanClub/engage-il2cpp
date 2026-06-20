@@ -16,12 +16,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounding/Grounding.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Grounding")]#[parent(crate::system::object::Object)]pub struct Grounding{#[offset(16)]#[rename(name="layers")]pub layers:crate::unity_engine::layermask::LayerMask, #[offset(20)]#[rename(name="maxStep")]pub max_step:f32, #[offset(24)]#[rename(name="heightOffset")]pub height_offset:f32, #[offset(28)]#[rename(name="footSpeed")]pub foot_speed:f32, #[offset(32)]#[rename(name="footRadius")]pub foot_radius:f32, #[offset(36)]#[rename(name="footCenterOffset")]pub foot_center_offset:f32, #[offset(40)]#[rename(name="prediction")]pub prediction:f32, #[offset(44)]#[rename(name="footRotationWeight")]pub foot_rotation_weight:f32, #[offset(48)]#[rename(name="footRotationSpeed")]pub foot_rotation_speed:f32, #[offset(52)]#[rename(name="maxFootRotationAngle")]pub max_foot_rotation_angle:f32, #[offset(56)]#[rename(name="rotateSolver")]pub rotate_solver:bool, #[offset(60)]#[rename(name="pelvisSpeed")]pub pelvis_speed:f32, #[offset(64)]#[rename(name="pelvisDamper")]pub pelvis_damper:f32, #[offset(68)]#[rename(name="lowerPelvisWeight")]pub lower_pelvis_weight:f32, #[offset(72)]#[rename(name="liftPelvisWeight")]pub lift_pelvis_weight:f32, #[offset(76)]#[rename(name="rootSphereCastRadius")]pub root_sphere_cast_radius:f32, #[offset(80)]#[rename(name="overstepFallsDown")]pub overstep_falls_down:bool, #[offset(84)]#[rename(name="quality")]pub quality:crate::root_motion::final_ik::grounding::Grounding_Quality, #[offset(164)]#[rename(name="initiated")]pub initiated:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounding/Grounding_Leg.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Grounding.Leg")]#[parent(crate::system::object::Object)]pub struct Grounding_Leg{#[offset(32)]#[rename(name="rotationOffset")]pub rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(84)]#[rename(name="invertFootCenter")]pub invert_foot_center:bool, #[offset(176)]#[rename(name="grounding")]pub grounding:crate::root_motion::final_ik::grounding::Grounding, #[offset(184)]#[rename(name="lastTime")]pub last_time:f64, #[offset(192)]#[rename(name="deltaTime")]pub delta_time:f64, #[offset(200)]#[rename(name="lastPosition")]pub last_position:crate::unity_engine::vector3::Vector3, #[offset(212)]#[rename(name="toHitNormal")]pub to_hit_normal:crate::unity_engine::quaternion::Quaternion, #[offset(228)]#[rename(name="r")]pub r:crate::unity_engine::quaternion::Quaternion, #[offset(244)]#[rename(name="up")]pub up:crate::unity_engine::vector3::Vector3, #[offset(256)]#[rename(name="doOverrideFootPosition")]pub do_override_foot_position:bool, #[offset(260)]#[rename(name="overrideFootPosition")]pub override_foot_position:crate::unity_engine::vector3::Vector3, #[offset(272)]#[rename(name="transformPosition")]pub transform_position:crate::unity_engine::vector3::Vector3,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounding/Grounding_Pelvis.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Grounding.Pelvis")]#[parent(crate::system::object::Object)]pub struct Grounding_Pelvis{#[offset(32)]#[rename(name="grounding")]pub grounding:crate::root_motion::final_ik::grounding::Grounding, #[offset(40)]#[rename(name="lastRootPosition")]pub last_root_position:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="damperF")]pub damper_f:f32, #[offset(56)]#[rename(name="initiated")]pub initiated:bool, #[offset(64)]#[rename(name="lastTime")]pub last_time:f64,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounding/Grounding_Quality.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Grounding_Quality{pub value:i32,}
 impl::unity2::ClassIdentity for Grounding_Quality{const NAMESPACE: &'static str="RootMotion.FinalIK";
 const NAME: &'static str="Grounding.Quality";
@@ -38,6 +32,12 @@ pub fn simple()->Self{Self{value:1}
 pub fn best()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounding/Grounding_Pelvis.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Grounding.Pelvis")]#[parent(crate::system::object::Object)]pub struct Grounding_Pelvis{#[offset(32)]#[rename(name="grounding")]pub grounding:crate::root_motion::final_ik::grounding::Grounding, #[offset(40)]#[rename(name="lastRootPosition")]pub last_root_position:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="damperF")]pub damper_f:f32, #[offset(56)]#[rename(name="initiated")]pub initiated:bool, #[offset(64)]#[rename(name="lastTime")]pub last_time:f64,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounding/Grounding_Leg.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Grounding.Leg")]#[parent(crate::system::object::Object)]pub struct Grounding_Leg{#[offset(32)]#[rename(name="rotationOffset")]pub rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(84)]#[rename(name="invertFootCenter")]pub invert_foot_center:bool, #[offset(176)]#[rename(name="grounding")]pub grounding:crate::root_motion::final_ik::grounding::Grounding, #[offset(184)]#[rename(name="lastTime")]pub last_time:f64, #[offset(192)]#[rename(name="deltaTime")]pub delta_time:f64, #[offset(200)]#[rename(name="lastPosition")]pub last_position:crate::unity_engine::vector3::Vector3, #[offset(212)]#[rename(name="toHitNormal")]pub to_hit_normal:crate::unity_engine::quaternion::Quaternion, #[offset(228)]#[rename(name="r")]pub r:crate::unity_engine::quaternion::Quaternion, #[offset(244)]#[rename(name="up")]pub up:crate::unity_engine::vector3::Vector3, #[offset(256)]#[rename(name="doOverrideFootPosition")]pub do_override_foot_position:bool, #[offset(260)]#[rename(name="overrideFootPosition")]pub override_foot_position:crate::unity_engine::vector3::Vector3, #[offset(272)]#[rename(name="transformPosition")]pub transform_position:crate::unity_engine::vector3::Vector3,}
 
 }
 
@@ -177,6 +177,64 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(Grounding), ::core::stringify!(new),));
  <Self as IGroundingMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-grounding")]pub trait IGrounding_PelvisMethods:IGrounding_Pelvis{#[doc="`get_IKOffset()` overload"]fn get_ik_offset(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd1f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(Grounding_Pelvis)__receiver)}
+}
+#[doc="`set_IKOffset(crate::unity_engine::vector3::Vector3)` overload"]fn set_ik_offset(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd200usize)as*mut u8,();
+(Grounding_Pelvis)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_heightOffset()` overload"]fn get_height_offset(self,)->f32{unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd210usize)as*mut u8,f32;
+(Grounding_Pelvis)__receiver)}
+}
+#[doc="`set_heightOffset(f32)` overload"]fn set_height_offset(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd220usize)as*mut u8,();
+(Grounding_Pelvis)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Initiate(crate::root_motion::final_ik::grounding::Grounding)` overload"]fn initiate(self,grounding:impl::core::convert::Into<crate::root_motion::final_ik::grounding::Grounding>)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd230usize)as*mut u8,();
+(Grounding_Pelvis)__receiver,(crate::root_motion::final_ik::grounding::Grounding)::core::convert::Into::into(grounding))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd2e0usize)as*mut u8,();
+(Grounding_Pelvis)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd290usize)as*mut u8,();
+(Grounding_Pelvis)__receiver)}
+}
+#[doc="`Process(f32, f32, bool)` overload"]fn process(self,lowest_offset:impl::core::convert::Into<f32> ,highest_offset:impl::core::convert::Into<f32> ,is_grounded:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd350usize)as*mut u8,();
+(Grounding_Pelvis)__receiver,(f32)::core::convert::Into::into(lowest_offset),(f32)::core::convert::Into::into(highest_offset),(bool)::core::convert::Into::into(is_grounded))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd4d0usize)as*mut u8,();
+(Grounding_Pelvis)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-grounding")]impl<__T:IGrounding_Pelvis>IGrounding_PelvisMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-grounding")]impl Grounding_Pelvis{pub fn get_ik_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_ik_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_height_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_height_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn process_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="root_motion-final_ik-grounding")]impl Grounding_Pelvis{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Grounding_Pelvis), ::core::stringify!(new),));
+ <Self as IGrounding_PelvisMethods> ::ctor(this,);
 this}
 }
 
@@ -368,77 +426,19 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-grounding")]pub trait IGrounding_PelvisMethods:IGrounding_Pelvis{#[doc="`get_IKOffset()` overload"]fn get_ik_offset(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd1f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(Grounding_Pelvis)__receiver)}
-}
-#[doc="`set_IKOffset(crate::unity_engine::vector3::Vector3)` overload"]fn set_ik_offset(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd200usize)as*mut u8,();
-(Grounding_Pelvis)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
-}
-#[doc="`get_heightOffset()` overload"]fn get_height_offset(self,)->f32{unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd210usize)as*mut u8,f32;
-(Grounding_Pelvis)__receiver)}
-}
-#[doc="`set_heightOffset(f32)` overload"]fn set_height_offset(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd220usize)as*mut u8,();
-(Grounding_Pelvis)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`Initiate(crate::root_motion::final_ik::grounding::Grounding)` overload"]fn initiate(self,grounding:impl::core::convert::Into<crate::root_motion::final_ik::grounding::Grounding>)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd230usize)as*mut u8,();
-(Grounding_Pelvis)__receiver,(crate::root_motion::final_ik::grounding::Grounding)::core::convert::Into::into(grounding))}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd2e0usize)as*mut u8,();
-(Grounding_Pelvis)__receiver)}
-}
-#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd290usize)as*mut u8,();
-(Grounding_Pelvis)__receiver)}
-}
-#[doc="`Process(f32, f32, bool)` overload"]fn process(self,lowest_offset:impl::core::convert::Into<f32> ,highest_offset:impl::core::convert::Into<f32> ,is_grounded:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd350usize)as*mut u8,();
-(Grounding_Pelvis)__receiver,(f32)::core::convert::Into::into(lowest_offset),(f32)::core::convert::Into::into(highest_offset),(bool)::core::convert::Into::into(is_grounded))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Grounding_Pelvis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdd4d0usize)as*mut u8,();
-(Grounding_Pelvis)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-grounding")]impl<__T:IGrounding_Pelvis>IGrounding_PelvisMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-grounding")]impl Grounding_Pelvis{pub fn get_ik_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_ik_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_height_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_height_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn process_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="root_motion-final_ik-grounding")]impl Grounding_Pelvis{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Grounding_Pelvis), ::core::stringify!(new),));
- <Self as IGrounding_PelvisMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "root_motion-final_ik-grounding")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Grounding;
     pub use super::IGrounding;
     pub use super::IGroundingMethods;
-    pub use super::Grounding_Leg;
-    pub use super::IGrounding_Leg;
-    pub use super::IGrounding_LegMethods;
+    pub use super::Grounding_Quality;
     pub use super::Grounding_Pelvis;
     pub use super::IGrounding_Pelvis;
     pub use super::IGrounding_PelvisMethods;
-    pub use super::Grounding_Quality;
+    pub use super::Grounding_Leg;
+    pub use super::IGrounding_Leg;
+    pub use super::IGrounding_LegMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

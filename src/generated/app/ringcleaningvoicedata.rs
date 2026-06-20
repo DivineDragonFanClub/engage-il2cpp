@@ -19,28 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningvoicedata/RingCleaningVoiceData_Situation.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingCleaningVoiceData_Situation{pub value:i32,}
-impl::unity2::ClassIdentity for RingCleaningVoiceData_Situation{const NAMESPACE: &'static str="App";
-const NAME: &'static str="RingCleaningVoiceData.Situation";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for RingCleaningVoiceData_Situation{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl RingCleaningVoiceData_Situation{pub fn start()->Self{Self{value:0}
-}
-pub fn clean_strongly_not_dirty()->Self{Self{value:1}
-}
-pub fn clean_dirty()->Self{Self{value:2}
-}
-pub fn clean_strongly_diry()->Self{Self{value:3}
-}
-pub fn finish()->Self{Self{value:4}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningvoicedata/RingCleaningVoiceData_VoiceLabel.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingCleaningVoiceData_VoiceLabel{pub value:i32,}
 impl::unity2::ClassIdentity for RingCleaningVoiceData_VoiceLabel{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RingCleaningVoiceData.VoiceLabel";
@@ -87,23 +65,32 @@ pub fn thank03()->Self{Self{value:15}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningvoicedata/RingCleaningVoiceData.md"))]#[::unity2::class(namespace="App",name="RingCleaningVoiceData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::ringcleaningvoicedata::RingCleaningVoiceData>)]pub struct RingCleaningVoiceData{#[static_field]#[rename(name="EventNames")]pub event_names: ::unity2::Array< ::unity2::Il2CppString> ,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningvoicedata/RingCleaningVoiceData_Situation.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingCleaningVoiceData_Situation{pub value:i32,}
+impl::unity2::ClassIdentity for RingCleaningVoiceData_Situation{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingCleaningVoiceData.Situation";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RingCleaningVoiceData_Situation{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RingCleaningVoiceData_Situation{pub fn start()->Self{Self{value:0}
+}
+pub fn clean_strongly_not_dirty()->Self{Self{value:1}
+}
+pub fn clean_dirty()->Self{Self{value:2}
+}
+pub fn clean_strongly_diry()->Self{Self{value:3}
+}
+pub fn finish()->Self{Self{value:4}
+}
+}
+
 }
 
 #[cfg(feature = "app-ringcleaningvoicedata-types")]
 pub use __types::*;
-
-#[cfg(feature="app-ringcleaningvoicedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingCleaningVoiceData_unity2_raw{use super:: * ;
-pub unsafe fn get_debug_name(this:RingCleaningVoiceData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",8usize,__vt.len(), <RingCleaningVoiceData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let inner:extern "C" fn(RingCleaningVoiceData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
 
 #[cfg(feature="app-ringcleaningvoicedata")]impl RingCleaningVoiceData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422810usize)as*mut u8,();
 )}
@@ -157,7 +144,16 @@ inner(this,__mi)}
 (RingCleaningVoiceData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__RingCleaningVoiceData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RingCleaningVoiceData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let __inner:extern "C" fn(RingCleaningVoiceData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`GetEventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24234a0usize)as*mut u8, ::unity2::Il2CppString;
@@ -189,6 +185,11 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
+#[cfg(feature="app-ringcleaningvoicedata")]impl RingCleaningVoiceData{#[doc="Direct (non-virtual) call to `RingCleaningVoiceData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+}
+
 #[cfg(feature="app-ringcleaningvoicedata")]impl RingCleaningVoiceData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
  failed to instantiate", ::core::stringify!(RingCleaningVoiceData), ::core::stringify!(new),));
@@ -199,11 +200,11 @@ this}
 #[cfg(feature = "app-ringcleaningvoicedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingCleaningVoiceData_Situation;
     pub use super::RingCleaningVoiceData_VoiceLabel;
     pub use super::RingCleaningVoiceData;
     pub use super::IRingCleaningVoiceData;
     pub use super::IRingCleaningVoiceDataMethods;
+    pub use super::RingCleaningVoiceData_Situation;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

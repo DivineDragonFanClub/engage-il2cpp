@@ -14,126 +14,77 @@ mod __types {
 #[cfg(feature = "unity_engine-resource_management-async_operations-igenericprovideroperation-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resource_management-async_operations-igenericprovideroperation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IGenericProviderOperation_unity2_raw{use super:: * ;
-pub unsafe fn init(this:IGenericProviderOperation,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,provider:crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+#[cfg(feature="unity_engine-resource_management-async_operations-igenericprovideroperation")]pub trait IIGenericProviderOperationMethods:IIGenericProviderOperation{#[doc="`Init(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>>)` overload"]fn init(self,rm:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,provider:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider> ,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,dep_op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > >)->(){unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",0usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"Init",));
-let inner:extern "C" fn(IGenericProviderOperation,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IGenericProviderOperation,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,rm,provider,location,dep_op,__mi)}
-pub unsafe fn init_2(this:IGenericProviderOperation,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,provider:crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,release_dependencies_on_failure:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(rm), ::core::convert::Into::into(provider), ::core::convert::Into::into(location), ::core::convert::Into::into(dep_op),__mi)}
+}
+}
+#[doc="`Init(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>>, bool)` overload"]fn init_2(self,rm:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,provider:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider> ,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,dep_op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > > ,release_dependencies_on_failure:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",1usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"Init",));
-let inner:extern "C" fn(IGenericProviderOperation,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IGenericProviderOperation,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,rm,provider,location,dep_op,release_dependencies_on_failure,__mi)}
-pub unsafe fn get_provide_handle_version(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver, ::core::convert::Into::into(rm), ::core::convert::Into::into(provider), ::core::convert::Into::into(location), ::core::convert::Into::into(dep_op), ::core::convert::Into::into(release_dependencies_on_failure),__mi)}
+}
+}
+#[doc="`get_ProvideHandleVersion()` overload"]fn get_provide_handle_version(self,)->i32{unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",2usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"get_ProvideHandleVersion",));
-let inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_location(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_Location()` overload"]fn get_location(self,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",3usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"get_Location",));
-let inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_dependency_count(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`get_DependencyCount()` overload"]fn get_dependency_count(self,)->i32{unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",4usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"get_DependencyCount",));
-let inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn get_dependencies(this:IGenericProviderOperation,dst_list:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+__inner(__receiver,__mi)}
+}
+}
+#[doc="`GetDependencies(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>)` overload"]fn get_dependencies(self,dst_list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> >)->(){unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
 let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
 `)",5usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"GetDependencies",));
-let inner:extern "C" fn(IGenericProviderOperation,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
+let __inner:extern "C" fn(IGenericProviderOperation,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,dst_list,__mi)}
-pub unsafe fn set_progress_callback(this:IGenericProviderOperation,callback:crate::system::func_1::Func_1<f32> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",7usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"SetProgressCallback",));
-let inner:extern "C" fn(IGenericProviderOperation,crate::system::func_1::Func_1<f32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,callback,__mi)}
-pub unsafe fn get_requested_type(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",9usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"get_RequestedType",));
-let inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-pub unsafe fn set_download_progress_callback(this:IGenericProviderOperation,callback:crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",10usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"SetDownloadProgressCallback",));
-let inner:extern "C" fn(IGenericProviderOperation,crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,callback,__mi)}
-pub unsafe fn set_wait_for_completion_callback(this:IGenericProviderOperation,callback:crate::system::func_1::Func_1<bool> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
- out of range (vtable len {}
-) on the runtime class behind {}
- (method `{}
-`)",11usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"SetWaitForCompletionCallback",));
-let inner:extern "C" fn(IGenericProviderOperation,crate::system::func_1::Func_1<bool> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,callback,__mi)}
+__inner(__receiver, ::core::convert::Into::into(dst_list),__mi)}
 }
-
-#[cfg(feature="unity_engine-resource_management-async_operations-igenericprovideroperation")]pub trait IIGenericProviderOperationMethods:IIGenericProviderOperation{#[doc="`Init(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>>)` overload"]fn init(self,rm:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,provider:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider> ,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,dep_op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > >)->(){unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGenericProviderOperation_unity2_raw::init(__receiver, ::core::convert::Into::into(rm), ::core::convert::Into::into(provider), ::core::convert::Into::into(location), ::core::convert::Into::into(dep_op), ::core::option::Option::None)}
-}
-#[doc="`Init(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>>, bool)` overload"]fn init_2(self,rm:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,provider:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider> ,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,dep_op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > > ,release_dependencies_on_failure:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGenericProviderOperation_unity2_raw::init_2(__receiver, ::core::convert::Into::into(rm), ::core::convert::Into::into(provider), ::core::convert::Into::into(location), ::core::convert::Into::into(dep_op), ::core::convert::Into::into(release_dependencies_on_failure), ::core::option::Option::None)}
-}
-#[doc="`get_ProvideHandleVersion()` overload"]fn get_provide_handle_version(self,)->i32{unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGenericProviderOperation_unity2_raw::get_provide_handle_version(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_Location()` overload"]fn get_location(self,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGenericProviderOperation_unity2_raw::get_location(__receiver, ::core::option::Option::None)}
-}
-#[doc="`get_DependencyCount()` overload"]fn get_dependency_count(self,)->i32{unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGenericProviderOperation_unity2_raw::get_dependency_count(__receiver, ::core::option::Option::None)}
-}
-#[doc="`GetDependencies(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>)` overload"]fn get_dependencies(self,dst_list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> >)->(){unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGenericProviderOperation_unity2_raw::get_dependencies(__receiver, ::core::convert::Into::into(dst_list), ::core::option::Option::None)}
 }
 fn get_dependency<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,index:impl::core::convert::Into<i32>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<IGenericProviderOperation as::unity2::ClassIdentity> ::class(),"GetDependency",1,)}
 );
@@ -157,16 +108,52 @@ let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
 __f(__receiver, ::core::convert::Into::into(index), ::core::option::Option::Some(__mi_opaque),)}
 }
 #[doc="`SetProgressCallback(crate::system::func_1::Func_1<f32>)` overload"]fn set_progress_callback(self,callback:impl::core::convert::Into<crate::system::func_1::Func_1<f32> >)->(){unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGenericProviderOperation_unity2_raw::set_progress_callback(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"SetProgressCallback",));
+let __inner:extern "C" fn(IGenericProviderOperation,crate::system::func_1::Func_1<f32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(callback),__mi)}
+}
 }
 #[doc="`get_RequestedType()` overload"]fn get_requested_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGenericProviderOperation_unity2_raw::get_requested_type(__receiver, ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"get_RequestedType",));
+let __inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver,__mi)}
+}
 }
 #[doc="`SetDownloadProgressCallback(crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus>)` overload"]fn set_download_progress_callback(self,callback:impl::core::convert::Into<crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus> >)->(){unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGenericProviderOperation_unity2_raw::set_download_progress_callback(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"SetDownloadProgressCallback",));
+let __inner:extern "C" fn(IGenericProviderOperation,crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(callback),__mi)}
+}
 }
 #[doc="`SetWaitForCompletionCallback(crate::system::func_1::Func_1<bool>)` overload"]fn set_wait_for_completion_callback(self,callback:impl::core::convert::Into<crate::system::func_1::Func_1<bool> >)->(){unsafe{let __receiver= <IGenericProviderOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__IGenericProviderOperation_unity2_raw::set_wait_for_completion_callback(__receiver, ::core::convert::Into::into(callback), ::core::option::Option::None)}
+{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"SetWaitForCompletionCallback",));
+let __inner:extern "C" fn(IGenericProviderOperation,crate::system::func_1::Func_1<bool> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+__inner(__receiver, ::core::convert::Into::into(callback),__mi)}
+}
 }
 }
 
@@ -182,6 +169,38 @@ pub fn set_progress_callback_method_info()-> & 'static::unity2::il2cpp::MethodIn
 pub fn get_requested_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn set_download_progress_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 pub fn set_wait_for_completion_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="unity_engine-resource_management-async_operations-igenericprovideroperation")]impl IGenericProviderOperation{#[doc="Direct (non-virtual) call to `IGenericProviderOperation`'s own `Init`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn init(this:impl::core::convert::Into< ::unity2::IlInstance> ,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,provider:crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,)->(){let __mi=Self::init_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),rm,provider,location,dep_op, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IGenericProviderOperation`'s own `Init`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn init_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,provider:crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,release_dependencies_on_failure:bool,)->(){let __mi=Self::init_2_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),rm,provider,location,dep_op,release_dependencies_on_failure, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IGenericProviderOperation`'s own `get_ProvideHandleVersion`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_provide_handle_version(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_provide_handle_version_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IGenericProviderOperation`'s own `get_Location`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_location(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{let __mi=Self::get_location_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IGenericProviderOperation`'s own `get_DependencyCount`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_dependency_count(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_dependency_count_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IGenericProviderOperation`'s own `GetDependencies`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_dependencies(this:impl::core::convert::Into< ::unity2::IlInstance> ,dst_list:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> ,)->(){let __mi=Self::get_dependencies_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),dst_list, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IGenericProviderOperation`'s own `SetProgressCallback`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_progress_callback(this:impl::core::convert::Into< ::unity2::IlInstance> ,callback:crate::system::func_1::Func_1<f32> ,)->(){let __mi=Self::set_progress_callback_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::func_1::Func_1<f32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),callback, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IGenericProviderOperation`'s own `get_RequestedType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_requested_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_requested_type_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(), ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IGenericProviderOperation`'s own `SetDownloadProgressCallback`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_download_progress_callback(this:impl::core::convert::Into< ::unity2::IlInstance> ,callback:crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus> ,)->(){let __mi=Self::set_download_progress_callback_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),callback, ::core::option::Option::None)}
+#[doc="Direct (non-virtual) call to `IGenericProviderOperation`'s own `SetWaitForCompletionCallback`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_wait_for_completion_callback(this:impl::core::convert::Into< ::unity2::IlInstance> ,callback:crate::system::func_1::Func_1<bool> ,)->(){let __mi=Self::set_wait_for_completion_callback_method_info();
+let __inner:extern "C" fn(::unity2::IlInstance,crate::system::func_1::Func_1<bool> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
+__inner(this.into(),callback, ::core::option::Option::None)}
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-igenericprovideroperation")]

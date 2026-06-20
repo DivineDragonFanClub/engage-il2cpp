@@ -11,6 +11,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scriptingutility/ScriptingUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="ScriptingUtility")]#[parent(crate::system::object::Object)]pub struct ScriptingUtility{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scriptingutility/ScriptingUtility_TestClass.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ScriptingUtility_TestClass{pub value:i32,}
 impl::unity2::ClassIdentity for ScriptingUtility_TestClass{const NAMESPACE: &'static str="UnityEngine";
 const NAME: &'static str="ScriptingUtility.TestClass";
@@ -20,9 +23,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for ScriptingUtility_TestClass{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scriptingutility/ScriptingUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="ScriptingUtility")]#[parent(crate::system::object::Object)]pub struct ScriptingUtility{}
 
 }
 
@@ -40,9 +40,9 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-scriptingutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ScriptingUtility_TestClass;
     pub use super::ScriptingUtility;
     pub use super::IScriptingUtility;
+    pub use super::ScriptingUtility_TestClass;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

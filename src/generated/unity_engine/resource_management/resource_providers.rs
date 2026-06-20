@@ -95,9 +95,9 @@
  #[cfg(feature="unity_engine-resource_management-resource_providers-providerloadrequestoptions")]pub use providerloadrequestoptions::{IProviderLoadRequestOptionsMethods}
 ;
  #[cfg(any(feature="unity_engine-resource_management-resource_providers-resourceproviderbase-types"))]pub mod resourceproviderbase;
- #[cfg(feature="unity_engine-resource_management-resource_providers-resourceproviderbase-types")]pub use resourceproviderbase::{ResourceProviderBase,IResourceProviderBase,ResourceProviderBase_BaseInitAsyncOp,IResourceProviderBase_BaseInitAsyncOp}
+ #[cfg(feature="unity_engine-resource_management-resource_providers-resourceproviderbase-types")]pub use resourceproviderbase::{ResourceProviderBase_BaseInitAsyncOp,IResourceProviderBase_BaseInitAsyncOp,ResourceProviderBase,IResourceProviderBase}
 ;
- #[cfg(feature="unity_engine-resource_management-resource_providers-resourceproviderbase")]pub use resourceproviderbase::{IResourceProviderBaseMethods,IResourceProviderBase_BaseInitAsyncOpMethods}
+ #[cfg(feature="unity_engine-resource_management-resource_providers-resourceproviderbase")]pub use resourceproviderbase::{IResourceProviderBase_BaseInitAsyncOpMethods,IResourceProviderBaseMethods}
 ;
  #[cfg(any(feature="unity_engine-resource_management-resource_providers-sceneinstance-types"))]pub mod sceneinstance;
  #[cfg(feature="unity_engine-resource_management-resource_providers-sceneinstance-types")]pub use sceneinstance::{SceneInstance}
@@ -108,7 +108,7 @@
  #[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]pub use sceneprovider::{ISceneProvider_SceneOpMethods,ISceneProvider_UnloadSceneOpMethods,ISceneProviderMethods}
 ;
  #[cfg(any(feature="unity_engine-resource_management-resource_providers-textdataprovider-types"))]pub mod textdataprovider;
- #[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider-types")]pub use textdataprovider::{TextDataProvider,ITextDataProvider,TextDataProvider_InternalOp,ITextDataProvider_InternalOp}
+ #[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider-types")]pub use textdataprovider::{TextDataProvider_InternalOp,ITextDataProvider_InternalOp,TextDataProvider,ITextDataProvider}
 ;
- #[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]pub use textdataprovider::{ITextDataProviderMethods,ITextDataProvider_InternalOpMethods}
+ #[cfg(feature="unity_engine-resource_management-resource_providers-textdataprovider")]pub use textdataprovider::{ITextDataProvider_InternalOpMethods,ITextDataProviderMethods}
 ;
